@@ -530,8 +530,10 @@ export function ImageGallery({ images, title = "الصور" }: ImageGalleryProps
       </div>
       <div style={{ 
         display: "grid", 
-        gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", 
-        gap: "16px" 
+        gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", 
+        gap: "16px",
+        width: "100%",
+        boxSizing: "border-box"
       }}>
         {images.map((src, i) => (
           <motion.div

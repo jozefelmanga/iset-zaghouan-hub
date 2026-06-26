@@ -49,11 +49,11 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
           style={{
             maxWidth: "1400px",
             margin: "0 auto",
-            padding: "0 32px",
+            padding: "0 clamp(16px, 4vw, 32px)",
             height: "100%",
             display: "flex",
             alignItems: "center",
-            gap: "24px",
+            gap: "clamp(12px, 3vw, 24px)",
           }}
         >
           {/* Logo */}
@@ -130,6 +130,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
             <Search size={16} strokeWidth={2} style={{ flexShrink: 0 }} />
             <span style={{ flex: 1, textAlign: "right" }}>بحث في الدليل...</span>
             <kbd
+              className="desktop-only"
               style={{
                 fontSize: "10px",
                 padding: "2px 7px",

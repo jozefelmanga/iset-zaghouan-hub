@@ -48,7 +48,7 @@ export default function BoursePage() {
         />
 
         {/* Scholarship Types */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "16px", marginBottom: "32px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "16px", marginBottom: "32px", width: "100%", boxSizing: "border-box" }}>
           {scholarshipTypes.map((s, i) => (
             <motion.div
               key={i}
@@ -151,7 +151,7 @@ export default function BoursePage() {
             <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>الأوراق المطلوبة</span>
           </div>
           <Card elevation="flat" padding="20px">
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "10px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "10px", width: "100%", boxSizing: "border-box" }}>
               {scholarshipDocs.map((doc, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 14px", borderRadius: "10px", background: "var(--color-background)" }}>
                   <CheckCircle2 size={14} style={{ color: "var(--color-secondary)", flexShrink: 0 }} strokeWidth={2.5} />

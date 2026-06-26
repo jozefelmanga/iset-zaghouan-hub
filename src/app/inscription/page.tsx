@@ -38,7 +38,7 @@ export default function InscriptionPage() {
 
   return (
     <AppLayout>
-      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 32px" }}>
+      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
 
         {/* Page Header */}
         <PageHeader

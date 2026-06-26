@@ -56,7 +56,7 @@ const contributors = [
 export default function BonusPage() {
   return (
     <AppLayout>
-      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 32px" }}>
+      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         
         {/* Page Header */}
         <PageHeader
@@ -150,8 +150,8 @@ export default function BonusPage() {
                 {/* Contributors Grid */}
                 <div 
                   style={{ 
-                    display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "12px",
-                    maxWidth: "600px", margin: "0 auto"
+                    display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: "12px",
+                    maxWidth: "600px", margin: "0 auto", width: "100%", boxSizing: "border-box"
                   }}
                 >
                   {contributors.map((name) => (

@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { BottomNav } from "@/components/layout/BottomNav";
-import { FloatingActionButton } from "@/components/ui/FloatingActionButton";
 import { CommandPalette } from "@/components/ui/CommandPalette";
 import { motion } from "framer-motion";
 
@@ -39,10 +38,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         {/* Mobile BottomNav */}
         <BottomNav />
 
-        {/* Mobile FAB */}
-        <FloatingActionButton onSearchOpen={() => setPaletteOpen(true)} />
-
-        {/* Global Command Palette (accessible from FAB) */}
+        {/* Global Command Palette */}
         <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
       </div>
     </div>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import {
   MapPin, Coffee, BookOpen, Camera, Mountain, Store, Dumbbell, Image as ImageIcon,
+  Phone, Instagram, ExternalLink, Play,
 } from "lucide-react";
 import { PageHeader, Card } from "@/components/ui/shared";
 import { exploreZaghouan } from "@/data/content";
@@ -265,8 +266,119 @@ export default function ExplorePage() {
           </div>
         </Card>
 
+        {/* Guide Contact */}
+        <div style={{ marginTop: "40px", marginBottom: "36px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Mountain size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>مرشد سياحي للجبل 🧭</span>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            style={{
+              background: "var(--color-surface)",
+              borderRadius: "20px",
+              border: "1px solid var(--color-border)",
+              boxShadow: "var(--shadow-card)",
+              padding: "24px",
+              display: "flex",
+              alignItems: "center",
+              gap: "20px",
+              flexWrap: "wrap",
+            }}
+          >
+            {/* Avatar */}
+            <div style={{
+              width: "72px", height: "72px", borderRadius: "50%", flexShrink: 0,
+              overflow: "hidden",
+              border: "3px solid rgba(18,184,200,0.3)",
+              boxShadow: "0 4px 16px rgba(11,31,58,0.12)",
+            }}>
+              <img
+                src="/images/fahd-belghith.webp"
+                alt="فهد البلغيث"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </div>
+
+            {/* Info */}
+            <div style={{ flex: 1, minWidth: "180px" }}>
+              <p style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)", marginBottom: "4px" }}>فهد البلغيث</p>
+              <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "14px" }}>مرشد سياحي — جبل زغوان</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                {/* Phone */}
+                <a
+                  href="tel:+21623605218"
+                  dir="ltr"
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: "8px",
+                    padding: "8px 16px", borderRadius: "999px",
+                    background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.25)",
+                    color: "#16A34A", textDecoration: "none", fontSize: "13px", fontWeight: 600,
+                    transition: "all 200ms ease",
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(34,197,94,0.15)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(34,197,94,0.08)"; }}
+                >
+                  <Phone size={14} strokeWidth={2} />
+                  23 605 218
+                </a>
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/fahdbelghith?igsh=c25vY3phZmpkeDI0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  dir="ltr"
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: "8px",
+                    padding: "8px 16px", borderRadius: "999px",
+                    background: "rgba(236,72,153,0.08)", border: "1px solid rgba(236,72,153,0.25)",
+                    color: "#DB2777", textDecoration: "none", fontSize: "13px", fontWeight: 600,
+                    transition: "all 200ms ease",
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(236,72,153,0.15)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(236,72,153,0.08)"; }}
+                >
+                  <Instagram size={14} strokeWidth={2} />
+                  @fahdbelghith
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* YouTube Video */}
+        <div style={{ marginBottom: "36px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: "#EF4444", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Play size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>Discover Zaghouan Mountain 🇹🇳</span>
+          </div>
+          <div style={{
+            borderRadius: "20px", overflow: "hidden",
+            border: "1px solid var(--color-border)",
+            boxShadow: "var(--shadow-card)",
+            aspectRatio: "16/9",
+            width: "100%",
+          }}>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/9ijcK7iK8rU"
+              title="Discover Zaghouan Mountain"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ display: "block", border: "none" }}
+            />
+          </div>
+        </div>
+
         {/* Zaghouan Photo Gallery */}
-        <div style={{ marginTop: "40px", marginBottom: "12px" }}>
+        <div style={{ marginBottom: "12px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
             <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <ImageIcon size={16} strokeWidth={2} />

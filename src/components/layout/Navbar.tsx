@@ -56,43 +56,27 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
             gap: "clamp(12px, 3vw, 24px)",
           }}
         >
-          {/* Logo */}
-          <Link
-            href="/"
+          {/* Hamburger — mobile only */}
+          <motion.button
+            className="mobile-only"
+            onClick={() => setDrawerOpen(true)}
+            whileTap={{ scale: 0.9 }}
             style={{
+              width: "40px",
+              height: "40px",
+              borderRadius: "10px",
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.10)",
               display: "flex",
               alignItems: "center",
-              gap: "10px",
-              textDecoration: "none",
+              justifyContent: "center",
+              color: "rgba(255,255,255,0.8)",
+              cursor: "pointer",
               flexShrink: 0,
             }}
           >
-            <div
-              style={{
-                width: "38px",
-                height: "38px",
-                borderRadius: "10px",
-                background: "rgba(18,184,200,0.15)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#12B8C8",
-              }}
-            >
-              <GraduationCap size={20} strokeWidth={2} />
-            </div>
-            <span
-              className="hidden sm:block"
-              style={{
-                fontWeight: 700,
-                fontSize: "15px",
-                color: "#fff",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              ISET Zaghouan
-            </span>
-          </Link>
+            <Menu size={20} strokeWidth={2} />
+          </motion.button>
 
           {/* Search — centerpiece */}
           <button
@@ -146,30 +130,44 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
             </kbd>
           </button>
 
-
-
-          {/* Hamburger — mobile only */}
-          <motion.button
-            className="mobile-only"
-            onClick={() => setDrawerOpen(true)}
-            whileTap={{ scale: 0.9 }}
+          {/* Logo */}
+          <Link
+            href="/"
             style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "10px",
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.10)",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
-              color: "rgba(255,255,255,0.8)",
-              cursor: "pointer",
+              gap: "10px",
+              textDecoration: "none",
               flexShrink: 0,
               marginRight: "auto",
             }}
           >
-            <Menu size={20} strokeWidth={2} />
-          </motion.button>
+            <div
+              style={{
+                width: "38px",
+                height: "38px",
+                borderRadius: "10px",
+                background: "rgba(18,184,200,0.15)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#12B8C8",
+              }}
+            >
+              <GraduationCap size={20} strokeWidth={2} />
+            </div>
+            <span
+              className="hidden sm:block"
+              style={{
+                fontWeight: 700,
+                fontSize: "15px",
+                color: "#fff",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              ISET Zaghouan
+            </span>
+          </Link>
         </div>
       </header>
 

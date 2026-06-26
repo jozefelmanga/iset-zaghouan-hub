@@ -47,6 +47,7 @@ interface CommandPaletteProps {
 export function CommandPalette({ open, onClose }: CommandPaletteProps) {
   const [query, setQuery] = useState("");
   const [recentSearches] = useState(["الترسيم", "المبيت الجامعي"]);
+  const [isMobile, setIsMobile] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const filtered = query.trim()
@@ -57,6 +58,13 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
           p.category.includes(query)
       )
     : [];
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (open) {
@@ -103,21 +111,24 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
 
           {/* Palette */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: -20 }}
+            initial={isMobile ? { y: "100%", opacity: 1 } : { opacity: 0, scale: 0.96, y: -20 }}
+            animate={isMobile ? { y: 0, opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
+            exit={isMobile ? { y: "100%", opacity: 1 } : { opacity: 0, scale: 0.96, y: -20 }}
             transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
             style={{
               position: "fixed",
-              top: "20%",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "min(580px, calc(100vw - 32px))",
+              top: isMobile ? 0 : "12vh",
+              left: isMobile ? 0 : "50%",
+              transform: isMobile ? "none" : "translateX(-50%)",
+              width: isMobile ? "100%" : "580px",
+              height: isMobile ? "100dvh" : "auto",
               background: "var(--color-surface)",
-              borderRadius: "20px",
-              boxShadow: "0 24px 80px rgba(11,31,58,0.25), 0 0 0 1px rgba(232,237,244,0.8)",
+              borderRadius: isMobile ? 0 : "20px",
+              boxShadow: isMobile ? "none" : "0 24px 80px rgba(11,31,58,0.25), 0 0 0 1px rgba(232,237,244,0.8)",
               zIndex: 201,
               overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             {/* Search Input */}
@@ -126,10 +137,28 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                 display: "flex",
                 alignItems: "center",
                 gap: "12px",
-                padding: "18px 20px",
+                padding: isMobile ? "14px 16px" : "18px 20px",
                 borderBottom: "1px solid var(--color-border)",
               }}
             >
+              {isMobile && (
+                <button
+                  onClick={onClose}
+                  style={{
+                    background: "transparent",
+                    border: "none",
+                    color: "var(--color-text-secondary)",
+                    cursor: "pointer",
+                    padding: "4px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  <ArrowLeft size={22} style={{ transform: "rotate(180deg)", color: "var(--color-text-secondary)" }} />
+                </button>
+              )}
               <Search size={20} style={{ color: "var(--color-text-muted)", flexShrink: 0 }} strokeWidth={2} />
               <input
                 ref={inputRef}
@@ -147,20 +176,22 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                 }}
               />
               <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
-                <kbd
-                  style={{
-                    fontSize: "10px",
-                    fontWeight: 500,
-                    background: "var(--color-background)",
-                    border: "1px solid var(--color-border)",
-                    borderRadius: "6px",
-                    padding: "2px 6px",
-                    color: "var(--color-text-muted)",
-                    fontFamily: "var(--font-sans)",
-                  }}
-                >
-                  ESC
-                </kbd>
+                {!isMobile && (
+                  <kbd
+                    style={{
+                      fontSize: "10px",
+                      fontWeight: 500,
+                      background: "var(--color-background)",
+                      border: "1px solid var(--color-border)",
+                      borderRadius: "6px",
+                      padding: "2px 6px",
+                      color: "var(--color-text-muted)",
+                      fontFamily: "var(--font-sans)",
+                    }}
+                  >
+                    ESC
+                  </kbd>
+                )}
                 {query && (
                   <button
                     onClick={() => setQuery("")}
@@ -179,11 +210,28 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                     <X size={12} style={{ color: "var(--color-text-muted)" }} />
                   </button>
                 )}
+                {!isMobile && (
+                  <button
+                    onClick={onClose}
+                    style={{
+                      background: "transparent",
+                      border: "none",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--color-text-muted)",
+                      marginLeft: "4px",
+                    }}
+                  >
+                    <X size={20} />
+                  </button>
+                )}
               </div>
             </div>
 
             {/* Results / Default state */}
-            <div style={{ maxHeight: "360px", overflowY: "auto", padding: "12px" }}>
+            <div style={{ maxHeight: isMobile ? "none" : "380px", flex: 1, overflowY: "auto", padding: "12px" }}>
               {query.trim() === "" ? (
                 <>
                   {/* Recent */}
@@ -411,38 +459,40 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
             </div>
 
             {/* Footer */}
-            <div
-              style={{
-                padding: "12px 20px",
-                borderTop: "1px solid var(--color-border)",
-                display: "flex",
-                gap: "16px",
-                alignItems: "center",
-              }}
-            >
-              {[
-                { key: "↵", label: "فتح" },
-                { key: "↑↓", label: "تنقل" },
-                { key: "ESC", label: "إغلاق" },
-              ].map(({ key, label }) => (
-                <div key={key} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                  <kbd
-                    style={{
-                      fontSize: "11px",
-                      background: "var(--color-background)",
-                      border: "1px solid var(--color-border)",
-                      borderRadius: "6px",
-                      padding: "2px 7px",
-                      color: "var(--color-text-muted)",
-                      fontFamily: "var(--font-sans)",
-                    }}
-                  >
-                    {key}
-                  </kbd>
-                  <span style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>{label}</span>
-                </div>
-              ))}
-            </div>
+            {!isMobile && (
+              <div
+                style={{
+                  padding: "12px 20px",
+                  borderTop: "1px solid var(--color-border)",
+                  display: "flex",
+                  gap: "16px",
+                  alignItems: "center",
+                }}
+              >
+                {[
+                  { key: "↵", label: "فتح" },
+                  { key: "↑↓", label: "تنقل" },
+                  { key: "ESC", label: "إغلاق" },
+                ].map(({ key, label }) => (
+                  <div key={key} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                    <kbd
+                      style={{
+                        fontSize: "11px",
+                        background: "var(--color-background)",
+                        border: "1px solid var(--color-border)",
+                        borderRadius: "6px",
+                        padding: "2px 7px",
+                        color: "var(--color-text-muted)",
+                        fontFamily: "var(--font-sans)",
+                      }}
+                    >
+                      {key}
+                    </kbd>
+                    <span style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </motion.div>
         </>
       )}

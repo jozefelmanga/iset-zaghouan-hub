@@ -64,9 +64,12 @@
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
+    overflow-y: scroll;
   }
 
   body {
+    margin: 0;
+    padding: 0;
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: var(--font-sans);

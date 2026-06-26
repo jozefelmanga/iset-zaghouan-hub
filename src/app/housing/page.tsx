@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Building2, Clock, MapPin, Wallet, CheckCircle2, Key, Sparkles, User, Users, Image as ImageIcon,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Badge, Alert } from "@/components/ui/shared";
 import { housingFoyer, housingLouled, housingProcess } from "@/data/housing";
 import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
@@ -43,7 +42,7 @@ export default function HousingPage() {
   const data = tab === "girls" ? housingFoyer : housingLouled;
 
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         <PageHeader
           icon={Building2}
@@ -266,6 +265,6 @@ export default function HousingPage() {
           <PhotoGallery images={tab === "girls" ? foyerGirlsGallery : foyerBoysGallery} />
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

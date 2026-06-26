@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import {
   Users, Heart, Star, Globe, Briefcase, MessageCircle, Clock, CheckCircle2, ArrowLeft,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Alert } from "@/components/ui/shared";
 import { clubs } from "@/data/content";
 import Link from "next/link";
@@ -18,7 +17,7 @@ const benefitCards = [
 
 export default function ClubsPage() {
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         <PageHeader
           icon={Users}
@@ -179,6 +178,6 @@ export default function ClubsPage() {
           الحياة الجامعية مهاش قراية بركا. النوادي تربط بين الجو والتفرهيد وتخليك تكتسب خبرة في برشا ميادين مختلفة.
         </Alert>
       </div>
-    </AppLayout>
+    </>
   );
 }

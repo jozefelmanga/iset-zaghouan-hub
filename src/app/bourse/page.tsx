@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import {
   Banknote, Calculator, AlertCircle, CheckCircle2, FileText,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Badge, Alert, ImageGallery } from "@/components/ui/shared";
 import { scholarshipTypes, scholarshipRules, scholarshipDocs } from "@/data/scholarships";
 
@@ -37,7 +36,7 @@ export default function BoursePage() {
   }
 
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         <PageHeader
           icon={Banknote}
@@ -178,6 +177,6 @@ export default function BoursePage() {
           ]} 
         />
       </div>
-    </AppLayout>
+    </>
   );
 }

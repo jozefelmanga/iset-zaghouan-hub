@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import {
   Briefcase, Calendar, FileText, CheckCircle2, AlertCircle, ExternalLink, Calculator,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Badge, Alert, StepItem } from "@/components/ui/shared";
 import { internships, internshipDocs, internshipTips } from "@/data/internships";
 
@@ -16,7 +15,7 @@ const yearColors = [
 
 export default function StagesPage() {
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         <PageHeader
           icon={Briefcase}
@@ -175,6 +174,6 @@ export default function StagesPage() {
           </div>
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

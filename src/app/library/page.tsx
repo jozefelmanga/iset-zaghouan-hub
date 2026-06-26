@@ -4,13 +4,12 @@ import { motion } from "framer-motion";
 import {
   BookOpen, CheckCircle2, Camera, DoorOpen, MapPin, Info,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Alert } from "@/components/ui/shared";
 import { libraryInfo } from "@/data/content";
 
 export default function LibraryPage() {
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         <PageHeader
           icon={BookOpen}
@@ -121,6 +120,6 @@ export default function LibraryPage() {
           </div>
         </Alert>
       </div>
-    </AppLayout>
+    </>
   );
 }

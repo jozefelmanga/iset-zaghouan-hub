@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Heart, Sparkles, AlertTriangle, Lightbulb, Coffee, Home, Users } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Alert } from "@/components/ui/shared";
 
 const generalTips = [
@@ -55,7 +54,7 @@ const contributors = [
 
 export default function BonusPage() {
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         
         {/* Page Header */}
@@ -178,6 +177,6 @@ export default function BonusPage() {
         </div>
 
       </div>
-    </AppLayout>
+    </>
   );
 }

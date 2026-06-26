@@ -22,7 +22,6 @@ import {
   Calendar,
   ChevronLeft,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import {
   ActionCard,
   Badge,
@@ -265,7 +264,7 @@ function Footer() {
    ====================================================== */
 export default function HomePage() {
   return (
-    <AppLayout>
+    <>
       {/* ================================================
           HERO SECTION
           ================================================ */}
@@ -863,6 +862,6 @@ export default function HomePage() {
 
       {/* Footer */}
       <Footer />
-    </AppLayout>
+    </>
   );
 }

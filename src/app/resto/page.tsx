@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import {
   UtensilsCrossed, Clock, Moon, PartyPopper, AlertCircle, CheckCircle2, Info, Image as ImageIcon,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Badge, Alert } from "@/components/ui/shared";
 import { restaurantInfo } from "@/data/restaurant";
 import { PhotoGallery } from "@/components/ui/Lightbox";
@@ -40,7 +39,7 @@ export default function RestoPage() {
   ];
 
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         <PageHeader
           icon={UtensilsCrossed}
@@ -198,6 +197,6 @@ export default function RestoPage() {
           <PhotoGallery images={restoGallery} />
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

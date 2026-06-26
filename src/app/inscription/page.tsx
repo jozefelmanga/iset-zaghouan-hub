@@ -15,7 +15,6 @@ import {
   Copy,
   ArrowLeft,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, StepItem, Alert, Badge, Button, ImageGallery } from "@/components/ui/shared";
 import { enrollmentSteps, enrollmentPhases, enrollmentDocs } from "@/data/enrollment";
 
@@ -37,7 +36,7 @@ export default function InscriptionPage() {
   const progress = Math.round((completed / enrollmentSteps.length) * 100);
 
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
 
         {/* Page Header */}
@@ -281,6 +280,6 @@ export default function InscriptionPage() {
           ]} 
         />
       </div>
-    </AppLayout>
+    </>
   );
 }

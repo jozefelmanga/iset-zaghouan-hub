@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import {
   MapPin, Coffee, BookOpen, Camera, Mountain, Store, Dumbbell, Image as ImageIcon,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card } from "@/components/ui/shared";
 import { exploreZaghouan } from "@/data/content";
 import { PhotoGallery } from "@/components/ui/Lightbox";
@@ -47,7 +46,7 @@ const cafeColors = [
 
 export default function ExplorePage() {
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "960px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         <PageHeader
           icon={MapPin}
@@ -277,6 +276,6 @@ export default function ExplorePage() {
           <PhotoGallery images={zaghouanGallery} />
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

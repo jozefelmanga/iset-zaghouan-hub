@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import {
   Bus, Phone, Clock, AlertCircle, ExternalLink,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Badge, Alert } from "@/components/ui/shared";
 import { transportRoutes, transportTips } from "@/data/transport";
 import { PhotoGallery } from "@/components/ui/Lightbox";
@@ -24,7 +23,7 @@ const typeColors: Record<string, { bg: string; text: string; label: string }> = 
 export default function TransportPage() {
 
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         <PageHeader
           icon={Bus}
@@ -173,6 +172,6 @@ export default function TransportPage() {
           </a>
         </Alert>
       </div>
-    </AppLayout>
+    </>
   );
 }

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Users, Globe, Briefcase, Calendar, Image as ImageIcon, Facebook, Instagram, Youtube, Award, Trophy, Play } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Alert, Badge } from "@/components/ui/shared";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
@@ -41,7 +40,7 @@ const events = ["يوم التراث 🏺", "Randotek GDG 🗺️", "Lightquest 
 
 export default function EnactusPage() {
   return (
-    <AppLayout>
+    <>
       {/* Cover Image */}
       <div style={{ position: "relative", height: "240px", width: "100%", overflow: "hidden" }}>
         <img 
@@ -226,6 +225,6 @@ export default function EnactusPage() {
         </div>
 
       </div>
-    </AppLayout>
+    </>
   );
 }

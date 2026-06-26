@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FlaskConical, BookOpen, GraduationCap, Link2, ExternalLink } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Alert, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 
@@ -11,7 +10,7 @@ export default function GPRPage() {
   const [semesterTab, setSemesterTab] = useState<"s1" | "s2">("s1");
 
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         
         {/* Page Header */}
@@ -195,6 +194,6 @@ export default function GPRPage() {
         </div>
 
       </div>
-    </AppLayout>
+    </>
   );
 }

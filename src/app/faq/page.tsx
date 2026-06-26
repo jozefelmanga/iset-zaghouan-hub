@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   HelpCircle, ChevronDown, Phone, MessageCircle,
 } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Alert } from "@/components/ui/shared";
 import { faqItems, emergencyContacts } from "@/data/content";
 
@@ -85,7 +84,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
 
 export default function FAQPage() {
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "760px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         <PageHeader
           icon={HelpCircle}
@@ -165,6 +164,6 @@ export default function FAQPage() {
           </div>
         </Alert>
       </div>
-    </AppLayout>
+    </>
   );
 }

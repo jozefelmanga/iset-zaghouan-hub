@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { GraduationCap, Code, Coins, FlaskConical, ArrowLeft } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Alert } from "@/components/ui/shared";
 import Link from "next/link";
 
@@ -47,7 +46,7 @@ const depts = [
 
 export default function DepartmentsPage() {
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         {/* Page Header */}
         <PageHeader
@@ -168,6 +167,6 @@ export default function DepartmentsPage() {
           يقع اختيار الشعب والتخصصات في نهاية السنة الأولى جذع مشترك بالنسبة للأقسام العلمية (باستثناء المحاسبة والمالية التي تبدأ مباشرة من السنة الأولى).
         </Alert>
       </div>
-    </AppLayout>
+    </>
   );
 }

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award, GraduationCap, BookOpen, Layers } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Alert } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 
@@ -69,7 +68,7 @@ export default function MastersPage() {
     : masterPrograms.filter((m) => m.dept === activeFilter);
 
   return (
-    <AppLayout>
+    <>
       <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "clamp(24px, 5vw, 40px) clamp(16px, 5vw, 32px)", width: "100%", boxSizing: "border-box" }}>
         <PageHeader
           icon={Award}
@@ -196,6 +195,6 @@ export default function MastersPage() {
           </div>
         </Alert>
       </div>
-    </AppLayout>
+    </>
   );
 }

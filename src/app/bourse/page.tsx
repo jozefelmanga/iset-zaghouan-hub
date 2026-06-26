@@ -3,147 +3,167 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Banknote,
-  Calculator,
-  AlertCircle,
-  CheckCircle2,
-  FileText,
-  Clock,
+  Banknote, Calculator, AlertCircle, CheckCircle2, FileText,
 } from "lucide-react";
 import { AppLayout } from "@/components/layout/AppLayout";
-import { SectionHeader, Card, Badge, Alert } from "@/components/ui/shared";
+import { PageHeader, Card, Badge, Alert } from "@/components/ui/shared";
 import { scholarshipTypes, scholarshipRules, scholarshipDocs } from "@/data/scholarships";
 
 export default function BoursePage() {
   const [income, setIncome] = useState<number | "">("");
 
   const incomeNum = typeof income === "number" ? income : 0;
-  const hasFull = incomeNum <= 5153000;
-  const hasIntegration = incomeNum <= 30000000;
 
   let result = "";
-  let resultVariant: "default" | "success" | "warning" | "danger" = "default";
+  let resultVariant: "info" | "success" | "warning" | "danger" = "info";
+  let resultIcon = "💰";
 
   if (incomeNum === 0) {
     result = "أدخل الدخل السنوي باش تشوف حقك";
-    resultVariant = "default";
+    resultVariant = "info";
+    resultIcon = "🔢";
   } else if (incomeNum > 30000000) {
     result = "لا بورص ولا منحة إدماج (الدخل > 30 مليون)";
     resultVariant = "danger";
+    resultIcon = "❌";
   } else if (incomeNum > 5153000) {
-    result = "منحة الإدماج فقط (500 د)";
+    result = "منحة الإدماج فقط — 500 دينار";
     resultVariant = "warning";
+    resultIcon = "⚠️";
   } else {
-    result = "حقك في البورصة الكاملة";
+    result = "مبروك! حقك في البورصة الكاملة 🎉";
     resultVariant = "success";
+    resultIcon = "✅";
   }
 
   return (
     <AppLayout>
-      <div className="max-w-3xl mx-auto px-4 py-6">
-        <SectionHeader
+      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 32px" }}>
+        <PageHeader
           icon={Banknote}
+          label="الحياة الجامعية"
           title="البورصة الجامعية"
-          subtitle="منحة الإدماج و البورصة الكاملة - شنية تحتاج تعرفو"
+          subtitle="منحة الإدماج و البورصة الكاملة — شنية تحتاج تعرفو"
+          category="life"
         />
 
+        {/* Scholarship Types */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "16px", marginBottom: "32px" }}>
+          {scholarshipTypes.map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <Card elevation="feature" padding="24px">
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
+                  <Badge variant={i === 0 ? "info" : "success"}>{s.name}</Badge>
+                  <div style={{ fontSize: "28px", fontWeight: 800, color: "var(--color-primary)", fontFeatureSettings: '"tnum"' }}>
+                    {s.amount}
+                    <span style={{ fontSize: "14px", fontWeight: 500, color: "var(--color-text-muted)", marginRight: "3px" }}>د</span>
+                  </div>
+                </div>
+                <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{s.condition}</p>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
         {/* Calculator */}
-        <Card className="mb-6">
-          <h3 className="text-lg font-bold text-text mb-4 flex items-center gap-2">
-            <Calculator className="w-5 h-5 text-primary" />
-            حاسبة الأهلية
-          </h3>
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-text mb-2">
-              الدخل السنوي للعائلة (بالدينار)
+        <Card elevation="raised" padding="28px" className="mb-8">
+          <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
+            <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Calculator size={20} strokeWidth={2} />
+            </div>
+            <div>
+              <p style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)" }}>حاسبة الأهلية</p>
+              <p style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>أدخل الدخل السنوي لمعرفة الحق في البورص</p>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: "16px" }}>
+            <label style={{ display: "block", fontSize: "13px", fontWeight: 600, color: "var(--color-text)", marginBottom: "8px" }}>
+              الدخل السنوي للعائلة (بالمليم)
             </label>
             <input
               type="number"
               value={income}
               onChange={(e) => setIncome(e.target.value === "" ? "" : Number(e.target.value))}
               placeholder="مثلا: 4000000"
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-text focus:outline-none focus:ring-2 focus:ring-primary/50"
+              style={{
+                width: "100%",
+                padding: "12px 16px",
+                borderRadius: "var(--radius-input)",
+                border: "1px solid var(--color-border)",
+                background: "var(--color-background)",
+                color: "var(--color-text)",
+                fontSize: "14px",
+                fontFamily: "var(--font-sans)",
+                outline: "none",
+                transition: "border-color var(--transition-fast), box-shadow var(--transition-fast)",
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.borderColor = "var(--color-secondary)";
+                e.currentTarget.style.boxShadow = "0 0 0 3px rgba(18,184,200,0.15)";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.borderColor = "var(--color-border)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             />
           </div>
+
           <motion.div
-            initial={false}
-            animate={{ opacity: incomeNum > 0 ? 1 : 0.6 }}
-            className={`rounded-xl border p-4 ${
-              resultVariant === "success"
-                ? "bg-success/5 border-success/20"
-                : resultVariant === "warning"
-                ? "bg-warning/5 border-warning/20"
-                : resultVariant === "danger"
-                ? "bg-danger/5 border-danger/20"
-                : "bg-primary/5 border-primary/20"
-            }`}
+            animate={{ opacity: 1 }}
+            key={result}
           >
-            <div className="flex items-center gap-2">
-              {resultVariant === "success" ? (
-                <CheckCircle2 className="w-5 h-5 text-success" />
-              ) : (
-                <AlertCircle className="w-5 h-5 text-text-muted" />
-              )}
-              <span className="font-semibold text-text">{result}</span>
-            </div>
+            <Alert title={resultIcon + " " + result} variant={resultVariant}>
+              {incomeNum > 0 && incomeNum <= 5153000 && "الدخل مناسب للبورص الكاملة — ابدأ تجمع الأوراق!"}
+              {incomeNum > 5153000 && incomeNum <= 30000000 && "تقدر تطلب منحة الإدماج 500 دينار."}
+              {incomeNum > 30000000 && "الدخل السنوي عالي جداً للاستفادة من أي منحة."}
+              {incomeNum === 0 && "أدخل دخل العائلة السنوي بالمليم للحصول على نتيجة فورية."}
+            </Alert>
           </motion.div>
         </Card>
 
-        {/* Scholarship types */}
-        <div className="grid sm:grid-cols-2 gap-4 mb-6">
-          {scholarshipTypes.map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-            >
-              <Card>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-2xl font-bold text-primary">{s.amount} DT</span>
-                  <Badge variant={i === 0 ? "accent" : "default"}>{s.name}</Badge>
-                </div>
-                <p className="text-sm text-text-muted">{s.condition}</p>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
         {/* Rules */}
-        <div className="mb-6">
-          <h3 className="text-lg font-bold text-text mb-3 flex items-center gap-2">
-            <AlertCircle className="w-5 h-5 text-warning" />
-            قواعد البورص
-          </h3>
-          <div className="space-y-2">
+        <div style={{ marginBottom: "28px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(246,180,27,0.12)", color: "var(--color-accent)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <AlertCircle size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>قواعد البورص</span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {scholarshipRules.map((rule, i) => (
-              <Alert key={i} title="" variant="warning">
-                {rule}
-              </Alert>
+              <Alert key={i} title="" variant="warning">{rule}</Alert>
             ))}
           </div>
         </div>
 
         {/* Documents */}
-        <div className="mb-6">
-          <h3 className="text-lg font-bold text-text mb-3 flex items-center gap-2">
-            <FileText className="w-5 h-5 text-primary" />
-            الأوراق المطلوبة
-          </h3>
-          <Card>
-            <ul className="space-y-2">
+        <div style={{ marginBottom: "28px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <FileText size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>الأوراق المطلوبة</span>
+          </div>
+          <Card elevation="flat" padding="20px">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "10px" }}>
               {scholarshipDocs.map((doc, i) => (
-                <li key={i} className="flex items-center gap-2 text-sm text-text">
-                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  {doc}
-                </li>
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 14px", borderRadius: "10px", background: "var(--color-background)" }}>
+                  <CheckCircle2 size={14} style={{ color: "var(--color-secondary)", flexShrink: 0 }} strokeWidth={2.5} />
+                  <span style={{ fontSize: "13px", color: "var(--color-text)" }}>{doc}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </Card>
         </div>
 
-        <Alert title="ملاحظة" variant="info">
-          أوراق البورص هي نفسها أوراق 500 د. عند تقديم البورص، نفس الأوراق إذا لم يكن الحق في البورص كاملة تأخذ منحة الإدماج.
+        <Alert title="ملاحظة مهمة" variant="info">
+          أوراق البورص هي نفسها أوراق 500 دينار. عند تقديم البورص، نفس الأوراق — إذا لم يكن الحق في البورص الكاملة تأخذ منحة الإدماج.
         </Alert>
       </div>
     </AppLayout>

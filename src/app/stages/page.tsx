@@ -2,162 +2,175 @@
 
 import { motion } from "framer-motion";
 import {
-  Briefcase,
-  Calendar,
-  FileText,
-  Presentation,
-  BookOpen,
-  CheckCircle2,
-  AlertCircle,
-  ExternalLink,
-  Calculator,
-  GraduationCap,
+  Briefcase, Calendar, FileText, CheckCircle2, AlertCircle, ExternalLink, Calculator,
 } from "lucide-react";
 import { AppLayout } from "@/components/layout/AppLayout";
-import { SectionHeader, Card, Badge, Alert, StepItem } from "@/components/ui/shared";
+import { PageHeader, Card, Badge, Alert, StepItem } from "@/components/ui/shared";
 import { internships, internshipDocs, internshipTips } from "@/data/internships";
+
+const yearColors = [
+  { bg: "rgba(18,184,200,0.08)",   border: "rgba(18,184,200,0.2)",   text: "#12B8C8", badge: "info"    as const },
+  { bg: "rgba(34,197,94,0.08)",    border: "rgba(34,197,94,0.2)",    text: "#22C55E", badge: "success" as const },
+  { bg: "rgba(246,180,27,0.08)",   border: "rgba(246,180,27,0.2)",   text: "#B45309", badge: "warning" as const },
+];
 
 export default function StagesPage() {
   return (
     <AppLayout>
-      <div className="max-w-3xl mx-auto px-4 py-6">
-        <SectionHeader
+      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 32px" }}>
+        <PageHeader
           icon={Briefcase}
+          label="مهني"
           title="الستاجات"
           subtitle="3 سنوات = 3 ستاجات. دليلك الكامل لمراحل التطبيق."
+          category="career"
         />
 
         {/* Timeline */}
-        <div className="mb-8">
-          <h3 className="text-lg font-bold text-text mb-4 flex items-center gap-2">
-            <Calendar className="w-5 h-5 text-primary" />
-            التايم لاين
-          </h3>
-          <div className="space-y-4">
-            {internships.map((internship, i) => (
-              <motion.div
-                key={internship.year}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.15 }}
-              >
-                <Card
-                  className={
-                    internship.year === 3 ? "border-primary/30 bg-primary/5" : ""
-                  }
+        <div style={{ marginBottom: "36px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: "#8B5CF6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Calendar size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>التايم لاين</span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            {internships.map((internship, i) => {
+              const colors = yearColors[i] || yearColors[0];
+              return (
+                <motion.div
+                  key={internship.year}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.12 }}
                 >
-                  <div className="flex items-center gap-2 mb-2">
-                    <Badge
-                      variant={
-                        internship.year === 3
-                          ? "accent"
-                          : internship.year === 2
-                          ? "success"
-                          : "default"
-                      }
-                    >
-                      السنة {internship.year}
-                    </Badge>
-                    <h4 className="font-bold text-text">{internship.name}</h4>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-2 text-sm mb-3">
-                    <div className="text-text-muted">
-                      <span className="font-medium text-text">المدة:</span>{" "}
-                      {internship.duration}
+                  <div
+                    style={{
+                      background: colors.bg,
+                      border: `1px solid ${colors.border}`,
+                      borderRadius: "20px",
+                      padding: "24px",
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "14px" }}>
+                      <Badge variant={colors.badge}>السنة {internship.year}</Badge>
+                      <h4 style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)" }}>{internship.name}</h4>
                     </div>
-                    <div className="text-text-muted">
-                      <span className="font-medium text-text">التوقيت:</span>{" "}
-                      {internship.timing}
-                    </div>
-                    <div className="text-text-muted">
-                      <span className="font-medium text-text">الوزن:</span>{" "}
-                      {internship.weight}
-                    </div>
-                  </div>
-                  <div className="mb-2">
-                    <span className="text-sm font-medium text-text">المتطلبات:</span>
-                    <div className="flex flex-wrap gap-1 mt-1">
-                      {internship.requirements.map((r) => (
-                        <Badge key={r} variant="default">
-                          {r}
-                        </Badge>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "10px", marginBottom: "14px" }}>
+                      {[
+                        { label: "المدة",    value: internship.duration },
+                        { label: "التوقيت", value: internship.timing   },
+                        { label: "الوزن",   value: internship.weight   },
+                      ].map(({ label, value }) => (
+                        <div key={label} style={{ padding: "10px 14px", borderRadius: "10px", background: "rgba(255,255,255,0.6)" }}>
+                          <p style={{ fontSize: "11px", fontWeight: 600, color: "var(--color-text-muted)", marginBottom: "3px", textTransform: "uppercase", letterSpacing: "0.06em" }}>{label}</p>
+                          <p style={{ fontSize: "13px", fontWeight: 600, color: "var(--color-text)" }}>{value}</p>
+                        </div>
                       ))}
                     </div>
-                  </div>
-                  {internship.note && (
-                    <div className="mt-2 p-2 bg-accent/10 rounded-lg text-sm text-accent">
-                      {internship.note}
+                    <div style={{ marginBottom: internship.note ? "12px" : "0" }}>
+                      <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-text-muted)", marginBottom: "8px" }}>المتطلبات:</p>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                        {internship.requirements.map((r) => (
+                          <span
+                            key={r}
+                            style={{
+                              padding: "4px 12px",
+                              borderRadius: "999px",
+                              fontSize: "12px",
+                              fontWeight: 500,
+                              background: "rgba(255,255,255,0.7)",
+                              color: colors.text,
+                              border: `1px solid ${colors.border}`,
+                            }}
+                          >
+                            {r}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  )}
-                </Card>
-              </motion.div>
-            ))}
+                    {internship.note && (
+                      <div style={{ padding: "10px 14px", borderRadius: "10px", background: "rgba(246,180,27,0.08)", border: "1px solid rgba(246,180,27,0.2)", fontSize: "13px", color: "#B45309", fontWeight: 500 }}>
+                        ⚠️ {internship.note}
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
         {/* Formula */}
-        <Card className="mb-6">
-          <h3 className="font-bold text-text mb-3 flex items-center gap-2">
-            <Calculator className="w-5 h-5 text-primary" />
-            معادلة احتساب المعدل
-          </h3>
-          <div className="p-4 bg-background rounded-lg text-center font-mono text-sm text-text">
+        <Card elevation="raised" padding="24px" className="mb-8">
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: "#8B5CF6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Calculator size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>معادلة احتساب المعدل</span>
+          </div>
+          <div
+            style={{
+              padding: "16px 20px",
+              borderRadius: "12px",
+              background: "var(--color-background)",
+              textAlign: "center",
+              fontFamily: "monospace",
+              fontSize: "13px",
+              color: "var(--color-text)",
+              border: "1px solid var(--color-border)",
+              lineHeight: 1.8,
+            }}
+          >
             (PFE × 10 + Perfectionnement × 2.5 + Initiation × 2.5) ÷ 15
           </div>
-          <p className="text-xs text-text-muted mt-2">
+          <p style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "10px" }}>
             الستاجات تدخل في معدل السداسي الثاني من السنة الثالثة.
           </p>
         </Card>
 
         {/* Didosoft */}
-        <div className="mb-6">
-          <h3 className="text-lg font-bold text-text mb-3 flex items-center gap-2">
-            <ExternalLink className="w-5 h-5 text-secondary" />
-            Didosoft
-          </h3>
-          <Alert title="التسجيل" variant="info">
+        <div style={{ marginBottom: "28px" }}>
+          <Alert title="التسجيل على Didosoft" variant="info">
             اعمل compte على{" "}
-            <a
-              href="https://didosoft.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline font-semibold"
-            >
-              didosoft
+            <a href="https://didosoft.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-secondary)", fontWeight: 700 }}>
+              didosoft.com
             </a>{" "}
             من أول العام. النتيجة تلقاها هناك.
           </Alert>
         </div>
 
         {/* Documents */}
-        <div className="mb-6">
-          <h3 className="text-lg font-bold text-text mb-3 flex items-center gap-2">
-            <FileText className="w-5 h-5 text-primary" />
-            الوثائق المطلوبة
-          </h3>
-          <Card>
-            <ul className="space-y-2">
+        <div style={{ marginBottom: "28px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <FileText size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>الوثائق المطلوبة</span>
+          </div>
+          <Card elevation="flat" padding="20px">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "10px" }}>
               {internshipDocs.map((doc, i) => (
-                <li key={i} className="flex items-center gap-2 text-sm text-text">
-                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  {doc}
-                </li>
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 14px", borderRadius: "10px", background: "var(--color-background)" }}>
+                  <CheckCircle2 size={14} style={{ color: "var(--color-secondary)", flexShrink: 0 }} strokeWidth={2.5} />
+                  <span style={{ fontSize: "13px", color: "var(--color-text)" }}>{doc}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </Card>
         </div>
 
         {/* Tips */}
-        <div className="mb-6">
-          <h3 className="text-lg font-bold text-text mb-3 flex items-center gap-2">
-            <AlertCircle className="w-5 h-5 text-accent" />
-            نصائح
-          </h3>
-          <div className="space-y-2">
+        <div>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(246,180,27,0.10)", color: "var(--color-accent)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <AlertCircle size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>نصائح للنجاح</span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {internshipTips.map((tip, i) => (
-              <Alert key={i} title="" variant="warning">
-                {tip}
-              </Alert>
+              <Alert key={i} title="" variant="warning">{tip}</Alert>
             ))}
           </div>
         </div>

@@ -15,9 +15,9 @@ export const libraryInfo = {
 };
 
 export const departments = [
-  { name: "TI", fullName: "Technologies de l'Information", masters: ["Master Department TI"] },
-  { name: "SEG", fullName: "Sciences Économiques et de Gestion", masters: ["Master Department SEG"] },
-  { name: "GPR", fullName: "Génie des Procédés et de l'Environnement", masters: ["Master Department GPR"] },
+  { name: "TI", fullName: "Technologies de l'Information", masters: ["ISID : Ingénierie des Systèmes d'Informations Décisionnels"] },
+  { name: "SEG", fullName: "Sciences Économiques et de Gestion", masters: ["E2I : Entrepreneurship et Ingénierie de l'Innovation", "MOPIL : Modernisation de la Production et Ingénierie de la Chaîne Logistique"] },
+  { name: "GPR", fullName: "Génie des Procédés et de l'Environnement", masters: ["GTVDI : Gestion Traitement et Valorisation des Déchets Industriels"] },
 ];
 
 export const clubs = [

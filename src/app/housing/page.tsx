@@ -3,20 +3,39 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Building2,
-  Clock,
-  MapPin,
-  Wallet,
-  CheckCircle2,
-  AlertCircle,
-  Key,
-  Sparkles,
-  User,
-  Users,
+  Building2, Clock, MapPin, Wallet, CheckCircle2, Key, Sparkles, User, Users, Image as ImageIcon,
 } from "lucide-react";
 import { AppLayout } from "@/components/layout/AppLayout";
-import { SectionHeader, Card, Badge, Alert } from "@/components/ui/shared";
+import { PageHeader, Card, Badge, Alert } from "@/components/ui/shared";
 import { housingFoyer, housingLouled, housingProcess } from "@/data/housing";
+import { PhotoGallery } from "@/components/ui/Lightbox";
+
+const foyerGirlsGallery = [
+  "/images/foyer girls/448872376_947314010742452_1019535438087276358_n.webp",
+  "/images/foyer girls/451547853_984055766847673_8558941274889278029_n.webp",
+  "/images/foyer girls/452706760_962939205633318_6129425710378229105_n.webp",
+  "/images/foyer girls/452848937_883694910457684_1621386241454197661_n.webp",
+  "/images/foyer girls/453060157_1672551733518874_3977738223592009691_n.webp",
+  "/images/foyer girls/453156481_1023997099439323_6780814524542770728_n.webp",
+  "/images/foyer girls/453174627_513858541277726_4200306603887111155_n.webp",
+  "/images/foyer girls/453439508_1207899707228477_8140608691653031405_n.webp",
+  "/images/foyer girls/453460624_431625519864133_3473211417965411587_n.webp",
+  "/images/foyer girls/453460630_1015811493255935_9105471688253090707_n.webp",
+  "/images/foyer girls/453465107_1639059430215421_4134603510622887663_n.webp",
+  "/images/foyer girls/453467393_1537397963515855_175611808864145860_n.webp",
+  "/images/foyer girls/453792484_1793394111190426_7031753863109453644_n.webp",
+  "/images/foyer girls/454063059_371283862741360_1595094905555457197_n.webp",
+];
+
+const foyerBoysGallery = [
+  "/images/foyer boys/1000125393.webp",
+  "/images/foyer boys/1000125394.webp",
+  "/images/foyer boys/1000125395.webp",
+  "/images/foyer boys/1000125398.webp",
+  "/images/foyer boys/1000125399.webp",
+  "/images/foyer boys/1000125400.webp",
+  "/images/foyer boys/1000125401.webp",
+];
 
 export default function HousingPage() {
   const [tab, setTab] = useState<"girls" | "boys">("girls");
@@ -24,162 +43,184 @@ export default function HousingPage() {
 
   return (
     <AppLayout>
-      <div className="max-w-3xl mx-auto px-4 py-6">
-        <SectionHeader
+      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 32px" }}>
+        <PageHeader
           icon={Building2}
+          label="الحياة الجامعية"
           title="المبيت الجامعي"
           subtitle="كل ما تحتاجو تعرفوه على السكن الطلابي في زغوان"
+          category="life"
         />
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-6">
-          <button
-            onClick={() => setTab("girls")}
-            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-colors ${
-              tab === "girls"
-                ? "bg-primary text-white"
-                : "bg-surface text-text-muted border border-border hover:text-text"
-            }`}
-          >
-            <User className="w-4 h-4" />
-            فواي البنات
-          </button>
-          <button
-            onClick={() => setTab("boys")}
-            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-colors ${
-              tab === "boys"
-                ? "bg-primary text-white"
-                : "bg-surface text-text-muted border border-border hover:text-text"
-            }`}
-          >
-            <Users className="w-4 h-4" />
-            فواي الأولاد
-          </button>
+        <div style={{ display: "flex", gap: "10px", marginBottom: "28px" }}>
+          {[
+            { value: "girls" as const, label: "فواي البنات", icon: User  },
+            { value: "boys"  as const, label: "فواي الأولاد", icon: Users },
+          ].map(({ value, label, icon: Icon }) => (
+            <motion.button
+              key={value}
+              onClick={() => setTab(value)}
+              whileHover={{ y: -1 }}
+              whileTap={{ scale: 0.97 }}
+              style={{
+                flex: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+                padding: "13px 20px",
+                borderRadius: "14px",
+                fontWeight: 600,
+                fontSize: "14px",
+                border: "none",
+                cursor: "pointer",
+                transition: "all var(--transition-base)",
+                fontFamily: "var(--font-sans)",
+                background: tab === value ? "var(--color-primary)" : "var(--color-surface)",
+                color: tab === value ? "#fff" : "var(--color-text-secondary)",
+                boxShadow: tab === value ? "var(--shadow-hover)" : "var(--shadow-card)",
+              }}
+            >
+              <Icon size={16} strokeWidth={2} />
+              {label}
+            </motion.button>
+          ))}
         </div>
 
         <AnimatePresence mode="wait">
           <motion.div
             key={tab}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}
           >
-            {/* Info cards */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-6">
-              <Card>
-                <div className="flex items-center gap-2 mb-1">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-semibold text-text">الموقع</span>
-                </div>
-                <p className="text-sm text-text-muted">{data.location}</p>
-              </Card>
-              <Card>
-                <div className="flex items-center gap-2 mb-1">
-                  <Wallet className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-semibold text-text">الضمان</span>
-                </div>
-                <p className="text-sm text-text-muted">{data.deposit} دينار (ترجع اخر العام)</p>
-              </Card>
-              {data.curfew && (
-                <Card>
-                  <div className="flex items-center gap-2 mb-1">
-                    <Clock className="w-4 h-4 text-warning" />
-                    <span className="text-sm font-semibold text-text">وقت الإقفال</span>
+            {/* Info cards grid */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "16px", marginBottom: "28px" }}>
+              {[
+                { icon: MapPin, label: "الموقع", value: data.location, color: "#3B82F6" },
+                { icon: Wallet, label: "الضمان", value: `${data.deposit} د (ترجع اخر العام)`, color: "#12B8C8" },
+                ...(data.curfew ? [{ icon: Clock, label: "وقت الإقفال", value: data.curfew, color: "#F6B41B" }] : []),
+                { icon: Key, label: "المفتاح", value: "بتك (مع التوصيل)", color: "#22C55E" },
+              ].map(({ icon: Icon, label, value, color }) => (
+                <Card key={label} elevation="raised" padding="18px">
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+                    <div style={{ width: "30px", height: "30px", borderRadius: "50%", background: `${color}18`, color, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <Icon size={14} strokeWidth={2} />
+                    </div>
+                    <span style={{ fontWeight: 600, fontSize: "13px", color: "var(--color-text)" }}>{label}</span>
                   </div>
-                  <p className="text-sm text-text-muted">{data.curfew} ⚠️</p>
+                  <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{value}</p>
                 </Card>
-              )}
-              <Card>
-                <div className="flex items-center gap-2 mb-1">
-                  <Key className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-semibold text-text">المفتاح</span>
-                </div>
-                <p className="text-sm text-text-muted">بتك (مع التوصيل)</p>
-              </Card>
+              ))}
             </div>
 
             {/* Features */}
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-text mb-3 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-secondary" />
-                الميزات
-              </h3>
-              <Card>
-                <ul className="space-y-2">
+            <div style={{ marginBottom: "24px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+                <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Sparkles size={16} strokeWidth={2} />
+                </div>
+                <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>الميزات</span>
+              </div>
+              <Card elevation="flat" padding="20px">
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "10px" }}>
                   {data.features.map((f, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-text">
-                      <CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" />
-                      {f}
-                    </li>
+                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                      <CheckCircle2 size={16} style={{ color: "#22C55E", flexShrink: 0, marginTop: "2px" }} strokeWidth={2.5} />
+                      <span style={{ fontSize: "13px", color: "var(--color-text)", lineHeight: 1.5 }}>{f}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </Card>
             </div>
 
             {/* Tips */}
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-text mb-3 flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-accent" />
-                نصائح
-              </h3>
-              <div className="space-y-2">
+            <div style={{ marginBottom: "24px" }}>
+              <p style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)", marginBottom: "14px" }}>نصائح مهمة</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 {data.tips.map((tip, i) => (
-                  <Alert key={i} title={""} variant="warning">
-                    {tip}
-                  </Alert>
+                  <Alert key={i} title="" variant="warning">{tip}</Alert>
                 ))}
               </div>
             </div>
 
             {/* Packing list */}
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-text mb-3">📦 قائمة الحاجات</h3>
-              <Card>
-                <div className="flex flex-wrap gap-2">
+            <div style={{ marginBottom: "24px" }}>
+              <p style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)", marginBottom: "14px" }}>📦 قائمة الحاجات</p>
+              <Card elevation="flat" padding="20px">
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                   {data.packingList.map((item, i) => (
-                    <Badge key={i} variant="default">
+                    <span
+                      key={i}
+                      style={{
+                        padding: "5px 12px",
+                        borderRadius: "999px",
+                        fontSize: "12px",
+                        fontWeight: 500,
+                        background: "rgba(18,184,200,0.08)",
+                        color: "var(--color-secondary)",
+                        border: "1px solid rgba(18,184,200,0.2)",
+                      }}
+                    >
                       {item}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
               </Card>
             </div>
 
             {/* Docs */}
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-text mb-3">📄 الأوراق المطلوبة</h3>
-              <Card>
-                <ul className="space-y-2">
+            <div style={{ marginBottom: "24px" }}>
+              <p style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)", marginBottom: "14px" }}>📄 الأوراق المطلوبة</p>
+              <Card elevation="flat" padding="20px">
+                <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                   {data.docs.map((doc, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-text">
-                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                      {doc}
-                    </li>
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <CheckCircle2 size={15} style={{ color: "var(--color-secondary)", flexShrink: 0 }} strokeWidth={2.5} />
+                      <span style={{ fontSize: "13px", color: "var(--color-text)" }}>{doc}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </Card>
             </div>
           </motion.div>
         </AnimatePresence>
 
         {/* Process */}
-        <div className="mb-6">
-          <h3 className="text-lg font-bold text-text mb-3 flex items-center gap-2">
-            <Key className="w-5 h-5 text-primary" />
-            خطوات التسجيل في المبيت
-          </h3>
-          <Card>
-            <ol className="space-y-3">
+        <div>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(11,31,58,0.06)", color: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Key size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>خطوات التسجيل في المبيت</span>
+          </div>
+          <Card elevation="flat" padding="24px">
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {housingProcess.map((step, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">
+                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
+                  <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "var(--color-secondary)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "12px", flexShrink: 0 }}>
                     {i + 1}
-                  </span>
-                  <p className="text-sm text-text">{step}</p>
-                </li>
+                  </div>
+                  <p style={{ fontSize: "13px", color: "var(--color-text)", lineHeight: 1.6, paddingTop: "4px" }}>{step}</p>
+                </div>
               ))}
-            </ol>
+            </div>
           </Card>
+        </div>
+
+        {/* Foyer Photo Gallery */}
+        <div style={{ marginTop: "40px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: "#8B5CF6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <ImageIcon size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>
+              {tab === "girls" ? "صور فواي البنات 📸" : "صور فواي الأولاد 📸"}
+            </span>
+          </div>
+          <PhotoGallery images={tab === "girls" ? foyerGirlsGallery : foyerBoysGallery} />
         </div>
       </div>
     </AppLayout>

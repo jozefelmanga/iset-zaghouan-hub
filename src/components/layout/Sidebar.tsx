@@ -16,56 +16,270 @@ import {
   MapPin,
   HelpCircle,
   GraduationCap,
+  Heart,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
-const sidebarLinks = [
-  { href: "/", label: "الرئيسية", icon: Home },
-  { href: "/inscription", label: "الترسيم الجامعي", icon: FileText },
-  { href: "/housing", label: "المبيت الجامعي", icon: Building2 },
-  { href: "/bourse", label: "البورص", icon: Banknote },
-  { href: "/resto", label: "الريستو", icon: UtensilsCrossed },
-  { href: "/transport", label: "النقل", icon: Bus },
-  { href: "/stages", label: "الستاجات", icon: Briefcase },
-  { href: "/library", label: "المكتبة", icon: BookOpen },
-  { href: "/clubs", label: "النوادي", icon: Users },
-  { href: "/masters", label: "الماستر", icon: Award },
-  { href: "/explore", label: "اكتشف زغوان", icon: MapPin },
-  { href: "/faq", label: "الأسئلة الشائعة", icon: HelpCircle },
+const navGroups = [
+  {
+    label: "ACADEMICS",
+    color: "#3B82F6",
+    links: [
+      { href: "/inscription", label: "الترسيم الجامعي", icon: FileText },
+      { href: "/library",     label: "المكتبة",          icon: BookOpen },
+      { href: "/departments", label: "الأقسام العلمية", icon: GraduationCap },
+      { href: "/masters",     label: "الماستر",          icon: Award    },
+    ],
+  },
+  {
+    label: "STUDENT LIFE",
+    color: "#12B8C8",
+    links: [
+      { href: "/housing",   label: "المبيت الجامعي", icon: Building2     },
+      { href: "/bourse",    label: "البورص",          icon: Banknote      },
+      { href: "/transport", label: "النقل",           icon: Bus           },
+      { href: "/resto",     label: "الريستو",         icon: UtensilsCrossed },
+      { href: "/clubs",     label: "النوادي",         icon: Users         },
+    ],
+  },
+  {
+    label: "CAREER",
+    color: "#8B5CF6",
+    links: [
+      { href: "/stages", label: "الستاجات", icon: Briefcase },
+    ],
+  },
+  {
+    label: "OTHER",
+    color: "#F97316",
+    links: [
+      { href: "/explore", label: "اكتشف زغوان",     icon: MapPin     },
+      { href: "/faq",     label: "الأسئلة الشائعة", icon: HelpCircle },
+      { href: "/bonus",   label: "نصائح وإهداء",     icon: Heart      },
+    ],
+  },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden md:flex flex-col w-64 h-screen sticky top-0 border-l border-border bg-surface">
-      <div className="p-4 flex items-center gap-2 text-primary font-bold text-lg">
-        <GraduationCap className="w-6 h-6" />
-        <span>ISET Zaghouan</span>
+    <aside
+      className="hidden md:flex flex-col"
+      style={{
+        width: "264px",
+        height: "100dvh",
+        position: "sticky",
+        top: 0,
+        background: "var(--color-surface)",
+        borderLeft: "1px solid var(--color-border)",
+        flexShrink: 0,
+        overflow: "hidden",
+        zIndex: 40,
+      }}
+    >
+      {/* Logo area */}
+      <div
+        style={{
+          height: "80px",
+          display: "flex",
+          alignItems: "center",
+          padding: "0 20px",
+          gap: "12px",
+          borderBottom: "1px solid var(--color-border)",
+          flexShrink: 0,
+        }}
+      >
+        <div
+          style={{
+            width: "40px",
+            height: "40px",
+            borderRadius: "12px",
+            background: "linear-gradient(135deg, rgba(11,31,58,0.08), rgba(18,184,200,0.12))",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "var(--color-primary)",
+          }}
+        >
+          <GraduationCap size={20} strokeWidth={2} />
+        </div>
+        <div>
+          <p style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-text)", lineHeight: 1.2 }}>
+            ISET Zaghouan
+          </p>
+          <p style={{ fontSize: "11px", color: "var(--color-text-muted)", lineHeight: 1.2 }}>
+            دليل الطالب
+          </p>
+        </div>
       </div>
 
-      <nav className="flex-1 px-3 py-2 space-y-1 overflow-y-auto">
-        {sidebarLinks.map((link) => {
-          const Icon = link.icon;
-          const active = pathname === link.href || pathname.startsWith(link.href + "/");
-          return (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
-                active
-                  ? "bg-primary/10 text-primary font-medium"
-                  : "text-text-muted hover:text-text hover:bg-border/50"
-              }`}
+      {/* Home link */}
+      <div style={{ padding: "12px 12px 0" }}>
+        <Link
+          href="/"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            padding: "10px 12px",
+            borderRadius: "12px",
+            background: pathname === "/" ? "rgba(18,184,200,0.08)" : "transparent",
+            textDecoration: "none",
+            transition: "background var(--transition-fast)",
+            borderRight: pathname === "/" ? "3px solid var(--color-secondary)" : "3px solid transparent",
+            marginBottom: "4px",
+          }}
+        >
+          <div
+            style={{
+              width: "34px",
+              height: "34px",
+              borderRadius: "50%",
+              background: pathname === "/" ? "rgba(18,184,200,0.12)" : "rgba(11,31,58,0.05)",
+              color: pathname === "/" ? "var(--color-secondary)" : "var(--color-text-secondary)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
+              transition: "all var(--transition-fast)",
+            }}
+          >
+            <Home size={16} strokeWidth={2} />
+          </div>
+          <span
+            style={{
+              fontSize: "14px",
+              fontWeight: pathname === "/" ? 600 : 400,
+              color: pathname === "/" ? "var(--color-secondary)" : "var(--color-text)",
+            }}
+          >
+            الرئيسية
+          </span>
+        </Link>
+      </div>
+
+      {/* Grouped navigation */}
+      <nav style={{ flex: 1, overflowY: "auto", padding: "8px 12px" }}>
+        {navGroups.map((group, gi) => (
+          <div key={gi} style={{ marginBottom: "20px" }}>
+            {/* Group label */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "4px 10px 8px",
+              }}
             >
-              <Icon className="w-4 h-4" />
-              {link.label}
-            </Link>
-          );
-        })}
+              <div
+                style={{
+                  height: "1px",
+                  width: "12px",
+                  background: group.color,
+                  borderRadius: "1px",
+                  opacity: 0.6,
+                }}
+              />
+              <p
+                style={{
+                  fontSize: "10px",
+                  fontWeight: 700,
+                  letterSpacing: "0.10em",
+                  textTransform: "uppercase",
+                  color: group.color,
+                  opacity: 0.8,
+                }}
+              >
+                {group.label}
+              </p>
+            </div>
+
+            {/* Links */}
+            {group.links.map((link) => {
+              const Icon = link.icon;
+              const active =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(link.href + "/"));
+
+              return (
+                <motion.div
+                  key={link.href}
+                  whileHover={{ x: 2 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <Link
+                    href={link.href}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      padding: "9px 12px",
+                      borderRadius: "12px",
+                      marginBottom: "2px",
+                      background: active ? `${group.color}12` : "transparent",
+                      textDecoration: "none",
+                      transition: "background var(--transition-fast)",
+                      borderRight: active ? `3px solid ${group.color}` : "3px solid transparent",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!active) {
+                        (e.currentTarget as HTMLAnchorElement).style.background = "rgba(11,31,58,0.04)";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!active) {
+                        (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+                      }
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "32px",
+                        height: "32px",
+                        borderRadius: "50%",
+                        background: active ? `${group.color}18` : "rgba(11,31,58,0.05)",
+                        color: active ? group.color : "var(--color-text-secondary)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                        transition: "all var(--transition-fast)",
+                      }}
+                    >
+                      <Icon size={15} strokeWidth={2} />
+                    </div>
+                    <span
+                      style={{
+                        fontSize: "13px",
+                        fontWeight: active ? 600 : 400,
+                        color: active ? group.color : "var(--color-text)",
+                        transition: "color var(--transition-fast)",
+                      }}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        ))}
       </nav>
 
-      <div className="p-4 border-t border-border text-xs text-text-muted text-center">
-        Made with ❤️ for ISET Zaghouan students
+      {/* Footer */}
+      <div
+        style={{
+          padding: "16px 20px",
+          borderTop: "1px solid var(--color-border)",
+          flexShrink: 0,
+        }}
+      >
+        <p style={{ fontSize: "11px", color: "var(--color-text-muted)", textAlign: "center", lineHeight: 1.6 }}>
+          Made with ❤️ for
+          <br />
+          ISET Zaghouan students
+        </p>
       </div>
     </aside>
   );

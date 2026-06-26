@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <!-- Base background (transparent or dark navy, we use dark navy for contrast) -->
+  <rect width="512" height="512" fill="#0B1F3A" rx="128" />
+  
+  <!-- Cyan rounded box matching the CSS rgba(18,184,200,0.15) -->
+  <rect x="0" y="0" width="512" height="512" rx="128" fill="#12B8C8" fill-opacity="0.15" />
+  
+  <!-- GraduationCap icon from lucide-react, scaled to fit perfectly inside -->
+  <g transform="translate(128, 128) scale(10.666)">
+    <path d="M21.42 10.922a2 2 0 0 0-.019-3.838L12.83 4.34a2 2 0 0 0-1.66 0L2.6 7.08a2 2 0 0 0 0 3.84l9.36 4.34a2 2 0 0 0 1.66 0z" fill="none" stroke="#12B8C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M22 10v6" fill="none" stroke="#12B8C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" fill="none" stroke="#12B8C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

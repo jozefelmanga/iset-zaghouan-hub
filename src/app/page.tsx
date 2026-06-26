@@ -460,13 +460,7 @@ export default function HomePage() {
             title="كل ما تحتاجه في مكان واحد"
             subtitle="الخدمات الأساسية للحياة الجامعية"
           />
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-              gap: "20px",
-            }}
-          >
+          <div className="grid-2-mobile">
             {quickActions.map((action, i) => (
               <motion.div
                 key={action.href}
@@ -562,13 +556,7 @@ export default function HomePage() {
             title="خدمات الحرم الجامعي"
             subtitle="كل ما تحتاجه داخل ISET Zaghouan"
           />
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-              gap: "16px",
-            }}
-          >
+          <div className="grid-2-campus">
             {campusServices.map((item) => {
               const Icon = item.icon;
               return (

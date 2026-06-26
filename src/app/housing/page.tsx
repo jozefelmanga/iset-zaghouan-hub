@@ -8,7 +8,7 @@ import {
 import { AppLayout } from "@/components/layout/AppLayout";
 import { PageHeader, Card, Badge, Alert } from "@/components/ui/shared";
 import { housingFoyer, housingLouled, housingProcess } from "@/data/housing";
-import { PhotoGallery } from "@/components/ui/Lightbox";
+import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
 
 const foyerGirlsGallery = [
   "/images/foyer girls/448872376_947314010742452_1019535438087276358_n.webp",
@@ -28,6 +28,7 @@ const foyerGirlsGallery = [
 ];
 
 const foyerBoysGallery = [
+  "/images/foyer boys localisation.webp",
   "/images/foyer boys/1000125393.webp",
   "/images/foyer boys/1000125394.webp",
   "/images/foyer boys/1000125395.webp",
@@ -187,6 +188,48 @@ export default function HousingPage() {
             </div>
           </motion.div>
         </AnimatePresence>
+
+        {/* General Foyer Information Guides */}
+        <div style={{ marginTop: "32px", marginBottom: "32px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(34,197,94,0.10)", color: "#22C55E", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <ImageIcon size={16} strokeWidth={2} />
+            </div>
+            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>دليل وثائق ومعلومات المبيت الجامعي 📋</span>
+          </div>
+
+          <div style={{ 
+            display: "grid", 
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
+            gap: "20px" 
+          }}>
+            <Card elevation="raised" padding="16px">
+              <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden", marginBottom: "12px", height: "200px" }}>
+                <ZoomableImage 
+                  src="/images/foyer (1).webp" 
+                  alt="دليل معلومات المبيت الجامعي (1)" 
+                  style={{ height: "100%" }}
+                />
+              </div>
+              <h4 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", textAlign: "center" }}>
+                دليل معلومات المبيت الجامعي (1)
+              </h4>
+            </Card>
+
+            <Card elevation="raised" padding="16px">
+              <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden", marginBottom: "12px", height: "200px" }}>
+                <ZoomableImage 
+                  src="/images/foyer (2).webp" 
+                  alt="دليل معلومات المبيت الجامعي (2)" 
+                  style={{ height: "100%" }}
+                />
+              </div>
+              <h4 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", textAlign: "center" }}>
+                دليل معلومات المبيت الجامعي (2)
+              </h4>
+            </Card>
+          </div>
+        </div>
 
         {/* Process */}
         <div>

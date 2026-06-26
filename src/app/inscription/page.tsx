@@ -16,7 +16,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { AppLayout } from "@/components/layout/AppLayout";
-import { PageHeader, Card, StepItem, Alert, Badge, Button } from "@/components/ui/shared";
+import { PageHeader, Card, StepItem, Alert, Badge, Button, ImageGallery } from "@/components/ui/shared";
 import { enrollmentSteps, enrollmentPhases, enrollmentDocs } from "@/data/enrollment";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -269,6 +269,17 @@ export default function InscriptionPage() {
         <Alert title="تنبيه مهم" variant="warning">
           شهادة الترسيم لازمك تستحفظ عليها و تخبيها. اعمل برشا نسخ و تخبيهم في بلاصات مختلفة.
         </Alert>
+
+        {/* Gallery */}
+        <ImageGallery 
+          title="صور من الترسيم" 
+          images={[
+            "/images/inscription (1).webp",
+            "/images/inscription (2).webp",
+            "/images/inscription (3).webp",
+            "/images/inscription (4).webp",
+          ]} 
+        />
       </div>
     </AppLayout>
   );

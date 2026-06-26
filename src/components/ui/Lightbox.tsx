@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 
@@ -27,6 +28,11 @@ export function PhotoGallery({
   altPrefix = "",
 }: PhotoGalleryProps) {
   const [lightbox, setLightbox] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
@@ -77,76 +83,81 @@ export function PhotoGallery({
         ))}
       </div>
 
-      {/* Lightbox */}
-      <AnimatePresence>
-        {lightbox && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => setLightbox(null)}
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 1000,
-              background: "rgba(0,0,0,0.9)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "24px",
-              cursor: "zoom-out",
-            }}
-          >
+      {/* Lightbox rendered in document body via Portal */}
+      {mounted && createPortal(
+        <AnimatePresence>
+          {lightbox && (
             <motion.div
-              initial={{ scale: 0.88, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.88, opacity: 0 }}
-              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setLightbox(null)}
               style={{
-                position: "relative",
-                maxWidth: "960px",
-                width: "100%",
-                maxHeight: "90vh",
+                position: "fixed",
+                inset: 0,
+                zIndex: 99999, // Render above everything, including navbars
+                background: "rgba(0,0,0,0.9)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "24px",
+                cursor: "zoom-out",
+                willChange: "opacity",
               }}
             >
-              <img
-                src={lightbox}
-                alt="full size"
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
+                onClick={(e) => e.stopPropagation()}
                 style={{
+                  position: "relative",
+                  maxWidth: "960px",
                   width: "100%",
                   maxHeight: "90vh",
-                  objectFit: "contain",
-                  borderRadius: "16px",
-                  display: "block",
-                }}
-              />
-              <button
-                onClick={() => setLightbox(null)}
-                style={{
-                  position: "absolute",
-                  top: "12px",
-                  right: "12px",
-                  width: "36px",
-                  height: "36px",
-                  borderRadius: "50%",
-                  background: "rgba(0,0,0,0.6)",
-                  border: "1px solid rgba(255,255,255,0.2)",
-                  color: "#fff",
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backdropFilter: "blur(8px)",
+                  willChange: "transform, opacity",
                 }}
               >
-                <X size={16} strokeWidth={2.5} />
-              </button>
+                <img
+                  src={lightbox}
+                  alt="full size"
+                  style={{
+                    width: "100%",
+                    maxHeight: "90vh",
+                    objectFit: "contain",
+                    borderRadius: "16px",
+                    display: "block",
+                  }}
+                />
+                <button
+                  onClick={() => setLightbox(null)}
+                  style={{
+                    position: "absolute",
+                    top: "12px",
+                    right: "12px",
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "50%",
+                    background: "rgba(0,0,0,0.6)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    color: "#fff",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  <X size={16} strokeWidth={2.5} />
+                </button>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 }
@@ -165,6 +176,11 @@ export function ZoomableImage({
   className,
 }: ZoomableImageProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
@@ -183,7 +199,7 @@ export function ZoomableImage({
         <img
           src={src}
           alt={alt}
-          style={{ width: "100%", height: "100%", display: "block", borderRadius: "inherit" }}
+          style={{ width: "100%", height: "100%", display: "block", borderRadius: "inherit", objectFit: "cover" }}
         />
         {/* Zoom hint on hover */}
         <motion.div
@@ -203,75 +219,81 @@ export function ZoomableImage({
         </motion.div>
       </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => setIsOpen(false)}
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 1000,
-              background: "rgba(0,0,0,0.9)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "24px",
-              cursor: "zoom-out",
-            }}
-          >
+      {/* Lightbox rendered in document body via Portal */}
+      {mounted && createPortal(
+        <AnimatePresence>
+          {isOpen && (
             <motion.div
-              initial={{ scale: 0.88, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.88, opacity: 0 }}
-              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setIsOpen(false)}
               style={{
-                position: "relative",
-                maxWidth: "960px",
-                width: "100%",
-                maxHeight: "90vh",
+                position: "fixed",
+                inset: 0,
+                zIndex: 99999, // Render above all other components, including headers and sidebars
+                background: "rgba(0,0,0,0.9)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "24px",
+                cursor: "zoom-out",
+                willChange: "opacity",
               }}
             >
-              <img
-                src={src}
-                alt={alt}
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
+                onClick={(e) => e.stopPropagation()}
                 style={{
+                  position: "relative",
+                  maxWidth: "960px",
                   width: "100%",
                   maxHeight: "90vh",
-                  objectFit: "contain",
-                  borderRadius: "16px",
-                  display: "block",
-                }}
-              />
-              <button
-                onClick={() => setIsOpen(false)}
-                style={{
-                  position: "absolute",
-                  top: "12px",
-                  right: "12px",
-                  width: "36px",
-                  height: "36px",
-                  borderRadius: "50%",
-                  background: "rgba(0,0,0,0.6)",
-                  border: "1px solid rgba(255,255,255,0.2)",
-                  color: "#fff",
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backdropFilter: "blur(8px)",
+                  willChange: "transform, opacity",
                 }}
               >
-                <X size={16} strokeWidth={2.5} />
-              </button>
+                <img
+                  src={src}
+                  alt={alt}
+                  style={{
+                    width: "100%",
+                    maxHeight: "90vh",
+                    objectFit: "contain",
+                    borderRadius: "16px",
+                    display: "block",
+                  }}
+                />
+                <button
+                  onClick={() => setIsOpen(false)}
+                  style={{
+                    position: "absolute",
+                    top: "12px",
+                    right: "12px",
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "50%",
+                    background: "rgba(0,0,0,0.6)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    color: "#fff",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  <X size={16} strokeWidth={2.5} />
+                </button>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 }

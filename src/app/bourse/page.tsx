@@ -6,7 +6,7 @@ import {
   Banknote, Calculator, AlertCircle, CheckCircle2, FileText,
 } from "lucide-react";
 import { AppLayout } from "@/components/layout/AppLayout";
-import { PageHeader, Card, Badge, Alert } from "@/components/ui/shared";
+import { PageHeader, Card, Badge, Alert, ImageGallery } from "@/components/ui/shared";
 import { scholarshipTypes, scholarshipRules, scholarshipDocs } from "@/data/scholarships";
 
 export default function BoursePage() {
@@ -165,6 +165,18 @@ export default function BoursePage() {
         <Alert title="ملاحظة مهمة" variant="info">
           أوراق البورص هي نفسها أوراق 500 دينار. عند تقديم البورص، نفس الأوراق — إذا لم يكن الحق في البورص الكاملة تأخذ منحة الإدماج.
         </Alert>
+
+        {/* Gallery */}
+        <ImageGallery 
+          title="دليل المنحة الجامعية" 
+          images={[
+            "/images/bourse (1).webp",
+            "/images/bourse (2).webp",
+            "/images/bourse (3).webp",
+            "/images/bourse (4).webp",
+            "/images/bourse (5).webp",
+          ]} 
+        />
       </div>
     </AppLayout>
   );

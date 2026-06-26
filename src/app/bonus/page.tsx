@@ -140,7 +140,7 @@ export default function BonusPage() {
               >
                 <Heart size={28} fill="#EF4444" strokeWidth={1.5} />
               </div>
-              <div>
+              <div style={{ width: "100%" }}>
                 <h3 style={{ fontSize: "20px", fontWeight: 800, color: "var(--color-primary)", marginBottom: "8px" }}>إهداء وشكر خاص</h3>
                 <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, maxWidth: "580px", margin: "0 auto 20px" }}>
                   نحبو نهديو الدليل هذا لكل طالب وطالبة يسعوا لتحقيق طموحاتهم ويتقدموا في مسيرتهم الدراسية. 

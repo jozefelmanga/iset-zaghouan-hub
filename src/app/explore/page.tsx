@@ -306,7 +306,7 @@ export default function ExplorePage() {
 
             {/* Info */}
             <div style={{ flex: 1, minWidth: "180px" }}>
-              <p style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)", marginBottom: "4px" }}>فهد البلغيث</p>
+              <p style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)", marginBottom: "4px" }}>فهد بلغيث</p>
               <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "14px" }}>مرشد سياحي — جبل زغوان</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
                 {/* Phone */}

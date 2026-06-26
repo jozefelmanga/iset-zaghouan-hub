@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import {
   Home,
   FileText,
@@ -17,8 +18,9 @@ import {
   HelpCircle,
   GraduationCap,
   Heart,
+  X,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navGroups = [
   {
@@ -60,24 +62,25 @@ const navGroups = [
   },
 ];
 
-export function Sidebar() {
+export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, setDrawerOpen?: (v: boolean) => void }) {
   const pathname = usePathname();
 
-  return (
-    <aside
-      className="hidden md:flex flex-col"
-      style={{
-        width: "264px",
-        height: "100dvh",
-        position: "sticky",
-        top: 0,
-        background: "var(--color-surface)",
-        borderLeft: "1px solid var(--color-border)",
-        flexShrink: 0,
-        overflow: "hidden",
-        zIndex: 40,
-      }}
-    >
+  // Close drawer on route change (mobile nav)
+  useEffect(() => {
+    setDrawerOpen?.(false);
+  }, [pathname, setDrawerOpen]);
+
+  // Close drawer if viewport widens past md breakpoint
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setDrawerOpen?.(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [setDrawerOpen]);
+
+  const sidebarContent = (
+    <>
       {/* Logo area */}
       <div
         style={{
@@ -112,12 +115,32 @@ export function Sidebar() {
             دليل الطالب
           </p>
         </div>
+        {/* Close Button for Mobile */}
+        <button
+          className="mobile-only"
+          onClick={() => setDrawerOpen?.(false)}
+          style={{
+            width: "32px",
+            height: "32px",
+            borderRadius: "8px",
+            background: "rgba(11,31,58,0.05)",
+            border: "none",
+            cursor: "pointer",
+            marginRight: "auto",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "var(--color-text-muted)",
+          }}
+        >
+          <X size={18} strokeWidth={2} />
+        </button>
       </div>
 
       {/* Home link */}
       <div style={{ padding: "12px 12px 0" }}>
         <Link
           href="/"
+          onClick={() => setDrawerOpen?.(false)}
           style={{
             display: "flex",
             alignItems: "center",
@@ -210,6 +233,7 @@ export function Sidebar() {
                 >
                   <Link
                     href={link.href}
+                    onClick={() => setDrawerOpen?.(false)}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -281,6 +305,75 @@ export function Sidebar() {
           ISET Zaghouan students
         </p>
       </div>
-    </aside>
+    </>
+  );
+
+  return (
+    <>
+      {/* Desktop Fixed Sidebar */}
+      <aside
+        className="desktop-only"
+        style={{
+          width: "264px",
+          height: "100dvh",
+          position: "sticky",
+          top: 0,
+          background: "var(--color-surface)",
+          borderLeft: "1px solid var(--color-border)",
+          flexShrink: 0,
+          overflow: "hidden",
+          zIndex: 40,
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        {sidebarContent}
+      </aside>
+
+      {/* Mobile Drawer Sidebar */}
+      <AnimatePresence>
+        {drawerOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setDrawerOpen?.(false)}
+              style={{
+                position: "fixed",
+                inset: 0,
+                background: "rgba(11,31,58,0.5)",
+                backdropFilter: "blur(4px)",
+                zIndex: 200,
+              }}
+            />
+
+            {/* Drawer */}
+            <motion.aside
+              initial={{ x: 320, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 320, opacity: 0 }}
+              transition={{ type: "spring", damping: 28, stiffness: 300 }}
+              style={{
+                position: "fixed",
+                top: 0,
+                right: 0,
+                bottom: 0,
+                width: "280px",
+                background: "var(--color-surface)",
+                boxShadow: "-8px 0 40px rgba(11,31,58,0.15)",
+                zIndex: 201,
+                display: "flex",
+                flexDirection: "column",
+                overflow: "hidden",
+              }}
+            >
+              {sidebarContent}
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

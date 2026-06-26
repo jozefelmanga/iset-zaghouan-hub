@@ -2,65 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import {
-  GraduationCap,
-  Search,
-  Menu,
-  X,
-  Home,
-  FileText,
-  Building2,
-  Banknote,
-  UtensilsCrossed,
-  Bus,
-  Briefcase,
-  BookOpen,
-  Users,
-  Award,
-  MapPin,
-  HelpCircle,
-} from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { GraduationCap, Search, Menu } from "lucide-react";
+import { motion } from "framer-motion";
 import { CommandPalette } from "@/components/ui/CommandPalette";
 
-const navLinks = [
-  { href: "/",          label: "الرئيسية",      icon: Home          },
-  { href: "/inscription", label: "الترسيم",      icon: FileText      },
-  { href: "/housing",   label: "المبيت",          icon: Building2     },
-  { href: "/bourse",    label: "البورص",          icon: Banknote      },
-  { href: "/transport", label: "النقل",           icon: Bus           },
-  { href: "/stages",    label: "الستاجات",        icon: Briefcase     },
-];
-
-const allNavLinks = [
-  { href: "/",           label: "الرئيسية",        icon: Home,            group: "رئيسي"      },
-  { href: "/inscription",label: "الترسيم",          icon: FileText,        group: "الأكاديمي"  },
-  { href: "/library",    label: "المكتبة",          icon: BookOpen,        group: "الأكاديمي"  },
-  { href: "/masters",    label: "الماستر",          icon: Award,           group: "الأكاديمي"  },
-  { href: "/housing",    label: "المبيت",           icon: Building2,       group: "الحياة الجامعية" },
-  { href: "/bourse",     label: "البورص",           icon: Banknote,        group: "الحياة الجامعية" },
-  { href: "/transport",  label: "النقل",            icon: Bus,             group: "الحياة الجامعية" },
-  { href: "/resto",      label: "الريستو",          icon: UtensilsCrossed, group: "الحياة الجامعية" },
-  { href: "/clubs",      label: "النوادي",          icon: Users,           group: "الحياة الجامعية" },
-  { href: "/stages",     label: "الستاجات",         icon: Briefcase,       group: "مهني"        },
-  { href: "/explore",    label: "اكتشف زغوان",      icon: MapPin,          group: "أخرى"        },
-  { href: "/faq",        label: "الأسئلة الشائعة",  icon: HelpCircle,      group: "أخرى"        },
-];
-
-const groupColors: Record<string, string> = {
-  "رئيسي":          "#12B8C8",
-  "الأكاديمي":      "#3B82F6",
-  "الحياة الجامعية":"#12B8C8",
-  "مهني":           "#8B5CF6",
-  "أخرى":           "#F97316",
-};
-
-export function Navbar() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void }) {
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -79,13 +27,6 @@ export function Navbar() {
     document.addEventListener("keydown", handler);
     return () => document.removeEventListener("keydown", handler);
   }, []);
-
-  // Group drawer links
-  const groups = allNavLinks.reduce<Record<string, typeof allNavLinks>>((acc, link) => {
-    if (!acc[link.group]) acc[link.group] = [];
-    acc[link.group].push(link);
-    return acc;
-  }, {});
 
   return (
     <>
@@ -206,9 +147,9 @@ export function Navbar() {
 
 
 
-          {/* Hamburger */}
+          {/* Hamburger — mobile only */}
           <motion.button
-            className="md:hidden"
+            className="mobile-only"
             onClick={() => setDrawerOpen(true)}
             whileTap={{ scale: 0.9 }}
             style={{
@@ -231,183 +172,6 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Drawer (RTL: slides in from right side / left in visual) */}
-      <AnimatePresence>
-        {drawerOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setDrawerOpen(false)}
-              style={{
-                position: "fixed",
-                inset: 0,
-                background: "rgba(11,31,58,0.5)",
-                backdropFilter: "blur(4px)",
-                zIndex: 200,
-              }}
-            />
-
-            {/* Drawer — right side in LTR, left side visually (RTL layout) */}
-            <motion.div
-              initial={{ x: -320, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -320, opacity: 0 }}
-              transition={{ type: "spring", damping: 28, stiffness: 300 }}
-              style={{
-                position: "fixed",
-                top: 0,
-                left: 0,
-                bottom: 0,
-                width: "320px",
-                background: "var(--color-surface)",
-                boxShadow: "8px 0 40px rgba(11,31,58,0.2)",
-                zIndex: 201,
-                borderRadius: "0 24px 24px 0",
-                display: "flex",
-                flexDirection: "column",
-                overflow: "hidden",
-              }}
-            >
-              {/* Drawer Header */}
-              <div
-                style={{
-                  padding: "20px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  borderBottom: "1px solid var(--color-border)",
-                  background: "var(--color-primary)",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <div
-                    style={{
-                      width: "36px",
-                      height: "36px",
-                      borderRadius: "10px",
-                      background: "rgba(18,184,200,0.2)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#12B8C8",
-                    }}
-                  >
-                    <GraduationCap size={18} strokeWidth={2} />
-                  </div>
-                  <span style={{ fontWeight: 700, fontSize: "14px", color: "#fff" }}>
-                    ISET Zaghouan
-                  </span>
-                </div>
-                <motion.button
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => setDrawerOpen(false)}
-                  style={{
-                    width: "32px",
-                    height: "32px",
-                    borderRadius: "8px",
-                    background: "rgba(255,255,255,0.08)",
-                    border: "none",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "rgba(255,255,255,0.7)",
-                  }}
-                >
-                  <X size={18} strokeWidth={2} />
-                </motion.button>
-              </div>
-
-              {/* Nav groups */}
-              <div style={{ flex: 1, overflowY: "auto", padding: "16px" }}>
-                {Object.entries(groups).map(([group, links]) => (
-                  <div key={group} style={{ marginBottom: "20px" }}>
-                    <p
-                      style={{
-                        fontSize: "10px",
-                        fontWeight: 700,
-                        letterSpacing: "0.10em",
-                        textTransform: "uppercase",
-                        color: groupColors[group] || "var(--color-text-muted)",
-                        marginBottom: "8px",
-                        padding: "0 8px",
-                      }}
-                    >
-                      {group}
-                    </p>
-                    {links.map((link) => {
-                      const Icon = link.icon;
-                      const active = pathname === link.href;
-                      return (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          onClick={() => setDrawerOpen(false)}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "12px",
-                            padding: "11px 12px",
-                            borderRadius: "12px",
-                            marginBottom: "2px",
-                            background: active ? "rgba(18,184,200,0.08)" : "transparent",
-                            textDecoration: "none",
-                            transition: "background var(--transition-fast)",
-                            borderRight: active ? "3px solid #12B8C8" : "3px solid transparent",
-                          }}
-                        >
-                          <div
-                            style={{
-                              width: "32px",
-                              height: "32px",
-                              borderRadius: "50%",
-                              background: active
-                                ? "rgba(18,184,200,0.12)"
-                                : "rgba(11,31,58,0.05)",
-                              color: active ? "#12B8C8" : "var(--color-text-secondary)",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              flexShrink: 0,
-                            }}
-                          >
-                            <Icon size={15} strokeWidth={2} />
-                          </div>
-                          <span
-                            style={{
-                              fontSize: "14px",
-                              fontWeight: active ? 600 : 400,
-                              color: active ? "#12B8C8" : "var(--color-text)",
-                            }}
-                          >
-                            {link.label}
-                          </span>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                ))}
-              </div>
-
-              {/* Drawer footer */}
-              <div
-                style={{
-                  padding: "16px 20px",
-                  borderTop: "1px solid var(--color-border)",
-                  textAlign: "center",
-                }}
-              >
-                <p style={{ fontSize: "11px", color: "var(--color-text-muted)" }}>
-                  Made with ❤️ for ISET Zaghouan students
-                </p>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </>
   );
 }

@@ -165,11 +165,11 @@ function Footer() {
 
   return (
     <footer
+      className="pb-20 md:pb-0"
       style={{
         position: "relative",
         background: "var(--color-primary)",
         overflow: "hidden",
-        marginTop: "80px",
       }}
     >
       {/* Animated stars */}
@@ -448,14 +448,14 @@ export default function HomePage() {
       {/* ================================================
           PAGE BODY
           ================================================ */}
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 32px" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 32px", flex: 1, width: "100%" }}>
 
 
 
         {/* ============================================
             QUICK ACCESS
             ============================================ */}
-        <Section style={{ marginBottom: "80px" }}>
+        <Section style={{ marginBottom: "80px", marginTop: "80px" }}>
           <SectionTitle
             label="الوصول السريع"
             title="كل ما تحتاجه في مكان واحد"

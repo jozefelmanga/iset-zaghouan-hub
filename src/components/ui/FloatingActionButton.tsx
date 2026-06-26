@@ -34,7 +34,7 @@ export function FloatingActionButton({ onSearchOpen }: FABProps) {
 
   return (
     <div
-      className="md:hidden"
+      className="mobile-only"
       style={{
         position: "fixed",
         bottom: "80px",

@@ -98,6 +98,33 @@
 }
 
 /* ========================================
+   RESPONSIVE LAYOUT OVERRIDES
+   Force-hide elements regardless of inline display styles.
+   These rules use !important to win over inline style={{display:...}}
+   ======================================== */
+
+/* Mobile-only elements: hidden on md+ (≥768px) */
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* Desktop-only elements: hidden below md (<768px) */
+@media (max-width: 767px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   GLOBAL LAYOUT FIXES
+   ======================================== */
+main > * {
+  width: 100%;
+}
+
+/* ========================================
    ANIMATIONS
    ======================================== */
 @keyframes fade-up {

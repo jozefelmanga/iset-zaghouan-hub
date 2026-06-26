@@ -24,7 +24,7 @@ export function BottomNav() {
 
   return (
     <nav
-      className="md:hidden"
+      className="mobile-only"
       style={{
         position: "fixed",
         bottom: 0,

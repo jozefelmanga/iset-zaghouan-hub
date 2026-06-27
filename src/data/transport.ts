@@ -1,3 +1,11 @@
+export const transportAbonnement = {
+  amount: "45 DT للسماستر",
+  scope: "أبونمان زغوان ↔ الايزات ",
+  place: "المندوبية الجهوية للنقل بزغوان",
+  mapUrl: "https://maps.app.goo.gl/UfdajEeBSjHBsX8q8",
+  docs: ["نسخة بطاقة تعريف", "زوز تصاور", "نسخة شهادة ترسيم"],
+};
+
 export const transportRoutes = [
   {
     id: "louage",
@@ -50,10 +58,10 @@ export const transportRoutes = [
     type: "bus",
     from: "المبيت",
     to: "الريستو",
-    fare: 0.7,
-    fareUnit: "دينار",
-    schedule: "18:00 (للأولاد فقط، بل abonnement)",
-    notes: "كار خاص للمبيت الجامعي للأولاد",
+    schedule: "18:00",
+    notes: "كار خاص للمبيت الجامعي للأولاد — أبونمان فقط",
+    abonnement: transportAbonnement.amount,
+    abonnementDocs: transportAbonnement.docs,
   },
   {
     id: "local_bus",
@@ -64,27 +72,16 @@ export const transportRoutes = [
     fare: 0.7,
     fareUnit: "دينار",
     schedule: "8:00 صباح",
-    notes: "تجهز للايزات، أبونمان 45 دينار للسماستر",
-    abonnement: "45 DT للسماستر",
-    abonnementDocs: ["نسخة بطاقة تعريف", "زوز تصاور", "نسخة شهادة ترسيم"],
-  },
-  {
-    id: "evening_bus",
-    name: "كار 17:30 (كانت طفلة)",
-    type: "bus",
-    from: "السونتر",
-    to: "الايزات",
-    fare: 0.7,
-    fareUnit: "دينار",
-    schedule: "17:30",
-    notes: "آخر كار، تتعدى على الايزات",
+    notes: "تهز للايزات، أبونمان 45 دينار للسماستر",
+    abonnement: transportAbonnement.amount,
+    abonnementDocs: transportAbonnement.docs,
   },
 ];
 
 export const transportTips = [
-  "كار 8 صباح تجهز للايزات ب 700 مي",
+  "كار 8 صباح تهز للايزات ب 700 مي",
   "أبونمان 45 دينار في كل سماستر",
-  "محطة الكار بحثة مبيت الاولاد",
+  "🚌 محطة الكار بحثة مبيت الأولاد 🛑",
   "الأسوام متاع النقل الكل بين السونتر و الايزات متفوتش دينار",
   "فما نقل (900) يوصلك للايزات من المحطة",
 ];

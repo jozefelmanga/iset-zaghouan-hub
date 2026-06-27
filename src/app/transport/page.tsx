@@ -1,11 +1,11 @@
 import { pageMetadata } from "@/constants/seo";
-import { Bus, Phone, Clock, AlertCircle, ExternalLink } from "@/lib/icons";
+import { Bus, Phone, Clock, AlertCircle, ExternalLink, MapPin } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { TransportBusGallery } from "@/components/transport/TransportBusGallery";
-import { transportRoutes, transportTips } from "@/data/transport";
+import { transportRoutes, transportTips, transportAbonnement } from "@/data/transport";
 
 export const metadata = pageMetadata("/transport");
 
@@ -25,6 +25,77 @@ export default function TransportPage() {
         category="life"
       />
 
+      <div style={{ marginBottom: "36px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Bus size={16} strokeWidth={2} />
+          </div>
+          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>جداول مواعيد الكار الرسمية (SRTN) 🚌</span>
+        </div>
+        <TransportBusGallery />
+      </div>
+
+      <Card elevation="raised" padding="24px" style={{ marginBottom: "36px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <MapPin size={16} strokeWidth={2} />
+          </div>
+          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>وين تاخذ الأبونمان؟</span>
+        </div>
+        <p style={{ fontSize: "13px", color: "var(--color-secondary)", fontWeight: 600, lineHeight: 1.6, marginBottom: "10px" }}>
+          {transportAbonnement.scope}
+        </p>
+        <p style={{ fontSize: "15px", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.6, marginBottom: "8px" }}>
+          {transportAbonnement.place}
+        </p>
+        <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "14px" }}>
+          امشي للمندوبية الجهوية للنقل بزغوان باش تاخذو ({transportAbonnement.amount}).
+        </p>
+        <a
+          href={transportAbonnement.mapUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            padding: "10px 16px",
+            borderRadius: "12px",
+            background: "rgba(59,130,246,0.08)",
+            border: "1px solid rgba(59,130,246,0.2)",
+            color: "#3B82F6",
+            fontSize: "13px",
+            fontWeight: 600,
+            textDecoration: "none",
+            marginBottom: "16px",
+          }}
+        >
+          <ExternalLink size={14} strokeWidth={2} />
+          افتح المندوبية على Google Maps
+        </a>
+        <p style={{ fontSize: "13px", fontWeight: 600, color: "var(--color-text)", marginBottom: "10px" }}>
+          تستحق كاوراق:
+        </p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+          {transportAbonnement.docs.map((doc) => (
+            <span
+              key={doc}
+              style={{
+                padding: "5px 12px",
+                borderRadius: "999px",
+                fontSize: "12px",
+                fontWeight: 500,
+                background: "rgba(18,184,200,0.08)",
+                color: "var(--color-secondary)",
+                border: "1px solid rgba(18,184,200,0.2)",
+              }}
+            >
+              {doc}
+            </span>
+          ))}
+        </div>
+      </Card>
+
       <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "36px" }}>
         {transportRoutes.map((route, i) => {
           const typeStyle = typeColors[route.type] || typeColors.bus;
@@ -43,12 +114,14 @@ export default function TransportPage() {
                       {route.from} ← {route.to}
                     </p>
                   </div>
-                  <div style={{ textAlign: "center" }}>
-                    <div style={{ fontSize: "24px", fontWeight: 800, color: "var(--color-primary)", fontFeatureSettings: '"tnum"' }}>
-                      {route.fare}
+                  {route.fare != null && (
+                    <div style={{ textAlign: "center" }}>
+                      <div style={{ fontSize: "24px", fontWeight: 800, color: "var(--color-primary)", fontFeatureSettings: '"tnum"' }}>
+                        {route.fare}
+                      </div>
+                      <div style={{ fontSize: "11px", color: "var(--color-text-muted)", fontWeight: 500 }}>{route.fareUnit}</div>
                     </div>
-                    <div style={{ fontSize: "11px", color: "var(--color-text-muted)", fontWeight: 500 }}>{route.fareUnit}</div>
-                  </div>
+                  )}
                 </div>
 
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "10px", marginBottom: "12px" }}>
@@ -81,16 +154,6 @@ export default function TransportPage() {
             </MotionReveal>
           );
         })}
-      </div>
-
-      <div style={{ marginBottom: "36px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Bus size={16} strokeWidth={2} />
-          </div>
-          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>جداول مواعيد الكار الرسمية (SRTN) 🚌</span>
-        </div>
-        <TransportBusGallery />
       </div>
 
       <div style={{ marginBottom: "28px" }}>

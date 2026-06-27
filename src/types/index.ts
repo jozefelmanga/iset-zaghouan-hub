@@ -18,8 +18,8 @@ export type TransportRoute = {
   type: "shared_taxi" | "bus";
   from: string;
   to: string;
-  fare: number;
-  fareUnit: string;
+  fare?: number;
+  fareUnit?: string;
   schedule: string;
   notes: string;
   contact?: { name: string; phone: string };

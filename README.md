@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ISET Zaghouan Hub
 
-## Getting Started
+Student onboarding guide for new students at **ISET Zaghouan** (Tunisia). A mobile-first Next.js app with Tunisian Arabic content covering enrollment, housing, transport, scholarships, internships, clubs, and campus life.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, static export)
+- **React 19** + **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** + **Lucide React**
+
+## Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # Start dev server
+npm run build    # Static production build → dist/
+npm run start    # Serve production build
+npm run test     # Run Vitest data validation tests
+npm run lint     # ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+  app/           # Route pages (Server Components)
+  components/    # UI, layout, domain sections
+  constants/     # Navigation (single source of truth)
+  data/          # Content arrays — no hardcoded copy in pages
+  lib/           # theme, motion, icons, utils
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The app uses `output: 'export'` — deploy the `dist/` folder to any static host (Vercel, Netlify, GitHub Pages, etc.).
 
-To learn more about Next.js, take a look at the following resources:
+## Planned
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Phase 5** — French UI shell (`next-intl`)
+- **Phase 7** — Vitest data validation (in progress)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `design/design.md` for the full product spec.

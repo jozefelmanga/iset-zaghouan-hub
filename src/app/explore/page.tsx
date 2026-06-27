@@ -1,6 +1,5 @@
-import { BookOpen, Mountain } from "@/lib/icons";
+import { BookOpen } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
-import { Card } from "@/components/ui/Card";
 import { PageWrapper } from "@/components/ui/layout";
 import {
   ExploreHeroBanner,
@@ -14,7 +13,7 @@ import { exploreZaghouan } from "@/data/explore";
 import { exploreServiceIcons } from "@/lib/iconMaps";
 
 export default function ExplorePage() {
-  const { coordinates, nearbyServices } = exploreZaghouan;
+  const { nearbyServices } = exploreZaghouan;
 
   return (
     <PageWrapper className="max-w-[960px]">
@@ -61,33 +60,6 @@ export default function ExplorePage() {
           })}
         </div>
       </div>
-
-      <Card elevation="flat" padding="0">
-        <div
-          style={{
-            aspectRatio: "16/7",
-            borderRadius: "20px",
-            background: "linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <svg viewBox="0 0 800 160" preserveAspectRatio="none" style={{ position: "absolute", bottom: 0, left: 0, right: 0, width: "100%", height: "60px", opacity: 0.2 }}>
-            <path d="M0,160 L0,100 L100,50 L200,80 L300,20 L400,55 L500,30 L600,65 L700,20 L800,50 L800,160 Z" fill="white" />
-          </svg>
-          <div className="animate-mountain" style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
-            <Mountain size={40} style={{ color: "rgba(18,184,200,0.5)", margin: "0 auto 12px" }} strokeWidth={1.5} />
-            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>
-              خريطة زغوان (OpenStreetMap)
-            </p>
-            <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "12px" }}>{coordinates.label}</p>
-          </div>
-        </div>
-      </Card>
 
       <ExploreMountainGuide />
       <ExploreYoutubeSection />

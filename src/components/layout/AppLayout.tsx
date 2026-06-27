@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { BottomNav } from "@/components/layout/BottomNav";
+import { Footer } from "@/components/layout/Footer";
 import { CommandPalette } from "@/components/ui/CommandPalette";
 import { motion } from "framer-motion";
 import { pageTransition } from "@/lib/motion";
@@ -36,6 +37,8 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         >
           {children}
         </motion.main>
+
+        <Footer />
 
         {/* Mobile BottomNav */}
         <BottomNav />

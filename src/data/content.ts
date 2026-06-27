@@ -24,19 +24,19 @@ export { faqItems, emergencyContacts } from "./faq";
    ====================================================== */
 
 export const quickActions = [
-  { id: "inscription", title: "الترسيم الجامعي",  description: "خطوات التسجيل و الأوراق المطلوبة", href: "/inscription", category: "academic", featured: true  },
-  { id: "housing",     title: "المبيت الجامعي",    description: "فواي البنات و الأولاد",             href: "/housing",    category: "life"     },
-  { id: "bourse",      title: "البورص",             description: "منحة الإدماج و البورص الكاملة",   href: "/bourse",     category: "life"     },
-  { id: "transport",   title: "النقل",              description: "لواجات، كيران، و المواصلات",       href: "/transport",  category: "life"     },
-  { id: "stages",      title: "الستاجات",           description: "دليل الستاجات و Didosoft",         href: "/stages",     category: "career"   },
-  { id: "library",     title: "المكتبة",            description: "مراجع و اكزامانات",                href: "/library",    category: "academic" },
+  { id: "inscription", icon: "file-text",       title: "الترسيم الجامعي",  description: "خطوات التسجيل و الأوراق المطلوبة", href: "/inscription", category: "academic", featured: true  },
+  { id: "housing",     icon: "building",        title: "المبيت الجامعي",    description: "فواي البنات و الأولاد",             href: "/housing",    category: "life"     },
+  { id: "bourse",      icon: "banknote",        title: "البورص",             description: "منحة الإدماج و البورص الكاملة",   href: "/bourse",     category: "life"     },
+  { id: "transport",   icon: "bus",             title: "النقل",              description: "لواجات، كيران، و المواصلات",       href: "/transport",  category: "life"     },
+  { id: "stages",      icon: "briefcase",       title: "الستاجات",           description: "دليل الستاجات و Didosoft",         href: "/stages",     category: "career"   },
+  { id: "library",     icon: "book-open",       title: "المكتبة",            description: "مراجع و اكزامانات",                href: "/library",    category: "academic" },
 ];
 
 export const campusServices = [
-  { id: "resto",   label: "الريستو",   href: "/resto",    color: "#F97316", bg: "rgba(249,115,22,0.10)"  },
-  { id: "library", label: "المكتبة",   href: "/library",  color: "#3B82F6", bg: "rgba(59,130,246,0.10)"  },
-  { id: "clubs",   label: "النوادي",   href: "/clubs",    color: "#12B8C8", bg: "rgba(18,184,200,0.10)"  },
-  { id: "masters", label: "الماستر",   href: "/masters",  color: "#8B5CF6", bg: "rgba(139,92,246,0.10)"  },
+  { id: "resto",   icon: "utensils",  label: "الريستو",   href: "/resto",    color: "#F97316", bg: "rgba(249,115,22,0.10)"  },
+  { id: "library", icon: "book-open", label: "المكتبة",   href: "/library",  color: "#3B82F6", bg: "rgba(59,130,246,0.10)"  },
+  { id: "clubs",   icon: "users",     label: "النوادي",   href: "/clubs",    color: "#12B8C8", bg: "rgba(18,184,200,0.10)"  },
+  { id: "masters", icon: "award",     label: "الماستر",   href: "/masters",  color: "#8B5CF6", bg: "rgba(139,92,246,0.10)"  },
 ];
 
 export const studentJourney = [

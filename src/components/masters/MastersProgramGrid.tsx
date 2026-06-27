@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, GraduationCap, BookOpen, Layers } from "@/lib/icons";
-import { PageHeader, Card, Alert } from "@/components/ui/shared";
-import { PageWrapper } from "@/components/ui/layout";
+import { GraduationCap, BookOpen, Layers } from "@/lib/icons";
+import { Card } from "@/components/ui/Card";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { masterPrograms, masterFilterTabs } from "@/data/departments";
 
-export function MastersPageContent() {
+export function MastersProgramGrid() {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filteredMasters = activeFilter === "all"
@@ -16,15 +15,7 @@ export function MastersPageContent() {
     : masterPrograms.filter((m) => m.dept === activeFilter);
 
   return (
-    <PageWrapper className="max-w-[1000px]">
-      <PageHeader
-        icon={Award}
-        label="الأكاديمي"
-        title="برامج الماستر"
-        subtitle="التخصصات المتاحة بعد الإجازة في ISET Zaghouan"
-        category="academic"
-      />
-
+    <>
       <div
         style={{
           display: "flex",
@@ -41,6 +32,7 @@ export function MastersPageContent() {
         {masterFilterTabs.map((tab) => (
           <motion.button
             key={tab.id}
+            type="button"
             onClick={() => setActiveFilter(tab.id)}
             whileHover={{ y: -1 }}
             whileTap={{ scale: 0.97 }}
@@ -121,15 +113,6 @@ export function MastersPageContent() {
           ))}
         </AnimatePresence>
       </div>
-
-      <Alert title="معلومات حول الترشح" variant="info">
-        <div style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-          <BookOpen size={14} style={{ flexShrink: 0, marginTop: "2px" }} />
-          <span style={{ fontSize: "13px", lineHeight: 1.5 }}>
-            يتم فتح مناظرات الترشح للماستير في بداية الصيف (غالباً شهر جويلية). ويتم ترتيب المترشحين حسب مجموع النقاط (Score) الذي يعتمد على معدلات سنوات الإجازة، عدد سنوات الرسوب، ومعدل الباكالوريا.
-          </span>
-        </div>
-      </Alert>
-    </PageWrapper>
+    </>
   );
 }

@@ -24,6 +24,7 @@ export {
   ArrowUp,
   ArrowDown,
   ExternalLink,
+  Link2,
 
   // Academic
   GraduationCap,
@@ -40,7 +41,14 @@ export {
   Bus,
   UtensilsCrossed,
   Users,
+  User,
   Heart,
+  Shield,
+  Leaf,
+  Key,
+  Wallet,
+  Moon,
+  PartyPopper,
 
   // Career
   Briefcase,
@@ -48,6 +56,7 @@ export {
   Coins,
   FlaskConical,
   Layers,
+  Trophy,
 
   // Campus & Explore
   MapPin,
@@ -61,6 +70,9 @@ export {
   Image as ImageIcon,
   Play,
   Instagram,
+  Facebook,
+  Linkedin,
+  Youtube,
   Phone,
   MessageCircle,
   Lightbulb,
@@ -94,6 +106,7 @@ export {
   IdCard,
   Calendar,
   Clock,
+  Calculator,
   TrendingUp,
   Loader2,
 } from "lucide-react";

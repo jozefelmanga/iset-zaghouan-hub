@@ -3,15 +3,8 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { campusServices } from "@/data/content";
+import { campusServiceIcons } from "@/lib/iconMaps";
 import { sectionReveal } from "@/lib/motion";
-import { UtensilsCrossed, BookOpen, Users, Award } from "@/lib/icons";
-
-const iconMap: Record<string, any> = {
-  resto: UtensilsCrossed,
-  library: BookOpen,
-  clubs: Users,
-  masters: Award,
-};
 
 export function CampusServicesSection() {
   return (
@@ -23,13 +16,14 @@ export function CampusServicesSection() {
       />
       <div className="grid-2-campus">
         {campusServices.map((item) => {
-          const Icon = iconMap[item.id];
+          const Icon = campusServiceIcons[item.icon];
           return (
             <motion.a
               key={item.href}
               href={item.href}
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ duration: 0.2 }}
+              className="group transition-all duration-300"
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -41,20 +35,10 @@ export function CampusServicesSection() {
                 border: "1px solid var(--color-border)",
                 boxShadow: "var(--shadow-card)",
                 textDecoration: "none",
-                transition: "all var(--transition-base)",
-              }}
-              onMouseEnter={(e) => {
-                const a = e.currentTarget as HTMLAnchorElement;
-                a.style.borderColor = `${item.color}40`;
-                a.style.boxShadow = `0 12px 32px ${item.color}15`;
-              }}
-              onMouseLeave={(e) => {
-                const a = e.currentTarget as HTMLAnchorElement;
-                a.style.borderColor = "var(--color-border)";
-                a.style.boxShadow = "var(--shadow-card)";
               }}
             >
               <div
+                className="group-hover:scale-105 transition-transform duration-300"
                 style={{
                   width: "56px",
                   height: "56px",
@@ -65,7 +49,6 @@ export function CampusServicesSection() {
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: "8px",
-                  transition: "transform var(--transition-base)",
                 }}
               >
                 <Icon size={26} strokeWidth={2} />

@@ -4,18 +4,9 @@ import { motion } from "framer-motion";
 import { ActionCard } from "@/components/ui/ActionCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { quickActions } from "@/data/content";
+import { quickActionIcons } from "@/lib/iconMaps";
 import { sectionReveal, itemReveal } from "@/lib/motion";
 import { Grid } from "@/components/ui/layout";
-import { FileText, Building2, Banknote, Bus, Briefcase, BookOpen } from "@/lib/icons";
-
-const iconMap: Record<string, any> = {
-  inscription: FileText,
-  housing: Building2,
-  bourse: Banknote,
-  transport: Bus,
-  stages: Briefcase,
-  library: BookOpen,
-};
 
 export function QuickAccessSection() {
   return (
@@ -29,11 +20,11 @@ export function QuickAccessSection() {
         {quickActions.map((action, i) => (
           <motion.div key={action.href} {...itemReveal(i * 0.06)}>
             <ActionCard
-              icon={iconMap[action.id]}
+              icon={quickActionIcons[action.icon]}
               title={action.title}
               description={action.description}
               href={action.href}
-              category={action.category as any}
+              category={action.category as "academic" | "life" | "career" | "campus"}
               featured={action.featured}
             />
           </motion.div>

@@ -118,3 +118,22 @@ export const bottomNavLinks: NavLink[] = [
   { href: "/transport",   label: "النقل",    icon: Bus,        category: "life"     },
   { href: "/faq",         label: "أكثر",     icon: HelpCircle, category: "campus"   },
 ];
+
+/* ============================================================
+   FOOTER — quick links (short labels)
+   ============================================================ */
+export interface FooterLink {
+  href: string;
+  label: string;
+}
+
+export const footerLinks: FooterLink[] = [
+  { href: "/inscription", label: "الترسيم"  },
+  { href: "/housing",     label: "المبيت"   },
+  { href: "/bourse",      label: "البورص"   },
+  { href: "/transport",   label: "النقل"    },
+  { href: "/stages",      label: "الستاجات" },
+  { href: "/library",     label: "المكتبة"  },
+  { href: "/clubs",       label: "النوادي"  },
+  { href: "/faq",         label: "الأسئلة"  },
+];

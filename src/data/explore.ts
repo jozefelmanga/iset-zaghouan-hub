@@ -68,3 +68,9 @@ export const zaghouanGallery = [
 ];
 
 export const explorePreviewSpots = ["Fabrica", "Café Rahba", "La Vallée", "The Rock", "Paradise"];
+
+export const cafeTagColors = [
+  "#F97316", "#12B8C8", "#8B5CF6", "#3B82F6", "#22C55E",
+  "#F59E0B", "#EF4444", "#06B6D4", "#84CC16", "#EC4899",
+  "#6366F1", "#14B8A6",
+];

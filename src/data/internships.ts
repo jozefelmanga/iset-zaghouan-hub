@@ -43,3 +43,38 @@ export const internshipTips = [
   "النتيجة تلقاها على didosoft",
   "علموا chef de département باللغة المختارة (فرنسية/إنجليزية)",
 ];
+
+export const dsegExampleReports = {
+  title: "نماذج تقارير الستاج — قسم SEG",
+  description:
+    "تقارير وعروض لطلبة حصلوا على نتائج ممتازة. استعملوهم باش تفهمو البنية، الأسلوب، والمستوى المطلوب.",
+  href: "https://drive.google.com/drive/folders/1nFOzlwNQ5I2X3F12BoUNORZ-64Wulcxu?usp=drive_link",
+  departmentNote: "المحتوى مخصّص لطلبة قسم العلوم الاقتصادية والتصرف (SEG) برك.",
+  disclaimer:
+    "هذه النماذج للتعلم والاستئناس فقط. ما تنسخوش المحتوى بلا ما تفهمو وتكيّفوه حسب ستاجكم وشركتكم — النسخ الأعمى يسبب مشاكل أكاديمية.",
+  folders: ["Stage d'initiation", "Stage de perfectionnement", "PFE"],
+};
+
+export const stagePresentationLogos = [
+  {
+    name: "ISET Zaghouan",
+    label: "شعار المعهد",
+    src: "/images/stage/Logo_ISET_ZAGHOUAN.webp",
+    downloadSrc: "/images/stage/Logo_ISET_ZAGHOUAN.png",
+    downloadName: "Logo_ISET_ZAGHOUAN.png",
+  },
+  {
+    name: "SEG",
+    label: "شعار قسم العلوم الاقتصادية والتصرف",
+    src: "/images/stage/Logo_DSEG.webp",
+    downloadSrc: "/images/stage/Logo_DSEG.png",
+    downloadName: "Logo_DSEG.png",
+  },
+  {
+    name: "TI",
+    label: "شعار قسم تقنية المعلومات",
+    src: "/images/stage/Logo_DTI.webp",
+    downloadSrc: "/images/stage/Logo_DTI.png",
+    downloadName: "Logo_DTI.png",
+  },
+];

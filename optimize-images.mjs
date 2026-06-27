@@ -26,6 +26,11 @@ async function optimizeImages() {
     
     for (const file of files) {
       const ext = path.extname(file).toLowerCase();
+
+      // Keep PNG download copies for stage logos (generated from .webp)
+      if (file.includes(`${path.sep}stage${path.sep}`) && ext === ".png") {
+        continue;
+      }
       
       // Process jpg/png files to webp
       if (SUPPORTED_EXTENSIONS.includes(ext)) {

@@ -14,7 +14,7 @@
     "check-bundle": "tsx scripts/check-bundle-budget.ts",
     "measure-bundle": "tsx scripts/measure-bundle-baseline.ts",
     "lighthouse": "lhci autorun",
-    "prebuild": "npm run generate-llms",
+    "prebuild": "npm run generate-llms && node scripts/generate-stage-logos.mjs",
     "analyze": "cross-env ANALYZE=true npm run build"
   },
   "dependencies": {

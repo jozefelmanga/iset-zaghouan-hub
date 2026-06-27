@@ -15,7 +15,7 @@ ISET Zaghouan Hub converts a long Tunisian-Arabic student guide into structured,
 
 New ISET Zaghouan students who need quick, practical answers about:
 
-- **ACADEMICS:** الترسيم الجامعي, المكتبة, الأقسام العلمية, الماستر
+- **ACADEMICS:** الترسيم الجامعي, الترسيم في المبيت, المكتبة, الأقسام العلمية, الماستر
 - **STUDENT LIFE:** المبيت الجامعي, البورص, النقل, الريستو, النوادي
 - **CAREER:** الستاجات
 - **OTHER:** اكتشف زغوان, الأسئلة الشائعة, نصائح وإهداء
@@ -23,7 +23,7 @@ New ISET Zaghouan students who need quick, practical answers about:
 ## Interactive features
 
 - **Enrollment stepper** (https://isetzg.vercel.app/inscription) — progress-tracked registration steps
-- **Housing tabs** (https://isetzg.vercel.app/housing) — separate guides for Foyer (girls) and Louled (boys) dorms
+- **Housing** (https://isetzg.vercel.app/housing) — Foyer (girls) and Louled (boys) dorm guides; dorm registration at https://isetzg.vercel.app/inscription/foyer
 - **FAQ accordion** (https://isetzg.vercel.app/faq) — common questions with FAQPage schema.org markup
 - **Command palette** — in-app search across all pages (keyboard shortcut on desktop)
 - **Department pages** — TI, SEG, GPR specialities with semester materials
@@ -37,6 +37,7 @@ New ISET Zaghouan students who need quick, practical answers about:
 ### Academics
 
 - [الترسيم الجامعي](https://isetzg.vercel.app/inscription): خطوات الترسيم في ISET Zaghouan، الأوراق اللي لازمك، ومواعيد الترسيم للجداد.
+- [الترسيم في المبيت](https://isetzg.vercel.app/inscription/foyer): كيفاش تترسّم في المبيت الجامعي: OOUN، الأوراق، E-dinar، و يوم الترسيم في الفواي.
 - [المكتبة](https://isetzg.vercel.app/library): معلومات المكتبة الجامعية، المراجع، و موارد القراية في ISET Zaghouan.
 - [الأقسام العلمية](https://isetzg.vercel.app/departments): نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.
 - [قسم تكنولوجيا المعلومات (TI)](https://isetzg.vercel.app/departments/ti): تخصصات DSI و RSI، المواد، و المراجع لقسم TI في ISET Zaghouan.

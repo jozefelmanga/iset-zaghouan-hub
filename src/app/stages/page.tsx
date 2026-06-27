@@ -1,10 +1,10 @@
 import { pageMetadata } from "@/constants/seo";
-import { Calendar, Calculator, FileText, CheckCircle2, AlertCircle } from "@/lib/icons";
+import { Calendar, Calculator, FileText, CheckCircle2, AlertCircle, ExternalLink, Download, ImageIcon } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Badge, Alert } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
-import { internships, internshipDocs, internshipTips } from "@/data/internships";
+import { internships, internshipDocs, internshipTips, dsegExampleReports, stagePresentationLogos } from "@/data/internships";
 
 const yearColors = [
   { bg: "rgba(18,184,200,0.08)", border: "rgba(18,184,200,0.2)", text: "#12B8C8", badge: "info" as const },
@@ -74,6 +74,110 @@ export default function StagesPage() {
             );
           })}
         </div>
+      </div>
+
+      <div style={{ marginBottom: "36px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(34,197,94,0.10)", color: "#22C55E", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <ImageIcon size={16} strokeWidth={2} />
+          </div>
+          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>شعارات التقارير والعروض</span>
+        </div>
+        <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "16px", lineHeight: 1.6 }}>
+          الشعارات الرسمية اللي تستعملوها في صفحات الغلاف، التقارير، والـ présentations. نزّلوهم مباشرة.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "14px" }}>
+          {stagePresentationLogos.map((logo) => (
+            <Card key={logo.src} elevation="raised" padding="16px">
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
+                <div style={{ width: "100%", height: "120px", display: "flex", alignItems: "center", justifyContent: "center", padding: "12px", borderRadius: "12px", background: "var(--color-background)", border: "1px solid var(--color-border)" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={logo.src} alt={logo.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+                </div>
+                <div style={{ textAlign: "center", width: "100%" }}>
+                  <p style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "4px" }}>{logo.name}</p>
+                  <p style={{ fontSize: "12px", color: "var(--color-text-muted)", marginBottom: "12px" }}>{logo.label}</p>
+                  <a
+                    href={logo.downloadSrc}
+                    download={logo.downloadName}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "6px",
+                      width: "100%",
+                      padding: "10px 14px",
+                      borderRadius: "10px",
+                      background: "rgba(18,184,200,0.08)",
+                      border: "1px solid rgba(18,184,200,0.2)",
+                      color: "var(--color-secondary)",
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      textDecoration: "none",
+                    }}
+                  >
+                    <Download size={14} strokeWidth={2.5} />
+                    تحميل
+                  </a>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <div style={{ marginBottom: "36px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px", flexWrap: "wrap" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <FileText size={16} strokeWidth={2} />
+          </div>
+          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>{dsegExampleReports.title}</span>
+          <Badge variant="info">SEG</Badge>
+        </div>
+
+        <Card elevation="raised" padding="24px">
+          <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "14px" }}>
+            {dsegExampleReports.description}
+          </p>
+          <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "16px", fontWeight: 600 }}>
+            {dsegExampleReports.departmentNote}
+          </p>
+
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
+            {dsegExampleReports.folders.map((folder) => (
+              <span key={folder} style={{ padding: "5px 12px", borderRadius: "999px", fontSize: "12px", fontWeight: 600, background: "rgba(59,130,246,0.08)", color: "#3B82F6", border: "1px solid rgba(59,130,246,0.15)" }}>
+                {folder}
+              </span>
+            ))}
+          </div>
+
+          <div style={{ marginBottom: "16px" }}>
+            <Alert title="تنبيه مهم" variant="warning">
+              {dsegExampleReports.disclaimer}
+            </Alert>
+          </div>
+
+          <a
+            href={dsegExampleReports.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "12px 18px",
+              borderRadius: "12px",
+              background: "var(--color-primary)",
+              color: "#fff",
+              fontSize: "14px",
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
+          >
+            <ExternalLink size={16} strokeWidth={2} />
+            فتح نماذج التقارير على Google Drive
+          </a>
+        </Card>
       </div>
 
       <Card elevation="raised" padding="24px" className="mb-8">

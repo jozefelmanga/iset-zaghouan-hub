@@ -29,7 +29,7 @@ const images = [
 
 const achievements = [
   "Best Project Photo of the year 📸",
-  "Best Faculty Advisor Award (للأستاذة نور عويني) 👩‍🏫",
+  "Best Faculty Advisor Award (للأستاذة منيرة مباركي) 👩‍🏫",
   "Best Administration Award (جائزة أفضل إدارة) 🏢",
   "Finalist Award and 3rd place overall 🏆 (المركز الثالث وطنياً)",
 ];

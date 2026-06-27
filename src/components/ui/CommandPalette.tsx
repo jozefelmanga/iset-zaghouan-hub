@@ -2,42 +2,12 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Search, X, Clock, TrendingUp, FileText, Building2, Banknote,
-  Bus, Briefcase, BookOpen, Users, Award, MapPin, HelpCircle,
-  UtensilsCrossed, ArrowLeft, GraduationCap, Heart,
-} from "lucide-react";
-
-const allPages = [
-  { href: "/inscription", label: "الترسيم الجامعي",    description: "خطوات التسجيل و الأوراق المطلوبة", icon: FileText,        category: "academic" },
-  { href: "/housing",     label: "المبيت الجامعي",      description: "فواي البنات و الأولاد",             icon: Building2,       category: "life"     },
-  { href: "/bourse",      label: "البورص",               description: "منحة الإدماج و البورص الكاملة",   icon: Banknote,        category: "life"     },
-  { href: "/transport",   label: "النقل",                description: "لواجات، كيران، و المواصلات",       icon: Bus,             category: "life"     },
-  { href: "/stages",      label: "الستاجات",             description: "دليل الستاجات و Didosoft",         icon: Briefcase,       category: "career"   },
-  { href: "/library",     label: "المكتبة",              description: "مراجع و اكزامانات",                icon: BookOpen,        category: "academic" },
-  { href: "/clubs",       label: "النوادي والجمعيات",    description: "أنشطة و نوادي الطلبة",            icon: Users,           category: "life"     },
-  { href: "/clubs/securinets", label: "نادي SecuriNets",  description: "جمعية الأمن السيبراني في ISETZG", icon: Users,           category: "life"     },
-  { href: "/clubs/odd",        label: "نادي ODD",         description: "نادي التنمية المستدامة والبيئة",   icon: Users,           category: "life"     },
-  { href: "/clubs/enactus",    label: "نادي Enactus",     description: "ريادة الأعمال والمشاريع الطلابية",  icon: Users,           category: "life"     },
-  { href: "/departments", label: "الأقسام العلمية",     description: "أقسام TI، SEG، و GPR بالمعهد",     icon: GraduationCap,   category: "academic" },
-  { href: "/departments/ti",   label: "قسم تكنولوجيا المعلومات (TI)", description: "تخصصات DSI و RSI ومراجعها", icon: GraduationCap, category: "academic" },
-  { href: "/departments/seg",  label: "قسم الاقتصاد والتصرف (SEG)",  description: "المحاسبة والمالية وإدارة الأعمال", icon: GraduationCap, category: "academic" },
-  { href: "/departments/gpr",  label: "قسم هندسة العمليات (GPR)",     description: "الأساليب الكيميائية والغذائية وأفاقها", icon: GraduationCap, category: "academic" },
-  { href: "/masters",     label: "الماستر",              description: "برامج الماستر المتوفرة",           icon: Award,           category: "academic" },
-  { href: "/explore",     label: "اكتشف زغوان",          description: "أحسن البلايص في المدينة",          icon: MapPin,          category: "campus"   },
-  { href: "/faq",         label: "الأسئلة الشائعة",      description: "إجابات لأكثر الأسئلة تكراراً",     icon: HelpCircle,      category: "campus"   },
-  { href: "/resto",       label: "الريستو",              description: "أوقات الوجبات و القائمة",          icon: UtensilsCrossed, category: "campus"   },
-  { href: "/bonus",       label: "نصائح وإهداء",          description: "نصائح للطلبة الجدد وشكر المساهمين", icon: Heart,           category: "life"     },
-];
+import { Search, X, Clock, TrendingUp, ArrowLeft } from "@/lib/icons";
+import { allNavLinks } from "@/constants/navigation";
+import { categoryConfig } from "@/lib/theme";
+import type { NavLink } from "@/constants/navigation";
 
 const popularTags = ["الترسيم", "البورص", "المبيت", "الستاجات", "النقل"];
-
-const categoryColors: Record<string, string> = {
-  academic: "#3B82F6",
-  career:   "#8B5CF6",
-  life:     "#12B8C8",
-  campus:   "#F97316",
-};
 
 interface CommandPaletteProps {
   open: boolean;
@@ -51,11 +21,11 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const filtered = query.trim()
-    ? allPages.filter(
+    ? allNavLinks.filter(
         (p) =>
           p.label.includes(query) ||
-          p.description.includes(query) ||
-          p.category.includes(query)
+          p.description?.includes(query) ||
+          p.category?.includes(query)
       )
     : [];
 
@@ -347,9 +317,9 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                     >
                       كل الصفحات
                     </p>
-                    {allPages.map((page) => {
+                    {allNavLinks.map((page) => {
                       const Icon = page.icon;
-                      const color = categoryColors[page.category] || "#0B1F3A";
+                      const color = page.category ? categoryConfig[page.category as keyof typeof categoryConfig]?.color : "#0B1F3A";
                       return (
                         <a
                           key={page.href}
@@ -401,7 +371,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
               ) : filtered.length > 0 ? (
                 filtered.map((page) => {
                   const Icon = page.icon;
-                  const color = categoryColors[page.category] || "#0B1F3A";
+                  const color = page.category ? categoryConfig[page.category as keyof typeof categoryConfig]?.color : "#0B1F3A";
                   return (
                     <a
                       key={page.href}

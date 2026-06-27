@@ -2,22 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Home,
-  FileText,
-  Building2,
-  Bus,
-  HelpCircle,
-} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const bottomLinks = [
-  { href: "/",           label: "الرئيسية", icon: Home     },
-  { href: "/inscription",label: "الترسيم",  icon: FileText  },
-  { href: "/housing",    label: "المبيت",   icon: Building2 },
-  { href: "/transport",  label: "النقل",    icon: Bus       },
-  { href: "/faq",        label: "أكثر",     icon: HelpCircle},
-];
+import { bottomNavLinks } from "@/constants/navigation";
+import { isNavActive } from "@/lib/utils";
 
 export function BottomNav() {
   const pathname = usePathname();
@@ -48,11 +35,9 @@ export function BottomNav() {
           padding: "0 8px",
         }}
       >
-        {bottomLinks.map((link) => {
+        {bottomNavLinks.map((link) => {
           const Icon = link.icon;
-          const active =
-            pathname === link.href ||
-            (link.href !== "/" && pathname.startsWith(link.href + "/"));
+          const active = isNavActive(link.href, pathname);
 
           return (
             <Link

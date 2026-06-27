@@ -7,6 +7,7 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { CommandPalette } from "@/components/ui/CommandPalette";
 import { motion } from "framer-motion";
+import { pageTransition } from "@/lib/motion";
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
   const [paletteOpen, setPaletteOpen] = useState(false);
@@ -24,12 +25,12 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         {/* Navbar */}
         <Navbar setDrawerOpen={setDrawerOpen} />
 
-        {/* Page content */}
+        {/* Page content — animated on route change */}
         <motion.main
           key={pathname}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          initial={pageTransition.initial}
+          animate={pageTransition.animate}
+          transition={pageTransition.transition}
           className={isHome ? "pb-0" : "pb-20 md:pb-0"}
           style={{ flex: 1, display: "flex", flexDirection: "column" }}
         >

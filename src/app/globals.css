@@ -65,6 +65,25 @@
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
     overflow-y: scroll;
+    /* Custom scrollbar — Webkit */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(18, 184, 200, 0.3) transparent;
+  }
+
+  /* Webkit scrollbar track + thumb */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(18, 184, 200, 0.25);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(18, 184, 200, 0.45);
   }
 
   body {
@@ -80,9 +99,39 @@
     overflow-x: hidden;
   }
 
+  /* Text selection — branded teal */
   ::selection {
     background-color: rgba(18, 184, 200, 0.2);
     color: var(--color-primary);
+  }
+  ::-moz-selection {
+    background-color: rgba(18, 184, 200, 0.2);
+    color: var(--color-primary);
+  }
+
+  /* Improved focus-visible — replaces browser default outline */
+  :focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Remove focus ring for mouse users */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Remove default list styles for nav lists */
+  nav ul, nav ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Smooth image rendering */
+  img {
+    display: block;
+    max-width: 100%;
   }
 }
 
@@ -449,4 +498,131 @@ main > * {
   height: 2px;
   background: var(--color-secondary);
   border-radius: 1px 1px 0 0;
+}
+
+/* ========================================
+   GRADIENT HELPERS
+   ======================================== */
+.gradient-text-accent {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   TYPOGRAPHY SCALE HELPERS
+   ======================================== */
+.heading-hero    { font-size: clamp(32px, 5vw, 58px);  font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+.heading-page    { font-size: clamp(22px, 4vw, 32px);  font-weight: 800; line-height: 1.2; }
+.heading-section { font-size: clamp(20px, 3vw, 26px);  font-weight: 700; line-height: 1.25; }
+.heading-card    { font-size: 18px;                     font-weight: 700; line-height: 1.3; }
+
+.truncate-2 { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.truncate-3 { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+
+/* ========================================
+   CHIP / PILL INTERACTIVE
+   ======================================== */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-text-secondary);
+  cursor: default;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+.chip:hover {
+  border-color: rgba(18,184,200,0.4);
+  color: var(--color-secondary);
+  background: rgba(18,184,200,0.05);
+}
+.chip-active {
+  background: rgba(18,184,200,0.10);
+  border-color: rgba(18,184,200,0.3);
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+/* ========================================
+   GLASS CARD VARIANTS
+   ======================================== */
+.card-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.card-glass-dark {
+  background: rgba(11, 31, 58, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-card);
+  padding: 24px;
+}
+
+/* ========================================
+   PROGRESS BAR
+   ======================================== */
+.progress-track {
+  height: 8px;
+  background: var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-secondary), #0FA8B8);
+  transition: width var(--transition-slow);
+}
+.progress-fill-success {
+  background: linear-gradient(90deg, #22C55E, #16A34A);
+}
+
+/* ========================================
+   INTERACTIVE ROW (FAQ, list items)
+   ======================================== */
+.row-interactive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  border-radius: 12px;
+  background: var(--color-background);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  color: var(--color-text);
+}
+.row-interactive:hover {
+  background: rgba(18,184,200,0.06);
+  color: var(--color-secondary);
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

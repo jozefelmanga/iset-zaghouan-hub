@@ -3,64 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import {
-  Home,
-  FileText,
-  Building2,
-  Banknote,
-  UtensilsCrossed,
-  Bus,
-  Briefcase,
-  BookOpen,
-  Users,
-  Award,
-  MapPin,
-  HelpCircle,
-  GraduationCap,
-  Heart,
-  X,
-} from "lucide-react";
+import { GraduationCap, X } from "@/lib/icons";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navGroups = [
-  {
-    label: "ACADEMICS",
-    color: "#3B82F6",
-    links: [
-      { href: "/inscription", label: "الترسيم الجامعي", icon: FileText },
-      { href: "/library",     label: "المكتبة",          icon: BookOpen },
-      { href: "/departments", label: "الأقسام العلمية", icon: GraduationCap },
-      { href: "/masters",     label: "الماستر",          icon: Award    },
-    ],
-  },
-  {
-    label: "STUDENT LIFE",
-    color: "#12B8C8",
-    links: [
-      { href: "/housing",   label: "المبيت الجامعي", icon: Building2     },
-      { href: "/bourse",    label: "البورص",          icon: Banknote      },
-      { href: "/transport", label: "النقل",           icon: Bus           },
-      { href: "/resto",     label: "الريستو",         icon: UtensilsCrossed },
-      { href: "/clubs",     label: "النوادي",         icon: Users         },
-    ],
-  },
-  {
-    label: "CAREER",
-    color: "#8B5CF6",
-    links: [
-      { href: "/stages", label: "الستاجات", icon: Briefcase },
-    ],
-  },
-  {
-    label: "OTHER",
-    color: "#F97316",
-    links: [
-      { href: "/explore", label: "اكتشف زغوان",     icon: MapPin     },
-      { href: "/faq",     label: "الأسئلة الشائعة", icon: HelpCircle },
-      { href: "/bonus",   label: "نصائح وإهداء",     icon: Heart      },
-    ],
-  },
-];
+import { navGroups, homeLink } from "@/constants/navigation";
+import { isNavActive } from "@/lib/utils";
+import { drawerFromRight, backdrop } from "@/lib/motion";
 
 export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, setDrawerOpen?: (v: boolean) => void }) {
   const pathname = usePathname();
@@ -139,7 +86,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
       {/* Home link */}
       <div style={{ padding: "12px 12px 0" }}>
         <Link
-          href="/"
+          href={homeLink.href}
           onClick={() => setDrawerOpen?.(false)}
           style={{
             display: "flex",
@@ -147,10 +94,10 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
             gap: "10px",
             padding: "10px 12px",
             borderRadius: "12px",
-            background: pathname === "/" ? "rgba(18,184,200,0.08)" : "transparent",
+            background: isNavActive(homeLink.href, pathname) ? "rgba(18,184,200,0.08)" : "transparent",
             textDecoration: "none",
             transition: "background var(--transition-fast)",
-            borderRight: pathname === "/" ? "3px solid var(--color-secondary)" : "3px solid transparent",
+            borderRight: isNavActive(homeLink.href, pathname) ? "3px solid var(--color-secondary)" : "3px solid transparent",
             marginBottom: "4px",
           }}
         >
@@ -159,8 +106,8 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
               width: "34px",
               height: "34px",
               borderRadius: "50%",
-              background: pathname === "/" ? "rgba(18,184,200,0.12)" : "rgba(11,31,58,0.05)",
-              color: pathname === "/" ? "var(--color-secondary)" : "var(--color-text-secondary)",
+              background: isNavActive(homeLink.href, pathname) ? "rgba(18,184,200,0.12)" : "rgba(11,31,58,0.05)",
+              color: isNavActive(homeLink.href, pathname) ? "var(--color-secondary)" : "var(--color-text-secondary)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -168,16 +115,16 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
               transition: "all var(--transition-fast)",
             }}
           >
-            <Home size={16} strokeWidth={2} />
+            <homeLink.icon size={16} strokeWidth={2} />
           </div>
           <span
             style={{
               fontSize: "14px",
-              fontWeight: pathname === "/" ? 600 : 400,
-              color: pathname === "/" ? "var(--color-secondary)" : "var(--color-text)",
+              fontWeight: isNavActive(homeLink.href, pathname) ? 600 : 400,
+              color: isNavActive(homeLink.href, pathname) ? "var(--color-secondary)" : "var(--color-text)",
             }}
           >
-            الرئيسية
+            {homeLink.label}
           </span>
         </Link>
       </div>
@@ -221,9 +168,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
             {/* Links */}
             {group.links.map((link) => {
               const Icon = link.icon;
-              const active =
-                pathname === link.href ||
-                (link.href !== "/" && pathname.startsWith(link.href + "/"));
+              const active = isNavActive(link.href, pathname);
 
               return (
                 <motion.div
@@ -336,9 +281,10 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
           <>
             {/* Backdrop */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              variants={backdrop}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
               onClick={() => setDrawerOpen?.(false)}
               style={{
                 position: "fixed",
@@ -351,10 +297,10 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
 
             {/* Drawer */}
             <motion.aside
-              initial={{ x: 320, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 320, opacity: 0 }}
-              transition={{ type: "spring", damping: 28, stiffness: 300 }}
+              variants={drawerFromRight}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
               style={{
                 position: "fixed",
                 top: 0,

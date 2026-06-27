@@ -11,7 +11,8 @@ import {
   ExternalLink,
 } from "@/lib/icons";
 import { Card, Alert } from "@/components/ui/shared";
-import { PhotoGallery } from "@/components/ui/Lightbox";
+import { FullBleed } from "@/components/ui/layout";
+import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
 
 const images = [
   "/images/SecuriNets ISET Zaghouan/441071033_849605910531258_8993167707782432578_n.webp",
@@ -40,30 +41,23 @@ const events = ["Workshops", "Hackathons", "CTFs (Capture The Flag)", "Trainings
 export function SecurinetsPageContent() {
   return (
     <>
-      <div
-        style={{
-          position: "relative",
-          height: "240px",
-          width: "100vw",
-          marginLeft: "calc(-50vw + 50%)",
-          marginBottom: "32px",
-          overflow: "hidden",
-        }}
-      >
-        <img
+      <FullBleed style={{ height: "240px", marginBottom: "32px" }}>
+        <ZoomableImage
+          fill
           src="/images/SecuriNets ISET Zaghouan/414471318_762084249283425_5669816558873673442_n.webp"
           alt="SecuriNets Cover"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 93%" }}
+          objectPosition="center 93%"
         />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(11,31,58,0.2), rgba(11,31,58,0.85))" }} />
-        <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap" }}>
-          <img
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(to bottom, rgba(11,31,58,0.2), rgba(11,31,58,0.85))" }} />
+        <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", pointerEvents: "none" }}>
+          <ZoomableImage
             src="/images/SecuriNets ISET Zaghouan/307089995_5896662463700630_57012804199137690_n.webp"
             alt="SecuriNets Logo"
-            style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", objectFit: "cover", background: "#000" }}
+            hideHint
+            style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", background: "#000", pointerEvents: "auto" }}
           />
         </div>
-      </div>
+      </FullBleed>
 
       <div style={{ marginBottom: "32px" }}>
         <Card elevation="raised" padding="28px">

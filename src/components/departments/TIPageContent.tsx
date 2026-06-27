@@ -6,6 +6,12 @@ import { Link2, ExternalLink } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 
+const semesterGalleryImages = [
+  "/images/Technologies de l’informatique (TI)/1000125478.webp",
+  "/images/Technologies de l’informatique (TI)/1000125475.webp",
+];
+const semesterGalleryAlts = ["Matières TI S1", "Matières TI S2"];
+
 export function TIPageContent() {
   const [semesterTab, setSemesterTab] = useState<"s1" | "s2">("s1");
 
@@ -124,6 +130,8 @@ export function TIPageContent() {
                   <ZoomableImage
                     src="/images/Technologies de l’informatique (TI)/1000125478.webp"
                     alt="Matières TI S1"
+                    galleryImages={semesterGalleryImages}
+                    galleryAlts={semesterGalleryAlts}
                     style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
                   />
                   <span style={{ fontSize: "11px", color: "var(--color-text-muted)", marginTop: "8px" }}>جدول مواد السداسي الأول</span>
@@ -140,6 +148,8 @@ export function TIPageContent() {
                   <ZoomableImage
                     src="/images/Technologies de l’informatique (TI)/1000125475.webp"
                     alt="Matières TI S2"
+                    galleryImages={semesterGalleryImages}
+                    galleryAlts={semesterGalleryAlts}
                     style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
                   />
                   <span style={{ fontSize: "11px", color: "var(--color-text-muted)", marginTop: "8px" }}>جدول مواد السداسي الثاني</span>

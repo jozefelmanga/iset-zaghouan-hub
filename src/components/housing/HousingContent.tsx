@@ -182,13 +182,21 @@ export function HousingContent() {
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>دليل وثائق ومعلومات المبيت الجامعي 📋</span>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
-          {[
-            { src: "/images/foyer (1).webp", alt: "دليل معلومات المبيت الجامعي (1)" },
-            { src: "/images/foyer (2).webp", alt: "دليل معلومات المبيت الجامعي (2)" },
-          ].map(({ src, alt }) => (
+          {(
+            [
+              { src: "/images/foyer (1).webp", alt: "دليل معلومات المبيت الجامعي (1)" },
+              { src: "/images/foyer (2).webp", alt: "دليل معلومات المبيت الجامعي (2)" },
+            ] as const
+          ).map(({ src, alt }) => (
             <Card key={src} elevation="raised" padding="16px">
               <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden", marginBottom: "12px", height: "200px" }}>
-                <ZoomableImage src={src} alt={alt} style={{ height: "100%" }} />
+                <ZoomableImage
+                  src={src}
+                  alt={alt}
+                  galleryImages={["/images/foyer (1).webp", "/images/foyer (2).webp"]}
+                  galleryAlts={["دليل معلومات المبيت الجامعي (1)", "دليل معلومات المبيت الجامعي (2)"]}
+                  style={{ height: "100%" }}
+                />
               </div>
               <h4 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", textAlign: "center" }}>{alt}</h4>
             </Card>

@@ -6,6 +6,12 @@ import { Link2, ExternalLink } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 
+const semesterGalleryImages = [
+  "/images/Sciences économiques et de gestion (SEG)/4a931b05-723c-48de-a3c2-ca9a82aa3b86.webp",
+  "/images/Sciences économiques et de gestion (SEG)/486f2064-c193-4f3f-8934-e76ccfed17c3.webp",
+];
+const semesterGalleryAlts = ["Matières SEG S1", "Matières SEG S2"];
+
 export function SEGPageContent() {
   const [semesterTab, setSemesterTab] = useState<"s1" | "s2">("s1");
 
@@ -109,6 +115,8 @@ export function SEGPageContent() {
                   <ZoomableImage
                     src="/images/Sciences économiques et de gestion (SEG)/4a931b05-723c-48de-a3c2-ca9a82aa3b86.webp"
                     alt="Matières SEG S1"
+                    galleryImages={semesterGalleryImages}
+                    galleryAlts={semesterGalleryAlts}
                     style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
                   />
                   <span style={{ fontSize: "11px", color: "var(--color-text-muted)", marginTop: "8px" }}>جدول مواد السداسي الأول</span>
@@ -125,6 +133,8 @@ export function SEGPageContent() {
                   <ZoomableImage
                     src="/images/Sciences économiques et de gestion (SEG)/486f2064-c193-4f3f-8934-e76ccfed17c3.webp"
                     alt="Matières SEG S2"
+                    galleryImages={semesterGalleryImages}
+                    galleryAlts={semesterGalleryAlts}
                     style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
                   />
                   <span style={{ fontSize: "11px", color: "var(--color-text-muted)", marginTop: "8px" }}>جدول مواد السداسي الثاني</span>

@@ -140,7 +140,6 @@ export function generateLlmsFullTxt(): string {
     "## Interactive features",
     "",
     `- **Enrollment stepper** (${pageUrl("/inscription")}) — progress-tracked registration steps`,
-    `- **Scholarship calculator** (${pageUrl("/bourse")}) — eligibility checker for bourse types`,
     `- **Housing tabs** (${pageUrl("/housing")}) — separate guides for Foyer (girls) and Louled (boys) dorms`,
     `- **FAQ accordion** (${pageUrl("/faq")}) — common questions with FAQPage schema.org markup`,
     `- **Command palette** — in-app search across all pages (keyboard shortcut on desktop)`,

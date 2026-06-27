@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Coffee, BookOpen, Mountain, Phone, Instagram, Play, ImageIcon } from "@/lib/icons";
-import { PhotoGallery } from "@/components/ui/Lightbox";
+import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
 import { exploreZaghouan, zaghouanGallery, cafeTagColors } from "@/data/explore";
 import { studySpotIcons } from "@/lib/iconMaps";
 import { enterAnimation } from "@/lib/motion";
@@ -190,10 +190,11 @@ export function ExploreMountainGuide() {
           border: "3px solid rgba(18,184,200,0.3)",
           boxShadow: "0 4px 16px rgba(11,31,58,0.12)",
         }}>
-          <img
+          <ZoomableImage
             src={mountainGuide.avatar}
             alt={mountainGuide.name}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            hideHint
+            style={{ width: "100%", height: "100%", borderRadius: "50%" }}
           />
         </div>
         <div style={{ flex: 1, minWidth: "180px" }}>

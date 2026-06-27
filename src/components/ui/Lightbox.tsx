@@ -1,9 +1,236 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ZoomIn } from "lucide-react";
+import { X, ZoomIn, ChevronLeft, ChevronRight } from "@/lib/icons";
+
+function useMounted() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  return mounted;
+}
+
+const navButtonStyle: CSSProperties = {
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  width: "44px",
+  height: "44px",
+  borderRadius: "50%",
+  background: "rgba(0,0,0,0.55)",
+  border: "1px solid rgba(255,255,255,0.2)",
+  color: "#fff",
+  cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backdropFilter: "blur(8px)",
+  zIndex: 2,
+};
+
+function LightboxOverlay({
+  open,
+  images,
+  currentIndex,
+  onIndexChange,
+  onClose,
+  getAlt,
+}: {
+  open: boolean;
+  images: string[];
+  currentIndex: number;
+  onIndexChange: (index: number) => void;
+  onClose: () => void;
+  getAlt: (index: number) => string;
+}) {
+  const mounted = useMounted();
+  const canNavigate = images.length > 1;
+  const src = images[currentIndex] ?? "";
+  const alt = getAlt(currentIndex);
+  const hasPrev = canNavigate && currentIndex > 0;
+  const hasNext = canNavigate && currentIndex < images.length - 1;
+
+  const goPrev = useCallback(() => {
+    if (hasPrev) onIndexChange(currentIndex - 1);
+  }, [hasPrev, currentIndex, onIndexChange]);
+
+  const goNext = useCallback(() => {
+    if (hasNext) onIndexChange(currentIndex + 1);
+  }, [hasNext, currentIndex, onIndexChange]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (!canNavigate) return;
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goPrev();
+      }
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goNext();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open, canNavigate, goPrev, goNext, onClose]);
+
+  if (!mounted) return null;
+
+  return createPortal(
+    <AnimatePresence>
+      {open && src && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          onClick={onClose}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 99999,
+            background: "rgba(0,0,0,0.9)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "24px",
+            cursor: "zoom-out",
+            willChange: "opacity",
+          }}
+        >
+          {hasPrev && (
+            <button
+              type="button"
+              aria-label="الصورة السابقة"
+              onClick={(e) => {
+                e.stopPropagation();
+                goPrev();
+              }}
+              style={{ ...navButtonStyle, left: "16px" }}
+            >
+              <ChevronLeft size={22} strokeWidth={2.5} />
+            </button>
+          )}
+
+          {hasNext && (
+            <button
+              type="button"
+              aria-label="الصورة التالية"
+              onClick={(e) => {
+                e.stopPropagation();
+                goNext();
+              }}
+              style={{ ...navButtonStyle, right: "16px" }}
+            >
+              <ChevronRight size={22} strokeWidth={2.5} />
+            </button>
+          )}
+
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: "relative",
+              maxWidth: "960px",
+              width: "100%",
+              maxHeight: "90vh",
+              willChange: "transform, opacity",
+            }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={src}
+                src={src}
+                alt={alt}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
+                style={{
+                  width: "100%",
+                  maxHeight: "90vh",
+                  objectFit: "contain",
+                  borderRadius: "16px",
+                  display: "block",
+                }}
+              />
+            </AnimatePresence>
+
+            {canNavigate && (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "12px",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  padding: "6px 12px",
+                  borderRadius: "999px",
+                  background: "rgba(0,0,0,0.55)",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  color: "rgba(255,255,255,0.9)",
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  fontFeatureSettings: '"tnum"',
+                  pointerEvents: "none",
+                }}
+              >
+                {currentIndex + 1} / {images.length}
+              </div>
+            )}
+
+            <button
+              type="button"
+              aria-label="إغلاق"
+              onClick={onClose}
+              style={{
+                position: "absolute",
+                top: "12px",
+                right: "12px",
+                width: "36px",
+                height: "36px",
+                borderRadius: "50%",
+                background: "rgba(0,0,0,0.6)",
+                border: "1px solid rgba(255,255,255,0.2)",
+                color: "#fff",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backdropFilter: "blur(8px)",
+              }}
+            >
+              <X size={16} strokeWidth={2.5} />
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>,
+    document.body
+  );
+}
+
+const zoomHintStyle: CSSProperties = {
+  position: "absolute",
+  inset: 0,
+  background: "rgba(11,31,58,0.35)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "inherit",
+};
 
 /* ─────────────────────────────────────────────
    Reusable photo grid + lightbox component.
@@ -27,16 +254,13 @@ export function PhotoGallery({
   minColWidth = 180,
   altPrefix = "",
 }: PhotoGalleryProps) {
-  const [lightbox, setLightbox] = useState<string | null>(null);
-  const [mounted, setMounted] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const getAlt = (idx: number) =>
+    altPrefix ? `${altPrefix} ${idx + 1}` : `photo-${idx + 1}`;
 
   return (
     <>
-      {/* Thumbnail grid */}
       <div
         style={{
           display: "grid",
@@ -44,120 +268,44 @@ export function PhotoGallery({
           gap: "12px",
         }}
       >
-        {images.map((src, idx) => (
-          <motion.div
-            key={idx}
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.18 }}
-            onClick={() => setLightbox(src)}
-            style={{
-              position: "relative",
-              height: `${thumbHeight}px`,
-              borderRadius: "12px",
-              overflow: "hidden",
-              border: "1px solid var(--color-border)",
-              cursor: "zoom-in",
-            }}
-          >
-            <img
-              src={src}
-              alt={altPrefix ? `${altPrefix} ${idx + 1}` : `photo-${idx + 1}`}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
-            {/* Hover zoom hint overlay */}
+        {images.map((src, idx) => {
+          const alt = getAlt(idx);
+          return (
             <motion.div
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
+              key={src}
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.18 }}
+              onClick={() => setLightboxIndex(idx)}
               style={{
-                position: "absolute",
-                inset: 0,
-                background: "rgba(11,31,58,0.35)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                position: "relative",
+                height: `${thumbHeight}px`,
+                borderRadius: "12px",
+                overflow: "hidden",
+                border: "1px solid var(--color-border)",
+                cursor: "zoom-in",
               }}
             >
-              <ZoomIn size={22} style={{ color: "#fff" }} strokeWidth={2} />
-            </motion.div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Lightbox rendered in document body via Portal */}
-      {mounted && createPortal(
-        <AnimatePresence>
-          {lightbox && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setLightbox(null)}
-              style={{
-                position: "fixed",
-                inset: 0,
-                zIndex: 99999, // Render above everything, including navbars
-                background: "rgba(0,0,0,0.9)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "24px",
-                cursor: "zoom-out",
-                willChange: "opacity",
-              }}
-            >
-              <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.95, opacity: 0 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-                onClick={(e) => e.stopPropagation()}
-                style={{
-                  position: "relative",
-                  maxWidth: "960px",
-                  width: "100%",
-                  maxHeight: "90vh",
-                  willChange: "transform, opacity",
-                }}
-              >
-                <img
-                  src={lightbox}
-                  alt="full size"
-                  style={{
-                    width: "100%",
-                    maxHeight: "90vh",
-                    objectFit: "contain",
-                    borderRadius: "16px",
-                    display: "block",
-                  }}
-                />
-                <button
-                  onClick={() => setLightbox(null)}
-                  style={{
-                    position: "absolute",
-                    top: "12px",
-                    right: "12px",
-                    width: "36px",
-                    height: "36px",
-                    borderRadius: "50%",
-                    background: "rgba(0,0,0,0.6)",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                    color: "#fff",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    backdropFilter: "blur(8px)",
-                  }}
-                >
-                  <X size={16} strokeWidth={2.5} />
-                </button>
+              <img
+                src={src}
+                alt={alt}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+              <motion.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle}>
+                <ZoomIn size={22} style={{ color: "#fff" }} strokeWidth={2} />
               </motion.div>
             </motion.div>
-          )}
-        </AnimatePresence>,
-        document.body
-      )}
+          );
+        })}
+      </div>
+
+      <LightboxOverlay
+        open={lightboxIndex !== null}
+        images={images}
+        currentIndex={lightboxIndex ?? 0}
+        onIndexChange={setLightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        getAlt={getAlt}
+      />
     </>
   );
 }
@@ -165,8 +313,17 @@ export function PhotoGallery({
 interface ZoomableImageProps {
   src: string;
   alt: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   className?: string;
+  /** Fill the parent (absolute inset 0). Use inside a relative container. */
+  fill?: boolean;
+  objectFit?: CSSProperties["objectFit"];
+  objectPosition?: string;
+  /** Hide zoom icon overlay (e.g. tiny logos). Lightbox still opens on tap. */
+  hideHint?: boolean;
+  /** When set, arrow keys cycle through this list while the lightbox is open. */
+  galleryImages?: string[];
+  galleryAlts?: string[];
 }
 
 export function ZoomableImage({
@@ -174,127 +331,75 @@ export function ZoomableImage({
   alt,
   style,
   className,
+  fill = false,
+  objectFit = "cover",
+  objectPosition,
+  hideHint = false,
+  galleryImages,
+  galleryAlts,
 }: ZoomableImageProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const images = galleryImages?.length ? galleryImages : [src];
+  const getAlt = (idx: number) => {
+    if (galleryAlts?.[idx]) return galleryAlts[idx];
+    if (images[idx] === src) return alt;
+    return alt;
+  };
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const wrapperStyle: CSSProperties = fill
+    ? {
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+        cursor: "zoom-in",
+        borderRadius: "inherit",
+        ...style,
+      }
+    : {
+        position: "relative",
+        cursor: "zoom-in",
+        display: "inline-block",
+        width: "100%",
+        borderRadius: "inherit",
+        ...style,
+      };
+
+  const openAt = () => {
+    const idx = images.indexOf(src);
+    setLightboxIndex(idx >= 0 ? idx : 0);
+  };
 
   return (
     <>
-      <div
-        className={className}
-        onClick={() => setIsOpen(true)}
-        style={{
-          position: "relative",
-          cursor: "zoom-in",
-          display: "inline-block",
-          width: "100%",
-          borderRadius: "inherit",
-          ...style,
-        }}
-      >
+      <div className={className} onClick={openAt} style={wrapperStyle}>
         <img
           src={src}
           alt={alt}
-          style={{ width: "100%", height: "100%", display: "block", borderRadius: "inherit", objectFit: "cover" }}
-        />
-        {/* Zoom hint on hover */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileHover={{ opacity: 1 }}
           style={{
-            position: "absolute",
-            inset: 0,
-            background: "rgba(11,31,58,0.25)",
+            width: "100%",
+            height: "100%",
+            display: "block",
             borderRadius: "inherit",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            objectFit,
+            objectPosition,
           }}
-        >
-          <ZoomIn size={24} style={{ color: "#fff" }} strokeWidth={2} />
-        </motion.div>
+        />
+        {!hideHint && (
+          <motion.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle}>
+            <ZoomIn size={24} style={{ color: "#fff" }} strokeWidth={2} />
+          </motion.div>
+        )}
       </div>
 
-      {/* Lightbox rendered in document body via Portal */}
-      {mounted && createPortal(
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setIsOpen(false)}
-              style={{
-                position: "fixed",
-                inset: 0,
-                zIndex: 99999, // Render above all other components, including headers and sidebars
-                background: "rgba(0,0,0,0.9)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "24px",
-                cursor: "zoom-out",
-                willChange: "opacity",
-              }}
-            >
-              <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.95, opacity: 0 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-                onClick={(e) => e.stopPropagation()}
-                style={{
-                  position: "relative",
-                  maxWidth: "960px",
-                  width: "100%",
-                  maxHeight: "90vh",
-                  willChange: "transform, opacity",
-                }}
-              >
-                <img
-                  src={src}
-                  alt={alt}
-                  style={{
-                    width: "100%",
-                    maxHeight: "90vh",
-                    objectFit: "contain",
-                    borderRadius: "16px",
-                    display: "block",
-                  }}
-                />
-                <button
-                  onClick={() => setIsOpen(false)}
-                  style={{
-                    position: "absolute",
-                    top: "12px",
-                    right: "12px",
-                    width: "36px",
-                    height: "36px",
-                    borderRadius: "50%",
-                    background: "rgba(0,0,0,0.6)",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                    color: "#fff",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    backdropFilter: "blur(8px)",
-                  }}
-                >
-                  <X size={16} strokeWidth={2.5} />
-                </button>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>,
-        document.body
-      )}
+      <LightboxOverlay
+        open={lightboxIndex !== null}
+        images={images}
+        currentIndex={lightboxIndex ?? 0}
+        onIndexChange={setLightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        getAlt={getAlt}
+      />
     </>
   );
 }
-

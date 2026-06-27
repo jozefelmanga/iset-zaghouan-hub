@@ -14,6 +14,9 @@ export function MastersProgramGrid() {
     ? masterPrograms
     : masterPrograms.filter((m) => m.dept === activeFilter);
 
+  const masterGalleryImages = filteredMasters.map((m) => m.image);
+  const masterGalleryAlts = filteredMasters.map((m) => m.name);
+
   return (
     <>
       <div
@@ -99,6 +102,8 @@ export function MastersProgramGrid() {
                   <ZoomableImage
                     src={master.image}
                     alt={master.name}
+                    galleryImages={masterGalleryImages}
+                    galleryAlts={masterGalleryAlts}
                     style={{
                       height: "220px",
                       borderRadius: "14px",

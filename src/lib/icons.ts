@@ -99,6 +99,7 @@ export {
   Upload,
   Share2,
   Filter,
+  ZoomIn,
 
   // Identity & Social
   CreditCard,

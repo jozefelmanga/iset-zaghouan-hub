@@ -6,6 +6,12 @@ import { Link2 } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 
+const semesterGalleryImages = [
+  "/images/Génie des Procédés (GPR)/8b38c86c-d857-42af-af22-0e62fbabab11.webp",
+  "/images/Génie des Procédés (GPR)/5cae2f2b-0827-4909-86e4-49cc524b6625.webp",
+];
+const semesterGalleryAlts = ["Matières GPR S1", "Matières GPR S2"];
+
 export function GPRPageContent() {
   const [semesterTab, setSemesterTab] = useState<"s1" | "s2">("s1");
 
@@ -125,6 +131,8 @@ export function GPRPageContent() {
                   <ZoomableImage
                     src="/images/Génie des Procédés (GPR)/8b38c86c-d857-42af-af22-0e62fbabab11.webp"
                     alt="Matières GPR S1"
+                    galleryImages={semesterGalleryImages}
+                    galleryAlts={semesterGalleryAlts}
                     style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
                   />
                   <span style={{ fontSize: "11px", color: "var(--color-text-muted)", marginTop: "8px" }}>جدول مواد السداسي الأول</span>
@@ -141,6 +149,8 @@ export function GPRPageContent() {
                   <ZoomableImage
                     src="/images/Génie des Procédés (GPR)/5cae2f2b-0827-4909-86e4-49cc524b6625.webp"
                     alt="Matières GPR S2"
+                    galleryImages={semesterGalleryImages}
+                    galleryAlts={semesterGalleryAlts}
                     style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
                   />
                   <span style={{ fontSize: "11px", color: "var(--color-text-muted)", marginTop: "8px" }}>جدول مواد السداسي الثاني</span>

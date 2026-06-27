@@ -23,7 +23,6 @@ New ISET Zaghouan students who need quick, practical answers about:
 ## Interactive features
 
 - **Enrollment stepper** (https://isetzg.vercel.app/inscription) — progress-tracked registration steps
-- **Scholarship calculator** (https://isetzg.vercel.app/bourse) — eligibility checker for bourse types
 - **Housing tabs** (https://isetzg.vercel.app/housing) — separate guides for Foyer (girls) and Louled (boys) dorms
 - **FAQ accordion** (https://isetzg.vercel.app/faq) — common questions with FAQPage schema.org markup
 - **Command palette** — in-app search across all pages (keyboard shortcut on desktop)
@@ -48,7 +47,7 @@ New ISET Zaghouan students who need quick, practical answers about:
 ### Student Life
 
 - [المبيت الجامعي](https://isetzg.vercel.app/housing): معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصايح للسكن الجامعي.
-- [البورص و المنحة](https://isetzg.vercel.app/bourse): دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط، الأوراق، و حاسبة الأهلية.
+- [البورص و المنحة](https://isetzg.vercel.app/bourse): دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط و الأوراق المطلوبة.
 - [النقل و المواصلات](https://isetzg.vercel.app/transport): لواجات النقل، أسعار الكيران، و معلومات المواصلات من و إلى ISET Zaghouan.
 - [الريستو الجامعي](https://isetzg.vercel.app/resto): أوقات الوجبات، قائمة الريستو، و نصايح للطلبة في ISET Zaghouan.
 - [النوادي الطلابية](https://isetzg.vercel.app/clubs): دليل النوادي و الأنشطة في ISET Zaghouan: SecuriNets، ODD، Enactus، و أكثر.

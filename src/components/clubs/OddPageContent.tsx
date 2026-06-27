@@ -9,7 +9,8 @@ import {
   CheckCircle2,
 } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
-import { PhotoGallery } from "@/components/ui/Lightbox";
+import { FullBleed } from "@/components/ui/layout";
+import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
 
 const images = [
   "/images/ODD ISET Zaghouan/350306791_925828658697098_9197756279969916445_n.webp",
@@ -41,30 +42,23 @@ const events = ["Ateliers", "Journée Carrière", "Formations", "Sorties d'étud
 export function OddPageContent() {
   return (
     <>
-      <div
-        style={{
-          position: "relative",
-          height: "240px",
-          width: "100vw",
-          marginLeft: "calc(-50vw + 50%)",
-          marginBottom: "32px",
-          overflow: "hidden",
-        }}
-      >
-        <img
+      <FullBleed style={{ height: "240px", marginBottom: "32px" }}>
+        <ZoomableImage
+          fill
           src="/images/ODD ISET Zaghouan/OIP_(1).webp"
           alt="ODD Cover"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 43.7%" }}
+          objectPosition="center 43.7%"
         />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(11,31,58,0.25), rgba(11,31,58,0.85))" }} />
-        <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap" }}>
-          <img
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(to bottom, rgba(11,31,58,0.25), rgba(11,31,58,0.85))" }} />
+        <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", pointerEvents: "none" }}>
+          <ZoomableImage
             src="/images/ODD ISET Zaghouan/346084632_2212215942302379_3257380520080764734_n.webp"
             alt="ODD Logo"
-            style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", objectFit: "cover", background: "#fff" }}
+            hideHint
+            style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", background: "#fff", pointerEvents: "auto" }}
           />
         </div>
-      </div>
+      </FullBleed>
 
       <div style={{ marginBottom: "32px" }}>
         <Card elevation="raised" padding="28px">

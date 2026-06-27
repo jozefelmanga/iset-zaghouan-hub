@@ -18,7 +18,7 @@ export const PAGE_SEO = {
   },
   "/bourse": {
     title: "البورص و المنحة",
-    description: "دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط، الأوراق، و حاسبة الأهلية.",
+    description: "دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط و الأوراق المطلوبة.",
   },
   "/transport": {
     title: "النقل و المواصلات",

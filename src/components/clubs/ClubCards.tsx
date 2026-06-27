@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";
+import { ZoomableImage } from "@/components/ui/Lightbox";
 import { clubBenefitIcons } from "@/lib/iconMaps";
 import { enterAnimation } from "@/lib/motion";
 
@@ -31,10 +32,11 @@ export function ClubDirectoryCard({ club, index }: { club: ClubEntry; index: num
     <motion.div {...enterAnimation(index * 0.1)}>
       <Card elevation="raised" padding="22px">
         <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", alignItems: "center" }}>
-          <img
+          <ZoomableImage
             src={club.logo}
             alt={club.name}
-            style={{ width: "52px", height: "52px", borderRadius: "12px", objectFit: "cover", border: "1px solid var(--color-border)", flexShrink: 0 }}
+            hideHint
+            style={{ width: "52px", height: "52px", borderRadius: "12px", border: "1px solid var(--color-border)", flexShrink: 0 }}
           />
           <div style={{ flex: 1, minWidth: "260px" }}>
             <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-text)", marginBottom: "2px" }}>{club.name}</h4>

@@ -77,6 +77,31 @@ export function PageWrapper({ children, className, narrow = false }: PageWrapper
 }
 
 /* ============================================================
+   FULL BLEED
+   Breaks out of a padded container to span the full viewport.
+   Uses margin-inline so it works in both LTR and RTL layouts.
+   ============================================================ */
+interface FullBleedProps {
+  children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}
+
+export function FullBleed({ children, className, style }: FullBleedProps) {
+  return (
+    <div
+      className={cn("relative w-screen max-w-[100vw] overflow-hidden", className)}
+      style={{
+        marginInline: "calc(50% - 50vw)",
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+/* ============================================================
    STACK
    Vertical flex column with a consistent gap between children.
    ============================================================ */

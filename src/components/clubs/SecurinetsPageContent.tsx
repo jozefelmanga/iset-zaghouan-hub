@@ -71,12 +71,12 @@ export function SecurinetsPageContent() {
             <Shield size={20} style={{ color: "#F6B41B" }} />
             شكون أحنا؟ (Who Are We?)
           </h2>
-          <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
-            تأسست جمعية <strong>SecuriNets</strong> الوطنية في سنة 2003، وهي أكبر جمعية ومجتمع في تونس مخصص بالكامل لمجال الأمن السيبراني.
-            افتتح الفرع الخاص بالمعهد العالي للعلوم التطبيقية والتكنولوجيا بزغوان في سنة 2016 من قبل مجموعة طلاب شغوفين بالـ <code style={{ color: "#3B82F6", fontWeight: 600 }}>Cybersecurity</code>.
+            <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
+            جمعية <strong>SecuriNets</strong> الوطنية تأسست في 2003، وهي أكبر جمعية ومجتمع في تونس كامل متع الأمن السيبراني.
+            فرع ISET زغوان انفتح في 2016 من مجموعة طلبة شغوفين بالـ <code style={{ color: "#3B82F6", fontWeight: 600 }}>Cybersecurity</code>.
           </p>
-          <Alert title="ملاحظة هامة" variant="info">
-            فريق SecuriNets ما يقتصرش فقط على طلبة الإعلامية (IT)، بالعكس التكوينات متاعنا مفتوحة للطلبة الكل من كافة التخصصات والسنوات للمشاركة والتعلم.
+          <Alert title="ملاحظة مهمة" variant="info">
+            فريق SecuriNets ما يقتصرش على طلبة الإعلامية (IT) — التكوينات متاعنا مفتوحة للكل من كافة التخصصات والسنوات باش يشاركو ويتعلّمو.
           </Alert>
         </Card>
       </div>
@@ -138,7 +138,7 @@ export function SecurinetsPageContent() {
             أنشطة وفعاليات النادي
           </h3>
           <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", lineHeight: 1.5, marginBottom: "14px" }}>
-            نقوم كل سنة بتنظيم وتسيير العديد من التظاهرات والمنافسات الرائعة:
+            كل عام ننظّمو برشا تظاهرات ومنافسات:
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
             {events.map((ev) => (

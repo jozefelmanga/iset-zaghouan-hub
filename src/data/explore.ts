@@ -1,6 +1,6 @@
 export const exploreZaghouan = {
   description:
-    "بلاد مليانة بتاريخها و منازلها القديمة الي سكانها مواضبين علي ترميمها، انهجها المزيانة و النظيفة، جبلها كي تطلعلو المنظر من فوق اينسيك الدنيا و ما فيها",
+    "بلاد مليانة بتاريخها و منازلها القديمة اللي سكانها مواضبين على ترميمها، انهجها المزيانة و النظيفة، جبلها كي تطلعلو المنظر من فوق ينسيك الدنيا و ما فيها",
   coordinates: { lat: 36.4029, lng: 10.1423, label: "36.4029° N, 10.1423° E" },
   studySpots: ["Fabrica", "Grech", "Royal lounge", "Para", "The Rock", "Paradise"],
   cafes: [
@@ -18,7 +18,7 @@ export const exploreZaghouan = {
     "Zguni-gaw (rond-point fechka)",
   ],
   nearbyServices: [
-    { icon: "store",    label: "كرفور اكبراس", color: "#F6B41B", bg: "rgba(246,180,27,0.10)" },
+    { icon: "store",    label: "كارفور اكبراس", color: "#F6B41B", bg: "rgba(246,180,27,0.10)" },
     { icon: "camera",   label: "Publinet",       color: "#3B82F6", bg: "rgba(59,130,246,0.10)" },
     { icon: "book",     label: "مكتبة",         color: "#12B8C8", bg: "rgba(18,184,200,0.10)" },
     { icon: "dumbbell", label: "قاعة رياضة",   color: "#22C55E", bg: "rgba(34,197,94,0.10)"  },

@@ -6,19 +6,19 @@ export const PAGE_SEO = {
   "/": {
     title: "الرئيسية — دليل الطالب",
     description:
-      "دليل شامل للطلبة الجدد في ISET Zaghouan: الترسيم، المبيت، النقل، البورص، الستاجات، النوادي، واكتشاف زغوان.",
+      "دليل شامل للجداد في ISET Zaghouan: الترسيم، المبيت، النقل، البورص، الستاجات، النوادي، واكتشاف زغوان.",
   },
   "/inscription": {
     title: "الترسيم الجامعي",
-    description: "خطوات التسجيل في ISET Zaghouan، الأوراق المطلوبة، ومواعيد الترسيم للطلبة الجدد.",
+    description: "خطوات الترسيم في ISET Zaghouan، الأوراق اللي لازمك، ومواعيد الترسيم للجداد.",
   },
   "/housing": {
     title: "المبيت الجامعي",
-    description: "معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصائح للسكن الجامعي.",
+    description: "معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصايح للسكن الجامعي.",
   },
   "/bourse": {
     title: "البورص و المنحة",
-    description: "دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط، الوثائق، و حاسبة الأهلية.",
+    description: "دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط، الأوراق، و حاسبة الأهلية.",
   },
   "/transport": {
     title: "النقل و المواصلات",
@@ -26,23 +26,23 @@ export const PAGE_SEO = {
   },
   "/resto": {
     title: "الريستو الجامعي",
-    description: "أوقات الوجبات، قائمة الريستو، و نصائح للطلبة في ISET Zaghouan.",
+    description: "أوقات الوجبات، قائمة الريستو، و نصايح للطلبة في ISET Zaghouan.",
   },
   "/stages": {
     title: "الستاجات",
-    description: "دليل الستاجات على 3 سنوات، وثائق Didosoft، و نصائح للتربص في ISET Zaghouan.",
+    description: "دليل الستاجات على 3 سنوات، أوراق Didosoft، و نصايح للتربص في ISET Zaghouan.",
   },
   "/library": {
     title: "المكتبة",
-    description: "معلومات المكتبة الجامعية، المراجع، و موارد الدراسة في ISET Zaghouan.",
+    description: "معلومات المكتبة الجامعية، المراجع، و موارد القراية في ISET Zaghouan.",
   },
   "/clubs": {
     title: "النوادي الطلابية",
-    description: "دليل النوادي و الأنشطة الطلابية في ISET Zaghouan: SecuriNets، ODD، Enactus، و أكثر.",
+    description: "دليل النوادي و الأنشطة في ISET Zaghouan: SecuriNets، ODD، Enactus، و أكثر.",
   },
   "/clubs/securinets": {
     title: "نادي SecuriNets",
-    description: "جمعية الأمن السيبراني SecuriNets في ISET Zaghouan: الأنشطة، الفوائد، و كيفية الانضمام.",
+    description: "جمعية الأمن السيبراني SecuriNets في ISET Zaghouan: الأنشطة، الفوايد، و كيفاش تنضم.",
   },
   "/clubs/odd": {
     title: "نادي ODD",
@@ -74,15 +74,15 @@ export const PAGE_SEO = {
   },
   "/explore": {
     title: "اكتشف زغوان",
-    description: "أحسن البلايص للدراسة، المقاهي، و الأنشطة في مدينة زغوان للطلبة.",
+    description: "أحسن البلايص للقراية، الكافيهات، و الأنشطة في مدينة زغوان للطلبة.",
   },
   "/faq": {
     title: "الأسئلة الشائعة",
-    description: "إجابات لأكثر الأسئلة اللي يسألوها الطلبة الجداد في ISET Zaghouan.",
+    description: "إجابات لأكثر الأسئلة اللي يسألوها الجداد في ISET Zaghouan.",
   },
   "/bonus": {
     title: "نصائح و إهداء",
-    description: "نصائح عملية للطلبة الجدد و شكر المساهمين في دليل ISET Zaghouan.",
+    description: "نصايح عملية للجداد و شكر المساهمين في دليل ISET Zaghouan.",
   },
 } as const satisfies Record<string, { title: string; description: string }>;
 

@@ -41,7 +41,7 @@ export const enrollmentPhases = [
     id: "phase1",
     title: "المرحلة الأولى: عن بعد",
     steps: [
-      "تخلص عند طريق الكارت E-dinar في سيت www.inscription.tn",
+      "تخلص على طريق الكارت E-dinar في سيت www.inscription.tn",
       "تجبد وصل الخلاص و تطبعو",
     ],
   },

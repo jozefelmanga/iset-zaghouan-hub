@@ -87,8 +87,8 @@ export const navGroups: NavGroup[] = [
     color: "#F97316",
     links: [
       { href: "/explore", label: "اكتشف زغوان",     icon: MapPin,     description: "أحسن البلايص في المدينة",             category: "campus" },
-      { href: "/faq",     label: "الأسئلة الشائعة", icon: HelpCircle, description: "إجابات لأكثر الأسئلة تكراراً",         category: "campus" },
-      { href: "/bonus",   label: "نصائح وإهداء",     icon: Heart,      description: "نصائح للطلبة الجدد وشكر المساهمين",   category: "campus" },
+      { href: "/faq",     label: "الأسئلة الشائعة", icon: HelpCircle, description: "إجابات لأكثر الأسئلة اللي تتكرّر",         category: "campus" },
+      { href: "/bonus",   label: "نصائح وإهداء",     icon: Heart,      description: "نصايح للجداد وشكر المساهمين",   category: "campus" },
     ],
   },
 ];

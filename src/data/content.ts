@@ -10,7 +10,7 @@ export const libraryInfo = {
   ],
   tips: [
     "عليك كان تهز بطاقة التعريف",
-    "كل يعاونك على المراجعة",
+    "الكل يعاونك على المراجعة",
   ],
 };
 
@@ -40,9 +40,9 @@ export const campusServices = [
 ];
 
 export const studentJourney = [
-  { id: 1, title: "التسجيل المبدئي",  description: "ادفع واجب التسجيل وجهز الوثائق",        active: true  },
-  { id: 2, title: "الترسيم الرسمي",   description: "تخلص الترسيم أونلاين و حضرلو يومو",     active: false },
-  { id: 3, title: "المبيت والخدمات",  description: "سجل في المبيت والريستو والنقل",          active: false },
+  { id: 1, title: "التسجيل المبدئي",  description: "خلّص واجب التسجيل وجهّز الأوراق",        active: true  },
+  { id: 2, title: "الترسيم الرسمي",   description: "خلّص الترسيم أونلاين و حضّرلو يومو",     active: false },
+  { id: 3, title: "المبيت والخدمات",  description: "ترسّم في المبيت والريستو والنقل",          active: false },
   { id: 4, title: "بداية الدراسة",   description: "اكتشف المكتبة والنوادي والأنشطة",         active: false },
 ];
 
@@ -57,13 +57,13 @@ export const announcements = [
   {
     time: "سبتمبر 2024",
     title: "بداية السنة الجامعية",
-    description: "انطلاق الدروس بالنسبة للطلبة الجدد والقدامى.",
+    description: "انطلاق الدروس للجداد والقدامى.",
     type: "info",
   },
   {
     time: "أكتوبر 2024",
     title: "آخر أجل للبورص",
-    description: "تذكير بتقديم أوراق منحة الإدماج.",
+    description: "تذكير باش تقدّم أوراق منحة الإدماج.",
     type: "warning",
   },
 ];

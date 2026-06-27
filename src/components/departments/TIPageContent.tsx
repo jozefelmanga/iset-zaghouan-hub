@@ -50,7 +50,7 @@ export function TIPageContent() {
               <Badge variant="success">نشط ✅</Badge>
             </div>
             <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "16px" }}>
-              تخصص يركز على الشبكات والأنظمة وإدارتها بعمق. يمثل الباب الكبير لأمن المعلومات والأمن السيبراني (Cybersecurity).
+              تخصص يركز على الشبكات والأنظمة وإدارتها بعمق. هو الباب الكبير لأمن المعلومات والأمن السيبراني (Cybersecurity).
             </p>
             <a
               href="http://www.parcours-lmd.salima.tn/listeueetab.php?parc=Bh4DTgskUTBcbQZ8ADkDMVRyX2M=&etab=AWQHNl9v"
@@ -79,7 +79,7 @@ export function TIPageContent() {
           <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى (Jardins)
         </h2>
         <p style={{ fontSize: "14px", color: "var(--color-text-muted)", marginBottom: "20px" }}>
-          المواد تختلف بين السداسي الأول والثاني. إليك المواد المقررة:
+          المواد تختلف بين السداسي الأول والثاني. هاذوما المواد المقررة:
         </p>
 
         <div style={{ display: "flex", gap: "8px", background: "rgba(11,31,58,0.04)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>

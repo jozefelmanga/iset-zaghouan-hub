@@ -24,7 +24,7 @@ export default function MastersPage() {
         <div style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
           <BookOpen size={14} style={{ flexShrink: 0, marginTop: "2px" }} />
           <span style={{ fontSize: "13px", lineHeight: 1.5 }}>
-            يتم فتح مناظرات الترشح للماستير في بداية الصيف (غالباً شهر جويلية). ويتم ترتيب المترشحين حسب مجموع النقاط (Score) الذي يعتمد على معدلات سنوات الإجازة، عدد سنوات الرسوب، ومعدل الباكالوريا.
+            مناظرات الماستر تتحل في بداية الصيف (غالباً جويلية). المترشحين يترتّبو حسب مجموع النقاط (Score) اللي يعتمد على معدلات سنوات الإجازة، عدد سنوات الرسوب، ومعدل الباك.
           </span>
         </div>
       </Alert>

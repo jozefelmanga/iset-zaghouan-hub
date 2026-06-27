@@ -23,7 +23,7 @@ export function SEGPageContent() {
               <Badge variant="success">نشط مباشرة ✅</Badge>
             </div>
             <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
-              تخصص يتم تدريسه مباشرة على مدة 3 سنوات. يعني لا يوجد توجيه في السنة الثانية. يركز التخصص على تقنيات المحاسبة، الجباية، إدارة الأموال، والتحليل المالي للشركات.
+              تخصص تقرا فيه مباشرة 3 سنين. يركز على تقنيات المحاسبة، الجباية، إدارة الأموال، والتحليل المالي للشركات.
             </p>
           </Card>
 
@@ -64,7 +64,7 @@ export function SEGPageContent() {
           <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى (Jardins)
         </h2>
         <p style={{ fontSize: "14px", color: "var(--color-text-muted)", marginBottom: "20px" }}>
-          المواد متماثلة بين تخصص المحاسبة وإدارة الأعمال في السداسي الأول، وتختلف لاحقًا. إليك جدول المواد:
+          المواد متشابهة بين المحاسبة وإدارة الأعمال في السداسي الأول، ومن بعد تختلف. هاذا جدول المواد:
         </p>
 
         <div style={{ display: "flex", gap: "8px", background: "rgba(11,31,58,0.04)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>

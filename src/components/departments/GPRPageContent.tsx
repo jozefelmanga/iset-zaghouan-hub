@@ -80,7 +80,7 @@ export function GPRPageContent() {
           <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى (Jardins)
         </h2>
         <p style={{ fontSize: "14px", color: "var(--color-text-muted)", marginBottom: "20px" }}>
-          المواد تختلف بين السداسي الأول والثاني. إليك المواد المقررة:
+          المواد تختلف بين السداسي الأول والثاني. هاذوما المواد المقررة:
         </p>
 
         <div style={{ display: "flex", gap: "8px", background: "rgba(11,31,58,0.04)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>

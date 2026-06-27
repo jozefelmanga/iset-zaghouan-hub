@@ -40,7 +40,7 @@ export function BourseCalculator() {
         </div>
         <div>
           <p style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)" }}>حاسبة الأهلية</p>
-          <p style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>أدخل الدخل السنوي لمعرفة الحق في البورص</p>
+          <p style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>أدخل الدخل السنوي باش تعرف حقك في البورص</p>
         </div>
       </div>
 
@@ -61,9 +61,9 @@ export function BourseCalculator() {
       <motion.div animate={{ opacity: 1 }} key={result}>
         <Alert title={resultIcon + " " + result} variant={resultVariant}>
           {incomeNum > 0 && incomeNum <= 5153000 && "الدخل مناسب للبورص الكاملة — ابدأ تجمع الأوراق!"}
-          {incomeNum > 5153000 && incomeNum <= 30000000 && "تقدر تطلب منحة الإدماج 500 دينار."}
-          {incomeNum > 30000000 && "الدخل السنوي عالي جداً للاستفادة من أي منحة."}
-          {incomeNum === 0 && "أدخل دخل العائلة السنوي بالمليم للحصول على نتيجة فورية."}
+          {incomeNum > 5153000 && incomeNum <= 30000000 && "تنجم تطلب منحة الإدماج 500 دينار."}
+          {incomeNum > 30000000 && "الدخل السنوي عالي برشا — ما عندكش حق في أي منحة."}
+          {incomeNum === 0 && "أدخل دخل العائلة السنوي بالمليم باش تشوف النتيجة."}
         </Alert>
       </motion.div>
     </Card>

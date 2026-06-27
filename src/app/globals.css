@@ -28,7 +28,7 @@
   --color-campus:    #F97316;
 
   /* === Typography === */
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-tajawal), system-ui, -apple-system, sans-serif;
 
   /* === Border Radius === */
   --radius-card:   20px;

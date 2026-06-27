@@ -1,7 +1,8 @@
 export const housingFoyer = {
-  name: "المبيت الجامعي موسى بن نصير",
+  name: "المبيت الجامعي موسى بن نصير بزغوان",
   gender: "girls",
   location: "بحذا الايزات",
+  mapUrl: undefined,
   curfew: "19:30",
   deposit: 20,
   features: [
@@ -28,17 +29,13 @@ export const housingFoyer = {
     "ماعون و ماكلة من الدار",
     "ملابس و دبش",
   ],
-  docs: [
-    "شهادة الترسيم (كوبي)",
-    "بطاقة التعريف (نسخة)",
-    "صورة شمسية",
-  ],
 };
 
 export const housingLouled = {
   name: "المبيت الجامعي رضا عامر (الفردوس)",
   gender: "boys",
   location: "بحذا كارفور اكبراس",
+  mapUrl: "https://maps.app.goo.gl/WqJxiqrXcrw48JM58",
   curfew: undefined,
   features: [
     "Gaz",
@@ -67,12 +64,37 @@ export const housingLouled = {
     "ملابس و دبش",
     "ماعون و ماكلة من الدار",
   ],
-  docs: [
-    "شهادة الترسيم (كوبي)",
-    "بطاقة التعريف (نسخة)",
-    "صورة شمسية",
-  ],
 };
+
+export const housingRegistration = [
+  {
+    id: "ooun",
+    title: "التسجيل في المبيت (OOUN)",
+    steps: [
+      "أول حاجة استنى موقع OOUN يحل على www.ooun.rnu.tn",
+      "تعمل عليه compte و demande و تستنى الإجابة",
+      "كيف يجاوبو تخلص الفواي و تحضّر الأوراق — ابدأ فيهم من قبل باش ما تتعطّلوش",
+    ],
+    url: "https://www.ooun.rnu.tn/fr/etudiant/login",
+  },
+  {
+    id: "edinar",
+    title: "كارت E-dinar Jeune",
+    steps: [
+      "امشي على بكري للبوسطة و خذ carte E-dinar jeune",
+      "ياخذ وقت و الترسيل يستنّاو لين يجيبو مرة أخرى",
+    ],
+  },
+  {
+    id: "iset",
+    title: "الترسيم في ISET",
+    steps: [
+      "حضّر أوراقك و استنى موقع التسجيل يحل على www.inscription.tn",
+      "تخلص و تاخذ ال reçu باش تهزّه معاك كيف تجي تمشي تقيد في الايزات",
+    ],
+    url: "https://www.inscription.tn",
+  },
+];
 
 export const housingProcess = [
   "نهار إنسكري للفاك تمشي للفاك تصب وراقك",

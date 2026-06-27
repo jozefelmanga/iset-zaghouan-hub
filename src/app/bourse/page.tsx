@@ -21,8 +21,8 @@ export default function BoursePage() {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "16px", marginBottom: "32px", width: "100%", boxSizing: "border-box" }}>
         {scholarshipTypes.map((s, i) => (
-          <MotionReveal key={i} delay={i * 0.1}>
-            <Card elevation="feature" padding="24px">
+          <MotionReveal key={i} delay={i * 0.1} className="h-full">
+            <Card elevation="feature" padding="24px" className="h-full flex flex-col justify-between">
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
                 <span style={{ fontSize: "12px", fontWeight: 600, padding: "4px 10px", borderRadius: "999px", background: i === 0 ? "rgba(59,130,246,0.1)" : "rgba(34,197,94,0.1)", color: i === 0 ? "#3B82F6" : "#16A34A" }}>{s.name}</span>
                 <div style={{ fontSize: "28px", fontWeight: 800, color: "var(--color-primary)", fontFeatureSettings: '"tnum"' }}>

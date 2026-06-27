@@ -23,7 +23,7 @@ export function ActionCard({ icon: Icon, title, description, href, category = "p
     <motion.a
       href={href}
       {...hoverLift}
-      className="group block"
+      className="group flex flex-col h-full"
       style={{
         background: "var(--color-surface)",
         borderRadius: "var(--radius-card)",
@@ -31,7 +31,6 @@ export function ActionCard({ icon: Icon, title, description, href, category = "p
         padding: featured ? "32px" : "24px",
         boxShadow: "var(--shadow-card)",
         textDecoration: "none",
-        display: "block",
       }}
     >
       {/* Icon circle */}
@@ -62,7 +61,7 @@ export function ActionCard({ icon: Icon, title, description, href, category = "p
       </p>
 
       <div
-        className="flex items-center gap-1 mt-4 opacity-0 group-hover:opacity-100 transition-opacity"
+        className="flex items-center gap-1 mt-auto pt-4 opacity-0 group-hover:opacity-100 transition-opacity"
         style={{ color: colors.color, fontSize: "13px", fontWeight: 500 }}
       >
         <span>عرض التفاصيل</span>

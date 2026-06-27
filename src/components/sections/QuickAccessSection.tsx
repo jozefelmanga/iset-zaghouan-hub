@@ -18,7 +18,7 @@ export function QuickAccessSection() {
       />
       <Grid gap="md" minColWidth="280px">
         {quickActions.map((action, i) => (
-          <motion.div key={action.href} {...itemReveal(i * 0.06)}>
+          <motion.div key={action.href} {...itemReveal(i * 0.06)} style={{ height: "100%" }}>
             <ActionCard
               icon={quickActionIcons[action.icon]}
               title={action.title}

@@ -15,6 +15,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" data-scroll-behavior="smooth">
       <head>
         <link rel="manifest" href="/manifest.webmanifest" />
+        <link rel="alternate" type="text/markdown" title="LLMs" href="/llms.txt" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

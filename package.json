@@ -9,7 +9,9 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "optimize-images": "node optimize-images.mjs"
+    "optimize-images": "node optimize-images.mjs",
+    "generate-llms": "tsx scripts/generate-llms.ts",
+    "prebuild": "npm run generate-llms"
   },
   "dependencies": {
     "framer-motion": "^12.0.0",
@@ -32,6 +34,7 @@
     "jsdom": "^27.0.1",
     "sharp": "^0.35.2",
     "tailwindcss": "^4",
+    "tsx": "^4.22.4",
     "typescript": "^5",
     "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.1.9"

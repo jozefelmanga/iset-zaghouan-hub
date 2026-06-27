@@ -38,4 +38,6 @@ Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL` to your produ
 
 Optional: set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` to enable privacy-friendly analytics.
 
+**LLM discovery:** `/llms.txt` and `/llms-full.txt` (auto-generated via `npm run generate-llms` from SEO constants).
+
 See `design/design.md` for the full product spec.

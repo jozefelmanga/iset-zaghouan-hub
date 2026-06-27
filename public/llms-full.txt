@@ -1,0 +1,89 @@
+# ISET Zaghouan Hub — Full documentation for AI agents
+
+> دليل الطالب في ISET Zaghouan - الترسيم، المبيت، النقل، البورص، الستاجات، وكل ما يخص الحياة الجامعية
+
+## Product overview
+
+ISET Zaghouan Hub converts a long Tunisian-Arabic student guide into structured, searchable pages covering university enrollment, dormitories, transport, scholarships, internships, academic departments, student clubs, and life in Zaghouan.
+
+- **Site URL:** https://isetzg.vercel.app
+- **Home:** https://isetzg.vercel.app
+- **Concise index:** https://isetzg.vercel.app/llms.txt
+- **Sitemap:** https://isetzg.vercel.app/sitemap.xml
+
+## Target users
+
+New ISET Zaghouan students who need quick, practical answers about:
+
+- **ACADEMICS:** الترسيم الجامعي, المكتبة, الأقسام العلمية, الماستر
+- **STUDENT LIFE:** المبيت الجامعي, البورص, النقل, الريستو, النوادي
+- **CAREER:** الستاجات
+- **OTHER:** اكتشف زغوان, الأسئلة الشائعة, نصائح وإهداء
+
+## Interactive features
+
+- **Enrollment stepper** (https://isetzg.vercel.app/inscription) — progress-tracked registration steps
+- **Scholarship calculator** (https://isetzg.vercel.app/bourse) — eligibility checker for bourse types
+- **Housing tabs** (https://isetzg.vercel.app/housing) — separate guides for Foyer (girls) and Louled (boys) dorms
+- **FAQ accordion** (https://isetzg.vercel.app/faq) — common questions with FAQPage schema.org markup
+- **Command palette** — in-app search across all pages (keyboard shortcut on desktop)
+- **Department pages** — TI, SEG, GPR specialities with semester materials
+
+## All pages
+
+### Home
+
+- [الرئيسية — دليل الطالب](https://isetzg.vercel.app): دليل شامل للطلبة الجدد في ISET Zaghouan: الترسيم، المبيت، النقل، البورص، الستاجات، النوادي، واكتشاف زغوان.
+
+### Academics
+
+- [الترسيم الجامعي](https://isetzg.vercel.app/inscription): خطوات التسجيل في ISET Zaghouan، الأوراق المطلوبة، ومواعيد الترسيم للطلبة الجدد.
+- [المكتبة](https://isetzg.vercel.app/library): معلومات المكتبة الجامعية، المراجع، و موارد الدراسة في ISET Zaghouan.
+- [الأقسام العلمية](https://isetzg.vercel.app/departments): نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.
+- [قسم تكنولوجيا المعلومات (TI)](https://isetzg.vercel.app/departments/ti): تخصصات DSI و RSI، المواد، و المراجع لقسم TI في ISET Zaghouan.
+- [قسم الاقتصاد و التصرف (SEG)](https://isetzg.vercel.app/departments/seg): تخصصات المحاسبة، المالية، و إدارة الأعمال في قسم SEG بـ ISET Zaghouan.
+- [قسم هندسة العمليات (GPR)](https://isetzg.vercel.app/departments/gpr): تخصصات الأساليب الكيميائية و الأفاق المهنية في قسم GPR بـ ISET Zaghouan.
+- [برامج الماستر](https://isetzg.vercel.app/masters): برامج الماستر المتوفرة و شروط الولوج في ISET Zaghouan.
+
+### Student Life
+
+- [المبيت الجامعي](https://isetzg.vercel.app/housing): معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصائح للسكن الجامعي.
+- [البورص و المنحة](https://isetzg.vercel.app/bourse): دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط، الوثائق، و حاسبة الأهلية.
+- [النقل و المواصلات](https://isetzg.vercel.app/transport): لواجات النقل، أسعار الكيران، و معلومات المواصلات من و إلى ISET Zaghouan.
+- [الريستو الجامعي](https://isetzg.vercel.app/resto): أوقات الوجبات، قائمة الريستو، و نصائح للطلبة في ISET Zaghouan.
+- [النوادي الطلابية](https://isetzg.vercel.app/clubs): دليل النوادي و الأنشطة الطلابية في ISET Zaghouan: SecuriNets، ODD، Enactus، و أكثر.
+- [نادي SecuriNets](https://isetzg.vercel.app/clubs/securinets): جمعية الأمن السيبراني SecuriNets في ISET Zaghouan: الأنشطة، الفوائد، و كيفية الانضمام.
+- [نادي ODD](https://isetzg.vercel.app/clubs/odd): نادي التنمية المستدامة ODD في ISET Zaghouan: المشاريع البيئية و الأنشطة الطلابية.
+- [نادي Enactus](https://isetzg.vercel.app/clubs/enactus): نادي Enactus في ISET Zaghouan: ريادة الأعمال، المشاريع الاجتماعية، و الفرص للطلبة.
+
+### Career
+
+- [الستاجات](https://isetzg.vercel.app/stages): دليل الستاجات على 3 سنوات، وثائق Didosoft، و نصائح للتربص في ISET Zaghouan.
+
+### Campus & City
+
+- [اكتشف زغوان](https://isetzg.vercel.app/explore): أحسن البلايص للدراسة، المقاهي، و الأنشطة في مدينة زغوان للطلبة.
+- [الأسئلة الشائعة](https://isetzg.vercel.app/faq): إجابات لأكثر الأسئلة اللي يسألوها الطلبة الجداد في ISET Zaghouan.
+- [نصائح و إهداء](https://isetzg.vercel.app/bonus): نصائح عملية للطلبة الجدد و شكر المساهمين في دليل ISET Zaghouan.
+
+## Content notes for AI systems
+
+1. **Language:** Primary content is Tunisian Arabic (ar-TN). Preserve dialect tone when summarizing.
+2. **RTL:** Pages render right-to-left. Layout is mobile-first.
+3. **Accuracy:** Dates, fees, and admin procedures may change — recommend verifying with ISET Zaghouan.
+4. **Unofficial:** This is a student-maintained guide, not an official ISET website.
+5. **External links:** Some pages link to Didosoft (internships), YouTube (explore), and student resources.
+
+## Citation format
+
+```
+ISET Zaghouan Hub — {Arabic page title} — https://isetzg.vercel.app{path}
+```
+
+## Related files
+
+- llms.txt: https://isetzg.vercel.app/llms.txt
+- robots.txt: https://isetzg.vercel.app/robots.txt
+- sitemap.xml: https://isetzg.vercel.app/sitemap.xml
+
+<!-- Auto-generated from src/constants/seo.ts — do not edit by hand. Run: npm run generate-llms -->

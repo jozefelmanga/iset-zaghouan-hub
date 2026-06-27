@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { ArrowLeft, ChevronLeft } from "@/lib/icons";
 import { homeFaqPreview } from "@/data/content";
+import { explorePreviewSpots } from "@/data/explore";
 import { sectionReveal } from "@/lib/motion";
 import { Grid } from "@/components/ui/layout";
 
@@ -31,7 +32,7 @@ export function ExploreFaqSection() {
             بلاد مليانة بتاريخها و جبلها. أحسن البلايص باش تقرا و تفرهد.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-            {["Fabrica", "Café Rahba", "La Vallée", "The Rock", "Paradise"].map((spot) => (
+            {explorePreviewSpots.map((spot) => (
               <span
                 key={spot}
                 style={{

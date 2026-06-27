@@ -44,11 +44,27 @@ export {
 
   // Career
   Briefcase,
+  Code,
+  Coins,
+  FlaskConical,
+  Layers,
 
   // Campus & Explore
   MapPin,
   Map,
   Compass,
+  Coffee,
+  Camera,
+  Mountain,
+  Store,
+  Dumbbell,
+  Image as ImageIcon,
+  Play,
+  Instagram,
+  Phone,
+  MessageCircle,
+  Lightbulb,
+  DoorOpen,
 
   // UI Feedback
   HelpCircle,

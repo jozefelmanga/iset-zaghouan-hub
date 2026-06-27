@@ -1,14 +1,19 @@
+import { pageMetadata } from "@/constants/seo";
 import { MessageCircle } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Alert } from "@/components/ui/Alert";
 import { Accordion } from "@/components/ui/Accordion";
 import { PageWrapper } from "@/components/ui/layout";
 import { EmergencyContacts } from "@/components/faq/EmergencyContacts";
+import { FaqJsonLd } from "@/components/faq/FaqJsonLd";
 import { faqItems, emergencyContacts } from "@/data/faq";
+
+export const metadata = pageMetadata("/faq");
 
 export default function FAQPage() {
   return (
     <PageWrapper className="max-w-[760px]">
+      <FaqJsonLd items={faqItems} />
       <StaticPageHeader
         icon="help-circle"
         label="مساعدة"

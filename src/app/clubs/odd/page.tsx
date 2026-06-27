@@ -1,6 +1,9 @@
+import { pageMetadata } from "@/constants/seo";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { OddPageContent } from "@/components/clubs/OddPageContent";
+
+export const metadata = pageMetadata("/clubs/odd");
 
 export default function ODDPage() {
   return (

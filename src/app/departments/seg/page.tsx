@@ -1,6 +1,9 @@
+import { pageMetadata } from "@/constants/seo";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { SEGPageContent } from "@/components/departments/SEGPageContent";
+
+export const metadata = pageMetadata("/departments/seg");
 
 export default function SEGPage() {
   return (

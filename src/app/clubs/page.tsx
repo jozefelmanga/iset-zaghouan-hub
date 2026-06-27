@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/constants/seo";
 import { Heart, Star, CheckCircle2 } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert } from "@/components/ui/shared";
@@ -5,6 +6,8 @@ import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { ClubBenefitCard, ClubDirectoryCard } from "@/components/clubs/ClubCards";
 import { clubMeta, clubBenefitCards, clubDirectory } from "@/data/clubs";
+
+export const metadata = pageMetadata("/clubs");
 
 export default function ClubsPage() {
   return (

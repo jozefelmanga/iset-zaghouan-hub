@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
 import { AppLayout } from "@/components/layout/AppLayout";
+import { Analytics } from "@/components/layout/Analytics";
+import { rootMetadata } from "@/lib/seo";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "ISET Zaghouan Hub — دليل الطالب",
-  description: "دليل الطالب في ISET Zaghouan - الترسيم، المبيت، النقل، البورص، الستاجات، وكل ما يخص الحياة الجامعية",
-  keywords: ["ISET Zaghouan", "دليل الطالب", "ترسيم", "مبيت", "بورص", "نقل"],
-  openGraph: {
-    title: "ISET Zaghouan Hub — دليل الطالب",
-    description: "دليلك الشامل للحياة الجامعية في ISET Zaghouan",
-    type: "website",
-  },
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -21,6 +14,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" data-scroll-behavior="smooth">
       <head>
+        <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -30,6 +24,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-[100dvh]">
         <AppLayout>{children}</AppLayout>
+        <Analytics />
       </body>
     </html>
   );

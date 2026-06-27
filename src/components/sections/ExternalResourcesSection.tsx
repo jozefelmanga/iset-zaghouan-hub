@@ -66,7 +66,7 @@ export function ExternalResourcesSection() {
               <a
                 href={resource.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="transition-all duration-200 hover:border-[var(--color-secondary)]"
                 style={{
                   display: "inline-flex",

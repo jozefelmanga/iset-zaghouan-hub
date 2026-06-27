@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/constants/seo";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { QuickAccessSection } from "@/components/sections/QuickAccessSection";
 import { StudentJourneySection } from "@/components/sections/StudentJourneySection";
@@ -6,6 +7,8 @@ import { AnnouncementsSection } from "@/components/sections/AnnouncementsSection
 import { ExternalResourcesSection } from "@/components/sections/ExternalResourcesSection";
 import { ExploreFaqSection } from "@/components/sections/ExploreFaqSection";
 import { Container } from "@/components/ui/layout";
+
+export const metadata = pageMetadata("/");
 
 export default function HomePage() {
   return (

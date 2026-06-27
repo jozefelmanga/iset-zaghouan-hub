@@ -1,9 +1,12 @@
+import { pageMetadata } from "@/constants/seo";
 import { CheckCircle2, Camera, DoorOpen, MapPin, Info } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { libraryInfo } from "@/data/content";
+
+export const metadata = pageMetadata("/library");
 
 export default function LibraryPage() {
   return (

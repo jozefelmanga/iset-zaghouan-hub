@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/constants/seo";
 import { AlertCircle, CheckCircle2, FileText } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert, ImageGallery } from "@/components/ui/shared";
@@ -5,6 +6,8 @@ import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { BourseCalculator } from "@/components/bourse/BourseCalculator";
 import { scholarshipTypes, scholarshipRules, scholarshipDocs } from "@/data/scholarships";
+
+export const metadata = pageMetadata("/bourse");
 
 export default function BoursePage() {
   return (

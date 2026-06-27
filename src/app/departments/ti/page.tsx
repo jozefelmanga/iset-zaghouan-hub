@@ -1,6 +1,9 @@
+import { pageMetadata } from "@/constants/seo";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { TIPageContent } from "@/components/departments/TIPageContent";
+
+export const metadata = pageMetadata("/departments/ti");
 
 export default function TIPage() {
   return (

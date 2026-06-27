@@ -1,8 +1,11 @@
+import { pageMetadata } from "@/constants/seo";
 import { BookOpen } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Alert } from "@/components/ui/Alert";
 import { PageWrapper } from "@/components/ui/layout";
 import { MastersProgramGrid } from "@/components/masters/MastersProgramGrid";
+
+export const metadata = pageMetadata("/masters");
 
 export default function MastersPage() {
   return (

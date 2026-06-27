@@ -1,6 +1,9 @@
+import { pageMetadata } from "@/constants/seo";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { EnactusPageContent } from "@/components/clubs/EnactusPageContent";
+
+export const metadata = pageMetadata("/clubs/enactus");
 
 export default function EnactusPage() {
   return (

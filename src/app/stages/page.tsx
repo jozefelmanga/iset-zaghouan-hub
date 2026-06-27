@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/constants/seo";
 import { Calendar, Calculator, FileText, CheckCircle2, AlertCircle } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Badge, Alert } from "@/components/ui/shared";
@@ -10,6 +11,8 @@ const yearColors = [
   { bg: "rgba(34,197,94,0.08)", border: "rgba(34,197,94,0.2)", text: "#22C55E", badge: "success" as const },
   { bg: "rgba(246,180,27,0.08)", border: "rgba(246,180,27,0.2)", text: "#B45309", badge: "warning" as const },
 ];
+
+export const metadata = pageMetadata("/stages");
 
 export default function StagesPage() {
   return (

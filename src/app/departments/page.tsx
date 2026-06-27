@@ -1,8 +1,11 @@
+import { pageMetadata } from "@/constants/seo";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Alert } from "@/components/ui/Alert";
 import { PageWrapper } from "@/components/ui/layout";
 import { DepartmentCard } from "@/components/departments/DepartmentCard";
 import { departmentList } from "@/data/departments";
+
+export const metadata = pageMetadata("/departments");
 
 export default function DepartmentsPage() {
   return (

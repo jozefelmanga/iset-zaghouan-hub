@@ -1,6 +1,9 @@
+import { pageMetadata } from "@/constants/seo";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { GPRPageContent } from "@/components/departments/GPRPageContent";
+
+export const metadata = pageMetadata("/departments/gpr");
 
 export default function GPRPage() {
   return (

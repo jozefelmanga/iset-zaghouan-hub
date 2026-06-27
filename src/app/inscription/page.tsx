@@ -1,6 +1,9 @@
+import { pageMetadata } from "@/constants/seo";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { InscriptionContent } from "@/components/inscription/InscriptionContent";
+
+export const metadata = pageMetadata("/inscription");
 
 export default function InscriptionPage() {
   return (

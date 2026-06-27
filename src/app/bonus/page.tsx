@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/constants/seo";
 import { Heart, Lightbulb, Coffee, Home } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert } from "@/components/ui/shared";
@@ -25,6 +26,8 @@ function TipList({ tips, accentColor }: { tips: string[]; accentColor: string })
     </div>
   );
 }
+
+export const metadata = pageMetadata("/bonus");
 
 export default function BonusPage() {
   return (

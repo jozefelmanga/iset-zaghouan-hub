@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/constants/seo";
 import { BookOpen } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
@@ -11,6 +12,8 @@ import {
 } from "@/components/explore/ExploreSections";
 import { exploreZaghouan } from "@/data/explore";
 import { exploreServiceIcons } from "@/lib/iconMaps";
+
+export const metadata = pageMetadata("/explore");
 
 export default function ExplorePage() {
   const { nearbyServices } = exploreZaghouan;

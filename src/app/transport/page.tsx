@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/constants/seo";
 import { Bus, Phone, Clock, AlertCircle, ExternalLink } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert } from "@/components/ui/shared";
@@ -5,6 +6,8 @@ import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { TransportBusGallery } from "@/components/transport/TransportBusGallery";
 import { transportRoutes, transportTips } from "@/data/transport";
+
+export const metadata = pageMetadata("/transport");
 
 const typeColors: Record<string, { bg: string; text: string; label: string }> = {
   shared_taxi: { bg: "rgba(246,180,27,0.10)", text: "#B45309", label: "لواج" },

@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/constants/seo";
 import { Clock, Moon, PartyPopper, AlertCircle, CheckCircle2, Info, ImageIcon } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert } from "@/components/ui/shared";
@@ -12,6 +13,8 @@ const infoAlerts = [
   { title: "دوبل بلاتو", content: restaurantInfo.doublePlate, variant: "success" as const },
   { title: "السبت", content: restaurantInfo.saturday, variant: "warning" as const },
 ];
+
+export const metadata = pageMetadata("/resto");
 
 export default function RestoPage() {
   return (

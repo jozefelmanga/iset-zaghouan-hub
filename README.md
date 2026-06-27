@@ -34,4 +34,8 @@ src/
 
 The app uses `output: 'export'` — deploy the `dist/` folder to any static host (Vercel, Netlify, GitHub Pages, etc.).
 
+Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL` to your production domain (canonical URLs, sitemap, Open Graph).
+
+Optional: set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` to enable privacy-friendly analytics.
+
 See `design/design.md` for the full product spec.

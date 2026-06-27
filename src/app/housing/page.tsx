@@ -1,6 +1,9 @@
+import { pageMetadata } from "@/constants/seo";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { HousingContent } from "@/components/housing/HousingContent";
+
+export const metadata = pageMetadata("/housing");
 
 export default function HousingPage() {
   return (

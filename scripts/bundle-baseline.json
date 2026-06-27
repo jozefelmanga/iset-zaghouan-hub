@@ -1,0 +1,6 @@
+{
+  "homepageInitialJsGzipBytes": 249128,
+  "maxHomepageInitialJsGzipBytes": 280000,
+  "measuredAt": "2026-06-27",
+  "note": "Sum of gzip sizes for all <script src> tags in dist/index.html after Week 3 perf work (~243 KB)."
+}

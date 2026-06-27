@@ -1,17 +1,40 @@
 import { pageMetadata } from "@/constants/seo";
+import dynamic from "next/dynamic";
 import { BookOpen } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
+import { PageContentPlaceholder } from "@/components/ui/PageContentPlaceholder";
 import {
   ExploreHeroBanner,
   ExploreStudySpots,
   ExploreCafeTags,
-  ExploreMountainGuide,
-  ExploreYoutubeSection,
-  ExplorePhotoGallerySection,
 } from "@/components/explore/ExploreSections";
 import { exploreZaghouan } from "@/data/explore";
 import { exploreServiceIcons } from "@/lib/iconMaps";
+
+const ExploreMountainGuide = dynamic(
+  () =>
+    import("@/components/explore/ExploreSections").then((mod) => ({
+      default: mod.ExploreMountainGuide,
+    })),
+  { loading: () => <PageContentPlaceholder minHeight={280} /> }
+);
+
+const ExploreYoutubeSection = dynamic(
+  () =>
+    import("@/components/explore/ExploreSections").then((mod) => ({
+      default: mod.ExploreYoutubeSection,
+    })),
+  { loading: () => <PageContentPlaceholder minHeight={220} /> }
+);
+
+const ExplorePhotoGallerySection = dynamic(
+  () =>
+    import("@/components/explore/ExploreSections").then((mod) => ({
+      default: mod.ExplorePhotoGallerySection,
+    })),
+  { loading: () => <PageContentPlaceholder minHeight={320} /> }
+);
 
 export const metadata = pageMetadata("/explore");
 

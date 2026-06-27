@@ -42,3 +42,6 @@ next-env.d.ts
 
 # build output
 /dist/
+
+# local planning docs (not committed)
+/mobile-perf-plan.md

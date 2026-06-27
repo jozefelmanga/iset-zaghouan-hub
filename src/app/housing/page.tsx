@@ -1,7 +1,16 @@
 import { pageMetadata } from "@/constants/seo";
+import dynamic from "next/dynamic";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
-import { HousingContent } from "@/components/housing/HousingContent";
+import { PageContentPlaceholder } from "@/components/ui/PageContentPlaceholder";
+
+const HousingContent = dynamic(
+  () =>
+    import("@/components/housing/HousingContent").then((mod) => ({
+      default: mod.HousingContent,
+    })),
+  { loading: () => <PageContentPlaceholder minHeight={480} /> }
+);
 
 export const metadata = pageMetadata("/housing");
 

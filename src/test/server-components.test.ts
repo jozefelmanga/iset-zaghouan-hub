@@ -4,12 +4,17 @@ import { describe, expect, it } from "vitest";
 
 /** Files that must remain Server Components (no client hooks or directives). */
 const SERVER_COMPONENT_FILES = [
+  "src/components/layout/RootShell.tsx",
+  "src/components/layout/Footer.tsx",
   "src/components/ui/StaticPageHeader.tsx",
   "src/components/ui/layout.tsx",
   "src/components/ui/Badge.tsx",
   "src/components/ui/Alert.tsx",
   "src/components/ui/StepItem.tsx",
   "src/components/ui/TimelineItem.tsx",
+  "src/components/ui/MotionReveal.tsx",
+  "src/components/ui/SectionHeader.tsx",
+  "src/components/ui/PageContentPlaceholder.tsx",
   "src/components/ui/Skeleton.tsx",
 ];
 

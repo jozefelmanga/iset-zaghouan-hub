@@ -1,7 +1,16 @@
 import { pageMetadata } from "@/constants/seo";
+import dynamic from "next/dynamic";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
-import { GPRPageContent } from "@/components/departments/GPRPageContent";
+import { PageContentPlaceholder } from "@/components/ui/PageContentPlaceholder";
+
+const GPRPageContent = dynamic(
+  () =>
+    import("@/components/departments/GPRPageContent").then((mod) => ({
+      default: mod.GPRPageContent,
+    })),
+  { loading: () => <PageContentPlaceholder minHeight={400} /> }
+);
 
 export const metadata = pageMetadata("/departments/gpr");
 

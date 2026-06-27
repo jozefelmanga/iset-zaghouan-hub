@@ -42,6 +42,10 @@ export function HeroSection() {
       <img
         src="/images/banner.webp"
         alt="ISET Zaghouan Campus"
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+        decoding="async"
         style={{
           position: "absolute",
           inset: 0,

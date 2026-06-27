@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { AppLayout } from "@/components/layout/AppLayout";
+import { RootShell } from "@/components/layout/RootShell";
 import { Analytics } from "@/components/layout/Analytics";
-import { rootMetadata } from "@/lib/seo";
+import { inter } from "@/lib/fonts";
+import { OG_IMAGE_PATH, rootMetadata } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = rootMetadata;
@@ -12,19 +13,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" data-scroll-behavior="smooth">
+    <html lang="ar" dir="rtl" data-scroll-behavior="smooth" className={inter.variable}>
       <head>
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="alternate" type="text/markdown" title="LLMs" href="/llms.txt" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="preload" as="image" href={OG_IMAGE_PATH} fetchPriority="high" />
       </head>
-      <body className="antialiased min-h-[100dvh]">
-        <AppLayout>{children}</AppLayout>
+      <body className={`${inter.className} antialiased min-h-[100dvh]`}>
+        <RootShell>{children}</RootShell>
         <Analytics />
       </body>
     </html>

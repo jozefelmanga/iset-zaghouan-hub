@@ -1,7 +1,16 @@
 import { pageMetadata } from "@/constants/seo";
+import dynamic from "next/dynamic";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
-import { TIPageContent } from "@/components/departments/TIPageContent";
+import { PageContentPlaceholder } from "@/components/ui/PageContentPlaceholder";
+
+const TIPageContent = dynamic(
+  () =>
+    import("@/components/departments/TIPageContent").then((mod) => ({
+      default: mod.TIPageContent,
+    })),
+  { loading: () => <PageContentPlaceholder minHeight={400} /> }
+);
 
 export const metadata = pageMetadata("/departments/ti");
 

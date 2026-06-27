@@ -96,7 +96,7 @@ export const staggerItem: Variants = {
 };
 
 /* ============================================================
-   PAGE TRANSITION — used in AppLayout's motion.main
+   PAGE TRANSITION — legacy preset (removed from layout; kept for reference)
    ============================================================ */
 export const pageTransition = {
   initial:   { opacity: 0, y: 12 },

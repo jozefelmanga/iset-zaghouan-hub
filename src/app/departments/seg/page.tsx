@@ -1,7 +1,16 @@
 import { pageMetadata } from "@/constants/seo";
+import dynamic from "next/dynamic";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
-import { SEGPageContent } from "@/components/departments/SEGPageContent";
+import { PageContentPlaceholder } from "@/components/ui/PageContentPlaceholder";
+
+const SEGPageContent = dynamic(
+  () =>
+    import("@/components/departments/SEGPageContent").then((mod) => ({
+      default: mod.SEGPageContent,
+    })),
+  { loading: () => <PageContentPlaceholder minHeight={400} /> }
+);
 
 export const metadata = pageMetadata("/departments/seg");
 

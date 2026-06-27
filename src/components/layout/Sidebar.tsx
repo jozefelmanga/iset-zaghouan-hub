@@ -289,8 +289,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
               style={{
                 position: "fixed",
                 inset: 0,
-                background: "rgba(11,31,58,0.5)",
-                backdropFilter: "blur(4px)",
+                background: "rgba(11,31,58,0.6)",
                 zIndex: 200,
               }}
             />

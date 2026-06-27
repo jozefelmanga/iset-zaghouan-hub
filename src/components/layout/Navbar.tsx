@@ -1,14 +1,32 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { GraduationCap, Search, Menu } from "lucide-react";
+import { GraduationCap, Search, Menu } from "@/lib/icons";
 import { motion } from "framer-motion";
-import { CommandPalette } from "@/components/ui/CommandPalette";
+
+const CommandPalette = dynamic(
+  () =>
+    import("@/components/ui/CommandPalette").then((mod) => ({
+      default: mod.CommandPalette,
+    })),
+  { ssr: false }
+);
 
 export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void }) {
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [paletteMounted, setPaletteMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const openPalette = useCallback(() => {
+    setPaletteMounted(true);
+    setPaletteOpen(true);
+  }, []);
+
+  const closePalette = useCallback(() => {
+    setPaletteOpen(false);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -16,11 +34,11 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Ctrl+K global listener
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key === "k") {
         e.preventDefault();
+        setPaletteMounted(true);
         setPaletteOpen((prev) => !prev);
       }
     };
@@ -30,20 +48,13 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
 
   return (
     <>
-      <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
+      {paletteMounted && (
+        <CommandPalette open={paletteOpen} onClose={closePalette} />
+      )}
 
       <header
-        className="sticky top-0 z-50 transition-all duration-300"
-        style={{
-          height: "80px",
-          background: scrolled
-            ? "rgba(11,31,58,0.95)"
-            : "rgba(11,31,58,0.85)",
-          backdropFilter: "blur(16px)",
-          WebkitBackdropFilter: "blur(16px)",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
-          boxShadow: scrolled ? "0 4px 32px rgba(11,31,58,0.24)" : "none",
-        }}
+        className={`sticky top-0 z-50 nav-chrome transition-all duration-300 ${scrolled ? "nav-chrome-scrolled" : ""}`}
+        style={{ height: "80px" }}
       >
         <div
           style={{
@@ -56,7 +67,6 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
             gap: "clamp(12px, 3vw, 24px)",
           }}
         >
-          {/* Hamburger — mobile only */}
           <motion.button
             className="mobile-only"
             onClick={() => setDrawerOpen(true)}
@@ -78,9 +88,8 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
             <Menu size={20} strokeWidth={2} />
           </motion.button>
 
-          {/* Search — centerpiece */}
           <button
-            onClick={() => setPaletteOpen(true)}
+            onClick={openPalette}
             style={{
               flex: 1,
               maxWidth: "360px",
@@ -130,7 +139,6 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
             </kbd>
           </button>
 
-          {/* Logo */}
           <Link
             href="/"
             style={{
@@ -170,7 +178,6 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
           </Link>
         </div>
       </header>
-
     </>
   );
 }

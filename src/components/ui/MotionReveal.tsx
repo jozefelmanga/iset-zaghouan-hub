@@ -1,8 +1,5 @@
-"use client";
-
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
-import { enterAnimation } from "@/lib/motion";
+import { cn } from "@/lib/utils";
 
 interface MotionRevealProps {
   children: ReactNode;
@@ -10,11 +7,11 @@ interface MotionRevealProps {
   className?: string;
 }
 
-/** Thin client wrapper — use inside Server Component pages for enter animations. */
+/** CSS-only enter animation — no Framer Motion (Server Component safe). */
 export function MotionReveal({ children, delay = 0, className }: MotionRevealProps) {
   return (
-    <motion.div {...enterAnimation(delay)} className={className}>
+    <div className={cn("motion-reveal", className)} style={{ animationDelay: `${delay}s` }}>
       {children}
-    </motion.div>
+    </div>
   );
 }

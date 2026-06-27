@@ -1,10 +1,10 @@
 import { pageMetadata } from "@/constants/seo";
-import { AlertCircle, CheckCircle2, FileText } from "@/lib/icons";
+import { AlertCircle } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert, ImageGallery } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
-import { scholarshipTypes, scholarshipRules, scholarshipDocs } from "@/data/scholarships";
+import { scholarshipTypes, scholarshipTranches, scholarshipRules } from "@/data/scholarships";
 
 export const metadata = pageMetadata("/bourse");
 
@@ -36,6 +36,39 @@ export default function BoursePage() {
         ))}
       </div>
 
+      <div style={{ marginBottom: "32px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>دفعات البورصة الكاملة (1320 د)</span>
+        </div>
+        <Card elevation="flat" padding="20px">
+          <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "16px" }}>
+            البورصة الكاملة تتقسّم على 4 مرات في السنة. منحة الإدماج (500 د) منفصلة و ما تدخلش في هالحساب.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", gap: "12px" }}>
+            {scholarshipTranches.map(({ order, amount }) => (
+              <div
+                key={order}
+                style={{
+                  padding: "16px 12px",
+                  borderRadius: "14px",
+                  background: "rgba(34,197,94,0.06)",
+                  border: "1px solid rgba(34,197,94,0.18)",
+                  textAlign: "center",
+                }}
+              >
+                <p style={{ fontSize: "11px", fontWeight: 600, color: "var(--color-text-muted)", marginBottom: "6px" }}>
+                  الدفعة {order}
+                </p>
+                <p style={{ fontSize: "24px", fontWeight: 800, color: "#16A34A", fontFeatureSettings: '"tnum"' }}>
+                  {amount}
+                  <span style={{ fontSize: "13px", fontWeight: 500, color: "var(--color-text-muted)", marginRight: "2px" }}>د</span>
+                </p>
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+
       <div style={{ marginBottom: "28px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
           <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(246,180,27,0.12)", color: "var(--color-accent)", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -50,37 +83,19 @@ export default function BoursePage() {
         </div>
       </div>
 
-      <div style={{ marginBottom: "28px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <FileText size={16} strokeWidth={2} />
-          </div>
-          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>الأوراق المطلوبة</span>
-        </div>
-        <Card elevation="flat" padding="20px">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "10px", width: "100%", boxSizing: "border-box" }}>
-            {scholarshipDocs.map((doc, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 14px", borderRadius: "10px", background: "var(--color-background)" }}>
-                <CheckCircle2 size={14} style={{ color: "var(--color-secondary)", flexShrink: 0 }} strokeWidth={2.5} />
-                <span style={{ fontSize: "13px", color: "var(--color-text)" }}>{doc}</span>
-              </div>
-            ))}
-          </div>
-        </Card>
-      </div>
-
       <Alert title="ملاحظة مهمة" variant="info">
-        أوراق البورص هي نفسها أوراق 500 دينار. عند تقديم البورص، نفس الأوراق — إذا لم يكن الحق في البورص الكاملة تأخذ منحة الإدماج.
+        منحة الإدماج (500 د) منفصلة على البورصة. أوراق البورص هي نفسها أوراق منحة الإدماج — إذا ما عندكش حق في البورص كاملة تاخذ منحة الإدماج برك.
       </Alert>
 
       <ImageGallery
         title="دليل المنحة الجامعية"
         images={[
-          "/images/bourse (1).webp",
-          "/images/bourse (2).webp",
-          "/images/bourse (3).webp",
-          "/images/bourse (4).webp",
-          "/images/bourse (5).webp",
+          "/images/bourse/bourse (4).webp",
+          "/images/bourse/bourse (1).webp",
+          "/images/bourse/bourse (2).webp",
+          "/images/bourse/bourse (3).webp",
+          "/images/bourse/bourse (5).webp",
+          "/images/bourse/bourse (6).webp",
         ]}
       />
     </PageWrapper>

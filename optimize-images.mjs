@@ -53,33 +53,6 @@ async function optimizeImages() {
         } catch (err) {
           console.error(`  Error processing ${file}:`, err.message);
         }
-      } 
-      // Also optimize existing webp files if they are large
-      else if (ext === '.webp') {
-        const stats = await fs.stat(file);
-        if (stats.size > 200 * 1024) { // Only re-optimize if it's larger than 200KB
-          const tempFile = file + '.tmp';
-          try {
-             const imageBuffer = await fs.readFile(file);
-             await sharp(imageBuffer)
-              .resize({ width: 1920, withoutEnlargement: true })
-              .webp({ quality: 80, effort: 6 })
-              .toFile(tempFile);
-             
-             const newStats = await fs.stat(tempFile);
-             // Keep it only if we actually reduced the size
-             if (newStats.size < stats.size) {
-                 await fs.unlink(file);
-                 await fs.rename(tempFile, file);
-                 console.log(`Optimized existing WebP: ${path.basename(file)} (${(stats.size/1024).toFixed(2)} KB -> ${(newStats.size/1024).toFixed(2)} KB)`);
-                 optimizedCount++;
-             } else {
-                 await fs.unlink(tempFile);
-             }
-          } catch(err) {
-             console.error(`  Error optimizing ${file}:`, err.message);
-          }
-        }
       }
     }
     

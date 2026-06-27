@@ -1,5 +1,3 @@
-"use client";
-
 interface StepItemProps {
   number: number;
   title: string;

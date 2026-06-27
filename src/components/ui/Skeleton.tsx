@@ -1,5 +1,3 @@
-"use client";
-
 /**
  * Skeleton Components — Loading placeholder UI that replaces spinners.
  *

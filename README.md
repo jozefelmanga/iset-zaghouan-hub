@@ -15,7 +15,7 @@ Student onboarding guide for new students at **ISET Zaghouan** (Tunisia). A mobi
 npm run dev      # Start dev server
 npm run build    # Static production build → dist/
 npm run start    # Serve production build
-npm run test     # Run Vitest data validation tests
+npm run test     # Run Vitest (data validation + component tests)
 npm run lint     # ESLint
 ```
 
@@ -33,10 +33,5 @@ src/
 ## Deployment
 
 The app uses `output: 'export'` — deploy the `dist/` folder to any static host (Vercel, Netlify, GitHub Pages, etc.).
-
-## Planned
-
-- **Phase 5** — French UI shell (`next-intl`)
-- **Phase 7** — Vitest data validation (in progress)
 
 See `design/design.md` for the full product spec.

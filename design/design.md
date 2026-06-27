@@ -75,11 +75,6 @@ New ISET Zaghouan students (ages 18-22), primarily Tunisian Arabic speakers, als
 - Campus/club photos in `public/images/`
 - YouTube embeds for explore and external resources
 
-## i18n (planned — Phase 5)
-- Default: Arabic (Tunisian dialect content preserved)
-- Secondary: French UI shell (navbar, footer, page titles)
-- `next-intl` with JSON message files — not yet implemented
-
 ## Responsive
 - Mobile: < 640px, single column, bottom nav
 - Tablet: 640px–1024px, 2 columns, sidebar

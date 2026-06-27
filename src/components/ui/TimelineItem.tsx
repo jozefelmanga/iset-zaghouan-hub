@@ -1,5 +1,3 @@
-"use client";
-
 interface TimelineItemProps {
   time: string;
   title: string;

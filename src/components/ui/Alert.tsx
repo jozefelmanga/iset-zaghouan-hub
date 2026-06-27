@@ -1,5 +1,3 @@
-"use client";
-
 import { ReactNode } from "react";
 import { Info, AlertTriangle, CheckCircle2, AlertCircle } from "@/lib/icons";
 

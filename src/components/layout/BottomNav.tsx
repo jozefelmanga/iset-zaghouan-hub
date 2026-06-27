@@ -8,13 +8,14 @@ import { cn } from "@/lib/utils";
 
 export function BottomNav() {
   const pathname = usePathname();
+  const navHrefs = bottomNavLinks.map((link) => link.href);
 
   return (
     <nav className="mobile-only bottom-nav-chrome">
       <div className="bottom-nav-inner">
         {bottomNavLinks.map((link) => {
           const Icon = link.icon;
-          const active = isNavActive(link.href, pathname);
+          const active = isNavActive(link.href, pathname, navHrefs);
 
           return (
             <Link key={link.href} href={link.href} className="bottom-nav-link">

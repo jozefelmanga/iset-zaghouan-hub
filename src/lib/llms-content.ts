@@ -29,6 +29,7 @@ const LLM_SECTIONS: { heading: string; paths: PagePath[] }[] = [
     heading: "Academics",
     paths: [
       "/inscription",
+      "/inscription/foyer",
       "/library",
       "/departments",
       "/departments/ti",
@@ -140,7 +141,7 @@ export function generateLlmsFullTxt(): string {
     "## Interactive features",
     "",
     `- **Enrollment stepper** (${pageUrl("/inscription")}) — progress-tracked registration steps`,
-    `- **Housing tabs** (${pageUrl("/housing")}) — separate guides for Foyer (girls) and Louled (boys) dorms`,
+    `- **Housing** (${pageUrl("/housing")}) — Foyer (girls) and Louled (boys) dorm guides; dorm registration at ${pageUrl("/inscription/foyer")}`,
     `- **FAQ accordion** (${pageUrl("/faq")}) — common questions with FAQPage schema.org markup`,
     `- **Command palette** — in-app search across all pages (keyboard shortcut on desktop)`,
     `- **Department pages** — TI, SEG, GPR specialities with semester materials`,

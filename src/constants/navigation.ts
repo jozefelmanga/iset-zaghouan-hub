@@ -58,8 +58,9 @@ export const navGroups: NavGroup[] = [
     label: "ACADEMICS",
     color: "#3B82F6",
     links: [
-      { href: "/inscription",   label: "الترسيم الجامعي",   icon: FileText,       description: "خطوات التسجيل و الأوراق المطلوبة", category: "academic" },
-      { href: "/library",       label: "المكتبة",            icon: BookOpen,       description: "مراجع و اكزامانات",                 category: "academic" },
+      { href: "/inscription",        label: "الترسيم الجامعي",   icon: FileText,       description: "خطوات التسجيل و الأوراق المطلوبة", category: "academic" },
+      { href: "/inscription/foyer",  label: "الترسيم في المبيت", icon: Building2,      description: "تسجيل المبيت، الأوراق، و يوم الترسيم", category: "academic" },
+      { href: "/library",            label: "المكتبة",            icon: BookOpen,       description: "مراجع و اكزامانات",                 category: "academic" },
       { href: "/departments",   label: "الأقسام العلمية",   icon: GraduationCap,  description: "أقسام TI، SEG، و GPR بالمعهد",     category: "academic" },
       { href: "/masters",       label: "الماستر",            icon: Award,          description: "برامج الماستر المتوفرة",             category: "academic" },
     ],

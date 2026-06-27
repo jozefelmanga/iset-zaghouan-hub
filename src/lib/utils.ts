@@ -47,11 +47,26 @@ export function capitalize(str: string): string {
 
 /**
  * Check if a given pathname is active for a nav link href.
- * Handles exact match for "/" and prefix match for sub-paths.
+ * Handles exact match for "/" and prefix match for sub-paths, unless a more
+ * specific nav href also matches the current pathname.
  */
-export function isNavActive(href: string, pathname: string): boolean {
+export function isNavActive(
+  href: string,
+  pathname: string,
+  allHrefs?: readonly string[],
+): boolean {
   if (href === "/") return pathname === "/";
-  return pathname === href || pathname.startsWith(href + "/");
+  if (pathname === href) return true;
+  if (!pathname.startsWith(href + "/")) return false;
+
+  if (!allHrefs?.length) return true;
+
+  return !allHrefs.some(
+    (other) =>
+      other !== href
+      && other.startsWith(href + "/")
+      && (pathname === other || pathname.startsWith(other + "/")),
+  );
 }
 
 /**

@@ -16,6 +16,10 @@ export const PAGE_SEO = {
     title: "المبيت الجامعي",
     description: "معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصايح للسكن الجامعي.",
   },
+  "/inscription/foyer": {
+    title: "الترسيم في المبيت",
+    description: "كيفاش تترسّم في المبيت الجامعي: OOUN، الأوراق، E-dinar، و يوم الترسيم في الفواي.",
+  },
   "/bourse": {
     title: "البورص و المنحة",
     description: "دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط و الأوراق المطلوبة.",

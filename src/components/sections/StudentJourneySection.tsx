@@ -3,74 +3,59 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Grid } from "@/components/ui/layout";
 import { studentJourney } from "@/data/content";
-import { sectionReveal, itemReveal } from "@/lib/motion";
-import { Star } from "@/lib/icons";
+import { journeyStepIcons } from "@/lib/iconMaps";
+import { ArrowLeft } from "@/lib/icons";
+import { hoverLift, itemReveal, sectionReveal } from "@/lib/motion";
 
 export function StudentJourneySection() {
   return (
     <motion.section {...sectionReveal} className="mb-20">
-      <Card elevation="feature" padding="40px">
+      <Card elevation="feature" padding="32px">
         <SectionHeader
           label="رحلتك الجامعية"
           title="خطوة بخطوة"
           subtitle="دليل مبسط للطالب الجديد"
         />
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "0",
-            position: "relative",
-          }}
-        >
-          {/* Connecting line */}
-          <div
-            style={{
-              position: "absolute",
-              top: "24px",
-              left: "10%",
-              right: "10%",
-              height: "2px",
-              background: "linear-gradient(90deg, var(--color-secondary), var(--color-border))",
-              zIndex: 0,
-            }}
-          />
-          {studentJourney.map((step, i) => (
-            <motion.div
-              key={step.id}
-              {...itemReveal(i * 0.1)}
-              style={{ textAlign: "center", padding: "0 16px", position: "relative", zIndex: 1 }}
-            >
-              <div
-                style={{
-                  width: "48px",
-                  height: "48px",
-                  borderRadius: "50%",
-                  background: step.active ? "var(--color-secondary)" : "var(--color-surface)",
-                  border: step.active ? "none" : "2px solid var(--color-border)",
-                  color: step.active ? "#fff" : "var(--color-text-muted)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px",
-                  fontWeight: 700,
-                  fontSize: "15px",
-                  boxShadow: step.active ? "0 0 0 6px rgba(18,184,200,0.15)" : "none",
-                  transition: "all var(--transition-base)",
-                }}
+
+        <Grid gap="md" minColWidth="220px">
+          {studentJourney.map((step, i) => {
+            const Icon = journeyStepIcons[step.icon];
+            return (
+              <motion.a
+                key={step.id}
+                href={step.href}
+                {...itemReveal(i * 0.08)}
+                {...hoverLift}
+                className="group flex flex-col h-full no-underline rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] p-5 transition-colors hover:border-[rgba(18,184,200,0.35)]"
+                style={{ boxShadow: "var(--shadow-card)" }}
               >
-                {step.active ? <Star size={20} strokeWidth={2} /> : i + 1}
-              </div>
-              <p style={{ fontWeight: 600, fontSize: "14px", color: step.active ? "var(--color-secondary)" : "var(--color-text)", marginBottom: "6px" }}>
-                {step.title}
-              </p>
-              <p style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: 1.6 }}>
-                {step.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform duration-200 group-hover:scale-105"
+                  style={{
+                    background: "rgba(18,184,200,0.10)",
+                    color: "var(--color-secondary)",
+                  }}
+                >
+                  <Icon size={20} strokeWidth={2} />
+                </div>
+
+                <h3 className="text-[15px] font-bold text-[var(--color-text)] mb-1.5 group-hover:text-[var(--color-secondary)] transition-colors">
+                  {step.title}
+                </h3>
+                <p className="text-[12px] sm:text-[13px] text-[var(--color-text-secondary)] leading-relaxed flex-1">
+                  {step.description}
+                </p>
+
+                <span className="inline-flex items-center gap-1 mt-4 text-[12px] font-semibold text-[var(--color-secondary)] opacity-0 group-hover:opacity-100 transition-opacity">
+                  عرض التفاصيل
+                  <ArrowLeft size={13} />
+                </span>
+              </motion.a>
+            );
+          })}
+        </Grid>
       </Card>
     </motion.section>
   );

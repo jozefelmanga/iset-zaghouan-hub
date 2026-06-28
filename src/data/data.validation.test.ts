@@ -3,9 +3,6 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { allNavLinks, footerLinks } from "@/constants/navigation";
 import {
-  announcements,
-  campusServices,
-  homeFaqPreview,
   quickActions,
   studentJourney,
 } from "@/data/content";
@@ -14,7 +11,8 @@ import { departmentList, masterPrograms } from "@/data/departments";
 import { exploreZaghouan, zaghouanGallery } from "@/data/explore";
 import { faqItems, emergencyContacts } from "@/data/faq";
 import { externalResources } from "@/data/resources";
-import { generalTips, restoTips, foyerTips, contributors } from "@/data/bonus";
+import { instituteOfficial } from "@/data/official";
+import { generalTips, restoTips, foyerTips, contributors, studentTips } from "@/data/bonus";
 import {
   assertAssetPath,
   assertExternalHref,
@@ -76,14 +74,10 @@ describe("navigation", () => {
     }
   });
 
-  it("quick actions and campus services link to valid routes", () => {
+  it("quick actions link to valid routes", () => {
     for (const action of quickActions) {
       assertInternalHref(action.href, `quickAction: ${action.id}`);
       expect(appRoutes).toContain(action.href);
-    }
-    for (const service of campusServices) {
-      assertInternalHref(service.href, `campusService: ${service.id}`);
-      expect(appRoutes).toContain(service.href);
     }
   });
 });
@@ -93,13 +87,6 @@ describe("faq", () => {
     for (const item of faqItems) {
       assertNonEmpty(item.question, "faq.question");
       assertNonEmpty(item.answer, "faq.answer");
-    }
-  });
-
-  it("home FAQ preview questions exist in full FAQ list", () => {
-    const questions = new Set(faqItems.map((item) => item.question));
-    for (const preview of homeFaqPreview) {
-      expect(questions, `preview not in faqItems: ${preview}`).toContain(preview);
     }
   });
 
@@ -185,17 +172,29 @@ describe("resources", () => {
   });
 });
 
+describe("official", () => {
+  it("official links have valid external urls", () => {
+    assertExternalHref(instituteOfficial.links.website.href, "official.website");
+    assertExternalHref(instituteOfficial.links.facebook.href, "official.facebook");
+    assertNonEmpty(instituteOfficial.profile.email, "official.email");
+    assertAssetPath(instituteOfficial.profile.logo, "official.logo");
+    for (const phone of instituteOfficial.profile.phones) {
+      assertNonEmpty(phone, "official.phone");
+    }
+  });
+});
+
 describe("home content", () => {
-  it("student journey steps are numbered uniquely", () => {
+  const appRoutes = getAppRoutes();
+
+  it("student journey steps are numbered uniquely and link to valid routes", () => {
     const ids = studentJourney.map((s) => String(s.id));
     assertUniqueValues(ids, "studentJourney.id");
-    expect(studentJourney.some((s) => s.active)).toBe(true);
-  });
-
-  it("announcements have titles and descriptions", () => {
-    for (const item of announcements) {
-      assertNonEmpty(item.title, "announcement.title");
-      assertNonEmpty(item.description, "announcement.description");
+    for (const step of studentJourney) {
+      assertInternalHref(step.href, `studentJourney: ${step.id}`);
+      expect(appRoutes).toContain(step.href);
+      assertNonEmpty(step.title, "studentJourney.title");
+      assertNonEmpty(step.icon, "studentJourney.icon");
     }
   });
 });
@@ -207,6 +206,14 @@ describe("bonus", () => {
     expect(foyerTips.length).toBeGreaterThan(0);
     for (const tip of [...generalTips, ...restoTips, ...foyerTips]) {
       assertNonEmpty(tip, "tip");
+    }
+  });
+
+  it("student tips carousel includes all bonus tips", () => {
+    expect(studentTips.length).toBe(generalTips.length + restoTips.length + foyerTips.length);
+    for (const tip of studentTips) {
+      assertNonEmpty(tip.text, "studentTip.text");
+      assertNonEmpty(tip.categoryLabel, "studentTip.categoryLabel");
     }
   });
 

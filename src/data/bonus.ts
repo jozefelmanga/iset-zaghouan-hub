@@ -45,3 +45,39 @@ export const contributors = [
   "Adel Aiouaz",
   "Améni Jdidi",
 ];
+
+export type StudentTip = {
+  text: string;
+  category: "general" | "resto" | "foyer";
+  categoryLabel: string;
+  accentColor: string;
+};
+
+export const homeTipsMeta = {
+  label: "نصيحة",
+  title: "نصائح وإهداء",
+  subtitle: "نصيحة جديدة كل مرة — من طلبة مروا بنفس الطريق",
+  cta: "كل النصائح",
+  ctaHref: "/bonus",
+};
+
+export const studentTips: StudentTip[] = [
+  ...generalTips.map((text) => ({
+    text,
+    category: "general" as const,
+    categoryLabel: "نصيحة عامة",
+    accentColor: "var(--color-secondary)",
+  })),
+  ...restoTips.map((text) => ({
+    text,
+    category: "resto" as const,
+    categoryLabel: "الريستو",
+    accentColor: "#F97316",
+  })),
+  ...foyerTips.map((text) => ({
+    text,
+    category: "foyer" as const,
+    categoryLabel: "المبيت",
+    accentColor: "#12B8C8",
+  })),
+];

@@ -26,6 +26,7 @@ import {
   internshipJobSearchTips,
   internshipContacts,
   dsegExampleReports,
+  stageJournalDocuments,
   stagePresentationLogos,
   internships,
 } from "@/data/internships";
@@ -155,6 +156,31 @@ export function StagesPageContent() {
             ))}
           </div>
         </Card>
+      </motion.div>
+
+      {/* Journal / Livret */}
+      <motion.div {...itemReveal(0.15)} id="journal" style={{ marginBottom: "36px" }}>
+        <SectionHeader icon={BookOpen} title={stageJournalDocuments.title} color="#8B5CF6" bg="rgba(139,92,246,0.10)" />
+        <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "16px", lineHeight: 1.6 }}>
+          {stageJournalDocuments.description}
+        </p>
+        <div className={styles.logoGrid}>
+          {stageJournalDocuments.documents.map((doc) => (
+            <Card key={doc.downloadSrc} elevation="raised" padding="16px">
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px", height: "100%" }}>
+                <div style={{ width: "100%", height: "100px", display: "flex", alignItems: "center", justifyContent: "center", padding: "12px", borderRadius: "12px", background: "rgba(139,92,246,0.06)", border: "1px solid rgba(139,92,246,0.15)" }}>
+                  <FileText size={40} strokeWidth={1.5} style={{ color: "#8B5CF6" }} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <p style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "4px" }}>{doc.name}</p>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-secondary)", marginBottom: "6px" }}>{doc.label}</p>
+                  <p style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: 1.6, marginBottom: "12px" }}>{doc.description}</p>
+                  <DownloadButton href={encodeURI(doc.downloadSrc)} downloadName={doc.downloadName} />
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
       </motion.div>
 
       {/* Deadline calendar */}

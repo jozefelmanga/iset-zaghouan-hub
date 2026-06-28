@@ -3,10 +3,17 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ArrowLeft } from "@/lib/icons";
+import { Divider, Grid } from "@/components/ui/layout";
+import { FeaturedPlatformCard } from "@/components/sections/FeaturedPlatformCard";
 import { externalResources, externalResourcesMeta } from "@/data/resources";
-import { externalResourceIcons } from "@/lib/iconMaps";
-import { sectionReveal } from "@/lib/motion";
+import { sectionReveal, itemReveal } from "@/lib/motion";
+
+const featuredPlatforms = externalResources.filter(
+  (r): r is Extract<typeof r, { type: "link" }> => r.type === "link"
+);
+const videos = externalResources.filter(
+  (r): r is Extract<typeof r, { type: "video" }> => r.type === "video"
+);
 
 export function ExternalResourcesSection() {
   return (
@@ -16,79 +23,61 @@ export function ExternalResourcesSection() {
         title={externalResourcesMeta.title}
         subtitle={externalResourcesMeta.subtitle}
       />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
-        {externalResources.map((resource) => {
-          if (resource.type === "video") {
-            return (
-              <Card key={resource.embedUrl} elevation="raised" padding="0" style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
-                  <iframe
-                    src={resource.embedUrl}
-                    title={resource.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                  />
-                </div>
-                <div style={{ padding: "20px" }}>
-                  <h3 style={{ fontSize: "16px", fontWeight: 700, marginBottom: "8px", color: "var(--color-text)", lineHeight: 1.4 }}>
-                    {resource.title}
-                  </h3>
-                  <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
-                    {resource.description}
-                    {resource.credit && (
-                      <span style={{ display: "block", marginTop: "4px", fontSize: "11px", color: "var(--color-text-muted)" }}>
-                        {resource.credit}
-                      </span>
-                    )}
-                  </p>
-                </div>
-              </Card>
-            );
-          }
 
-          const Icon = externalResourceIcons[resource.icon];
-          return (
-            <Card key={resource.href} elevation="raised" padding="24px" style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
-                <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: resource.bg, color: resource.color, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Icon size={24} strokeWidth={2} />
-                </div>
-                <div>
-                  <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)" }}>{resource.title}</h3>
-                  <span style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>{resource.subtitle}</span>
-                </div>
-              </div>
-              <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6, flex: 1, marginBottom: "20px" }}>
-                {resource.description}
-              </p>
-              <a
-                href={resource.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-all duration-200 hover:border-[var(--color-secondary)]"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "8px",
-                  padding: "10px 16px",
-                  background: "var(--color-background)",
-                  border: "1px solid var(--color-border)",
-                  borderRadius: "8px",
-                  color: "var(--color-text)",
-                  fontSize: "13px",
-                  fontWeight: 600,
-                  textDecoration: "none",
-                }}
-              >
-                {resource.icon === "book-open" ? "زور المنصة" : "تصفح الدليل"} <ArrowLeft size={14} />
-              </a>
-            </Card>
-          );
-        })}
+      <div style={{ marginBottom: "32px" }}>
+        <p
+          style={{
+            fontSize: "13px",
+            fontWeight: 700,
+            color: "var(--color-text-muted)",
+            marginBottom: "16px",
+            letterSpacing: "0.04em",
+          }}
+        >
+          منصات أساسية — لا تفوّتها
+        </p>
+        <Grid gap="lg" minColWidth="320px">
+          {featuredPlatforms.map((resource, i) => (
+            <motion.div key={resource.href} {...itemReveal(i * 0.08)} style={{ height: "100%" }}>
+              <FeaturedPlatformCard resource={resource} />
+            </motion.div>
+          ))}
+        </Grid>
       </div>
+
+      <Divider label="فيديوهات" className="mb-8" />
+
+      <Grid gap="md" minColWidth="300px">
+        {videos.map((resource, i) => (
+          <motion.div key={resource.embedUrl} {...itemReveal(i * 0.06)}>
+            <Card elevation="raised" padding="0" style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}>
+              <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+                <iframe
+                  src={resource.embedUrl}
+                  title={resource.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                />
+              </div>
+              <div style={{ padding: "20px" }}>
+                <h3 style={{ fontSize: "16px", fontWeight: 700, marginBottom: "8px", color: "var(--color-text)", lineHeight: 1.4 }}>
+                  {resource.title}
+                </h3>
+                <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
+                  {resource.description}
+                  {resource.credit && (
+                    <span style={{ display: "block", marginTop: "4px", fontSize: "11px", color: "var(--color-text-muted)" }}>
+                      {resource.credit}
+                    </span>
+                  )}
+                </p>
+              </div>
+            </Card>
+          </motion.div>
+        ))}
+      </Grid>
     </motion.section>
   );
 }

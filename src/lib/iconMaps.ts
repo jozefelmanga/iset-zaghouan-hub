@@ -24,6 +24,7 @@ import {
   HelpCircle,
   MapPin,
   Heart,
+  CheckCircle2,
   Sparkles,
   CreditCard,
   Stethoscope,
@@ -59,6 +60,20 @@ export const quickActionIcons: Record<string, LucideIcon> = {
   bus: Bus,
   briefcase: Briefcase,
   "book-open": BookOpen,
+  "graduation-cap": GraduationCap,
+  "map-pin": MapPin,
+  "help-circle": HelpCircle,
+  heart: Heart,
+  users: Users,
+  award: Award,
+  utensils: UtensilsCrossed,
+};
+
+export const journeyStepIcons: Record<string, LucideIcon> = {
+  "file-text": FileText,
+  "check-circle": CheckCircle2,
+  building: Building2,
+  sparkles: Sparkles,
 };
 
 export const campusServiceIcons: Record<string, LucideIcon> = {

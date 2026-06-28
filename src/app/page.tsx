@@ -12,22 +12,6 @@ const StudentJourneySection = dynamic(
   { loading: () => <HomeSectionPlaceholder /> }
 );
 
-const CampusServicesSection = dynamic(
-  () =>
-    import("@/components/sections/CampusServicesSection").then((mod) => ({
-      default: mod.CampusServicesSection,
-    })),
-  { loading: () => <HomeSectionPlaceholder /> }
-);
-
-const AnnouncementsSection = dynamic(
-  () =>
-    import("@/components/sections/AnnouncementsSection").then((mod) => ({
-      default: mod.AnnouncementsSection,
-    })),
-  { loading: () => <HomeSectionPlaceholder /> }
-);
-
 const ExternalResourcesSection = dynamic(
   () =>
     import("@/components/sections/ExternalResourcesSection").then((mod) => ({
@@ -36,10 +20,18 @@ const ExternalResourcesSection = dynamic(
   { loading: () => <HomeSectionPlaceholder /> }
 );
 
-const ExploreFaqSection = dynamic(
+const OfficialChannelsSection = dynamic(
   () =>
-    import("@/components/sections/ExploreFaqSection").then((mod) => ({
-      default: mod.ExploreFaqSection,
+    import("@/components/sections/OfficialChannelsSection").then((mod) => ({
+      default: mod.OfficialChannelsSection,
+    })),
+  { loading: () => <HomeSectionPlaceholder /> }
+);
+
+const TipsCarouselSection = dynamic(
+  () =>
+    import("@/components/sections/TipsCarouselSection").then((mod) => ({
+      default: mod.TipsCarouselSection,
     })),
   { loading: () => <HomeSectionPlaceholder /> }
 );
@@ -64,10 +56,9 @@ export default function HomePage() {
       <Container size="content">
         <QuickAccessSection />
         <StudentJourneySection />
-        <CampusServicesSection />
-        <AnnouncementsSection />
         <ExternalResourcesSection />
-        <ExploreFaqSection />
+        <OfficialChannelsSection />
+        <TipsCarouselSection />
       </Container>
     </>
   );

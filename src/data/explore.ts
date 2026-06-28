@@ -67,8 +67,6 @@ export const zaghouanGallery = [
   "/images/zaghouan pictures/453910680_4537749859783633_4355390446148271378_n.webp",
 ];
 
-export const explorePreviewSpots = ["Fabrica", "Café Rahba", "La Vallée", "The Rock", "Paradise"];
-
 export const cafeTagColors = [
   "#F97316", "#12B8C8", "#8B5CF6", "#3B82F6", "#22C55E",
   "#F59E0B", "#EF4444", "#06B6D4", "#84CC16", "#EC4899",

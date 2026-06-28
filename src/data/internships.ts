@@ -12,6 +12,7 @@ export const internshipMistakes = [
 
 export const internshipRelatedResources = [
   { label: "الإجراءات الإدارية", href: "#admin", icon: "file" as const },
+  { label: "Livret / Journal", href: "#journal", icon: "book" as const },
   { label: "دليل الشركات", href: "/stages/companies", icon: "file" as const },
   { label: "المصطلحات والوثائق", href: "#vocabulary", icon: "file" as const },
   { label: "نماذج التقارير", href: "#examples", icon: "book" as const },
@@ -118,7 +119,7 @@ export const internships: Internship[] = [
       "تطبيق كل المعارف المكتسبة",
       "الاستعداد للدخول في سوق الشغل",
     ],
-    deliverables: ["rapport PFE (~60-80 صفحة)", "présentation (~20 دقيقة)", "soutenance (~30 دقيقة)", "démonstration (إن وجدت)"],
+    deliverables: ["rapport PFE (~90-100 صفحة)", "présentation (~20 دقيقة)", "soutenance (~60 دقيقة)", "démonstration (إن وجدت)"],
     deadlines: [
       { label: "بداية PFE", month: "فيفري", monthIndex: 1 },
       { label: "تسليم rapport", month: "ماي", monthIndex: 4 },
@@ -139,9 +140,9 @@ export const internships: Internship[] = [
       },
     ],
     workload: {
-      reportPages: "~70 صفحة",
+      reportPages: "~90+ صفحة",
       presentationMinutes: "20 دقيقة",
-      defenseMinutes: "30 دقيقة",
+      defenseMinutes: "60 دقيقة",
     },
     hasDedicatedPage: true,
   },
@@ -227,6 +228,28 @@ export const dsegExampleReports = {
   folders: ["Stage d'initiation", "Stage de perfectionnement", "PFE"],
 };
 
+export const stageJournalDocuments = {
+  title: "Livret de stage (Journal)",
+  description:
+    "الlivret الرسمي (journal de stage) باش تدوّن فيه يومياتك طول الستاج. خاص بالسنة الأولى والثانية — initiation و perfectionnement.",
+  documents: [
+    {
+      name: "Livret de stage — ISET Zaghouan",
+      label: "النموذج الرسمي",
+      description: "الlivret المعتمد من المعهد — حمّلو، اطبعوه، وعبّيوه يوم بيوم طول الستاج.",
+      downloadSrc: "/documents/stages/LIVRET_DE STAGE ISET ZAGHOUAN.pdf",
+      downloadName: "LIVRET_DE STAGE ISET ZAGHOUAN.pdf",
+    },
+    {
+      name: "دليل تعبئة Journal",
+      label: "شرح خطوة بخطوة",
+      description: "دليل يشرحلك كيفاش تملّى كل صفحة في الlivret — أمثلة ونصائح عملية.",
+      downloadSrc: "/documents/stages/Pryzanti Journal Guide_compressed.pdf",
+      downloadName: "Pryzanti Journal Guide.pdf",
+    },
+  ],
+};
+
 export const stagePresentationLogos = [
   {
     name: "ISET Zaghouan",
@@ -268,11 +291,11 @@ export const pfeGuide = {
     },
     {
       title: "Rapport PFE",
-      content: "60-80 صفحة تقريباً. البنية: introduction، état de l'art، méthodologie، réalisation، résultats، conclusion.",
+      content: "90-100 صفحة تقريباً. البنية: introduction، état de l'art، méthodologie، réalisation، résultats، conclusion.",
     },
     {
       title: "Soutenance",
-      content: "20 دقيقة présentation + 30 دقيقة أسئلة. حضّر démonstration إذا كان المشروع تقني.",
+      content: "20 دقيقة présentation + ~40 دقيقة أسئلة (~60 دقيقة المجموع). حضّر démonstration إذا كان المشروع تقني.",
     },
     {
       title: "التقييم",

@@ -8,6 +8,7 @@ export type ExternalVideoResource = {
 
 export type ExternalLinkResource = {
   type: "link";
+  featured?: boolean;
   title: string;
   subtitle: string;
   description: string;
@@ -15,6 +16,10 @@ export type ExternalLinkResource = {
   icon: "book-open" | "briefcase";
   color: string;
   bg: string;
+  preview: {
+    gradient: string;
+    highlights: string[];
+  };
 };
 
 export type ExternalResource = ExternalVideoResource | ExternalLinkResource;
@@ -22,10 +27,40 @@ export type ExternalResource = ExternalVideoResource | ExternalLinkResource;
 export const externalResourcesMeta = {
   label: "مصادر مفيدة",
   title: "روابط تهمك كطالب",
-  subtitle: "منصات وفيديوهات تعاونك في مسيرتك الجامعية وبعد التخرج",
+  subtitle: "منصات أساسية وفيديوهات تعاونك في مسيرتك الجامعية وبعد التخرج",
 };
 
 export const externalResources: ExternalResource[] = [
+  {
+    type: "link",
+    featured: true,
+    title: "AceIT Platform",
+    subtitle: "Student Resources",
+    description: "منصة شاملة فيها مصادر دراسية وملخصات لطلاب الإجازة باش تسهّل عليهم مسيرتهم.",
+    href: "https://aceittn.vercel.app",
+    icon: "book-open",
+    color: "#3B82F6",
+    bg: "rgba(59,130,246,0.1)",
+    preview: {
+      gradient: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%)",
+      highlights: ["ملخصات", "امتحانات", "مراجع", "نصائح"],
+    },
+  },
+  {
+    type: "link",
+    featured: true,
+    title: "After Graduation Guide",
+    subtitle: "Career & Masters",
+    description: "دليل كامل يوجّهك بعد التخرج نحو الحياة المهنية، الستاجات، ولا إكمال الدراسة في الماستر.",
+    href: "https://after-graduation.vercel.app/",
+    icon: "briefcase",
+    color: "#8B5CF6",
+    bg: "rgba(139,92,246,0.1)",
+    preview: {
+      gradient: "linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a78bfa 100%)",
+      highlights: ["ماستر", "ستاج", "كونكurs", "تكوين مزدوج"],
+    },
+  },
   {
     type: "video",
     embedUrl: "https://www.youtube.com/embed/WKIVD4q5kws",
@@ -38,25 +73,5 @@ export const externalResources: ExternalResource[] = [
     embedUrl: "https://www.youtube.com/embed/hs-jfqcg6Bw",
     title: "تجربة طلبة ISET Zaghouan",
     description: "نصايح مهمة للجداد اللي نجحوا في الباك وتجربة طلبة إيسات زغوان في المعهد.",
-  },
-  {
-    type: "link",
-    title: "AceIT Platform",
-    subtitle: "Student Resources",
-    description: "منصة شاملة فيها مصادر دراسية وملخصات لطلاب الإجازة باش تسهّل عليهم مسيرتهم.",
-    href: "https://aceittn.vercel.app",
-    icon: "book-open",
-    color: "#3B82F6",
-    bg: "rgba(59,130,246,0.1)",
-  },
-  {
-    type: "link",
-    title: "After Graduation Guide",
-    subtitle: "Career & Masters",
-    description: "دليل كامل يوجّهك بعد التخرج نحو الحياة المهنية، الستاجات، ولا إكمال الدراسة في الماستر.",
-    href: "https://after-graduation.vercel.app/",
-    icon: "briefcase",
-    color: "#8B5CF6",
-    bg: "rgba(139,92,246,0.1)",
   },
 ];

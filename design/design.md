@@ -15,7 +15,7 @@ New ISET Zaghouan students (ages 18-22), primarily Tunisian Arabic speakers, als
 | /bourse | Scholarships | Eligibility calculator |
 | /resto | Restaurant | Hours, menus, tips |
 | /transport | Transportation | Schedules, fares, contacts |
-| /stages | Internships | 3-year timeline, Didosoft guide |
+| /stages | Internships | 3-year timeline, report examples, logos |
 | /library | Library | Info, resources |
 | /clubs | Clubs | Directory, benefits |
 | /masters | Masters | Departments |

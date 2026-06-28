@@ -156,7 +156,7 @@ export function generateLlmsFullTxt(): string {
     "2. **RTL:** Pages render right-to-left. Layout is mobile-first.",
     "3. **Accuracy:** Dates, fees, and admin procedures may change — recommend verifying with ISET Zaghouan.",
     "4. **Unofficial:** This is a student-maintained guide, not an official ISET website.",
-    "5. **External links:** Some pages link to Didosoft (internships), YouTube (explore), and student resources.",
+    "5. **External links:** Some pages link to YouTube (explore), Google Drive (internship examples), and student resources.",
     "",
     "## Citation format",
     "",

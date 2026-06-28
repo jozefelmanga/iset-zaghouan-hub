@@ -25,12 +25,10 @@ export const internships = [
     weight: 10,
     requirements: ["rapport PFE", "présentation", "soutenance"],
     docs: ["rapport PFE", "présentation"],
-    note: "المعدل يتحسب: (PFE×10 + perfectionnement×2.5 + initiation×2.5) / 15",
   },
 ];
 
 export const internshipDocs = [
-  "compte على didosoft (من أول العام)",
   "journal: مفكرة يومية بالمهام (بالفرنسية أو الإنجليزية)",
   "rapport: كتاب بالتفاصيل (بالفرنسية أو الإنجليزية)",
   "présentation قدام les jurys",
@@ -40,7 +38,6 @@ export const internshipDocs = [
 export const internshipTips = [
   "تنجموا تعملوا أكثر من stage صيفي، أما تصرحوا بواحد برك",
   "الستاج الصيفي مافماش rapport ولا journal ولا soutenance",
-  "النتيجة تلقاها على didosoft",
   "علموا chef de département باللغة المختارة (فرنسية/إنجليزية)",
 ];
 

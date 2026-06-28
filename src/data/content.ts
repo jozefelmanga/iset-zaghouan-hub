@@ -28,7 +28,7 @@ export const quickActions = [
   { id: "housing",     icon: "building",        title: "المبيت الجامعي",    description: "فواي البنات و الأولاد",             href: "/housing",    category: "life"     },
   { id: "bourse",      icon: "banknote",        title: "البورص",             description: "منحة الإدماج و البورص الكاملة",   href: "/bourse",     category: "life"     },
   { id: "transport",   icon: "bus",             title: "النقل",              description: "لواجات، كيران، و المواصلات",       href: "/transport",  category: "life"     },
-  { id: "stages",      icon: "briefcase",       title: "الستاجات",           description: "دليل الستاجات و Didosoft",         href: "/stages",     category: "career"   },
+  { id: "stages",      icon: "briefcase",       title: "الستاجات",           description: "دليل الستاجات و نماذج التقارير",         href: "/stages",     category: "career"   },
   { id: "library",     icon: "book-open",       title: "المكتبة",            description: "مراجع و اكزامانات",                href: "/library",    category: "academic" },
 ];
 

@@ -34,7 +34,7 @@ export const PAGE_SEO = {
   },
   "/stages": {
     title: "الستاجات",
-    description: "دليل الستاجات على 3 سنوات، أوراق Didosoft، و نصايح للتربص في ISET Zaghouan.",
+    description: "دليل الستاجات على 3 سنوات، نماذج التقارير، و نصايح للتربص في ISET Zaghouan.",
   },
   "/library": {
     title: "المكتبة",

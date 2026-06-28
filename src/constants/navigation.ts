@@ -80,7 +80,7 @@ export const navGroups: NavGroup[] = [
     label: "CAREER",
     color: "#8B5CF6",
     links: [
-      { href: "/stages", label: "الستاجات", icon: Briefcase, description: "دليل الستاجات و Didosoft", category: "career" },
+      { href: "/stages", label: "الستاجات", icon: Briefcase, description: "دليل الستاجات و نماذج التقارير", category: "career" },
     ],
   },
   {

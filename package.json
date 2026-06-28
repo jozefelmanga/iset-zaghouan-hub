@@ -14,7 +14,7 @@
     "check-bundle": "tsx scripts/check-bundle-budget.ts",
     "measure-bundle": "tsx scripts/measure-bundle-baseline.ts",
     "lighthouse": "lhci autorun",
-    "prebuild": "npm run generate-llms && node scripts/generate-stage-logos.mjs",
+    "prebuild": "npm run generate-llms && node scripts/generate-stage-logos.mjs && node scripts/generate-stage-companies.mjs",
     "analyze": "cross-env ANALYZE=true npm run build"
   },
   "dependencies": {
@@ -44,6 +44,7 @@
     "tsx": "^4.22.4",
     "typescript": "^5",
     "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.9",
+    "xlsx": "^0.18.5"
   }
 }

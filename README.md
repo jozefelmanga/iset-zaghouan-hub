@@ -25,9 +25,37 @@ npm run lint     # ESLint
 src/
   app/           # Route pages (Server Components)
   components/    # UI, layout, domain sections
-  constants/     # Navigation (single source of truth)
+    stages/      # Internship timeline, calculator, company search
+  constants/     # Navigation, SEO (single source of truth)
   data/          # Content arrays — no hardcoded copy in pages
   lib/           # theme, motion, icons, utils
+  types/         # Shared TypeScript types
+public/
+  documents/stages/   # Official xlsx (companies), logos, report assets
+scripts/
+  generate-stage-companies.mjs   # xlsx → stage-companies.json (runs on prebuild)
+  generate-stage-logos.mjs
+  generate-llms.ts
+```
+
+## Internships (`/stages`)
+
+Three related routes under **CAREER** in the sidebar:
+
+| Route | Purpose |
+|---|---|
+| `/stages` | Main guide: 3-year progress tracker, stage details, FAQ, admin steps, deadlines, logos, SEG report examples, grade calculator |
+| `/stages/companies` | Searchable company directory (~267 entries from `sociétés_final.xlsx`) |
+| `/stages/pfe` | Dedicated Projet de Fin d'Études guide |
+
+**Content** lives in `src/data/internships.ts`. **Company data** is generated at build time from `public/documents/stages/sociétés_final.xlsx` into `src/data/stage-companies.json`.
+
+**Key components:** `StagesPageContent`, `InternshipTimeline`, `InternshipGradeCalculator`, `InternshipCompanySearch` — responsive layout via `stages.module.css`.
+
+To refresh company data after updating the xlsx:
+
+```bash
+node scripts/generate-stage-companies.mjs
 ```
 
 ## Deployment

@@ -15,7 +15,9 @@ New ISET Zaghouan students (ages 18-22), primarily Tunisian Arabic speakers, als
 | /bourse | Scholarships | Eligibility calculator |
 | /resto | Restaurant | Hours, menus, tips |
 | /transport | Transportation | Schedules, fares, contacts |
-| /stages | Internships | 3-year timeline, report examples, logos |
+| /stages | Internships (main) | 3-year progress tracker, per-stage details, FAQ, admin steps, deadline calendar, report logos, SEG examples (Google Drive), grade calculator |
+| /stages/companies | Company directory | Search/filter by name, city, address; sourced from official xlsx |
+| /stages/pfe | PFE guide | Projet de Fin d'Études: planning, rapport, présentation, soutenance |
 | /library | Library | Info, resources |
 | /clubs | Clubs | Directory, benefits |
 | /masters | Masters | Departments |
@@ -50,6 +52,37 @@ New ISET Zaghouan students (ages 18-22), primarily Tunisian Arabic speakers, als
 - Card radius: 20px (`--radius-card`)
 - Spacing: gap-4 to gap-6
 
+## Internships module (`/stages`)
+
+### Routes
+- **`/stages`** — hub page with year selector, interactive timeline details, general FAQ, administrative steps, combined deadline calendar (all 3 stages), downloadable presentation logos, SEG example reports link, job-search tips, vocabulary, grade calculator, ISET contact info, common mistakes, quick links
+- **`/stages/companies`** — standalone searchable directory; data from `public/documents/stages/sociétés_final.xlsx`, built to `src/data/stage-companies.json` via `scripts/generate-stage-companies.mjs`
+- **`/stages/pfe`** — focused PFE checklist and guidance
+
+### Navigation
+Sidebar **CAREER** group: الستاجات → دليل الشركات → دليل PFE. Same links in the command palette (`allNavLinks`).
+
+### Data files
+| File | Role |
+|---|---|
+| `src/data/internships.ts` | Stage metadata, FAQ, admin steps, vocabulary, mistakes, resources |
+| `src/data/stage-companies.json` | Generated company list (do not edit by hand) |
+| `src/data/stage-companies.ts` | Typed export + count |
+| `public/documents/stages/sociétés_final.xlsx` | Source of truth for companies |
+
+### Components (`src/components/stages/`)
+- `StagesPageContent` — main `/stages` client UI
+- `InternshipTimeline` — year details, workload grid, per-year FAQ
+- `InternshipGradeCalculator` — live average: (PFE×10 + perfectionnement×2.5 + initiation×2.5) ÷ 15
+- `InternshipCompanySearch` — search, city filters, pagination
+- `DownloadButton` — asset downloads with count
+- `stages.module.css` — mobile-first responsive grids and card padding
+
+### Responsive (stages)
+- Breakpoint aligned with site: **768px**
+- Mobile: stacked year pills, 2-column deadline grid, single-column vocab/logos/links, full-width CTAs
+- Desktop: horizontal timeline card, 6-column deadline calendar
+
 ## Shared Components
 - Sidebar: desktop collapsible, icons + labels
 - BottomNav: mobile-only, 5 icons
@@ -68,16 +101,18 @@ New ISET Zaghouan students (ages 18-22), primarily Tunisian Arabic speakers, als
 ## Dependencies (current)
 - next, react, react-dom, typescript
 - tailwindcss v4, framer-motion, lucide-react
+- xlsx (dev — parse company xlsx on prebuild)
 - vitest (dev — data validation tests)
 
 ## Asset Manifest
 - Lucide icons throughout
 - Campus/club photos in `public/images/`
+- Stage logos and company xlsx in `public/documents/stages/`
 - YouTube embeds for explore and external resources
 
 ## Responsive
-- Mobile: < 640px, single column, bottom nav
-- Tablet: 640px–1024px, 2 columns, sidebar
+- Mobile: < 768px, single column, bottom nav, reduced card padding on stages
+- Tablet: 768px–1024px, 2 columns where applicable, sidebar
 - Desktop: > 1024px, expanded sidebar
 
 ## Performance (implemented)

@@ -74,6 +74,7 @@ export {
   Linkedin,
   Youtube,
   Phone,
+  Mail,
   MessageCircle,
   Lightbulb,
   DoorOpen,

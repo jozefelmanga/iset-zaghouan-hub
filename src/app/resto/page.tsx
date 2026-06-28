@@ -23,7 +23,7 @@ export default function RestoPage() {
         icon="utensils"
         label="خدمات الحرم"
         title="ريستو ISET Zaghouan"
-        subtitle="من أحسن الريستوات في تونس — ماكلا نظيفة و كل شي منظم"
+        subtitle="من أحسن الريستوات في تونس — ماكلة نظيفة و كل شي منظم"
         category="campus"
       />
 
@@ -59,7 +59,7 @@ export default function RestoPage() {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "16px", marginBottom: "28px" }}>
         {[
-          { icon: Clock, label: "الغداة", open: restaurantInfo.lunch.open, close: restaurantInfo.lunch.close, note: null, color: "#F97316", bg: "rgba(249,115,22,0.10)" },
+          { icon: Clock, label: "الغداء", open: restaurantInfo.lunch.open, close: restaurantInfo.lunch.close, note: null, color: "#F97316", bg: "rgba(249,115,22,0.10)" },
           { icon: Moon, label: "العشاء", open: restaurantInfo.dinner.open, close: restaurantInfo.dinner.close, note: restaurantInfo.dinner.note, color: "#8B5CF6", bg: "rgba(139,92,246,0.10)" },
         ].map(({ icon: Icon, label, open, close, note, color, bg }) => (
           <Card key={label} elevation="raised" padding="22px">

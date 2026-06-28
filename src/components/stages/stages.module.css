@@ -1,0 +1,351 @@
+/* Stages page — mobile-first responsive helpers */
+
+/* Year selector pills */
+.yearPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.yearPill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+@media (max-width: 767px) {
+  .yearPills {
+    flex-direction: column;
+  }
+
+  .yearPill {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+}
+
+/* Deadline calendar */
+.deadlineGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.deadlineMonth {
+  text-align: center;
+  min-width: 0;
+}
+
+@media (min-width: 480px) {
+  .deadlineGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .deadlineGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Logo cards */
+.logoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 480px) {
+  .logoGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .logoGrid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+/* Vocabulary */
+.vocabGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 480px) {
+  .vocabGrid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .vocabGrid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+/* Quick links */
+.quickLinksGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 400px) {
+  .quickLinksGrid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .quickLinksGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+/* Job search tips */
+.tipsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 480px) {
+  .tipsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+/* CTA buttons / links */
+.driveLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .driveLink {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+.companyLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(18, 184, 200, 0.06));
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  text-decoration: none;
+}
+
+.companyLinkBody {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .companyLink {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .companyLinkTitle {
+    font-size: 14px !important;
+  }
+}
+
+/* Card padding on small screens */
+.mobileCard {
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .mobileCard {
+    padding: 16px !important;
+  }
+}
+
+/* Timeline active stage card */
+.stageCard {
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.stageHeaderRow {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.stageEmojiBox {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.stageBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.stageTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .stageCard {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .stageHeaderRow {
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .stageEmojiBox {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+    align-self: center;
+  }
+
+  .stageTitle {
+    font-size: 16px !important;
+  }
+}
+
+/* Grade calculator */
+.calcGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 400px) {
+  .calcGrid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .calcGrid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+.formulaBox {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--color-background);
+  text-align: center;
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  margin-top: 14px;
+  line-height: 1.8;
+  overflow-x: auto;
+  word-break: break-word;
+}
+
+@media (max-width: 767px) {
+  .formulaBox {
+    font-size: 11px;
+    padding: 12px;
+  }
+}
+
+/* Workload / meta grids inside timeline */
+.workloadGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+@media (min-width: 400px) {
+  .workloadGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .metaGrid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .workloadGrid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .metaGrid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+.pfeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .pfeLink {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}

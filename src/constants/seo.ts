@@ -34,7 +34,16 @@ export const PAGE_SEO = {
   },
   "/stages": {
     title: "الستاجات",
-    description: "دليل الستاجات على 3 سنوات، نماذج التقارير، و نصايح للتربص في ISET Zaghouan.",
+    description:
+      "دليل الستاجات على 3 سنوات: مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص في ISET Zaghouan.",
+  },
+  "/stages/pfe": {
+    title: "دليل PFE",
+    description: "دليل Projet de Fin d'Études الكامل: التخطيط، rapport، présentation، و soutenance في ISET Zaghouan.",
+  },
+  "/stages/companies": {
+    title: "دليل شركات الستاج",
+    description: "دوّر على شركة للستاج في ISET Zaghouan: قائمة رسمية من مصالح التربصات مع العناوين وأرقام التواصل.",
   },
   "/library": {
     title: "المكتبة",

@@ -27,15 +27,39 @@ export type TransportRoute = {
   abonnementDocs?: string[];
 };
 
+export type InternshipDifficulty = "easy" | "medium" | "hard";
+
+export type InternshipWorkload = {
+  reportPages?: string;
+  presentationMinutes?: string;
+  journalEntries?: string;
+  defenseMinutes?: string;
+};
+
+export type InternshipDeadline = {
+  label: string;
+  month: string;
+  monthIndex: number;
+};
+
 export type Internship = {
   year: number;
   name: string;
+  emoji: string;
   duration: string;
+  durationDays?: number;
   timing: string;
   weight: number;
+  difficulty: InternshipDifficulty;
   requirements: string[];
   docs: string[];
+  objectives: string[];
+  deliverables: string[];
+  deadlines: InternshipDeadline[];
+  faq: FAQItem[];
+  workload: InternshipWorkload;
   note?: string;
+  hasDedicatedPage?: boolean;
 };
 
 export type FAQItem = {

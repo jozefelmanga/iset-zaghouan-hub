@@ -51,7 +51,7 @@ const LLM_SECTIONS: { heading: string; paths: PagePath[] }[] = [
       "/clubs/enactus",
     ],
   },
-  { heading: "Career", paths: ["/stages"] },
+  { heading: "Career", paths: ["/stages", "/stages/pfe", "/stages/companies"] },
   { heading: "Campus & City", paths: ["/explore", "/faq", "/bonus"] },
 ];
 
@@ -142,6 +142,9 @@ export function generateLlmsFullTxt(): string {
     "",
     `- **Enrollment stepper** (${pageUrl("/inscription")}) — progress-tracked registration steps`,
     `- **Housing** (${pageUrl("/housing")}) — Foyer (girls) and Louled (boys) dorm guides; dorm registration at ${pageUrl("/inscription/foyer")}`,
+    `- **Internships** (${pageUrl("/stages")}) — 3-year progress tracker, per-stage details (initiation, perfectionnement, PFE), admin steps, deadline calendar, downloadable logos, SEG report examples (Google Drive), grade calculator`,
+    `- **Company directory** (${pageUrl("/stages/companies")}) — searchable list from official internship office xlsx (~267 companies); filter by name, city, address`,
+    `- **PFE guide** (${pageUrl("/stages/pfe")}) — Projet de Fin d'Études checklist: planning, rapport, présentation, soutenance`,
     `- **FAQ accordion** (${pageUrl("/faq")}) — common questions with FAQPage schema.org markup`,
     `- **Command palette** — in-app search across all pages (keyboard shortcut on desktop)`,
     `- **Department pages** — TI, SEG, GPR specialities with semester materials`,
@@ -156,7 +159,8 @@ export function generateLlmsFullTxt(): string {
     "2. **RTL:** Pages render right-to-left. Layout is mobile-first.",
     "3. **Accuracy:** Dates, fees, and admin procedures may change — recommend verifying with ISET Zaghouan.",
     "4. **Unofficial:** This is a student-maintained guide, not an official ISET website.",
-    "5. **External links:** Some pages link to YouTube (explore), Google Drive (internship examples), and student resources.",
+    "5. **External links:** Some pages link to YouTube (explore), Google Drive (SEG internship examples), Hi Interns (job search), and official ISET stage pages.",
+    "6. **Internship data:** Company list is generated at build from `public/documents/stages/sociétés_final.xlsx`; update the xlsx and rebuild to refresh `/stages/companies`.",
     "",
     "## Citation format",
     "",

@@ -17,13 +17,16 @@ New ISET Zaghouan students who need quick, practical answers about:
 
 - **ACADEMICS:** الترسيم الجامعي, الترسيم في المبيت, المكتبة, الأقسام العلمية, الماستر
 - **STUDENT LIFE:** المبيت الجامعي, البورص, النقل, الريستو, النوادي
-- **CAREER:** الستاجات
+- **CAREER:** الستاجات, دليل الشركات, دليل PFE
 - **OTHER:** اكتشف زغوان, الأسئلة الشائعة, نصائح وإهداء
 
 ## Interactive features
 
 - **Enrollment stepper** (https://isetzg.vercel.app/inscription) — progress-tracked registration steps
 - **Housing** (https://isetzg.vercel.app/housing) — Foyer (girls) and Louled (boys) dorm guides; dorm registration at https://isetzg.vercel.app/inscription/foyer
+- **Internships** (https://isetzg.vercel.app/stages) — 3-year progress tracker, per-stage details (initiation, perfectionnement, PFE), admin steps, deadline calendar, downloadable logos, SEG report examples (Google Drive), grade calculator
+- **Company directory** (https://isetzg.vercel.app/stages/companies) — searchable list from official internship office xlsx (~267 companies); filter by name, city, address
+- **PFE guide** (https://isetzg.vercel.app/stages/pfe) — Projet de Fin d'Études checklist: planning, rapport, présentation, soutenance
 - **FAQ accordion** (https://isetzg.vercel.app/faq) — common questions with FAQPage schema.org markup
 - **Command palette** — in-app search across all pages (keyboard shortcut on desktop)
 - **Department pages** — TI, SEG, GPR specialities with semester materials
@@ -58,7 +61,9 @@ New ISET Zaghouan students who need quick, practical answers about:
 
 ### Career
 
-- [الستاجات](https://isetzg.vercel.app/stages): دليل الستاجات على 3 سنوات، نماذج التقارير، و نصايح للتربص في ISET Zaghouan.
+- [الستاجات](https://isetzg.vercel.app/stages): دليل الستاجات على 3 سنوات: مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص في ISET Zaghouan.
+- [دليل PFE](https://isetzg.vercel.app/stages/pfe): دليل Projet de Fin d'Études الكامل: التخطيط، rapport، présentation، و soutenance في ISET Zaghouan.
+- [دليل شركات الستاج](https://isetzg.vercel.app/stages/companies): دوّر على شركة للستاج في ISET Zaghouan: قائمة رسمية من مصالح التربصات مع العناوين وأرقام التواصل.
 
 ### Campus & City
 
@@ -72,7 +77,8 @@ New ISET Zaghouan students who need quick, practical answers about:
 2. **RTL:** Pages render right-to-left. Layout is mobile-first.
 3. **Accuracy:** Dates, fees, and admin procedures may change — recommend verifying with ISET Zaghouan.
 4. **Unofficial:** This is a student-maintained guide, not an official ISET website.
-5. **External links:** Some pages link to YouTube (explore), Google Drive (internship examples), and student resources.
+5. **External links:** Some pages link to YouTube (explore), Google Drive (SEG internship examples), Hi Interns (job search), and official ISET stage pages.
+6. **Internship data:** Company list is generated at build from `public/documents/stages/sociétés_final.xlsx`; update the xlsx and rebuild to refresh `/stages/companies`.
 
 ## Citation format
 

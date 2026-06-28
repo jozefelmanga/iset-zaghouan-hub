@@ -18,14 +18,14 @@ ISET Zaghouan Hub (دليل الطالب — ISET Zaghouan) is a mobile-first st
 - [المبيت الجامعي](https://isetzg.vercel.app/housing): معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصايح للسكن الجامعي.
 - [البورص و المنحة](https://isetzg.vercel.app/bourse): دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط و الأوراق المطلوبة.
 - [النقل و المواصلات](https://isetzg.vercel.app/transport): لواجات النقل، أسعار الكيران، و معلومات المواصلات من و إلى ISET Zaghouan.
-- [الستاجات](https://isetzg.vercel.app/stages): دليل الستاجات على 3 سنوات، نماذج التقارير، و نصايح للتربص في ISET Zaghouan.
+- [الستاجات](https://isetzg.vercel.app/stages): دليل الستاجات على 3 سنوات: مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص في ISET Zaghouan.
 - [الأقسام العلمية](https://isetzg.vercel.app/departments): نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.
 - [الأسئلة الشائعة](https://isetzg.vercel.app/faq): إجابات لأكثر الأسئلة اللي يسألوها الجداد في ISET Zaghouan.
 
 ## Full documentation
 
 - [llms-full.txt](https://isetzg.vercel.app/llms-full.txt) — complete page index with descriptions
-- [sitemap.xml](https://isetzg.vercel.app/sitemap.xml) — all 21 routes
+- [sitemap.xml](https://isetzg.vercel.app/sitemap.xml) — all 23 routes
 - [FAQ (JSON-LD)](https://isetzg.vercel.app/faq) — structured Q&A for common student questions
 
 ## Citation

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 /** Public site URL — set NEXT_PUBLIC_SITE_URL in production. */
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://isetzg.vercel.app";
+  "https://guideisetzg.tn";
 
 export const SITE_NAME = "ISET Zaghouan Hub";
 export const SITE_NAME_AR = "دليل الطالب — ISET Zaghouan";

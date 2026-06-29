@@ -4,7 +4,7 @@ import Script from "next/script";
 
 /**
  * Optional privacy-friendly analytics.
- * Set NEXT_PUBLIC_PLAUSIBLE_DOMAIN to enable (e.g. isetzg.vercel.app).
+ * Set NEXT_PUBLIC_PLAUSIBLE_DOMAIN to enable (e.g. guideisetzg.tn).
  */
 export function Analytics() {
   const domain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;

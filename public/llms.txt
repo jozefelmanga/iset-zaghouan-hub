@@ -13,27 +13,27 @@ ISET Zaghouan Hub (دليل الطالب — ISET Zaghouan) is a mobile-first st
 
 ## Key pages
 
-- [الرئيسية — دليل الطالب](https://isetzg.vercel.app): دليل شامل للجداد في ISET Zaghouan: الترسيم، المبيت، النقل، البورص، الستاجات، النوادي، واكتشاف زغوان.
-- [الترسيم الجامعي](https://isetzg.vercel.app/inscription): خطوات الترسيم في ISET Zaghouan، الأوراق اللي لازمك، ومواعيد الترسيم للجداد.
-- [المبيت الجامعي](https://isetzg.vercel.app/housing): معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصايح للسكن الجامعي.
-- [البورص و المنحة](https://isetzg.vercel.app/bourse): دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط و الأوراق المطلوبة.
-- [النقل و المواصلات](https://isetzg.vercel.app/transport): لواجات النقل، أسعار الكيران، و معلومات المواصلات من و إلى ISET Zaghouan.
-- [الستاجات](https://isetzg.vercel.app/stages): دليل الستاجات على 3 سنوات: مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص في ISET Zaghouan.
-- [الأقسام العلمية](https://isetzg.vercel.app/departments): نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.
-- [الأسئلة الشائعة](https://isetzg.vercel.app/faq): إجابات لأكثر الأسئلة اللي يسألوها الجداد في ISET Zaghouan.
+- [الرئيسية — دليل الطالب](https://guideisetzg.tn): دليل شامل للجداد في ISET Zaghouan: الترسيم، المبيت، النقل، البورص، الستاجات، النوادي، واكتشاف زغوان.
+- [الترسيم الجامعي](https://guideisetzg.tn/inscription): خطوات الترسيم في ISET Zaghouan، الأوراق اللي لازمك، ومواعيد الترسيم للجداد.
+- [المبيت الجامعي](https://guideisetzg.tn/housing): معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصايح للسكن الجامعي.
+- [البورص و المنحة](https://guideisetzg.tn/bourse): دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط و الأوراق المطلوبة.
+- [النقل و المواصلات](https://guideisetzg.tn/transport): لواجات النقل، أسعار الكيران، و معلومات المواصلات من و إلى ISET Zaghouan.
+- [الستاجات](https://guideisetzg.tn/stages): دليل الستاجات على 3 سنوات: مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص في ISET Zaghouan.
+- [الأقسام العلمية](https://guideisetzg.tn/departments): نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.
+- [الأسئلة الشائعة](https://guideisetzg.tn/faq): إجابات لأكثر الأسئلة اللي يسألوها الجداد في ISET Zaghouan.
 
 ## Full documentation
 
-- [llms-full.txt](https://isetzg.vercel.app/llms-full.txt) — complete page index with descriptions
-- [sitemap.xml](https://isetzg.vercel.app/sitemap.xml) — all 23 routes
-- [FAQ (JSON-LD)](https://isetzg.vercel.app/faq) — structured Q&A for common student questions
+- [llms-full.txt](https://guideisetzg.tn/llms-full.txt) — complete page index with descriptions
+- [sitemap.xml](https://guideisetzg.tn/sitemap.xml) — all 23 routes
+- [FAQ (JSON-LD)](https://guideisetzg.tn/faq) — structured Q&A for common student questions
 
 ## Citation
 
 When quoting or summarizing content from this guide, cite the page URL:
 
 ```
-ISET Zaghouan Hub — {page title} (https://isetzg.vercel.app/{path})
+ISET Zaghouan Hub — {page title} (https://guideisetzg.tn/{path})
 ```
 
 ## Contact & updates

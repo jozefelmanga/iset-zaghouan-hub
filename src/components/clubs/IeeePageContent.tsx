@@ -10,8 +10,8 @@ import {
   CheckCircle2,
 } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
-import { FullBleed } from "@/components/ui/layout";
-import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
+import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
+import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const IEEE_COLOR = "#00629B";
 const IEEE_BASE = "/images/IEEE";
@@ -22,11 +22,11 @@ const galleryImages = [
 ];
 
 const objectives = [
-  "إنشاء مجتمع نشط في ISET Zaghouan عبر ورشات، تكوينات، و skill-building workouts.",
-  "تطوير Hard skills و Soft skills: معرفة تقنية، تواصل، teamwork، leadership، و problem-solving.",
-  "ربط الأعضاء بشبكة IEEE العالمية وفرص التعلّم والقيادة والتطور المهني.",
-  "فتح الباب لكل الأقسام — مو بس IT — حسب روح IEEE في التعاون بين التخصصات.",
-  "إشراك الأعضاء في TSYP، أنشطة IEEE Tunisia Section، و التظاهرات السنوية لـ IEEE.",
+  "بناء مجتمع IEEE نشط في ISET Zaghouan من خلال ورشات، تكوينات، و skill-building workouts بشكل مستمر.",
+  "تطوير الـ Hard Skills والـ Soft Skills: من المعرفة التقنية إلى التواصل، teamwork، leadership، و problem-solving.",
+  "ربط الأعضاء بشبكة IEEE العالمية وفتح فرص للتعلّم، القيادة، التطوع، والتطور المهني.",
+  "فتح المجال لكل الأقسام والتخصصات للمشاركة، إيمانًا بروح IEEE في التعاون وتبادل الخبرات.",
+  "تشجيع الأعضاء على المشاركة في TSYP، أنشطة IEEE Tunisia Section، والمسابقات والتظاهرات السنوية متاع IEEE.",
 ];
 
 const events = [
@@ -41,23 +41,12 @@ const events = [
 export function IeeePageContent() {
   return (
     <>
-      <FullBleed style={{ height: "240px", marginBottom: "32px" }}>
-        <ZoomableImage
-          fill
-          src={`${IEEE_BASE}/banner-ieee.webp`}
-          alt="IEEE ISET Zaghouan SB Cover"
-          objectPosition="center center"
-        />
-        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(to bottom, rgba(11,31,58,0.25), rgba(11,31,58,0.85))" }} />
-        <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", pointerEvents: "none" }}>
-          <ZoomableImage
-            src={`${IEEE_BASE}/Logo-IEEE.webp`}
-            alt="IEEE ISET Zaghouan SB Logo"
-            hideHint
-            style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", background: "#fff", pointerEvents: "auto" }}
-          />
-        </div>
-      </FullBleed>
+      <ClubHeroBanner
+        bannerSrc={`${IEEE_BASE}/banner-ieee.webp`}
+        bannerAlt="IEEE ISET Zaghouan SB Cover"
+        logoSrc={`${IEEE_BASE}/Logo-IEEE.webp`}
+        logoAlt="IEEE ISET Zaghouan SB Logo"
+      />
 
       <div style={{ marginBottom: "32px" }}>
         <Card elevation="raised" padding="28px">

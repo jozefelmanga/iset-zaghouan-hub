@@ -8,8 +8,7 @@ import {
   Award,
 } from "@/lib/icons";
 import { Card, Alert } from "@/components/ui/shared";
-import { FullBleed } from "@/components/ui/layout";
-import { ZoomableImage } from "@/components/ui/Lightbox";
+import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 
 const SOS_COLOR = "#E30613";
 const IMAGE_BASE = "/images/Club ambassadeurs sos village";
@@ -55,23 +54,12 @@ const GALLERY_PLACEHOLDER_COUNT = 6;
 export function SosAmbassadeursPageContent() {
   return (
     <>
-      <FullBleed style={{ height: "240px", marginBottom: "32px" }}>
-        <ZoomableImage
-          fill
-          src={`${IMAGE_BASE}/banner-sos.webp`}
-          alt="Club Ambassadeurs SOS Village Cover"
-          objectPosition="center center"
-        />
-        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(to bottom, rgba(11,31,58,0.25), rgba(11,31,58,0.85))" }} />
-        <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", pointerEvents: "none" }}>
-          <ZoomableImage
-            src={`${IMAGE_BASE}/logo-SOS.webp`}
-            alt="Club Ambassadeurs SOS Village Logo"
-            hideHint
-            style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", background: "#fff", pointerEvents: "auto" }}
-          />
-        </div>
-      </FullBleed>
+      <ClubHeroBanner
+        bannerSrc={`${IMAGE_BASE}/banner-sos.webp`}
+        bannerAlt="Club Ambassadeurs SOS Village Cover"
+        logoSrc={`${IMAGE_BASE}/logo-SOS.webp`}
+        logoAlt="Club Ambassadeurs SOS Village Logo"
+      />
 
       <div style={{ marginBottom: "32px" }}>
         <Card elevation="raised" padding="28px">

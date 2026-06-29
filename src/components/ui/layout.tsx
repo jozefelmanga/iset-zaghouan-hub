@@ -90,11 +90,8 @@ interface FullBleedProps {
 export function FullBleed({ children, className, style }: FullBleedProps) {
   return (
     <div
-      className={cn("relative w-screen max-w-[100vw] overflow-hidden", className)}
-      style={{
-        marginInline: "calc(50% - 50vw)",
-        ...style,
-      }}
+      className={cn("full-bleed relative overflow-hidden", className)}
+      style={style}
     >
       {children}
     </div>

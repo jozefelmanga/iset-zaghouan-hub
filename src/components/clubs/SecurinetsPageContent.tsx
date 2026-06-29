@@ -11,8 +11,8 @@ import {
   ExternalLink,
 } from "@/lib/icons";
 import { Card, Alert } from "@/components/ui/shared";
-import { FullBleed } from "@/components/ui/layout";
-import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
+import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
+import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const SECURINETS_BASE = "/images/SecuriNets ISET Zaghouan";
 
@@ -50,23 +50,15 @@ const events = ["Workshops", "Hackathons", "CTFs (Capture The Flag)", "Trainings
 export function SecurinetsPageContent() {
   return (
     <>
-      <FullBleed style={{ height: "240px", marginBottom: "32px" }}>
-        <ZoomableImage
-          fill
-          src="/images/SecuriNets ISET Zaghouan/414471318_762084249283425_5669816558873673442_n.webp"
-          alt="SecuriNets Cover"
-          objectPosition="center 93%"
-        />
-        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(to bottom, rgba(11,31,58,0.2), rgba(11,31,58,0.85))" }} />
-        <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", pointerEvents: "none" }}>
-          <ZoomableImage
-            src="/images/SecuriNets ISET Zaghouan/307089995_5896662463700630_57012804199137690_n.webp"
-            alt="SecuriNets Logo"
-            hideHint
-            style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", background: "#000", pointerEvents: "auto" }}
-          />
-        </div>
-      </FullBleed>
+      <ClubHeroBanner
+        bannerSrc="/images/SecuriNets ISET Zaghouan/414471318_762084249283425_5669816558873673442_n.webp"
+        bannerAlt="SecuriNets Cover"
+        logoSrc="/images/SecuriNets ISET Zaghouan/307089995_5896662463700630_57012804199137690_n.webp"
+        logoAlt="SecuriNets Logo"
+        objectPosition="center 93%"
+        logoBackground="#000"
+        gradientTop={0.2}
+      />
 
       <div style={{ marginBottom: "32px" }}>
         <Card elevation="raised" padding="28px">

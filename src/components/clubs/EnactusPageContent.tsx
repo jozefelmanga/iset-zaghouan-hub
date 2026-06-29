@@ -13,8 +13,8 @@ import {
   Play,
 } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
-import { FullBleed } from "@/components/ui/layout";
-import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
+import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
+import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const images = [
   "/images/Enactus ISET Zaghouan/1703081864007.webp",
@@ -52,24 +52,14 @@ const events = ["يوم التراث 🏺", "Randotek GDG 🗺️", "Lightquest 
 export function EnactusPageContent() {
   return (
     <>
-      <FullBleed style={{ height: "240px", marginBottom: "32px" }}>
-        <ZoomableImage
-          fill
-          src="/images/Enactus ISET Zaghouan/453488211_823412283222658_7480948437040389927_n.webp"
-          alt="Enactus Cover"
-          objectPosition="center 35%"
-        />
-        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(to bottom, rgba(11,31,58,0.25), rgba(11,31,58,0.85))" }} />
-        <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", pointerEvents: "none" }}>
-          <ZoomableImage
-            src="https://th.bing.com/th/id/R.8a3ad5957f7a61393d26e56812ef3134?rik=trk7N6Nmyzry8g&pid=ImgRaw&r=0"
-            alt="Enactus Logo"
-            hideHint
-            objectFit="contain"
-            style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", background: "#fff", padding: "4px", pointerEvents: "auto" }}
-          />
-        </div>
-      </FullBleed>
+      <ClubHeroBanner
+        bannerSrc="/images/Enactus ISET Zaghouan/453488211_823412283222658_7480948437040389927_n.webp"
+        bannerAlt="Enactus Cover"
+        logoSrc="https://th.bing.com/th/id/R.8a3ad5957f7a61393d26e56812ef3134?rik=trk7N6Nmyzry8g&pid=ImgRaw&r=0"
+        logoAlt="Enactus Logo"
+        objectPosition="center 35%"
+        logoObjectFit="contain"
+      />
 
       <div style={{ marginBottom: "32px" }}>
         <Card elevation="raised" padding="28px">

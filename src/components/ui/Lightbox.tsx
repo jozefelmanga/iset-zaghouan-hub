@@ -358,6 +358,10 @@ interface ZoomableImageProps {
   /** When set, arrow keys cycle through this list while the lightbox is open. */
   galleryImages?: string[];
   galleryAlts?: string[];
+  /** Hint LCP image + avoid layout shift with explicit dimensions. */
+  priority?: boolean;
+  imgWidth?: number;
+  imgHeight?: number;
 }
 
 export function ZoomableImage({
@@ -371,6 +375,9 @@ export function ZoomableImage({
   hideHint = false,
   galleryImages,
   galleryAlts,
+  priority = false,
+  imgWidth,
+  imgHeight,
 }: ZoomableImageProps) {
   const images = galleryImages?.length ? galleryImages : [src];
   const getAlt = (idx: number) => {
@@ -410,6 +417,10 @@ export function ZoomableImage({
         <img
           src={src}
           alt={alt}
+          width={imgWidth}
+          height={imgHeight}
+          decoding={priority ? "sync" : "async"}
+          fetchPriority={priority ? "high" : "auto"}
           style={{
             width: "100%",
             height: "100%",

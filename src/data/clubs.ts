@@ -46,6 +46,24 @@ export const clubDirectory = [
     href: "/clubs/enactus",
     logo: "https://th.bing.com/th/id/R.8a3ad5957f7a61393d26e56812ef3134?rik=trk7N6Nmyzry8g&pid=ImgRaw&r=0",
   },
+  {
+    id: "ieee",
+    name: "IEEE ISET Zaghouan SB",
+    slogan: "Advancing technology for humanity. ⚡🔬",
+    description: "مجتمع طلابي يحمل روح IEEE — أكبر منظمة تقنية في العالم. ورشات، مشاريع، وأحداث باش تعزّز التعلّم والابتكار والتعاون.",
+    color: "#00629B",
+    href: "/clubs/ieee",
+    logo: "/images/IEEE/Logo-IEEE.jpg",
+  },
+  {
+    id: "sos-ambassadeurs",
+    name: "Club Ambassadeurs SOS Village",
+    slogan: "Raise the voice and make the choice. 💚🤝",
+    description: "نادي تطوعي تحت إشراف جمعية قرى الأطفال SOS تونس — تضامن، مبادرات إنسانية وثقافية، وجائزة أفضل نادٍ صاعد وطنياً 2026.",
+    color: "#E30613",
+    href: "/clubs/sos-ambassadeurs",
+    logo: "/images/Club ambassadeurs sos village/logo-SOS.jpg",
+  },
 ];
 
 /** @deprecated use clubMeta */

@@ -58,14 +58,14 @@ export function SosAmbassadeursPageContent() {
       <FullBleed style={{ height: "240px", marginBottom: "32px" }}>
         <ZoomableImage
           fill
-          src={`${IMAGE_BASE}/banner-sos.jpg`}
+          src={`${IMAGE_BASE}/banner-sos.webp`}
           alt="Club Ambassadeurs SOS Village Cover"
           objectPosition="center center"
         />
         <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(to bottom, rgba(11,31,58,0.25), rgba(11,31,58,0.85))" }} />
         <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", pointerEvents: "none" }}>
           <ZoomableImage
-            src={`${IMAGE_BASE}/logo-SOS.jpg`}
+            src={`${IMAGE_BASE}/logo-SOS.webp`}
             alt="Club Ambassadeurs SOS Village Logo"
             hideHint
             style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", background: "#fff", pointerEvents: "auto" }}

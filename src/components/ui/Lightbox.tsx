@@ -246,6 +246,10 @@ interface PhotoGalleryProps {
   minColWidth?: number;
   /** Alt text prefix (appended with index). Default empty. */
   altPrefix?: string;
+  /** When set, only this many images show until the user expands the gallery. */
+  initialVisibleCount?: number;
+  /** Label for the expand button. */
+  showMoreLabel?: string;
 }
 
 export function PhotoGallery({
@@ -253,8 +257,16 @@ export function PhotoGallery({
   thumbHeight = 140,
   minColWidth = 180,
   altPrefix = "",
+  initialVisibleCount,
+  showMoreLabel = "عرض المزيد",
 }: PhotoGalleryProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState(false);
+
+  const hasMore =
+    initialVisibleCount != null && images.length > initialVisibleCount;
+  const visibleImages =
+    hasMore && !expanded ? images.slice(0, initialVisibleCount) : images;
 
   const getAlt = (idx: number) =>
     altPrefix ? `${altPrefix} ${idx + 1}` : `photo-${idx + 1}`;
@@ -268,7 +280,7 @@ export function PhotoGallery({
           gap: "12px",
         }}
       >
-        {images.map((src, idx) => {
+        {visibleImages.map((src, idx) => {
           const alt = getAlt(idx);
           return (
             <motion.div
@@ -298,9 +310,31 @@ export function PhotoGallery({
         })}
       </div>
 
+      {hasMore && !expanded && (
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          style={{
+            display: "block",
+            margin: "16px auto 0",
+            padding: "10px 20px",
+            borderRadius: "999px",
+            border: "1px solid var(--color-border)",
+            background: "var(--color-surface)",
+            color: "var(--color-text-secondary)",
+            fontSize: "13px",
+            fontWeight: 600,
+            cursor: "pointer",
+            transition: "all var(--transition-fast)",
+          }}
+        >
+          {showMoreLabel} ({images.length - initialVisibleCount!})
+        </button>
+      )}
+
       <LightboxOverlay
         open={lightboxIndex !== null}
-        images={images}
+        images={visibleImages}
         currentIndex={lightboxIndex ?? 0}
         onIndexChange={setLightboxIndex}
         onClose={() => setLightboxIndex(null)}

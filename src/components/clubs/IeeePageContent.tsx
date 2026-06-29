@@ -33,14 +33,14 @@ export function IeeePageContent() {
       <FullBleed style={{ height: "240px", marginBottom: "32px" }}>
         <ZoomableImage
           fill
-          src="/images/IEEE/banner-ieee.jpg"
+          src="/images/IEEE/banner-ieee.webp"
           alt="IEEE ISET Zaghouan SB Cover"
           objectPosition="center center"
         />
         <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(to bottom, rgba(11,31,58,0.25), rgba(11,31,58,0.85))" }} />
         <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", pointerEvents: "none" }}>
           <ZoomableImage
-            src="/images/IEEE/Logo-IEEE.jpg"
+            src="/images/IEEE/Logo-IEEE.webp"
             alt="IEEE ISET Zaghouan SB Logo"
             hideHint
             style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", background: "#fff", pointerEvents: "auto" }}

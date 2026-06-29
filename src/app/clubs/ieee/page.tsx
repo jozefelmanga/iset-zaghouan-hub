@@ -11,7 +11,7 @@ export default function IeeePage() {
       <StaticPageHeader
         icon="users"
         label="النوادي و الجمعيات"
-        title="IEEE ISET Zaghouan SB"
+        title="IEEE ISET Zaghouan Student Branch"
         subtitle="Advancing technology for humanity. ⚡🔬"
         category="life"
       />

@@ -48,9 +48,9 @@ export const clubDirectory = [
   },
   {
     id: "ieee",
-    name: "IEEE ISET Zaghouan SB",
+    name: "IEEE ISET Zaghouan Student Branch",
     slogan: "Advancing technology for humanity. ⚡🔬",
-    description: "مجتمع طلابي يحمل روح IEEE — أكبر منظمة تقنية في العالم. ورشات، مشاريع، وأحداث باش تعزّز التعلّم والابتكار والتعاون.",
+    description: "فرع IEEE الطلابي في ISET Zaghouan — ورشات، تكوينات، hard & soft skills، TSYP، و شبكة IEEE العالمية. مفتوح لكل الأقسام.",
     color: "#00629B",
     href: "/clubs/ieee",
     logo: "/images/IEEE/Logo-IEEE.webp",

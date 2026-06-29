@@ -11,21 +11,32 @@ import {
 } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
 import { FullBleed } from "@/components/ui/layout";
-import { ZoomableImage } from "@/components/ui/Lightbox";
+import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
 
 const IEEE_COLOR = "#00629B";
+const IEEE_BASE = "/images/IEEE";
 
-const objectives = [
-  "مجتمع طلابي يحمل روح IEEE، أكبر منظمة تقنية في العالم.",
-  "تعزيز التعلّم والابتكار عبر ورشات ومشاريع وأحداث تقنية.",
-  "تشجيع التعاون والعمل الجماعي بين الطلبة من مختلف التخصصات.",
-  "ربط الطلبة بشبكة IEEE العالمية وفرصها المهنية والعلمية.",
-  "تطوير مهارات تقنية ومهنية تخدم المسار الجامعي والمهني.",
+const galleryImages = [
+  ...Array.from({ length: 11 }, (_, i) => `${IEEE_BASE}/ieee (${i + 1}).webp`),
+  ...Array.from({ length: 7 }, (_, i) => `${IEEE_BASE}/ieee-images (${i + 1}).webp`),
 ];
 
-const events = ["Workshops", "Projects", "Technical Events", "Trainings", "Journée d'intégration"];
+const objectives = [
+  "إنشاء مجتمع نشط في ISET Zaghouan عبر ورشات، تكوينات، و skill-building workouts.",
+  "تطوير Hard skills و Soft skills: معرفة تقنية، تواصل، teamwork، leadership، و problem-solving.",
+  "ربط الأعضاء بشبكة IEEE العالمية وفرص التعلّم والقيادة والتطور المهني.",
+  "فتح الباب لكل الأقسام — مو بس IT — حسب روح IEEE في التعاون بين التخصصات.",
+  "إشراك الأعضاء في TSYP، أنشطة IEEE Tunisia Section، و التظاهرات السنوية لـ IEEE.",
+];
 
-const GALLERY_PLACEHOLDER_COUNT = 6;
+const events = [
+  "Workshops",
+  "Training Sessions",
+  "Skill-building",
+  "Projects",
+  "TSYP",
+  "IEEE Tunisia Section",
+];
 
 export function IeeePageContent() {
   return (
@@ -33,14 +44,14 @@ export function IeeePageContent() {
       <FullBleed style={{ height: "240px", marginBottom: "32px" }}>
         <ZoomableImage
           fill
-          src="/images/IEEE/banner-ieee.webp"
+          src={`${IEEE_BASE}/banner-ieee.webp`}
           alt="IEEE ISET Zaghouan SB Cover"
           objectPosition="center center"
         />
         <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(to bottom, rgba(11,31,58,0.25), rgba(11,31,58,0.85))" }} />
         <div style={{ position: "absolute", bottom: "24px", right: "32px", left: "32px", display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", pointerEvents: "none" }}>
           <ZoomableImage
-            src="/images/IEEE/Logo-IEEE.webp"
+            src={`${IEEE_BASE}/Logo-IEEE.webp`}
             alt="IEEE ISET Zaghouan SB Logo"
             hideHint
             style={{ width: "80px", height: "80px", borderRadius: "16px", border: "2px solid #fff", background: "#fff", pointerEvents: "auto" }}
@@ -54,10 +65,33 @@ export function IeeePageContent() {
             <Code size={20} style={{ color: IEEE_COLOR }} />
             شكون أحنا؟ (Who Are We?)
           </h2>
-          <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
-            <strong>IEEE ISET Zaghouan SB</strong> مجتمع طلابي يحمل روح IEEE — أكبر منظمة تقنية في العالم.
-            نعزّزو التعلّم والابتكار والتعاون عبر ورشات، مشاريع، وأحداث تقنية باش تطوّرو مهاراتكم وتربطو بالشبكة العالمية لـ IEEE.
+          <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "12px" }}>
+            <strong>IEEE ISET Zaghouan Student Branch</strong> فرع جامعي تابع للـ Institute of Electrical and Electronics Engineers (IEEE) —
+            أكبر منظمة مهنية تقنية في العالم. الـ Student Branch مجتمع طلابي يربط الأعضاء بالشبكة العالمية لـ IEEE
+            ويشجّع الابتكار، التعلّم التقني، القيادة، و التطور المهني.
           </p>
+          <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "12px" }}>
+            تأسّس الفرع سنة <strong>2026</strong> باش يخلق مجتمع فاعل في ISET Zaghouan عبر تنظيم workshops، training sessions،
+            skill-building workouts، و events تساعد الطلبة والمهندسين في المستقبل يطوّرو المهارات اللازمة للدخول والنمو في عالم الشغل.
+          </p>
+          <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
+            IEEE ISET Zaghouan SB فضاء باش تتعلّم، تتعاون، تبني projects، وتحضّر روحك للمسار المهني —
+            مع تركيز على hard skills و soft skills، وانفتاح على كل الأقسام مو بس الإعلامية.
+          </p>
+          <span
+            style={{
+              display: "inline-block",
+              padding: "6px 14px",
+              borderRadius: "999px",
+              background: "rgba(0,98,155,0.08)",
+              border: "1px solid rgba(0,98,155,0.18)",
+              color: IEEE_COLOR,
+              fontSize: "12.5px",
+              fontWeight: 600,
+            }}
+          >
+            تأسيس: 2026
+          </span>
         </Card>
       </div>
 
@@ -156,34 +190,7 @@ export function IeeePageContent() {
           <ImageIcon size={20} style={{ color: "var(--color-secondary)" }} />
           معرض الصور والذكريات
         </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-            gap: "12px",
-          }}
-        >
-          {Array.from({ length: GALLERY_PLACEHOLDER_COUNT }, (_, i) => (
-            <div
-              key={i}
-              style={{
-                aspectRatio: "1",
-                borderRadius: "12px",
-                border: "2px dashed var(--color-border)",
-                background: "rgba(11,31,58,0.03)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "8px",
-                color: "var(--color-text-muted)",
-              }}
-            >
-              <ImageIcon size={28} style={{ opacity: 0.4 }} />
-              <span style={{ fontSize: "12px", fontWeight: 600 }}>صور قريباً</span>
-            </div>
-          ))}
-        </div>
+        <PhotoGallery images={galleryImages} initialVisibleCount={12} altPrefix="IEEE" />
       </div>
     </>
   );

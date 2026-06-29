@@ -66,8 +66,8 @@ export const PAGE_SEO = {
     description: "نادي Enactus في ISET Zaghouan: ريادة الأعمال، المشاريع الاجتماعية، و الفرص للطلبة.",
   },
   "/clubs/ieee": {
-    title: "IEEE ISET Zaghouan SB",
-    description: "فرع IEEE الطلابي في ISET Zaghouan: ورشات تقنية، مشاريع، أحداث، و التعاون مع أكبر منظمة هندسية في العالم.",
+    title: "IEEE ISET Zaghouan Student Branch",
+    description: "فرع IEEE الطلابي في ISET Zaghouan: ورشات، تكوينات، hard & soft skills، TSYP، IEEE Tunisia Section، و شبكة أكبر منظمة تقنية في العالم.",
   },
   "/clubs/sos-ambassadeurs": {
     title: "نادي سفراء قرى الأطفال SOS",

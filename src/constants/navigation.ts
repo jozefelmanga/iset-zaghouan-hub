@@ -106,7 +106,7 @@ export const allNavLinks: NavLink[] = [
   { href: "/clubs/securinets", label: "نادي SecuriNets",                 icon: Users,        description: "جمعية الأمن السيبراني في ISETZG", category: "life"     },
   { href: "/clubs/odd",        label: "نادي ODD",                        icon: Users,        description: "نادي التنمية المستدامة والبيئة",   category: "life"     },
   { href: "/clubs/enactus",    label: "نادي Enactus",                    icon: Users,        description: "ريادة الأعمال والمشاريع الطلابية", category: "life"     },
-  { href: "/clubs/ieee",       label: "IEEE ISET Zaghouan SB",           icon: Users,        description: "مجتمع IEEE الطلابي — ورشات ومشاريع تقنية", category: "life" },
+  { href: "/clubs/ieee",       label: "IEEE ISET Zaghouan Student Branch", icon: Users,        description: "فرع IEEE — ورشات، TSYP، و skill-building", category: "life" },
   { href: "/clubs/sos-ambassadeurs", label: "نادي سفراء SOS",           icon: Users,        description: "عمل تطوعي ومبادرات إنسانية مع قرى الأطفال SOS", category: "life" },
   { href: "/departments/ti",   label: "قسم تكنولوجيا المعلومات (TI)",   icon: GraduationCap, description: "تخصصات DSI و RSI ومراجعها",       category: "academic" },
   { href: "/departments/seg",  label: "قسم الاقتصاد والتصرف (SEG)",     icon: GraduationCap, description: "المحاسبة والمالية وإدارة الأعمال", category: "academic" },

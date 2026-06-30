@@ -68,6 +68,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
           className="mobile-only"
           onClick={() => setDrawerOpen?.(false)}
           style={{
+            display: "flex",
             width: "32px",
             height: "32px",
             borderRadius: "8px",
@@ -78,6 +79,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
             alignItems: "center",
             justifyContent: "center",
             color: "var(--color-text-muted)",
+            flexShrink: 0,
           }}
         >
           <X size={18} strokeWidth={2} />

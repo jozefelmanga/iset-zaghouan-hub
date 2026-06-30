@@ -29,6 +29,15 @@ export const clubDirectory = [
     logo: "/images/SecuriNets ISET Zaghouan/307089995_5896662463700630_57012804199137690_n.webp",
   },
   {
+    id: "robotique",
+    name: "Club Robotique ISET Zaghouan",
+    slogan: "Innovate. Create. Inspire. 🤖",
+    description: "مجتمع شغوف بالروبوتيك والإلكترونيك والبرمجة: ورشات، مشاريع تطبيقية، وأنشطة تقنية وتحديات وطنية.",
+    color: "#2563EB",
+    href: "/clubs/robotique",
+    logo: "/images/Club Robotique/logo.webp",
+  },
+  {
     id: "enactus",
     name: "Enactus ISET Zaghouan",
     slogan: "We empower, innovate, and create positive change. 💯🌍",

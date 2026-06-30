@@ -51,11 +51,15 @@ export const PAGE_SEO = {
   },
   "/clubs": {
     title: "النوادي الطلابية",
-    description: "دليل النوادي و الأنشطة في ISET Zaghouan: SecuriNets، Enactus، IEEE، SOS، و أكثر.",
+    description: "دليل النوادي و الأنشطة في ISET Zaghouan: SecuriNets، Robotique، Enactus، IEEE، SOS، و أكثر.",
   },
   "/clubs/securinets": {
     title: "نادي SecuriNets",
     description: "جمعية الأمن السيبراني SecuriNets في ISET Zaghouan: الأنشطة، الفوايد، و كيفاش تنضم.",
+  },
+  "/clubs/robotique": {
+    title: "Club Robotique ISET Zaghouan",
+    description: "Club Robotique ISET Zaghouan: ورشات Arduino/C/Python، إلكترونيك، مشاريع روبوتية، hackathons وتحديات تقنية.",
   },
   "/clubs/enactus": {
     title: "نادي Enactus",

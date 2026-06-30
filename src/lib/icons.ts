@@ -53,6 +53,10 @@ export {
   // Career
   Briefcase,
   Code,
+  Bot,
+  Cpu,
+  Zap,
+  Wrench,
   Coins,
   FlaskConical,
   Layers,

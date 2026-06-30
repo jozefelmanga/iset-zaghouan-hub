@@ -11,6 +11,7 @@ import {
 } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
+import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const IEEE_COLOR = "#00629B";
@@ -46,9 +47,11 @@ export function IeeePageContent() {
         bannerAlt="IEEE ISET Zaghouan SB Cover"
         logoSrc={`${IEEE_BASE}/Logo-IEEE.webp`}
         logoAlt="IEEE ISET Zaghouan SB Logo"
+        title="IEEE ISET Zaghouan Student Branch"
+        subtitle="Advancing technology for humanity. ⚡🔬"
       />
 
-      <div style={{ marginBottom: "32px" }}>
+      <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
             <Code size={20} style={{ color: IEEE_COLOR }} />
@@ -82,7 +85,6 @@ export function IeeePageContent() {
             تأسيس: 2026
           </span>
         </Card>
-      </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "24px", marginBottom: "32px" }}>
         <Card elevation="raised" padding="24px">
@@ -181,6 +183,7 @@ export function IeeePageContent() {
         </h2>
         <PhotoGallery images={galleryImages} initialVisibleCount={12} altPrefix="IEEE" />
       </div>
+      </PageWrapper>
     </>
   );
 }

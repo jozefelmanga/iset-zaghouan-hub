@@ -12,6 +12,7 @@ import {
 } from "@/lib/icons";
 import { Card, Alert } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
+import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const SECURINETS_BASE = "/images/SecuriNets ISET Zaghouan";
@@ -55,12 +56,14 @@ export function SecurinetsPageContent() {
         bannerAlt="SecuriNets Cover"
         logoSrc="/images/SecuriNets ISET Zaghouan/307089995_5896662463700630_57012804199137690_n.webp"
         logoAlt="SecuriNets Logo"
+        title="SecuriNets ISET Zaghouan"
+        subtitle="Defending today, securing tomorrow. 🛡️🚀"
         objectPosition="center 93%"
         logoBackground="#000"
         gradientTop={0.2}
       />
 
-      <div style={{ marginBottom: "32px" }}>
+      <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
             <Shield size={20} style={{ color: "#F6B41B" }} />
@@ -74,7 +77,6 @@ export function SecurinetsPageContent() {
             فريق SecuriNets ما يقتصرش على طلبة الإعلامية (IT) — التكوينات متاعنا مفتوحة للكل من كافة التخصصات والسنوات باش يشاركو ويتعلّمو.
           </Alert>
         </Card>
-      </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "24px", marginBottom: "32px" }}>
         <Card elevation="raised" padding="24px">
@@ -163,6 +165,7 @@ export function SecurinetsPageContent() {
         </h2>
         <PhotoGallery images={images} initialVisibleCount={12} />
       </div>
+      </PageWrapper>
     </>
   );
 }

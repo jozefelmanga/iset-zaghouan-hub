@@ -14,6 +14,7 @@ import {
 } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
+import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const images = [
@@ -57,11 +58,13 @@ export function EnactusPageContent() {
         bannerAlt="Enactus Cover"
         logoSrc="https://th.bing.com/th/id/R.8a3ad5957f7a61393d26e56812ef3134?rik=trk7N6Nmyzry8g&pid=ImgRaw&r=0"
         logoAlt="Enactus Logo"
+        title="Enactus ISET Zaghouan"
+        subtitle="A UNITED TEAM WITH A SHARED DREAM. we empower, innovate, and create positive change. 💯🌍"
         objectPosition="center 35%"
         logoObjectFit="contain"
       />
 
-      <div style={{ marginBottom: "32px" }}>
+      <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
             <Briefcase size={20} style={{ color: "#F6B41B" }} />
@@ -75,7 +78,6 @@ export function EnactusPageContent() {
             تأسس فرع <strong>Enactus ISET Zaghouan</strong> في ديسمبر 2020 على يد الأستاذة <strong>نور عويني</strong>. بالرغم من الصعوبات، الفريق نجح ينظّم برشا تكوينات وأحداث تنموية وريادية في الفاك وشارك بتميز على المستوى الوطني.
           </p>
         </Card>
-      </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "24px", marginBottom: "32px" }}>
         <Card elevation="raised" padding="24px">
@@ -206,6 +208,7 @@ export function EnactusPageContent() {
         </h2>
         <PhotoGallery images={images} />
       </div>
+      </PageWrapper>
     </>
   );
 }

@@ -9,6 +9,7 @@ import {
 } from "@/lib/icons";
 import { Card, Alert } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
+import { PageWrapper } from "@/components/ui/layout";
 
 const SOS_COLOR = "#E30613";
 const IMAGE_BASE = "/images/Club ambassadeurs sos village";
@@ -59,9 +60,11 @@ export function SosAmbassadeursPageContent() {
         bannerAlt="Club Ambassadeurs SOS Village Cover"
         logoSrc={`${IMAGE_BASE}/logo-SOS.webp`}
         logoAlt="Club Ambassadeurs SOS Village Logo"
+        title="Club Ambassadeurs SOS Village"
+        subtitle="Raise the voice and make the choice. 💚🤝"
       />
 
-      <div style={{ marginBottom: "32px" }}>
+      <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
             <Heart size={20} style={{ color: SOS_COLOR }} />
@@ -104,7 +107,6 @@ export function SosAmbassadeursPageContent() {
             أفضل نادٍ صاعد على المستوى الوطني خلال حفل اختتام السنة الجمعياتية لشبكة نوادي سفراء قرى الأطفال SOS بصفاقس.
           </Alert>
         </Card>
-      </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "24px", marginBottom: "32px" }}>
         <Card elevation="raised" padding="24px">
@@ -201,6 +203,7 @@ export function SosAmbassadeursPageContent() {
           ))}
         </div>
       </div>
+      </PageWrapper>
     </>
   );
 }

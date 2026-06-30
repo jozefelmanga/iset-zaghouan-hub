@@ -17,6 +17,7 @@ import {
 } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
+import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const ROBOTIQUE_COLOR = "#2563EB";
@@ -83,10 +84,12 @@ export function RobotiquePageContent() {
         bannerAlt="Club Robotique ISET Zaghouan Cover"
         logoSrc={`${ROBOTIQUE_BASE}/logo.webp`}
         logoAlt="Club Robotique ISET Zaghouan Logo"
+        title="Club Robotique ISET Zaghouan"
+        subtitle="Innovate. Create. Inspire. 🤖"
         logoObjectFit="contain"
       />
 
-      <div style={{ marginBottom: "32px" }}>
+      <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
             <Bot size={20} style={{ color: ROBOTIQUE_COLOR }} />
@@ -147,7 +150,6 @@ export function RobotiquePageContent() {
             </div>
           </div>
         </Card>
-      </div>
 
       <div style={{ marginBottom: "32px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
@@ -277,6 +279,7 @@ export function RobotiquePageContent() {
         </h2>
         <PhotoGallery images={images} initialVisibleCount={12} altPrefix="Robotique" />
       </div>
+      </PageWrapper>
     </>
   );
 }

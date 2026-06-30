@@ -1,9 +1,10 @@
 import { pageMetadata } from "@/constants/seo";
-import { CheckCircle2, Camera, DoorOpen, MapPin, Info } from "@/lib/icons";
+import { DoorOpen } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
-import { Card, Alert } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
+import { LibraryShowcaseImage } from "@/components/library/LibraryShowcaseImage";
+import { LibraryFeaturesGrid } from "@/components/library/LibraryFeaturesGrid";
 import { libraryInfo } from "@/data/content";
 
 export const metadata = pageMetadata("/library");
@@ -18,6 +19,10 @@ export default function LibraryPage() {
         subtitle="مراجع، اكزامانات، وكل ما يعاونك على المراجعة"
         category="academic"
       />
+
+      <MotionReveal delay={0.05}>
+        <LibraryShowcaseImage src={libraryInfo.image} alt={libraryInfo.imageAlt} />
+      </MotionReveal>
 
       <MotionReveal delay={0.1} className="mb-7">
         <div
@@ -57,55 +62,7 @@ export default function LibraryPage() {
         </div>
       </MotionReveal>
 
-      <div style={{ marginBottom: "28px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-          <div style={{
-            width: "34px", height: "34px", borderRadius: "50%",
-            background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-          }}>
-            <Info size={16} strokeWidth={2} />
-          </div>
-          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>الميزات</span>
-        </div>
-        <Card elevation="flat" padding="20px">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "12px" }}>
-            {libraryInfo.features.map((f, i) => (
-              <MotionReveal key={i} delay={i * 0.06}>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <CheckCircle2 size={16} style={{ color: "#22C55E", flexShrink: 0, marginTop: "2px" }} strokeWidth={2.5} />
-                  <span style={{ fontSize: "13px", color: "var(--color-text)", lineHeight: 1.5 }}>{f}</span>
-                </div>
-              </MotionReveal>
-            ))}
-          </div>
-        </Card>
-      </div>
-
-      <div style={{ marginBottom: "28px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-          <div style={{
-            width: "34px", height: "34px", borderRadius: "50%",
-            background: "rgba(246,180,27,0.10)", color: "var(--color-accent)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-          }}>
-            <Camera size={16} strokeWidth={2} />
-          </div>
-          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>نصائح</span>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          {libraryInfo.tips.map((tip, i) => (
-            <Alert key={i} title="" variant="info">{tip}</Alert>
-          ))}
-        </div>
-      </div>
-
-      <Alert title="الموقع" variant="success">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <MapPin size={14} style={{ flexShrink: 0 }} />
-          {libraryInfo.location}
-        </div>
-      </Alert>
+      <LibraryFeaturesGrid features={libraryInfo.features} />
     </PageWrapper>
   );
 }

@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { categoryConfig } from "@/lib/theme";
 import { pageHeaderIcons } from "@/lib/iconMaps";
+import { cn } from "@/lib/utils";
 import type { Category } from "@/types";
 
 interface StaticPageHeaderProps {
@@ -10,15 +11,16 @@ interface StaticPageHeaderProps {
   subtitle?: string;
   badge?: ReactNode;
   category?: Category;
+  className?: string;
 }
 
 /** Server Component page header — no Framer Motion, icon passed as string key. */
-export function StaticPageHeader({ icon, label, title, subtitle, badge, category = "primary" }: StaticPageHeaderProps) {
+export function StaticPageHeader({ icon, label, title, subtitle, badge, category = "primary", className }: StaticPageHeaderProps) {
   const Icon = pageHeaderIcons[icon];
   const colors = categoryConfig[category] || categoryConfig.primary;
 
   return (
-    <div className="mb-8">
+    <div className={cn("mb-8", className)}>
       <div className="flex items-start gap-4">
         <div
           className="icon-circle"

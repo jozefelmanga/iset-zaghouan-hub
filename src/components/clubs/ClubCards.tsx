@@ -29,24 +29,38 @@ export function ClubBenefitCard({ item, index }: { item: BenefitCard; index: num
 
 export function ClubDirectoryCard({ club, index }: { club: ClubEntry; index: number }) {
   return (
-    <motion.div {...enterAnimation(index * 0.1)}>
-      <Card elevation="raised" padding="22px">
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", alignItems: "center" }}>
-          <ZoomableImage
-            src={club.logo}
-            alt={club.name}
-            hideHint
-            style={{ width: "52px", height: "52px", borderRadius: "12px", border: "1px solid var(--color-border)", flexShrink: 0 }}
-          />
-          <div style={{ flex: 1, minWidth: "260px" }}>
-            <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-text)", marginBottom: "2px" }}>{club.name}</h4>
-            <p style={{ fontSize: "12px", color: club.color, fontWeight: 600, marginBottom: "6px" }}>{club.slogan}</p>
-            <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>{club.description}</p>
+    <motion.div {...enterAnimation(index * 0.06)}>
+      <Card elevation="raised" padding="16px" className="md:!p-[22px]">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+          <div className="flex min-w-0 flex-1 items-start gap-3">
+            <ZoomableImage
+              src={club.logo}
+              alt={club.name}
+              hideHint
+              style={{
+                width: "48px",
+                height: "48px",
+                borderRadius: "12px",
+                border: "1px solid var(--color-border)",
+                flexShrink: 0,
+              }}
+            />
+            <div className="min-w-0 flex-1">
+              <h4 className="mb-0.5 text-[14px] font-bold leading-snug text-[var(--color-text)] md:text-[15px]">
+                {club.name}
+              </h4>
+              <p className="mb-1 text-[11px] font-semibold leading-snug md:text-[12px]" style={{ color: club.color }}>
+                {club.slogan}
+              </p>
+              <p className="text-[12.5px] leading-relaxed text-[var(--color-text-secondary)] md:text-[13px]">
+                {club.description}
+              </p>
+            </div>
           </div>
-          <Link href={club.href} style={{ textDecoration: "none" }}>
+          <Link href={club.href} className="shrink-0 self-start sm:self-center" style={{ textDecoration: "none" }}>
             <motion.div
               whileHover={{ x: -4 }}
-              style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "13px", fontWeight: 600, color: "var(--color-secondary)", cursor: "pointer" }}
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[rgba(18,184,200,0.08)] px-3 py-2 text-[12.5px] font-semibold text-[var(--color-secondary)] md:bg-transparent md:px-0 md:py-0 md:text-[13px]"
             >
               <span>التفاصيل والصور</span>
               <ArrowLeft size={14} />

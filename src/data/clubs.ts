@@ -8,7 +8,7 @@ export const clubMeta = {
     "تربط بين الجو والتفرهيد",
     "تقوي السيرة الذاتية بالشهادات والخبرات",
   ],
-  skills: ["Time management", "Public speaking", "Communication", "Teamwork"],
+  skills: ["تنظيم الوقت", "التحدث قدّام الناس", "التواصل", "العمل الجماعي"],
 };
 
 export const clubBenefitCards = [

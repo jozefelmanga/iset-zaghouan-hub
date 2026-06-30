@@ -111,8 +111,6 @@ export const allNavLinks: NavLink[] = [
   { href: "/departments/ti",   label: "قسم تكنولوجيا المعلومات (TI)",   icon: GraduationCap, description: "تخصصات DSI و RSI ومراجعها",       category: "academic" },
   { href: "/departments/seg",  label: "قسم الاقتصاد والتصرف (SEG)",     icon: GraduationCap, description: "المحاسبة والمالية وإدارة الأعمال", category: "academic" },
   { href: "/departments/gpr",  label: "قسم هندسة العمليات (GPR)",       icon: GraduationCap, description: "الأساليب الكيميائية والأفاق",      category: "academic" },
-  { href: "/stages/companies", label: "دليل الشركات",                    icon: Building2,     description: "دوّر على شركة للستاج",            category: "career"   },
-  { href: "/stages/pfe",       label: "دليل PFE",                        icon: GraduationCap, description: "دليل Projet de Fin d'Études",     category: "career"   },
 ];
 
 /* ============================================================

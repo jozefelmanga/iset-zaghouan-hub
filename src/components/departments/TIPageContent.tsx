@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link2, ExternalLink } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
+import { DepartmentScheduleDisclaimer } from "@/components/departments/DepartmentScheduleDisclaimer";
+import { afterGraduationGuide } from "@/data/resources";
 
 const semesterGalleryImages = [
   "/images/Technologies de l’informatique (TI)/1000125478.webp",
@@ -82,11 +84,9 @@ export function TIPageContent() {
       {/* Section 2: Study Materials */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "10px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى (Jardins)
+          <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى
         </h2>
-        <p style={{ fontSize: "14px", color: "var(--color-text-muted)", marginBottom: "20px" }}>
-          المواد تختلف بين السداسي الأول والثاني. هاذوما المواد المقررة:
-        </p>
+        <DepartmentScheduleDisclaimer intro="المواد تختلف بين السداسي الأول والثاني." />
 
         <div style={{ display: "flex", gap: "8px", background: "rgba(11,31,58,0.04)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>
           <button
@@ -196,27 +196,50 @@ export function TIPageContent() {
               ))}
             </div>
 
-            <a
-              href="https://makaabi.github.io/scoreapp/1ere"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "10px 18px",
-                borderRadius: "10px",
-                background: "var(--color-primary)",
-                color: "#fff",
-                fontSize: "13px",
-                fontWeight: 600,
-                textDecoration: "none",
-                boxShadow: "var(--shadow-hover)",
-              }}
-            >
-              <span>احسب سكورك هنا (Scoreapp)</span>
-              <ExternalLink size={14} />
-            </a>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+              <a
+                href="https://makaabi.github.io/scoreapp/1ere"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "10px 18px",
+                  borderRadius: "10px",
+                  background: "var(--color-primary)",
+                  color: "#fff",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  boxShadow: "var(--shadow-hover)",
+                }}
+              >
+                <span>احسب سكورك هنا (Scoreapp)</span>
+                <ExternalLink size={14} />
+              </a>
+              <a
+                href={afterGraduationGuide.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "10px 18px",
+                  borderRadius: "10px",
+                  background: "transparent",
+                  color: "var(--color-primary)",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  border: "1px solid var(--color-border)",
+                }}
+              >
+                <span>تفاصيل أكثر ({afterGraduationGuide.title})</span>
+                <ExternalLink size={14} />
+              </a>
+            </div>
           </Card>
         </div>
       </div>

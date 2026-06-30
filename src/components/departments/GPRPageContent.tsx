@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link2 } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
+import { DepartmentScheduleDisclaimer } from "@/components/departments/DepartmentScheduleDisclaimer";
 
 const semesterGalleryImages = [
   "/images/Génie des Procédés (GPR)/8b38c86c-d857-42af-af22-0e62fbabab11.webp",
@@ -83,11 +84,9 @@ export function GPRPageContent() {
       {/* Section 3: Study Materials */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "10px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى (Jardins)
+          <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى
         </h2>
-        <p style={{ fontSize: "14px", color: "var(--color-text-muted)", marginBottom: "20px" }}>
-          المواد تختلف بين السداسي الأول والثاني. هاذوما المواد المقررة:
-        </p>
+        <DepartmentScheduleDisclaimer intro="المواد تختلف بين السداسي الأول والثاني." />
 
         <div style={{ display: "flex", gap: "8px", background: "rgba(11,31,58,0.04)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>
           <button

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link2, ExternalLink } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
+import { DepartmentScheduleDisclaimer } from "@/components/departments/DepartmentScheduleDisclaimer";
 
 const semesterGalleryImages = [
   "/images/Sciences économiques et de gestion (SEG)/4a931b05-723c-48de-a3c2-ca9a82aa3b86.webp",
@@ -67,11 +68,9 @@ export function SEGPageContent() {
       {/* Section 2: Study Materials */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "10px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى (Jardins)
+          <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى
         </h2>
-        <p style={{ fontSize: "14px", color: "var(--color-text-muted)", marginBottom: "20px" }}>
-          المواد متشابهة بين المحاسبة وإدارة الأعمال في السداسي الأول، ومن بعد تختلف. هاذا جدول المواد:
-        </p>
+        <DepartmentScheduleDisclaimer intro="المواد متشابهة بين المحاسبة وإدارة الأعمال في السداسي الأول، ومن بعد تختلف." />
 
         <div style={{ display: "flex", gap: "8px", background: "rgba(11,31,58,0.04)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>
           <button

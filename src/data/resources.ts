@@ -75,3 +75,8 @@ export const externalResources: ExternalResource[] = [
     description: "نصايح مهمة للجداد اللي نجحوا في الباك وتجربة طلبة إيسات زغوان في المعهد.",
   },
 ];
+
+export const afterGraduationGuide = externalResources.find(
+  (resource): resource is ExternalLinkResource =>
+    resource.type === "link" && resource.title === "After Graduation Guide"
+)!;

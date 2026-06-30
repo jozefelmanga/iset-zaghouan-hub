@@ -1,18 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { breakpoints } from "@/lib/theme";
 
+function subscribeToMediaQuery(query: string, onStoreChange: () => void) {
+  const mq = window.matchMedia(query);
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
+}
+
 export function useIsMobile(breakpoint = breakpoints.tablet) {
-  const [isMobile, setIsMobile] = useState(false);
+  const query = `(max-width: ${breakpoint}px)`;
 
-  useEffect(() => {
-    const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
-    setIsMobile(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, [breakpoint]);
-
-  return isMobile;
+  return useSyncExternalStore(
+    (onStoreChange) => subscribeToMediaQuery(query, onStoreChange),
+    () => window.matchMedia(query).matches,
+    () => false,
+  );
 }

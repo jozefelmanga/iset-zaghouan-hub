@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GraduationCap, BookOpen, Layers } from "@/lib/icons";
+import { GraduationCap, Layers } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { masterPrograms, masterFilterTabs } from "@/data/departments";

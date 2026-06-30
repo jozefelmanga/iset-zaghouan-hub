@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { homeTipsMeta, studentTips } from "@/data/bonus";
@@ -13,17 +13,51 @@ function wrapIndex(index: number, length: number) {
 
 const AUTO_ROTATE_MS = 6000;
 
-export function TipsCarouselSection() {
-  const [index, setIndex] = useState(0);
-  const [ready, setReady] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(false);
+let randomTipIndex: number | null = null;
+const tipIndexListeners = new Set<() => void>();
 
-  useEffect(() => {
-    setIndex(Math.floor(Math.random() * studentTips.length));
-    setReady(true);
-    setReduceMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-  }, []);
+function seedRandomTipIndex() {
+  if (randomTipIndex !== null) return;
+  randomTipIndex = Math.floor(Math.random() * studentTips.length);
+  tipIndexListeners.forEach((listener) => listener());
+}
+
+function subscribeRandomTipIndex(onStoreChange: () => void) {
+  tipIndexListeners.add(onStoreChange);
+  queueMicrotask(seedRandomTipIndex);
+  return () => tipIndexListeners.delete(onStoreChange);
+}
+
+function getRandomTipIndex() {
+  return randomTipIndex ?? 0;
+}
+
+export function TipsCarouselSection() {
+  const seededIndex = useSyncExternalStore(
+    subscribeRandomTipIndex,
+    getRandomTipIndex,
+    () => 0,
+  );
+  const reduceMotion = useSyncExternalStore(
+    (onStoreChange) => {
+      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+      mq.addEventListener("change", onStoreChange);
+      return () => mq.removeEventListener("change", onStoreChange);
+    },
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    () => false,
+  );
+
+  const [index, setIndex] = useState(0);
+  const [indexSynced, setIndexSynced] = useState(false);
+  const [paused, setPaused] = useState(false);
+
+  const ready = randomTipIndex !== null;
+
+  if (ready && !indexSynced) {
+    setIndexSynced(true);
+    setIndex(seededIndex);
+  }
 
   const goNext = useCallback(() => {
     setIndex((current) => wrapIndex(current + 1, studentTips.length));

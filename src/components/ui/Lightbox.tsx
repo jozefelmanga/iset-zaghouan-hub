@@ -5,14 +5,7 @@ import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn, ChevronLeft, ChevronRight } from "@/lib/icons";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
-
-function useMounted() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  return mounted;
-}
+import { useMounted } from "@/hooks/useMounted";
 
 const navButtonStyle: CSSProperties = {
   position: "absolute",

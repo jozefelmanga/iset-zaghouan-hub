@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ArrowLeft, ExternalLink } from "@/lib/icons";
@@ -15,18 +16,6 @@ const yearColors = [
   { bg: "rgba(34,197,94,0.08)", border: "rgba(34,197,94,0.2)", text: "#22C55E", badge: "success" as const },
   { bg: "rgba(246,180,27,0.08)", border: "rgba(246,180,27,0.2)", text: "#B45309", badge: "warning" as const },
 ];
-
-function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
-    setIsMobile(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, [breakpoint]);
-  return isMobile;
-}
 
 function WorkloadGrid({ workload }: { workload: (typeof internships)[0]["workload"] }) {
   const items = [
@@ -161,10 +150,14 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
 
   const isMobile = useIsMobile();
   const [mobileOpen, setMobileOpen] = useState<number | null>(controlledYear ?? 1);
+  const [prevControlledYear, setPrevControlledYear] = useState(controlledYear);
 
-  useEffect(() => {
-    if (controlledYear !== undefined) setMobileOpen(controlledYear);
-  }, [controlledYear]);
+  if (controlledYear !== prevControlledYear) {
+    setPrevControlledYear(controlledYear);
+    if (controlledYear !== undefined) {
+      setMobileOpen(controlledYear);
+    }
+  }
 
   if (isMobile && !hideSelector) {
     return (

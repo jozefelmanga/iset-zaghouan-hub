@@ -7,6 +7,7 @@ import { allNavLinks } from "@/constants/navigation";
 import { matchesNavLink } from "@/lib/nav-search";
 import { categoryConfig } from "@/lib/theme";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const popularTags = ["الترسيم", "البورص", "المبيت", "الستاجات", "النقل"];
 
@@ -18,27 +19,25 @@ interface CommandPaletteProps {
 export function CommandPalette({ open, onClose }: CommandPaletteProps) {
   const [query, setQuery] = useState("");
   const [recentSearches] = useState(["الترسيم", "المبيت الجامعي"]);
-  const [isMobile, setIsMobile] = useState(false);
+  const [trackedOpen, setTrackedOpen] = useState(open);
+  const isMobile = useIsMobile();
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
 
   useFocusTrap(dialogRef, open);
+
+  if (open !== trackedOpen) {
+    setTrackedOpen(open);
+    if (open) setQuery("");
+  }
 
   const filtered = query.trim()
     ? allNavLinks.filter((p) => matchesNavLink(p, query))
     : [];
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
     if (open) {
       setTimeout(() => inputRef.current?.focus(), 50);
-      setQuery("");
     }
   }, [open]);
 

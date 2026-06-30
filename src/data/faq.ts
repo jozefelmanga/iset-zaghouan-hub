@@ -1,4 +1,7 @@
 import type { FAQItem, Contact } from "@/types";
+import { instituteOfficial } from "./official";
+
+const formatPhone = (phone: string) => phone.replace("+216 ", "");
 
 export const faqItems: FAQItem[] = [
   {
@@ -38,8 +41,16 @@ export const faqItems: FAQItem[] = [
 ];
 
 export const emergencyContacts: Contact[] = [
-  { name: "المبيت بنات (عم عزيز)", phone: "-", note: "عساس الفردوس" },
+  {
+    name: "إدارة ISET Zaghouan",
+    phone: instituteOfficial.profile.phones.map(formatPhone).join(" / "),
+    note: "الهاتف الرسمي للمعهد",
+  },
+  {
+    name: "فاكس ISET Zaghouan",
+    phone: formatPhone(instituteOfficial.profile.fax),
+    note: "للمراسلات الإدارية",
+  },
   { name: "لواجيست قيس", phone: "98202339", note: "نقل تونس-زغوان" },
   { name: "Restaurant Ohana", phone: "20110358 / 98681904", note: "livraison للفوايي" },
-  { name: "النقل المحلي", price: "0.9 د", note: "يوصل للايزات من المحطة" },
 ];

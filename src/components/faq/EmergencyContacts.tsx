@@ -13,7 +13,7 @@ export function EmergencyContacts({ contacts }: { contacts: Contact[] }) {
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         {contacts.map((contact, i) => (
-          <MotionReveal key={contact.name} delay={i * 0.06}>
+          <MotionReveal key={`${contact.name}-${contact.phone ?? contact.price ?? i}`} delay={i * 0.06}>
             <div
               style={{
                 display: "flex",
@@ -34,6 +34,7 @@ export function EmergencyContacts({ contacts }: { contacts: Contact[] }) {
               {contact.phone && contact.phone !== "-" && (
                 <a
                   href={`tel:${contact.phone.replace(/[^0-9]/g, "")}`}
+                  dir="ltr"
                   className="transition-opacity hover:opacity-85"
                   style={{
                     padding: "8px 18px",
@@ -44,6 +45,7 @@ export function EmergencyContacts({ contacts }: { contacts: Contact[] }) {
                     fontWeight: 600,
                     textDecoration: "none",
                     flexShrink: 0,
+                    unicodeBidi: "isolate",
                   }}
                 >
                   {contact.phone}

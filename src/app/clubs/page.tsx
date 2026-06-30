@@ -9,7 +9,7 @@ export const metadata = pageMetadata("/clubs");
 
 export default function ClubsPage() {
   return (
-    <PageWrapper narrow className="flex flex-col gap-6 md:gap-8">
+    <PageWrapper className="flex flex-col gap-6 md:gap-8">
       <StaticPageHeader
         icon="users"
         label="الحياة الجامعية"
@@ -21,8 +21,8 @@ export default function ClubsPage() {
 
       <ClubsInfoPanels />
 
-      <section>
-        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+      <section className="flex flex-col gap-4">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h2 className="text-[17px] font-bold text-text md:text-[18px]">
             النوادي النشطة بالمعهد
           </h2>
@@ -30,7 +30,7 @@ export default function ClubsPage() {
             {clubDirectory.length} نوادي
           </span>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {clubDirectory.map((club, idx) => (
             <ClubDirectoryCard key={club.id} club={club} index={idx} />
           ))}

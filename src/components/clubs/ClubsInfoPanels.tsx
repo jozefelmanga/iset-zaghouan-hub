@@ -20,7 +20,7 @@ function InfoPanel({ title, children, defaultOpen = false }: { title: string; ch
 /** Compact FAQ panels above the club directory. */
 export function ClubsInfoPanels() {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-4">
       <InfoPanel title="علاش تنضم لنادي؟">
         <ul className="mb-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
           {clubMeta.benefits.map((b) => (

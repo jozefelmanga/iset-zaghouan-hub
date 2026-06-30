@@ -1,6 +1,5 @@
 export const transportAbonnement = {
   amount: "45 DT للسماستر",
-  scope: "أبونمان زغوان ↔ الايزات ",
   place: "المندوبية الجهوية للنقل بزغوان",
   mapUrl: "https://maps.app.goo.gl/UfdajEeBSjHBsX8q8",
   docs: ["نسخة بطاقة تعريف", "زوز تصاور", "نسخة شهادة ترسيم"],
@@ -50,7 +49,7 @@ export const transportRoutes = [
     fare: 3.400,
     fareUnit: "دينار",
     schedule: "10:00 / 12:00 / 15:00 / 16:00 / 17:30",
-    notes: "الكيران الكل تتعدى من قدام الايزات",
+    notes: "يتعدى من قدام الايزات",
   },
   {
     id: "bus_special",
@@ -61,27 +60,34 @@ export const transportRoutes = [
     schedule: "18:00",
     notes: "كار خاص للمبيت الجامعي للأولاد — أبونمان فقط",
     abonnement: transportAbonnement.amount,
-    abonnementDocs: transportAbonnement.docs,
   },
   {
     id: "local_bus",
     name: "نقل محلي (كار 8 صباح)",
     type: "bus",
-    from: "زغوان (السونتر)",
+    from: "زغوان (المحطة / السونتر)",
     to: "الايزات",
-    fare: 0.7,
+    fare: 0.9,
     fareUnit: "دينار",
     schedule: "8:00 صباح",
-    notes: "تهز للايزات، أبونمان 45 دينار للسماستر",
-    abonnement: transportAbonnement.amount,
-    abonnementDocs: transportAbonnement.docs,
+    notes: "تذكرة أو أبونمان — يوصل للايزات",
   },
 ];
 
+/** Tips not already covered by route cards or the abonnement block. */
 export const transportTips = [
-  "كار 8 صباح تهز للايزات ب 700 مي",
-  "أبونمان 45 دينار في كل سماستر",
   "🚌 محطة الكار بحثة مبيت الأولاد 🛑",
   "الأسوام متاع النقل الكل بين السونتر و الايزات متفوتش دينار",
-  "فما نقل (900) يوصلك للايزات من المحطة",
+];
+
+/** Evening / availability warnings — practical student advice. */
+export const transportWarnings = [
+  {
+    title: "بعد 17:30",
+    text: "آخر كار ماشي لتونس يتعدى على الايزات تقريباً على 17:30. بعدها صعيب برشا تلقى كار و حتى النقل المحلي.",
+  },
+  {
+    title: "بلاصة قريبة باش تلقى نقل",
+    text: "إذا ما لقيتش نقل قدّام المعهد، تنجم تمشي للمقرن. بلاصة قريبة وعادةً تلقى منها نقل لعدة وجهات.",
+  },
 ];

@@ -49,6 +49,21 @@ export function EmergencyContacts({ contacts }: { contacts: Contact[] }) {
                   {contact.phone}
                 </a>
               )}
+              {contact.price && (
+                <span
+                  style={{
+                    padding: "8px 18px",
+                    borderRadius: "var(--radius-button)",
+                    background: "rgba(11,31,58,0.08)",
+                    color: "var(--color-primary)",
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    flexShrink: 0,
+                  }}
+                >
+                  {contact.price}
+                </span>
+              )}
             </div>
           </MotionReveal>
         ))}

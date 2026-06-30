@@ -41,5 +41,5 @@ export const emergencyContacts: Contact[] = [
   { name: "المبيت بنات (عم عزيز)", phone: "-", note: "عساس الفردوس" },
   { name: "لواجيست قيس", phone: "98202339", note: "نقل تونس-زغوان" },
   { name: "Restaurant Ohana", phone: "20110358 / 98681904", note: "livraison للفوايي" },
-  { name: "النقل المحلي", phone: "900", note: "يوصل للايزات" },
+  { name: "النقل المحلي", price: "0.9 د", note: "يوصل للايزات من المحطة" },
 ];

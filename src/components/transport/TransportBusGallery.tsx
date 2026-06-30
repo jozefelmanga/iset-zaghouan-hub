@@ -11,7 +11,7 @@ const busScheduleImages = [
 
 export function TransportBusGallery() {
   return (
-    <div style={{ marginBottom: "36px" }}>
+    <div>
       <p style={{ fontSize: "12px", color: "var(--color-text-muted)", marginBottom: "18px" }}>اضغط على الصورة باش تكبّرها</p>
       <PhotoGallery images={busScheduleImages} thumbHeight={280} minColWidth={220} />
     </div>

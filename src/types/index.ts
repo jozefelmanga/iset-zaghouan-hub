@@ -24,7 +24,6 @@ export type TransportRoute = {
   notes: string;
   contact?: { name: string; phone: string };
   abonnement?: string;
-  abonnementDocs?: string[];
 };
 
 export type InternshipDifficulty = "easy" | "medium" | "hard";
@@ -117,6 +116,7 @@ export interface ExploreSpot {
 export interface Contact {
   name: string;
   phone?: string;
+  price?: string;
   email?: string;
   note?: string;
 }

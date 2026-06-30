@@ -5,7 +5,7 @@ import { Card, Alert } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { TransportBusGallery } from "@/components/transport/TransportBusGallery";
-import { transportRoutes, transportTips, transportAbonnement } from "@/data/transport";
+import { transportRoutes, transportTips, transportWarnings, transportAbonnement } from "@/data/transport";
 
 export const metadata = pageMetadata("/transport");
 
@@ -40,16 +40,13 @@ export default function TransportPage() {
           <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <MapPin size={16} strokeWidth={2} />
           </div>
-          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>وين تاخذ الأبونمان؟</span>
+          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>أبونمان زغوان ↔ الايزات</span>
         </div>
-        <p style={{ fontSize: "13px", color: "var(--color-secondary)", fontWeight: 600, lineHeight: 1.6, marginBottom: "10px" }}>
-          {transportAbonnement.scope}
-        </p>
-        <p style={{ fontSize: "15px", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.6, marginBottom: "8px" }}>
+        <p style={{ fontSize: "15px", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.6, marginBottom: "6px" }}>
           {transportAbonnement.place}
         </p>
-        <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "14px" }}>
-          امشي للمندوبية الجهوية للنقل بزغوان باش تاخذو ({transportAbonnement.amount}).
+        <p style={{ fontSize: "13px", color: "var(--color-secondary)", fontWeight: 600, lineHeight: 1.6, marginBottom: "14px" }}>
+          {transportAbonnement.amount}
         </p>
         <a
           href={transportAbonnement.mapUrl}
@@ -158,6 +155,18 @@ export default function TransportPage() {
 
       <div style={{ marginBottom: "28px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: "#EF4444", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <AlertCircle size={16} strokeWidth={2} />
+          </div>
+          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>بالليل و بعد العشية</span>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "24px" }}>
+          {transportWarnings.map((warning) => (
+            <Alert key={warning.title} title={warning.title} variant="warning">{warning.text}</Alert>
+          ))}
+        </div>
+
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
           <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(246,180,27,0.10)", color: "var(--color-accent)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <AlertCircle size={16} strokeWidth={2} />
           </div>
@@ -169,28 +178,6 @@ export default function TransportPage() {
           ))}
         </div>
       </div>
-
-      <Card elevation="flat" padding="24px" className="mb-6">
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Phone size={16} strokeWidth={2} />
-          </div>
-          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>أرقام مهمة</span>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-          {[
-            { name: "لواجيست قيس", phone: "98202339" },
-            { name: "النقل المحلي", phone: "900" },
-          ].map(({ name, phone }) => (
-            <div key={name} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 16px", borderRadius: "12px", background: "var(--color-background)" }}>
-              <span style={{ fontSize: "14px", fontWeight: 500, color: "var(--color-text)" }}>{name}</span>
-              <a href={`tel:${phone}`} style={{ fontSize: "14px", fontWeight: 700, color: "var(--color-secondary)", textDecoration: "none" }}>
-                {phone}
-              </a>
-            </div>
-          ))}
-        </div>
-      </Card>
 
       <Alert title="Google Sheets — Louage & Na9l Zaghouan" variant="success">
         <a

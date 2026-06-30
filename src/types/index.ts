@@ -61,9 +61,15 @@ export type Internship = {
   hasDedicatedPage?: boolean;
 };
 
+export type FAQRelatedLink = {
+  href: string;
+  label: string;
+};
+
 export type FAQItem = {
   question: string;
   answer: string;
+  links?: FAQRelatedLink[];
 };
 
 export type HousingPlace = {

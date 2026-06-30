@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "@/lib/icons";
+import { ArrowLeft, ChevronDown } from "@/lib/icons";
 import type { FAQItem } from "@/types";
 
-function AccordionItem({ question, answer, index }: FAQItem & { index: number }) {
+function AccordionItem({ question, answer, links, index }: FAQItem & { index: number }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -73,6 +74,42 @@ function AccordionItem({ question, answer, index }: FAQItem & { index: number })
               <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.7, paddingTop: "14px" }}>
                 {answer}
               </p>
+              {links && links.length > 0 && (
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "8px",
+                    marginTop: "14px",
+                    paddingTop: "14px",
+                    borderTop: "1px dashed var(--color-border)",
+                  }}
+                >
+                  {links.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "6px",
+                        padding: "8px 12px",
+                        borderRadius: "10px",
+                        background: "rgba(18,184,200,0.08)",
+                        border: "1px solid rgba(18,184,200,0.22)",
+                        color: "var(--color-secondary)",
+                        fontSize: "12px",
+                        fontWeight: 600,
+                        textDecoration: "none",
+                        transition: "background var(--transition-fast), border-color var(--transition-fast)",
+                      }}
+                    >
+                      {link.label}
+                      <ArrowLeft size={13} strokeWidth={2.5} />
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           </motion.div>
         )}

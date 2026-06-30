@@ -4,8 +4,8 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, Clock, TrendingUp, ArrowLeft } from "@/lib/icons";
 import { allNavLinks } from "@/constants/navigation";
+import { matchesNavLink } from "@/lib/nav-search";
 import { categoryConfig } from "@/lib/theme";
-import type { NavLink } from "@/constants/navigation";
 
 const popularTags = ["الترسيم", "البورص", "المبيت", "الستاجات", "النقل"];
 
@@ -21,12 +21,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const filtered = query.trim()
-    ? allNavLinks.filter(
-        (p) =>
-          p.label.includes(query) ||
-          p.description?.includes(query) ||
-          p.category?.includes(query)
-      )
+    ? allNavLinks.filter((p) => matchesNavLink(p, query))
     : [];
 
   useEffect(() => {
@@ -134,7 +129,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                 ref={inputRef}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="ابحث عن مقررات، وثائق، خدمات..."
+                placeholder="ابحث بالعربية، English، ou français…"
                 style={{
                   flex: 1,
                   border: "none",

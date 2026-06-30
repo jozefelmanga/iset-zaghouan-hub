@@ -90,6 +90,17 @@ describe("faq", () => {
     }
   });
 
+  it("faq related links resolve to app routes", () => {
+    const appRoutes = getAppRoutes();
+    for (const item of faqItems) {
+      for (const link of item.links ?? []) {
+        assertInternalHref(link.href, `faq: ${item.question}`);
+        assertNonEmpty(link.label, "faq.link.label");
+        expect(appRoutes, `missing route for ${link.href}`).toContain(link.href);
+      }
+    }
+  });
+
   it("emergency contacts have names", () => {
     for (const contact of emergencyContacts) {
       assertNonEmpty(contact.name, "contact.name");

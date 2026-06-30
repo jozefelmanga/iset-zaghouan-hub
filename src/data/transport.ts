@@ -1,7 +1,7 @@
 export const transportSrtn = {
   website: {
     label: "الموقع الرسمي",
-    href: "https://www.srtgn.com.tn",
+    href: "http://www.srtgn.com.tn/site/index.php",
     display: "srtgn.com.tn",
   },
   facebook: {

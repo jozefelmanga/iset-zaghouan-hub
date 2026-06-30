@@ -1,3 +1,16 @@
+export const transportSrtn = {
+  website: {
+    label: "الموقع الرسمي",
+    href: "https://www.srtgn.com.tn",
+    display: "srtgn.com.tn",
+  },
+  facebook: {
+    label: "Facebook",
+    href: "https://www.facebook.com/SRTGNabeul2016/",
+  },
+  tip: "المواعيد تتبدّل في العطل و رمضان — تابع الموقع الرسمي و صفحة Facebook باش تبقى على الخط.",
+};
+
 export const transportAbonnement = {
   amount: "45 DT للسماستر",
   place: "المندوبية الجهوية للنقل بزغوان",

@@ -1,11 +1,11 @@
 import { pageMetadata } from "@/constants/seo";
-import { Bus, Phone, Clock, AlertCircle, ExternalLink, MapPin } from "@/lib/icons";
+import { Bus, Phone, Clock, AlertCircle, ExternalLink, MapPin, Globe, Facebook } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { TransportBusGallery } from "@/components/transport/TransportBusGallery";
-import { transportRoutes, transportTips, transportWarnings, transportAbonnement } from "@/data/transport";
+import { transportRoutes, transportTips, transportWarnings, transportAbonnement, transportSrtn } from "@/data/transport";
 
 export const metadata = pageMetadata("/transport");
 
@@ -31,6 +31,56 @@ export default function TransportPage() {
             <Bus size={16} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>جداول مواعيد الكار الرسمية (SRTN) 🚌</span>
+        </div>
+        <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "14px" }}>
+          {transportSrtn.tip}
+        </p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "18px" }}>
+          <a
+            href={transportSrtn.website.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "10px 16px",
+              borderRadius: "12px",
+              background: "rgba(18,184,200,0.08)",
+              border: "1px solid rgba(18,184,200,0.2)",
+              color: "var(--color-secondary)",
+              fontSize: "13px",
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
+          >
+            <Globe size={14} strokeWidth={2} />
+            {transportSrtn.website.label}
+            <span dir="ltr" style={{ opacity: 0.85 }}>({transportSrtn.website.display})</span>
+            <ExternalLink size={12} strokeWidth={2} style={{ opacity: 0.7 }} />
+          </a>
+          <a
+            href={transportSrtn.facebook.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "10px 16px",
+              borderRadius: "12px",
+              background: "rgba(24,119,242,0.08)",
+              border: "1px solid rgba(24,119,242,0.2)",
+              color: "#1877F2",
+              fontSize: "13px",
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
+          >
+            <Facebook size={14} strokeWidth={2} />
+            {transportSrtn.facebook.label}
+            <ExternalLink size={12} strokeWidth={2} style={{ opacity: 0.7 }} />
+          </a>
         </div>
         <TransportBusGallery />
       </div>

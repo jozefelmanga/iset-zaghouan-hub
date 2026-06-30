@@ -9,7 +9,7 @@ export const metadata = pageMetadata("/clubs");
 
 export default function ClubsPage() {
   return (
-    <PageWrapper className="flex flex-col gap-6 md:gap-8">
+    <PageWrapper seoPath="/clubs" className="flex flex-col gap-6 md:gap-8">
       <StaticPageHeader
         icon="users"
         label="الحياة الجامعية"

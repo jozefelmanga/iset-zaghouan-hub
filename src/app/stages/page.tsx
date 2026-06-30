@@ -7,7 +7,7 @@ export const metadata = pageMetadata("/stages");
 
 export default function StagesPage() {
   return (
-    <PageWrapper>
+    <PageWrapper seoPath="/stages">
       <StaticPageHeader
         icon="briefcase"
         label="مهني"

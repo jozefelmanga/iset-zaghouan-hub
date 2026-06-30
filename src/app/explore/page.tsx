@@ -42,7 +42,7 @@ export default function ExplorePage() {
   const { nearbyServices } = exploreZaghouan;
 
   return (
-    <PageWrapper className="max-w-[960px]">
+    <PageWrapper seoPath="/explore" className="max-w-[960px]">
       <StaticPageHeader
         icon="map-pin"
         label="اكتشاف"

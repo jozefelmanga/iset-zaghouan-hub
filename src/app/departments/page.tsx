@@ -9,7 +9,7 @@ export const metadata = pageMetadata("/departments");
 
 export default function DepartmentsPage() {
   return (
-    <PageWrapper narrow>
+    <PageWrapper seoPath="/departments" narrow>
       <StaticPageHeader
         icon="graduation-cap"
         label="الأكاديمي"

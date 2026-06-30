@@ -10,7 +10,7 @@ export const metadata = pageMetadata("/masters");
 
 export default function MastersPage() {
   return (
-    <PageWrapper className="max-w-[1000px]">
+    <PageWrapper seoPath="/masters" className="max-w-[1000px]">
       <StaticPageHeader
         icon="award"
         label="الأكاديمي"

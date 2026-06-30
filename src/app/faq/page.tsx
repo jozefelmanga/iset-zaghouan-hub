@@ -12,7 +12,7 @@ export const metadata = pageMetadata("/faq");
 
 export default function FAQPage() {
   return (
-    <PageWrapper className="max-w-[760px]">
+    <PageWrapper seoPath="/faq" className="max-w-[760px]">
       <FaqJsonLd items={faqItems} />
       <StaticPageHeader
         icon="help-circle"

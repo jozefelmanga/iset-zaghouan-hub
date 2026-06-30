@@ -1,3 +1,4 @@
+import { JsonLd } from "@/components/seo/JsonLd";
 import type { FAQItem } from "@/types";
 import { SITE_NAME, SITE_URL } from "@/lib/seo";
 
@@ -22,10 +23,5 @@ export function FaqJsonLd({ items }: FaqJsonLdProps) {
     })),
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
+  return <JsonLd data={jsonLd} />;
 }

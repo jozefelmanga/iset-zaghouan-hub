@@ -16,7 +16,7 @@ export const metadata = pageMetadata("/departments/gpr");
 
 export default function GPRPage() {
   return (
-    <PageWrapper narrow>
+    <PageWrapper seoPath="/departments/gpr" narrow>
       <StaticPageHeader
         icon="flask"
         label="الأقسام العلمية"

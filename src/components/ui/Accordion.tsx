@@ -2,7 +2,7 @@
 
 import { useState, useId } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowLeft, ChevronDown } from "@/lib/icons";
 import type { FAQItem } from "@/types";
 
@@ -67,62 +67,58 @@ function AccordionItem({ question, answer, links, index }: FAQItem & { index: nu
           <ChevronDown size={16} strokeWidth={2.5} aria-hidden="true" />
         </motion.div>
       </button>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            id={panelId}
-            role="region"
-            aria-labelledby={buttonId}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.22 }}
-            style={{ overflow: "hidden" }}
-          >
-            <div style={{ padding: "0 20px 20px", borderTop: "1px solid var(--color-border)" }}>
-              <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.7, paddingTop: "14px" }}>
-                {answer}
-              </p>
-              {links && links.length > 0 && (
-                <div
+      <motion.div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
+        aria-hidden={!open}
+        initial={false}
+        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+        transition={{ duration: 0.22 }}
+        style={{ overflow: "hidden" }}
+      >
+        <div style={{ padding: "0 20px 20px", borderTop: "1px solid var(--color-border)" }}>
+          <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.7, paddingTop: "14px" }}>
+            {answer}
+          </p>
+          {links && links.length > 0 && (
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "8px",
+                marginTop: "14px",
+                paddingTop: "14px",
+                borderTop: "1px dashed var(--color-border)",
+              }}
+            >
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
                   style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "8px",
-                    marginTop: "14px",
-                    paddingTop: "14px",
-                    borderTop: "1px dashed var(--color-border)",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    padding: "8px 12px",
+                    borderRadius: "10px",
+                    background: "rgba(18,184,200,0.08)",
+                    border: "1px solid rgba(18,184,200,0.22)",
+                    color: "var(--color-secondary)",
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    textDecoration: "none",
+                    transition: "background var(--transition-fast), border-color var(--transition-fast)",
                   }}
                 >
-                  {links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "6px",
-                        padding: "8px 12px",
-                        borderRadius: "10px",
-                        background: "rgba(18,184,200,0.08)",
-                        border: "1px solid rgba(18,184,200,0.22)",
-                        color: "var(--color-secondary)",
-                        fontSize: "12px",
-                        fontWeight: 600,
-                        textDecoration: "none",
-                        transition: "background var(--transition-fast), border-color var(--transition-fast)",
-                      }}
-                    >
-                      {link.label}
-                      <ArrowLeft size={13} strokeWidth={2.5} />
-                    </Link>
-                  ))}
-                </div>
-              )}
+                  {link.label}
+                  <ArrowLeft size={13} strokeWidth={2.5} />
+                </Link>
+              ))}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </div>
+      </motion.div>
     </motion.div>
   );
 }

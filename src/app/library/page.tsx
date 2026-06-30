@@ -11,7 +11,7 @@ export const metadata = pageMetadata("/library");
 
 export default function LibraryPage() {
   return (
-    <PageWrapper>
+    <PageWrapper seoPath="/library">
       <StaticPageHeader
         icon="book-open"
         label="الأكاديمي"

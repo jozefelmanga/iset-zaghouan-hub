@@ -31,7 +31,7 @@ export const metadata = pageMetadata("/bonus");
 
 export default function BonusPage() {
   return (
-    <PageWrapper narrow>
+    <PageWrapper seoPath="/bonus" narrow>
       <StaticPageHeader
         icon="sparkles"
         label="الأنشطة والحياة"

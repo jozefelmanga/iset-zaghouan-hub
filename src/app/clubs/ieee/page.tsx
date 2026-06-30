@@ -1,8 +1,14 @@
 import { pageMetadata } from "@/constants/seo";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { IeeePageContent } from "@/components/clubs/IeeePageContent";
 
 export const metadata = pageMetadata("/clubs/ieee");
 
 export default function IeeePage() {
-  return <IeeePageContent />;
+  return (
+    <>
+      <BreadcrumbJsonLd path="/clubs/ieee" />
+      <IeeePageContent />
+    </>
+  );
 }

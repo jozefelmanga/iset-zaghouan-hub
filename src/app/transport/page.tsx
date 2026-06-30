@@ -16,7 +16,7 @@ const typeColors: Record<string, { bg: string; text: string; label: string }> = 
 
 export default function TransportPage() {
   return (
-    <PageWrapper>
+    <PageWrapper seoPath="/transport">
       <StaticPageHeader
         icon="bus"
         label="الحياة الجامعية"

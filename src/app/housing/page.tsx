@@ -16,7 +16,7 @@ export const metadata = pageMetadata("/housing");
 
 export default function HousingPage() {
   return (
-    <PageWrapper>
+    <PageWrapper seoPath="/housing">
       <StaticPageHeader
         icon="building"
         label="الحياة الجامعية"

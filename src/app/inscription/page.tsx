@@ -16,7 +16,7 @@ export const metadata = pageMetadata("/inscription");
 
 export default function InscriptionPage() {
   return (
-    <PageWrapper>
+    <PageWrapper seoPath="/inscription">
       <StaticPageHeader
         icon="file-text"
         label="الأكاديمي"

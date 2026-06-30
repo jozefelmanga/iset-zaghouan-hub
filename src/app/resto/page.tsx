@@ -18,7 +18,7 @@ export const metadata = pageMetadata("/resto");
 
 export default function RestoPage() {
   return (
-    <PageWrapper>
+    <PageWrapper seoPath="/resto">
       <StaticPageHeader
         icon="utensils"
         label="خدمات الحرم"

@@ -16,7 +16,7 @@ export const metadata = pageMetadata("/inscription/foyer");
 
 export default function FoyerInscriptionPage() {
   return (
-    <PageWrapper>
+    <PageWrapper seoPath="/inscription/foyer">
       <StaticPageHeader
         icon="building"
         label="الترسيم الجامعي"

@@ -14,6 +14,8 @@
  */
 
 import type { ReactNode, CSSProperties } from "react";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import type { PagePath } from "@/constants/seo";
 import { cn } from "@/lib/utils";
 
 /* ============================================================
@@ -59,20 +61,25 @@ interface PageWrapperProps {
   children: ReactNode;
   className?: string;
   narrow?: boolean;
+  /** When set, emits BreadcrumbList JSON-LD for this route. */
+  seoPath?: PagePath;
 }
 
-export function PageWrapper({ children, className, narrow = false }: PageWrapperProps) {
+export function PageWrapper({ children, className, narrow = false, seoPath }: PageWrapperProps) {
   return (
-    <div
-      className={cn(
-        narrow ? "max-w-[860px]" : "max-w-[1280px]",
-        "mx-auto w-full px-4 md:px-8",
-        "py-6 md:py-10",
-        className
-      )}
-    >
-      {children}
-    </div>
+    <>
+      {seoPath ? <BreadcrumbJsonLd path={seoPath} /> : null}
+      <div
+        className={cn(
+          narrow ? "max-w-[860px]" : "max-w-[1280px]",
+          "mx-auto w-full px-4 md:px-8",
+          "py-6 md:py-10",
+          className
+        )}
+      >
+        {children}
+      </div>
+    </>
   );
 }
 

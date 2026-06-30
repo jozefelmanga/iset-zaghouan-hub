@@ -5,13 +5,15 @@ import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { InternshipCompanySearch } from "@/components/stages/InternshipCompanySearch";
+import { InternshipCompanySeoIndex } from "@/components/stages/InternshipCompanySeoIndex";
 import { stageCompanyCount } from "@/data/stage-companies";
 
 export const metadata = pageMetadata("/stages/companies");
 
 export default function StageCompaniesPage() {
   return (
-    <PageWrapper>
+    <PageWrapper seoPath="/stages/companies">
+      <InternshipCompanySeoIndex />
       <Link
         href="/stages"
         style={{

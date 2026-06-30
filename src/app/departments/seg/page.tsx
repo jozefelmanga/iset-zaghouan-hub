@@ -16,7 +16,7 @@ export const metadata = pageMetadata("/departments/seg");
 
 export default function SEGPage() {
   return (
-    <PageWrapper narrow>
+    <PageWrapper seoPath="/departments/seg" narrow>
       <StaticPageHeader
         icon="coins"
         label="الأقسام العلمية"

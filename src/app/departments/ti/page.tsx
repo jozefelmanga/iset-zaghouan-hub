@@ -16,7 +16,7 @@ export const metadata = pageMetadata("/departments/ti");
 
 export default function TIPage() {
   return (
-    <PageWrapper narrow>
+    <PageWrapper seoPath="/departments/ti" narrow>
       <StaticPageHeader
         icon="code"
         label="الأقسام العلمية"

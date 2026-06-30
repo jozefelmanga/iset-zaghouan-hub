@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { pageMetadata } from "@/constants/seo";
+import { WebsiteJsonLd } from "@/components/seo/WebsiteJsonLd";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { QuickAccessSection } from "@/components/sections/QuickAccessSection";
 import { Container } from "@/components/ui/layout";
@@ -51,6 +52,7 @@ export const metadata = pageMetadata("/");
 export default function HomePage() {
   return (
     <>
+      <WebsiteJsonLd />
       <HeroSection />
 
       <Container size="content">

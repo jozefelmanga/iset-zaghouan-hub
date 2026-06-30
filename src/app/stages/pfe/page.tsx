@@ -13,7 +13,7 @@ const pfeInternship = internships[2];
 
 export default function PfePage() {
   return (
-    <PageWrapper>
+    <PageWrapper seoPath="/stages/pfe">
       <Link
         href="/stages"
         style={{

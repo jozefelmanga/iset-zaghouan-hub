@@ -10,7 +10,7 @@ export const metadata = pageMetadata("/bourse");
 
 export default function BoursePage() {
   return (
-    <PageWrapper>
+    <PageWrapper seoPath="/bourse">
       <StaticPageHeader
         icon="banknote"
         label="الحياة الجامعية"

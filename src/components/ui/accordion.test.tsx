@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { Accordion } from "./Accordion";
@@ -9,10 +9,15 @@ const items = [
 ];
 
 describe("Accordion", () => {
-  it("renders collapsed by default", () => {
+  it("renders collapsed by default with answers in DOM for SEO", () => {
     render(<Accordion items={items} />);
+    const trigger = screen.getByRole("button", { name: /سؤال 1؟/ });
+    const panel = document.getElementById(trigger.getAttribute("aria-controls")!);
+
     expect(screen.getByText("سؤال 1؟")).toBeInTheDocument();
-    expect(screen.queryByText("جواب 1")).not.toBeInTheDocument();
+    expect(screen.getByText("جواب 1")).toBeInTheDocument();
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+    expect(panel).toHaveAttribute("aria-hidden", "true");
   });
 
   it("expands on click and collapses on second click", async () => {
@@ -20,12 +25,14 @@ describe("Accordion", () => {
     render(<Accordion items={items} />);
 
     const trigger = screen.getByRole("button", { name: /سؤال 1؟/ });
-    await user.click(trigger);
-    expect(screen.getByText("جواب 1")).toBeInTheDocument();
+    const panel = document.getElementById(trigger.getAttribute("aria-controls")!);
 
     await user.click(trigger);
-    await waitFor(() => {
-      expect(screen.queryByText("جواب 1")).not.toBeInTheDocument();
-    });
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
+    expect(panel).toHaveAttribute("aria-hidden", "false");
+
+    await user.click(trigger);
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+    expect(panel).toHaveAttribute("aria-hidden", "true");
   });
 });

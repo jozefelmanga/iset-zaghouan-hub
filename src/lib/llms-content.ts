@@ -47,7 +47,6 @@ const LLM_SECTIONS: { heading: string; paths: PagePath[] }[] = [
       "/resto",
       "/clubs",
       "/clubs/securinets",
-      "/clubs/odd",
       "/clubs/enactus",
       "/clubs/ieee",
       "/clubs/sos-ambassadeurs",

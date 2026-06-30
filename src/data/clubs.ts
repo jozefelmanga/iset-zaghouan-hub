@@ -29,15 +29,6 @@ export const clubDirectory = [
     logo: "/images/SecuriNets ISET Zaghouan/307089995_5896662463700630_57012804199137690_n.webp",
   },
   {
-    id: "odd",
-    name: "ODD ISET Zaghouan",
-    slogan: "Shaping minds, building a sustainable world. 🌱💡",
-    description: "نادي التنمية المستدامة والبيئة، ينظّم تكوينات، ورشات، وزيارات ميدانية للشركات الصناعية باش يربط القراية بالواقع المهني.",
-    color: "#22C55E",
-    href: "/clubs/odd",
-    logo: "/images/ODD ISET Zaghouan/346084632_2212215942302379_3257380520080764734_n.webp",
-  },
-  {
     id: "enactus",
     name: "Enactus ISET Zaghouan",
     slogan: "We empower, innovate, and create positive change. 💯🌍",

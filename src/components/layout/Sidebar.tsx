@@ -2,16 +2,20 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { GraduationCap, X } from "@/lib/icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { navGroups, homeLink } from "@/constants/navigation";
 import { isNavActive } from "@/lib/utils";
 import { drawerFromRight, backdrop } from "@/lib/motion";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 
 export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, setDrawerOpen?: (v: boolean) => void }) {
   const pathname = usePathname();
+  const drawerRef = useRef<HTMLElement>(null);
   const navHrefs = [homeLink.href, ...navGroups.flatMap((group) => group.links.map((link) => link.href))];
+
+  useFocusTrap(drawerRef, !!drawerOpen);
 
   // Close drawer on route change (mobile nav)
   useEffect(() => {
@@ -26,6 +30,15 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [setDrawerOpen]);
+
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setDrawerOpen?.(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [drawerOpen, setDrawerOpen]);
 
   const sidebarContent = (
     <>
@@ -65,7 +78,9 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
         </div>
         {/* Close Button for Mobile */}
         <button
+          type="button"
           className="mobile-only"
+          aria-label="إغلاق القائمة"
           onClick={() => setDrawerOpen?.(false)}
           style={{
             display: "flex",
@@ -82,7 +97,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
             flexShrink: 0,
           }}
         >
-          <X size={18} strokeWidth={2} />
+          <X size={18} strokeWidth={2} aria-hidden="true" />
         </button>
       </div>
 
@@ -91,6 +106,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
         <Link
           href={homeLink.href}
           onClick={() => setDrawerOpen?.(false)}
+          aria-current={isNavActive(homeLink.href, pathname, navHrefs) ? "page" : undefined}
           style={{
             display: "flex",
             alignItems: "center",
@@ -133,7 +149,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
       </div>
 
       {/* Grouped navigation */}
-      <nav style={{ flex: 1, overflowY: "auto", padding: "8px 12px" }}>
+      <nav style={{ flex: 1, overflowY: "auto", padding: "8px 12px" }} aria-label="قائمة الصفحات">
         {navGroups.map((group, gi) => (
           <div key={gi} style={{ marginBottom: "20px" }}>
             {/* Group label */}
@@ -182,6 +198,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
                   <Link
                     href={link.href}
                     onClick={() => setDrawerOpen?.(false)}
+                    aria-current={active ? "page" : undefined}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -261,6 +278,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
       {/* Desktop Fixed Sidebar */}
       <aside
         className="desktop-only"
+        aria-label="القائمة الجانبية"
         style={{
           width: "264px",
           height: "100dvh",
@@ -289,6 +307,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
               animate="visible"
               exit="hidden"
               onClick={() => setDrawerOpen?.(false)}
+              aria-hidden="true"
               style={{
                 position: "fixed",
                 inset: 0,
@@ -299,6 +318,10 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
 
             {/* Drawer */}
             <motion.aside
+              ref={drawerRef}
+              role="dialog"
+              aria-modal="true"
+              aria-label="قائمة التنقل"
               variants={drawerFromRight}
               initial="hidden"
               animate="visible"

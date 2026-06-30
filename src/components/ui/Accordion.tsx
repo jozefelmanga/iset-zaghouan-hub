@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronDown } from "@/lib/icons";
@@ -8,6 +8,8 @@ import type { FAQItem } from "@/types";
 
 function AccordionItem({ question, answer, links, index }: FAQItem & { index: number }) {
   const [open, setOpen] = useState(false);
+  const panelId = useId();
+  const buttonId = useId();
 
   return (
     <motion.div
@@ -24,7 +26,10 @@ function AccordionItem({ question, answer, links, index }: FAQItem & { index: nu
       }}
     >
       <button
+        id={buttonId}
         type="button"
+        aria-expanded={open}
+        aria-controls={panelId}
         onClick={() => setOpen(!open)}
         style={{
           width: "100%",
@@ -46,6 +51,7 @@ function AccordionItem({ question, answer, links, index }: FAQItem & { index: nu
         <motion.div
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.22 }}
+          aria-hidden="true"
           style={{
             width: "28px",
             height: "28px",
@@ -58,12 +64,15 @@ function AccordionItem({ question, answer, links, index }: FAQItem & { index: nu
             color: open ? "var(--color-secondary)" : "var(--color-text-muted)",
           }}
         >
-          <ChevronDown size={16} strokeWidth={2.5} />
+          <ChevronDown size={16} strokeWidth={2.5} aria-hidden="true" />
         </motion.div>
       </button>
       <AnimatePresence>
         {open && (
           <motion.div
+            id={panelId}
+            role="region"
+            aria-labelledby={buttonId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

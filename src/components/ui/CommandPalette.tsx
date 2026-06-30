@@ -6,6 +6,7 @@ import { Search, X, Clock, TrendingUp, ArrowLeft } from "@/lib/icons";
 import { allNavLinks } from "@/constants/navigation";
 import { matchesNavLink } from "@/lib/nav-search";
 import { categoryConfig } from "@/lib/theme";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 
 const popularTags = ["الترسيم", "البورص", "المبيت", "الستاجات", "النقل"];
 
@@ -19,6 +20,9 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
   const [recentSearches] = useState(["الترسيم", "المبيت الجامعي"]);
   const [isMobile, setIsMobile] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useFocusTrap(dialogRef, open);
 
   const filtered = query.trim()
     ? allNavLinks.filter((p) => matchesNavLink(p, query))
@@ -65,6 +69,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
+            aria-hidden="true"
             style={{
               position: "fixed",
               inset: 0,
@@ -76,6 +81,10 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
 
           {/* Palette */}
           <motion.div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="بحث في الدليل"
             initial={isMobile ? { y: "100%", opacity: 1 } : { opacity: 0, scale: 0.96, y: -20 }}
             animate={isMobile ? { y: 0, opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
             exit={isMobile ? { y: "100%", opacity: 1 } : { opacity: 0, scale: 0.96, y: -20 }}
@@ -108,6 +117,8 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
             >
               {isMobile && (
                 <button
+                  type="button"
+                  aria-label="إغلاق البحث"
                   onClick={onClose}
                   style={{
                     background: "transparent",
@@ -121,15 +132,21 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                     flexShrink: 0,
                   }}
                 >
-                  <ArrowLeft size={22} style={{ transform: "rotate(180deg)", color: "var(--color-text-secondary)" }} />
+                  <ArrowLeft size={22} style={{ transform: "rotate(180deg)", color: "var(--color-text-secondary)" }} aria-hidden="true" />
                 </button>
               )}
-              <Search size={20} style={{ color: "var(--color-text-muted)", flexShrink: 0 }} strokeWidth={2} />
+              <Search size={20} style={{ color: "var(--color-text-muted)", flexShrink: 0 }} strokeWidth={2} aria-hidden="true" />
+              <label htmlFor="command-palette-search" className="sr-only">
+                بحث في الدليل
+              </label>
               <input
+                id="command-palette-search"
                 ref={inputRef}
+                type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="ابحث بالعربية، English، ou français…"
+                autoComplete="off"
                 style={{
                   flex: 1,
                   border: "none",
@@ -159,6 +176,8 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                 )}
                 {query && (
                   <button
+                    type="button"
+                    aria-label="مسح البحث"
                     onClick={() => setQuery("")}
                     style={{
                       width: "24px",
@@ -172,11 +191,13 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                       justifyContent: "center",
                     }}
                   >
-                    <X size={12} style={{ color: "var(--color-text-muted)" }} />
+                    <X size={12} style={{ color: "var(--color-text-muted)" }} aria-hidden="true" />
                   </button>
                 )}
                 {!isMobile && (
                   <button
+                    type="button"
+                    aria-label="إغلاق البحث"
                     onClick={onClose}
                     style={{
                       background: "transparent",
@@ -189,7 +210,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                       marginLeft: "4px",
                     }}
                   >
-                    <X size={20} />
+                    <X size={20} aria-hidden="true" />
                   </button>
                 )}
               </div>

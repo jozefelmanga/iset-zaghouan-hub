@@ -39,12 +39,15 @@ export function InternshipGradeCalculator() {
       </div>
 
       <div className={styles.calcGrid}>
-        {fields.map(({ key, label, weight }) => (
+        {fields.map(({ key, label, weight }) => {
+          const inputId = `grade-${key}`;
+          return (
           <div key={key}>
-            <label style={{ display: "block", fontSize: "12px", fontWeight: 600, color: "var(--color-text-muted)", marginBottom: "6px" }}>
+            <label htmlFor={inputId} style={{ display: "block", fontSize: "12px", fontWeight: 600, color: "var(--color-text-muted)", marginBottom: "6px" }}>
               {label} <span style={{ opacity: 0.7 }}>(×{weight})</span>
             </label>
             <input
+              id={inputId}
               type="number"
               min={0}
               max={20}
@@ -66,13 +69,17 @@ export function InternshipGradeCalculator() {
               }}
             />
           </div>
-        ))}
+          );
+        })}
       </div>
 
       <motion.div
         key={average}
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
         style={{
           padding: "20px",
           borderRadius: "14px",

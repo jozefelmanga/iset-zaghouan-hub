@@ -19,12 +19,18 @@ export function ClientChrome({ children, footer }: ClientChromeProps) {
 
   return (
     <div style={{ display: "flex", minHeight: "100dvh", background: "var(--color-background)" }}>
+      <a href="#main-content" className="skip-link">
+        الانتقال إلى المحتوى الرئيسي
+      </a>
+
       <Sidebar drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
         <Navbar setDrawerOpen={setDrawerOpen} />
 
         <main
+          id="main-content"
+          tabIndex={-1}
           className={isHome ? "pb-0" : "pb-20 md:pb-0"}
           style={{ flex: 1, display: "flex", flexDirection: "column" }}
         >

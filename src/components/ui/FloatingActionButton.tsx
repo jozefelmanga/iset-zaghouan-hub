@@ -55,6 +55,8 @@ export function FloatingActionButton({ onSearchOpen }: FABProps) {
             return (
               <motion.button
                 key={i}
+                type="button"
+                aria-label={action.label}
                 initial={{ opacity: 0, scale: 0.6, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.6, y: 20 }}
@@ -100,6 +102,9 @@ export function FloatingActionButton({ onSearchOpen }: FABProps) {
 
       {/* Main FAB */}
       <motion.button
+        type="button"
+        aria-label={open ? "إغلاق القائمة السريعة" : "فتح القائمة السريعة"}
+        aria-expanded={open}
         onClick={() => setOpen(!open)}
         whileTap={{ scale: 0.92 }}
         animate={{ rotate: open ? 45 : 0 }}
@@ -118,7 +123,7 @@ export function FloatingActionButton({ onSearchOpen }: FABProps) {
           color: "#fff",
         }}
       >
-        {open ? <X size={22} strokeWidth={2.5} /> : <Plus size={22} strokeWidth={2.5} />}
+        {open ? <X size={22} strokeWidth={2.5} aria-hidden="true" /> : <Plus size={22} strokeWidth={2.5} aria-hidden="true" />}
       </motion.button>
 
       {/* Backdrop */}
@@ -129,6 +134,7 @@ export function FloatingActionButton({ onSearchOpen }: FABProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setOpen(false)}
+            aria-hidden="true"
             style={{
               position: "fixed",
               inset: 0,

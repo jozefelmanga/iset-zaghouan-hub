@@ -81,12 +81,17 @@ export function InternshipCompanySearch() {
       </div>
 
       <div style={{ position: "relative", marginBottom: "14px" }}>
+        <label htmlFor="company-search" className="sr-only">
+          البحث عن شركة
+        </label>
         <Search
           size={16}
           style={{ position: "absolute", right: "14px", top: "50%", transform: "translateY(-50%)", color: "var(--color-text-muted)" }}
           strokeWidth={2}
+          aria-hidden="true"
         />
         <input
+          id="company-search"
           type="search"
           value={query}
           onChange={(e) => {

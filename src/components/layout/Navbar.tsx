@@ -55,6 +55,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
       <header
         className={`sticky top-0 z-50 nav-chrome transition-all duration-300 ${scrolled ? "nav-chrome-scrolled" : ""}`}
         style={{ height: "80px" }}
+        aria-label="التنقل الرئيسي"
       >
         <div
           style={{
@@ -69,6 +70,8 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
         >
           <motion.button
             className="mobile-only"
+            type="button"
+            aria-label="فتح القائمة"
             onClick={() => setDrawerOpen(true)}
             whileTap={{ scale: 0.9 }}
             style={{
@@ -85,10 +88,12 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
               flexShrink: 0,
             }}
           >
-            <Menu size={20} strokeWidth={2} />
+            <Menu size={20} strokeWidth={2} aria-hidden="true" />
           </motion.button>
 
           <button
+            type="button"
+            aria-label="بحث في الدليل"
             onClick={openPalette}
             style={{
               flex: 1,
@@ -120,7 +125,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
               btn.style.color = "rgba(255,255,255,0.55)";
             }}
           >
-            <Search size={16} strokeWidth={2} style={{ flexShrink: 0 }} />
+            <Search size={16} strokeWidth={2} style={{ flexShrink: 0 }} aria-hidden="true" />
             <span style={{ flex: 1, textAlign: "right" }}>بحث في الدليل...</span>
             <kbd
               className="desktop-only"

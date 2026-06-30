@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useId } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Info, AlertTriangle, CheckCircle2, AlertCircle, ChevronDown } from "@/lib/icons";
 import { useIsMobile } from "@/hooks/useIsMobile";
@@ -48,6 +48,7 @@ function AlertBody({ title, children, variant = "info" }: CollapsibleAlertProps)
 export function CollapsibleAlert({ title, children, variant = "info" }: CollapsibleAlertProps) {
   const isMobile = useIsMobile();
   const [open, setOpen] = useState(false);
+  const panelId = useId();
   const v = variants[variant];
   const IconEl = v.iconEl;
 
@@ -72,6 +73,7 @@ export function CollapsibleAlert({ title, children, variant = "info" }: Collapsi
         type="button"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        aria-controls={panelId}
         style={{
           width: "100%",
           padding: "16px 20px",
@@ -85,13 +87,14 @@ export function CollapsibleAlert({ title, children, variant = "info" }: Collapsi
           fontFamily: "var(--font-sans)",
         }}
       >
-        <IconEl size={18} style={{ color: v.icon, flexShrink: 0 }} strokeWidth={2} />
+        <IconEl size={18} style={{ color: v.icon, flexShrink: 0 }} strokeWidth={2} aria-hidden="true" />
         <span style={{ flex: 1, fontWeight: 600, fontSize: "14px", color: "var(--color-text)", lineHeight: 1.4 }}>
           {title}
         </span>
         <motion.div
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.22 }}
+          aria-hidden="true"
           style={{
             width: "28px",
             height: "28px",
@@ -110,6 +113,7 @@ export function CollapsibleAlert({ title, children, variant = "info" }: Collapsi
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
+            id={panelId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

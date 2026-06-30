@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect, useCallback, type CSSProperties } from "react";
+import { useState, useEffect, useCallback, useRef, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn, ChevronLeft, ChevronRight } from "@/lib/icons";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 
 function useMounted() {
   const [mounted, setMounted] = useState(false);
@@ -47,6 +48,8 @@ function LightboxOverlay({
   getAlt: (index: number) => string;
 }) {
   const mounted = useMounted();
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useFocusTrap(dialogRef, open);
   const canNavigate = images.length > 1;
   const src = images[currentIndex] ?? "";
   const alt = getAlt(currentIndex);
@@ -90,6 +93,10 @@ function LightboxOverlay({
     <AnimatePresence>
       {open && src && (
         <motion.div
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label={alt || "عرض الصورة"}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -118,7 +125,7 @@ function LightboxOverlay({
               }}
               style={{ ...navButtonStyle, left: "16px" }}
             >
-              <ChevronLeft size={22} strokeWidth={2.5} />
+              <ChevronLeft size={22} strokeWidth={2.5} aria-hidden="true" />
             </button>
           )}
 
@@ -132,7 +139,7 @@ function LightboxOverlay({
               }}
               style={{ ...navButtonStyle, right: "16px" }}
             >
-              <ChevronRight size={22} strokeWidth={2.5} />
+              <ChevronRight size={22} strokeWidth={2.5} aria-hidden="true" />
             </button>
           )}
 
@@ -171,6 +178,8 @@ function LightboxOverlay({
 
             {canNavigate && (
               <div
+                aria-live="polite"
+                aria-atomic="true"
                 style={{
                   position: "absolute",
                   bottom: "12px",
@@ -212,7 +221,7 @@ function LightboxOverlay({
                 backdropFilter: "blur(8px)",
               }}
             >
-              <X size={16} strokeWidth={2.5} />
+              <X size={16} strokeWidth={2.5} aria-hidden="true" />
             </button>
           </motion.div>
         </motion.div>
@@ -283,8 +292,10 @@ export function PhotoGallery({
         {visibleImages.map((src, idx) => {
           const alt = getAlt(idx);
           return (
-            <motion.div
+            <motion.button
+              type="button"
               key={src}
+              aria-label={`تكبير ${alt}`}
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.18 }}
               onClick={() => setLightboxIndex(idx)}
@@ -295,17 +306,21 @@ export function PhotoGallery({
                 overflow: "hidden",
                 border: "1px solid var(--color-border)",
                 cursor: "zoom-in",
+                padding: 0,
+                background: "none",
+                display: "block",
+                width: "100%",
               }}
             >
               <img
                 src={src}
                 alt={alt}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
-              <motion.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle}>
+              <motion.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle} aria-hidden="true">
                 <ZoomIn size={22} style={{ color: "#fff" }} strokeWidth={2} />
               </motion.div>
-            </motion.div>
+            </motion.button>
           );
         })}
       </div>
@@ -413,7 +428,20 @@ export function ZoomableImage({
 
   return (
     <>
-      <div className={className} onClick={openAt} style={wrapperStyle}>
+      <button
+        type="button"
+        className={className}
+        aria-label={`تكبير ${alt}`}
+        onClick={openAt}
+        style={{
+          ...wrapperStyle,
+          border: "none",
+          padding: 0,
+          background: "none",
+          font: "inherit",
+          textAlign: "inherit",
+        }}
+      >
         <img
           src={src}
           alt={alt}
@@ -428,14 +456,15 @@ export function ZoomableImage({
             borderRadius: "inherit",
             objectFit,
             objectPosition,
+            pointerEvents: "none",
           }}
         />
         {!hideHint && (
-          <motion.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle}>
+          <motion.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle} aria-hidden="true">
             <ZoomIn size={24} style={{ color: "#fff" }} strokeWidth={2} />
           </motion.div>
         )}
-      </div>
+      </button>
 
       <LightboxOverlay
         open={lightboxIndex !== null}

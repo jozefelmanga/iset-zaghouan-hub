@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { ArrowLeft } from "@/lib/icons";
 import { hoverLift } from "@/lib/motion";
 import { categoryConfig } from "@/lib/theme";

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ArrowLeft, ExternalLink } from "@/lib/icons";
 import { Badge } from "@/components/ui/shared";
 import { Accordion } from "@/components/ui/Accordion";

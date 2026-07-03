@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { Coffee, BookOpen, Mountain, Phone, Instagram, Play, ImageIcon } from "@/lib/icons";
 import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
 import { exploreZaghouan, zaghouanGallery, cafeTagColors } from "@/data/explore";

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { CheckCircle2, MapPin, Sparkles } from "@/lib/icons";
 
 /* ======================================================

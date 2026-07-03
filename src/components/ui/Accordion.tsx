@@ -2,7 +2,7 @@
 
 import { useState, useId } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { ArrowLeft, ChevronDown } from "@/lib/icons";
 import type { FAQItem } from "@/types";
 

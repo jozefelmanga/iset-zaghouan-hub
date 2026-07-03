@@ -10,7 +10,7 @@
  * All accept an optional `action` slot for a CTA button.
  */
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { enterAnimation } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";

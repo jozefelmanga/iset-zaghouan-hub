@@ -2,7 +2,7 @@
 
 import type { LucideIcon } from "@/lib/icons";
 import { BookOpen, Camera, Clock, FileText, Sparkles } from "@/lib/icons";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { enterAnimation } from "@/lib/motion";
 

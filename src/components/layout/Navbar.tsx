@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { GraduationCap, Search, Menu } from "@/lib/icons";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 
 const CommandPalette = dynamic(
   () =>
@@ -107,7 +107,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
               background: "rgba(255,255,255,0.07)",
               border: "1px solid rgba(255,255,255,0.10)",
               cursor: "pointer",
-              color: "rgba(255,255,255,0.55)",
+              color: "rgba(255,255,255,0.75)",
               fontSize: "13px",
               fontFamily: "var(--font-sans)",
               transition: "all var(--transition-base)",
@@ -135,7 +135,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
                 borderRadius: "5px",
                 background: "rgba(255,255,255,0.08)",
                 border: "1px solid rgba(255,255,255,0.12)",
-                color: "rgba(255,255,255,0.4)",
+                color: "rgba(255,255,255,0.7)",
                 fontFamily: "var(--font-sans)",
                 flexShrink: 0,
               }}
@@ -146,6 +146,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
 
           <Link
             href="/"
+            aria-label="الصفحة الرئيسية - ISET Zaghouan"
             style={{
               display: "flex",
               alignItems: "center",

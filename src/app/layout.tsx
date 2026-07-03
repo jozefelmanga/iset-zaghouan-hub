@@ -17,7 +17,7 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="alternate" type="text/markdown" title="LLMs" href="/llms.txt" />
-        <link rel="preload" as="image" href={OG_IMAGE_PATH} fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/banner.webp" fetchPriority="high" />
       </head>
       <body className={`${tajawal.className} antialiased min-h-[100dvh]`}>
         <RootShell>{children}</RootShell>

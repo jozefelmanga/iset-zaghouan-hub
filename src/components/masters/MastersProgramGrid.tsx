@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { m as motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { GraduationCap, Layers } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";
 import { ZoomableImage } from "@/components/ui/Lightbox";

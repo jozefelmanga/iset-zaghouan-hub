@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { m as motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { categoryConfig } from "@/lib/theme";
 import { enterAnimation } from "@/lib/motion";
 import type { Category } from "@/types";

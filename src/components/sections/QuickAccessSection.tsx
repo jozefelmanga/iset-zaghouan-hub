@@ -1,6 +1,6 @@
 "use client";
 
-import { m as motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ActionCard } from "@/components/ui/ActionCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { quickActions } from "@/data/content";

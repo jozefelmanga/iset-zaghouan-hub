@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { m as motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link2, ExternalLink } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";

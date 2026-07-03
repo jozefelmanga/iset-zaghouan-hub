@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode, useState, useId } from "react";
-import { m as motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Info, AlertTriangle, CheckCircle2, AlertCircle, ChevronDown } from "@/lib/icons";
 import { useIsMobile } from "@/hooks/useIsMobile";
 

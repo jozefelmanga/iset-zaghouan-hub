@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
-import { AnimatePresence, m as motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { homeTipsMeta, studentTips } from "@/data/bonus";
 import { ArrowLeft, ChevronLeft, ChevronRight, Heart, Lightbulb } from "@/lib/icons";

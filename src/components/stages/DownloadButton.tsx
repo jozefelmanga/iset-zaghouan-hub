@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { m as motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Download, CheckCircle2 } from "@/lib/icons";
 
 interface DownloadButtonProps {

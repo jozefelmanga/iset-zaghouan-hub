@@ -1,6 +1,6 @@
 "use client";
 
-import { m as motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { instituteOfficial } from "@/data/official";
 import { CheckCircle2, Facebook, Globe, Lightbulb, Mail, MapPin, Phone } from "@/lib/icons";

@@ -1,6 +1,6 @@
 "use client";
 
-import { m as motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";

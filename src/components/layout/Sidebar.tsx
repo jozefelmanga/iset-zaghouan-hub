@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { GraduationCap, X } from "@/lib/icons";
-import { m as motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { navGroups, homeLink } from "@/constants/navigation";
 import { isNavActive } from "@/lib/utils";
 import { drawerFromRight, backdrop } from "@/lib/motion";

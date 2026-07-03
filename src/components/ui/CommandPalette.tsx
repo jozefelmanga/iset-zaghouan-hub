@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { m as motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, Clock, TrendingUp, ArrowLeft } from "@/lib/icons";
 import { allNavLinks } from "@/constants/navigation";
 import { matchesNavLink } from "@/lib/nav-search";

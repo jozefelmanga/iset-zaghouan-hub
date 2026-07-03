@@ -1,7 +1,5 @@
 "use client";
 
-import { LazyMotion } from "framer-motion";
-
 import { useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
@@ -13,8 +11,6 @@ interface ClientChromeProps {
   footer: ReactNode;
 }
 
-const loadFeatures = () => import("framer-motion").then((res) => res.domAnimation);
-
 /** Client island — nav, drawer state, bottom bar. Page content stays server-rendered via children. */
 export function ClientChrome({ children, footer }: ClientChromeProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -22,30 +18,28 @@ export function ClientChrome({ children, footer }: ClientChromeProps) {
   const isHome = pathname === "/";
 
   return (
-    <LazyMotion features={loadFeatures} strict>
-      <div style={{ display: "flex", minHeight: "100dvh", background: "var(--color-background)" }}>
-        <a href="#main-content" className="skip-link">
-          الانتقال إلى المحتوى الرئيسي
-        </a>
+    <div style={{ display: "flex", minHeight: "100dvh", background: "var(--color-background)" }}>
+      <a href="#main-content" className="skip-link">
+        الانتقال إلى المحتوى الرئيسي
+      </a>
 
-        <Sidebar drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
+      <Sidebar drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
 
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
-          <Navbar setDrawerOpen={setDrawerOpen} />
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
+        <Navbar setDrawerOpen={setDrawerOpen} />
 
-          <main
-            id="main-content"
-            tabIndex={-1}
-            className={isHome ? "pb-0" : "pb-20 md:pb-0"}
-            style={{ flex: 1, display: "flex", flexDirection: "column" }}
-          >
-            {children}
-          </main>
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className={isHome ? "pb-0" : "pb-20 md:pb-0"}
+          style={{ flex: 1, display: "flex", flexDirection: "column" }}
+        >
+          {children}
+        </main>
 
-          {footer}
-          <BottomNav />
-        </div>
+        {footer}
+        <BottomNav />
       </div>
-    </LazyMotion>
+    </div>
   );
 }

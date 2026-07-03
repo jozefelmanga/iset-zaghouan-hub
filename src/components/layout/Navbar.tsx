@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { GraduationCap, Search, Menu } from "@/lib/icons";
-import { m as motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const CommandPalette = dynamic(
   () =>

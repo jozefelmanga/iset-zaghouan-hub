@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { m as motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Calculator } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
 import { internships } from "@/data/internships";

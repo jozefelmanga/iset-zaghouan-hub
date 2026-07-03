@@ -56,13 +56,14 @@ export function OfficialChannelsSection() {
             {/* Identity */}
             <div className="flex flex-col items-center text-center lg:items-end lg:text-right gap-4 mb-6 lg:mb-0">
               <div className="w-[80px] h-[80px] lg:w-[88px] lg:h-[88px] rounded-2xl bg-white border border-[var(--color-border)] shadow-[var(--shadow-card)] flex items-center justify-center p-2.5 shrink-0">
-                <img
-                  src={profile.logo}
-                  alt={profile.name}
-                  width={88}
-                  height={88}
-                  className="w-full h-full object-contain"
-                />
+                  <img
+                    src={profile.logo}
+                    alt={profile.name}
+                    width={88}
+                    height={88}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
               </div>
 
               <div className="min-w-0">

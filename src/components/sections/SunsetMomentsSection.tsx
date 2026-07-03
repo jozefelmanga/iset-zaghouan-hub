@@ -49,6 +49,7 @@ export function SunsetMomentsSection() {
               alt=""
               aria-hidden="true"
               className="h-full w-full object-cover"
+              loading="lazy"
             />
             <div
               aria-hidden="true"

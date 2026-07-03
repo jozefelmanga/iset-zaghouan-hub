@@ -1,59 +1,13 @@
-import dynamic from "next/dynamic";
 import { pageMetadata } from "@/constants/seo";
 import { WebsiteJsonLd } from "@/components/seo/WebsiteJsonLd";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { QuickAccessSection } from "@/components/sections/QuickAccessSection";
 import { Container } from "@/components/ui/layout";
-
-const StudentJourneySection = dynamic(
-  () =>
-    import("@/components/sections/StudentJourneySection").then((mod) => ({
-      default: mod.StudentJourneySection,
-    })),
-  { loading: () => <HomeSectionPlaceholder /> }
-);
-
-const ExternalResourcesSection = dynamic(
-  () =>
-    import("@/components/sections/ExternalResourcesSection").then((mod) => ({
-      default: mod.ExternalResourcesSection,
-    })),
-  { loading: () => <HomeSectionPlaceholder /> }
-);
-
-const OfficialChannelsSection = dynamic(
-  () =>
-    import("@/components/sections/OfficialChannelsSection").then((mod) => ({
-      default: mod.OfficialChannelsSection,
-    })),
-  { loading: () => <HomeSectionPlaceholder /> }
-);
-
-const TipsCarouselSection = dynamic(
-  () =>
-    import("@/components/sections/TipsCarouselSection").then((mod) => ({
-      default: mod.TipsCarouselSection,
-    })),
-  { loading: () => <HomeSectionPlaceholder /> }
-);
-
-const SunsetMomentsSection = dynamic(
-  () =>
-    import("@/components/sections/SunsetMomentsSection").then((mod) => ({
-      default: mod.SunsetMomentsSection,
-    })),
-  { loading: () => <HomeSectionPlaceholder /> }
-);
-
-function HomeSectionPlaceholder() {
-  return (
-    <div
-      className="shimmer my-10 rounded-[20px]"
-      style={{ minHeight: "220px" }}
-      aria-hidden="true"
-    />
-  );
-}
+import { StudentJourneySection } from "@/components/sections/StudentJourneySection";
+import { ExternalResourcesSection } from "@/components/sections/ExternalResourcesSection";
+import { OfficialChannelsSection } from "@/components/sections/OfficialChannelsSection";
+import { TipsCarouselSection } from "@/components/sections/TipsCarouselSection";
+import { SunsetMomentsSection } from "@/components/sections/SunsetMomentsSection";
 
 export const metadata = pageMetadata("/");
 

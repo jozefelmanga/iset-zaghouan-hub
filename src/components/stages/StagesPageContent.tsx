@@ -234,7 +234,7 @@ export function StagesPageContent() {
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
                 <div style={{ width: "100%", height: "120px", display: "flex", alignItems: "center", justifyContent: "center", padding: "12px", borderRadius: "12px", background: "var(--color-background)", border: "1px solid var(--color-border)" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={logo.src} alt={logo.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+                  <img src={logo.src} alt={logo.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} loading="lazy" />
                 </div>
                 <div style={{ textAlign: "center", width: "100%" }}>
                   <p style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "4px" }}>{logo.name}</p>

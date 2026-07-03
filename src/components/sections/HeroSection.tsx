@@ -29,15 +29,7 @@ function MountainDecoration() {
 
 export function HeroSection() {
   return (
-    <section
-      style={{
-        position: "relative",
-        minHeight: "65vh",
-        display: "flex",
-        alignItems: "center",
-        overflow: "hidden",
-      }}
-    >
+    <section className="relative min-h-[65vh] flex items-center overflow-hidden">
       {/* Real banner photo */}
       <img
         src="/images/banner.webp"
@@ -46,41 +38,26 @@ export function HeroSection() {
         height={1080}
         fetchPriority="high"
         decoding="async"
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center 60%",
-        }}
+        className="absolute inset-0 w-full h-full object-cover object-[center_60%]"
       />
 
       {/* Dark overlay — deep navy gradient over the photo */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(135deg, rgba(11,31,58,0.92) 0%, rgba(13,43,78,0.88) 50%, rgba(15,52,96,0.82) 100%)",
-        }}
-      />
+      <div className="absolute inset-0 bg-gradient-to-br from-[rgba(11,31,58,0.92)] via-[rgba(13,43,78,0.88)] to-[rgba(15,52,96,0.82)]" />
 
       {/* Cyan accent blob */}
-      <div className="blob" style={{ width: "500px", height: "500px", background: "rgba(18,184,200,0.07)", top: "-100px", right: "-100px" }} />
+      <div className="blob absolute w-[500px] h-[500px] bg-[rgba(18,184,200,0.07)] -top-[100px] -right-[100px]" />
       {/* Gold accent blob */}
-      <div className="blob" style={{ width: "400px", height: "400px", background: "rgba(246,180,27,0.04)", bottom: "-80px", left: "-80px" }} />
+      <div className="blob absolute w-[400px] h-[400px] bg-[rgba(246,180,27,0.04)] -bottom-[80px] -left-[80px]" />
 
       {/* Grid pattern */}
       <div
+        className="absolute inset-0 pointer-events-none"
         style={{
-          position: "absolute",
-          inset: 0,
           backgroundImage: `
             linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)
           `,
           backgroundSize: "48px 48px",
-          pointerEvents: "none",
         }}
       />
 
@@ -88,59 +65,38 @@ export function HeroSection() {
       <MountainDecoration />
 
       {/* Content */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 10,
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "80px 32px",
-          width: "100%",
-        }}
-      >
+      <div className="relative z-10 max-w-[1280px] mx-auto px-8 py-20 w-full">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Label badge */}
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(18,184,200,0.12)", border: "1px solid rgba(18,184,200,0.25)", borderRadius: "999px", padding: "6px 16px", marginBottom: "24px" }}>
-            <Sparkles size={14} strokeWidth={2} style={{ color: "#12B8C8" }} />
-            <span style={{ fontSize: "12px", fontWeight: 600, color: "#12B8C8" }}>🎓 دليل الطالب — ISET Zaghouan</span>
+          <div className="inline-flex items-center gap-2 bg-[rgba(18,184,200,0.12)] border border-[rgba(18,184,200,0.25)] rounded-full px-4 py-1.5 mb-6">
+            <Sparkles size={14} strokeWidth={2} className="text-[#12B8C8]" />
+            <span className="text-xs font-semibold text-[#12B8C8]">🎓 دليل الطالب — ISET Zaghouan</span>
           </div>
 
           {/* Headline */}
-          <h1 style={{ fontSize: "clamp(32px, 5vw, 58px)", fontWeight: 800, color: "#fff", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: "20px", maxWidth: "640px" }}>
+          <h1 className="text-[clamp(32px,5vw,58px)] font-extrabold text-white leading-[1.15] tracking-[-0.02em] mb-5 max-w-[640px]">
             ISET ZAGHOUAN
             <br />
-            <span style={{ background: "linear-gradient(135deg, #12B8C8, #F6B41B)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            <span className="bg-gradient-to-br from-[#12B8C8] to-[#F6B41B] bg-clip-text text-transparent">
               Student hub
             </span>
           </h1>
 
-          <p style={{ fontSize: "clamp(14px,2vw,17px)", color: "rgba(255,255,255,0.65)", lineHeight: 1.7, marginBottom: "36px", maxWidth: "480px" }}>
+          <p className="text-[clamp(14px,2vw,17px)] text-white/65 leading-[1.7] mb-9 max-w-[480px]">
             الترسيم، المبيت، النقل، البورص، الستاجات، وأكثر. دليل شامل مصنوع بطريقة تخلي حياتك الجامعية أسهل.
           </p>
 
           {/* CTAs */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "48px" }}>
+          <div className="flex flex-wrap gap-3 mb-12">
             <motion.a
               href="/inscription"
               whileHover={{ y: -2, boxShadow: "0 12px 32px rgba(246,180,27,0.35)" }}
               whileTap={{ scale: 0.97 }}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "14px 28px",
-                borderRadius: "14px",
-                background: "var(--color-accent)",
-                color: "var(--color-primary)",
-                fontWeight: 700,
-                fontSize: "15px",
-                textDecoration: "none",
-                transition: "all var(--transition-base)",
-              }}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary)] font-bold text-[15px] no-underline transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-accent)]"
             >
               <CheckCircle2 size={18} strokeWidth={2.5} />
               ابدأ الترسيم
@@ -149,21 +105,7 @@ export function HeroSection() {
               href="/explore"
               whileHover={{ y: -2, boxShadow: "0 12px 32px rgba(255,255,255,0.1)" }}
               whileTap={{ scale: 0.97 }}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "14px 28px",
-                borderRadius: "14px",
-                background: "rgba(255,255,255,0.08)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                color: "#fff",
-                fontWeight: 600,
-                fontSize: "15px",
-                textDecoration: "none",
-                transition: "all var(--transition-base)",
-                backdropFilter: "blur(8px)",
-              }}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white font-semibold text-[15px] no-underline transition-all backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white"
             >
               <MapPin size={18} strokeWidth={2} />
               اكتشف زغوان
@@ -171,7 +113,7 @@ export function HeroSection() {
           </div>
 
           {/* Floating chips */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+          <div className="flex flex-wrap gap-2">
             {["الترسيم", "المبيت", "البورص", "النقل", "الستاجات"].map((chip, i) => (
               <motion.a
                 key={chip}
@@ -180,26 +122,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + i * 0.07 }}
                 whileHover={{ y: -2 }}
-                style={{
-                  padding: "7px 16px",
-                  borderRadius: "999px",
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                  color: "rgba(255,255,255,0.7)",
-                  fontSize: "12px",
-                  fontWeight: 500,
-                  textDecoration: "none",
-                  transition: "all var(--transition-fast)",
-                  backdropFilter: "blur(8px)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "#12B8C8";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(18,184,200,0.4)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.7)";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.12)";
-                }}
+                className="px-4 py-[7px] rounded-full bg-white/5 border border-white/10 text-white/70 text-xs font-medium no-underline transition-colors duration-200 backdrop-blur-md hover:text-[#12B8C8] hover:border-[rgba(18,184,200,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12B8C8]"
               >
                 {chip}
               </motion.a>

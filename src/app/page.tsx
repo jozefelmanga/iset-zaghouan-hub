@@ -37,6 +37,14 @@ const TipsCarouselSection = dynamic(
   { loading: () => <HomeSectionPlaceholder /> }
 );
 
+const SunsetMomentsSection = dynamic(
+  () =>
+    import("@/components/sections/SunsetMomentsSection").then((mod) => ({
+      default: mod.SunsetMomentsSection,
+    })),
+  { loading: () => <HomeSectionPlaceholder /> }
+);
+
 function HomeSectionPlaceholder() {
   return (
     <div
@@ -59,6 +67,7 @@ export default function HomePage() {
         <QuickAccessSection />
         <StudentJourneySection />
         <ExternalResourcesSection />
+        <SunsetMomentsSection />
         <OfficialChannelsSection />
         <TipsCarouselSection />
       </Container>

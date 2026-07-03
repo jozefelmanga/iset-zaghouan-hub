@@ -23,45 +23,44 @@ export function ActionCard({ icon: Icon, title, description, href, category = "p
     <motion.a
       href={href}
       {...hoverLift}
-      className="group flex flex-col h-full"
+      className={`group flex h-full flex-col no-underline ${
+        featured ? "p-3.5 sm:p-8" : "p-3.5 sm:p-6"
+      }`}
       style={{
         background: "var(--color-surface)",
         borderRadius: "var(--radius-card)",
         border: `1px solid ${colors.border}`,
-        padding: featured ? "32px" : "24px",
         boxShadow: "var(--shadow-card)",
-        textDecoration: "none",
       }}
     >
-      {/* Icon circle */}
       <div
-        className="icon-circle mb-4"
+        className={`icon-circle mb-2 sm:mb-4 ${
+          featured ? "h-9 w-9 sm:h-14 sm:w-14" : "h-9 w-9 sm:h-12 sm:w-12"
+        }`}
         style={{
-          width: featured ? "56px" : "48px",
-          height: featured ? "56px" : "48px",
           background: colors.bg,
-          color: colors.color, // Maps to the main color property in categoryConfig
+          color: colors.color,
           transition: "transform var(--transition-base)",
         }}
       >
-        <Icon size={featured ? 24 : 22} strokeWidth={2} />
+        <Icon size={featured ? 20 : 18} strokeWidth={2} className="sm:hidden" />
+        <Icon size={featured ? 24 : 22} strokeWidth={2} className="hidden sm:block" />
       </div>
 
       <h3
-        className="font-semibold mb-1.5 group-hover:transition-colors"
-        style={{
-          color: "var(--color-text)",
-          fontSize: featured ? "18px" : "15px",
-        }}
+        className={`font-semibold leading-snug group-hover:transition-colors sm:mb-1.5 ${
+          featured ? "text-[13px] sm:text-lg" : "text-[13px] sm:text-[15px]"
+        }`}
+        style={{ color: "var(--color-text)" }}
       >
         {title}
       </h3>
-      <p style={{ color: "var(--color-text-secondary)", fontSize: "13px", lineHeight: 1.6 }}>
+      <p className="mt-0.5 hidden text-[13px] leading-relaxed sm:block" style={{ color: "var(--color-text-secondary)" }}>
         {description}
       </p>
 
       <div
-        className="flex items-center gap-1 mt-auto pt-4 opacity-0 group-hover:opacity-100 transition-opacity"
+        className="mt-auto hidden items-center gap-1 pt-4 opacity-0 transition-opacity group-hover:opacity-100 sm:flex"
         style={{ color: colors.color, fontSize: "13px", fontWeight: 500 }}
       >
         <span>عرض التفاصيل</span>

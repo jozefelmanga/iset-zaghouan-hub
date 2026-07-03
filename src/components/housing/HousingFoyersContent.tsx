@@ -26,6 +26,9 @@ const foyerGirlsGallery = [
   "/images/foyer girls/453467393_1537397963515855_175611808864145860_n.webp",
   "/images/foyer girls/453792484_1793394111190426_7031753863109453644_n.webp",
   "/images/foyer girls/454063059_371283862741360_1595094905555457197_n.webp",
+  "/images/foyer girls/ooo (1).webp",
+  "/images/foyer girls/ooo (8).webp",
+  "/images/foyer girls/ooo (18).webp",
 ];
 
 const foyerBoysGallery = [

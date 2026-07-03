@@ -9,12 +9,13 @@ interface SectionHeaderProps {
   icon?: LucideIcon;
   children?: ReactNode;
   center?: boolean;
+  className?: string;
 }
 
 /** Section heading with CSS scroll reveal — no Framer Motion. */
-export function SectionHeader({ label, title, subtitle, icon: Icon, children, center }: SectionHeaderProps) {
+export function SectionHeader({ label, title, subtitle, icon: Icon, children, center, className }: SectionHeaderProps) {
   return (
-    <div className={cn("section-reveal mb-10", center && "text-center")}>
+    <div className={cn("section-reveal mb-10", center && "text-center", className)}>
       {label && <span className="section-label">{label}</span>}
       <div className={cn("flex items-center gap-3", center && "justify-center")}>
         {Icon && (
@@ -22,7 +23,7 @@ export function SectionHeader({ label, title, subtitle, icon: Icon, children, ce
             <Icon size={22} strokeWidth={2} />
           </div>
         )}
-        <h2 className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--color-text)" }}>
+        <h2 className="text-xl font-bold sm:text-2xl md:text-3xl" style={{ color: "var(--color-text)" }}>
           {title}
         </h2>
       </div>

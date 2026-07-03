@@ -10,6 +10,7 @@ import {
 import { Card, Alert } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
+import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const SOS_COLOR = "#E30613";
 const IMAGE_BASE = "/images/Club ambassadeurs sos village";
@@ -38,11 +39,11 @@ const highlights = [
   },
   {
     title: "صُنّاع الأمل",
-    desc: "بالشراكة مع مدرسة المغرب — زيارات ميدانية لمؤسسات رعاية الأطفال واليافعين من ذوي الإعاقة الذهنية وأنشطة ترفيهية وتربوية.",
+    desc: "بالشراكة مع مدرسة المقرن — زيارات ميدانية لمؤسسات رعاية الأطفال واليافعين من ذوي الإعاقة الذهنية وأنشطة ترفيهية وتربوية.",
   },
   {
     title: "كسوة العيد",
-    desc: "بالتعاون مع نادي سفراء SOS بـ ISET زغوان — جمع ملابس جديدة أو بحالة جيدة وتوزيعها على العائلات محدودة الدخل بمناسبة عيد الفطر.",
+    desc: "بالتعاون مع نادي سفراء SOS بـ ISEAH زغوان — جمع ملابس جديدة أو بحالة جيدة وتوزيعها على العائلات محدودة الدخل بمناسبة عيد الفطر.",
   },
   {
     title: "الساحة الثقافية",
@@ -50,7 +51,9 @@ const highlights = [
   },
 ];
 
-const GALLERY_PLACEHOLDER_COUNT = 6;
+const galleryImages = [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(
+  (n) => `${IMAGE_BASE}/sos (${n}).webp`,
+);
 
 export function SosAmbassadeursPageContent() {
   return (
@@ -174,34 +177,7 @@ export function SosAmbassadeursPageContent() {
           <ImageIcon size={20} style={{ color: "var(--color-secondary)" }} />
           معرض الصور والذكريات
         </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-            gap: "12px",
-          }}
-        >
-          {Array.from({ length: GALLERY_PLACEHOLDER_COUNT }, (_, i) => (
-            <div
-              key={i}
-              style={{
-                aspectRatio: "1",
-                borderRadius: "12px",
-                border: "2px dashed var(--color-border)",
-                background: "rgba(11,31,58,0.03)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "8px",
-                color: "var(--color-text-muted)",
-              }}
-            >
-              <ImageIcon size={28} style={{ opacity: 0.4 }} />
-              <span style={{ fontSize: "12px", fontWeight: 600 }}>صور قريباً</span>
-            </div>
-          ))}
-        </div>
+        <PhotoGallery images={galleryImages} initialVisibleCount={12} altPrefix="SOS Ambassadeurs" />
       </div>
       </PageWrapper>
     </>

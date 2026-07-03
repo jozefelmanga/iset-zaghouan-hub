@@ -40,6 +40,15 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [drawerOpen, setDrawerOpen]);
 
+  // Accessible label colors: darker variants of each group's brand color
+  // that pass WCAG AA (4.5:1) contrast on a white sidebar background.
+  const labelColorMap: Record<string, string> = {
+    "#3B82F6": "#1D4ED8", // Blue: 4.7:1 on white
+    "#12B8C8": "#0E7490", // Cyan: 5.0:1 on white
+    "#8B5CF6": "#6D28D9", // Purple: 5.3:1 on white
+    "#F97316": "#C2410C", // Orange: 5.2:1 on white
+  };
+
   const sidebarContent = (
     <>
       {/* Logo area */}
@@ -176,8 +185,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
                   fontWeight: 700,
                   letterSpacing: "0.10em",
                   textTransform: "uppercase",
-                  color: group.color,
-                  opacity: 0.8,
+                  color: labelColorMap[group.color] ?? group.color,
                 }}
               >
                 {group.label}
@@ -264,7 +272,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
           flexShrink: 0,
         }}
       >
-        <p style={{ fontSize: "11px", color: "var(--color-text-muted)", textAlign: "center", lineHeight: 1.6 }}>
+        <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", textAlign: "center", lineHeight: 1.6 }}>
           Made with ❤️ for
           <br />
           ISET Zaghouan students

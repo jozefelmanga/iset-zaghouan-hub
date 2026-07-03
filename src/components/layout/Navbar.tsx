@@ -135,7 +135,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
                 borderRadius: "5px",
                 background: "rgba(255,255,255,0.08)",
                 border: "1px solid rgba(255,255,255,0.12)",
-                color: "rgba(255,255,255,0.7)",
+                color: "rgba(255,255,255,0.92)",
                 fontFamily: "var(--font-sans)",
                 flexShrink: 0,
               }}

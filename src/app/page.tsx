@@ -4,6 +4,7 @@ import { WebsiteJsonLd } from "@/components/seo/WebsiteJsonLd";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { QuickAccessSection } from "@/components/sections/QuickAccessSection";
 import { Container } from "@/components/ui/layout";
+import { WelcomeSection } from "@/components/sections/WelcomeSection";
 
 // Below-fold sections: code-split for a smaller initial JS bundle.
 // No loading placeholder — with static export (SSG) the HTML is already
@@ -37,6 +38,7 @@ export default function HomePage() {
       <HeroSection />
 
       <Container size="content">
+        <WelcomeSection />
         <QuickAccessSection />
         <StudentJourneySection />
         <ExternalResourcesSection />

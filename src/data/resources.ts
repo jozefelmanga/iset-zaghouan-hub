@@ -51,14 +51,14 @@ export const externalResources: ExternalResource[] = [
     featured: true,
     title: "After Graduation Guide",
     subtitle: "Career & Masters",
-    description: "دليل كامل يوجّهك بعد التخرج نحو الحياة المهنية، الستاجات، ولا إكمال الدراسة في الماستر.",
+    description: "دليل كامل يوجّهك بعد التخرج — من الماستر والمناظرة الخصوصية للمهندسين إلى التكوين المزدوج.",
     href: "https://after-graduation.vercel.app/",
     icon: "briefcase",
     color: "#8B5CF6",
     bg: "rgba(139,92,246,0.1)",
     preview: {
       gradient: "linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a78bfa 100%)",
-      highlights: ["ماستر", "ستاج", "كونكurs", "تكوين مزدوج"],
+      highlights: ["ماستر", "المناظرة الخصوصية للمهندسين", " التكوين المزدوج"],
     },
   },
   {

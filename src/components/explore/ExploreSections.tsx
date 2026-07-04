@@ -6,6 +6,7 @@ import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
 import { exploreZaghouan, zaghouanGallery, cafeTagColors } from "@/data/explore";
 import { studySpotIcons } from "@/lib/iconMaps";
 import { enterAnimation } from "@/lib/motion";
+import { YoutubeEmbed } from "@/components/ui/YoutubeEmbed";
 
 const heroDots = [
   { top: "20%", left: "15%", size: 3, delay: "0s" },
@@ -249,16 +250,9 @@ export function ExploreYoutubeSection() {
         boxShadow: "var(--shadow-card)",
         aspectRatio: "16/9",
         width: "100%",
+        position: "relative",
       }}>
-        <iframe
-          width="100%"
-          height="100%"
-          src={youtubeVideo.embedUrl}
-          title={youtubeVideo.title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{ display: "block", border: "none" }}
-        />
+        <YoutubeEmbed embedUrl={youtubeVideo.embedUrl} title={youtubeVideo.title} />
       </div>
     </div>
   );

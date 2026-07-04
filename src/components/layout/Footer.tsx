@@ -87,10 +87,10 @@ export function Footer() {
         </div>
 
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px" }}>
-          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)" }}>
+          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)" }}>
             © 2024 ISET Zaghouan Hub. Made with ❤️ for students.
           </p>
-          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)" }}>
+          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)" }}>
             زغوان — تونس
           </p>
         </div>

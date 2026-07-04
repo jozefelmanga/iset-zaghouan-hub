@@ -7,6 +7,7 @@ import { Divider, Grid } from "@/components/ui/layout";
 import { FeaturedPlatformCard } from "@/components/sections/FeaturedPlatformCard";
 import { externalResources, externalResourcesMeta } from "@/data/resources";
 import { sectionReveal, itemReveal } from "@/lib/motion";
+import { YoutubeEmbed } from "@/components/ui/YoutubeEmbed";
 
 const featuredPlatforms = externalResources.filter(
   (r): r is Extract<typeof r, { type: "link" }> => r.type === "link"
@@ -52,14 +53,7 @@ export function ExternalResourcesSection() {
           <motion.div key={resource.embedUrl} {...itemReveal(i * 0.06)}>
             <Card elevation="raised" padding="0" style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}>
               <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
-                <iframe
-                  src={resource.embedUrl}
-                  title={resource.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                />
+                <YoutubeEmbed embedUrl={resource.embedUrl} title={resource.title} />
               </div>
               <div style={{ padding: "20px" }}>
                 <h3 style={{ fontSize: "16px", fontWeight: 700, marginBottom: "8px", color: "var(--color-text)", lineHeight: 1.4 }}>

@@ -56,12 +56,46 @@ export function SEGPageContent() {
                   يركز على تحسين جودة الخدمات والمنتوجات، وضمان المعايير الدولية والرضا.
                 </p>
               </div>
-              <div style={{ padding: "14px", borderRadius: "12px", background: "rgba(239,68,68,0.04)", border: "1px solid rgba(239,68,68,0.15)", opacity: 0.65 }}>
-                <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "4px" }}>Logistique et Transport</h4>
-                <Badge variant="danger">غير متوفر بـ ISETZG ⛔</Badge>
-              </div>
+
             </div>
           </Card>
+        </div>
+      </div>
+
+      {/* Section 1b: Mini Parcours */}
+      <div style={{ marginBottom: "40px" }}>
+        <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "8px", display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ color: "var(--color-secondary)"}}>•</span> المسارات المصغّرة (Mini Parcours)
+        </h2>
+        <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "16px" }}>
+          ابتداءً من السنة الثانية، يمكن للطلبة اختيار مسار مصغّر (Mini Parcours) ضمن تخصصهم. هذه المسارات متوفّرة حالياً في قسم SEG بـ ISET Zaghouan:
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "12px" }}>
+
+          {/* Logistique Durable */}
+          <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(34,197,94,0.05)", border: "1px solid rgba(34,197,94,0.2)" }}>
+            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px" }}>🌿 Logistique Durable</h4>
+            <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
+              مسار مُصغَّر في اللوجستيك المستدام — يُطلَق هذا العام لأوّل مرة في ISET Zaghouan.
+            </p>
+          </div>
+
+          {/* Marketing Digital */}
+          <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(139,92,246,0.05)", border: "1px solid rgba(139,92,246,0.2)" }}>
+            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px" }}>📱 Marketing Digital</h4>
+            <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
+              مسار مُصغَّر يركّز على استراتيجيات التسويق الرقمي، إدارة منصات التواصل الاجتماعي، وتحليل البيانات التجارية.
+            </p>
+          </div>
+
+          {/* Lean Entrepreneurship */}
+          <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(251,146,60,0.05)", border: "1px solid rgba(251,146,60,0.2)" }}>
+            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px" }}>🚀 Lean Entrepreneurship</h4>
+            <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
+              مسار مُصغَّر في ريادة الأعمال الرشيقة — يُعلّمك تأسيس مشاريع بفعّالية عبر منهجية Lean Startup.
+            </p>
+          </div>
+
         </div>
       </div>
 

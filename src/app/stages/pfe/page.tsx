@@ -1,6 +1,6 @@
 import { pageMetadata } from "@/constants/seo";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "@/lib/icons";
+import { ArrowRight, CheckCircle2, Download } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Badge } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
@@ -79,6 +79,67 @@ export default function PfePage() {
           </MotionReveal>
         ))}
       </div>
+
+      <MotionReveal delay={0.45}>
+        <div
+          style={{
+            marginBottom: "16px",
+            padding: "24px",
+            borderRadius: "20px",
+            background: "linear-gradient(135deg, rgba(139,92,246,0.06), rgba(34,197,94,0.06))",
+            border: "1px solid rgba(139,92,246,0.18)",
+          }}
+        >
+          <h3 style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)", marginBottom: "6px" }}>
+            📄 دليل PFE — تحميل
+          </h3>
+          <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "16px", lineHeight: 1.5 }}>
+            حمّل الدليل الخاص بتخصصك.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+            <a
+              href="/documents/stages/pfe/Guide-de-PFE GPR.pdf"
+              download
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "10px 18px",
+                borderRadius: "12px",
+                background: "rgba(34,197,94,0.1)",
+                border: "1px solid rgba(34,197,94,0.3)",
+                color: "#15803d",
+                fontWeight: 700,
+                fontSize: "13px",
+                textDecoration: "none",
+              }}
+            >
+              <Download size={15} strokeWidth={2.5} />
+              Guide PFE — GPR
+            </a>
+            <a
+              href="/documents/stages/pfe/Guide-de-PFE SEG.pdf"
+              download
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "10px 18px",
+                borderRadius: "12px",
+                background: "rgba(139,92,246,0.1)",
+                border: "1px solid rgba(139,92,246,0.3)",
+                color: "var(--color-primary)",
+                fontWeight: 700,
+                fontSize: "13px",
+                textDecoration: "none",
+              }}
+            >
+              <Download size={15} strokeWidth={2.5} />
+              Guide PFE — SEG
+            </a>
+          </div>
+        </div>
+      </MotionReveal>
 
       <MotionReveal delay={0.5}>
         <Card elevation="feature" padding="28px">

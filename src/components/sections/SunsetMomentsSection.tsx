@@ -107,6 +107,17 @@ export function SunsetMomentsSection() {
                   style={{ color: "var(--color-text-secondary)" }}
                 >
                   مشاهد من ISET Zaghouan — قبل ما تمشي، وقف شوية و استمتع بالمنظر.
+                  <span 
+                    style={{ 
+                      display: "block", 
+                      fontSize: "11px", 
+                      color: "rgba(217,119,6,0.85)", 
+                      marginTop: "4px",
+                      fontStyle: "italic" 
+                    }}
+                  >
+                    📸 عدسة: يسر خليل (Yosser Khalil)
+                  </span>
                 </p>
                 <PhotoGallery
                   images={sunsetGallery}

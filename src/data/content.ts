@@ -1,7 +1,7 @@
 export const libraryInfo = {
   name: "المكتبة الجامعية",
   access: "تدخللها من غير تسجيل، لا فلوس ولا أوراق",
-  image: "/images/biblio.png",
+  image: "/images/biblio.webp",
   imageAlt: "المكتبة الجامعية - ISET Zaghouan",
   features: [
     "تنجم تمشي في أي وقت وتقعد تريفز",

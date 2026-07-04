@@ -66,24 +66,10 @@ export default function PfePage() {
         </div>
       </MotionReveal>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "32px" }}>
-        {pfeGuide.sections.map((section, i) => (
-          <MotionReveal key={section.title} delay={0.15 + i * 0.08}>
-            <Card elevation="raised" padding="24px">
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                <Badge variant="warning">الخطوة {i + 1}</Badge>
-                <h3 style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)" }}>{section.title}</h3>
-              </div>
-              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7 }}>{section.content}</p>
-            </Card>
-          </MotionReveal>
-        ))}
-      </div>
-
-      <MotionReveal delay={0.45}>
+      <MotionReveal delay={0.15}>
         <div
           style={{
-            marginBottom: "16px",
+            marginBottom: "32px",
             padding: "24px",
             borderRadius: "20px",
             background: "linear-gradient(135deg, rgba(139,92,246,0.06), rgba(34,197,94,0.06))",
@@ -160,6 +146,20 @@ export default function PfePage() {
           </div>
         </div>
       </MotionReveal>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "32px" }}>
+        {pfeGuide.sections.map((section, i) => (
+          <MotionReveal key={section.title} delay={0.25 + i * 0.08}>
+            <Card elevation="raised" padding="24px">
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <Badge variant="warning">الخطوة {i + 1}</Badge>
+                <h3 style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)" }}>{section.title}</h3>
+              </div>
+              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7 }}>{section.content}</p>
+            </Card>
+          </MotionReveal>
+        ))}
+      </div>
 
       <MotionReveal delay={0.5}>
         <Card elevation="feature" padding="28px">

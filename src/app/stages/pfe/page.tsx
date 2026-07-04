@@ -98,6 +98,26 @@ export default function PfePage() {
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
             <a
+              href="/documents/stages/pfe/Guide-de-PFE TI.pdf"
+              download
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "10px 18px",
+                borderRadius: "12px",
+                background: "rgba(59,130,246,0.1)",
+                border: "1px solid rgba(59,130,246,0.3)",
+                color: "#1d4ed8",
+                fontWeight: 700,
+                fontSize: "13px",
+                textDecoration: "none",
+              }}
+            >
+              <Download size={15} strokeWidth={2.5} />
+              Guide PFE — TI
+            </a>
+            <a
               href="/documents/stages/pfe/Guide-de-PFE GPR.pdf"
               download
               style={{

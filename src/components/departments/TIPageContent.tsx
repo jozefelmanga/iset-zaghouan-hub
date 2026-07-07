@@ -284,12 +284,7 @@ export function TIPageContent() {
               title: "Drive ISET Zaghouan",
               desc: "درايف خاص بالقسم مجهّز ومعد من طرف الطالب يوسف بن سالم",
               link: "https://bit.ly/ISET_Zaghouan",
-            },
-            {
-              title: "Drive Study Lounge IT",
-              desc: "ملفات دراسة وامتحانات للـ IT",
-              link: "https://shorturl.at/2CCOB",
-            },
+            }
           ].map((res) => (
             <a
               key={res.title}

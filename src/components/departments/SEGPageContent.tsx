@@ -29,7 +29,7 @@ export function SEGPageContent() {
         </p>
         <div style={{ textAlign: "center" }}>
           <ZoomableImage
-            src="/images/departments/new paths/SEG_path.jpg"
+            src="/images/departments/new paths/SEG_path.webp"
             alt="Nouveaux Parcours SEG"
             style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
           />

@@ -30,7 +30,7 @@ export function TIPageContent() {
         </p>
         <div style={{ textAlign: "center" }}>
           <ZoomableImage
-            src="/images/departments/new paths/TI_path.jpg"
+            src="/images/departments/new paths/TI_path.webp"
             alt="Nouveaux Parcours TI"
             style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
           />

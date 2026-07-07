@@ -29,7 +29,7 @@ export function GPRPageContent() {
         </p>
         <div style={{ textAlign: "center" }}>
           <ZoomableImage
-            src="/images/departments/new paths/GPR_path.jpg"
+            src="/images/departments/new paths/GPR_path.webp"
             alt="Nouveaux Parcours GPR"
             style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
           />

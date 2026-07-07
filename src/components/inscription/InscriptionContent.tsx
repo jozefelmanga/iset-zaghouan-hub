@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   FileText, CheckCircle2, Circle, Printer, Globe, Copy, ArrowLeft,
@@ -11,6 +11,25 @@ import { enrollmentStepIcons } from "@/lib/iconMaps";
 
 export function InscriptionContent() {
   const [checked, setChecked] = useState<Record<number, boolean>>({});
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("inscription-checklist");
+      if (saved) {
+        setChecked(JSON.parse(saved));
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    setIsLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem("inscription-checklist", JSON.stringify(checked));
+    }
+  }, [checked, isLoaded]);
 
   const toggle = (id: number) =>
     setChecked((prev) => ({ ...prev, [id]: !prev[id] }));

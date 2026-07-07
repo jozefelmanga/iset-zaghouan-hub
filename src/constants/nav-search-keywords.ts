@@ -219,6 +219,14 @@ export const navSearchKeywords: Record<string, string[]> = {
     "bénévolat",
     "charity",
   ],
+  "/clubs/procegenius": [
+    "ProceGenius",
+    "process engineering",
+    "genie des procedes",
+    "génie des procédés",
+    "science",
+    "innovation",
+  ],
   "/departments/ti": [
     "TI",
     "IT",

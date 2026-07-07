@@ -64,6 +64,15 @@ export const clubDirectory = [
     href: "/clubs/sos-ambassadeurs",
     logo: "/images/Club ambassadeurs sos village/logo-SOS.webp",
   },
+  {
+    id: "procegenius",
+    name: "Club ProceGenius",
+    slogan: "Innovation et Excellence en Génie des Procédés.",
+    description: "نادي علمي يجمع الشغوفين بهندسة العمليات لتطوير المهارات، تبادل المعرفة، وتعزيز الابتكار من خلال دورات تدريبية ومشاريع تطبيقية.",
+    color: "#22C55E",
+    href: "/clubs/procegenius",
+    logo: "/images/procegenius club/logo.webp",
+  },
 ];
 
 /** @deprecated use clubMeta */

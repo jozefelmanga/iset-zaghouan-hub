@@ -73,6 +73,10 @@ export const PAGE_SEO = {
     title: "نادي سفراء قرى الأطفال SOS",
     description: "Club Ambassadeurs SOS Village بـ ISET Zaghouan: عمل تطوعي، مبادرات إنسانية وثقافية، و جائزة أفضل نادٍ صاعد وطنياً 2026.",
   },
+  "/clubs/procegenius": {
+    title: "Club ProceGenius",
+    description: "ProceGenius هو نادي علمي في ISET Zaghouan يلم المغرومين بهندسة العمليات باش يطورو مهاراتهم ويشجعو على الابتكار.",
+  },
   "/departments": {
     title: "الأقسام العلمية",
     description: "نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.",

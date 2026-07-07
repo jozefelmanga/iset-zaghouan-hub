@@ -108,6 +108,7 @@ export const allNavLinks: NavLink[] = [
   { href: "/clubs/enactus",    label: "نادي Enactus",                    icon: Users,        description: "ريادة الأعمال والمشاريع الطلابية", category: "life"     },
   { href: "/clubs/ieee",       label: "IEEE ISET Zaghouan Student Branch", icon: Users,        description: "فرع IEEE — ورشات، TSYP، و skill-building", category: "life" },
   { href: "/clubs/sos-ambassadeurs", label: "نادي سفراء SOS",           icon: Users,        description: "عمل تطوعي ومبادرات إنسانية مع قرى الأطفال SOS", category: "life" },
+  { href: "/clubs/procegenius",        label: "ProceGenius",             icon: Users,        description: "نادي علمي يجمع الشغوفين بهندسة العمليات", category: "life" },
   { href: "/departments/ti",   label: "قسم تكنولوجيا المعلومات (TI)",   icon: GraduationCap, description: "تخصصات DSI و RSI ومراجعها",       category: "academic" },
   { href: "/departments/seg",  label: "قسم الاقتصاد والتصرف (SEG)",     icon: GraduationCap, description: "المحاسبة والمالية وإدارة الأعمال", category: "academic" },
   { href: "/departments/gpr",  label: "قسم هندسة العمليات (GPR)",       icon: GraduationCap, description: "الأساليب الكيميائية والأفاق",      category: "academic" },

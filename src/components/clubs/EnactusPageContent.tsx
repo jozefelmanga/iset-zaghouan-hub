@@ -18,14 +18,42 @@ import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const images = [
-  "/images/Enactus ISET Zaghouan/1703081864007.webp",
+  "/images/Enactus ISET Zaghouan/e3feaad2-aba6-4461-8e01-66d5f879e612.webp",
+  "/images/Enactus ISET Zaghouan/d1590e48-ad16-4db9-9034-4ee2cb2c2e1b.webp",
+  "/images/Enactus ISET Zaghouan/ac0953d7-291f-4607-8e35-078c665f9cdb.webp",
+  "/images/Enactus ISET Zaghouan/6b3991f8-c0c6-4f01-b40b-34e96d71cabc.webp",
   "/images/Enactus ISET Zaghouan/received_339612968478048_(1).webp",
+  "/images/Enactus ISET Zaghouan/436381219_1449757275931071_3217552452188267822_n.webp",
   "/images/Enactus ISET Zaghouan/FB_IMG_1709626634622.webp",
   "/images/Enactus ISET Zaghouan/enactusisetzaghouan_335658515_615813247031283_4854653150784438139_n.webp",
-  "/images/Enactus ISET Zaghouan/334748585_592761119562857_4998579694977752212_n.webp",
-  "/images/Enactus ISET Zaghouan/453331840_823412293222657_5334781583359156765_n.webp",
+  "/images/Enactus ISET Zaghouan/453525204_507064728663002_8259480403802673580_n.webp",
+  "/images/Enactus ISET Zaghouan/453512744_823412126556007_5306982322671175148_n.webp",
   "/images/Enactus ISET Zaghouan/453510491_823407753223111_6568305378444872917_n.webp",
+  "/images/Enactus ISET Zaghouan/453488211_823412283222658_7480948437040389927_n.webp",
+  "/images/Enactus ISET Zaghouan/453488211_823412283222658_7480948437040389927_n 1.webp",
+  "/images/Enactus ISET Zaghouan/453416600_823407759889777_8089060894113601535_n.webp",
+  "/images/Enactus ISET Zaghouan/453403289_823407173223169_2389353185566624540_n.webp",
   "/images/Enactus ISET Zaghouan/453348330_823411613222725_3685005343889981378_n.webp",
+  "/images/Enactus ISET Zaghouan/453331840_823412293222657_5334781583359156765_n.webp",
+  "/images/Enactus ISET Zaghouan/453264609_823410449889508_7502880550900553460_n.webp",
+  "/images/Enactus ISET Zaghouan/453252237_823407143223172_567877147649592220_n.webp",
+  "/images/Enactus ISET Zaghouan/453216991_823410326556187_1605153942602073009_n.webp",
+  "/images/Enactus ISET Zaghouan/452982943_1873297629844921_6069705589359713803_n.webp",
+  "/images/Enactus ISET Zaghouan/452053998_7299324580168116_7302795906109028048_n.webp",
+  "/images/Enactus ISET Zaghouan/451963353_1227066188433025_1300295185956169083_n.webp",
+  "/images/Enactus ISET Zaghouan/451937608_784394810236009_3196913303410625347_n.webp",
+  "/images/Enactus ISET Zaghouan/451587759_1165678558029021_3942955720128848013_n.webp",
+  "/images/Enactus ISET Zaghouan/450781622_516101464414635_7393071576656520224_n.webp",
+  "/images/Enactus ISET Zaghouan/449808218_2369432800072097_1702369702319018273_n.webp",
+  "/images/Enactus ISET Zaghouan/449803608_845980877082020_6842826807378577724_n.webp",
+  "/images/Enactus ISET Zaghouan/449351074_312721508502825_7599011687244957312_n.webp",
+  "/images/Enactus ISET Zaghouan/381138118_621992780107700_207498600314879941_n.webp",
+  "/images/Enactus ISET Zaghouan/334748585_592761119562857_4998579694977752212_n.webp",
+  "/images/Enactus ISET Zaghouan/1703499476377.webp",
+  "/images/Enactus ISET Zaghouan/1703082205001.webp",
+  "/images/Enactus ISET Zaghouan/1703082098535.webp",
+  "/images/Enactus ISET Zaghouan/1703081881069.webp",
+  "/images/Enactus ISET Zaghouan/1703081864007.webp",
 ];
 
 const achievements = [
@@ -206,7 +234,7 @@ export function EnactusPageContent() {
           <ImageIcon size={20} style={{ color: "var(--color-secondary)" }} />
           معرض الصور والذكريات
         </h2>
-        <PhotoGallery images={images} />
+        <PhotoGallery images={images} initialVisibleCount={12} altPrefix="Enactus" />
       </div>
       </PageWrapper>
     </>

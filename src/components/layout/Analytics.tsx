@@ -1,22 +1,28 @@
 "use client";
 
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 /**
- * Optional privacy-friendly analytics.
- * Set NEXT_PUBLIC_PLAUSIBLE_DOMAIN to enable (e.g. guideisetzg.tn).
+ * Analytics components.
+ * Set NEXT_PUBLIC_PLAUSIBLE_DOMAIN for Plausible Analytics.
+ * Set NEXT_PUBLIC_GA_ID for Google Analytics (e.g., G-XXXXXXXXXX).
  */
 export function Analytics() {
-  const domain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
-
-  if (!domain) return null;
+  const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
-    <Script
-      defer
-      data-domain={domain}
-      src="https://plausible.io/js/script.js"
-      strategy="afterInteractive"
-    />
+    <>
+      {plausibleDomain && (
+        <Script
+          defer
+          data-domain={plausibleDomain}
+          src="https://plausible.io/js/script.js"
+          strategy="afterInteractive"
+        />
+      )}
+      {gaId && <GoogleAnalytics gaId={gaId} />}
+    </>
   );
 }

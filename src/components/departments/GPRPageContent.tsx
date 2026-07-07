@@ -18,6 +18,24 @@ export function GPRPageContent() {
 
   return (
     <>
+      {/* Announcement: New Paths */}
+      <div style={{ marginBottom: "40px", padding: "20px", borderRadius: "12px", background: "rgba(34, 197, 94, 0.05)", border: "1px solid rgba(34, 197, 94, 0.2)" }}>
+        <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-primary)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "10px" }}>
+          🚨 إعلان هام: مسارات جديدة (Nouveaux Parcours)
+        </h2>
+        <p style={{ fontSize: "14.5px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "16px" }}>
+          نعلمكم أنه تم تحديث المسارات (Parcours) في قسم هندسة الأساليب! السنة الأولى ستبقى جذعاً مشتركاً (Tronc Commun)، وابتداءً من السنة الثانية يمكنكم الاختيار من بين 3 مسارات جديدة:
+          <strong> Génie des Procédés Chimiques, Génie des Procédés Alimentaires, و Génie des Procédés Pharmaceutiques.</strong>
+        </p>
+        <div style={{ textAlign: "center" }}>
+          <ZoomableImage
+            src="/images/departments/new paths/GPR_path.jpg"
+            alt="Nouveaux Parcours GPR"
+            style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
+          />
+        </div>
+      </div>
+
       {/* Section 1: Specialities */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>

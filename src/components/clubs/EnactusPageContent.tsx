@@ -74,6 +74,11 @@ const projects = [
     desc: "تثمين ثروة الصبار واستخراج مشتقاتها الطبيعية والطبية لغايات تجارية وتنموية وصديقة للبيئة.",
     youtube: "https://youtu.be/vtY5X0BE0qg?si=5V7c5UZ-bqePr0yE",
   },
+  {
+    name: "NURATH 🍏💡",
+    desc: "مصيدة حشرات إيكولوجية تخدم بالطاقة الشمسية ومواد طبيعية. تحمي الفلاحة (خاصة التفاح) من الآفات وتحد من استعمال المبيدات الكيميائية المضرة بالبيئة والصحة.",
+    youtube: "https://youtu.be/Bsk9H9y59Ck?si=hIXYw6-O75dPRNRK",
+  },
 ];
 
 const events = ["يوم التراث 🏺", "Randotek GDG 🗺️", "Lightquest 🔦", "طلعة لجبل زغوان ⛰️", "Journée d'intégration 🤝"];

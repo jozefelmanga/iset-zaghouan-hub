@@ -4,6 +4,9 @@ import {
   ImageIcon,
   Briefcase,
   Trophy,
+  Globe,
+  Facebook,
+  Instagram,
 } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
@@ -63,7 +66,7 @@ export function ProceGeniusPageContent() {
           </p>
         </Card>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "24px", marginBottom: "32px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "24px", marginBottom: "32px" }}>
           <Card elevation="raised" padding="24px">
             <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
               <Trophy size={18} style={{ color: "#22C55E" }} />
@@ -75,6 +78,51 @@ export function ProceGeniusPageContent() {
                   <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-text)", marginBottom: "8px" }}>{proj.name}</h4>
                   <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{proj.desc}</p>
                 </div>
+              ))}
+            </div>
+          </Card>
+
+          <Card elevation="raised" padding="24px">
+            <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
+              <Globe size={18} style={{ color: "#22C55E" }} />
+              روابط التواصل الاجتماعي
+            </h3>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {[
+                { label: "Facebook", icon: Facebook, link: "https://www.facebook.com/profile.php?id=61574097255215", color: "#1877F2" },
+                { label: "Instagram", icon: Instagram, link: "https://www.instagram.com/procegenius/", color: "#E4405F" },
+              ].map((soc) => (
+                <a
+                  key={soc.label}
+                  href={soc.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    padding: "10px 16px",
+                    borderRadius: "8px",
+                    background: "rgba(11,31,58,0.03)",
+                    border: "1px solid var(--color-border)",
+                    color: "var(--color-text-secondary)",
+                    fontSize: "13.5px",
+                    fontWeight: 500,
+                    textDecoration: "none",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    transition: "all var(--transition-fast)",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = soc.color;
+                    (e.currentTarget as HTMLAnchorElement).style.color = soc.color;
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--color-border)";
+                    (e.currentTarget as HTMLAnchorElement).style.color = "var(--color-text-secondary)";
+                  }}
+                >
+                  <soc.icon size={16} />
+                  <span>{soc.label}</span>
+                </a>
               ))}
             </div>
           </Card>

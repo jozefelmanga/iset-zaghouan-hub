@@ -1,5 +1,5 @@
 import { pageMetadata } from "@/constants/seo";
-import { Clock, Moon, PartyPopper, AlertCircle, CheckCircle2, Info, ImageIcon } from "@/lib/icons";
+import { Clock, Moon, PartyPopper, AlertCircle, CheckCircle2, Info, ImageIcon, ExternalLink, Facebook } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
@@ -89,6 +89,43 @@ export default function RestoPage() {
             <Alert key={title} title={title} variant={variant}>{content}</Alert>
           ))}
         </div>
+      </div>
+
+      <div style={{ marginBottom: "28px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(24,119,242,0.10)", color: "#1877F2", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Facebook size={16} strokeWidth={2} />
+          </div>
+          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>الصفحة الرسمية على فيسبوك</span>
+        </div>
+        <Card elevation="flat" padding="20px">
+          <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "14px" }}>
+            إدارة المطعم الجامعي تهبط بانتظام المنيو اليومي، تصاور الأكلات في المناسبات، والإعلانات الطارئة (كيف ما تبديل الأوقات أو الأوراق المطلوبة) على الباج الرسمية فيسبوك.
+          </p>
+          <a
+            href="https://www.facebook.com/RUZaghouan"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "10px 18px",
+              borderRadius: "10px",
+              background: "#1877F2",
+              color: "#fff",
+              fontSize: "13px",
+              fontWeight: 600,
+              textDecoration: "none",
+              boxShadow: "var(--shadow-hover)",
+              transition: "transform var(--transition-fast)",
+            }}
+          >
+            <Facebook size={16} />
+            <span>زور الصفحة الرسمية للمطعم الجامعي زغوان</span>
+            <ExternalLink size={14} />
+          </a>
+        </Card>
       </div>
 
       <div style={{ marginBottom: "28px" }}>

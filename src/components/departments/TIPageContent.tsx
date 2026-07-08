@@ -9,8 +9,8 @@ import { DepartmentScheduleDisclaimer } from "@/components/departments/Departmen
 import { afterGraduationGuide } from "@/data/resources";
 
 const semesterGalleryImages = [
-  "/images/Technologies de l’informatique (TI)/1000125478.webp",
-  "/images/Technologies de l’informatique (TI)/1000125475.webp",
+  "/images/departments/TI/1000125478.webp",
+  "/images/departments/TI/1000125475.webp",
 ];
 const semesterGalleryAlts = ["Matières TI S1", "Matières TI S2"];
 
@@ -32,7 +32,7 @@ export function TIPageContent() {
           </p>
           <div style={{ textAlign: "center" }}>
             <ZoomableImage
-              src="/images/departments/new paths/TI_path.webp"
+              src="/images/departments/TI/TI_path.webp"
               alt="Nouveaux Parcours TI"
               style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
             />
@@ -149,7 +149,7 @@ export function TIPageContent() {
                   style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
                 >
                   <ZoomableImage
-                    src="/images/Technologies de l’informatique (TI)/1000125478.webp"
+                    src="/images/departments/TI/1000125478.webp"
                     alt="Matières TI S1"
                     galleryImages={semesterGalleryImages}
                     galleryAlts={semesterGalleryAlts}
@@ -167,7 +167,7 @@ export function TIPageContent() {
                   style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
                 >
                   <ZoomableImage
-                    src="/images/Technologies de l’informatique (TI)/1000125475.webp"
+                    src="/images/departments/TI/1000125475.webp"
                     alt="Matières TI S2"
                     galleryImages={semesterGalleryImages}
                     galleryAlts={semesterGalleryAlts}

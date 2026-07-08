@@ -8,8 +8,8 @@ import { ZoomableImage } from "@/components/ui/Lightbox";
 import { DepartmentScheduleDisclaimer } from "@/components/departments/DepartmentScheduleDisclaimer";
 
 const semesterGalleryImages = [
-  "/images/Génie des Procédés (GPR)/8b38c86c-d857-42af-af22-0e62fbabab11.webp",
-  "/images/Génie des Procédés (GPR)/5cae2f2b-0827-4909-86e4-49cc524b6625.webp",
+  "/images/departments/GPR/8b38c86c-d857-42af-af22-0e62fbabab11.webp",
+  "/images/departments/GPR/5cae2f2b-0827-4909-86e4-49cc524b6625.webp",
 ];
 const semesterGalleryAlts = ["Matières GPR S1", "Matières GPR S2"];
 
@@ -31,7 +31,7 @@ export function GPRPageContent() {
           </p>
           <div style={{ textAlign: "center" }}>
             <ZoomableImage
-              src="/images/departments/new paths/GPR_path.webp"
+              src="/images/departments/GPR/GPR_path.webp"
               alt="Nouveaux Parcours GPR"
               style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
             />
@@ -149,7 +149,7 @@ export function GPRPageContent() {
                   style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
                 >
                   <ZoomableImage
-                    src="/images/Génie des Procédés (GPR)/8b38c86c-d857-42af-af22-0e62fbabab11.webp"
+                    src="/images/departments/GPR/8b38c86c-d857-42af-af22-0e62fbabab11.webp"
                     alt="Matières GPR S1"
                     galleryImages={semesterGalleryImages}
                     galleryAlts={semesterGalleryAlts}
@@ -167,7 +167,7 @@ export function GPRPageContent() {
                   style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
                 >
                   <ZoomableImage
-                    src="/images/Génie des Procédés (GPR)/5cae2f2b-0827-4909-86e4-49cc524b6625.webp"
+                    src="/images/departments/GPR/5cae2f2b-0827-4909-86e4-49cc524b6625.webp"
                     alt="Matières GPR S2"
                     galleryImages={semesterGalleryImages}
                     galleryAlts={semesterGalleryAlts}

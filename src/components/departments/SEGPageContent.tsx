@@ -8,8 +8,8 @@ import { ZoomableImage } from "@/components/ui/Lightbox";
 import { DepartmentScheduleDisclaimer } from "@/components/departments/DepartmentScheduleDisclaimer";
 
 const semesterGalleryImages = [
-  "/images/Sciences économiques et de gestion (SEG)/4a931b05-723c-48de-a3c2-ca9a82aa3b86.webp",
-  "/images/Sciences économiques et de gestion (SEG)/486f2064-c193-4f3f-8934-e76ccfed17c3.webp",
+  "/images/departments/SEG/4a931b05-723c-48de-a3c2-ca9a82aa3b86.webp",
+  "/images/departments/SEG/486f2064-c193-4f3f-8934-e76ccfed17c3.webp",
 ];
 const semesterGalleryAlts = ["Matières SEG S1", "Matières SEG S2"];
 
@@ -31,7 +31,7 @@ export function SEGPageContent() {
           </p>
           <div style={{ textAlign: "center" }}>
             <ZoomableImage
-              src="/images/departments/new paths/SEG_path.webp"
+              src="/images/departments/SEG/SEG_path.webp"
               alt="Nouveaux Parcours SEG"
               style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
             />
@@ -167,7 +167,7 @@ export function SEGPageContent() {
                   style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
                 >
                   <ZoomableImage
-                    src="/images/Sciences économiques et de gestion (SEG)/4a931b05-723c-48de-a3c2-ca9a82aa3b86.webp"
+                    src="/images/departments/SEG/4a931b05-723c-48de-a3c2-ca9a82aa3b86.webp"
                     alt="Matières SEG S1"
                     galleryImages={semesterGalleryImages}
                     galleryAlts={semesterGalleryAlts}
@@ -185,7 +185,7 @@ export function SEGPageContent() {
                   style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
                 >
                   <ZoomableImage
-                    src="/images/Sciences économiques et de gestion (SEG)/486f2064-c193-4f3f-8934-e76ccfed17c3.webp"
+                    src="/images/departments/SEG/486f2064-c193-4f3f-8934-e76ccfed17c3.webp"
                     alt="Matières SEG S2"
                     galleryImages={semesterGalleryImages}
                     galleryAlts={semesterGalleryAlts}

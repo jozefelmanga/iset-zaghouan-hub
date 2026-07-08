@@ -51,6 +51,7 @@ const LLM_SECTIONS: { heading: string; paths: PagePath[] }[] = [
       "/clubs/enactus",
       "/clubs/ieee",
       "/clubs/sos-ambassadeurs",
+      "/clubs/procegenius",
     ],
   },
   { heading: "Career", paths: ["/stages", "/stages/pfe", "/stages/companies"] },

@@ -9,8 +9,8 @@ import { ZoomableImage } from "@/components/ui/Lightbox";
 import { HousingCrossLink } from "@/components/housing/HousingCrossLink";
 
 const housingDocsGallery = [
-  { src: "/images/foyer (1).webp", alt: "دليل معلومات المبيت الجامعي (1)" },
-  { src: "/images/foyer (2).webp", alt: "دليل معلومات المبيت الجامعي (2)" },
+  { src: "/images/foyer/inscription (1).webp", alt: "دليل معلومات المبيت الجامعي (1)" },
+  { src: "/images/foyer/inscription (2).webp", alt: "دليل معلومات المبيت الجامعي (2)" },
 ] as const;
 
 export function HousingInscriptionContent() {

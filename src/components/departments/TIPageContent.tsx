@@ -20,22 +20,25 @@ export function TIPageContent() {
   return (
     <>
       {/* Announcement: New Paths */}
-      <div style={{ marginBottom: "40px", padding: "20px", borderRadius: "12px", background: "rgba(59, 130, 246, 0.05)", border: "1px solid rgba(59, 130, 246, 0.2)" }}>
-        <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-primary)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "10px" }}>
-          🚨 إعلان هام: مسارات جديدة (Nouveaux Parcours)
-        </h2>
-        <p style={{ fontSize: "14.5px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "16px" }}>
-          نعلمكم أنه تم تحديث المسارات (Parcours) في قسم تكنولوجيات الإعلامية! السنة الأولى ستبقى جذعاً مشتركاً (Tronc Commun)، وابتداءً من السنة الثانية يمكنكم الاختيار من بين 4 مسارات جديدة ومستقبلية:
-          <strong> Software Development (SD), Networks and Cloud Computing, Smart Data, و Software Development for IOT.</strong>
-        </p>
-        <div style={{ textAlign: "center" }}>
-          <ZoomableImage
-            src="/images/departments/new paths/TI_path.webp"
-            alt="Nouveaux Parcours TI"
-            style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
-          />
+      <details style={{ marginBottom: "40px", padding: "20px", borderRadius: "12px", background: "rgba(59, 130, 246, 0.05)", border: "1px solid rgba(59, 130, 246, 0.2)", cursor: "pointer" }}>
+        <summary style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-primary)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "12px", outline: "none", userSelect: "none" }}>
+          <span style={{ display: "flex", alignItems: "center", gap: "8px", lineHeight: 1.4 }}>🚨 إعلان هام: مسارات جديدة (Nouveaux Parcours)</span>
+          <span style={{ fontSize: "13px", fontWeight: 600, color: "var(--color-primary)", background: "rgba(59, 130, 246, 0.1)", padding: "6px 12px", borderRadius: "8px", whiteSpace: "nowrap", marginTop: "auto" }}>اضغط للتفاصيل 🔽</span>
+        </summary>
+        <div style={{ marginTop: "16px", cursor: "default" }}>
+          <p style={{ fontSize: "14.5px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "16px" }}>
+            نعلمكم أنه تم تحديث المسارات (Parcours) في قسم تكنولوجيات الإعلامية! السنة الأولى ستبقى جذعاً مشتركاً (Tronc Commun)، وابتداءً من السنة الثانية يمكنكم الاختيار من بين 4 مسارات جديدة ومستقبلية:
+            <strong> Software Development (SD), Networks and Cloud Computing, Smart Data, و Software Development for IOT.</strong>
+          </p>
+          <div style={{ textAlign: "center" }}>
+            <ZoomableImage
+              src="/images/departments/new paths/TI_path.webp"
+              alt="Nouveaux Parcours TI"
+              style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
+            />
+          </div>
         </div>
-      </div>
+      </details>
 
       {/* Section 1: Specialities */}
       <div style={{ marginBottom: "40px" }}>

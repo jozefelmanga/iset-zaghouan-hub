@@ -15,7 +15,7 @@ import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const IEEE_COLOR = "#00629B";
-const IEEE_BASE = "/images/IEEE";
+const IEEE_BASE = "/images/clubs/ieee";
 
 const galleryImages = [
   ...Array.from({ length: 11 }, (_, i) => `${IEEE_BASE}/ieee (${i + 1}).webp`),

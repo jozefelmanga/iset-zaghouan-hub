@@ -21,7 +21,7 @@ import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const ROBOTIQUE_COLOR = "#2563EB";
-const ROBOTIQUE_BASE = "/images/Club Robotique";
+const ROBOTIQUE_BASE = "/images/clubs/robotique";
 
 const images = Array.from(
   { length: 18 },

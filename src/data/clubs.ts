@@ -26,7 +26,7 @@ export const clubDirectory = [
     description: "أكبر مجتمع وتجمع طلابي للأمن السيبراني في تونس. انطلق من 2016 في الفاك ومفتوح لكل الطلبة باش تطوّرو مهارات الحماية واختبار الاختراق.",
     color: "#F6B41B",
     href: "/clubs/securinets",
-    logo: "/images/SecuriNets ISET Zaghouan/307089995_5896662463700630_57012804199137690_n.webp",
+    logo: "/images/clubs/securinets/307089995_5896662463700630_57012804199137690_n.webp",
   },
   {
     id: "robotique",
@@ -35,7 +35,7 @@ export const clubDirectory = [
     description: "مجتمع شغوف بالروبوتيك والإلكترونيك والبرمجة: ورشات، مشاريع تطبيقية، وأنشطة تقنية وتحديات وطنية.",
     color: "#2563EB",
     href: "/clubs/robotique",
-    logo: "/images/Club Robotique/logo.webp",
+    logo: "/images/clubs/robotique/logo.webp",
   },
   {
     id: "enactus",
@@ -53,7 +53,7 @@ export const clubDirectory = [
     description: "فرع IEEE الطلابي في ISET Zaghouan — ورشات، تكوينات، hard & soft skills، TSYP، و شبكة IEEE العالمية. مفتوح لكل الأقسام.",
     color: "#00629B",
     href: "/clubs/ieee",
-    logo: "/images/IEEE/Logo-IEEE.webp",
+    logo: "/images/clubs/ieee/Logo-IEEE.webp",
   },
   {
     id: "sos-ambassadeurs",
@@ -62,7 +62,7 @@ export const clubDirectory = [
     description: "نادي تطوعي تحت إشراف جمعية قرى الأطفال SOS تونس — تضامن، مبادرات إنسانية وثقافية، وجائزة أفضل نادٍ صاعد وطنياً 2026.",
     color: "#E30613",
     href: "/clubs/sos-ambassadeurs",
-    logo: "/images/Club ambassadeurs sos village/logo-SOS.webp",
+    logo: "/images/clubs/sos-ambassadeurs/logo-SOS.webp",
   },
   {
     id: "procegenius",
@@ -71,7 +71,7 @@ export const clubDirectory = [
     description: "نادي علمي يجمع الشغوفين بهندسة العمليات لتطوير المهارات، تبادل المعرفة، وتعزيز الابتكار من خلال دورات تدريبية ومشاريع تطبيقية.",
     color: "#22C55E",
     href: "/clubs/procegenius",
-    logo: "/images/procegenius club/logo.webp",
+    logo: "/images/clubs/procegenius/logo.webp",
   },
 ];
 

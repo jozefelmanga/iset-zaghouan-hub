@@ -25,7 +25,7 @@ ISET Zaghouan Hub (دليل الطالب — ISET Zaghouan) is a mobile-first st
 ## Full documentation
 
 - [llms-full.txt](https://guideisetzg.tn/llms-full.txt) — complete page index with descriptions
-- [sitemap.xml](https://guideisetzg.tn/sitemap.xml) — all 25 routes
+- [sitemap.xml](https://guideisetzg.tn/sitemap.xml) — all 26 routes
 - [FAQ (JSON-LD)](https://guideisetzg.tn/faq) — structured Q&A for common student questions
 
 ## Citation

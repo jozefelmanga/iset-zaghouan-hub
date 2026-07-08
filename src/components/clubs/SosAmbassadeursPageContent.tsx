@@ -13,7 +13,7 @@ import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const SOS_COLOR = "#E30613";
-const IMAGE_BASE = "/images/Club ambassadeurs sos village";
+const IMAGE_BASE = "/images/clubs/sos-ambassadeurs";
 
 const objectives = [
   "نشر ثقافة التضامن والعمل التطوعي داخل وخارج المعهد.",

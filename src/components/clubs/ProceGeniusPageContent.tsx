@@ -14,17 +14,17 @@ import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
 const images = [
-  "/images/procegenius club/gpr club (1).webp",
-  "/images/procegenius club/gpr club (2).webp",
-  "/images/procegenius club/gpr club (3).webp",
-  "/images/procegenius club/gpr club (4).webp",
-  "/images/procegenius club/gpr club (5).webp",
-  "/images/procegenius club/gpr club (6).webp",
-  "/images/procegenius club/gpr club (7).webp",
-  "/images/procegenius club/gpr club (8).webp",
-  "/images/procegenius club/gpr club (9).webp",
-  "/images/procegenius club/gpr club (10).webp",
-  "/images/procegenius club/gpr club (11).webp",
+  "/images/clubs/procegenius/gpr club (1).webp",
+  "/images/clubs/procegenius/gpr club (2).webp",
+  "/images/clubs/procegenius/gpr club (3).webp",
+  "/images/clubs/procegenius/gpr club (4).webp",
+  "/images/clubs/procegenius/gpr club (5).webp",
+  "/images/clubs/procegenius/gpr club (6).webp",
+  "/images/clubs/procegenius/gpr club (7).webp",
+  "/images/clubs/procegenius/gpr club (8).webp",
+  "/images/clubs/procegenius/gpr club (9).webp",
+  "/images/clubs/procegenius/gpr club (10).webp",
+  "/images/clubs/procegenius/gpr club (11).webp",
 ];
 
 const projects = [
@@ -42,9 +42,9 @@ export function ProceGeniusPageContent() {
   return (
     <>
       <ClubHeroBanner
-        bannerSrc="/images/procegenius club/banner.webp"
+        bannerSrc="/images/clubs/procegenius/banner.webp"
         bannerAlt="ProceGenius Cover"
-        logoSrc="/images/procegenius club/logo.webp"
+        logoSrc="/images/clubs/procegenius/logo.webp"
         logoAlt="ProceGenius Logo"
         title="Club ProceGenius"
         subtitle="Innovation et Excellence en Génie des Procédés"

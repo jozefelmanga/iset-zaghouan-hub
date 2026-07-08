@@ -15,7 +15,7 @@ import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
-const SECURINETS_BASE = "/images/SecuriNets ISET Zaghouan";
+const SECURINETS_BASE = "/images/clubs/securinets";
 
 const newImages = Array.from(
   { length: 20 },
@@ -52,9 +52,9 @@ export function SecurinetsPageContent() {
   return (
     <>
       <ClubHeroBanner
-        bannerSrc="/images/SecuriNets ISET Zaghouan/414471318_762084249283425_5669816558873673442_n.webp"
+        bannerSrc="/images/clubs/securinets/414471318_762084249283425_5669816558873673442_n.webp"
         bannerAlt="SecuriNets Cover"
-        logoSrc="/images/SecuriNets ISET Zaghouan/307089995_5896662463700630_57012804199137690_n.webp"
+        logoSrc="/images/clubs/securinets/307089995_5896662463700630_57012804199137690_n.webp"
         logoAlt="SecuriNets Logo"
         title="SecuriNets ISET Zaghouan"
         subtitle="Defending today, securing tomorrow. 🛡️🚀"

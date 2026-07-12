@@ -12,6 +12,7 @@ interface StaticPageHeaderProps {
   badge?: ReactNode;
   category?: Category;
   lastUpdated?: string;
+  className?: string;
 }
 
 /** Server Component page header — no Framer Motion, icon passed as string key. */

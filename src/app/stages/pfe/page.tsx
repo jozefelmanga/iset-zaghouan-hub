@@ -147,6 +147,47 @@ export default function PfePage() {
         </div>
       </MotionReveal>
 
+      <MotionReveal delay={0.2}>
+        <div
+          style={{
+            marginBottom: "32px",
+            padding: "24px",
+            borderRadius: "20px",
+            background: "linear-gradient(135deg, rgba(249,115,22,0.06), rgba(234,88,12,0.06))",
+            border: "1px solid rgba(249,115,22,0.18)",
+          }}
+        >
+          <h3 style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)", marginBottom: "6px" }}>
+            📝 نموذج تقرير — PFE
+          </h3>
+          <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "16px", lineHeight: 1.5 }}>
+            حمّل نموذج تقرير نهاية الدراسة الخاص بقسم الإعلامية (TI).
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+            <a
+              href="/documents/stages/pfe/rapport%20exemple.docx"
+              download
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "10px 18px",
+                borderRadius: "12px",
+                background: "rgba(249,115,22,0.1)",
+                border: "1px solid rgba(249,115,22,0.3)",
+                color: "#c2410c",
+                fontWeight: 700,
+                fontSize: "13px",
+                textDecoration: "none",
+              }}
+            >
+              <Download size={15} strokeWidth={2.5} />
+              Exemple Rapport — TI
+            </a>
+          </div>
+        </div>
+      </MotionReveal>
+
       <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "32px" }}>
         {pfeGuide.sections.map((section, i) => (
           <MotionReveal key={section.title} delay={0.25 + i * 0.08}>

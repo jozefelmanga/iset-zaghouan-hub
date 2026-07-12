@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { RootShell } from "@/components/layout/RootShell";
 import { Analytics } from "@/components/layout/Analytics";
 import { tajawal } from "@/lib/fonts";
@@ -7,6 +7,10 @@ import "./globals.css";
 
 export const metadata: Metadata = rootMetadata;
 
+export const viewport: Viewport = {
+  themeColor: "#0B1F3A",
+  viewportFit: "cover",
+};
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -95,6 +95,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
             type="button"
             aria-label="بحث في الدليل"
             onClick={openPalette}
+            className="search-btn"
             style={{
               flex: 1,
               maxWidth: "360px",
@@ -104,25 +105,10 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
               height: "42px",
               padding: "0 16px",
               borderRadius: "var(--radius-search)",
-              background: "rgba(255,255,255,0.07)",
-              border: "1px solid rgba(255,255,255,0.10)",
               cursor: "pointer",
-              color: "rgba(255,255,255,0.75)",
               fontSize: "13px",
               fontFamily: "var(--font-sans)",
               transition: "all var(--transition-base)",
-            }}
-            onMouseEnter={(e) => {
-              const btn = e.currentTarget as HTMLButtonElement;
-              btn.style.background = "rgba(255,255,255,0.11)";
-              btn.style.borderColor = "rgba(18,184,200,0.35)";
-              btn.style.color = "rgba(255,255,255,0.75)";
-            }}
-            onMouseLeave={(e) => {
-              const btn = e.currentTarget as HTMLButtonElement;
-              btn.style.background = "rgba(255,255,255,0.07)";
-              btn.style.borderColor = "rgba(255,255,255,0.10)";
-              btn.style.color = "rgba(255,255,255,0.55)";
             }}
           >
             <Search size={16} strokeWidth={2} style={{ flexShrink: 0 }} aria-hidden="true" />

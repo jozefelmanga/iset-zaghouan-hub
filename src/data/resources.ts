@@ -52,7 +52,7 @@ export const externalResources: ExternalResource[] = [
     title: "After Graduation Guide",
     subtitle: "Career & Masters",
     description: "دليل كامل يوجّهك بعد التخرج — من الماستر والمناظرة الخصوصية للمهندسين إلى التكوين المزدوج.",
-    href: "https://after-graduation.vercel.app/",
+    href: "https://aftergraduation.tn",
     icon: "briefcase",
     color: "#8B5CF6",
     bg: "rgba(139,92,246,0.1)",

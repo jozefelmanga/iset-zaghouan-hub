@@ -106,8 +106,8 @@ export const allNavLinks: NavLink[] = [
   ...navGroups.flatMap((g) => g.links),
   // Sub-pages (for CommandPalette deep search)
   { href: "/clubs/securinets", label: "نادي SecuriNets",                 icon: Users,        description: "جمعية الأمن السيبراني في ISETZG", category: "life"     },
-  { href: "/clubs/robotique",  label: "Club Robotique ISET Zaghouan",    icon: Users,        description: "روبوتيك، إلكترونيك، وبرمجة",        category: "life"     },
   { href: "/clubs/enactus",    label: "نادي Enactus",                    icon: Users,        description: "ريادة الأعمال والمشاريع الطلابية", category: "life"     },
+  { href: "/clubs/robotique",  label: "Club Robotique ISET Zaghouan",    icon: Users,        description: "روبوتيك، إلكترونيك، وبرمجة",        category: "life"     },
   { href: "/clubs/ieee",       label: "IEEE ISET Zaghouan Student Branch", icon: Users,        description: "فرع IEEE — ورشات، TSYP، و skill-building", category: "life" },
   { href: "/clubs/sos-ambassadeurs", label: "نادي سفراء SOS",           icon: Users,        description: "عمل تطوعي ومبادرات إنسانية مع قرى الأطفال SOS", category: "life" },
   { href: "/clubs/procegenius",        label: "ProceGenius",             icon: Users,        description: "نادي علمي يجمع الشغوفين بهندسة العمليات", category: "life" },

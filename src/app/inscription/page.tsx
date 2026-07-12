@@ -3,6 +3,8 @@ import dynamic from "next/dynamic";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { PageContentPlaceholder } from "@/components/ui/PageContentPlaceholder";
+import { FaqJsonLd } from "@/components/faq/FaqJsonLd";
+import { inscriptionFaqItems } from "@/data/faq";
 
 const InscriptionContent = dynamic(
   () =>
@@ -17,6 +19,7 @@ export const metadata = pageMetadata("/inscription");
 export default function InscriptionPage() {
   return (
     <PageWrapper seoPath="/inscription">
+      <FaqJsonLd items={inscriptionFaqItems} />
       <StaticPageHeader
         icon="file-text"
         label="الأكاديمي"

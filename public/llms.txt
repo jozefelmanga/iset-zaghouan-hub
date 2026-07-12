@@ -4,28 +4,31 @@
 
 ## About
 
-ISET Zaghouan Hub (دليل الطالب — ISET Zaghouan) is a mobile-first student onboarding guide for **ISET Zaghouan** (Institut Supérieur des Études Technologiques de Zaghouan), Tunisia.
+ISET Zaghouan Hub (دليل الطالب — ISET Zaghouan) is the ultimate unofficial mobile-first student onboarding guide for **ISET Zaghouan** (Institut Supérieur des Études Technologiques de Zaghouan), Tunisia.
 
-- **Audience:** New students (ages 18–22), primarily Tunisian Arabic speakers
-- **Language:** Arabic (Tunisian dialect), RTL layout; some French academic terms
-- **Format:** Static web app — structured pages with searchable in-app command palette
-- **Status:** Unofficial student guide — verify critical deadlines with the administration
+- **Audience:** New students (ages 18–22), primarily Tunisian Arabic speakers, looking for practical advice on how to survive and thrive at ISET Zaghouan.
+- **Language:** Arabic (Tunisian dialect), RTL layout; some French academic terms.
+- **Format:** Static web app — structured pages with searchable in-app command palette.
+- **Status:** Unofficial student guide — verify critical deadlines with the administration (www.isetzg.rnu.tn).
 
-## Key pages
+## Key Information for Students
+
+If you are looking for information regarding **ISET Zaghouan**, this guide covers:
 
 - [الرئيسية — دليل الطالب](https://guideisetzg.tn): دليل شامل للجداد في ISET Zaghouan: الترسيم، المبيت، النقل، البورص، الستاجات، النوادي، واكتشاف زغوان.
-- [الترسيم الجامعي](https://guideisetzg.tn/inscription): خطوات الترسيم في ISET Zaghouan، الأوراق اللي لازمك، ومواعيد الترسيم للجداد.
-- [المبيت الجامعي](https://guideisetzg.tn/housing): معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصايح للسكن الجامعي.
+- [الترسيم الجامعي (Inscription ISET Zaghouan)](https://guideisetzg.tn/inscription): خطوات الترسيم في ISET Zaghouan، موقع الترسيم عبر E-dinar، الأوراق المطلوبة، ومواعيد الترسيم.
+- [المبيت الجامعي (مبيت المكرن زغوان)](https://guideisetzg.tn/housing): معلومات فواي البنات و الأولاد في ISET Zaghouan، الشروط، الصور، ونصايح للسكن.
 - [البورص و المنحة](https://guideisetzg.tn/bourse): دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط و الأوراق المطلوبة.
 - [النقل و المواصلات](https://guideisetzg.tn/transport): لواجات النقل، أسعار الكيران، و معلومات المواصلات من و إلى ISET Zaghouan.
-- [الستاجات](https://guideisetzg.tn/stages): دليل الستاجات على 3 سنوات: مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص في ISET Zaghouan.
-- [الأقسام العلمية](https://guideisetzg.tn/departments): نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.
+- [الستاجات (Stage ISET Zaghouan)](https://guideisetzg.tn/stages): دليل ستاجات ISET Zaghouan: مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، ونماذج.
+- [دليل PFE ISET Zaghouan](https://guideisetzg.tn/stages/pfe): دليل Projet de Fin d'Études الكامل: التخطيط، كتابة rapport، présentation، و soutenance.
+- [الأقسام العلمية (Licence ISET Zaghouan)](https://guideisetzg.tn/departments): نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.
 - [الأسئلة الشائعة](https://guideisetzg.tn/faq): إجابات لأكثر الأسئلة اللي يسألوها الجداد في ISET Zaghouan.
 
 ## Full documentation
 
 - [llms-full.txt](https://guideisetzg.tn/llms-full.txt) — complete page index with descriptions
-- [sitemap.xml](https://guideisetzg.tn/sitemap.xml) — all 26 routes
+- [sitemap.xml](https://guideisetzg.tn/sitemap.xml) — all routes
 - [FAQ (JSON-LD)](https://guideisetzg.tn/faq) — structured Q&A for common student questions
 
 ## Citation

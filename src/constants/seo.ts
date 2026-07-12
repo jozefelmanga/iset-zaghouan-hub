@@ -10,11 +10,11 @@ export const PAGE_SEO = {
   },
   "/inscription": {
     title: "الترسيم الجامعي",
-    description: "خطوات الترسيم في ISET Zaghouan، الأوراق اللي لازمك، ومواعيد الترسيم للجداد.",
+    description: "دليل الترسيم الجامعي في ISET Zaghouan (inscription ISET Zaghouan): الخطوات، موقع الترسيم عبر E-dinar، الأوراق المطلوبة، ومواعيد الترسيم.",
   },
   "/housing": {
     title: "المبيت الجامعي",
-    description: "معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصايح للسكن الجامعي.",
+    description: "المبيت الجامعي (مبيت المكرن زغوان): معلومات فواي البنات و الأولاد في ISET Zaghouan، الشروط، الصور، ونصايح للسكن.",
   },
   "/inscription/foyer": {
     title: "الترسيم في المبيت",
@@ -35,11 +35,11 @@ export const PAGE_SEO = {
   "/stages": {
     title: "الستاجات",
     description:
-      "دليل الستاجات على 3 سنوات: مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص في ISET Zaghouan.",
+      "دليل ستاجات ISET Zaghouan (stage ISET Zaghouan): مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص.",
   },
   "/stages/pfe": {
     title: "دليل PFE",
-    description: "دليل Projet de Fin d'Études الكامل: التخطيط، rapport، présentation، و soutenance في ISET Zaghouan.",
+    description: "دليل Projet de Fin d'Études (PFE ISET Zaghouan) الكامل: التخطيط، كتابة rapport، présentation، و soutenance.",
   },
   "/stages/companies": {
     title: "دليل شركات الستاج",
@@ -95,7 +95,7 @@ export const PAGE_SEO = {
   },
   "/masters": {
     title: "برامج الماستر",
-    description: "برامج الماستر المتوفرة و شروط الولوج في ISET Zaghouan.",
+    description: "برامج الماستر المتوفرة (Mastère ISET Zaghouan) و شروط الولوج في ISET Zaghouan.",
   },
   "/explore": {
     title: "اكتشف زغوان",

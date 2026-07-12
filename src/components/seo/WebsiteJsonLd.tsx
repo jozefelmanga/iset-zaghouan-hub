@@ -27,7 +27,11 @@ export function WebsiteJsonLd() {
         name: SITE_NAME,
         alternateName: SITE_NAME_AR,
         url: SITE_URL,
-        description: DEFAULT_DESCRIPTION,
+        description: "Independent student platform for ISET Zaghouan students.",
+        founder: {
+          "@type": "Person",
+          name: "Youssef Ben Salem"
+        }
       },
     ],
   };

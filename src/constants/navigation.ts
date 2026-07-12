@@ -21,6 +21,7 @@ import {
   HelpCircle,
   GraduationCap,
   Heart,
+  Info,
 } from "@/lib/icons";
 
 /* ============================================================
@@ -92,6 +93,7 @@ export const navGroups: NavGroup[] = [
       { href: "/explore", label: "اكتشف زغوان",     icon: MapPin,     description: "أحسن البلايص في المدينة",             category: "campus" },
       { href: "/faq",     label: "الأسئلة الشائعة", icon: HelpCircle, description: "إجابات لأكثر الأسئلة اللي تتكرّر",         category: "campus" },
       { href: "/bonus",   label: "نصائح وإهداء",     icon: Heart,      description: "نصايح للجداد وشكر المساهمين",   category: "campus" },
+      { href: "/about",   label: "عن المنصة",       icon: Info,       description: "معلومات حول المنصة ومطورها",       category: "campus" },
     ],
   },
 ];
@@ -142,4 +144,5 @@ export const footerLinks: FooterLink[] = [
   { href: "/library",     label: "المكتبة"  },
   { href: "/clubs",       label: "النوادي"  },
   { href: "/faq",         label: "الأسئلة"  },
+  { href: "/about",       label: "عن المنصة"},
 ];

@@ -11,11 +11,11 @@ interface StaticPageHeaderProps {
   subtitle?: string;
   badge?: ReactNode;
   category?: Category;
-  className?: string;
+  lastUpdated?: string;
 }
 
 /** Server Component page header — no Framer Motion, icon passed as string key. */
-export function StaticPageHeader({ icon, label, title, subtitle, badge, category = "primary", className }: StaticPageHeaderProps) {
+export function StaticPageHeader({ icon, label, title, subtitle, badge, lastUpdated, category = "primary", className }: StaticPageHeaderProps) {
   const Icon = pageHeaderIcons[icon];
   const colors = categoryConfig[category] || categoryConfig.primary;
 
@@ -41,6 +41,11 @@ export function StaticPageHeader({ icon, label, title, subtitle, badge, category
           </h1>
           {subtitle && (
             <p style={{ color: "var(--color-text-secondary)", fontSize: "15px", lineHeight: 1.6 }}>{subtitle}</p>
+          )}
+          {lastUpdated && (
+            <p style={{ color: "var(--color-text-muted)", fontSize: "12px", marginTop: "6px" }}>
+              آخر تحديث: {lastUpdated}
+            </p>
           )}
           {badge && <div className="mt-2">{badge}</div>}
         </div>

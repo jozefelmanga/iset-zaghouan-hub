@@ -26,6 +26,7 @@ export default function InscriptionPage() {
         title="الترسيم الجامعي"
         subtitle="خطوة بخطوة باش تسجل في ISET Zaghouan"
         category="academic"
+        lastUpdated="أوت 2026"
       />
       <InscriptionContent />
     </PageWrapper>

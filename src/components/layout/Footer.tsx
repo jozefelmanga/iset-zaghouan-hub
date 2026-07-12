@@ -87,9 +87,14 @@ export function Footer() {
         </div>
 
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px" }}>
-          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)" }}>
-            © 2024 ISET Zaghouan Hub. Made with ❤️ for students.
-          </p>
+          <div>
+            <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)", marginBottom: "4px" }}>
+              © {new Date().getFullYear()} Guide ISET Zaghouan — Plateforme indépendante créée pour les étudiants.
+            </p>
+            <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>
+              Développé et maintenu par <a href="https://linktr.ee/Youssef_Ben_Salem" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "underline" }}>Youssef Ben Salem</a>.
+            </p>
+          </div>
           <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)" }}>
             زغوان — تونس
           </p>

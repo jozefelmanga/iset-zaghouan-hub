@@ -23,6 +23,7 @@ export default function HousingPage() {
         title="المبيت الجامعي"
         subtitle="كل ما تحتاجو تعرفوه على السكن الطلابي في زغوان"
         category="life"
+        lastUpdated="أوت 2026"
       />
       <HousingFoyersContent />
     </PageWrapper>

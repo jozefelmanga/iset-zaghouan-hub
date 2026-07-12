@@ -109,6 +109,10 @@ export const PAGE_SEO = {
     title: "نصائح و إهداء",
     description: "نصايح عملية للجداد و شكر المساهمين في دليل ISET Zaghouan.",
   },
+  "/about": {
+    title: "عن المنصة",
+    description: "Guide ISET Zaghouan هي منصة مستقلة للطلبة، تم تطويرها لتسهيل الحياة الجامعية وجمع المعلومات.",
+  },
 } as const satisfies Record<string, { title: string; description: string }>;
 
 export type PagePath = keyof typeof PAGE_SEO;

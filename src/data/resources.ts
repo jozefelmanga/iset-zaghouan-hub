@@ -36,7 +36,7 @@ export const externalResources: ExternalResource[] = [
     featured: true,
     title: "AceIT Platform",
     subtitle: "Student Resources",
-    description: "منصة شاملة فيها مصادر دراسية وملخصات لطلاب الإجازة باش تسهّل عليهم مسيرتهم.",
+    description: "منصة شاملة خاصة بطلبة ISET Zaghouan وبقية معاهد ISET، فيها مصادر دراسية وملخصات لطلاب الإجازة باش تسهّل عليهم مسيرتهم.",
     href: "https://aceittn.vercel.app",
     icon: "book-open",
     color: "#3B82F6",

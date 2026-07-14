@@ -102,6 +102,37 @@ export function GPRPageContent() {
         </Card>
       </div>
 
+      {/* Section 2.5: Student Testimony */}
+      <div style={{ marginBottom: "40px" }}>
+        <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ color: "var(--color-secondary)" }}>•</span> مسار الدراسة على امتداد 3 سنوات (تجربة طالبة)
+        </h2>
+        <Card elevation="raised" padding="24px">
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)" }}>
+              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الأولى (Les bases)</h4>
+              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6, margin: 0 }}>
+                &quot;Fi l&apos;3am l&apos;owel na9raw les bases : math, physique, chimie générale, w nzidou 3lihom mécanique des fluides w électrotechnique. Hethom ykhadhmouna bech nfahmou l&apos;écoulement mta3 les liquides w gaz w kifesh nekhdmou m3a les moteurs w l&apos;équipement f ma3mel.&quot;
+              </p>
+            </div>
+            
+            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)" }}>
+              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثانية (Au cœur du procédé)</h4>
+              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6, margin: 0 }}>
+                &quot;Fi l&apos;3am ethani nodkhlou fi 9alb l&apos;procédé: génie des réacteurs bech na3rfou kifeh ysir tafa3ol kimawi, w parachimie kima savon, peinture, cosmétique. W akid m3ahom opérations unitaires w transfert.&quot;
+              </p>
+            </div>
+            
+            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)" }}>
+              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثالثة (Matières appliquées)</h4>
+              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6, margin: 0 }}>
+                &quot;Fi l&apos;3am theleth na9raw des matières appliquées barcha: séchage, adsorption, énergie renouvelable, w plan d&apos;expérience bech n3amlou des essais w noptimiziw l&apos;production. Fi lekher l&apos;matière hethi lkol nesta3mlouha fi les usines mta3 l&apos;chimie, énergie, traitement d&apos;eau, w fi ay ma3mel yheb yna9ess tkalfa w yzed l&apos;mardoud.&quot;
+              </p>
+            </div>
+          </div>
+        </Card>
+      </div>
+
       {/* Section 3: Study Materials */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "10px", display: "flex", alignItems: "center", gap: "10px" }}>

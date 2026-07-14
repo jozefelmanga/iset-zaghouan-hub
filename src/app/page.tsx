@@ -31,6 +31,10 @@ const SunsetMomentsSection = dynamic(() =>
   import("@/components/sections/SunsetMomentsSection").then((m) => ({ default: m.SunsetMomentsSection }))
 );
 
+const MotivationalCTASection = dynamic(() =>
+  import("@/components/sections/MotivationalCTASection").then((m) => ({ default: m.MotivationalCTASection }))
+);
+
 export const metadata = pageMetadata("/");
 
 export default function HomePage() {
@@ -51,6 +55,8 @@ export default function HomePage() {
         <OfficialChannelsSection />
         <TipsCarouselSection />
       </Container>
+      
+      <MotivationalCTASection />
     </>
   );
 }

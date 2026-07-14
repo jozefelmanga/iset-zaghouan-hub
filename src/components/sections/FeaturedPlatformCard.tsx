@@ -27,6 +27,7 @@ export function FeaturedPlatformCard({ resource }: { resource: ExternalLinkResou
       {...hoverLift}
       className="group flex flex-col overflow-hidden"
       style={{
+        height: "100%",
         background: "var(--color-surface)",
         borderRadius: "var(--radius-card)",
         border: `1px solid ${resource.color}33`,
@@ -132,8 +133,25 @@ export function FeaturedPlatformCard({ resource }: { resource: ExternalLinkResou
           </div>
         </div>
 
-        <div style={{ position: "absolute", top: "48px", left: "12px" }}>
-          <Badge variant="warning">مهم ⭐</Badge>
+        <div style={{ position: "absolute", top: "54px", left: "12px" }}>
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "4px",
+              padding: "4px 10px",
+              borderRadius: "999px",
+              fontSize: "11px",
+              fontWeight: 700,
+              background: "rgba(0, 0, 0, 0.35)",
+              color: "#ffffff",
+              backdropFilter: "blur(8px)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+              boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+            }}
+          >
+            ⭐ مهم
+          </span>
         </div>
       </div>
 

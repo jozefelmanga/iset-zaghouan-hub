@@ -51,11 +51,13 @@ const highlights = [
   },
 ];
 
-const galleryImages = [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(
-  (n) => `${IMAGE_BASE}/sos (${n}).webp`,
-);
 
-export function SosAmbassadeursPageContent() {
+
+interface Props {
+  galleryImages: string[];
+}
+
+export function SosAmbassadeursPageContent({ galleryImages }: Props) {
   return (
     <>
       <ClubHeroBanner

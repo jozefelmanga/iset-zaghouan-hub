@@ -17,11 +17,6 @@ import { PhotoGallery } from "@/components/ui/Lightbox";
 const IEEE_COLOR = "#00629B";
 const IEEE_BASE = "/images/clubs/ieee";
 
-const galleryImages = [
-  ...Array.from({ length: 11 }, (_, i) => `${IEEE_BASE}/ieee (${i + 1}).webp`),
-  ...Array.from({ length: 7 }, (_, i) => `${IEEE_BASE}/ieee-images (${i + 1}).webp`),
-];
-
 const objectives = [
   "بناء مجتمع IEEE نشط في ISET Zaghouan من خلال ورشات، تكوينات، و skill-building workouts بشكل مستمر.",
   "تطوير الـ Hard Skills والـ Soft Skills: من المعرفة التقنية إلى التواصل، teamwork، leadership، و problem-solving.",
@@ -39,7 +34,11 @@ const events = [
   "IEEE Tunisia Section",
 ];
 
-export function IeeePageContent() {
+interface Props {
+  galleryImages: string[];
+}
+
+export function IeeePageContent({ galleryImages }: Props) {
   return (
     <>
       <ClubHeroBanner

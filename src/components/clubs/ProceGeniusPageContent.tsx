@@ -13,19 +13,7 @@ import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 
-const images = [
-  "/images/clubs/procegenius/gpr club (1).webp",
-  "/images/clubs/procegenius/gpr club (2).webp",
-  "/images/clubs/procegenius/gpr club (3).webp",
-  "/images/clubs/procegenius/gpr club (4).webp",
-  "/images/clubs/procegenius/gpr club (5).webp",
-  "/images/clubs/procegenius/gpr club (6).webp",
-  "/images/clubs/procegenius/gpr club (7).webp",
-  "/images/clubs/procegenius/gpr club (8).webp",
-  "/images/clubs/procegenius/gpr club (9).webp",
-  "/images/clubs/procegenius/gpr club (10).webp",
-  "/images/clubs/procegenius/gpr club (11).webp",
-];
+
 
 const projects = [
   {
@@ -38,7 +26,11 @@ const projects = [
   },
 ];
 
-export function ProceGeniusPageContent() {
+interface Props {
+  galleryImages: string[];
+}
+
+export function ProceGeniusPageContent({ galleryImages }: Props) {
   return (
     <>
       <ClubHeroBanner
@@ -133,7 +125,7 @@ export function ProceGeniusPageContent() {
             <ImageIcon size={20} style={{ color: "var(--color-secondary)" }} />
             معرض الصور والذكريات
           </h2>
-          <PhotoGallery images={images} initialVisibleCount={8} altPrefix="ProceGenius" />
+          <PhotoGallery images={galleryImages} initialVisibleCount={8} altPrefix="ProceGenius" />
         </div>
       </PageWrapper>
     </>

@@ -102,6 +102,43 @@ export function TIPageContent() {
         </div>
       </div>
 
+      {/* Section 1b: Mini Parcours */}
+      <div style={{ marginBottom: "40px" }}>
+        <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "8px", display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ color: "var(--color-secondary)"}}>•</span> المسارات المصغّرة (Mini Parcours)
+        </h2>
+        <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "16px" }}>
+          ابتداءً من السنة الثانية، يمكن للطلبة اختيار مسار مصغّر (Mini Parcours) ضمن تخصصهم. هذه المسارات متوفّرة حالياً في قسم الإعلامية (TI) بـ ISET Zaghouan:
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "12px" }}>
+
+          {/* Full Stack AI */}
+          <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(59,130,246,0.05)", border: "1px solid rgba(59,130,246,0.2)" }}>
+            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>🤖 Full Stack Developer augmenté par l'IA</h4>
+            <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
+              مسار يركّز على تطوير تطبيقات الويب الشاملة مع استخدام ذكي لأدوات الذكاء الاصطناعي لتسريع البرمجة والإنتاجية.
+            </p>
+          </div>
+
+          {/* DevOps */}
+          <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(16,185,129,0.05)", border: "1px solid rgba(16,185,129,0.2)" }}>
+            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>⚙️ DevOps</h4>
+            <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
+              مسار مُصغَّر يجمع بين التطوير (Dev) وعمليات التشغيل (Ops) للتحكم في البنية التحتية وتسريع نشر التطبيقات.
+            </p>
+          </div>
+
+          {/* Cybersecurity */}
+          <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(239,68,68,0.05)", border: "1px solid rgba(239,68,68,0.2)" }}>
+            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>🔒 Cybersecurity</h4>
+            <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
+              مسار لتعلم كيفية حماية الأنظمة، الشبكات، والبرمجيات من الهجمات والاختراقات وتأمين البيانات.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
       {/* Section 2: Study Materials */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "10px", display: "flex", alignItems: "center", gap: "10px" }}>

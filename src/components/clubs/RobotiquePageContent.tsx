@@ -23,10 +23,7 @@ import { PhotoGallery } from "@/components/ui/Lightbox";
 const ROBOTIQUE_COLOR = "#2563EB";
 const ROBOTIQUE_BASE = "/images/clubs/robotique";
 
-const images = Array.from(
-  { length: 18 },
-  (_, i) => `${ROBOTIQUE_BASE}/robotics (${i + 1}).webp`,
-);
+
 
 const techStack: { name: string; icon: LucideIcon; color: string; bg: string }[] = [
   { name: "Arduino",            icon: Cpu,  color: "#00979D", bg: "rgba(0,151,157,0.10)"  },
@@ -76,7 +73,11 @@ const workshops: { icon: LucideIcon; title: string; desc: string; color: string 
   },
 ];
 
-export function RobotiquePageContent() {
+interface Props {
+  galleryImages: string[];
+}
+
+export function RobotiquePageContent({ galleryImages }: Props) {
   return (
     <>
       <ClubHeroBanner
@@ -277,7 +278,7 @@ export function RobotiquePageContent() {
           <ImageIcon size={20} style={{ color: "var(--color-secondary)" }} />
           معرض الصور والذكريات
         </h2>
-        <PhotoGallery images={images} initialVisibleCount={12} altPrefix="Robotique" />
+        <PhotoGallery images={galleryImages} initialVisibleCount={12} altPrefix="Robotique" />
       </div>
       </PageWrapper>
     </>

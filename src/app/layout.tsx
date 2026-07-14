@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" data-scroll-behavior="smooth" className={tajawal.variable}>
+    <html lang="ar" dir="rtl" data-scroll-behavior="smooth" className={`scroll-smooth ${tajawal.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="alternate" type="text/markdown" title="LLMs" href="/llms.txt" />

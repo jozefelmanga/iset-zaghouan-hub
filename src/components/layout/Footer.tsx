@@ -79,12 +79,12 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col-reverse md:flex-row justify-between items-center gap-8 md:gap-4">
-          <div className="text-center md:text-start flex flex-col gap-2 md:gap-1">
+          <div className="text-center md:text-start flex flex-col gap-2 md:gap-1" dir="ltr">
             <p className="text-[13px] text-white/50 m-0">
-              © {new Date().getFullYear()} Guide ISET Zaghouan — Plateforme indépendante.
+              © {new Date().getFullYear()} Guide ISET Zaghouan — Independent Platform
             </p>
             <p className="text-[13px] text-white/40 m-0">
-              Développé avec ❤️ par <a href="https://linktr.ee/Youssef_Ben_Salem" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors underline decoration-white/20 underline-offset-4">Youssef Ben Salem</a>.
+              Developed with ❤️ by <a href="https://linktr.ee/Youssef_Ben_Salem" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors underline decoration-white/20 underline-offset-4">Youssef Ben Salem</a>
             </p>
           </div>
           <div className="flex items-center gap-3 bg-white/5 px-4 py-2.5 rounded-full border border-white/10 shadow-sm">

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { BottomNav } from "@/components/layout/BottomNav";
+import { BackToTopButton } from "@/components/ui/BackToTopButton";
 
 interface ClientChromeProps {
   children: ReactNode;
@@ -38,6 +39,7 @@ export function ClientChrome({ children, footer }: ClientChromeProps) {
         </main>
 
         {footer}
+        <BackToTopButton />
         <BottomNav />
       </div>
     </div>

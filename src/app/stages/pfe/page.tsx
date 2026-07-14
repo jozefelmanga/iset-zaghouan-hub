@@ -37,7 +37,7 @@ export default function PfePage() {
         title={pfeGuide.title}
         subtitle={pfeGuide.subtitle}
         category="career"
-        lastUpdated="أوت 2026"
+        lastUpdated="جويلية 2026"
       />
 
       <MotionReveal delay={0.1}>

@@ -2,6 +2,7 @@ import { pageMetadata } from "@/constants/seo";
 import { DoorOpen } from "@/lib/icons";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
+import { Alert } from "@/components/ui/shared";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { LibraryShowcaseImage } from "@/components/library/LibraryShowcaseImage";
 import { LibraryFeaturesGrid } from "@/components/library/LibraryFeaturesGrid";
@@ -60,6 +61,12 @@ export default function LibraryPage() {
             </p>
           </div>
         </div>
+      </MotionReveal>
+
+      <MotionReveal delay={0.15} className="mb-7">
+        <Alert title="ملاحظة هامة جداً ⚠️" variant="warning">
+          باش تاخو أي كتاب أو وثيقة (حتى اكزامان)، حتى لو باش تقراها في وسط المكتبة، لازم تخلّي كارطة الإتديون (Carte Étudiant) ولا بطاقة التعريف (CIN) عند المسؤول.
+        </Alert>
       </MotionReveal>
 
       <LibraryFeaturesGrid features={libraryInfo.features} />

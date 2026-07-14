@@ -142,20 +142,17 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
               marginRight: "auto",
             }}
           >
-            <div
+            <img
+              src="/images/logo/logo.webp"
+              alt="ISET Zaghouan Logo"
               style={{
-                width: "38px",
-                height: "38px",
+                height: "36px",
+                width: "auto",
+                objectFit: "contain",
                 borderRadius: "10px",
-                background: "rgba(18,184,200,0.15)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#12B8C8",
+                overflow: "hidden",
               }}
-            >
-              <GraduationCap size={20} strokeWidth={2} />
-            </div>
+            />
             <span
               className="hidden sm:block"
               style={{

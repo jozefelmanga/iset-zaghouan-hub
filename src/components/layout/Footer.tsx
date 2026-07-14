@@ -52,11 +52,18 @@ export function Footer() {
           
           {/* Brand Section */}
           <div className="flex-none w-full lg:w-auto lg:max-w-[300px] flex flex-col items-center lg:items-start text-center lg:text-start">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 lg:w-10 lg:h-10 rounded-xl bg-white/10 flex items-center justify-center text-[#12B8C8] backdrop-blur-sm shadow-inner shadow-white/5">
-                <GraduationCap size={24} strokeWidth={2} />
-              </div>
-              <span className="font-bold text-xl lg:text-lg text-white tracking-wide">ISET Zaghouan</span>
+            <div className="flex items-center justify-center lg:justify-start mb-6">
+              <img
+                src="/images/logo/logo.webp"
+                alt="Guide ISET Zaghouan"
+                style={{
+                  height: "65px",
+                  width: "auto",
+                  objectFit: "contain",
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                }}
+              />
             </div>
             <p className="text-[14px] lg:text-[13px] text-white/60 leading-relaxed max-w-[280px]">
               دليلك الشامل للحياة الجامعية — من الترسيم للستاج. مبادرة مستقلة لدعم الطلبة.

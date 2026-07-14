@@ -82,7 +82,7 @@ export function HeroSection() {
             ISET ZAGHOUAN
             <br />
             <span className="bg-gradient-to-br from-[#12B8C8] to-[#F6B41B] bg-clip-text text-transparent">
-              Student hub
+              Student guide
             </span>
           </h1>
 

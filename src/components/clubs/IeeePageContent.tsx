@@ -85,7 +85,7 @@ export function IeeePageContent({ galleryImages }: Props) {
           </span>
         </Card>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "24px", marginBottom: "32px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))", gap: "24px", marginBottom: "32px" }}>
         <Card elevation="raised" padding="24px">
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
             <CheckCircle2 size={18} style={{ color: IEEE_COLOR }} />

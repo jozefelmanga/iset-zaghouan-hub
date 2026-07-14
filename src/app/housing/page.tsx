@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { PageContentPlaceholder } from "@/components/ui/PageContentPlaceholder";
+import { getGalleryImages } from "@/lib/gallery";
 
 const HousingFoyersContent = dynamic(
   () =>
@@ -15,6 +16,9 @@ const HousingFoyersContent = dynamic(
 export const metadata = pageMetadata("/housing");
 
 export default function HousingPage() {
+  const girlsGallery = getGalleryImages("foyer/girls", ["ooo (1).webp", "ooo (8).webp", "ooo (18).webp"]);
+  const boysGallery = getGalleryImages("foyer/boys", ["localisation"]);
+
   return (
     <PageWrapper seoPath="/housing">
       <StaticPageHeader
@@ -25,7 +29,7 @@ export default function HousingPage() {
         category="life"
         lastUpdated="جويلية 2026"
       />
-      <HousingFoyersContent />
+      <HousingFoyersContent foyerGirlsGallery={girlsGallery} foyerBoysGallery={boysGallery} />
     </PageWrapper>
   );
 }

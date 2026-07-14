@@ -6,6 +6,7 @@ import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { RestoGallery } from "@/components/resto/RestoGallery";
 import { restaurantInfo } from "@/data/restaurant";
+import { getGalleryImages } from "@/lib/gallery";
 
 const infoAlerts = [
   { title: "الفطور", content: restaurantInfo.breakfast, variant: "info" as const },
@@ -17,6 +18,8 @@ const infoAlerts = [
 export const metadata = pageMetadata("/resto");
 
 export default function RestoPage() {
+  const images = getGalleryImages("resto");
+
   return (
     <PageWrapper seoPath="/resto">
       <StaticPageHeader
@@ -187,7 +190,7 @@ export default function RestoPage() {
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>معرض صور الريستو</span>
         </div>
-        <RestoGallery />
+        <RestoGallery galleryImages={images} />
       </div>
     </PageWrapper>
   );

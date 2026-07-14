@@ -1,12 +1,12 @@
 import { pageMetadata } from "@/constants/seo";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { EnactusPageContent } from "@/components/clubs/EnactusPageContent";
-import { getClubGalleryImages } from "@/lib/gallery";
+import { getGalleryImages } from "@/lib/gallery";
 
 export const metadata = pageMetadata("/clubs/enactus");
 
 export default function EnactusPage() {
-  const images = getClubGalleryImages("enactus", ["banner"]);
+  const images = getGalleryImages("clubs/enactus", ["banner"]);
 
   return (
     <>

@@ -6,6 +6,7 @@ import { QuickAccessSection } from "@/components/sections/QuickAccessSection";
 import { Container } from "@/components/ui/layout";
 import { WelcomeSection } from "@/components/sections/WelcomeSection";
 import { InstitutionInfoSection } from "@/components/sections/InstitutionInfoSection";
+import { getGalleryImages } from "@/lib/gallery";
 
 // Below-fold sections: code-split for a smaller initial JS bundle.
 // No loading placeholder — with static export (SSG) the HTML is already
@@ -33,6 +34,8 @@ const SunsetMomentsSection = dynamic(() =>
 export const metadata = pageMetadata("/");
 
 export default function HomePage() {
+  const sunsetImages = getGalleryImages("sunset");
+
   return (
     <>
       <WebsiteJsonLd />
@@ -44,7 +47,7 @@ export default function HomePage() {
         <QuickAccessSection />
         <StudentJourneySection />
         <ExternalResourcesSection />
-        <SunsetMomentsSection />
+        <SunsetMomentsSection galleryImages={sunsetImages} />
         <OfficialChannelsSection />
         <TipsCarouselSection />
       </Container>

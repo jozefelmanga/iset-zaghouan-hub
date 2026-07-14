@@ -18,7 +18,7 @@ New ISET Zaghouan students who need quick, practical answers about:
 - **ACADEMICS:** الترسيم الجامعي, الترسيم في المبيت, المكتبة, الأقسام العلمية, الماستر
 - **STUDENT LIFE:** المبيت الجامعي, البورص, النقل, الريستو, النوادي
 - **CAREER:** الستاجات, دليل الشركات, دليل PFE
-- **OTHER:** اكتشف زغوان, الأسئلة الشائعة, نصائح وإهداء
+- **OTHER:** اكتشف زغوان, الأسئلة الشائعة, نصائح وإهداء, عن المنصة
 
 ## Interactive features
 
@@ -39,18 +39,18 @@ New ISET Zaghouan students who need quick, practical answers about:
 
 ### Academics
 
-- [الترسيم الجامعي](https://guideisetzg.tn/inscription): خطوات الترسيم في ISET Zaghouan، الأوراق اللي لازمك، ومواعيد الترسيم للجداد.
+- [الترسيم الجامعي](https://guideisetzg.tn/inscription): دليل الترسيم الجامعي في ISET Zaghouan (inscription ISET Zaghouan): الخطوات، موقع الترسيم عبر E-dinar، الأوراق المطلوبة، ومواعيد الترسيم.
 - [الترسيم في المبيت](https://guideisetzg.tn/inscription/foyer): كيفاش تترسّم في المبيت الجامعي: OOUN، الأوراق، E-dinar، و يوم الترسيم في الفواي.
 - [المكتبة](https://guideisetzg.tn/library): معلومات المكتبة الجامعية، المراجع، و موارد القراية في ISET Zaghouan.
 - [الأقسام العلمية](https://guideisetzg.tn/departments): نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.
 - [قسم تكنولوجيا المعلومات (TI)](https://guideisetzg.tn/departments/ti): تخصصات DSI و RSI، المواد، و المراجع لقسم TI في ISET Zaghouan.
 - [قسم الاقتصاد و التصرف (SEG)](https://guideisetzg.tn/departments/seg): تخصصات المحاسبة، المالية، و إدارة الأعمال في قسم SEG بـ ISET Zaghouan.
 - [قسم هندسة العمليات (GPR)](https://guideisetzg.tn/departments/gpr): تخصصات الأساليب الكيميائية و الأفاق المهنية في قسم GPR بـ ISET Zaghouan.
-- [برامج الماستر](https://guideisetzg.tn/masters): برامج الماستر المتوفرة و شروط الولوج في ISET Zaghouan.
+- [برامج الماستر](https://guideisetzg.tn/masters): برامج الماستر المتوفرة (Mastère ISET Zaghouan) و شروط الولوج في ISET Zaghouan.
 
 ### Student Life
 
-- [المبيت الجامعي](https://guideisetzg.tn/housing): معلومات فواي البنات و الأولاد في ISET Zaghouan: الشروط، الصور، ونصايح للسكن الجامعي.
+- [المبيت الجامعي](https://guideisetzg.tn/housing): المبيت الجامعي (مبيت المكرن زغوان): معلومات فواي البنات و الأولاد في ISET Zaghouan، الشروط، الصور، ونصايح للسكن.
 - [البورص و المنحة](https://guideisetzg.tn/bourse): دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط و الأوراق المطلوبة.
 - [النقل و المواصلات](https://guideisetzg.tn/transport): لواجات النقل، أسعار الكيران، و معلومات المواصلات من و إلى ISET Zaghouan.
 - [الريستو الجامعي](https://guideisetzg.tn/resto): أوقات الوجبات، قائمة الريستو، و نصايح للطلبة في ISET Zaghouan.
@@ -64,8 +64,8 @@ New ISET Zaghouan students who need quick, practical answers about:
 
 ### Career
 
-- [الستاجات](https://guideisetzg.tn/stages): دليل الستاجات على 3 سنوات: مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص في ISET Zaghouan.
-- [دليل PFE](https://guideisetzg.tn/stages/pfe): دليل Projet de Fin d'Études الكامل: التخطيط، rapport، présentation، و soutenance في ISET Zaghouan.
+- [الستاجات](https://guideisetzg.tn/stages): دليل ستاجات ISET Zaghouan (stage ISET Zaghouan): مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص.
+- [دليل PFE](https://guideisetzg.tn/stages/pfe): دليل Projet de Fin d'Études (PFE ISET Zaghouan) الكامل: التخطيط، كتابة rapport، présentation، و soutenance.
 - [دليل شركات الستاج](https://guideisetzg.tn/stages/companies): دوّر على شركة للستاج في ISET Zaghouan: قائمة رسمية من مصالح التربصات مع العناوين وأرقام التواصل.
 
 ### Campus & City

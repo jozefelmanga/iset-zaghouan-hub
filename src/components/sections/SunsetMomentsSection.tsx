@@ -8,12 +8,13 @@ import { sectionReveal } from "@/lib/motion";
 
 const SUNSET_BASE = "/images/sunset";
 
-const sunsetGallery = Array.from(
-  { length: 12 },
-  (_, i) => `${SUNSET_BASE}/sunset (${i + 1}).webp`,
-);
 
-export function SunsetMomentsSection() {
+
+interface Props {
+  galleryImages: string[];
+}
+
+export function SunsetMomentsSection({ galleryImages }: Props) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
 
@@ -120,7 +121,7 @@ export function SunsetMomentsSection() {
                   </span>
                 </p>
                 <PhotoGallery
-                  images={sunsetGallery}
+                  images={galleryImages}
                   thumbHeight={140}
                   minColWidth={140}
                   altPrefix="غروب ISET Zaghouan"

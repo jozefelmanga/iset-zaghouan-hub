@@ -1,8 +1,9 @@
 import fs from "fs";
 import path from "path";
 
-export function getClubGalleryImages(clubId: string, excludeKeywords: string[] = []): string[] {
-  const directoryPath = path.join(process.cwd(), `public/images/clubs/${clubId}`);
+export function getGalleryImages(folderRelativePath: string, excludeKeywords: string[] = []): string[] {
+  // folderRelativePath e.g. "clubs/securinets" or "resto"
+  const directoryPath = path.join(process.cwd(), `public/images/${folderRelativePath}`);
   let images: string[] = [];
 
   try {
@@ -10,7 +11,7 @@ export function getClubGalleryImages(clubId: string, excludeKeywords: string[] =
     images = files
       .filter((file) => file.match(/\.(webp|png|jpg|jpeg)$/i))
       .filter((file) => {
-        // Exclude banners and logos by keywords
+        // Exclude specific files by keywords
         const lowerFile = file.toLowerCase();
         return !excludeKeywords.some((keyword) => lowerFile.includes(keyword.toLowerCase()));
       })
@@ -20,10 +21,11 @@ export function getClubGalleryImages(clubId: string, excludeKeywords: string[] =
         return { file, mtime: stats.mtime.getTime() };
       })
       .sort((a, b) => b.mtime - a.mtime)
-      .map(({ file }) => `/images/clubs/${clubId}/${file}`);
+      .map(({ file }) => `/images/${folderRelativePath}/${file}`);
   } catch (error) {
-    console.error(`Error reading directory for ${clubId} images`, error);
+    console.error(`Error reading directory for ${folderRelativePath} images`, error);
   }
 
   return images;
 }
+

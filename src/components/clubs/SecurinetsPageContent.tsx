@@ -5,6 +5,7 @@ import {
   Shield,
   Calendar,
   ImageIcon,
+  Trophy,
   Facebook,
   Instagram,
   Linkedin,
@@ -51,7 +52,7 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
           </Alert>
         </Card>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "24px", marginBottom: "32px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))", gap: "24px" }}>
         <Card elevation="raised" padding="24px">
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
             <Globe size={18} style={{ color: "var(--color-secondary)" }} />
@@ -128,6 +129,32 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
               </span>
             ))}
           </div>
+        </Card>
+      </div>
+
+      <div>
+        <Card elevation="raised" padding="24px">
+          <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
+            <Trophy size={18} style={{ color: "var(--color-secondary)" }} />
+            إنجازات وأرقام النادي
+          </h3>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
+            {[
+              { icon: "🔹", text: "Securicon Quals by ISI Ariana سنة 2025." },
+              { icon: "🥇", text: "المركز الأول في Securicon Finals بـ ISI Ariana." },
+              { icon: "👨‍🏫", text: "تنظيم أكثر من 20 ورشة في مختلف مجالات الأمن السيبراني (Web Security, Digital Forensics, OSINT, Reverse Engineering, Cryptography...)." },
+              { icon: "🚩", text: "المشاركة في أكثر من 50 CTF على المستوى الوطني (INSAT, ISI Ariana, TEK-UP, ISET Radès, ...)." },
+              { icon: "🏆", text: "تنظيم 3 CTFs حضوريًا و 4 CTFs Online." },
+              { icon: "🎯", text: "تنظيم Friendly CTF للمبتدئين لتشجيع الطلبة على دخول مجال الأمن السيبراني." },
+              { icon: "🤝", text: "عقد شراكات مع جهات متخصصة لدعم الأنشطة والفعاليات وتوفير الجوائز والشهادات." },
+              { icon: "👥", text: "المساهمة في تكوين مجتمع تقني داخل ISET Zaghouan وتدريب الطلبة على المهارات العملية في الأمن السيبراني." },
+            ].map((item, idx) => (
+              <li key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "14.5px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
+                <span style={{ fontSize: "18px", lineHeight: 1 }}>{item.icon}</span>
+                <span>{item.text}</span>
+              </li>
+            ))}
+          </ul>
         </Card>
       </div>
 

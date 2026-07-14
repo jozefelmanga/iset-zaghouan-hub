@@ -13,6 +13,7 @@ export const instituteOfficial = {
     fax: "+216 72 660 300",
     email: "contact@isetzg.rnu.tn",
     websiteDisplay: "isetzg.rnu.tn",
+    mapUrl: "https://maps.app.goo.gl/6XGAj1YKoMe7eKpy7",
   },
   links: {
     website: {

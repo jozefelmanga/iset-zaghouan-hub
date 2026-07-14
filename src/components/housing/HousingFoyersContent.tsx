@@ -8,7 +8,7 @@ import {
 } from "@/lib/icons";
 import { Card, Alert } from "@/components/ui/shared";
 import { housingFoyer, housingLouled } from "@/data/housing";
-import { PhotoGallery } from "@/components/ui/Lightbox";
+import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
 import { HousingCrossLink } from "@/components/housing/HousingCrossLink";
 
 interface Props {
@@ -82,36 +82,67 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
             <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)", lineHeight: 1.4 }}>{data.name}</h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "16px", marginBottom: "28px" }}>
-            {[
-              { icon: MapPin, label: "الموقع", value: data.location, color: "#3B82F6" },
-              { icon: Wallet, label: "الضمان", value: `${data.deposit} د (ترجع اخر العام)`, color: "#12B8C8" },
-              ...(data.curfew ? [{ icon: Clock, label: "وقت الإقفال", value: data.curfew, color: "#F6B41B" }] : []),
-              { icon: Key, label: "المفتاح", value: "بتك (مع التوصيل)", color: "#22C55E" },
-            ].map(({ icon: Icon, label, value, color }) => (
-              <Card key={label} elevation="raised" padding="18px">
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
-                  <div style={{ width: "30px", height: "30px", borderRadius: "50%", background: `${color}18`, color, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Icon size={14} strokeWidth={2} />
-                  </div>
-                  <span style={{ fontWeight: 600, fontSize: "13px", color: "var(--color-text)" }}>{label}</span>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px", marginBottom: "28px" }}>
+            {/* Unified Location Card */}
+            <Card elevation="raised" padding="18px" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: "rgba(59,130,246,0.12)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <MapPin size={16} strokeWidth={2} />
                 </div>
-                <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{value}</p>
-              </Card>
-            ))}
-            {data.mapUrl && (
-              <a href={data.mapUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-                <Card elevation="raised" padding="18px" style={{ height: "100%", border: "1px solid rgba(59,130,246,0.25)", background: "rgba(59,130,246,0.04)" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
-                    <div style={{ width: "30px", height: "30px", borderRadius: "50%", background: "rgba(59,130,246,0.12)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <ExternalLink size={14} strokeWidth={2} />
-                    </div>
-                    <span style={{ fontWeight: 600, fontSize: "13px", color: "var(--color-text)" }}>الموقع على الخريطة</span>
+                <span style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>الموقع</span>
+              </div>
+              <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: tab === "girls" || data.mapUrl ? "16px" : 0 }}>
+                {data.location}
+              </p>
+              
+              {tab === "girls" && (
+                <div style={{ flex: 1, borderRadius: "12px", overflow: "hidden", border: "1px solid var(--color-border)", minHeight: "120px", position: "relative" }}>
+                  <ZoomableImage 
+                    src="/images/foyer/foyer-girls-localisation.webp" 
+                    alt="خريطة موقع الفواي" 
+                    fill 
+                    objectFit="cover"
+                  />
+                </div>
+              )}
+
+              {tab === "boys" && data.mapUrl && (
+                <a href={data.mapUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", marginTop: "auto" }}>
+                  <div style={{ padding: "10px", borderRadius: "10px", background: "rgba(59,130,246,0.06)", border: "1px solid rgba(59,130,246,0.15)", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", transition: "all 0.2s" }}>
+                    <ExternalLink size={14} color="#3B82F6" strokeWidth={2} />
+                    <span style={{ fontSize: "13px", fontWeight: 600, color: "#3B82F6" }}>افتح في خرائط جوجل</span>
                   </div>
-                  <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>افتح في Google Maps</p>
-                </Card>
-              </a>
-            )}
+                </a>
+              )}
+            </Card>
+
+            {/* Unified Info Card */}
+            <Card elevation="raised" padding="18px" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
+                <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: "rgba(18,184,200,0.12)", color: "#12B8C8", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Sparkles size={16} strokeWidth={2} />
+                </div>
+                <span style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>معلومات عامة</span>
+              </div>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px", flex: 1, justifyContent: "center" }}>
+                {[
+                  { icon: Wallet, label: "الضمان", value: `${data.deposit} د (ترجع اخر العام)`, color: "#12B8C8" },
+                  ...(data.curfew ? [{ icon: Clock, label: "وقت الإقفال", value: data.curfew, color: "#F6B41B" }] : []),
+                  { icon: Key, label: "المفتاح", value: "بتك (مع التوصيل)", color: "#22C55E" },
+                ].map(({ icon: Icon, label, value, color }) => (
+                  <div key={label} style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+                    <div style={{ width: "38px", height: "38px", borderRadius: "12px", background: `${color}15`, color, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <Icon size={18} strokeWidth={2} />
+                    </div>
+                    <div>
+                      <div style={{ fontWeight: 600, fontSize: "13.5px", color: "var(--color-text)", marginBottom: "4px" }}>{label}</div>
+                      <div style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.4 }}>{value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card>
           </div>
 
           <div style={{ marginBottom: "24px" }}>

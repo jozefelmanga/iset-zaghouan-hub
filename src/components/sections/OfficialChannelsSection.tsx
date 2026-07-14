@@ -14,7 +14,8 @@ export function OfficialChannelsSection() {
       icon: MapPin,
       label: profile.location,
       sublabel: profile.address,
-      href: undefined,
+      href: profile.mapUrl,
+      external: true,
       ltr: false,
     },
     {

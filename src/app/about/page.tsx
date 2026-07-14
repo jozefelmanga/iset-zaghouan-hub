@@ -75,6 +75,11 @@ export default function AboutPage() {
             ملاحظة: هذه المنصة هي مبادرة طلابية مستقلة وليست الموقع الرسمي للمعهد. للحصول على المعلومات الرسمية والقرارات الإدارية، يرجى دائماً مراجعة إدارة المعهد العالي للدراسات التكنولوجية بزغوان.
           </p>
         </div>
+        <div style={{ textAlign: "center", marginTop: "4px" }}>
+          <a href="https://forms.gle/4Aj6svouhdPu9TBA7" target="_blank" rel="noopener noreferrer" style={{ fontSize: "12px", color: "var(--color-text-muted)", textDecoration: "underline", opacity: 0.6 }}>
+            عندك اقتراح أو لقيت مشكلة؟ أعلمنا هنا
+          </a>
+        </div>
       </div>
     </PageWrapper>
   );

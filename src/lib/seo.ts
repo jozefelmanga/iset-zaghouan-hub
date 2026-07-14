@@ -22,7 +22,7 @@ export const DEFAULT_KEYWORDS = [
 ];
 
 /** Default share image (campus banner deployed with static assets). */
-export const OG_IMAGE_PATH = "/images/banner.webp";
+export const OG_IMAGE_PATH = "/images/OG-image.webp";
 
 export const rootMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),

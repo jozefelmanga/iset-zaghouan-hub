@@ -108,25 +108,31 @@ export function GPRPageContent() {
           <span style={{ color: "var(--color-secondary)" }}>•</span> مسار الدراسة على امتداد 3 سنوات (تجربة طالبة)
         </h2>
         <Card elevation="raised" padding="24px">
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)" }}>
-              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الأولى (Les bases)</h4>
-              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6, margin: 0 }}>
-                &quot;Fi l&apos;3am l&apos;owel na9raw les bases : math, physique, chimie générale, w nzidou 3lihom mécanique des fluides w électrotechnique. Hethom ykhadhmouna bech nfahmou l&apos;écoulement mta3 les liquides w gaz w kifesh nekhdmou m3a les moteurs w l&apos;équipement f ma3mel.&quot;
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }} dir="rtl">
+            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
+              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الأولى (Tronc Commun)</h4>
+              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0 }}>
+                في العام الأول (tronc commun)، نقراو les bases اللي نستحقوهم، كيما chimie générale et organique, math, و physique. و في الـ S2 نزيدو عليهم thermodynamique, mécanique des fluides, و électrotechnique. هالمواد يعاونونا برشا باش نفهمو les réactions chimiques و كيفاش يخدمو les équipements في أي معمل.
               </p>
             </div>
             
-            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)" }}>
-              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثانية (Au cœur du procédé)</h4>
-              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6, margin: 0 }}>
-                &quot;Fi l&apos;3am ethani nodkhlou fi 9alb l&apos;procédé: génie des réacteurs bech na3rfou kifeh ysir tafa3ol kimawi, w parachimie kima savon, peinture, cosmétique. W akid m3ahom opérations unitaires w transfert.&quot;
+            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
+              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثانية (Spécialisation)</h4>
+              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0, marginBottom: "12px" }}>
+                <strong style={{ color: "var(--color-text)" }}>في اختصاص Génie des Procédés Agroalimentaires:</strong> هوني ندخلو في صلب الموضوع ونقراو microbiologie, biochimie, opérations unitaires, و conservation des produits. نتعلمو كيفاش نراقبو جودة الماكلة (contrôle qualité)، وكيفاش نحسنو طرق التصنيع ونستغلو الكائنات الدقيقة في الصناعات الغذائية.
+              </p>
+              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0 }}>
+                <strong style={{ color: "var(--color-text)" }}>في اختصاص Génie des Procédés Chimiques:</strong> في العام الثاني ندخلو في قلب الـ procédé: نقراو génie des réacteurs باش نعرفو كيفاش يصير تفاعل كيمياوي، و parachimie كيما صناعة الصابون، الدهن (peinture)، والـ cosmétique. وأكيد معاهم opérations unitaires و transfert.
               </p>
             </div>
             
-            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)" }}>
-              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثالثة (Matières appliquées)</h4>
-              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6, margin: 0 }}>
-                &quot;Fi l&apos;3am theleth na9raw des matières appliquées barcha: séchage, adsorption, énergie renouvelable, w plan d&apos;expérience bech n3amlou des essais w noptimiziw l&apos;production. Fi lekher l&apos;matière hethi lkol nesta3mlouha fi les usines mta3 l&apos;chimie, énergie, traitement d&apos;eau, w fi ay ma3mel yheb yna9ess tkalfa w yzed l&apos;mardoud.&quot;
+            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
+              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثالثة (Matières Appliquées)</h4>
+              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0, marginBottom: "12px" }}>
+                <strong style={{ color: "var(--color-text)" }}>في اختصاص Génie des Procédés Agroalimentaires:</strong> نكملو نتعمقو في مواد سبيسيال كيما formulation des produits, emballage, و sécurité alimentaire. هالمواد مهمين برشا في الـ industrie باش نطوروا منتوجات جديدة، نضمنو الجودة، ونقصو مالـ coûts والـ énergie في المعامل.
+              </p>
+              <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0 }}>
+                <strong style={{ color: "var(--color-text)" }}>في اختصاص Génie des Procédés Chimiques:</strong> نواصلو نتعمقو في عمليات كيما séchage, adsorption, و cristallisation. نزيدو نقراو énergie renouvelable, traitement des déchets, و plan d&apos;expérience (تصميم التجارب). هالمواد نستعملوها في معامل الكيمياء باش نحسنو الإنتاج، نقتصدو في الطاقة، ونحميو البيئة.
               </p>
             </div>
           </div>

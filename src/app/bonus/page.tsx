@@ -101,6 +101,7 @@ export default function BonusPage() {
                 {contributors.map((name) => (
                   <div
                     key={name}
+                    dir="ltr"
                     style={{
                       padding: "8px 16px",
                       borderRadius: "10px",
@@ -110,9 +111,13 @@ export default function BonusPage() {
                       fontWeight: 600,
                       color: "var(--color-text)",
                       boxShadow: "var(--shadow-card)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "6px",
                     }}
                   >
-                    @{name} ❤️
+                    ❤️ @{name}
                   </div>
                 ))}
               </div>

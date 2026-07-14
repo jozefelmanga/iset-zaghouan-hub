@@ -44,6 +44,9 @@ export const contributors = [
   "Ghada Az",
   "Adel Aiouaz",
   "Améni Jdidi",
+  "Oussama Ghizaoui",
+  "Wijden Boubahri",
+  "Yosser Khalil",
 ];
 
 export type StudentTip = {

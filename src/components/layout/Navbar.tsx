@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { GraduationCap, Search, Menu } from "@/lib/icons";
+import { Search, Menu } from "@/lib/icons";
 import { motion } from "framer-motion";
 
 const CommandPalette = dynamic(

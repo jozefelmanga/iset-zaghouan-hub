@@ -55,7 +55,7 @@ const LLM_SECTIONS: { heading: string; paths: PagePath[] }[] = [
     ],
   },
   { heading: "Career", paths: ["/stages", "/stages/pfe", "/stages/companies"] },
-  { heading: "Campus & City", paths: ["/explore", "/faq", "/bonus"] },
+  { heading: "Campus & City", paths: ["/explore", "/faq", "/bonus", "/about"] },
 ];
 
 function pageUrl(path: PagePath): string {

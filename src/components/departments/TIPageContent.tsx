@@ -114,7 +114,7 @@ export function TIPageContent() {
 
           {/* Full Stack AI */}
           <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(59,130,246,0.05)", border: "1px solid rgba(59,130,246,0.2)" }}>
-            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>🤖 Full Stack Developer augmenté par l'IA</h4>
+            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>🤖 Full Stack Developer augmenté par l&apos;IA</h4>
             <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
               مسار يركّز على تطوير تطبيقات الويب الشاملة مع استخدام ذكي لأدوات الذكاء الاصطناعي لتسريع البرمجة والإنتاجية.
             </p>

@@ -17,6 +17,7 @@ export function InscriptionContent() {
     try {
       const saved = localStorage.getItem("inscription-checklist");
       if (saved) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setChecked(JSON.parse(saved));
       }
     } catch (e) {

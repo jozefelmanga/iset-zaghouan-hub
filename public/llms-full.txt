@@ -73,6 +73,7 @@ New ISET Zaghouan students who need quick, practical answers about:
 - [اكتشف زغوان](https://guideisetzg.tn/explore): أحسن البلايص للقراية، الكافيهات، و الأنشطة في مدينة زغوان للطلبة.
 - [الأسئلة الشائعة](https://guideisetzg.tn/faq): إجابات لأكثر الأسئلة اللي يسألوها الجداد في ISET Zaghouan.
 - [نصائح و إهداء](https://guideisetzg.tn/bonus): نصايح عملية للجداد و شكر المساهمين في دليل ISET Zaghouan.
+- [عن المنصة](https://guideisetzg.tn/about): Guide ISET Zaghouan هي منصة مستقلة للطلبة، تم تطويرها لتسهيل الحياة الجامعية وجمع المعلومات.
 
 ## Content notes for AI systems
 

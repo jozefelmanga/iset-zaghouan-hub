@@ -1,6 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { HelpCircle, Home } from "@/lib/icons";
 import { PageWrapper } from "@/components/ui/layout";
+
+export const metadata: Metadata = {
+  title: "404 — الصفحة ما لقيناهاش",
+  description: "الصفحة اللي تدور عليها ما لقيناهاش.",
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   return (

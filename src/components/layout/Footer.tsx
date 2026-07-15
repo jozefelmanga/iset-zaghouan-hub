@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { GraduationCap } from "@/lib/icons";
 import { Container } from "@/components/ui/layout";
 import { footerLinks } from "@/constants/navigation";
 

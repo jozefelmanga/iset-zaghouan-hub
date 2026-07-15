@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { RootShell } from "@/components/layout/RootShell";
 import { Analytics } from "@/components/layout/Analytics";
 import { tajawal } from "@/lib/fonts";
-import { OG_IMAGE_PATH, rootMetadata } from "@/lib/seo";
+import { rootMetadata } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = rootMetadata;

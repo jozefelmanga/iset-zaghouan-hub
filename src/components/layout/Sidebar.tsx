@@ -114,6 +114,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
       <div style={{ padding: "12px 12px 0" }}>
         <Link
           href={homeLink.href}
+          prefetch={false}
           onClick={() => setDrawerOpen?.(false)}
           aria-current={isNavActive(homeLink.href, pathname, navHrefs) ? "page" : undefined}
           style={{
@@ -205,6 +206,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
                 >
                   <Link
                     href={link.href}
+                    prefetch={false}
                     onClick={() => setDrawerOpen?.(false)}
                     aria-current={active ? "page" : undefined}
                     style={{

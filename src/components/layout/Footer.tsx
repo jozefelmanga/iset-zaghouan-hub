@@ -76,6 +76,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch={false}
                 className="text-white/60 hover:text-[#12B8C8] transition-colors duration-200 no-underline text-[14px] py-2 flex items-center justify-center sm:justify-start lg:justify-start"
               >
                 {link.label}

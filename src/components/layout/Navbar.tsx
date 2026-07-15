@@ -132,6 +132,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
 
           <Link
             href="/"
+            prefetch={false}
             aria-label="الصفحة الرئيسية - ISET Zaghouan"
             style={{
               display: "flex",

@@ -58,7 +58,7 @@ export function ExploreHeroBanner() {
           <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
             <Mountain size={20} style={{ color: "#12B8C8" }} strokeWidth={2} />
             <span style={{ fontSize: "12px", fontWeight: 600, color: "#12B8C8", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-              جبل زغوان
+              عن زغوان
             </span>
           </div>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.8)", lineHeight: 1.8, maxWidth: "600px" }}>

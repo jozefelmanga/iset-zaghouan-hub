@@ -38,19 +38,33 @@ scripts/
   generate-llms.ts
 ```
 
-## Internships (`/stages`)
+## Key Features & Routes
 
-Three related routes under **CAREER** in the sidebar:
+The platform is divided into four main pillars to cover every aspect of a student's journey:
 
-| Route | Purpose |
-|---|---|
-| `/stages` | Main guide: 3-year progress tracker, stage details, FAQ, admin steps, deadlines, logos, SEG report examples, grade calculator |
-| `/stages/companies` | Searchable company directory (~267 entries from `sociétés_final.xlsx`) |
-| `/stages/pfe` | Dedicated Projet de Fin d'Études guide |
+### 🎓 Academics
+- **`/inscription` & `/inscription/foyer`**: Step-by-step guides for university and dorm enrollment, including required paperwork and timelines.
+- **`/library`**: Access to academic resources, references, and past exams.
+- **`/departments`**: Detailed overviews of the IT (TI), Economics & Management (SEG), and Process Engineering (GPR) departments.
+- **`/masters`**: Information on available Master's degree programs at the institute.
 
-**Content** lives in `src/data/internships.ts`. **Company data** is generated at build time from `public/documents/stages/sociétés_final.xlsx` into `src/data/stage-companies.json`.
+### 🌟 Student Life
+- **`/housing` & `/resto`**: Comprehensive details on dormitories (Foyer) and the university restaurant, including meal times and procedures.
+- **`/bourse`**: Information on full scholarships and integration grants.
+- **`/transport`**: Practical commuting guides, louage/bus station locations, and pricing from surrounding cities.
+- **`/clubs`**: Showcases active student organizations (SecuriNets, Enactus, Robotique, IEEE, etc.), their activities, achievements, and integration events.
 
-**Key components:** `StagesPageContent`, `InternshipTimeline`, `InternshipGradeCalculator`, `InternshipCompanySearch` — responsive layout via `stages.module.css`.
+### 💼 Career & Internships (`/stages`)
+- **`/stages`**: 3-year internship progress tracker, admin steps, deadlines, report templates, and grade calculators.
+- **`/stages/companies`**: Searchable company directory (~267 entries generated from official data).
+- **`/stages/pfe`**: Dedicated Projet de Fin d'Études (PFE) guide.
+*(Content lives in `src/data/internships.ts`. Company data is generated via `node scripts/generate-stage-companies.mjs`)*
+
+### 🗺️ Campus & City
+- **`/explore`**: A guide to discovering Zaghouan, featuring study spots, cafes, a photo gallery, and local mountain guide contacts.
+- **`/faq`**: Answers to the most frequently asked questions by new students.
+- **`/bonus`**: Special tips for newcomers and acknowledgments to contributors.
+- **`/about`**: Information about the platform's mission and development.
 
 To refresh company data after updating the xlsx:
 

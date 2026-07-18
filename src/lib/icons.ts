@@ -115,6 +115,7 @@ export {
   Calculator,
   TrendingUp,
   Loader2,
+  Sticker,
 } from "lucide-react";
 
 export type { LucideIcon } from "lucide-react";

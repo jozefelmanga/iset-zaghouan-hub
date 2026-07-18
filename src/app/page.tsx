@@ -35,6 +35,10 @@ const MotivationalCTASection = dynamic(() =>
   import("@/components/sections/MotivationalCTASection").then((m) => ({ default: m.MotivationalCTASection }))
 );
 
+const Zan9aStickersSection = dynamic(() =>
+  import("@/components/sections/Zan9aStickersSection").then((m) => ({ default: m.Zan9aStickersSection }))
+);
+
 export const metadata = pageMetadata("/");
 
 export default function HomePage() {
@@ -52,6 +56,7 @@ export default function HomePage() {
         <StudentJourneySection />
         <ExternalResourcesSection />
         <SunsetMomentsSection galleryImages={sunsetImages} />
+        <Zan9aStickersSection />
         <OfficialChannelsSection />
         <TipsCarouselSection />
       </Container>

@@ -37,6 +37,20 @@ describe("SEO configuration", () => {
     }
   });
 
+  it("every SEO description has optimal length (120-165 chars)", () => {
+    for (const [path, seo] of Object.entries(PAGE_SEO)) {
+      const len = seo.description.trim().length;
+      expect(len, `${path} description length (${len}) should be >= 120`).toBeGreaterThanOrEqual(120);
+      expect(len, `${path} description length (${len}) should be <= 165`).toBeLessThanOrEqual(165);
+    }
+  });
+
+  it("every SEO description is unique across routes", () => {
+    const descriptions = Object.values(PAGE_SEO).map((s) => s.description.trim());
+    const uniqueDescriptions = new Set(descriptions);
+    expect(uniqueDescriptions.size).toBe(descriptions.length);
+  });
+
   it("all navigable routes have SEO metadata", () => {
     const navHrefs = allNavLinks.map((link) => link.href);
     for (const href of navHrefs) {

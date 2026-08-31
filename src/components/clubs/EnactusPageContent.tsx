@@ -16,6 +16,7 @@ import { Card } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
+import { RelatedClubsNav } from "@/components/ui/RelatedNav";
 
 const achievements = [
   "Best Project Photo of the year 📸",
@@ -206,6 +207,8 @@ export function EnactusPageContent({ galleryImages }: Props) {
         </h2>
         <PhotoGallery images={galleryImages} initialVisibleCount={12} altPrefix="Enactus" />
       </div>
+
+      <RelatedClubsNav currentClubId="enactus" />
       </PageWrapper>
     </>
   );

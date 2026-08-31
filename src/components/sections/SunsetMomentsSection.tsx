@@ -47,8 +47,7 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
           >
             <img
               src={`${SUNSET_BASE}/sunset (1).webp`}
-              alt=""
-              aria-hidden="true"
+              alt="معرض صور غروب الشمس في معهد ISET Zaghouan"
               className="h-full w-full object-cover"
               loading="lazy"
             />

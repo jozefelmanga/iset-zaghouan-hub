@@ -35,45 +35,45 @@ New ISET Zaghouan students who need quick, practical answers about:
 
 ### Home
 
-- [الرئيسية — دليل الطالب](https://guideisetzg.tn): دليل شامل للجداد في ISET Zaghouan: الترسيم، المبيت، النقل، البورص، الستاجات، النوادي، واكتشاف زغوان.
+- [الرئيسية — دليل الطالب](https://guideisetzg.tn): دليل الطالب الشامل في ISET Zaghouan: كل ما تحتاجه حول الترسيم الجامعي، المبيت، النقل، البورص، الستاجات، والنوادي لتسهيل مسارك الدراسي.
 
 ### Academics
 
 - [الترسيم الجامعي](https://guideisetzg.tn/inscription): دليل الترسيم الجامعي في ISET Zaghouan (inscription ISET Zaghouan): الخطوات، موقع الترسيم عبر E-dinar، الأوراق المطلوبة، ومواعيد الترسيم.
-- [الترسيم في المبيت](https://guideisetzg.tn/inscription/foyer): كيفاش تترسّم في المبيت الجامعي: OOUN، الأوراق، E-dinar، و يوم الترسيم في الفواي.
-- [المكتبة](https://guideisetzg.tn/library): معلومات المكتبة الجامعية، المراجع، و موارد القراية في ISET Zaghouan.
-- [الأقسام العلمية](https://guideisetzg.tn/departments): نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.
-- [قسم تكنولوجيا المعلومات (TI)](https://guideisetzg.tn/departments/ti): تخصصات DSI و RSI، المواد، و المراجع لقسم TI في ISET Zaghouan.
-- [قسم الاقتصاد و التصرف (SEG)](https://guideisetzg.tn/departments/seg): تخصصات المحاسبة، المالية، و إدارة الأعمال في قسم SEG بـ ISET Zaghouan.
-- [قسم هندسة العمليات (GPR)](https://guideisetzg.tn/departments/gpr): تخصصات الأساليب الكيميائية و الأفاق المهنية في قسم GPR بـ ISET Zaghouan.
-- [برامج الماستر](https://guideisetzg.tn/masters): برامج الماستر المتوفرة (Mastère ISET Zaghouan) و شروط الولوج في ISET Zaghouan.
+- [الترسيم في المبيت](https://guideisetzg.tn/inscription/foyer): خطوات الترسيم في المبيت الجامعي بـ ISET Zaghouan: التسجيل عبر موقع OOUN، الخلاص ببطاقة E-dinar، الأوراق المطلوبة، وإجراءات يوم الدخول للفواي.
+- [المكتبة](https://guideisetzg.tn/library): دليل المكتبة الجامعية في ISET Zaghouan: أوقات الفتح، كيفية الإعارة، بنك الامتحانات والفروض السابقة (DS & Examens)، والمراجع المتوفرة للمراجعة.
+- [الأقسام العلمية](https://guideisetzg.tn/departments): الأقسام العلمية في ISET Zaghouan: تعرّف على اختصاصات تكنولوجيا المعلومات (TI)، العلوم الاقتصادية والتصرف (SEG)، وهندسة العمليات (GPR) والمسارات الدراسية.
+- [قسم تكنولوجيا المعلومات (TI)](https://guideisetzg.tn/departments/ti): قسم تكنولوجيا المعلومات (TI) بـ ISET Zaghouan: مسارات DSI و RSI، البرمجة، الشبكات، البرامج التعليمية والمصادر المجانية للطلبة.
+- [قسم الاقتصاد و التصرف (SEG)](https://guideisetzg.tn/departments/seg): قسم العلوم الاقتصادية والتصرف (SEG) بـ ISET Zaghouan: دراسة المحاسبة، المالية، وإدارة الأعمال، خطط المواد، والآفاق المهنية للخريجين.
+- [قسم هندسة العمليات (GPR)](https://guideisetzg.tn/departments/gpr): قسم هندسة العمليات (GPR) بـ ISET Zaghouan: تخصصات الأساليب الكيميائية والغذائية، التجارب المخبرية، وفرص العمل في القطاع الصناعي ومراقبة الجودة.
+- [برامج الماستر](https://guideisetzg.tn/masters): برامج الماستر المهني في ISET Zaghouan: ماستيرات ISID و E2I و MOPIL و GTVDI، شروط القبول وملفات الترشح والآفاق الأكاديمية والمهنية.
 
 ### Student Life
 
-- [المبيت الجامعي](https://guideisetzg.tn/housing): المبيت الجامعي (مبيت المكرن زغوان): معلومات فواي البنات و الأولاد في ISET Zaghouan، الشروط، الصور، ونصايح للسكن.
-- [البورص و المنحة](https://guideisetzg.tn/bourse): دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط و الأوراق المطلوبة.
-- [النقل و المواصلات](https://guideisetzg.tn/transport): لواجات النقل، أسعار الكيران، و معلومات المواصلات من و إلى ISET Zaghouan.
-- [الريستو الجامعي](https://guideisetzg.tn/resto): أوقات الوجبات، قائمة الريستو، و نصايح للطلبة في ISET Zaghouan.
-- [النوادي الطلابية](https://guideisetzg.tn/clubs): دليل النوادي و الأنشطة في ISET Zaghouan: SecuriNets، Robotique، Enactus، IEEE، SOS، و أكثر.
-- [نادي SecuriNets](https://guideisetzg.tn/clubs/securinets): جمعية الأمن السيبراني SecuriNets في ISET Zaghouan: الأنشطة، الفوايد، و كيفاش تنضم.
-- [Club Robotique ISET Zaghouan](https://guideisetzg.tn/clubs/robotique): Club Robotique ISET Zaghouan: ورشات Arduino/C/Python، إلكترونيك، مشاريع روبوتية، hackathons وتحديات تقنية.
-- [نادي Enactus](https://guideisetzg.tn/clubs/enactus): نادي Enactus في ISET Zaghouan: ريادة الأعمال، المشاريع الاجتماعية، و الفرص للطلبة.
+- [المبيت الجامعي](https://guideisetzg.tn/housing): دليل السكن والمبيت الجامعي في زغوان (مبيت المكرن): معلومات فواي البنات والأولاد، الوثائق المطلوبة، الصور، ونصائح عملية للعيش في الفواي.
+- [البورص و المنحة](https://guideisetzg.tn/bourse): دليل المنحة الجامعية (البورص) ومنحة الإدماج لطلبة ISET Zaghouan: شروط الانتفاع، الوثائق المطلوبة، ملف OOUN، ومواعيد صرف المنح للطلبة.
+- [النقل و المواصلات](https://guideisetzg.tn/transport): دليل النقل والمواصلات من وإلى ISET Zaghouan: محطات ومسارات اللواجات، خطوط واشتراكات الكيران، الطاكسي جماعي، وأسهل الطرق للوصول للمعهد.
+- [الريستو الجامعي](https://guideisetzg.tn/resto): دليل الريستو والمطعم الجامعي في ISET Zaghouan: أوقات وجبات الغداء والعشاء، سعر التذاكر، قائمة المأكولات، ونصائح عملية للطلبة الجدد.
+- [النوادي الطلابية](https://guideisetzg.tn/clubs): دليل النوادي والأنشطة الطلابية في ISET Zaghouan: اكتشف نوادي SecuriNets و Robotique و Enactus و IEEE و SOS، وطوّر مهاراتك وانضم للمجتمع الطلابي.
+- [نادي SecuriNets](https://guideisetzg.tn/clubs/securinets): نادي SecuriNets في ISET Zaghouan: نادي الأمن السيبراني واختبار الاختراق، ورشات العمل، المشاركة في مسابقات CTF، وكيفية الانضمام للفريق.
+- [Club Robotique ISET Zaghouan](https://guideisetzg.tn/clubs/robotique): نادي الروبوتيك بـ ISET Zaghouan: ورشات تطبيقية في Arduino والإلكترونيك والبرمجة، مشاريع روبوتية مبتكرة، والمشاركة في التحديات والهاكاثونات.
+- [نادي Enactus](https://guideisetzg.tn/clubs/enactus): نادي Enactus في ISET Zaghouan: ريادة الأعمال والمشاريع الاجتماعية، تنمية مهارات القيادة والعمل الجماعي، والمنافسة في المسابقة الوطنية السنوية.
 - [IEEE ISET Zaghouan Student Branch](https://guideisetzg.tn/clubs/ieee): فرع IEEE الطلابي في ISET Zaghouan: ورشات، تكوينات، hard & soft skills، TSYP، IEEE Tunisia Section، و شبكة أكبر منظمة تقنية في العالم.
-- [نادي سفراء قرى الأطفال SOS](https://guideisetzg.tn/clubs/sos-ambassadeurs): Club Ambassadeurs SOS Village بـ ISET Zaghouan: عمل تطوعي، مبادرات إنسانية وثقافية، و جائزة أفضل نادٍ صاعد وطنياً 2026.
-- [Club ProceGenius](https://guideisetzg.tn/clubs/procegenius): ProceGenius هو نادي علمي في ISET Zaghouan يلم المغرومين بهندسة العمليات باش يطورو مهاراتهم ويشجعو على الابتكار.
+- [نادي سفراء قرى الأطفال SOS](https://guideisetzg.tn/clubs/sos-ambassadeurs): نادي سفراء قرى الأطفال SOS بـ ISET Zaghouan: مبادرات إنسانية وثقافية، عمل تطوعي ومجتمعي، وتتويج كأفضل نادٍ صاعد على المستوى الوطني.
+- [Club ProceGenius](https://guideisetzg.tn/clubs/procegenius): نادي ProceGenius في ISET Zaghouan: النادي العلمي لطلبة هندسة العمليات لتبادل الخبرات، ورشات تكوينية متخصصة، ومشاريع تطبيقية في الصناعة الكيميائية والغذائية.
 
 ### Career
 
 - [الستاجات](https://guideisetzg.tn/stages): دليل ستاجات ISET Zaghouan (stage ISET Zaghouan): مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص.
-- [دليل PFE](https://guideisetzg.tn/stages/pfe): دليل Projet de Fin d'Études (PFE ISET Zaghouan) الكامل: التخطيط، كتابة rapport، présentation، و soutenance.
-- [دليل شركات الستاج](https://guideisetzg.tn/stages/companies): دوّر على شركة للستاج في ISET Zaghouan: قائمة رسمية من مصالح التربصات مع العناوين وأرقام التواصل.
+- [دليل PFE](https://guideisetzg.tn/stages/pfe): دليل مشروع التخرج PFE في ISET Zaghouan: خطوات اختيار الموضوع، إعداد التقرير والعرض التقديمي، نصائح الـ Soutenance، ونماذج جاهزة للتحميل.
+- [دليل شركات الستاج](https://guideisetzg.tn/stages/companies): دليل شركات التربصات لطلبة ISET Zaghouan: قاعدة بيانات موثوقة بالشركات والمؤسسات مع أرقام الهاتف والعناوين لمساعدتك في إيجاد ستاجك بسهولة.
 
 ### Campus & City
 
-- [اكتشف زغوان](https://guideisetzg.tn/explore): أحسن البلايص للقراية، الكافيهات، و الأنشطة في مدينة زغوان للطلبة.
-- [الأسئلة الشائعة](https://guideisetzg.tn/faq): إجابات لأكثر الأسئلة اللي يسألوها الجداد في ISET Zaghouan.
-- [نصائح و إهداء](https://guideisetzg.tn/bonus): نصايح عملية للجداد و شكر المساهمين في دليل ISET Zaghouan.
-- [عن المنصة](https://guideisetzg.tn/about): Guide ISET Zaghouan هي منصة مستقلة للطلبة، تم تطويرها لتسهيل الحياة الجامعية وجمع المعلومات.
+- [اكتشف زغوان](https://guideisetzg.tn/explore): دليل مدينة زغوان للطلبة: أحسن المقاهي للدراسة، أماكن السكن والترفيه، المواقع الطبيعية والسياحية، وكل الخدمات القريبة من معهد ISET.
+- [الأسئلة الشائعة](https://guideisetzg.tn/faq): الأسئلة الشائعة وإجاباتها لطلبة ISET Zaghouan: كل الاستفسارات حول الترسيم، المبيت، الستاجات، الامتحانات، والحياة الجامعية في مكان واحد.
+- [نصائح و إهداء](https://guideisetzg.tn/bonus): نصائح عملية وتجارب حقيقية للنجاح في ISET Zaghouan للطلبة الجدد، مع شكر وتقدير لكل المساهمين والنوادي التي ساعدت في بناء هذا الدليل.
+- [عن المنصة](https://guideisetzg.tn/about): عن دليل ISET Zaghouan Hub: منصة طلابية مستقلة ومجانية، طُوّرت من قبل الطلبة لمساعدة زملائهم وتوفير كل المعلومات والمراجع الجامعية الموثوقة.
 
 ## Content notes for AI systems
 

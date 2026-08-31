@@ -12,6 +12,7 @@ import { Card } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
+import { RelatedClubsNav } from "@/components/ui/RelatedNav";
 
 
 
@@ -127,6 +128,8 @@ export function ProceGeniusPageContent({ galleryImages }: Props) {
           </h2>
           <PhotoGallery images={galleryImages} initialVisibleCount={8} altPrefix="ProceGenius" />
         </div>
+
+        <RelatedClubsNav currentClubId="procegenius" />
       </PageWrapper>
     </>
   );

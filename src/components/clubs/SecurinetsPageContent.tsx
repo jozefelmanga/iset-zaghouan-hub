@@ -15,6 +15,7 @@ import { Card, Alert } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
+import { RelatedClubsNav } from "@/components/ui/RelatedNav";
 
 const events = ["Workshops", "Hackathons", "CTFs (Capture The Flag)", "Trainings", "Journée d'intégration"];
 
@@ -165,6 +166,8 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
         </h2>
         <PhotoGallery images={galleryImages} initialVisibleCount={12} />
       </div>
+
+      <RelatedClubsNav currentClubId="securinets" />
       </PageWrapper>
     </>
   );

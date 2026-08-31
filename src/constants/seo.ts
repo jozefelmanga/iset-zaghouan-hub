@@ -6,7 +6,7 @@ export const PAGE_SEO = {
   "/": {
     title: "الرئيسية — دليل الطالب",
     description:
-      "دليل شامل للجداد في ISET Zaghouan: الترسيم، المبيت، النقل، البورص، الستاجات، النوادي، واكتشاف زغوان.",
+      "دليل الطالب الشامل في ISET Zaghouan: كل ما تحتاجه حول الترسيم الجامعي، المبيت، النقل، البورص، الستاجات، والنوادي لتسهيل مسارك الدراسي.",
   },
   "/inscription": {
     title: "الترسيم الجامعي",
@@ -14,23 +14,23 @@ export const PAGE_SEO = {
   },
   "/housing": {
     title: "المبيت الجامعي",
-    description: "المبيت الجامعي (مبيت المكرن زغوان): معلومات فواي البنات و الأولاد في ISET Zaghouan، الشروط، الصور، ونصايح للسكن.",
+    description: "دليل السكن والمبيت الجامعي في زغوان (مبيت المكرن): معلومات فواي البنات والأولاد، الوثائق المطلوبة، الصور، ونصائح عملية للعيش في الفواي.",
   },
   "/inscription/foyer": {
     title: "الترسيم في المبيت",
-    description: "كيفاش تترسّم في المبيت الجامعي: OOUN، الأوراق، E-dinar، و يوم الترسيم في الفواي.",
+    description: "خطوات الترسيم في المبيت الجامعي بـ ISET Zaghouan: التسجيل عبر موقع OOUN، الخلاص ببطاقة E-dinar، الأوراق المطلوبة، وإجراءات يوم الدخول للفواي.",
   },
   "/bourse": {
     title: "البورص و المنحة",
-    description: "دليل البورص الكاملة و منحة الإدماج في ISET Zaghouan: الشروط و الأوراق المطلوبة.",
+    description: "دليل المنحة الجامعية (البورص) ومنحة الإدماج لطلبة ISET Zaghouan: شروط الانتفاع، الوثائق المطلوبة، ملف OOUN، ومواعيد صرف المنح للطلبة.",
   },
   "/transport": {
     title: "النقل و المواصلات",
-    description: "لواجات النقل، أسعار الكيران، و معلومات المواصلات من و إلى ISET Zaghouan.",
+    description: "دليل النقل والمواصلات من وإلى ISET Zaghouan: محطات ومسارات اللواجات، خطوط واشتراكات الكيران، الطاكسي جماعي، وأسهل الطرق للوصول للمعهد.",
   },
   "/resto": {
     title: "الريستو الجامعي",
-    description: "أوقات الوجبات، قائمة الريستو، و نصايح للطلبة في ISET Zaghouan.",
+    description: "دليل الريستو والمطعم الجامعي في ISET Zaghouan: أوقات وجبات الغداء والعشاء، سعر التذاكر، قائمة المأكولات، ونصائح عملية للطلبة الجدد.",
   },
   "/stages": {
     title: "الستاجات",
@@ -39,31 +39,31 @@ export const PAGE_SEO = {
   },
   "/stages/pfe": {
     title: "دليل PFE",
-    description: "دليل Projet de Fin d'Études (PFE ISET Zaghouan) الكامل: التخطيط، كتابة rapport، présentation، و soutenance.",
+    description: "دليل مشروع التخرج PFE في ISET Zaghouan: خطوات اختيار الموضوع، إعداد التقرير والعرض التقديمي، نصائح الـ Soutenance، ونماذج جاهزة للتحميل.",
   },
   "/stages/companies": {
     title: "دليل شركات الستاج",
-    description: "دوّر على شركة للستاج في ISET Zaghouan: قائمة رسمية من مصالح التربصات مع العناوين وأرقام التواصل.",
+    description: "دليل شركات التربصات لطلبة ISET Zaghouan: قاعدة بيانات موثوقة بالشركات والمؤسسات مع أرقام الهاتف والعناوين لمساعدتك في إيجاد ستاجك بسهولة.",
   },
   "/library": {
     title: "المكتبة",
-    description: "معلومات المكتبة الجامعية، المراجع، و موارد القراية في ISET Zaghouan.",
+    description: "دليل المكتبة الجامعية في ISET Zaghouan: أوقات الفتح، كيفية الإعارة، بنك الامتحانات والفروض السابقة (DS & Examens)، والمراجع المتوفرة للمراجعة.",
   },
   "/clubs": {
     title: "النوادي الطلابية",
-    description: "دليل النوادي و الأنشطة في ISET Zaghouan: SecuriNets، Robotique، Enactus، IEEE، SOS، و أكثر.",
+    description: "دليل النوادي والأنشطة الطلابية في ISET Zaghouan: اكتشف نوادي SecuriNets و Robotique و Enactus و IEEE و SOS، وطوّر مهاراتك وانضم للمجتمع الطلابي.",
   },
   "/clubs/securinets": {
     title: "نادي SecuriNets",
-    description: "جمعية الأمن السيبراني SecuriNets في ISET Zaghouan: الأنشطة، الفوايد، و كيفاش تنضم.",
+    description: "نادي SecuriNets في ISET Zaghouan: نادي الأمن السيبراني واختبار الاختراق، ورشات العمل، المشاركة في مسابقات CTF، وكيفية الانضمام للفريق.",
   },
   "/clubs/robotique": {
     title: "Club Robotique ISET Zaghouan",
-    description: "Club Robotique ISET Zaghouan: ورشات Arduino/C/Python، إلكترونيك، مشاريع روبوتية، hackathons وتحديات تقنية.",
+    description: "نادي الروبوتيك بـ ISET Zaghouan: ورشات تطبيقية في Arduino والإلكترونيك والبرمجة، مشاريع روبوتية مبتكرة، والمشاركة في التحديات والهاكاثونات.",
   },
   "/clubs/enactus": {
     title: "نادي Enactus",
-    description: "نادي Enactus في ISET Zaghouan: ريادة الأعمال، المشاريع الاجتماعية، و الفرص للطلبة.",
+    description: "نادي Enactus في ISET Zaghouan: ريادة الأعمال والمشاريع الاجتماعية، تنمية مهارات القيادة والعمل الجماعي، والمنافسة في المسابقة الوطنية السنوية.",
   },
   "/clubs/ieee": {
     title: "IEEE ISET Zaghouan Student Branch",
@@ -71,47 +71,47 @@ export const PAGE_SEO = {
   },
   "/clubs/sos-ambassadeurs": {
     title: "نادي سفراء قرى الأطفال SOS",
-    description: "Club Ambassadeurs SOS Village بـ ISET Zaghouan: عمل تطوعي، مبادرات إنسانية وثقافية، و جائزة أفضل نادٍ صاعد وطنياً 2026.",
+    description: "نادي سفراء قرى الأطفال SOS بـ ISET Zaghouan: مبادرات إنسانية وثقافية، عمل تطوعي ومجتمعي، وتتويج كأفضل نادٍ صاعد على المستوى الوطني.",
   },
   "/clubs/procegenius": {
     title: "Club ProceGenius",
-    description: "ProceGenius هو نادي علمي في ISET Zaghouan يلم المغرومين بهندسة العمليات باش يطورو مهاراتهم ويشجعو على الابتكار.",
+    description: "نادي ProceGenius في ISET Zaghouan: النادي العلمي لطلبة هندسة العمليات لتبادل الخبرات، ورشات تكوينية متخصصة، ومشاريع تطبيقية في الصناعة الكيميائية والغذائية.",
   },
   "/departments": {
     title: "الأقسام العلمية",
-    description: "نظرة عامة على أقسام TI، SEG، و GPR في ISET Zaghouan.",
+    description: "الأقسام العلمية في ISET Zaghouan: تعرّف على اختصاصات تكنولوجيا المعلومات (TI)، العلوم الاقتصادية والتصرف (SEG)، وهندسة العمليات (GPR) والمسارات الدراسية.",
   },
   "/departments/ti": {
     title: "قسم تكنولوجيا المعلومات (TI)",
-    description: "تخصصات DSI و RSI، المواد، و المراجع لقسم TI في ISET Zaghouan.",
+    description: "قسم تكنولوجيا المعلومات (TI) بـ ISET Zaghouan: مسارات DSI و RSI، البرمجة، الشبكات، البرامج التعليمية والمصادر المجانية للطلبة.",
   },
   "/departments/seg": {
     title: "قسم الاقتصاد و التصرف (SEG)",
-    description: "تخصصات المحاسبة، المالية، و إدارة الأعمال في قسم SEG بـ ISET Zaghouan.",
+    description: "قسم العلوم الاقتصادية والتصرف (SEG) بـ ISET Zaghouan: دراسة المحاسبة، المالية، وإدارة الأعمال، خطط المواد، والآفاق المهنية للخريجين.",
   },
   "/departments/gpr": {
     title: "قسم هندسة العمليات (GPR)",
-    description: "تخصصات الأساليب الكيميائية و الأفاق المهنية في قسم GPR بـ ISET Zaghouan.",
+    description: "قسم هندسة العمليات (GPR) بـ ISET Zaghouan: تخصصات الأساليب الكيميائية والغذائية، التجارب المخبرية، وفرص العمل في القطاع الصناعي ومراقبة الجودة.",
   },
   "/masters": {
     title: "برامج الماستر",
-    description: "برامج الماستر المتوفرة (Mastère ISET Zaghouan) و شروط الولوج في ISET Zaghouan.",
+    description: "برامج الماستر المهني في ISET Zaghouan: ماستيرات ISID و E2I و MOPIL و GTVDI، شروط القبول وملفات الترشح والآفاق الأكاديمية والمهنية.",
   },
   "/explore": {
     title: "اكتشف زغوان",
-    description: "أحسن البلايص للقراية، الكافيهات، و الأنشطة في مدينة زغوان للطلبة.",
+    description: "دليل مدينة زغوان للطلبة: أحسن المقاهي للدراسة، أماكن السكن والترفيه، المواقع الطبيعية والسياحية، وكل الخدمات القريبة من معهد ISET.",
   },
   "/faq": {
     title: "الأسئلة الشائعة",
-    description: "إجابات لأكثر الأسئلة اللي يسألوها الجداد في ISET Zaghouan.",
+    description: "الأسئلة الشائعة وإجاباتها لطلبة ISET Zaghouan: كل الاستفسارات حول الترسيم، المبيت، الستاجات، الامتحانات، والحياة الجامعية في مكان واحد.",
   },
   "/bonus": {
     title: "نصائح و إهداء",
-    description: "نصايح عملية للجداد و شكر المساهمين في دليل ISET Zaghouan.",
+    description: "نصائح عملية وتجارب حقيقية للنجاح في ISET Zaghouan للطلبة الجدد، مع شكر وتقدير لكل المساهمين والنوادي التي ساعدت في بناء هذا الدليل.",
   },
   "/about": {
     title: "عن المنصة",
-    description: "Guide ISET Zaghouan هي منصة مستقلة للطلبة، تم تطويرها لتسهيل الحياة الجامعية وجمع المعلومات.",
+    description: "عن دليل ISET Zaghouan Hub: منصة طلابية مستقلة ومجانية، طُوّرت من قبل الطلبة لمساعدة زملائهم وتوفير كل المعلومات والمراجع الجامعية الموثوقة.",
   },
 } as const satisfies Record<string, { title: string; description: string }>;
 

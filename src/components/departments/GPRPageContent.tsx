@@ -6,6 +6,7 @@ import { Link2 } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { DepartmentScheduleDisclaimer } from "@/components/departments/DepartmentScheduleDisclaimer";
+import { RelatedDepartmentsNav } from "@/components/ui/RelatedNav";
 
 const semesterGalleryImages = [
   "/images/departments/GPR/8b38c86c-d857-42af-af22-0e62fbabab11.webp",
@@ -243,6 +244,8 @@ export function GPRPageContent() {
           </a>
         </div>
       </div>
+
+      <RelatedDepartmentsNav currentDept="GPR" />
     </>
   );
 }

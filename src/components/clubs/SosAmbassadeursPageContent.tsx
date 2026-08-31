@@ -11,6 +11,7 @@ import { Card, Alert } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
+import { RelatedClubsNav } from "@/components/ui/RelatedNav";
 
 const SOS_COLOR = "#E30613";
 const IMAGE_BASE = "/images/clubs/sos-ambassadeurs";
@@ -181,6 +182,8 @@ export function SosAmbassadeursPageContent({ galleryImages }: Props) {
         </h2>
         <PhotoGallery images={galleryImages} initialVisibleCount={12} altPrefix="SOS Ambassadeurs" />
       </div>
+
+      <RelatedClubsNav currentClubId="sos-ambassadeurs" />
       </PageWrapper>
     </>
   );

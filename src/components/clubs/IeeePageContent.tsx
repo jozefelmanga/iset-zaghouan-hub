@@ -13,6 +13,7 @@ import { Card } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
+import { RelatedClubsNav } from "@/components/ui/RelatedNav";
 
 const IEEE_COLOR = "#00629B";
 const IEEE_BASE = "/images/clubs/ieee";
@@ -182,6 +183,8 @@ export function IeeePageContent({ galleryImages }: Props) {
         </h2>
         <PhotoGallery images={galleryImages} initialVisibleCount={12} altPrefix="IEEE" />
       </div>
+
+      <RelatedClubsNav currentClubId="ieee" />
       </PageWrapper>
     </>
   );

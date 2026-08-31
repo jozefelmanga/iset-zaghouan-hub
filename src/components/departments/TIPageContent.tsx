@@ -6,6 +6,7 @@ import { Link2, ExternalLink } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { DepartmentScheduleDisclaimer } from "@/components/departments/DepartmentScheduleDisclaimer";
+import { RelatedDepartmentsNav } from "@/components/ui/RelatedNav";
 import { afterGraduationGuide } from "@/data/resources";
 
 const semesterGalleryImages = [
@@ -344,6 +345,8 @@ export function TIPageContent() {
           ))}
         </div>
       </div>
+
+      <RelatedDepartmentsNav currentDept="TI" />
     </>
   );
 }

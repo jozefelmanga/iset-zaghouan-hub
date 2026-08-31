@@ -145,6 +145,15 @@ export default function PfePage() {
               Guide PFE — SEG
             </a>
           </div>
+
+          <div style={{ marginTop: "16px", paddingTop: "14px", borderTop: "1px solid rgba(139,92,246,0.12)", display: "flex", flexWrap: "wrap", gap: "10px", alignItems: "center" }}>
+            <span style={{ fontSize: "12.5px", color: "var(--color-text-muted)" }}>تصفح تفاصيل قسمك ومقرراته:</span>
+            <Link href="/departments/ti" style={{ fontSize: "12.5px", fontWeight: 600, color: "#2563EB", textDecoration: "none" }}>قسم TI</Link>
+            <span style={{ color: "var(--color-border)" }}>•</span>
+            <Link href="/departments/gpr" style={{ fontSize: "12.5px", fontWeight: 600, color: "#15803d", textDecoration: "none" }}>قسم GPR</Link>
+            <span style={{ color: "var(--color-border)" }}>•</span>
+            <Link href="/departments/seg" style={{ fontSize: "12.5px", fontWeight: 600, color: "#7c3aed", textDecoration: "none" }}>قسم SEG</Link>
+          </div>
         </div>
       </MotionReveal>
 

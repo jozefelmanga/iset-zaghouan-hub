@@ -19,6 +19,7 @@ import { Card } from "@/components/ui/shared";
 import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
+import { RelatedClubsNav } from "@/components/ui/RelatedNav";
 
 const ROBOTIQUE_COLOR = "#2563EB";
 const ROBOTIQUE_BASE = "/images/clubs/robotique";
@@ -280,6 +281,8 @@ export function RobotiquePageContent({ galleryImages }: Props) {
         </h2>
         <PhotoGallery images={galleryImages} initialVisibleCount={12} altPrefix="Robotique" />
       </div>
+
+      <RelatedClubsNav currentClubId="robotique" />
       </PageWrapper>
     </>
   );

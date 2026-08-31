@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GraduationCap, Layers } from "@/lib/icons";
+import Link from "next/link";
+import { GraduationCap, Layers, ArrowLeft } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { masterPrograms, masterFilterTabs } from "@/data/departments";
@@ -72,27 +73,54 @@ export function MastersProgramGrid() {
               <Card elevation="raised" padding="24px" style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div>
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px" }}>
-                    <span
-                      style={{
-                        padding: "4px 12px",
-                        borderRadius: "999px",
-                        fontSize: "11px",
-                        fontWeight: 700,
-                        background: master.bg,
-                        color: master.color,
-                        border: `1px solid ${master.border}`,
-                      }}
+                    <Link
+                      href={`/departments/${master.dept.toLowerCase()}`}
+                      style={{ textDecoration: "none" }}
                     >
-                      {master.deptFullName}
-                    </span>
+                      <span
+                        style={{
+                          padding: "4px 12px",
+                          borderRadius: "999px",
+                          fontSize: "11px",
+                          fontWeight: 700,
+                          background: master.bg,
+                          color: master.color,
+                          border: `1px solid ${master.border}`,
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "4px",
+                          cursor: "pointer",
+                        }}
+                      >
+                        {master.deptFullName}
+                        <ArrowLeft size={11} />
+                      </span>
+                    </Link>
                     <GraduationCap size={18} style={{ color: master.color }} />
                   </div>
                   <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.5, marginBottom: "10px" }}>
                     {master.name}
                   </h3>
-                  <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "20px" }}>
+                  <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "12px" }}>
                     {master.description}
                   </p>
+                  <div style={{ marginBottom: "16px" }}>
+                    <Link
+                      href={`/departments/${master.dept.toLowerCase()}`}
+                      style={{
+                        fontSize: "12.5px",
+                        fontWeight: 600,
+                        color: master.color,
+                        textDecoration: "none",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "4px",
+                      }}
+                    >
+                      <span>تصفح قسم {master.dept} والمواد الأساسية</span>
+                      <ArrowLeft size={12} />
+                    </Link>
+                  </div>
                 </div>
                 <div style={{ marginTop: "auto" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "10px" }}>

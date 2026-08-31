@@ -6,6 +6,7 @@ import { Link2, ExternalLink } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { DepartmentScheduleDisclaimer } from "@/components/departments/DepartmentScheduleDisclaimer";
+import { RelatedDepartmentsNav } from "@/components/ui/RelatedNav";
 
 const semesterGalleryImages = [
   "/images/departments/SEG/4a931b05-723c-48de-a3c2-ca9a82aa3b86.webp",
@@ -264,6 +265,8 @@ export function SEGPageContent() {
           </a>
         </div>
       </div>
+
+      <RelatedDepartmentsNav currentDept="SEG" />
     </>
   );
 }

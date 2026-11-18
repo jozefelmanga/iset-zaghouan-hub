@@ -26,23 +26,6 @@ function parseContact(web) {
   return { website };
 }
 
-// Corrections applied on top of the spreadsheet, keyed by company name.
-// A field set to null is removed (e.g. a website whose domain no longer exists).
-const OVERRIDES = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "stage-company-overrides.json"), "utf8"),
-);
-
-function applyOverrides(company) {
-  const patch = OVERRIDES[company.name];
-  if (!patch) return company;
-  const result = { ...company };
-  for (const [key, value] of Object.entries(patch)) {
-    if (value === null) delete result[key];
-    else result[key] = value;
-  }
-  return result;
-}
-
 const workbook = XLSX.readFile(INPUT);
 const sheet = workbook.Sheets[workbook.SheetNames[0]];
 const rows = XLSX.utils.sheet_to_json(sheet);
@@ -66,7 +49,6 @@ const companies = rows
     };
   })
   .filter(Boolean)
-  .map(applyOverrides)
   .sort((a, b) => a.name.localeCompare(b.name, "fr", { sensitivity: "base" }));
 
 fs.writeFileSync(OUTPUT, JSON.stringify(companies, null, 0));

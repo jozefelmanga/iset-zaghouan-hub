@@ -1,10 +1,11 @@
 "use client";
 
 import {
-  Key, ImageIcon, ExternalLink, Globe, ArrowLeft,
+  Key, ImageIcon, ExternalLink, Globe, ArrowLeft, FileText, ListChecks,
 } from "@/lib/icons";
 import { Card, Alert } from "@/components/ui/shared";
-import { housingProcess, housingRegistration } from "@/data/housing";
+import { housingProcess, housingRegistration, housingEligibility, housingDocuments } from "@/data/housing";
+import { DocumentChecklist } from "@/components/ui/DocumentChecklist";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { HousingCrossLink } from "@/components/housing/HousingCrossLink";
 
@@ -23,7 +24,7 @@ export function HousingInscriptionContent() {
           <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Globe size={16} strokeWidth={2} />
           </div>
-          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>كيفاش ترسّم في المبيت؟</span>
+          <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>كيفاش ترسّم في المبيت الجامعي؟</h2>
         </div>
 
         <Alert title="قبل ما تختار الفواي" variant="info">
@@ -74,11 +75,27 @@ export function HousingInscriptionContent() {
         </div>
 
         <div style={{ marginTop: "28px" }}>
+          <DocumentChecklist
+            title="شروط الانتفاع بالمبيت الجامعي"
+            icon={<ListChecks size={16} strokeWidth={2} />}
+            items={housingEligibility}
+            accent="#3B82F6"
+          />
+          <DocumentChecklist
+            title="أوراق الترسيم في المبيت الجامعي"
+            icon={<FileText size={16} strokeWidth={2} />}
+            items={housingDocuments}
+            intro="كيف تجيك الموافقة على السكن، عندك أسبوع باش تمشي للمبيت و معاك الأوراق هاذي:"
+            footer="المصدر: دليل الاتحاد العام التونسي للطلبة (UGTE). ثبّت ديما في وثيقة الإعلام بالموافقة متاعك."
+          />
+        </div>
+
+        <div style={{ marginTop: "28px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
             <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(34,197,94,0.10)", color: "#22C55E", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <ImageIcon size={16} strokeWidth={2} />
             </div>
-            <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>دليل وثائق ومعلومات المبيت الجامعي 📋</span>
+            <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>صور: دليل وثائق ومعلومات المبيت الجامعي 📋</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
             {housingDocsGallery.map(({ src, alt }) => (

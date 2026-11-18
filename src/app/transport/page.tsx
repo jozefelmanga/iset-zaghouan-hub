@@ -23,7 +23,7 @@ export default function TransportPage() {
       <StaticPageHeader
         icon="bus"
         label="الحياة الجامعية"
-        title="النقل و المواصلات"
+        title="النقل و توقيت الحافلات تونس زغوان"
         subtitle="كل الطرق باش تروح و تجي من ISET Zaghouan"
         category="life"
       />
@@ -33,7 +33,7 @@ export default function TransportPage() {
           <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Bus size={16} strokeWidth={2} />
           </div>
-          <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>جداول مواعيد الكار الرسمية (SRTN) 🚌</span>
+          <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>توقيت الحافلات: جداول مواعيد الكار الرسمية (SRTN) 🚌</h2>
         </div>
         <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "14px" }}>
           {transportSrtn.tip}

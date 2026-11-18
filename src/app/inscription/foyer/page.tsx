@@ -20,7 +20,7 @@ export default function FoyerInscriptionPage() {
       <StaticPageHeader
         icon="building"
         label="الترسيم الجامعي"
-        title="الترسيم في المبيت"
+        title="الترسيم في المبيت الجامعي: الأوراق و الخطوات"
         subtitle="خطوات التسجيل، الأوراق، و يوم الترسيم في الفواي"
         category="academic"
       />

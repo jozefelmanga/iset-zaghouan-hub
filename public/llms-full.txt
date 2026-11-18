@@ -40,7 +40,7 @@ New ISET Zaghouan students who need quick, practical answers about:
 ### Academics
 
 - [الترسيم الجامعي](https://guideisetzg.tn/inscription): دليل الترسيم الجامعي في ISET Zaghouan (inscription ISET Zaghouan): الخطوات، موقع الترسيم عبر E-dinar، الأوراق المطلوبة، ومواعيد الترسيم.
-- [الترسيم في المبيت](https://guideisetzg.tn/inscription/foyer): خطوات الترسيم في المبيت الجامعي بـ ISET Zaghouan: التسجيل عبر موقع OOUN، الخلاص ببطاقة E-dinar، الأوراق المطلوبة، وإجراءات يوم الدخول للفواي.
+- [أوراق الترسيم في المبيت الجامعي 2026-2027](https://guideisetzg.tn/inscription/foyer): أوراق الترسيم في المبيت الجامعي و شروط الانتفاع بالسكن لطلبة ISET Zaghouan: قائمة الوثائق كاملة، التسجيل في موقع OOUN، الخلاص بـ E-dinar و يوم الدخول للفواي.
 - [المكتبة](https://guideisetzg.tn/library): دليل المكتبة الجامعية في ISET Zaghouan: أوقات الفتح، كيفية الإعارة، بنك الامتحانات والفروض السابقة (DS & Examens)، والمراجع المتوفرة للمراجعة.
 - [الأقسام العلمية](https://guideisetzg.tn/departments): الأقسام العلمية في ISET Zaghouan: تعرّف على اختصاصات تكنولوجيا المعلومات (TI)، العلوم الاقتصادية والتصرف (SEG)، وهندسة العمليات (GPR) والمسارات الدراسية.
 - [قسم تكنولوجيا المعلومات (TI)](https://guideisetzg.tn/departments/ti): قسم تكنولوجيا المعلومات (TI) بـ ISET Zaghouan: مسارات DSI و RSI، البرمجة، الشبكات، البرامج التعليمية والمصادر المجانية للطلبة.
@@ -51,8 +51,8 @@ New ISET Zaghouan students who need quick, practical answers about:
 ### Student Life
 
 - [المبيت الجامعي](https://guideisetzg.tn/housing): دليل السكن والمبيت الجامعي في زغوان (مبيت المكرن): معلومات فواي البنات والأولاد، الوثائق المطلوبة، الصور، ونصائح عملية للعيش في الفواي.
-- [البورص و المنحة](https://guideisetzg.tn/bourse): دليل المنحة الجامعية (البورص) ومنحة الإدماج لطلبة ISET Zaghouan: شروط الانتفاع، الوثائق المطلوبة، ملف OOUN، ومواعيد صرف المنح للطلبة.
-- [النقل و المواصلات](https://guideisetzg.tn/transport): دليل النقل والمواصلات من وإلى ISET Zaghouan: محطات ومسارات اللواجات، خطوط واشتراكات الكيران، الطاكسي جماعي، وأسهل الطرق للوصول للمعهد.
+- [أوراق البورص و منحة الإدماج 2026-2027](https://guideisetzg.tn/bourse): قائمة أوراق البورص و منحة الإدماج (500 د) كاملة، شروط المنحة الجامعية، مراحل التقديم للديوان، و مبالغ و مواعيد الدفعات لطلبة ISET Zaghouan.
+- [توقيت الحافلات تونس زغوان 2026 و النقل](https://guideisetzg.tn/transport): توقيت الحافلات (الكار) تونس زغوان و زغوان تونس 2026، جداول SRTN، اللواجات، الأبونمان و أسهل الطرق للوصول لـ ISET Zaghouan.
 - [الريستو الجامعي](https://guideisetzg.tn/resto): دليل الريستو والمطعم الجامعي في ISET Zaghouan: أوقات وجبات الغداء والعشاء، سعر التذاكر، قائمة المأكولات، ونصائح عملية للطلبة الجدد.
 - [النوادي الطلابية](https://guideisetzg.tn/clubs): دليل النوادي والأنشطة الطلابية في ISET Zaghouan: اكتشف نوادي SecuriNets و Robotique و Enactus و IEEE و SOS، وطوّر مهاراتك وانضم للمجتمع الطلابي.
 - [نادي SecuriNets](https://guideisetzg.tn/clubs/securinets): نادي SecuriNets في ISET Zaghouan: نادي الأمن السيبراني واختبار الاختراق، ورشات العمل، المشاركة في مسابقات CTF، وكيفية الانضمام للفريق.
@@ -65,8 +65,8 @@ New ISET Zaghouan students who need quick, practical answers about:
 ### Career
 
 - [الستاجات](https://guideisetzg.tn/stages): دليل ستاجات ISET Zaghouan (stage ISET Zaghouan): مسار تفاعلي، إجراءات إدارية، مواعيد، شعارات، نماذج SEG، حاسبة المعدل، و نصايح التربص.
-- [دليل PFE](https://guideisetzg.tn/stages/pfe): دليل مشروع التخرج PFE في ISET Zaghouan: خطوات اختيار الموضوع، إعداد التقرير والعرض التقديمي، نصائح الـ Soutenance، ونماذج جاهزة للتحميل.
-- [دليل شركات الستاج](https://guideisetzg.tn/stages/companies): دليل شركات التربصات لطلبة ISET Zaghouan: قاعدة بيانات موثوقة بالشركات والمؤسسات مع أرقام الهاتف والعناوين لمساعدتك في إيجاد ستاجك بسهولة.
+- [PFE: شنوة مشروع التخرج و كيفاش تحضّرو](https://guideisetzg.tn/stages/pfe): شنوة معنى PFE (Projet de Fin d'Études) و دليل مشروع التخرج في ISET Zaghouan: اختيار الموضوع، التقرير، العرض التقديمي، الـ Soutenance و نماذج للتحميل.
+- [شركات الستاج: دليل الشركات للتربص](https://guideisetzg.tn/stages/companies): دليل شركات التربصات لطلبة ISET Zaghouan: قاعدة بيانات موثوقة بالشركات والمؤسسات مع أرقام الهاتف والعناوين لمساعدتك في إيجاد ستاجك بسهولة.
 
 ### Campus & City
 

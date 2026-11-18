@@ -30,6 +30,8 @@ export {
   GraduationCap,
   BookOpen,
   FileText,
+  ListOrdered,
+  ListChecks,
   Award,
   Printer,
   Copy,

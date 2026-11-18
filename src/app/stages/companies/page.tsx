@@ -34,7 +34,7 @@ export default function StageCompaniesPage() {
       <StaticPageHeader
         icon="building"
         label="دليل الشركات"
-        title="دوّر على شركة للستاج"
+        title="دليل شركات الستاج لطلبة ISET Zaghouan"
         subtitle={`${stageCompanyCount} شركة من مصالح التربصات — دوّر بالاسم، المدينة، أو العنوان`}
         category="career"
       />

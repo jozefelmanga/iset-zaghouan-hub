@@ -317,11 +317,6 @@ export function TIPageContent() {
               link: "https://t3alem.tn/",
             },
             {
-              title: "مكتبة كتب البرمجة PDF",
-              desc: "مجموعة ضخمة من الكتب البرمجية لأي لغة تحتاجها",
-              link: "https://shorturl.at/Yh4L8",
-            },
-            {
               title: "Drive ISET Zaghouan",
               desc: "درايف خاص بالقسم مجهّز ومعد من طرف الطالب يوسف بن سالم",
               link: "https://bit.ly/ISET_Zaghouan",

@@ -197,13 +197,13 @@ export const internshipAdminSteps = [
 
 export const internshipJobPlatforms = [
   { name: "Hi Interns", href: "https://hi-interns.com/en" },
-  { name: "Indeed Tunisie", href: "https://tn.indeed.com/" },
+  { name: "Keejob", href: "https://www.keejob.com/" },
   { name: "Tanitjobs", href: "https://www.tanitjobs.com/" },
 ];
 
 export const internshipJobSearchTips = [
   "Networking — تواصل مع محترفين في مجالك",
-  "منصات التوظيف — Indeed، Tanitjobs، Hi Interns",
+  "منصات التوظيف — Keejob، Tanitjobs، Hi Interns",
   "موارد الجامعة — مصالح التربصات و الأساتذة",
   "مواقع الشركات — candidature مباشرة",
 ];

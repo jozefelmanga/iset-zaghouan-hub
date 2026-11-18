@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 /** Single source of truth for per-route SEO — keyed by pathname. */
 export const PAGE_SEO = {
   "/": {
-    title: "الرئيسية — دليل الطالب",
+    // The root layout's title template doesn't apply to the root page, so add the site name here.
+    title: "الرئيسية — دليل الطالب | ISET Zaghouan Hub",
     description:
       "دليل الطالب الشامل في ISET Zaghouan: كل ما تحتاجه حول الترسيم الجامعي، المبيت، النقل، البورص، الستاجات، والنوادي لتسهيل مسارك الدراسي.",
   },

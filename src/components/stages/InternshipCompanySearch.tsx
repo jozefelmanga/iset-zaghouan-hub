@@ -6,9 +6,72 @@ import { Card } from "@/components/ui/shared";
 import { stageCompanies } from "@/data/stage-companies";
 
 const PAGE_SIZE = 24;
+const ABROAD = "abroad";
 
-function normalize(text: string) {
-  return text.toLowerCase();
+/** Arabic names, so students can search "سوسة" or "فرنسا" as well as the French name. */
+const REGION_AR: Record<string, string> = {
+  Tunis: "تونس",
+  Ariana: "أريانة",
+  "Ben Arous": "بن عروس",
+  Sousse: "سوسة",
+  Monastir: "المنستير",
+  Nabeul: "نابل",
+  Sfax: "صفاقس",
+  Mahdia: "المهدية",
+  Béja: "باجة",
+  Gabès: "قابس",
+  Zaghouan: "زغوان",
+  Médenine: "مدنين",
+  France: "فرنسا",
+  Allemagne: "ألمانيا",
+  "Royaume-Uni": "بريطانيا",
+  Canada: "كندا",
+  Égypte: "مصر",
+  Maroc: "المغرب",
+  Turquie: "تركيا",
+};
+const ABROAD_REGIONS = new Set(["France", "Allemagne", "Royaume-Uni", "Canada", "Égypte", "Maroc", "Turquie"]);
+
+/** Case-, accent- and punctuation-insensitive form; also folds Arabic letter variants. */
+function fold(text: string) {
+  return text
+    .normalize("NFD")
+    .replace(/[̀-ًͯ-ٟ]/g, "")
+    .toLowerCase()
+    .replace(/[أإآ]/g, "ا")
+    .replace(/ة/g, "ه")
+    .replace(/ى/g, "ي")
+    .replace(/[^\p{L}\p{N}@.]+/gu, " ")
+    .trim();
+}
+
+const indexed = stageCompanies.map((company) => {
+  const regionAr = company.region ? REGION_AR[company.region] : undefined;
+  return {
+    company,
+    name: fold(company.name),
+    haystack: fold(
+      [
+        company.name,
+        company.city,
+        company.region,
+        regionAr,
+        company.region && ABROAD_REGIONS.has(company.region) ? "خارج تونس abroad etranger" : undefined,
+        company.address,
+        company.phone,
+        company.phone?.replace(/\D/g, ""),
+        company.email,
+        company.website,
+      ]
+        .filter(Boolean)
+        .join(" ")
+    ),
+  };
+});
+
+function regionMatches(region: string | undefined, filter: string) {
+  if (filter === ABROAD) return !!region && ABROAD_REGIONS.has(region);
+  return region === filter;
 }
 
 function formatWebsite(url: string) {
@@ -20,32 +83,37 @@ export function InternshipCompanySearch() {
   const [cityFilter, setCityFilter] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  const cities = useMemo(() => {
+  // Tunisian regions by size, then one chip for every company abroad.
+  const regions = useMemo(() => {
     const counts = new Map<string, number>();
-    for (const company of stageCompanies) {
-      if (!company.city) continue;
-      const key = company.city.trim();
-      counts.set(key, (counts.get(key) ?? 0) + 1);
+    let abroad = 0;
+    for (const { region } of stageCompanies) {
+      if (!region) continue;
+      if (ABROAD_REGIONS.has(region)) abroad++;
+      else counts.set(region, (counts.get(region) ?? 0) + 1);
     }
-    return [...counts.entries()]
+    const list = [...counts.entries()]
       .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "fr"))
-      .map(([city]) => city);
+      .map(([value, count]) => ({ value, label: value, count }));
+    if (abroad) list.push({ value: ABROAD, label: "خارج تونس", count: abroad });
+    return list;
   }, []);
 
   const filtered = useMemo(() => {
-    const q = normalize(query.trim());
-    return stageCompanies.filter((company) => {
-      if (cityFilter && company.city?.toLowerCase() !== cityFilter.toLowerCase()) {
-        return false;
-      }
-      if (!q) return true;
-      const haystack = normalize(
-        [company.name, company.city, company.address, company.phone, company.email, company.website]
-          .filter(Boolean)
-          .join(" ")
-      );
-      return haystack.includes(q);
+    const tokens = fold(query).split(" ").filter(Boolean);
+    const matches = indexed.filter(({ company, haystack }) => {
+      if (cityFilter && !regionMatches(company.region, cityFilter)) return false;
+      // Every word must appear somewhere, in any order.
+      return tokens.every((token) => haystack.includes(token));
     });
+    if (!tokens.length) return matches.map((m) => m.company);
+    // Companies whose name matches come first, name-prefix matches before the rest.
+    const q = tokens.join(" ");
+    const rank = (name: string) => (name.startsWith(q) ? 0 : tokens.every((t) => name.includes(t)) ? 1 : 2);
+    return matches
+      .map((m, i) => ({ m, i, r: rank(m.name) }))
+      .sort((a, b) => a.r - b.r || a.i - b.i)
+      .map(({ m }) => m.company);
   }, [query, cityFilter]);
 
   const visible = filtered.slice(0, visibleCount);
@@ -98,7 +166,7 @@ export function InternshipCompanySearch() {
             setQuery(e.target.value);
             setVisibleCount(PAGE_SIZE);
           }}
-          placeholder="دوّر على شركة، مدينة، عنوان..."
+          placeholder="دوّر على شركة، مدينة (Sousse أو سوسة)، عنوان، تليفون..."
           style={{
             width: "100%",
             padding: "12px 40px 12px 14px",
@@ -133,10 +201,11 @@ export function InternshipCompanySearch() {
         >
           الكل
         </button>
-        {cities.slice(0, 12).map((city) => (
+        {regions.map(({ value: city, label, count }) => (
           <button
             key={city}
             type="button"
+            aria-pressed={cityFilter === city}
             onClick={() => {
               setCityFilter(cityFilter === city ? null : city);
               setVisibleCount(PAGE_SIZE);
@@ -153,7 +222,7 @@ export function InternshipCompanySearch() {
               border: cityFilter === city ? "1px solid rgba(99,102,241,0.4)" : "1px solid var(--color-border)",
             }}
           >
-            {city}
+            {label} <span style={{ opacity: 0.6, fontWeight: 500 }}>{count}</span>
           </button>
         ))}
       </div>
@@ -172,10 +241,10 @@ export function InternshipCompanySearch() {
                 </div>
                 <div style={{ minWidth: 0 }}>
                   <p style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", lineHeight: 1.4 }}>{company.name}</p>
-                  {company.city && (
+                  {(company.city || company.region) && (
                     <p style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "12px", color: "var(--color-secondary)", fontWeight: 600, marginTop: "4px" }}>
                       <MapPin size={12} strokeWidth={2} />
-                      {company.city}
+                      {company.city ?? company.region}
                     </p>
                   )}
                 </div>
@@ -229,6 +298,31 @@ export function InternshipCompanySearch() {
           <p style={{ textAlign: "center", fontSize: "14px", color: "var(--color-text-muted)" }}>
             ما لقيناش شركة بهالمعايير. جرّب كلمة أخرى أو شيل الفلتر.
           </p>
+          {(query || cityFilter) && (
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "12px" }}>
+              <button
+                type="button"
+                onClick={() => {
+                  setQuery("");
+                  setCityFilter(null);
+                  setVisibleCount(PAGE_SIZE);
+                }}
+                style={{
+                  padding: "8px 16px",
+                  borderRadius: "10px",
+                  border: "1px solid rgba(99,102,241,0.3)",
+                  background: "rgba(99,102,241,0.08)",
+                  color: "#6366F1",
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  fontFamily: "var(--font-sans)",
+                }}
+              >
+                امسح البحث و الفلتر
+              </button>
+            </div>
+          )}
         </Card>
       )}
 

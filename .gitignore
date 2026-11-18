@@ -45,3 +45,6 @@ next-env.d.ts
 
 # local planning docs (not committed)
 /mobile-perf-plan.md
+
+# Private analytics exports (Search Console, GA4)
+/analytics/

@@ -104,3 +104,57 @@ export const transportWarnings = [
     text: "إذا ما لقيتش نقل قدّام المعهد، تنجم تمشي للمقرن. بلاصة قريبة وعادةً تلقى منها نقل لعدة وجهات.",
   },
 ];
+
+/**
+ * Bus departure times for routes serving Zaghouan, transcribed from the SRTGN
+ * winter timetable (valid from 1 September 2023 — the latest one published).
+ * Marks: "*" no service Sundays & public holidays; "①" Sundays & public holidays only.
+ * Update `busTimetableSource` when SRTGN publishes a new timetable.
+ */
+export const busTimetableSource = {
+  label: "جدول SRTGN الشتوي — ساري من 1 سبتمبر 2023 (آخر جدول منشور)",
+  updated: "2023-09-01",
+};
+
+export const busTimetableNotes = [
+  { mark: "*", text: "ما تخدمش نهار الأحد و العطل الرسمية" },
+  { mark: "①", text: "تخدم كان نهار الأحد و العطل الرسمية" },
+] as const;
+
+export type BusRoute = {
+  id: string;
+  name: string;
+  lines: string;
+  from: { label: string; times: string[] };
+  to: { label: string; times: string[] };
+};
+
+export const busTimetables: BusRoute[] = [
+  {
+    id: "zaghouan-tunis",
+    name: "زغوان ⇄ تونس",
+    lines: "840 / 802",
+    from: {
+      label: "من زغوان",
+      times: ["05:00*", "05:45*", "06:45*", "08:00", "10:00*", "12:00", "13:00*", "14:00", "15:00*", "16:00", "17:30*"],
+    },
+    to: {
+      label: "من تونس",
+      times: ["06:30*", "07:15*", "08:30*", "09:30", "11:30*", "13:30", "14:30*", "15:30", "16:00①", "16:30*", "18:00", "19:00*"],
+    },
+  },
+  {
+    id: "zaghouan-nabeul",
+    name: "زغوان ⇄ نابل",
+    lines: "841 / 141 / 940",
+    from: { label: "من زغوان", times: ["05:00", "06:15", "11:00", "13:00", "15:00", "18:00"] },
+    to: { label: "من نابل", times: ["05:30", "07:30", "09:30", "14:30", "15:30", "17:00"] },
+  },
+  {
+    id: "zaghouan-sousse",
+    name: "زغوان ⇄ سوسة",
+    lines: "842",
+    from: { label: "من زغوان", times: ["06:00"] },
+    to: { label: "من سوسة", times: ["10:30"] },
+  },
+];

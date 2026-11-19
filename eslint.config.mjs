@@ -14,8 +14,6 @@ const eslintConfig = defineConfig([
     "dist/**",
     "next-env.d.ts",
     // Root-level utility scripts (CommonJS, not part of the app)
-    "fix-paths.js",
-    "fix_links.js",
     "optimize-images.mjs",
     "scripts/**",
   ]),

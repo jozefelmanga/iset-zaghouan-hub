@@ -1,6 +1,6 @@
 {
-  "homepageInitialJsGzipBytes": 249128,
-  "maxHomepageInitialJsGzipBytes": 280000,
-  "measuredAt": "2026-06-27",
-  "note": "Sum of gzip sizes for all <script src> tags in dist/index.html after Week 3 perf work (~243 KB)."
+  "homepageInitialJsGzipBytes": 237056,
+  "maxHomepageInitialJsGzipBytes": 255000,
+  "measuredAt": "2026-11-20",
+  "note": "Sum of gzip sizes for all <script src> tags in dist/index.html after removing Sentry and switching framer-motion to LazyMotion (~231.5 KB)."
 }

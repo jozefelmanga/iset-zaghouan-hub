@@ -308,6 +308,8 @@ export function PhotoGallery({
               <img
                 src={src}
                 alt={alt}
+                loading="lazy"
+                decoding="async"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
               <m.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle} aria-hidden="true">
@@ -442,6 +444,8 @@ export function ZoomableImage({
           height={imgHeight}
           decoding={priority ? "sync" : "async"}
           fetchPriority={priority ? "high" : "auto"}
+          // Gallery thumbnails below the fold only download when scrolled near.
+          loading={priority ? "eager" : "lazy"}
           style={{
             width: "100%",
             height: "100%",

@@ -48,3 +48,6 @@ next-env.d.ts
 
 # Private analytics exports (Search Console, GA4)
 /analytics/
+
+# Lighthouse CI reports
+.lighthouseci/

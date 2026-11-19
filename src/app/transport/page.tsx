@@ -5,6 +5,7 @@ import { Card, Alert } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { TransportBusGallery } from "@/components/transport/TransportBusGallery";
+import { BusTimetables } from "@/components/transport/BusTimetables";
 import { transportRoutes, transportTips, transportWarnings, transportAbonnement, transportSrtn } from "@/data/transport";
 import { getGalleryImages } from "@/lib/gallery";
 
@@ -85,6 +86,7 @@ export default function TransportPage() {
             <ExternalLink size={12} strokeWidth={2} style={{ opacity: 0.7 }} />
           </a>
         </div>
+        <BusTimetables />
         <TransportBusGallery galleryImages={images} />
       </div>
 

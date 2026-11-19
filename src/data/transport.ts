@@ -1,7 +1,7 @@
 export const transportSrtn = {
   website: {
-    label: "الموقع الرسمي",
-    href: "http://www.srtgn.com.tn/site/index.php",
+    label: "المواعيد الرسمية",
+    href: "http://www.srtgn.com.tn/site/horaires",
     display: "srtgn.com.tn",
   },
   facebook: {
@@ -106,19 +106,19 @@ export const transportWarnings = [
 ];
 
 /**
- * Bus departure times for routes serving Zaghouan, transcribed from the SRTGN
- * winter timetable (valid from 1 September 2023 — the latest one published).
- * Marks: "*" no service Sundays & public holidays; "①" Sundays & public holidays only.
- * Update `busTimetableSource` when SRTGN publishes a new timetable.
+ * Bus departure times for routes serving Zaghouan, copied from SRTGN's live
+ * timetable at http://www.srtgn.com.tn/site/horaires (checked 2026-11-19).
+ * Marks: "*" no service Sundays & public holidays.
+ * Re-check that page each September and update `checked`.
  */
 export const busTimetableSource = {
-  label: "جدول SRTGN الشتوي — ساري من 1 سبتمبر 2023 (آخر جدول منشور)",
-  updated: "2023-09-01",
+  label: "حسب جدول المواعيد الرسمي متاع SRTGN",
+  href: "http://www.srtgn.com.tn/site/horaires",
+  checked: "نوفمبر 2026",
 };
 
 export const busTimetableNotes = [
   { mark: "*", text: "ما تخدمش نهار الأحد و العطل الرسمية" },
-  { mark: "①", text: "تخدم كان نهار الأحد و العطل الرسمية" },
 ] as const;
 
 export type BusRoute = {
@@ -136,11 +136,11 @@ export const busTimetables: BusRoute[] = [
     lines: "840 / 802",
     from: {
       label: "من زغوان",
-      times: ["05:00*", "05:45*", "06:45*", "08:00", "10:00*", "12:00", "13:00*", "14:00", "15:00*", "16:00", "17:30*"],
+      times: ["05:00*", "05:45*", "06:45*", "08:00", "10:00*", "12:00", "14:00", "15:00*", "16:00", "17:30*"],
     },
     to: {
       label: "من تونس",
-      times: ["06:30*", "07:15*", "08:30*", "09:30", "11:30*", "13:30", "14:30*", "15:30", "16:00①", "16:30*", "18:00", "19:00*"],
+      times: ["06:30*", "07:15*", "08:30*", "09:30", "11:30*", "13:30", "15:30", "16:30*", "18:00", "19:00*"],
     },
   },
   {

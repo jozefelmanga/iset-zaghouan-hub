@@ -6,7 +6,11 @@ export function BusTimetables() {
   return (
     <div style={{ marginBottom: "20px" }}>
       <p style={{ fontSize: "12px", color: "var(--color-text-muted)", marginBottom: "14px", lineHeight: 1.6 }}>
-        {busTimetableSource.label}. ثبّت في الموقع الرسمي و صفحة Facebook قبل ما تخرج.
+        {busTimetableSource.label} (آخر مراجعة: {busTimetableSource.checked}).{" "}
+        <a href={busTimetableSource.href} target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-secondary-text)", fontWeight: 600 }}>
+          شوف المواعيد المحيّنة لكل الخطوط
+        </a>
+        . ثبّت قبل ما تخرج، خاصة في العطل و رمضان.
       </p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "14px" }}>
         {busTimetables.map((route) => (

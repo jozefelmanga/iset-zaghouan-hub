@@ -20,6 +20,8 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" data-scroll-behavior="smooth" className={`scroll-smooth ${tajawal.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.webmanifest" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="ISETZG Hub" />
         <link rel="alternate" type="text/markdown" title="LLMs" href="/llms.txt" />
         <link rel="preload" as="image" href="/images/banner.webp" fetchPriority="high" />
       </head>

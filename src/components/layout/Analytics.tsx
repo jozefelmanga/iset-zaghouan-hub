@@ -2,7 +2,6 @@
 
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import "@/../sentry.client.config";
 
 /**
  * Analytics components.

@@ -23,13 +23,6 @@ const tools = [
     link: "https://privacy.microsoft.com/privacystatement",
   },
   {
-    name: "Sentry",
-    owner: "Functional Software, Inc.",
-    what: "كي يصير خطأ تقني في الصفحة: نوع الخطأ، الصفحة، المتصفح و الجهاز.",
-    why: "باش نصلحو الأعطال بسرعة. ما يسجّلش الجلسة متاعك.",
-    link: "https://sentry.io/privacy/",
-  },
-  {
     name: "Vercel",
     owner: "Vercel Inc.",
     what: "الاستضافة متاع الموقع. كيما أي سيرفر، يسجّل معلومات تقنية كيف عنوان IP و وقت الزيارة.",

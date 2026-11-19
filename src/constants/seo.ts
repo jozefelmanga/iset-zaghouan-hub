@@ -112,7 +112,7 @@ export const PAGE_SEO = {
   },
   "/privacy": {
     title: "سياسة الخصوصية",
-    description: "سياسة الخصوصية متاع ISET Zaghouan Hub: شنية المعلومات اللي تجمعها أدوات الإحصائيات (Google Analytics، Clarity، Sentry)، علاش، و كيفاش توقفها.",
+    description: "سياسة الخصوصية متاع ISET Zaghouan Hub: شنية المعلومات اللي تجمعها أدوات الإحصائيات (Google Analytics و Microsoft Clarity)، علاش، و كيفاش توقفها.",
   },
   "/about": {
     title: "عن المنصة",

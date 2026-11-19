@@ -42,7 +42,7 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
 
   const url = new URL(request.url);
-  if (url.origin !== self.location.origin) return; // analytics, YouTube, Sentry: leave alone
+  if (url.origin !== self.location.origin) return; // analytics, YouTube: leave alone
 
   if (request.mode === "navigate") {
     event.respondWith(handlePage(request));

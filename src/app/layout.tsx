@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { RootShell } from "@/components/layout/RootShell";
 import { Analytics } from "@/components/layout/Analytics";
+import { ServiceWorkerRegister } from "@/components/layout/ServiceWorkerRegister";
 import { tajawal } from "@/lib/fonts";
 import { rootMetadata } from "@/lib/seo";
 import "./globals.css";
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className={`${tajawal.className} antialiased min-h-[100dvh]`}>
         <RootShell>{children}</RootShell>
         <Analytics />
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

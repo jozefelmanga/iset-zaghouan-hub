@@ -1,11 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { m } from "framer-motion";
 import { ArrowLeft } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";
 import { departmentIcons } from "@/lib/iconMaps";
-import { enterAnimation } from "@/lib/motion";
 
 import { textTint } from "@/lib/utils";
 type Department = (typeof import("@/data/departments").departmentList)[number];
@@ -14,7 +10,7 @@ export function DepartmentCard({ dept, index }: { dept: Department; index: numbe
   const Icon = departmentIcons[dept.icon];
 
   return (
-    <m.div {...enterAnimation(index * 0.1)}>
+    <div className="motion-reveal" style={{ animationDelay: `${index * 0.1}s` }}>
       <Card elevation="raised" padding="30px">
         <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "flex-start" }}>
           <div
@@ -79,26 +75,18 @@ export function DepartmentCard({ dept, index }: { dept: Department; index: numbe
               ))}
             </div>
 
-            <Link href={dept.href} style={{ textDecoration: "none" }}>
-              <m.div
-                whileHover={{ x: -4 }}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  fontSize: "13px",
-                  fontWeight: 600,
-                  color: textTint(dept.color),
-                  cursor: "pointer",
-                }}
+            <Link href={dept.href} className="no-underline">
+              <div
+                className="inline-flex cursor-pointer items-center gap-2 text-[13px] font-semibold transition-[translate] duration-200 hover:-translate-x-1"
+                style={{ color: textTint(dept.color) }}
               >
                 <span>عرض تفاصيل القسم والمواد</span>
                 <ArrowLeft size={14} />
-              </m.div>
+              </div>
             </Link>
           </div>
         </div>
       </Card>
-    </m.div>
+    </div>
   );
 }

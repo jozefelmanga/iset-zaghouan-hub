@@ -1,10 +1,6 @@
-"use client";
-
-import { m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { instituteOfficial } from "@/data/official";
 import { CheckCircle2, Facebook, Globe, Lightbulb, Mail, MapPin, Phone } from "@/lib/icons";
-import { sectionReveal } from "@/lib/motion";
 
 export function OfficialChannelsSection() {
   const { meta, profile, links, tip } = instituteOfficial;
@@ -41,7 +37,7 @@ export function OfficialChannelsSection() {
   ] as const;
 
   return (
-    <m.section {...sectionReveal} className="mb-16">
+    <section className="section-reveal mb-16">
       <span className="section-label">{meta.label}</span>
 
       <Card
@@ -172,6 +168,6 @@ export function OfficialChannelsSection() {
         <Lightbulb size={16} strokeWidth={2} className="text-[var(--color-accent)] shrink-0 mt-0.5" />
         <span>{tip}</span>
       </p>
-    </m.section>
+    </section>
   );
 }

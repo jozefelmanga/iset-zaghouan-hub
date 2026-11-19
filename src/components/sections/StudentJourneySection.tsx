@@ -1,16 +1,12 @@
-"use client";
-
-import { m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { studentJourney } from "@/data/content";
 import { journeyStepIcons } from "@/lib/iconMaps";
 import { ArrowLeft } from "@/lib/icons";
-import { hoverLift, itemReveal, sectionReveal } from "@/lib/motion";
 
 export function StudentJourneySection() {
   return (
-    <m.section {...sectionReveal} className="mb-20">
+    <section className="section-reveal mb-20">
       <Card elevation="feature" padding="32px">
         <SectionHeader
           label="رحلتك الجامعية"
@@ -22,13 +18,11 @@ export function StudentJourneySection() {
           {studentJourney.map((step, i) => {
             const Icon = journeyStepIcons[step.icon];
             return (
-              <m.a
+              <a
                 key={step.id}
                 href={step.href}
-                {...itemReveal(i * 0.08)}
-                {...hoverLift}
-                className="group relative flex flex-col h-full no-underline rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] p-3.5 sm:p-5 md:p-6 transition-all hover:border-[rgba(18,184,200,0.35)]"
-                style={{ boxShadow: "var(--shadow-card)" }}
+                className="motion-reveal card-lift group relative flex flex-col h-full no-underline rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] p-3.5 sm:p-5 md:p-6 hover:border-[rgba(18,184,200,0.35)] shadow-[var(--shadow-card)]"
+                style={{ animationDelay: `${i * 0.08}s` }}
               >
                 {/* Step Number Badge */}
                 <div className="absolute top-3.5 left-3.5 sm:top-5 sm:left-5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[rgba(18,184,200,0.1)] text-[var(--color-secondary)] font-bold flex items-center justify-center text-[11px] sm:text-sm transition-all group-hover:scale-110 group-hover:bg-[var(--color-secondary)] group-hover:text-white">
@@ -56,11 +50,11 @@ export function StudentJourneySection() {
                   عرض التفاصيل
                   <ArrowLeft className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </span>
-              </m.a>
+              </a>
             );
           })}
         </div>
       </Card>
-    </m.section>
+    </section>
   );
 }

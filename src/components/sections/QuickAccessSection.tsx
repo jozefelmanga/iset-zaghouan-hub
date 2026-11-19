@@ -1,15 +1,11 @@
-"use client";
-
-import { m } from "framer-motion";
 import { ActionCard } from "@/components/ui/ActionCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { quickActions } from "@/data/content";
 import { quickActionIcons } from "@/lib/iconMaps";
-import { sectionReveal, itemReveal } from "@/lib/motion";
 
 export function QuickAccessSection() {
   return (
-    <m.section {...sectionReveal} className="mb-14 mt-10 sm:mb-20 sm:mt-20">
+    <section className="section-reveal mb-14 mt-10 sm:mb-20 sm:mt-20">
       <SectionHeader
         className="mb-5 sm:mb-10"
         label="الوصول السريع"
@@ -18,7 +14,7 @@ export function QuickAccessSection() {
       />
       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
         {quickActions.map((action, i) => (
-          <m.div key={action.href} {...itemReveal(i * 0.06)} className="h-full">
+          <div key={action.href} className="motion-reveal h-full" style={{ animationDelay: `${i * 0.06}s` }}>
             <ActionCard
               icon={quickActionIcons[action.icon]}
               title={action.title}
@@ -27,9 +23,9 @@ export function QuickAccessSection() {
               category={action.category as "academic" | "life" | "career" | "campus"}
               featured={action.featured}
             />
-          </m.div>
+          </div>
         ))}
       </div>
-    </m.section>
+    </section>
   );
 }

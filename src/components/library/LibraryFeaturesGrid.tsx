@@ -1,10 +1,6 @@
-"use client";
-
 import type { LucideIcon } from "@/lib/icons";
 import { BookOpen, Camera, Clock, FileText, Sparkles } from "@/lib/icons";
-import { m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
-import { enterAnimation } from "@/lib/motion";
 
 import { textTint } from "@/lib/utils";
 const featureMeta: { icon: LucideIcon; color: string; bg: string }[] = [
@@ -33,7 +29,7 @@ export function LibraryFeaturesGrid({ features }: { features: string[] }) {
           const Icon = meta.icon;
 
           return (
-            <m.div key={text} {...enterAnimation(i * 0.06)} whileHover={{ y: -3 }}>
+            <div key={text} className="motion-reveal transition-[translate] duration-200 hover:-translate-y-[3px]" style={{ animationDelay: `${i * 0.06}s` }}>
               <Card elevation="raised" padding="20px" className="h-full">
                 <div className="flex items-start gap-3.5">
                   <div
@@ -47,7 +43,7 @@ export function LibraryFeaturesGrid({ features }: { features: string[] }) {
                   </p>
                 </div>
               </Card>
-            </m.div>
+            </div>
           );
         })}
       </div>

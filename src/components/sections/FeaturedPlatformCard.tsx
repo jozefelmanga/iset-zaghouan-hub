@@ -1,9 +1,5 @@
-"use client";
-
-import { m } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "@/lib/icons";
 import { externalResourceIcons } from "@/lib/iconMaps";
-import { hoverLift } from "@/lib/motion";
 import type { ExternalLinkResource } from "@/data/resources";
 
 import { textTint } from "@/lib/utils";
@@ -20,21 +16,12 @@ export function FeaturedPlatformCard({ resource }: { resource: ExternalLinkResou
   const domain = getDomain(resource.href);
 
   return (
-    <m.a
+    <a
       href={resource.href}
       target="_blank"
       rel="noopener noreferrer"
-      {...hoverLift}
-      className="group flex flex-col overflow-hidden"
-      style={{
-        height: "100%",
-        background: "var(--color-surface)",
-        borderRadius: "var(--radius-card)",
-        border: `1px solid ${resource.color}33`,
-        boxShadow: "var(--shadow-hover)",
-        textDecoration: "none",
-        color: "inherit",
-      }}
+      className="card-lift group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] bg-[var(--color-surface)] text-inherit no-underline shadow-[var(--shadow-hover)]"
+      style={{ border: `1px solid ${resource.color}33` }}
     >
       {/* Browser chrome + preview thumbnail */}
       <div style={{ position: "relative" }}>
@@ -205,6 +192,6 @@ export function FeaturedPlatformCard({ resource }: { resource: ExternalLinkResou
           {resource.icon === "book-open" ? "زور المنصة" : "تصفح الدليل"} <ArrowLeft size={14} />
         </div>
       </div>
-    </m.a>
+    </a>
   );
 }

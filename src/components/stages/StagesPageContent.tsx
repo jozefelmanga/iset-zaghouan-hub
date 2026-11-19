@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { m } from "framer-motion";
 import {
   Calendar, FileText, ExternalLink, ImageIcon,
   Building2, CheckCircle2, Circle,
@@ -31,7 +30,6 @@ import {
   internships,
 } from "@/data/internships";
 import { stageCompanyCount } from "@/data/stage-companies";
-import { itemReveal } from "@/lib/motion";
 
 import { textTint } from "@/lib/utils";
 const resourceIcons = {
@@ -85,7 +83,7 @@ export function StagesPageContent() {
   return (
     <>
       {/* Progress tracker — single year selector */}
-      <m.div {...itemReveal(0)} id="progress" style={{ marginBottom: "32px" }}>
+      <div className="motion-reveal mb-8" id="progress">
         <Card elevation="raised" padding="24px" className={styles.mobileCard}>
           <p style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)", marginBottom: "14px" }}>
             مسار الستاجات
@@ -114,25 +112,24 @@ export function StagesPageContent() {
           </div>
 
           <div style={{ height: "6px", background: "var(--color-border)", borderRadius: "999px", overflow: "hidden", marginBottom: "24px" }}>
-            <m.div
-              style={{ height: "100%", background: "linear-gradient(90deg, var(--color-secondary), #0FA8B8)", borderRadius: "999px" }}
-              animate={{ width: `${((completedStages + 1) / internships.length) * 100}%` }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+            <div
+              className="h-full rounded-full bg-[linear-gradient(90deg,var(--color-secondary),#0FA8B8)] transition-[width] duration-500 ease-out"
+              style={{ width: `${((completedStages + 1) / internships.length) * 100}%` }}
             />
           </div>
 
           <InternshipTimeline activeYear={activeYear} onYearChange={setActiveYear} hideSelector />
         </Card>
-      </m.div>
+      </div>
 
       {/* General FAQ */}
-      <m.div {...itemReveal(0.08)} id="faq-general" style={{ marginBottom: "32px" }}>
+      <div className="motion-reveal mb-8 [animation-delay:0.08s]" id="faq-general">
         <SectionHeader icon={HelpCircle} title="أسئلة شائعة" color="#6366F1" bg="rgba(99,102,241,0.10)" />
         <Accordion items={internshipGeneralFaq} />
-      </m.div>
+      </div>
 
       {/* Administrative steps */}
-      <m.div {...itemReveal(0.12)} id="admin" style={{ marginBottom: "36px" }}>
+      <div className="motion-reveal mb-9 [animation-delay:0.12s]" id="admin">
         <SectionHeader icon={FileText} title="الإجراءات الإدارية" color="#0EA5E9" bg="rgba(14,165,233,0.10)" />
         <Card elevation="raised" padding="24px" className={styles.mobileCard}>
           <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "20px", lineHeight: 1.6 }}>
@@ -157,10 +154,10 @@ export function StagesPageContent() {
             ))}
           </div>
         </Card>
-      </m.div>
+      </div>
 
       {/* Journal / Livret */}
-      <m.div {...itemReveal(0.15)} id="journal" style={{ marginBottom: "36px" }}>
+      <div className="motion-reveal mb-9 [animation-delay:0.15s]" id="journal">
         <SectionHeader icon={BookOpen} title={stageJournalDocuments.title} color="#8B5CF6" bg="rgba(139,92,246,0.10)" />
         <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "16px", lineHeight: 1.6 }}>
           {stageJournalDocuments.description}
@@ -182,10 +179,10 @@ export function StagesPageContent() {
             </Card>
           ))}
         </div>
-      </m.div>
+      </div>
 
       {/* Deadline calendar */}
-      <m.div {...itemReveal(0.2)} style={{ marginBottom: "36px" }}>
+      <div className="motion-reveal mb-9 [animation-delay:0.2s]">
         <SectionHeader icon={Calendar} title="المواعيد النهائية" color="#F97316" bg="rgba(249,115,22,0.10)" />
         <Card elevation="flat" padding="20px" className={styles.mobileCard}>
           <div className={styles.deadlineGrid}>
@@ -221,10 +218,10 @@ export function StagesPageContent() {
             المواعيد تقريبية — كل الستاجات (س1، س2، PFE)
           </p>
         </Card>
-      </m.div>
+      </div>
 
       {/* Logos */}
-      <m.div {...itemReveal(0.25)} id="kit" style={{ marginBottom: "36px" }}>
+      <div className="motion-reveal mb-9 [animation-delay:0.25s]" id="kit">
         <SectionHeader icon={ImageIcon} title="شعارات التقارير والعروض" color="#22C55E" bg="rgba(34,197,94,0.10)" />
         <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "16px", lineHeight: 1.6 }}>
           الشعارات الرسمية لصفحات الغلاف، التقارير، والـ présentations.
@@ -246,10 +243,10 @@ export function StagesPageContent() {
             </Card>
           ))}
         </div>
-      </m.div>
+      </div>
 
       {/* Example reports */}
-      <m.div {...itemReveal(0.3)} id="examples" style={{ marginBottom: "36px" }}>
+      <div className="motion-reveal mb-9 [animation-delay:0.3s]" id="examples">
         <SectionHeader icon={FileText} title={dsegExampleReports.title} color="#3B82F6" bg="rgba(59,130,246,0.08)" badge="SEG" />
         <Card elevation="raised" padding="24px" className={styles.mobileCard}>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "14px" }}>
@@ -283,10 +280,10 @@ export function StagesPageContent() {
             فتح نماذج التقارير على Google Drive
           </a>
         </Card>
-      </m.div>
+      </div>
 
       {/* Job search + companies */}
-      <m.div {...itemReveal(0.35)} id="companies" style={{ marginBottom: "36px" }}>
+      <div className="motion-reveal mb-9 [animation-delay:0.35s]" id="companies">
         <SectionHeader icon={Building2} title="كيفاش تلقى stage؟" color="#6366F1" bg="rgba(99,102,241,0.10)" />
         <Card elevation="flat" padding="20px" style={{ marginBottom: "14px" }} className={styles.mobileCard}>
           <div className={styles.tipsGrid}>
@@ -341,10 +338,10 @@ export function StagesPageContent() {
           </div>
           <ArrowLeft size={18} style={{ color: "color-mix(in srgb, #6366F1, #fff var(--text-lift))", flexShrink: 0 }} strokeWidth={2} />
         </Link>
-      </m.div>
+      </div>
 
       {/* Vocabulary — single source for document terms */}
-      <m.div {...itemReveal(0.4)} id="vocabulary" style={{ marginBottom: "36px" }}>
+      <div className="motion-reveal mb-9 [animation-delay:0.4s]" id="vocabulary">
         <SectionHeader icon={BookOpen} title="المصطلحات والوثائق" color="#8B5CF6" bg="rgba(139,92,246,0.10)" />
         <div className={styles.vocabGrid}>
           {internshipVocabulary.map((item) => (
@@ -354,15 +351,15 @@ export function StagesPageContent() {
             </Card>
           ))}
         </div>
-      </m.div>
+      </div>
 
       {/* Grade calculator */}
-      <m.div {...itemReveal(0.45)} style={{ marginBottom: "36px" }}>
+      <div className="motion-reveal mb-9 [animation-delay:0.45s]">
         <InternshipGradeCalculator />
-      </m.div>
+      </div>
 
       {/* ISET contact */}
-      <m.div {...itemReveal(0.5)} id="contact" style={{ marginBottom: "28px" }}>
+      <div className="motion-reveal mb-7 [animation-delay:0.5s]" id="contact">
         <SectionHeader icon={Phone} title="مشكلة مع الشركة؟" color="#EF4444" bg="rgba(239,68,68,0.10)" />
         <Card elevation="raised" padding="24px" className={styles.mobileCard}>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
@@ -389,20 +386,20 @@ export function StagesPageContent() {
             </span>
           </p>
         </Card>
-      </m.div>
+      </div>
 
       {/* Common mistakes */}
-      <m.div {...itemReveal(0.55)} style={{ marginBottom: "28px" }}>
+      <div className="motion-reveal mb-7 [animation-delay:0.55s]">
         <SectionHeader icon={AlertTriangle} title="أخطاء شائعة" color="var(--color-accent)" bg="rgba(246,180,27,0.10)" />
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           {internshipMistakes.map((mistake, i) => (
             <Alert key={i} title="" variant="warning">⚠ {mistake}</Alert>
           ))}
         </div>
-      </m.div>
+      </div>
 
       {/* Quick links */}
-      <m.div {...itemReveal(0.6)}>
+      <div className="motion-reveal [animation-delay:0.6s]">
         <SectionHeader icon={BookOpen} title="روابط سريعة" color="#8B5CF6" bg="rgba(139,92,246,0.10)" />
         <div className={styles.quickLinksGrid}>
           {internshipRelatedResources.map((resource) => {
@@ -434,7 +431,7 @@ export function StagesPageContent() {
             );
           })}
         </div>
-      </m.div>
+      </div>
     </>
   );
 }

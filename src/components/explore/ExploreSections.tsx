@@ -1,11 +1,7 @@
-"use client";
-
-import { m } from "framer-motion";
 import { Coffee, BookOpen, Mountain, Phone, Instagram, Play, ImageIcon } from "@/lib/icons";
 import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
 import { exploreZaghouan, zaghouanGallery, cafeTagColors } from "@/data/explore";
 import { studySpotIcons } from "@/lib/iconMaps";
-import { enterAnimation } from "@/lib/motion";
 import { YoutubeEmbed } from "@/components/ui/YoutubeEmbed";
 import { textTint } from "@/lib/utils";
 
@@ -20,7 +16,7 @@ export function ExploreHeroBanner() {
   const { coordinates } = exploreZaghouan;
 
   return (
-    <m.div {...enterAnimation(0.1)} style={{ marginBottom: "36px" }}>
+    <div className="motion-reveal mb-9 [animation-delay:0.1s]">
       <div
         style={{
           position: "relative",
@@ -73,7 +69,7 @@ export function ExploreHeroBanner() {
           </div>
         </div>
       </div>
-    </m.div>
+    </div>
   );
 }
 
@@ -90,21 +86,10 @@ export function ExploreStudySpots() {
         {exploreZaghouan.studySpots.map((spot, i) => {
           const Icon = studySpotIcons[i % studySpotIcons.length];
           return (
-            <m.div
+            <div
               key={spot}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.06 }}
-              whileHover={{ y: -4, scale: 1.02 }}
-              style={{
-                padding: "20px 16px",
-                background: "var(--color-surface)",
-                borderRadius: "16px",
-                border: "1px solid var(--color-border)",
-                boxShadow: "var(--shadow-card)",
-                textAlign: "center",
-                cursor: "default",
-              }}
+              className="motion-reveal card-lift cursor-default rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-5 text-center shadow-[var(--shadow-card)]"
+              style={{ animationDelay: `${i * 0.06}s` }}
             >
               <div style={{
                 width: "40px", height: "40px", borderRadius: "50%",
@@ -113,8 +98,8 @@ export function ExploreStudySpots() {
               }}>
                 <Icon size={18} strokeWidth={2} />
               </div>
-              <span style={{ fontSize: "13px", fontWeight: 600, color: "var(--color-text)" }}>{spot}</span>
-            </m.div>
+              <span className="text-[13px] font-semibold text-[var(--color-text)]">{spot}</span>
+            </div>
           );
         })}
       </div>
@@ -135,25 +120,18 @@ export function ExploreCafeTags() {
         {exploreZaghouan.cafes.map((cafe, i) => {
           const color = cafeTagColors[i % cafeTagColors.length];
           return (
-            <m.span
+            <span
               key={cafe}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.04 }}
-              whileHover={{ y: -2, scale: 1.04 }}
+              className="motion-reveal cursor-default rounded-full px-4 py-2 text-[13px] font-medium transition-[translate,scale] duration-200 hover:-translate-y-0.5 hover:scale-[1.04]"
               style={{
-                padding: "8px 16px",
-                borderRadius: "999px",
-                fontSize: "13px",
-                fontWeight: 500,
+                animationDelay: `${i * 0.04}s`,
                 background: `${color}12`,
                 color: textTint(color),
                 border: `1px solid ${color}30`,
-                cursor: "default",
               }}
             >
               ☕ {cafe}
-            </m.span>
+            </span>
           );
         })}
       </div>
@@ -172,20 +150,7 @@ export function ExploreMountainGuide() {
         </div>
         <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>مرشد سياحي للجبل 🧭</span>
       </div>
-      <m.div
-        {...enterAnimation(0.15)}
-        style={{
-          background: "var(--color-surface)",
-          borderRadius: "20px",
-          border: "1px solid var(--color-border)",
-          boxShadow: "var(--shadow-card)",
-          padding: "24px",
-          display: "flex",
-          alignItems: "center",
-          gap: "20px",
-          flexWrap: "wrap",
-        }}
-      >
+      <div className="motion-reveal flex flex-wrap items-center gap-5 rounded-[20px] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-card)] [animation-delay:0.15s]">
         <div style={{
           width: "72px", height: "72px", borderRadius: "50%", flexShrink: 0,
           overflow: "hidden",
@@ -229,7 +194,7 @@ export function ExploreMountainGuide() {
             </a>
           </div>
         </div>
-      </m.div>
+      </div>
     </div>
   );
 }

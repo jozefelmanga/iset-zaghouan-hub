@@ -745,6 +745,9 @@ main > * {
   }
 }
 
+/* Animates `transform`; hover effects use the separate `translate` /
+   `scale` properties (as Tailwind v4 utilities do) so a held reveal
+   never blocks them. */
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -756,12 +759,29 @@ main > * {
   }
 }
 
+/* CSS-only reveals (replace framer `initial`/`whileInView` fades).
+   Stagger with an inline `animation-delay`. */
 .motion-reveal {
   animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .section-reveal {
   animation: fade-up 0.55s ease-out both;
+}
+
+/* Bigger hover lift for cards (replaces framer `hoverLift`) */
+.card-lift {
+  transition: translate 0.25s ease-out, scale 0.25s ease-out, box-shadow 0.25s ease-out,
+    border-color 0.2s ease-out;
+}
+@media (hover: hover) {
+  .card-lift:hover {
+    translate: 0 -6px;
+    scale: 1.02;
+  }
+}
+.card-lift:active {
+  scale: 0.98;
 }
 
 /* Solid chrome on mobile; blur only on md+ */

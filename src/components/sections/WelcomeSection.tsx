@@ -9,22 +9,13 @@ export function WelcomeSection() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <m.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 }}
-      className="mb-8 mt-4"
-      dir="rtl"
-    >
+    <section className="motion-reveal mb-8 mt-4 [animation-delay:0.1s]" dir="rtl">
       <Card
         elevation="flat"
+        className="relative overflow-hidden"
         style={{
-          border: "1px solid var(--color-border)",
           background: "linear-gradient(135deg, rgba(18, 184, 200, 0.03) 0%, rgba(246, 180, 27, 0.02) 100%)",
-          borderRadius: "20px",
           padding: "20px 24px",
-          position: "relative",
-          overflow: "hidden",
         }}
       >
         {/* Glow Effects */}
@@ -101,6 +92,6 @@ export function WelcomeSection() {
           </div>
         </div>
       </Card>
-    </m.section>
+    </section>
   );
 }

@@ -16,6 +16,21 @@ const SERVER_COMPONENT_FILES = [
   "src/components/ui/SectionHeader.tsx",
   "src/components/ui/PageContentPlaceholder.tsx",
   "src/components/ui/Skeleton.tsx",
+  "src/components/ui/Card.tsx",
+  "src/components/ui/ActionCard.tsx",
+  "src/components/sections/HeroSection.tsx",
+  "src/components/sections/InstitutionInfoSection.tsx",
+  "src/components/sections/QuickAccessSection.tsx",
+  "src/components/sections/StudentJourneySection.tsx",
+  "src/components/sections/ExternalResourcesSection.tsx",
+  "src/components/sections/FeaturedPlatformCard.tsx",
+  "src/components/sections/Zan9aStickersSection.tsx",
+  "src/components/sections/OfficialChannelsSection.tsx",
+  "src/components/sections/MotivationalCTASection.tsx",
+  "src/components/explore/ExploreSections.tsx",
+  "src/components/departments/DepartmentCard.tsx",
+  "src/components/clubs/ClubCards.tsx",
+  "src/components/library/LibraryFeaturesGrid.tsx",
 ];
 
 const CLIENT_HOOK_PATTERNS = [

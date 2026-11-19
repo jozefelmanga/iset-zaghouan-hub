@@ -1,6 +1,3 @@
-"use client";
-
-import { m } from "framer-motion";
 import { CheckCircle2, MapPin, Sparkles } from "@/lib/icons";
 
 /* ======================================================
@@ -11,16 +8,7 @@ function MountainDecoration() {
     <svg
       viewBox="0 0 800 200"
       preserveAspectRatio="none"
-      style={{
-        position: "absolute",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        width: "100%",
-        height: "120px",
-        opacity: 0.18,
-        pointerEvents: "none",
-      }}
+      className="pointer-events-none absolute inset-x-0 bottom-0 h-[120px] w-full opacity-[0.18]"
     >
       <path d="M0,200 L0,120 L80,60 L160,100 L240,40 L320,80 L400,20 L480,70 L560,50 L640,90 L720,45 L800,80 L800,200 Z" fill="white" />
     </svg>
@@ -66,11 +54,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-8 py-20 w-full">
-        <m.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        >
+        <div className="motion-reveal">
           {/* Label badge */}
           <div className="inline-flex items-center gap-2 bg-[rgba(18,184,200,0.12)] border border-[rgba(18,184,200,0.25)] rounded-full px-4 py-1.5 mb-6">
             <Sparkles size={14} strokeWidth={2} className="text-[#12B8C8]" />
@@ -92,43 +76,36 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-3 mb-12">
-            <m.a
+            <a
               href="/inscription"
-              whileHover={{ y: -2, boxShadow: "0 12px 32px rgba(246,180,27,0.35)" }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[var(--color-accent)] text-[var(--color-navy)] font-bold text-[15px] no-underline transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-accent)]"
+              className="hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(246,180,27,0.35)] active:scale-[0.97] inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[var(--color-accent)] text-[var(--color-navy)] font-bold text-[15px] no-underline transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-accent)]"
             >
               <CheckCircle2 size={18} strokeWidth={2.5} />
               ابدأ الترسيم
-            </m.a>
-            <m.a
+            </a>
+            <a
               href="/explore"
-              whileHover={{ y: -2, boxShadow: "0 12px 32px rgba(255,255,255,0.1)" }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white font-semibold text-[15px] no-underline transition-all backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white"
+              className="hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(255,255,255,0.1)] active:scale-[0.97] inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white font-semibold text-[15px] no-underline transition-all backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white"
             >
               <MapPin size={18} strokeWidth={2} />
               اكتشف زغوان
-            </m.a>
+            </a>
           </div>
 
           {/* Floating chips */}
           <div className="flex flex-wrap gap-2">
             {["الترسيم", "المبيت", "البورص", "النقل", "الستاجات"].map((chip, i) => (
-              <m.a
+              <a
                 key={chip}
                 href={`/${["inscription","housing","bourse","transport","stages"][i]}`}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + i * 0.07 }}
-                whileHover={{ y: -2 }}
-                className="px-4 py-[7px] rounded-full bg-white/5 border border-white/10 text-white/70 text-xs font-medium no-underline transition-colors duration-200 backdrop-blur-md hover:text-[#12B8C8] hover:border-[rgba(18,184,200,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12B8C8]"
+                style={{ animationDelay: `${0.5 + i * 0.07}s` }}
+                className="motion-reveal hover:-translate-y-0.5 px-4 py-[7px] rounded-full bg-white/5 border border-white/10 text-white/70 text-xs font-medium no-underline transition-[color,border-color,transform] duration-200 backdrop-blur-md hover:text-[#12B8C8] hover:border-[rgba(18,184,200,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12B8C8]"
               >
                 {chip}
-              </m.a>
+              </a>
             ))}
           </div>
-        </m.div>
+        </div>
       </div>
     </section>
   );

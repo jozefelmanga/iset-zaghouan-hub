@@ -1,12 +1,8 @@
-"use client";
-
-import { m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Divider, Grid } from "@/components/ui/layout";
 import { FeaturedPlatformCard } from "@/components/sections/FeaturedPlatformCard";
 import { externalResources, externalResourcesMeta } from "@/data/resources";
-import { sectionReveal, itemReveal } from "@/lib/motion";
 import { YoutubeEmbed } from "@/components/ui/YoutubeEmbed";
 
 const featuredPlatforms = externalResources.filter(
@@ -18,30 +14,22 @@ const videos = externalResources.filter(
 
 export function ExternalResourcesSection() {
   return (
-    <m.section {...sectionReveal} className="mb-20">
+    <section className="section-reveal mb-20">
       <SectionHeader
         label={externalResourcesMeta.label}
         title={externalResourcesMeta.title}
         subtitle={externalResourcesMeta.subtitle}
       />
 
-      <div style={{ marginBottom: "32px" }}>
-        <p
-          style={{
-            fontSize: "13px",
-            fontWeight: 700,
-            color: "var(--color-text-muted)",
-            marginBottom: "16px",
-            letterSpacing: "0.04em",
-          }}
-        >
+      <div className="mb-8">
+        <p className="mb-4 text-[13px] font-bold tracking-[0.04em] text-[var(--color-text-muted)]">
           منصات أساسية — لا تفوّتها
         </p>
         <Grid gap="lg" minColWidth="320px">
           {featuredPlatforms.map((resource, i) => (
-            <m.div key={resource.href} {...itemReveal(i * 0.08)} style={{ height: "100%" }}>
+            <div key={resource.href} className="motion-reveal h-full" style={{ animationDelay: `${i * 0.08}s` }}>
               <FeaturedPlatformCard resource={resource} />
-            </m.div>
+            </div>
           ))}
         </Grid>
       </div>
@@ -50,7 +38,7 @@ export function ExternalResourcesSection() {
 
       <Grid gap="md" minColWidth="300px">
         {videos.map((resource, i) => (
-          <m.div key={resource.embedUrl} {...itemReveal(i * 0.06)}>
+          <div key={resource.embedUrl} className="motion-reveal" style={{ animationDelay: `${i * 0.06}s` }}>
             <Card elevation="raised" padding="0" style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}>
               <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
                 <YoutubeEmbed embedUrl={resource.embedUrl} title={resource.title} />
@@ -69,9 +57,9 @@ export function ExternalResourcesSection() {
                 </p>
               </div>
             </Card>
-          </m.div>
+          </div>
         ))}
       </Grid>
-    </m.section>
+    </section>
   );
 }

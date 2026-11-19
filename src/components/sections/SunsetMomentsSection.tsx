@@ -4,7 +4,6 @@ import { useId, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown, Sparkles } from "@/lib/icons";
 import { PhotoGallery } from "@/components/ui/Lightbox";
-import { sectionReveal } from "@/lib/motion";
 
 const SUNSET_BASE = "/images/sunset";
 
@@ -19,7 +18,7 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
   const panelId = useId();
 
   return (
-    <m.section {...sectionReveal} className="mb-16">
+    <section className="section-reveal mb-16">
       <div
         className="relative overflow-hidden rounded-2xl border"
         style={{
@@ -73,11 +72,9 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
             </p>
           </div>
 
-          <m.div
-            animate={{ rotate: open ? 180 : 0 }}
-            transition={{ duration: 0.22 }}
+          <div
             aria-hidden="true"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full"
+            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-[rotate] duration-200 ${open ? "rotate-180" : ""}`}
             style={{
               background: open ? "rgba(246,180,27,0.15)" : "var(--color-surface)",
               color: open ? "color-mix(in srgb, #B45309, #fff var(--text-lift))" : "var(--color-text-muted)",
@@ -85,7 +82,7 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
             }}
           >
             <ChevronDown size={18} strokeWidth={2.5} />
-          </m.div>
+          </div>
         </button>
 
         <AnimatePresence initial={false}>
@@ -131,6 +128,6 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
           )}
         </AnimatePresence>
       </div>
-    </m.section>
+    </section>
   );
 }

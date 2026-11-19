@@ -1,8 +1,4 @@
-"use client";
-
-import { m } from "framer-motion";
 import { ArrowLeft } from "@/lib/icons";
-import { hoverLift } from "@/lib/motion";
 import { categoryConfig } from "@/lib/theme";
 import type { Category } from "@/types";
 import type { LucideIcon } from "@/lib/icons";
@@ -21,10 +17,9 @@ export function ActionCard({ icon: Icon, title, description, href, category = "p
   const colors = categoryConfig[category] || categoryConfig.primary;
 
   return (
-    <m.a
+    <a
       href={href}
-      {...hoverLift}
-      className={`group flex h-full flex-col no-underline ${
+      className={`card-lift group flex h-full flex-col no-underline ${
         featured ? "p-3.5 sm:p-8" : "p-3.5 sm:p-6"
       }`}
       style={{
@@ -67,6 +62,6 @@ export function ActionCard({ icon: Icon, title, description, href, category = "p
         <span>عرض التفاصيل</span>
         <ArrowLeft size={14} />
       </div>
-    </m.a>
+    </a>
   );
 }

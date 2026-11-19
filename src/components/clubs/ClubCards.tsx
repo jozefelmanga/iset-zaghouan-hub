@@ -1,12 +1,8 @@
-"use client";
-
-import { m } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { clubBenefitIcons } from "@/lib/iconMaps";
-import { enterAnimation } from "@/lib/motion";
 
 import { textTint } from "@/lib/utils";
 type BenefitCard = (typeof import("@/data/clubs").clubBenefitCards)[number];
@@ -16,7 +12,7 @@ export function ClubBenefitCard({ item, index }: { item: BenefitCard; index: num
   const Icon = clubBenefitIcons[item.id];
 
   return (
-    <m.div {...enterAnimation(index * 0.1)} whileHover={{ y: -4 }}>
+    <div className="motion-reveal transition-[translate] duration-200 hover:-translate-y-1" style={{ animationDelay: `${index * 0.1}s` }}>
       <Card elevation="raised" padding="22px">
         <div style={{ width: "44px", height: "44px", borderRadius: "50%", background: item.bg, color: textTint(item.color), display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
           <Icon size={20} strokeWidth={2} />
@@ -24,13 +20,13 @@ export function ClubBenefitCard({ item, index }: { item: BenefitCard; index: num
         <h4 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)", marginBottom: "6px" }}>{item.title}</h4>
         <p style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: 1.6 }}>{item.desc}</p>
       </Card>
-    </m.div>
+    </div>
   );
 }
 
 export function ClubDirectoryCard({ club, index }: { club: ClubEntry; index: number }) {
   return (
-    <m.div {...enterAnimation(index * 0.06)} className="md:h-full">
+    <div className="motion-reveal md:h-full" style={{ animationDelay: `${index * 0.06}s` }}>
       <Card elevation="raised" padding="16px" className="h-full md:p-[22px]!">
         <div className="flex flex-col gap-4 md:h-full">
           <div className="flex min-w-0 items-start gap-3">
@@ -58,17 +54,16 @@ export function ClubDirectoryCard({ club, index }: { club: ClubEntry; index: num
               </p>
             </div>
           </div>
-          <Link href={club.href} className="shrink-0 md:mt-auto" style={{ textDecoration: "none" }}>
-            <m.div
-              whileHover={{ x: -4 }}
-              className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-[rgba(18,184,200,0.08)] px-3 py-2.5 text-[12.5px] font-semibold text-(--color-secondary) md:w-auto md:justify-start md:bg-transparent md:px-0 md:py-0 md:text-[13px]"
+          <Link href={club.href} className="shrink-0 no-underline md:mt-auto">
+            <div
+              className="transition-[translate] duration-200 hover:-translate-x-1 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-[rgba(18,184,200,0.08)] px-3 py-2.5 text-[12.5px] font-semibold text-(--color-secondary) md:w-auto md:justify-start md:bg-transparent md:px-0 md:py-0 md:text-[13px]"
             >
               <span>التفاصيل والصور</span>
               <ArrowLeft size={14} />
-            </m.div>
+            </div>
           </Link>
         </div>
       </Card>
-    </m.div>
+    </div>
   );
 }

@@ -5,7 +5,6 @@ import { AnimatePresence, m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { homeTipsMeta, studentTips } from "@/data/bonus";
 import { ArrowLeft, ChevronLeft, ChevronRight, Heart, Lightbulb } from "@/lib/icons";
-import { sectionReveal } from "@/lib/motion";
 
 import { textTint } from "@/lib/utils";
 function wrapIndex(index: number, length: number) {
@@ -77,7 +76,7 @@ export function TipsCarouselSection() {
   const tip = studentTips[index];
 
   return (
-    <m.section {...sectionReveal} className="mb-16">
+    <section className="section-reveal mb-16">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-4">
         <div>
           <span className="section-label">{homeTipsMeta.label}</span>
@@ -194,6 +193,6 @@ export function TipsCarouselSection() {
         </div>
       </Card>
       </div>
-    </m.section>
+    </section>
   );
 }

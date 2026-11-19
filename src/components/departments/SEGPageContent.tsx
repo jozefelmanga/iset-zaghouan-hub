@@ -128,7 +128,7 @@ export function SEGPageContent() {
         </h2>
         <DepartmentScheduleDisclaimer intro="المواد متشابهة بين المحاسبة وإدارة الأعمال في السداسي الأول، ومن بعد تختلف." />
 
-        <div style={{ display: "flex", gap: "8px", background: "rgba(11,31,58,0.04)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>
+        <div style={{ display: "flex", gap: "8px", background: "color-mix(in srgb, var(--color-primary) 4%, transparent)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>
           <button
             onClick={() => setSemesterTab("s1")}
             style={{

@@ -32,7 +32,8 @@ import {
 } from "@/data/internships";
 import { stageCompanyCount } from "@/data/stage-companies";
 import { itemReveal } from "@/lib/motion";
-
+
+import { textTint } from "@/lib/utils";
 const resourceIcons = {
   file: FileText,
   book: BookOpen,
@@ -105,7 +106,7 @@ export function StagesPageContent() {
                     color: isCurrent ? "var(--color-secondary)" : "var(--color-text)",
                   }}
                 >
-                  {isPast ? <CheckCircle2 size={16} style={{ color: "#22C55E" }} strokeWidth={2.5} /> : <Circle size={16} style={{ color: isCurrent ? "var(--color-secondary)" : "var(--color-border)" }} strokeWidth={2} />}
+                  {isPast ? <CheckCircle2 size={16} style={{ color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))" }} strokeWidth={2.5} /> : <Circle size={16} style={{ color: isCurrent ? "var(--color-secondary)" : "var(--color-border)" }} strokeWidth={2} />}
                   {internship.name}
                 </button>
               );
@@ -169,7 +170,7 @@ export function StagesPageContent() {
             <Card key={doc.downloadSrc} elevation="raised" padding="16px">
               <div style={{ display: "flex", flexDirection: "column", gap: "12px", height: "100%" }}>
                 <div style={{ width: "100%", height: "100px", display: "flex", alignItems: "center", justifyContent: "center", padding: "12px", borderRadius: "12px", background: "rgba(139,92,246,0.06)", border: "1px solid rgba(139,92,246,0.15)" }}>
-                  <FileText size={40} strokeWidth={1.5} style={{ color: "#8B5CF6" }} />
+                  <FileText size={40} strokeWidth={1.5} style={{ color: "color-mix(in srgb, #8B5CF6, #fff var(--text-lift))" }} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <p style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "4px" }}>{doc.name}</p>
@@ -205,7 +206,7 @@ export function StagesPageContent() {
                           marginBottom: "4px",
                         }}
                       >
-                        <p style={{ fontSize: "9px", fontWeight: 700, color: d.color, marginBottom: "2px" }}>{d.stageShort}</p>
+                        <p style={{ fontSize: "9px", fontWeight: 700, color: textTint(d.color), marginBottom: "2px" }}>{d.stageShort}</p>
                         <p style={{ fontSize: "10px", fontWeight: 600, color: "var(--color-text)", lineHeight: 1.3 }}>{d.label}</p>
                       </div>
                     ))
@@ -260,7 +261,7 @@ export function StagesPageContent() {
 
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
             {dsegExampleReports.folders.map((folder) => (
-              <span key={folder} style={{ padding: "5px 12px", borderRadius: "999px", fontSize: "12px", fontWeight: 600, background: "rgba(59,130,246,0.08)", color: "#3B82F6", border: "1px solid rgba(59,130,246,0.15)" }}>
+              <span key={folder} style={{ padding: "5px 12px", borderRadius: "999px", fontSize: "12px", fontWeight: 600, background: "rgba(59,130,246,0.08)", color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))", border: "1px solid rgba(59,130,246,0.15)" }}>
                 {folder}
               </span>
             ))}
@@ -313,7 +314,7 @@ export function StagesPageContent() {
                   fontSize: "13px",
                   fontWeight: 600,
                   background: "rgba(99,102,241,0.08)",
-                  color: "#6366F1",
+                  color: "color-mix(in srgb, #6366F1, #fff var(--text-lift))",
                   border: "1px solid rgba(99,102,241,0.2)",
                   textDecoration: "none",
                 }}
@@ -329,7 +330,7 @@ export function StagesPageContent() {
           href="/stages/companies"
           className={styles.companyLink}
         >
-          <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "rgba(99,102,241,0.12)", color: "#6366F1", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "rgba(99,102,241,0.12)", color: "color-mix(in srgb, #6366F1, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
             <Building2 size={22} strokeWidth={2} />
           </div>
           <div className={styles.companyLinkBody}>
@@ -338,7 +339,7 @@ export function StagesPageContent() {
               دوّر في {stageCompanyCount} شركة — بالاسم، المدينة، أو العنوان
             </p>
           </div>
-          <ArrowLeft size={18} style={{ color: "#6366F1", flexShrink: 0 }} strokeWidth={2} />
+          <ArrowLeft size={18} style={{ color: "color-mix(in srgb, #6366F1, #fff var(--text-lift))", flexShrink: 0 }} strokeWidth={2} />
         </Link>
       </m.div>
 
@@ -374,7 +375,7 @@ export function StagesPageContent() {
                 key={phone}
                 href={`tel:${phone.replace(/\s/g, "")}`}
                 dir="ltr"
-                style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "8px 14px", borderRadius: "10px", background: "rgba(239,68,68,0.08)", color: "#EF4444", fontSize: "13px", fontWeight: 600, textDecoration: "none", border: "1px solid rgba(239,68,68,0.2)" }}
+                style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "8px 14px", borderRadius: "10px", background: "rgba(239,68,68,0.08)", color: "color-mix(in srgb, #EF4444, #fff var(--text-lift))", fontSize: "13px", fontWeight: 600, textDecoration: "none", border: "1px solid rgba(239,68,68,0.2)" }}
               >
                 <Phone size={14} strokeWidth={2} />
                 {phone}
@@ -424,7 +425,7 @@ export function StagesPageContent() {
                   boxShadow: "var(--shadow-card)",
                 }}
               >
-                <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "rgba(139,92,246,0.10)", color: "#8B5CF6", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "rgba(139,92,246,0.10)", color: "color-mix(in srgb, #8B5CF6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <Icon size={16} strokeWidth={2} />
                 </div>
                 <span style={{ fontSize: "13px", fontWeight: 600, color: "var(--color-text)" }}>{resource.label}</span>

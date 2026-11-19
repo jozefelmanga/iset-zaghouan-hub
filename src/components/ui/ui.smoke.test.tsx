@@ -15,7 +15,8 @@ describe("Badge", () => {
   it("applies variant styling", () => {
     render(<Badge variant="success">OK</Badge>);
     const badge = screen.getByText("OK");
-    expect(badge).toHaveStyle({ color: "#16A34A" });
+    // color is wrapped in color-mix() for dark mode (jsdom can't parse it)
+    expect(badge.getAttribute("style")).toContain("#16A34A");
   });
 });
 

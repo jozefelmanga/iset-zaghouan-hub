@@ -4,7 +4,8 @@ import Link from "next/link";
 import { ArrowLeft, GraduationCap, Users } from "@/lib/icons";
 import { departmentList } from "@/data/departments";
 import { clubDirectory } from "@/data/clubs";
-
+
+import { textTint } from "@/lib/utils";
 interface RelatedDepartmentsNavProps {
   currentDept?: "TI" | "SEG" | "GPR" | string;
 }
@@ -47,7 +48,7 @@ export function RelatedDepartmentsNav({ currentDept }: RelatedDepartmentsNavProp
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#3B82F6",
+              color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))",
             }}
           >
             <GraduationCap size={20} />
@@ -132,7 +133,7 @@ export function RelatedDepartmentsNav({ currentDept }: RelatedDepartmentsNavProp
                   style={{
                     fontSize: "11px",
                     fontWeight: 700,
-                    color: dept.color,
+                    color: textTint(dept.color),
                     marginBottom: "2px",
                   }}
                 >
@@ -153,7 +154,7 @@ export function RelatedDepartmentsNav({ currentDept }: RelatedDepartmentsNavProp
               </div>
               <span
                 style={{
-                  color: dept.color,
+                  color: textTint(dept.color),
                   display: "flex",
                   alignItems: "center",
                   flexShrink: 0,
@@ -211,7 +212,7 @@ export function RelatedClubsNav({ currentClubId }: RelatedClubsNavProps) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#12B8C8",
+              color: "color-mix(in srgb, #12B8C8, #fff var(--text-lift))",
             }}
           >
             <Users size={20} />
@@ -276,7 +277,7 @@ export function RelatedClubsNav({ currentClubId }: RelatedClubsNavProps) {
               style={{
                 padding: "12px 14px",
                 borderRadius: "12px",
-                background: "rgba(11, 31, 58, 0.03)",
+                background: "color-mix(in srgb, var(--color-primary) 3%, transparent)",
                 border: "1px solid var(--color-border)",
                 transition: "all 0.2s ease",
                 display: "flex",
@@ -291,7 +292,7 @@ export function RelatedClubsNav({ currentClubId }: RelatedClubsNavProps) {
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = "var(--color-border)";
-                e.currentTarget.style.background = "rgba(11, 31, 58, 0.03)";
+                e.currentTarget.style.background = "color-mix(in srgb, var(--color-primary) 3%, transparent)";
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
@@ -309,7 +310,7 @@ export function RelatedClubsNav({ currentClubId }: RelatedClubsNavProps) {
               </div>
               <span
                 style={{
-                  color: club.color,
+                  color: textTint(club.color),
                   display: "flex",
                   alignItems: "center",
                   flexShrink: 0,

@@ -6,7 +6,8 @@ import { ArrowLeft } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";
 import { departmentIcons } from "@/lib/iconMaps";
 import { enterAnimation } from "@/lib/motion";
-
+
+import { textTint } from "@/lib/utils";
 type Department = (typeof import("@/data/departments").departmentList)[number];
 
 export function DepartmentCard({ dept, index }: { dept: Department; index: number }) {
@@ -23,7 +24,7 @@ export function DepartmentCard({ dept, index }: { dept: Department; index: numbe
               borderRadius: "16px",
               background: dept.bg,
               border: `1px solid ${dept.border}`,
-              color: dept.color,
+              color: textTint(dept.color),
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -39,7 +40,7 @@ export function DepartmentCard({ dept, index }: { dept: Department; index: numbe
                 style={{
                   fontSize: "11px",
                   fontWeight: 700,
-                  color: dept.color,
+                  color: textTint(dept.color),
                   background: dept.bg,
                   padding: "3px 8px",
                   borderRadius: "6px",
@@ -67,7 +68,7 @@ export function DepartmentCard({ dept, index }: { dept: Department; index: numbe
                     fontSize: "12px",
                     padding: "4px 12px",
                     borderRadius: "999px",
-                    background: "rgba(11,31,58,0.04)",
+                    background: "color-mix(in srgb, var(--color-primary) 4%, transparent)",
                     color: "var(--color-text-secondary)",
                     border: "1px solid var(--color-border)",
                     fontWeight: 500,
@@ -87,7 +88,7 @@ export function DepartmentCard({ dept, index }: { dept: Department; index: numbe
                   gap: "8px",
                   fontSize: "13px",
                   fontWeight: 600,
-                  color: dept.color,
+                  color: textTint(dept.color),
                   cursor: "pointer",
                 }}
               >

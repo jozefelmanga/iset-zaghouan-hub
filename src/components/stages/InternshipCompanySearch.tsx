@@ -137,7 +137,7 @@ export function InternshipCompanySearch() {
             fontSize: "12px",
             fontWeight: 600,
             background: "rgba(99,102,241,0.08)",
-            color: "#6366F1",
+            color: "color-mix(in srgb, #6366F1, #fff var(--text-lift))",
             border: "1px solid rgba(99,102,241,0.2)",
             textDecoration: "none",
             flexShrink: 0,
@@ -195,7 +195,7 @@ export function InternshipCompanySearch() {
             cursor: "pointer",
             fontFamily: "var(--font-sans)",
             background: !cityFilter ? "rgba(99,102,241,0.15)" : "var(--color-background)",
-            color: !cityFilter ? "#6366F1" : "var(--color-text)",
+            color: !cityFilter ? "color-mix(in srgb, #6366F1, #fff var(--text-lift))" : "var(--color-text)",
             border: !cityFilter ? "1px solid rgba(99,102,241,0.4)" : "1px solid var(--color-border)",
           }}
         >
@@ -218,7 +218,7 @@ export function InternshipCompanySearch() {
               cursor: "pointer",
               fontFamily: "var(--font-sans)",
               background: cityFilter === city ? "rgba(99,102,241,0.15)" : "var(--color-background)",
-              color: cityFilter === city ? "#6366F1" : "var(--color-text-muted)",
+              color: cityFilter === city ? "color-mix(in srgb, #6366F1, #fff var(--text-lift))" : "var(--color-text-muted)",
               border: cityFilter === city ? "1px solid rgba(99,102,241,0.4)" : "1px solid var(--color-border)",
             }}
           >
@@ -236,7 +236,7 @@ export function InternshipCompanySearch() {
           {visible.map((company) => (
             <Card key={`${company.name}-${company.city ?? ""}-${company.phone ?? ""}`} elevation="raised" padding="16px">
               <div style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "10px" }}>
-                <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "rgba(99,102,241,0.10)", color: "#6366F1", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "rgba(99,102,241,0.10)", color: "color-mix(in srgb, #6366F1, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <Building2 size={16} strokeWidth={2} />
                 </div>
                 <div style={{ minWidth: 0 }}>
@@ -283,7 +283,7 @@ export function InternshipCompanySearch() {
                     target="_blank"
                     rel="noopener noreferrer"
                     dir="ltr"
-                    style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", color: "#6366F1", textDecoration: "none", wordBreak: "break-all" }}
+                    style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", color: "color-mix(in srgb, #6366F1, #fff var(--text-lift))", textDecoration: "none", wordBreak: "break-all" }}
                   >
                     <ExternalLink size={12} strokeWidth={2} style={{ flexShrink: 0 }} />
                     {formatWebsite(company.website)}
@@ -312,7 +312,7 @@ export function InternshipCompanySearch() {
                   borderRadius: "10px",
                   border: "1px solid rgba(99,102,241,0.3)",
                   background: "rgba(99,102,241,0.08)",
-                  color: "#6366F1",
+                  color: "color-mix(in srgb, #6366F1, #fff var(--text-lift))",
                   fontSize: "12px",
                   fontWeight: 600,
                   cursor: "pointer",

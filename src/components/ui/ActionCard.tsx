@@ -6,7 +6,8 @@ import { hoverLift } from "@/lib/motion";
 import { categoryConfig } from "@/lib/theme";
 import type { Category } from "@/types";
 import type { LucideIcon } from "@/lib/icons";
-
+
+import { textTint } from "@/lib/utils";
 interface ActionCardProps {
   icon: LucideIcon;
   title: string;
@@ -39,7 +40,7 @@ export function ActionCard({ icon: Icon, title, description, href, category = "p
         }`}
         style={{
           background: colors.bg,
-          color: colors.color,
+          color: textTint(colors.color),
           transition: "transform var(--transition-base)",
         }}
       >
@@ -61,7 +62,7 @@ export function ActionCard({ icon: Icon, title, description, href, category = "p
 
       <div
         className="mt-auto hidden items-center gap-1 pt-4 opacity-0 transition-opacity group-hover:opacity-100 sm:flex"
-        style={{ color: colors.color, fontSize: "13px", fontWeight: 500 }}
+        style={{ color: textTint(colors.color), fontSize: "13px", fontWeight: 500 }}
       >
         <span>عرض التفاصيل</span>
         <ArrowLeft size={14} />

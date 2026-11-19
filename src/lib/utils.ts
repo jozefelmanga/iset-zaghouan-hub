@@ -155,3 +155,17 @@ export function clamp(value: number, min: number, max: number): number {
 
 /** Returns true if running in a browser context. */
 export const isBrowser = typeof window !== "undefined";
+
+/* ============================================================
+   COLOUR
+   ============================================================ */
+
+/**
+ * Brand/status colour for text or icons. Unchanged in light mode; mixed
+ * toward white in dark mode (`--text-lift`) so it stays readable.
+ *
+ * @example style={{ color: textTint(club.color) }}
+ */
+export function textTint(color: string): string {
+  return `color-mix(in srgb, ${color}, #fff var(--text-lift))`;
+}

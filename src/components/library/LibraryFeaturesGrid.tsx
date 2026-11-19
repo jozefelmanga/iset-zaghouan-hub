@@ -5,7 +5,8 @@ import { BookOpen, Camera, Clock, FileText, Sparkles } from "@/lib/icons";
 import { m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { enterAnimation } from "@/lib/motion";
-
+
+import { textTint } from "@/lib/utils";
 const featureMeta: { icon: LucideIcon; color: string; bg: string }[] = [
   { icon: Clock, color: "#12B8C8", bg: "rgba(18,184,200,0.10)" },
   { icon: FileText, color: "#3B82F6", bg: "rgba(59,130,246,0.10)" },
@@ -37,7 +38,7 @@ export function LibraryFeaturesGrid({ features }: { features: string[] }) {
                 <div className="flex items-start gap-3.5">
                   <div
                     className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
-                    style={{ background: meta.bg, color: meta.color }}
+                    style={{ background: meta.bg, color: textTint(meta.color) }}
                   >
                     <Icon size={20} strokeWidth={2} />
                   </div>

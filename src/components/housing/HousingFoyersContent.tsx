@@ -25,7 +25,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
       <HousingCrossLink variant="to-inscription" />
 
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: "#8B5CF6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: "color-mix(in srgb, #8B5CF6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Users size={16} strokeWidth={2} />
         </div>
         <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>فواي البنات و الأولاد</span>
@@ -56,7 +56,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
               cursor: "pointer",
               transition: "all var(--transition-base)",
               fontFamily: "var(--font-sans)",
-              background: tab === value ? "var(--color-primary)" : "var(--color-surface)",
+              background: tab === value ? "var(--color-primary-bg)" : "var(--color-surface)",
               color: tab === value ? "#fff" : "var(--color-text-secondary)",
               boxShadow: tab === value ? "var(--shadow-hover)" : "var(--shadow-card)",
             }}
@@ -76,7 +76,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
           transition={{ duration: 0.25 }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(11,31,58,0.06)", color: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "color-mix(in srgb, var(--color-primary) 6%, transparent)", color: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Building2 size={16} strokeWidth={2} />
             </div>
             <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)", lineHeight: 1.4 }}>{data.name}</h2>
@@ -86,7 +86,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
             {/* Unified Location Card */}
             <Card elevation="raised" padding="18px" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: "rgba(59,130,246,0.12)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: "rgba(59,130,246,0.12)", color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <MapPin size={16} strokeWidth={2} />
                 </div>
                 <span style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>الموقع</span>
@@ -110,7 +110,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
                 <a href={data.mapUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", marginTop: "auto" }}>
                   <div style={{ padding: "10px", borderRadius: "10px", background: "rgba(59,130,246,0.06)", border: "1px solid rgba(59,130,246,0.15)", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", transition: "all 0.2s" }}>
                     <ExternalLink size={14} color="#3B82F6" strokeWidth={2} />
-                    <span style={{ fontSize: "13px", fontWeight: 600, color: "#3B82F6" }}>افتح في خرائط جوجل</span>
+                    <span style={{ fontSize: "13px", fontWeight: 600, color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))" }}>افتح في خرائط جوجل</span>
                   </div>
                 </a>
               )}
@@ -119,7 +119,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
             {/* Unified Info Card */}
             <Card elevation="raised" padding="18px" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-                <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: "rgba(18,184,200,0.12)", color: "#12B8C8", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: "rgba(18,184,200,0.12)", color: "color-mix(in srgb, #12B8C8, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Sparkles size={16} strokeWidth={2} />
                 </div>
                 <span style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>معلومات عامة</span>
@@ -156,7 +156,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "10px" }}>
                 {data.features.map((f, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                    <CheckCircle2 size={16} style={{ color: "#22C55E", flexShrink: 0, marginTop: "2px" }} strokeWidth={2.5} />
+                    <CheckCircle2 size={16} style={{ color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))", flexShrink: 0, marginTop: "2px" }} strokeWidth={2.5} />
                     <span style={{ fontSize: "13px", color: "var(--color-text)", lineHeight: 1.5 }}>{f}</span>
                   </div>
                 ))}
@@ -201,7 +201,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
 
       <div style={{ marginTop: "40px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: "#8B5CF6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: "color-mix(in srgb, #8B5CF6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <ImageIcon size={16} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>

@@ -10,7 +10,8 @@ import { Accordion } from "@/components/ui/Accordion";
 import { internships, difficultyLabels } from "@/data/internships";
 import { hoverLift } from "@/lib/motion";
 import styles from "./stages.module.css";
-
+
+import { textTint } from "@/lib/utils";
 const yearColors = [
   { bg: "rgba(18,184,200,0.08)", border: "rgba(18,184,200,0.2)", text: "#12B8C8", badge: "info" as const },
   { bg: "rgba(34,197,94,0.08)", border: "rgba(34,197,94,0.2)", text: "#22C55E", badge: "success" as const },
@@ -28,7 +29,7 @@ function WorkloadGrid({ workload }: { workload: (typeof internships)[0]["workloa
   return (
     <div className={styles.workloadGrid}>
       {items.map(({ icon, label, value }) => (
-        <div key={label} style={{ padding: "10px 12px", borderRadius: "10px", background: "rgba(255,255,255,0.6)" }}>
+        <div key={label} style={{ padding: "10px 12px", borderRadius: "10px", background: "color-mix(in srgb, var(--color-surface) 60%, transparent)" }}>
           <p style={{ fontSize: "16px", marginBottom: "4px" }}>{icon}</p>
           <p style={{ fontSize: "11px", fontWeight: 600, color: "var(--color-text-muted)" }}>{label}</p>
           <p style={{ fontSize: "13px", fontWeight: 700, color: "var(--color-text)" }}>{value}</p>
@@ -58,7 +59,7 @@ function StageDetail({ internship, colors, isExpanded }: {
           <div style={{ paddingTop: "16px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "14px" }}>
               <span style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-text-muted)" }}>الصعوبة</span>
-              <span style={{ fontSize: "13px", fontWeight: 700, color: diff.color }}>
+              <span style={{ fontSize: "13px", fontWeight: 700, color: textTint(diff.color) }}>
                 {diff.dot} {diff.label}
               </span>
             </div>
@@ -71,7 +72,7 @@ function StageDetail({ internship, colors, isExpanded }: {
                 { label: "التوقيت", value: internship.timing },
                 { label: "الوزن", value: `${internship.weight}/15` },
               ].map(({ label, value }) => (
-                <div key={label} style={{ padding: "10px 14px", borderRadius: "10px", background: "rgba(255,255,255,0.6)" }}>
+                <div key={label} style={{ padding: "10px 14px", borderRadius: "10px", background: "color-mix(in srgb, var(--color-surface) 60%, transparent)" }}>
                   <p style={{ fontSize: "11px", fontWeight: 600, color: "var(--color-text-muted)", marginBottom: "3px", textTransform: "uppercase", letterSpacing: "0.06em" }}>{label}</p>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "var(--color-text)" }}>{value}</p>
                 </div>
@@ -89,7 +90,7 @@ function StageDetail({ internship, colors, isExpanded }: {
               <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-text-muted)", marginBottom: "8px" }}>المخرجات:</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                 {internship.deliverables.map((d) => (
-                  <span key={d} style={{ padding: "4px 12px", borderRadius: "999px", fontSize: "12px", fontWeight: 500, background: "rgba(255,255,255,0.7)", color: colors.text, border: `1px solid ${colors.border}` }}>
+                  <span key={d} style={{ padding: "4px 12px", borderRadius: "999px", fontSize: "12px", fontWeight: 500, background: "color-mix(in srgb, var(--color-surface) 70%, transparent)", color: textTint(colors.text), border: `1px solid ${colors.border}` }}>
                     {d}
                   </span>
                 ))}
@@ -100,7 +101,7 @@ function StageDetail({ internship, colors, isExpanded }: {
               <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-text-muted)", marginBottom: "8px" }}>المتطلبات:</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                 {internship.requirements.map((r) => (
-                  <span key={r} style={{ padding: "4px 12px", borderRadius: "999px", fontSize: "12px", fontWeight: 500, background: "rgba(255,255,255,0.7)", color: colors.text, border: `1px solid ${colors.border}` }}>
+                  <span key={r} style={{ padding: "4px 12px", borderRadius: "999px", fontSize: "12px", fontWeight: 500, background: "color-mix(in srgb, var(--color-surface) 70%, transparent)", color: textTint(colors.text), border: `1px solid ${colors.border}` }}>
                     {r}
                   </span>
                 ))}
@@ -206,7 +207,7 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
                   </div>
                 </div>
                 <m.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.22 }}>
-                  <ChevronDown size={18} style={{ color: colors.text }} strokeWidth={2.5} />
+                  <ChevronDown size={18} style={{ color: textTint(colors.text) }} strokeWidth={2.5} />
                 </m.div>
               </button>
               {isOpen && (
@@ -254,7 +255,7 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
                     height: isActive ? "52px" : "44px",
                     borderRadius: "50%",
                     background: isActive ? colors.text : "var(--color-surface)",
-                    color: isActive ? "#fff" : colors.text,
+                    color: textTint(isActive ? "#fff" : colors.text),
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -265,7 +266,7 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
                 >
                   {internship.emoji}
                 </div>
-                <span style={{ fontSize: "12px", fontWeight: isActive ? 700 : 500, color: isActive ? colors.text : "var(--color-text-muted)" }}>
+                <span style={{ fontSize: "12px", fontWeight: isActive ? 700 : 500, color: textTint(isActive ? colors.text : "var(--color-text-muted)") }}>
                   السنة {internship.year}
                 </span>
               </m.button>

@@ -8,7 +8,7 @@
   <title>ما فماش كونيكسيون — ISET Zaghouan Hub</title>
   <link rel="icon" href="/favicon.ico">
   <style>
-    :root { color-scheme: light; }
+    :root { color-scheme: light dark; }
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -47,6 +47,13 @@
     }
     button { border: none; background: #0B1F3A; color: #FFFFFF; }
     a { border: 1px solid #E8EDF4; color: #077A86; background: #FFFFFF; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0B1422; color: #E8EEF6; }
+      main { background: #121E31; border-color: #24344B; box-shadow: none; }
+      p { color: #B4C0D0; }
+      button { background: #1B3253; }
+      a { border-color: #24344B; color: #3FD0DE; background: #121E31; }
+    }
   </style>
 </head>
 <body>

@@ -96,7 +96,7 @@ export function HeroSection() {
               href="/inscription"
               whileHover={{ y: -2, boxShadow: "0 12px 32px rgba(246,180,27,0.35)" }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary)] font-bold text-[15px] no-underline transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-accent)]"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[var(--color-accent)] text-[var(--color-navy)] font-bold text-[15px] no-underline transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-accent)]"
             >
               <CheckCircle2 size={18} strokeWidth={2.5} />
               ابدأ الترسيم

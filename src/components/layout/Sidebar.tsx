@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import { GraduationCap, X } from "@/lib/icons";
 import { m, AnimatePresence } from "framer-motion";
 import { navGroups, homeLink } from "@/constants/navigation";
-import { isNavActive } from "@/lib/utils";
+import { isNavActive, textTint } from "@/lib/utils";
 import { drawerFromRight, backdrop } from "@/lib/motion";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 
@@ -68,7 +68,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
             width: "40px",
             height: "40px",
             borderRadius: "12px",
-            background: "linear-gradient(135deg, rgba(11,31,58,0.08), rgba(18,184,200,0.12))",
+            background: "linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 8%, transparent), rgba(18,184,200,0.12))",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -96,7 +96,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
             width: "32px",
             height: "32px",
             borderRadius: "8px",
-            background: "rgba(11,31,58,0.05)",
+            background: "color-mix(in srgb, var(--color-primary) 5%, transparent)",
             border: "none",
             cursor: "pointer",
             marginRight: "auto",
@@ -135,7 +135,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
               width: "34px",
               height: "34px",
               borderRadius: "50%",
-              background: isNavActive(homeLink.href, pathname, navHrefs) ? "rgba(18,184,200,0.12)" : "rgba(11,31,58,0.05)",
+              background: isNavActive(homeLink.href, pathname, navHrefs) ? "rgba(18,184,200,0.12)" : "color-mix(in srgb, var(--color-primary) 5%, transparent)",
               color: isNavActive(homeLink.href, pathname, navHrefs) ? "var(--color-secondary)" : "var(--color-text-secondary)",
               display: "flex",
               alignItems: "center",
@@ -186,7 +186,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
                   fontWeight: 700,
                   letterSpacing: "0.10em",
                   textTransform: "uppercase",
-                  color: labelColorMap[group.color] ?? group.color,
+                  color: textTint(labelColorMap[group.color] ?? group.color),
                 }}
               >
                 {group.label}
@@ -223,7 +223,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
                     }}
                     onMouseEnter={(e) => {
                       if (!active) {
-                        (e.currentTarget as HTMLAnchorElement).style.background = "rgba(11,31,58,0.04)";
+                        (e.currentTarget as HTMLAnchorElement).style.background = "color-mix(in srgb, var(--color-primary) 4%, transparent)";
                       }
                     }}
                     onMouseLeave={(e) => {
@@ -237,8 +237,8 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
                         width: "32px",
                         height: "32px",
                         borderRadius: "50%",
-                        background: active ? `${group.color}18` : "rgba(11,31,58,0.05)",
-                        color: active ? group.color : "var(--color-text-secondary)",
+                        background: active ? `${group.color}18` : "color-mix(in srgb, var(--color-primary) 5%, transparent)",
+                        color: textTint(active ? group.color : "var(--color-text-secondary)"),
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -252,7 +252,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
                       style={{
                         fontSize: "13px",
                         fontWeight: active ? 600 : 400,
-                        color: active ? group.color : "var(--color-text)",
+                        color: textTint(active ? group.color : "var(--color-text)"),
                         transition: "color var(--transition-fast)",
                       }}
                     >

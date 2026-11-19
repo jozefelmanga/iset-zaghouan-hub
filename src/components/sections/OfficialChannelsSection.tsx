@@ -91,7 +91,7 @@ export function OfficialChannelsSection() {
                 const Icon = row.icon;
                 const inner = (
                   <>
-                    <div className="w-9 h-9 rounded-xl bg-[rgba(11,31,58,0.06)] text-[var(--color-primary)] flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 rounded-xl bg-primary/6 text-[var(--color-primary)] flex items-center justify-center shrink-0">
                       <Icon size={16} strokeWidth={2} />
                     </div>
                     <div className="flex-1 min-w-0 text-right">
@@ -147,7 +147,7 @@ export function OfficialChannelsSection() {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 min-h-[48px] px-4 py-3 rounded-xl text-sm font-bold no-underline transition-all hover:-translate-y-0.5 active:scale-[0.98]"
               style={{
-                background: "var(--color-primary)",
+                background: "var(--color-primary-bg)",
                 color: "#fff",
                 boxShadow: "0 8px 24px rgba(11,31,58,0.18)",
               }}

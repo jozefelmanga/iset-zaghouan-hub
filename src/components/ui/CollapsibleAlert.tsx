@@ -4,7 +4,8 @@ import { ReactNode, useState, useId } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { Info, AlertTriangle, CheckCircle2, AlertCircle, ChevronDown } from "@/lib/icons";
 import { useIsMobile } from "@/hooks/useIsMobile";
-
+
+import { textTint } from "@/lib/utils";
 type AlertVariant = "info" | "warning" | "success" | "danger";
 
 interface CollapsibleAlertProps {
@@ -36,7 +37,7 @@ function AlertBody({ title, children, variant = "info" }: CollapsibleAlertProps)
         alignItems: "flex-start",
       }}
     >
-      <IconEl size={18} style={{ color: v.icon, flexShrink: 0, marginTop: "1px" }} strokeWidth={2} />
+      <IconEl size={18} style={{ color: textTint(v.icon), flexShrink: 0, marginTop: "1px" }} strokeWidth={2} />
       <div>
         <p style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)", marginBottom: "2px" }}>{title}</p>
         <div style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{children}</div>
@@ -87,7 +88,7 @@ export function CollapsibleAlert({ title, children, variant = "info" }: Collapsi
           fontFamily: "var(--font-sans)",
         }}
       >
-        <IconEl size={18} style={{ color: v.icon, flexShrink: 0 }} strokeWidth={2} aria-hidden="true" />
+        <IconEl size={18} style={{ color: textTint(v.icon), flexShrink: 0 }} strokeWidth={2} aria-hidden="true" />
         <span style={{ flex: 1, fontWeight: 600, fontSize: "14px", color: "var(--color-text)", lineHeight: 1.4 }}>
           {title}
         </span>

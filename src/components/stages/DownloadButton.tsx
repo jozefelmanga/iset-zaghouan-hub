@@ -28,7 +28,7 @@ export function DownloadButton({ href, downloadName, downloadCount }: DownloadBu
         borderRadius: "10px",
         background: downloaded ? "rgba(34,197,94,0.10)" : "rgba(18,184,200,0.08)",
         border: downloaded ? "1px solid rgba(34,197,94,0.3)" : "1px solid rgba(18,184,200,0.2)",
-        color: downloaded ? "#22C55E" : "var(--color-secondary)",
+        color: downloaded ? "color-mix(in srgb, #22C55E, #fff var(--text-lift))" : "color-mix(in srgb, var(--color-secondary), #fff var(--text-lift))",
         fontSize: "13px",
         fontWeight: 600,
         textDecoration: "none",

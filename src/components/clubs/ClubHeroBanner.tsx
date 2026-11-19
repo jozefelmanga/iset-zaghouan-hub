@@ -39,7 +39,7 @@ export function ClubHeroBanner({
           aspectRatio: "4 / 1",
           minHeight: "140px",
           maxHeight: "340px",
-          backgroundColor: "var(--color-primary)",
+          backgroundColor: "var(--color-primary-bg)",
         }}
       >
         <ZoomableImage

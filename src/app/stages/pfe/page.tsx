@@ -77,7 +77,7 @@ export default function PfePage() {
             { value: pfeInternship.workload.defenseMinutes, label: "Soutenance" },
           ].map(({ value, label }) => (
             <div key={label} style={{ textAlign: "center" }}>
-              <p style={{ fontSize: "20px", fontWeight: 800, color: "#B45309" }}>{value}</p>
+              <p style={{ fontSize: "20px", fontWeight: 800, color: "color-mix(in srgb, #B45309, #fff var(--text-lift))" }}>{value}</p>
               <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-text-muted)" }}>{label}</p>
             </div>
           ))}
@@ -112,7 +112,7 @@ export default function PfePage() {
                 borderRadius: "12px",
                 background: "rgba(59,130,246,0.1)",
                 border: "1px solid rgba(59,130,246,0.3)",
-                color: "#1d4ed8",
+                color: "color-mix(in srgb, #1d4ed8, #fff var(--text-lift))",
                 fontWeight: 700,
                 fontSize: "13px",
                 textDecoration: "none",
@@ -132,7 +132,7 @@ export default function PfePage() {
                 borderRadius: "12px",
                 background: "rgba(34,197,94,0.1)",
                 border: "1px solid rgba(34,197,94,0.3)",
-                color: "#15803d",
+                color: "color-mix(in srgb, #15803d, #fff var(--text-lift))",
                 fontWeight: 700,
                 fontSize: "13px",
                 textDecoration: "none",
@@ -165,11 +165,11 @@ export default function PfePage() {
 
           <div style={{ marginTop: "16px", paddingTop: "14px", borderTop: "1px solid rgba(139,92,246,0.12)", display: "flex", flexWrap: "wrap", gap: "10px", alignItems: "center" }}>
             <span style={{ fontSize: "12.5px", color: "var(--color-text-muted)" }}>تصفح تفاصيل قسمك ومقرراته:</span>
-            <Link href="/departments/ti" style={{ fontSize: "12.5px", fontWeight: 600, color: "#2563EB", textDecoration: "none" }}>قسم TI</Link>
+            <Link href="/departments/ti" style={{ fontSize: "12.5px", fontWeight: 600, color: "color-mix(in srgb, #2563EB, #fff var(--text-lift))", textDecoration: "none" }}>قسم TI</Link>
             <span style={{ color: "var(--color-border)" }}>•</span>
-            <Link href="/departments/gpr" style={{ fontSize: "12.5px", fontWeight: 600, color: "#15803d", textDecoration: "none" }}>قسم GPR</Link>
+            <Link href="/departments/gpr" style={{ fontSize: "12.5px", fontWeight: 600, color: "color-mix(in srgb, #15803d, #fff var(--text-lift))", textDecoration: "none" }}>قسم GPR</Link>
             <span style={{ color: "var(--color-border)" }}>•</span>
-            <Link href="/departments/seg" style={{ fontSize: "12.5px", fontWeight: 600, color: "#7c3aed", textDecoration: "none" }}>قسم SEG</Link>
+            <Link href="/departments/seg" style={{ fontSize: "12.5px", fontWeight: 600, color: "color-mix(in srgb, #7c3aed, #fff var(--text-lift))", textDecoration: "none" }}>قسم SEG</Link>
           </div>
         </div>
       </MotionReveal>
@@ -202,7 +202,7 @@ export default function PfePage() {
                 borderRadius: "12px",
                 background: "rgba(249,115,22,0.1)",
                 border: "1px solid rgba(249,115,22,0.3)",
-                color: "#c2410c",
+                color: "color-mix(in srgb, #c2410c, #fff var(--text-lift))",
                 fontWeight: 700,
                 fontSize: "13px",
                 textDecoration: "none",

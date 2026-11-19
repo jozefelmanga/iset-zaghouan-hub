@@ -5,7 +5,8 @@ import { ArrowLeft, ExternalLink } from "@/lib/icons";
 import { externalResourceIcons } from "@/lib/iconMaps";
 import { hoverLift } from "@/lib/motion";
 import type { ExternalLinkResource } from "@/data/resources";
-
+
+import { textTint } from "@/lib/utils";
 function getDomain(href: string) {
   try {
     return new URL(href).hostname.replace("www.", "");
@@ -163,7 +164,7 @@ export function FeaturedPlatformCard({ resource }: { resource: ExternalLinkResou
               height: "44px",
               borderRadius: "12px",
               background: resource.bg,
-              color: resource.color,
+              color: textTint(resource.color),
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -195,7 +196,7 @@ export function FeaturedPlatformCard({ resource }: { resource: ExternalLinkResou
             background: resource.bg,
             border: `1px solid ${resource.color}44`,
             borderRadius: "10px",
-            color: resource.color,
+            color: textTint(resource.color),
             fontSize: "13px",
             fontWeight: 700,
             alignSelf: "flex-start",

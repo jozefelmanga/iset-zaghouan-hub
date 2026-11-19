@@ -108,11 +108,11 @@ export function InscriptionContent() {
                     style={{
                       background: "none", border: "none", cursor: "pointer", padding: 0,
                       marginTop: "2px", flexShrink: 0,
-                      color: isChecked ? "#22C55E" : "var(--color-border)",
+                      color: isChecked ? "color-mix(in srgb, #22C55E, #fff var(--text-lift))" : "var(--color-border)",
                     }}
                   >
                     {isChecked
-                      ? <CheckCircle2 size={22} strokeWidth={2.5} style={{ color: "#22C55E" }} />
+                      ? <CheckCircle2 size={22} strokeWidth={2.5} style={{ color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))" }} />
                       : <Circle size={22} strokeWidth={2} style={{ color: "var(--color-border)" }} />
                     }
                   </button>
@@ -120,7 +120,7 @@ export function InscriptionContent() {
                     style={{
                       width: "38px", height: "38px", borderRadius: "50%",
                       background: isChecked ? "rgba(34,197,94,0.10)" : "rgba(59,130,246,0.08)",
-                      color: isChecked ? "#22C55E" : "#3B82F6",
+                      color: isChecked ? "color-mix(in srgb, #22C55E, #fff var(--text-lift))" : "color-mix(in srgb, #3B82F6, #fff var(--text-lift))",
                       display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
                     }}
                   >
@@ -148,7 +148,7 @@ export function InscriptionContent() {
 
       <div style={{ marginBottom: "40px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-          <div style={{ width: "36px", height: "36px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "36px", height: "36px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Globe size={18} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "18px", color: "var(--color-text)" }}>مراحل الترسيم</span>
@@ -167,7 +167,7 @@ export function InscriptionContent() {
                   <div style={{
                     width: "32px", height: "32px", borderRadius: "50%",
                     background: i === 0 ? "rgba(18,184,200,0.1)" : "rgba(34,197,94,0.1)",
-                    color: i === 0 ? "var(--color-secondary)" : "#22C55E",
+                    color: i === 0 ? "var(--color-secondary)" : "color-mix(in srgb, #22C55E, #fff var(--text-lift))",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     fontWeight: 700, fontSize: "13px",
                   }}>

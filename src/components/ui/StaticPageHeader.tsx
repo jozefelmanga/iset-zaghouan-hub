@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { categoryConfig } from "@/lib/theme";
 import { pageHeaderIcons } from "@/lib/iconMaps";
-import { cn } from "@/lib/utils";
+import { cn, textTint } from "@/lib/utils";
 import type { Category } from "@/types";
 
 interface StaticPageHeaderProps {
@@ -29,7 +29,7 @@ export function StaticPageHeader({ icon, label, title, subtitle, badge, lastUpda
             width: "56px",
             height: "56px",
             background: colors.bg,
-            color: colors.color,
+            color: textTint(colors.color),
             flexShrink: 0,
           }}
         >

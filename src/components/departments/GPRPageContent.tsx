@@ -91,7 +91,7 @@ export function GPRPageContent() {
               "المختبرات البيئية ومحطات معالجة المياه",
               "مجموعة المجمع الكيميائي التونسي (Groupe Chimique)",
             ].map((job, idx) => (
-              <div key={idx} style={{ background: "rgba(11,31,58,0.03)", padding: "10px 12px", border: "1px solid var(--color-border)", borderRadius: "10px", fontSize: "13px", color: "var(--color-text-secondary)", fontWeight: 500 }}>
+              <div key={idx} style={{ background: "color-mix(in srgb, var(--color-primary) 3%, transparent)", padding: "10px 12px", border: "1px solid var(--color-border)", borderRadius: "10px", fontSize: "13px", color: "var(--color-text-secondary)", fontWeight: 500 }}>
                 🔹 {job}
               </div>
             ))}
@@ -110,14 +110,14 @@ export function GPRPageContent() {
         </h2>
         <Card elevation="raised" padding="24px">
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }} dir="rtl">
-            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
+            <div style={{ background: "color-mix(in srgb, var(--color-primary) 3%, transparent)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
               <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الأولى (Tronc Commun)</h4>
               <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0 }}>
                 في العام الأول (tronc commun)، نقراو les bases اللي نستحقوهم، كيما chimie générale et organique, math, و physique. و في الـ S2 نزيدو عليهم thermodynamique, mécanique des fluides, و électrotechnique. هالمواد يعاونونا برشا باش نفهمو les réactions chimiques و كيفاش يخدمو les équipements في أي معمل.
               </p>
             </div>
             
-            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
+            <div style={{ background: "color-mix(in srgb, var(--color-primary) 3%, transparent)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
               <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثانية (Spécialisation)</h4>
               <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0, marginBottom: "12px" }}>
                 <strong style={{ color: "var(--color-text)" }}>في اختصاص Génie des Procédés Agroalimentaires:</strong> هوني ندخلو في صلب الموضوع ونقراو microbiologie, biochimie, opérations unitaires, و conservation des produits. نتعلمو كيفاش نراقبو جودة الماكلة (contrôle qualité)، وكيفاش نحسنو طرق التصنيع ونستغلو الكائنات الدقيقة في الصناعات الغذائية.
@@ -127,7 +127,7 @@ export function GPRPageContent() {
               </p>
             </div>
             
-            <div style={{ background: "rgba(11,31,58,0.03)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
+            <div style={{ background: "color-mix(in srgb, var(--color-primary) 3%, transparent)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
               <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثالثة (Matières Appliquées)</h4>
               <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0, marginBottom: "12px" }}>
                 <strong style={{ color: "var(--color-text)" }}>في اختصاص Génie des Procédés Agroalimentaires:</strong> نكملو نتعمقو في مواد سبيسيال كيما formulation des produits, emballage, و sécurité alimentaire. هالمواد مهمين برشا في الـ industrie باش نطوروا منتوجات جديدة، نضمنو الجودة، ونقصو مالـ coûts والـ énergie في المعامل.
@@ -147,7 +147,7 @@ export function GPRPageContent() {
         </h2>
         <DepartmentScheduleDisclaimer intro="المواد تختلف بين السداسي الأول والثاني." />
 
-        <div style={{ display: "flex", gap: "8px", background: "rgba(11,31,58,0.04)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>
+        <div style={{ display: "flex", gap: "8px", background: "color-mix(in srgb, var(--color-primary) 4%, transparent)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>
           <button
             onClick={() => setSemesterTab("s1")}
             style={{

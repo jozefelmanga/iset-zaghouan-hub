@@ -41,12 +41,12 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
       <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Shield size={20} style={{ color: "#F6B41B" }} />
+            <Shield size={20} style={{ color: "color-mix(in srgb, #F6B41B, #fff var(--text-lift))" }} />
             شكون أحنا؟ (Who Are We?)
           </h2>
             <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
             جمعية <strong>SecuriNets</strong> الوطنية تأسست في 2003، وهي أكبر جمعية ومجتمع في تونس كامل متع الأمن السيبراني.
-            فرع ISET زغوان انفتح في 2016 من مجموعة طلبة شغوفين بالـ <code style={{ color: "#3B82F6", fontWeight: 600 }}>Cybersecurity</code>.
+            فرع ISET زغوان انفتح في 2016 من مجموعة طلبة شغوفين بالـ <code style={{ color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))", fontWeight: 600 }}>Cybersecurity</code>.
           </p>
           <Alert title="ملاحظة مهمة" variant="info">
             فريق SecuriNets ما يقتصرش على طلبة الإعلامية (IT) — التكوينات متاعنا مفتوحة للكل من كافة التخصصات والسنوات باش يشاركو ويتعلّمو.
@@ -82,7 +82,7 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
                     color: "var(--color-text-secondary)",
                     padding: "8px 12px",
                     borderRadius: "10px",
-                    background: "rgba(11,31,58,0.03)",
+                    background: "color-mix(in srgb, var(--color-primary) 3%, transparent)",
                     border: "1px solid var(--color-border)",
                     fontWeight: 500,
                     transition: "all var(--transition-fast)",
@@ -121,7 +121,7 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
                   borderRadius: "999px",
                   background: "rgba(246,180,27,0.08)",
                   border: "1px solid rgba(246,180,27,0.18)",
-                  color: "#B45309",
+                  color: "color-mix(in srgb, #B45309, #fff var(--text-lift))",
                   fontSize: "12.5px",
                   fontWeight: 600,
                 }}

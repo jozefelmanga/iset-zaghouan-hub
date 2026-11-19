@@ -20,7 +20,8 @@ import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 import { RelatedClubsNav } from "@/components/ui/RelatedNav";
-
+
+import { textTint } from "@/lib/utils";
 const ROBOTIQUE_COLOR = "#2563EB";
 const ROBOTIQUE_BASE = "/images/clubs/robotique";
 
@@ -94,7 +95,7 @@ export function RobotiquePageContent({ galleryImages }: Props) {
       <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Bot size={20} style={{ color: ROBOTIQUE_COLOR }} />
+            <Bot size={20} style={{ color: textTint(ROBOTIQUE_COLOR) }} />
             شكون أحنا؟ (Who Are We?)
           </h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "12px" }}>
@@ -113,7 +114,7 @@ export function RobotiquePageContent({ galleryImages }: Props) {
                 borderRadius: "999px",
                 background: "rgba(37,99,235,0.08)",
                 border: "1px solid rgba(37,99,235,0.18)",
-                color: ROBOTIQUE_COLOR,
+                color: textTint(ROBOTIQUE_COLOR),
                 fontSize: "12.5px",
                 fontWeight: 600,
               }}
@@ -127,7 +128,7 @@ export function RobotiquePageContent({ galleryImages }: Props) {
                 rel="noopener noreferrer"
                 style={{
                   display: "flex", alignItems: "center", gap: "8px",
-                  textDecoration: "none", fontSize: "13px", color: "#1877F2", padding: "8px 14px",
+                  textDecoration: "none", fontSize: "13px", color: "color-mix(in srgb, #1877F2, #fff var(--text-lift))", padding: "8px 14px",
                   borderRadius: "10px", background: "rgba(24,119,242,0.06)", border: "1px solid rgba(24,119,242,0.18)",
                   fontWeight: 600,
                 }}
@@ -141,7 +142,7 @@ export function RobotiquePageContent({ galleryImages }: Props) {
                 rel="noopener noreferrer"
                 style={{
                   display: "flex", alignItems: "center", gap: "8px",
-                  textDecoration: "none", fontSize: "13px", color: "#E4405F", padding: "8px 14px",
+                  textDecoration: "none", fontSize: "13px", color: "color-mix(in srgb, #E4405F, #fff var(--text-lift))", padding: "8px 14px",
                   borderRadius: "10px", background: "rgba(228,64,95,0.06)", border: "1px solid rgba(228,64,95,0.18)",
                   fontWeight: 600,
                 }}
@@ -155,7 +156,7 @@ export function RobotiquePageContent({ galleryImages }: Props) {
 
       <div style={{ marginBottom: "32px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-          <Wrench size={18} style={{ color: ROBOTIQUE_COLOR }} />
+          <Wrench size={18} style={{ color: textTint(ROBOTIQUE_COLOR) }} />
           <h3 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)", margin: 0 }}>
             التكنولوجيات اللي نستعملوها
           </h3>
@@ -188,12 +189,12 @@ export function RobotiquePageContent({ galleryImages }: Props) {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: tech.color,
+                    color: textTint(tech.color),
                   }}
                 >
                   <Icon size={22} strokeWidth={2} />
                 </div>
-                <span style={{ fontSize: "13px", fontWeight: 700, color: tech.color, lineHeight: 1.3 }}>
+                <span style={{ fontSize: "13px", fontWeight: 700, color: textTint(tech.color), lineHeight: 1.3 }}>
                   {tech.name}
                 </span>
               </div>
@@ -204,7 +205,7 @@ export function RobotiquePageContent({ galleryImages }: Props) {
 
       <Card elevation="raised" padding="24px" style={{ marginBottom: "32px" }}>
         <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
-          <Calendar size={18} style={{ color: ROBOTIQUE_COLOR }} />
+          <Calendar size={18} style={{ color: textTint(ROBOTIQUE_COLOR) }} />
           أنشطة وفعاليات النادي
         </h3>
 
@@ -218,7 +219,7 @@ export function RobotiquePageContent({ galleryImages }: Props) {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-            <Trophy size={18} style={{ color: ROBOTIQUE_COLOR }} />
+            <Trophy size={18} style={{ color: textTint(ROBOTIQUE_COLOR) }} />
             <h4 style={{ fontSize: "15px", fontWeight: 700, color: "var(--color-text)", margin: 0 }}>
               Hackathon Robotique 24H
             </h4>
@@ -241,7 +242,7 @@ export function RobotiquePageContent({ galleryImages }: Props) {
                   gap: "12px",
                   padding: "12px 14px",
                   borderRadius: "12px",
-                  background: "rgba(11,31,58,0.03)",
+                  background: "color-mix(in srgb, var(--color-primary) 3%, transparent)",
                   border: "1px solid var(--color-border)",
                 }}
               >
@@ -251,7 +252,7 @@ export function RobotiquePageContent({ galleryImages }: Props) {
                     height: "36px",
                     borderRadius: "10px",
                     background: `${item.color}14`,
-                    color: item.color,
+                    color: textTint(item.color),
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",

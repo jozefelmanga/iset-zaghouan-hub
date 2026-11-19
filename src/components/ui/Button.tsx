@@ -16,9 +16,9 @@ interface ButtonProps {
 
 export function Button({ children, variant = "primary", size = "md", href, onClick, className = "", icon: Icon }: ButtonProps) {
   const styles: Record<string, React.CSSProperties> = {
-    primary:   { background: "var(--color-primary)",  color: "#fff",                    border: "none" },
+    primary:   { background: "var(--color-primary-bg)",  color: "#fff",                    border: "none" },
     secondary: { background: "var(--color-surface)",  color: "var(--color-text)",       border: "1px solid var(--color-border)" },
-    accent:    { background: "var(--color-accent)",   color: "var(--color-primary)",    border: "none" },
+    accent:    { background: "var(--color-accent)",   color: "var(--color-navy)",       border: "none" },
     ghost:     { background: "transparent",           color: "var(--color-text-secondary)", border: "none" },
   };
 

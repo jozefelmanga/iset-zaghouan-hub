@@ -6,7 +6,7 @@ export function EmergencyContacts({ contacts }: { contacts: Contact[] }) {
   return (
     <div style={{ marginBottom: "28px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: "#EF4444", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: "color-mix(in srgb, #EF4444, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Phone size={16} strokeWidth={2} />
         </div>
         <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>أرقام مهمة</span>
@@ -39,7 +39,7 @@ export function EmergencyContacts({ contacts }: { contacts: Contact[] }) {
                   style={{
                     padding: "8px 18px",
                     borderRadius: "var(--radius-button)",
-                    background: "var(--color-primary)",
+                    background: "var(--color-primary-bg)",
                     color: "#fff",
                     fontSize: "13px",
                     fontWeight: 600,
@@ -56,7 +56,7 @@ export function EmergencyContacts({ contacts }: { contacts: Contact[] }) {
                   style={{
                     padding: "8px 18px",
                     borderRadius: "var(--radius-button)",
-                    background: "rgba(11,31,58,0.08)",
+                    background: "color-mix(in srgb, var(--color-primary) 8%, transparent)",
                     color: "var(--color-primary)",
                     fontSize: "13px",
                     fontWeight: 700,

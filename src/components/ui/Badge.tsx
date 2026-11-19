@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-
+
+import { textTint } from "@/lib/utils";
 interface BadgeProps {
   children: ReactNode;
   variant?: "default" | "success" | "warning" | "danger" | "accent" | "info";
@@ -7,7 +8,7 @@ interface BadgeProps {
 
 export function Badge({ children, variant = "default" }: BadgeProps) {
   const variants: Record<string, { bg: string; color: string }> = {
-    default: { bg: "rgba(11,31,58,0.08)",   color: "var(--color-primary)"   },
+    default: { bg: "color-mix(in srgb, var(--color-primary) 8%, transparent)",   color: "var(--color-primary)"   },
     success: { bg: "rgba(34,197,94,0.10)",  color: "#16A34A"                },
     warning: { bg: "rgba(246,180,27,0.12)", color: "#B45309"                },
     danger:  { bg: "rgba(239,68,68,0.10)",  color: "#DC2626"                },
@@ -26,7 +27,7 @@ export function Badge({ children, variant = "default" }: BadgeProps) {
         fontWeight: 600,
         letterSpacing: "0.02em",
         background: v.bg,
-        color: v.color,
+        color: textTint(v.color),
       }}
     >
       {children}

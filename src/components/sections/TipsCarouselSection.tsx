@@ -6,7 +6,8 @@ import { Card } from "@/components/ui/Card";
 import { homeTipsMeta, studentTips } from "@/data/bonus";
 import { ArrowLeft, ChevronLeft, ChevronRight, Heart, Lightbulb } from "@/lib/icons";
 import { sectionReveal } from "@/lib/motion";
-
+
+import { textTint } from "@/lib/utils";
 function wrapIndex(index: number, length: number) {
   return ((index % length) + length) % length;
 }
@@ -125,7 +126,7 @@ export function TipsCarouselSection() {
               className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
               style={{
                 background: ready ? `color-mix(in srgb, ${tip.accentColor} 14%, transparent)` : "rgba(246,180,27,0.12)",
-                color: ready ? tip.accentColor : "var(--color-accent)",
+                color: textTint(ready ? tip.accentColor : "var(--color-accent)"),
               }}
             >
               <Lightbulb size={18} strokeWidth={2} />
@@ -136,7 +137,7 @@ export function TipsCarouselSection() {
                   className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold mb-2"
                   style={{
                     background: `color-mix(in srgb, ${tip.accentColor} 12%, transparent)`,
-                    color: tip.accentColor,
+                    color: textTint(tip.accentColor),
                   }}
                 >
                   {tip.categoryLabel}

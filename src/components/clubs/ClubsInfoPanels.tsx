@@ -38,7 +38,7 @@ export function ClubsInfoPanels() {
           {clubMeta.skills.map((s) => (
             <span
               key={s}
-              className="rounded-full border border-[rgba(246,180,27,0.25)] bg-[rgba(246,180,27,0.10)] px-3 py-1 text-[12px] font-semibold text-[#B45309]"
+              className="rounded-full border border-[rgba(246,180,27,0.25)] bg-[rgba(246,180,27,0.10)] px-3 py-1 text-[12px] font-semibold text-[var(--color-amber-text)]"
             >
               {s}
             </span>

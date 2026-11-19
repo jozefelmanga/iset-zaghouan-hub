@@ -18,7 +18,7 @@ export function Footer() {
     <footer
       className="pb-24 md:pb-0 relative overflow-hidden"
       style={{
-        background: "var(--color-primary)",
+        background: "var(--color-navy)",
       }}
     >
       {/* Dynamic Stars Background */}

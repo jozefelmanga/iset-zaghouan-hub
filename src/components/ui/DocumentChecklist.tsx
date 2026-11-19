@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { CheckCircle2 } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
 
+import { textTint } from "@/lib/utils";
 interface DocumentChecklistProps {
   /** Rendered as an <h2> so search engines see the section topic. */
   title: string;
@@ -27,7 +28,7 @@ export function DocumentChecklist({ title, icon, items, ordered = false, intro, 
             height: "34px",
             borderRadius: "50%",
             background: `color-mix(in srgb, ${accent} 12%, transparent)`,
-            color: accent,
+            color: textTint(accent),
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -53,7 +54,7 @@ export function DocumentChecklist({ title, icon, items, ordered = false, intro, 
                     height: "22px",
                     borderRadius: "50%",
                     background: `color-mix(in srgb, ${accent} 14%, transparent)`,
-                    color: accent,
+                    color: textTint(accent),
                     fontSize: "12px",
                     fontWeight: 700,
                     display: "flex",
@@ -65,7 +66,7 @@ export function DocumentChecklist({ title, icon, items, ordered = false, intro, 
                   {i + 1}
                 </span>
               ) : (
-                <CheckCircle2 size={18} strokeWidth={2} style={{ color: accent, flexShrink: 0, marginTop: "2px" }} aria-hidden="true" />
+                <CheckCircle2 size={18} strokeWidth={2} style={{ color: textTint(accent), flexShrink: 0, marginTop: "2px" }} aria-hidden="true" />
               )}
               <span>{item}</span>
             </li>

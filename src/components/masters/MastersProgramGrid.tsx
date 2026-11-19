@@ -7,7 +7,8 @@ import { GraduationCap, Layers, ArrowLeft } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { masterPrograms, masterFilterTabs } from "@/data/departments";
-
+
+import { textTint } from "@/lib/utils";
 export function MastersProgramGrid() {
   const [activeFilter, setActiveFilter] = useState("all");
 
@@ -24,7 +25,7 @@ export function MastersProgramGrid() {
         style={{
           display: "flex",
           gap: "8px",
-          background: "rgba(11,31,58,0.04)",
+          background: "color-mix(in srgb, var(--color-primary) 4%, transparent)",
           padding: "6px",
           borderRadius: "16px",
           marginBottom: "32px",
@@ -49,7 +50,7 @@ export function MastersProgramGrid() {
               cursor: "pointer",
               transition: "all var(--transition-base)",
               fontFamily: "var(--font-sans)",
-              background: activeFilter === tab.id ? "var(--color-primary)" : "transparent",
+              background: activeFilter === tab.id ? "var(--color-primary-bg)" : "transparent",
               color: activeFilter === tab.id ? "#fff" : "var(--color-text-secondary)",
               boxShadow: activeFilter === tab.id ? "var(--shadow-hover)" : "none",
             }}
@@ -84,7 +85,7 @@ export function MastersProgramGrid() {
                           fontSize: "11px",
                           fontWeight: 700,
                           background: master.bg,
-                          color: master.color,
+                          color: textTint(master.color),
                           border: `1px solid ${master.border}`,
                           display: "inline-flex",
                           alignItems: "center",
@@ -96,7 +97,7 @@ export function MastersProgramGrid() {
                         <ArrowLeft size={11} />
                       </span>
                     </Link>
-                    <GraduationCap size={18} style={{ color: master.color }} />
+                    <GraduationCap size={18} style={{ color: textTint(master.color) }} />
                   </div>
                   <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.5, marginBottom: "10px" }}>
                     {master.name}
@@ -110,7 +111,7 @@ export function MastersProgramGrid() {
                       style={{
                         fontSize: "12.5px",
                         fontWeight: 600,
-                        color: master.color,
+                        color: textTint(master.color),
                         textDecoration: "none",
                         display: "inline-flex",
                         alignItems: "center",

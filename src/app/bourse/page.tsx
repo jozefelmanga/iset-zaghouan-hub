@@ -34,7 +34,7 @@ export default function BoursePage() {
           <MotionReveal key={i} delay={i * 0.1} className="h-full">
             <Card elevation="feature" padding="24px" className="h-full flex flex-col justify-between">
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
-                <span style={{ fontSize: "12px", fontWeight: 600, padding: "4px 10px", borderRadius: "999px", background: i === 0 ? "rgba(59,130,246,0.1)" : "rgba(34,197,94,0.1)", color: i === 0 ? "#2563EB" : "#15803D" }}>{s.name}</span>
+                <span style={{ fontSize: "12px", fontWeight: 600, padding: "4px 10px", borderRadius: "999px", background: i === 0 ? "rgba(59,130,246,0.1)" : "rgba(34,197,94,0.1)", color: i === 0 ? "color-mix(in srgb, #2563EB, #fff var(--text-lift))" : "color-mix(in srgb, #15803D, #fff var(--text-lift))" }}>{s.name}</span>
                 <div style={{ fontSize: "28px", fontWeight: 800, color: "var(--color-primary)", fontFeatureSettings: '"tnum"' }}>
                   {s.amount}
                   <span style={{ fontSize: "14px", fontWeight: 500, color: "var(--color-text-muted)", marginRight: "3px" }}>د</span>
@@ -85,7 +85,7 @@ export default function BoursePage() {
                 <p style={{ fontSize: "11px", fontWeight: 600, color: "var(--color-text-muted)", marginBottom: "6px" }}>
                   الدفعة {order}
                 </p>
-                <p style={{ fontSize: "24px", fontWeight: 800, color: "#16A34A", fontFeatureSettings: '"tnum"' }}>
+                <p style={{ fontSize: "24px", fontWeight: 800, color: "color-mix(in srgb, #16A34A, #fff var(--text-lift))", fontFeatureSettings: '"tnum"' }}>
                   {amount}
                   <span style={{ fontSize: "13px", fontWeight: 500, color: "var(--color-text-muted)", marginRight: "2px" }}>د</span>
                 </p>

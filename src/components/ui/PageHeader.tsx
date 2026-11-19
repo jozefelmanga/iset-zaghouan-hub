@@ -6,7 +6,8 @@ import { categoryConfig } from "@/lib/theme";
 import { enterAnimation } from "@/lib/motion";
 import type { Category } from "@/types";
 import type { LucideIcon } from "@/lib/icons";
-
+
+import { textTint } from "@/lib/utils";
 interface PageHeaderProps {
   icon: LucideIcon;
   label?: string;
@@ -32,7 +33,7 @@ export function PageHeader({ icon: Icon, label, title, subtitle, badge, lastUpda
             width: "56px",
             height: "56px",
             background: colors.bg,
-            color: colors.color, // Map to categoryConfig.color
+            color: textTint(colors.color), // Map to categoryConfig.color
             flexShrink: 0,
           }}
         >

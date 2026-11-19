@@ -7,7 +7,8 @@ import { Card } from "@/components/ui/Card";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { clubBenefitIcons } from "@/lib/iconMaps";
 import { enterAnimation } from "@/lib/motion";
-
+
+import { textTint } from "@/lib/utils";
 type BenefitCard = (typeof import("@/data/clubs").clubBenefitCards)[number];
 type ClubEntry = (typeof import("@/data/clubs").clubDirectory)[number];
 
@@ -17,7 +18,7 @@ export function ClubBenefitCard({ item, index }: { item: BenefitCard; index: num
   return (
     <m.div {...enterAnimation(index * 0.1)} whileHover={{ y: -4 }}>
       <Card elevation="raised" padding="22px">
-        <div style={{ width: "44px", height: "44px", borderRadius: "50%", background: item.bg, color: item.color, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
+        <div style={{ width: "44px", height: "44px", borderRadius: "50%", background: item.bg, color: textTint(item.color), display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
           <Icon size={20} strokeWidth={2} />
         </div>
         <h4 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)", marginBottom: "6px" }}>{item.title}</h4>
@@ -49,7 +50,7 @@ export function ClubDirectoryCard({ club, index }: { club: ClubEntry; index: num
               <h4 className="text-[14px] font-bold leading-snug text-text md:text-[15px]">
                 {club.name}
               </h4>
-              <p className="text-[11px] font-semibold leading-snug md:text-[12px]" style={{ color: club.color }}>
+              <p className="text-[11px] font-semibold leading-snug md:text-[12px]" style={{ color: textTint(club.color) }}>
                 {club.slogan}
               </p>
               <p className="text-[12.5px] leading-relaxed text-text-secondary md:text-[13px]">

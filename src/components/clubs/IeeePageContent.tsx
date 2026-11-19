@@ -14,7 +14,8 @@ import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 import { RelatedClubsNav } from "@/components/ui/RelatedNav";
-
+
+import { textTint } from "@/lib/utils";
 const IEEE_COLOR = "#00629B";
 const IEEE_BASE = "/images/clubs/ieee";
 
@@ -54,7 +55,7 @@ export function IeeePageContent({ galleryImages }: Props) {
       <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Code size={20} style={{ color: IEEE_COLOR }} />
+            <Code size={20} style={{ color: textTint(IEEE_COLOR) }} />
             شكون أحنا؟ (Who Are We?)
           </h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "12px" }}>
@@ -77,7 +78,7 @@ export function IeeePageContent({ galleryImages }: Props) {
               borderRadius: "999px",
               background: "rgba(0,98,155,0.08)",
               border: "1px solid rgba(0,98,155,0.18)",
-              color: IEEE_COLOR,
+              color: textTint(IEEE_COLOR),
               fontSize: "12.5px",
               fontWeight: 600,
             }}
@@ -89,13 +90,13 @@ export function IeeePageContent({ galleryImages }: Props) {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))", gap: "24px", marginBottom: "32px" }}>
         <Card elevation="raised" padding="24px">
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <CheckCircle2 size={18} style={{ color: IEEE_COLOR }} />
+            <CheckCircle2 size={18} style={{ color: textTint(IEEE_COLOR) }} />
             أهدافنا
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {objectives.map((obj, i) => (
               <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                <span style={{ color: IEEE_COLOR, fontSize: "14px", fontWeight: "bold" }}>✓</span>
+                <span style={{ color: textTint(IEEE_COLOR), fontSize: "14px", fontWeight: "bold" }}>✓</span>
                 <span style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>{obj}</span>
               </div>
             ))}
@@ -112,7 +113,7 @@ export function IeeePageContent({ galleryImages }: Props) {
                 rel="noopener noreferrer"
                 style={{
                   display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
-                  textDecoration: "none", fontSize: "13px", color: "#1877F2", padding: "10px",
+                  textDecoration: "none", fontSize: "13px", color: "color-mix(in srgb, #1877F2, #fff var(--text-lift))", padding: "10px",
                   borderRadius: "10px", background: "rgba(24,119,242,0.06)", border: "1px solid rgba(24,119,242,0.18)",
                   fontWeight: 600,
                 }}
@@ -126,7 +127,7 @@ export function IeeePageContent({ galleryImages }: Props) {
                 rel="noopener noreferrer"
                 style={{
                   display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
-                  textDecoration: "none", fontSize: "13px", color: "#E4405F", padding: "10px",
+                  textDecoration: "none", fontSize: "13px", color: "color-mix(in srgb, #E4405F, #fff var(--text-lift))", padding: "10px",
                   borderRadius: "10px", background: "rgba(228,64,95,0.06)", border: "1px solid rgba(228,64,95,0.18)",
                   fontWeight: 600,
                 }}
@@ -138,7 +139,7 @@ export function IeeePageContent({ galleryImages }: Props) {
                 href="mailto:ieeeisetz@gmail.com"
                 style={{
                   display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
-                  textDecoration: "none", fontSize: "13px", color: IEEE_COLOR, padding: "10px",
+                  textDecoration: "none", fontSize: "13px", color: textTint(IEEE_COLOR), padding: "10px",
                   borderRadius: "10px", background: "rgba(0,98,155,0.06)", border: "1px solid rgba(0,98,155,0.18)",
                   fontWeight: 600,
                 }}
@@ -163,7 +164,7 @@ export function IeeePageContent({ galleryImages }: Props) {
                     borderRadius: "999px",
                     background: "rgba(0,98,155,0.08)",
                     border: "1px solid rgba(0,98,155,0.18)",
-                    color: IEEE_COLOR,
+                    color: textTint(IEEE_COLOR),
                     fontSize: "12px",
                     fontWeight: 600,
                   }}

@@ -5,6 +5,7 @@ import { Card, Alert } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
 import { generalTips, restoTips, foyerTips, contributors } from "@/data/bonus";
 
+import { textTint } from "@/lib/utils";
 function TipList({ tips, accentColor }: { tips: string[]; accentColor: string }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
@@ -19,7 +20,7 @@ function TipList({ tips, accentColor }: { tips: string[]; accentColor: string })
             borderBottom: idx < tips.length - 1 ? "1px solid var(--color-border)" : "none",
           }}
         >
-          <span style={{ fontSize: "14px", fontWeight: "bold", color: accentColor, marginTop: "2px" }}>#</span>
+          <span style={{ fontSize: "14px", fontWeight: "bold", color: textTint(accentColor), marginTop: "2px" }}>#</span>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{tip}</p>
         </div>
       ))}
@@ -58,7 +59,7 @@ export default function BonusPage() {
 
       <div style={{ marginBottom: "36px" }}>
         <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <Coffee size={20} style={{ color: "#F97316" }} />
+          <Coffee size={20} style={{ color: "color-mix(in srgb, #F97316, #fff var(--text-lift))" }} />
           في المطعم الجامعي (الريستو)
         </h2>
         <Card elevation="raised" padding="24px">
@@ -68,7 +69,7 @@ export default function BonusPage() {
 
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <Home size={20} style={{ color: "#12B8C8" }} />
+          <Home size={20} style={{ color: "color-mix(in srgb, #12B8C8, #fff var(--text-lift))" }} />
           داخل المبيت الجامعي
         </h2>
         <Card elevation="raised" padding="24px">
@@ -81,7 +82,7 @@ export default function BonusPage() {
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "16px" }}>
             <div
               style={{
-                width: "56px", height: "56px", borderRadius: "50%", background: "rgba(239,68,68,0.08)", color: "#EF4444",
+                width: "56px", height: "56px", borderRadius: "50%", background: "rgba(239,68,68,0.08)", color: "color-mix(in srgb, #EF4444, #fff var(--text-lift))",
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}
             >

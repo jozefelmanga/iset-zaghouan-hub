@@ -30,6 +30,20 @@
   --color-life:      #12B8C8;
   --color-campus:    #F97316;
 
+  /* === Fills that stay dark in both themes / adapt (see dark block below) === */
+  --color-navy:       #0B1F3A; /* dark text on bright fills (accent buttons) */
+  --color-primary-bg: #0B1F3A; /* solid primary fills: buttons, active tabs, footer */
+  --color-surface-glass: rgba(255, 255, 255, 0.85);
+
+  /* === Text tints for status / category colours === */
+  --color-amber-text:  #B45309;
+  --color-green-text:  #15803D;
+  --color-blue-text:   #2563EB;
+  --color-red-text:    #DC2626;
+  --color-orange-text: #C2410C;
+  --color-violet-text: #7C3AED;
+  --color-indigo-text: #4F46E5;
+
   /* === Typography === */
   --font-sans: var(--font-tajawal), system-ui, -apple-system, sans-serif;
 
@@ -52,6 +66,46 @@
   --transition-fast:   150ms ease;
   --transition-base:   250ms ease;
   --transition-slow:   400ms ease;
+}
+
+/* ========================================
+   DARK MODE — follows the system setting
+   `--color-primary` is mostly used for headings, so it turns light;
+   solid navy fills use `--color-primary-bg` / `--color-navy` instead.
+   ======================================== */
+:root {
+  color-scheme: light dark;
+  --text-lift: 0%; /* see textTint() in src/lib/utils.ts */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary:    #E8EEF6;
+    --color-primary-bg: #1B3253;
+    --color-background: #0B1422;
+    --color-surface:    #121E31;
+    --color-border:     #24344B;
+    --color-surface-glass: rgba(18, 30, 49, 0.85);
+
+    --color-text:           #E8EEF6;
+    --color-text-secondary: #B4C0D0;
+    --color-text-muted:     #98A6B9;
+    --color-secondary-text: #3FD0DE;
+    --color-accent-text:    #F6C451;
+
+    --color-amber-text:  #FBBF24;
+    --color-green-text:  #4ADE80;
+    --color-blue-text:   #7AB3FF;
+    --color-red-text:    #F87171;
+    --color-orange-text: #FB923C;
+    --color-violet-text: #B79CFF;
+    --color-indigo-text: #A5B4FC;
+    --text-lift: 45%;
+
+    --shadow-soft:  0 10px 30px rgba(0, 0, 0, 0.30);
+    --shadow-hover: 0 18px 50px rgba(0, 0, 0, 0.40);
+    --shadow-card:  0 2px 8px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.25);
+  }
 }
 
 /* ========================================
@@ -310,7 +364,7 @@ main > * {
 }
 
 .glass-light {
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--color-surface-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -396,7 +450,7 @@ main > * {
 
 /* Shimmer loading */
 .shimmer {
-  background: linear-gradient(90deg, var(--color-border) 25%, rgba(232,237,244,0.5) 50%, var(--color-border) 75%);
+  background: linear-gradient(90deg, var(--color-border) 25%, color-mix(in srgb, var(--color-border) 50%, transparent) 50%, var(--color-border) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
@@ -574,7 +628,7 @@ main > * {
    GLASS CARD VARIANTS
    ======================================== */
 .card-glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.4);

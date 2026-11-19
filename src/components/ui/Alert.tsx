@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Info, AlertTriangle, CheckCircle2, AlertCircle } from "@/lib/icons";
 
+import { textTint } from "@/lib/utils";
 interface AlertProps {
   title: string;
   children: ReactNode;
@@ -29,7 +30,7 @@ export function Alert({ title, children, variant = "info" }: AlertProps) {
         alignItems: "flex-start",
       }}
     >
-      <IconEl size={18} style={{ color: v.icon, flexShrink: 0, marginTop: "1px" }} strokeWidth={2} />
+      <IconEl size={18} style={{ color: textTint(v.icon), flexShrink: 0, marginTop: "1px" }} strokeWidth={2} />
       <div>
         <p style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)", marginBottom: "2px" }}>{title}</p>
         <div style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{children}</div>

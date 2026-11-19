@@ -43,7 +43,7 @@ export default function LibraryPage() {
               height: "56px",
               borderRadius: "50%",
               background: "rgba(34,197,94,0.12)",
-              color: "#22C55E",
+              color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -53,7 +53,7 @@ export default function LibraryPage() {
             <DoorOpen size={26} strokeWidth={2} />
           </div>
           <div>
-            <p style={{ fontWeight: 700, fontSize: "18px", color: "#16A34A", marginBottom: "4px" }}>
+            <p style={{ fontWeight: 700, fontSize: "18px", color: "color-mix(in srgb, #16A34A, #fff var(--text-lift))", marginBottom: "4px" }}>
               الدخول حر 🎉
             </p>
             <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>

@@ -6,7 +6,8 @@ import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { BusTimetables } from "@/components/transport/BusTimetables";
 import { transportRoutes, transportTips, transportWarnings, transportAbonnement, transportSrtn } from "@/data/transport";
-
+
+import { textTint } from "@/lib/utils";
 export const metadata = pageMetadata("/transport");
 
 const typeColors: Record<string, { bg: string; text: string; label: string }> = {
@@ -71,7 +72,7 @@ export default function TransportPage() {
               borderRadius: "12px",
               background: "rgba(24,119,242,0.08)",
               border: "1px solid rgba(24,119,242,0.2)",
-              color: "#0E5BC4",
+              color: "color-mix(in srgb, #0E5BC4, #fff var(--text-lift))",
               fontSize: "13px",
               fontWeight: 600,
               textDecoration: "none",
@@ -110,7 +111,7 @@ export default function TransportPage() {
             borderRadius: "12px",
             background: "rgba(59,130,246,0.08)",
             border: "1px solid rgba(59,130,246,0.2)",
-            color: "#3B82F6",
+            color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))",
             fontSize: "13px",
             fontWeight: 600,
             textDecoration: "none",
@@ -152,7 +153,7 @@ export default function TransportPage() {
                 <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "14px", flexWrap: "wrap", gap: "12px" }}>
                   <div>
                     <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "6px" }}>
-                      <span style={{ padding: "3px 10px", borderRadius: "999px", fontSize: "11px", fontWeight: 600, background: typeStyle.bg, color: typeStyle.text }}>
+                      <span style={{ padding: "3px 10px", borderRadius: "999px", fontSize: "11px", fontWeight: 600, background: typeStyle.bg, color: textTint(typeStyle.text) }}>
                         {typeStyle.label}
                       </span>
                       <h3 style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)" }}>{route.name}</h3>
@@ -180,7 +181,7 @@ export default function TransportPage() {
                   </div>
                   {route.contact && (
                     <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                      <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <Phone size={13} strokeWidth={2} />
                       </div>
                       <span style={{ fontSize: "13px", color: "var(--color-text-secondary)" }}>
@@ -205,7 +206,7 @@ export default function TransportPage() {
 
       <div style={{ marginBottom: "28px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: "#EF4444", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: "color-mix(in srgb, #EF4444, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <AlertCircle size={16} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>بالليل و بعد العشية</span>

@@ -74,7 +74,7 @@ export function WelcomeSection() {
                 style={{
                   background: "transparent",
                   border: "none",
-                  color: "#12B8C8",
+                  color: "color-mix(in srgb, #12B8C8, #fff var(--text-lift))",
                   fontSize: "13px",
                   fontWeight: 750,
                   cursor: "pointer",

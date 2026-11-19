@@ -34,7 +34,7 @@ export default function AboutPage() {
 
         <Card elevation="flat" padding="28px">
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-            <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "rgba(139,92,246,0.1)", color: "#8B5CF6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "rgba(139,92,246,0.1)", color: "color-mix(in srgb, #8B5CF6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Code size={18} strokeWidth={2} />
             </div>
             <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)" }}>التطوير والصيانة</h2>
@@ -64,7 +64,7 @@ export default function AboutPage() {
               <p style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-text)", marginBottom: "2px" }}>Youssef Ben Salem</p>
               <p style={{ fontSize: "13px", color: "var(--color-text-muted)" }}>Developer & Former ISETZG Student</p>
             </div>
-            <div style={{ padding: "6px 12px", borderRadius: "8px", background: "var(--color-primary)", color: "white", fontSize: "12px", fontWeight: 600 }}>
+            <div style={{ padding: "6px 12px", borderRadius: "8px", background: "var(--color-primary-bg)", color: "white", fontSize: "12px", fontWeight: 600 }}>
               Contact
             </div>
           </a>

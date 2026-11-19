@@ -66,7 +66,7 @@ export function EnactusPageContent({ galleryImages }: Props) {
       <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Briefcase size={20} style={{ color: "#F6B41B" }} />
+            <Briefcase size={20} style={{ color: "color-mix(in srgb, #F6B41B, #fff var(--text-lift))" }} />
             ما هي شبكة Enactus؟
           </h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
@@ -81,12 +81,12 @@ export function EnactusPageContent({ galleryImages }: Props) {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))", gap: "24px", marginBottom: "32px" }}>
         <Card elevation="raised" padding="24px">
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Trophy size={18} style={{ color: "#F6B41B" }} />
+            <Trophy size={18} style={{ color: "color-mix(in srgb, #F6B41B, #fff var(--text-lift))" }} />
             أبرز مشاريع النادي الريادية
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             {projects.map((proj, idx) => (
-              <div key={idx} style={{ padding: "12px 14px", borderRadius: "10px", background: "rgba(11,31,58,0.03)", border: "1px solid var(--color-border)" }}>
+              <div key={idx} style={{ padding: "12px 14px", borderRadius: "10px", background: "color-mix(in srgb, var(--color-primary) 3%, transparent)", border: "1px solid var(--color-border)" }}>
                 <h4 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "4px" }}>{proj.name}</h4>
                 <p style={{ fontSize: "12.5px", color: "var(--color-text-secondary)", lineHeight: 1.5, marginBottom: "10px" }}>{proj.desc}</p>
                 <a
@@ -98,7 +98,7 @@ export function EnactusPageContent({ galleryImages }: Props) {
                     alignItems: "center",
                     gap: "6px",
                     fontSize: "12.5px",
-                    color: "#EF4444",
+                    color: "color-mix(in srgb, #EF4444, #fff var(--text-lift))",
                     fontWeight: 600,
                     textDecoration: "none",
                   }}
@@ -114,13 +114,13 @@ export function EnactusPageContent({ galleryImages }: Props) {
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <Card elevation="raised" padding="20px">
             <h3 style={{ fontSize: "15px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
-              <Award size={16} style={{ color: "#22C55E" }} />
+              <Award size={16} style={{ color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))" }} />
               نجاحات وجوائز 2024
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               {achievements.map((ach, idx) => (
                 <div key={idx} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <span style={{ color: "#22C55E" }}>✔</span>
+                  <span style={{ color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))" }}>✔</span>
                   <span style={{ fontSize: "13px", color: "var(--color-text-secondary)", fontWeight: 500 }}>{ach}</span>
                 </div>
               ))}
@@ -146,7 +146,7 @@ export function EnactusPageContent({ galleryImages }: Props) {
                   style={{
                     padding: "6px 12px",
                     borderRadius: "8px",
-                    background: "rgba(11,31,58,0.03)",
+                    background: "color-mix(in srgb, var(--color-primary) 3%, transparent)",
                     border: "1px solid var(--color-border)",
                     color: "var(--color-text-secondary)",
                     fontSize: "12.5px",
@@ -187,7 +187,7 @@ export function EnactusPageContent({ galleryImages }: Props) {
                     borderRadius: "999px",
                     background: "rgba(246,180,27,0.08)",
                     border: "1px solid rgba(246,180,27,0.18)",
-                    color: "#B45309",
+                    color: "color-mix(in srgb, #B45309, #fff var(--text-lift))",
                     fontSize: "12px",
                     fontWeight: 600,
                   }}

@@ -33,7 +33,7 @@ export default function RestoPage() {
       <MotionReveal delay={0.1} className="mb-7">
         <div
           style={{
-            background: "linear-gradient(135deg, rgba(11,31,58,0.04), rgba(18,184,200,0.06))",
+            background: "linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 4%, transparent), rgba(18,184,200,0.06))",
             border: "1px solid rgba(18,184,200,0.2)",
             borderRadius: "20px",
             padding: "20px 24px",
@@ -45,14 +45,14 @@ export default function RestoPage() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <CheckCircle2 size={22} style={{ color: "#22C55E", flexShrink: 0 }} strokeWidth={2.5} />
+            <CheckCircle2 size={22} style={{ color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))", flexShrink: 0 }} strokeWidth={2.5} />
             <span style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)" }}>
               {restaurantInfo.rating}
             </span>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
             {restaurantInfo.features.map((f, i) => (
-              <span key={i} style={{ padding: "4px 12px", borderRadius: "999px", fontSize: "12px", fontWeight: 600, background: "rgba(34,197,94,0.10)", color: "#16A34A", border: "1px solid rgba(34,197,94,0.2)" }}>
+              <span key={i} style={{ padding: "4px 12px", borderRadius: "999px", fontSize: "12px", fontWeight: 600, background: "rgba(34,197,94,0.10)", color: "color-mix(in srgb, #16A34A, #fff var(--text-lift))", border: "1px solid rgba(34,197,94,0.2)" }}>
                 {f}
               </span>
             ))}
@@ -96,7 +96,7 @@ export default function RestoPage() {
 
       <div style={{ marginBottom: "28px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(24,119,242,0.10)", color: "#1877F2", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(24,119,242,0.10)", color: "color-mix(in srgb, #1877F2, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Facebook size={16} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>الصفحة الرسمية على فيسبوك</span>
@@ -115,7 +115,7 @@ export default function RestoPage() {
               gap: "8px",
               padding: "10px 18px",
               borderRadius: "10px",
-              background: "#1877F2",
+              background: "#166FE5",
               color: "#fff",
               fontSize: "13px",
               fontWeight: 600,
@@ -133,7 +133,7 @@ export default function RestoPage() {
 
       <div style={{ marginBottom: "28px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: "#8B5CF6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: "color-mix(in srgb, #8B5CF6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Moon size={16} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>رمضان في الريستو</span>
@@ -142,7 +142,7 @@ export default function RestoPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {restaurantInfo.ramadan.map((item, i) => (
               <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                <CheckCircle2 size={15} style={{ color: "#22C55E", flexShrink: 0, marginTop: "2px" }} strokeWidth={2.5} />
+                <CheckCircle2 size={15} style={{ color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))", flexShrink: 0, marginTop: "2px" }} strokeWidth={2.5} />
                 <span style={{ fontSize: "13px", color: "var(--color-text)", lineHeight: 1.6 }}>{item}</span>
               </div>
             ))}
@@ -185,7 +185,7 @@ export default function RestoPage() {
 
       <div style={{ marginTop: "40px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(249,115,22,0.10)", color: "#F97316", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(249,115,22,0.10)", color: "color-mix(in srgb, #F97316, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <ImageIcon size={16} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>معرض صور الريستو</span>

@@ -7,6 +7,7 @@ import { exploreZaghouan, zaghouanGallery, cafeTagColors } from "@/data/explore"
 import { studySpotIcons } from "@/lib/iconMaps";
 import { enterAnimation } from "@/lib/motion";
 import { YoutubeEmbed } from "@/components/ui/YoutubeEmbed";
+import { textTint } from "@/lib/utils";
 
 const heroDots = [
   { top: "20%", left: "15%", size: 3, delay: "0s" },
@@ -56,8 +57,8 @@ export function ExploreHeroBanner() {
 
         <div style={{ position: "relative", zIndex: 1 }}>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
-            <Mountain size={20} style={{ color: "#12B8C8" }} strokeWidth={2} />
-            <span style={{ fontSize: "12px", fontWeight: 600, color: "#12B8C8", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+            <Mountain size={20} style={{ color: "color-mix(in srgb, #12B8C8, #fff var(--text-lift))" }} strokeWidth={2} />
+            <span style={{ fontSize: "12px", fontWeight: 600, color: "color-mix(in srgb, #12B8C8, #fff var(--text-lift))", letterSpacing: "0.08em", textTransform: "uppercase" }}>
               عن زغوان
             </span>
           </div>
@@ -66,7 +67,7 @@ export function ExploreHeroBanner() {
           </p>
           <div style={{ marginTop: "16px", display: "flex", alignItems: "center", gap: "12px" }}>
             <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>الإحداثيات:</span>
-            <code style={{ fontSize: "12px", color: "#12B8C8", background: "rgba(18,184,200,0.10)", padding: "4px 10px", borderRadius: "6px" }}>
+            <code style={{ fontSize: "12px", color: "color-mix(in srgb, #12B8C8, #fff var(--text-lift))", background: "rgba(18,184,200,0.10)", padding: "4px 10px", borderRadius: "6px" }}>
               {coordinates.label}
             </code>
           </div>
@@ -80,7 +81,7 @@ export function ExploreStudySpots() {
   return (
     <div style={{ marginBottom: "36px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(59,130,246,0.10)", color: "#3B82F6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(59,130,246,0.10)", color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <BookOpen size={16} strokeWidth={2} />
         </div>
         <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>بلايص القراية</span>
@@ -107,7 +108,7 @@ export function ExploreStudySpots() {
             >
               <div style={{
                 width: "40px", height: "40px", borderRadius: "50%",
-                background: "rgba(59,130,246,0.10)", color: "#3B82F6",
+                background: "rgba(59,130,246,0.10)", color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))",
                 display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 10px",
               }}>
                 <Icon size={18} strokeWidth={2} />
@@ -125,7 +126,7 @@ export function ExploreCafeTags() {
   return (
     <div style={{ marginBottom: "36px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(249,115,22,0.10)", color: "#F97316", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(249,115,22,0.10)", color: "color-mix(in srgb, #F97316, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Coffee size={16} strokeWidth={2} />
         </div>
         <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>كافيهات و تفرهيد</span>
@@ -146,7 +147,7 @@ export function ExploreCafeTags() {
                 fontSize: "13px",
                 fontWeight: 500,
                 background: `${color}12`,
-                color,
+                color: textTint(color),
                 border: `1px solid ${color}30`,
                 cursor: "default",
               }}
@@ -207,7 +208,7 @@ export function ExploreMountainGuide() {
               dir="ltr"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[13px] font-semibold no-underline transition-colors duration-200 hover:bg-[rgba(34,197,94,0.15)]"
               style={{
-                background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.25)", color: "#16A34A",
+                background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.25)", color: "color-mix(in srgb, #16A34A, #fff var(--text-lift))",
               }}
             >
               <Phone size={14} strokeWidth={2} />
@@ -220,7 +221,7 @@ export function ExploreMountainGuide() {
               dir="ltr"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[13px] font-semibold no-underline transition-colors duration-200 hover:bg-[rgba(236,72,153,0.15)]"
               style={{
-                background: "rgba(236,72,153,0.08)", border: "1px solid rgba(236,72,153,0.25)", color: "#DB2777",
+                background: "rgba(236,72,153,0.08)", border: "1px solid rgba(236,72,153,0.25)", color: "color-mix(in srgb, #DB2777, #fff var(--text-lift))",
               }}
             >
               <Instagram size={14} strokeWidth={2} />
@@ -239,7 +240,7 @@ export function ExploreYoutubeSection() {
   return (
     <div style={{ marginBottom: "36px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: "#EF4444", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: "color-mix(in srgb, #EF4444, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Play size={16} strokeWidth={2} />
         </div>
         <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>{youtubeVideo.title}</span>

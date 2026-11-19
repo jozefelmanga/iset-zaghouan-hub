@@ -64,7 +64,7 @@ export function TIPageContent() {
                 alignItems: "center",
                 gap: "6px",
                 fontSize: "13px",
-                color: "#3B82F6",
+                color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))",
                 fontWeight: 600,
                 textDecoration: "none",
               }}
@@ -91,7 +91,7 @@ export function TIPageContent() {
                 alignItems: "center",
                 gap: "6px",
                 fontSize: "13px",
-                color: "#3B82F6",
+                color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))",
                 fontWeight: 600,
                 textDecoration: "none",
               }}
@@ -147,7 +147,7 @@ export function TIPageContent() {
         </h2>
         <DepartmentScheduleDisclaimer intro="المواد تختلف بين السداسي الأول والثاني." />
 
-        <div style={{ display: "flex", gap: "8px", background: "rgba(11,31,58,0.04)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>
+        <div style={{ display: "flex", gap: "8px", background: "color-mix(in srgb, var(--color-primary) 4%, transparent)", padding: "4px", borderRadius: "10px", marginBottom: "20px", maxWidth: "240px" }}>
           <button
             onClick={() => setSemesterTab("s1")}
             style={{
@@ -249,7 +249,7 @@ export function TIPageContent() {
                 "معدل الفرنسية والإنجليزية للسنتين",
                 "معدل الباكالوريا (Moyenne du Bac)",
               ].map((item, idx) => (
-                <div key={idx} style={{ background: "rgba(11,31,58,0.03)", padding: "10px 12px", borderRadius: "10px", fontSize: "12.5px", color: "var(--color-text)", border: "1px solid var(--color-border)", fontWeight: 500 }}>
+                <div key={idx} style={{ background: "color-mix(in srgb, var(--color-primary) 3%, transparent)", padding: "10px 12px", borderRadius: "10px", fontSize: "12.5px", color: "var(--color-text)", border: "1px solid var(--color-border)", fontWeight: 500 }}>
                   {item}
                 </div>
               ))}
@@ -266,7 +266,7 @@ export function TIPageContent() {
                   gap: "8px",
                   padding: "10px 18px",
                   borderRadius: "10px",
-                  background: "var(--color-primary)",
+                  background: "var(--color-primary-bg)",
                   color: "#fff",
                   fontSize: "13px",
                   fontWeight: 600,

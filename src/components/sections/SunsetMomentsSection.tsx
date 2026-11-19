@@ -25,7 +25,7 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
         style={{
           borderColor: "rgba(246,180,27,0.22)",
           background:
-            "linear-gradient(135deg, rgba(11,31,58,0.03) 0%, rgba(246,180,27,0.08) 100%)",
+            "linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 3%, transparent) 0%, rgba(246,180,27,0.08) 100%)",
         }}
       >
         <button
@@ -60,8 +60,8 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
 
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
-              <Sparkles size={15} style={{ color: "#D97706", flexShrink: 0 }} strokeWidth={2} aria-hidden="true" />
-              <span className="text-[13px] font-semibold sm:text-sm" style={{ color: "#B45309" }}>
+              <Sparkles size={15} style={{ color: "color-mix(in srgb, #D97706, #fff var(--text-lift))", flexShrink: 0 }} strokeWidth={2} aria-hidden="true" />
+              <span className="text-[13px] font-semibold sm:text-sm" style={{ color: "color-mix(in srgb, #B45309, #fff var(--text-lift))" }}>
                 لحظات من الحرم
               </span>
             </div>
@@ -80,7 +80,7 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full"
             style={{
               background: open ? "rgba(246,180,27,0.15)" : "var(--color-surface)",
-              color: open ? "#B45309" : "var(--color-text-muted)",
+              color: open ? "color-mix(in srgb, #B45309, #fff var(--text-lift))" : "var(--color-text-muted)",
               border: "1px solid rgba(246,180,27,0.2)",
             }}
           >

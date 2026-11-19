@@ -12,7 +12,8 @@ import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 import { RelatedClubsNav } from "@/components/ui/RelatedNav";
-
+
+import { textTint } from "@/lib/utils";
 const SOS_COLOR = "#E30613";
 const IMAGE_BASE = "/images/clubs/sos-ambassadeurs";
 
@@ -73,7 +74,7 @@ export function SosAmbassadeursPageContent({ galleryImages }: Props) {
       <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Heart size={20} style={{ color: SOS_COLOR }} />
+            <Heart size={20} style={{ color: textTint(SOS_COLOR) }} />
             شكون أحنا؟ (Who Are We?)
           </h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
@@ -88,7 +89,7 @@ export function SosAmbassadeursPageContent({ galleryImages }: Props) {
                 borderRadius: "999px",
                 background: "rgba(227,6,19,0.08)",
                 border: "1px solid rgba(227,6,19,0.18)",
-                color: SOS_COLOR,
+                color: textTint(SOS_COLOR),
                 fontSize: "12.5px",
                 fontWeight: 600,
               }}
@@ -99,7 +100,7 @@ export function SosAmbassadeursPageContent({ galleryImages }: Props) {
               style={{
                 padding: "6px 14px",
                 borderRadius: "999px",
-                background: "rgba(11,31,58,0.05)",
+                background: "color-mix(in srgb, var(--color-primary) 5%, transparent)",
                 border: "1px solid var(--color-border)",
                 color: "var(--color-text-secondary)",
                 fontSize: "12.5px",
@@ -117,13 +118,13 @@ export function SosAmbassadeursPageContent({ galleryImages }: Props) {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))", gap: "24px", marginBottom: "32px" }}>
         <Card elevation="raised" padding="24px">
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <CheckCircle2 size={18} style={{ color: SOS_COLOR }} />
+            <CheckCircle2 size={18} style={{ color: textTint(SOS_COLOR) }} />
             أهدافنا
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {objectives.map((obj, i) => (
               <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                <span style={{ color: SOS_COLOR, fontSize: "14px", fontWeight: "bold" }}>✓</span>
+                <span style={{ color: textTint(SOS_COLOR), fontSize: "14px", fontWeight: "bold" }}>✓</span>
                 <span style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>{obj}</span>
               </div>
             ))}
@@ -144,7 +145,7 @@ export function SosAmbassadeursPageContent({ galleryImages }: Props) {
                   borderRadius: "999px",
                   background: "rgba(227,6,19,0.08)",
                   border: "1px solid rgba(227,6,19,0.18)",
-                  color: SOS_COLOR,
+                  color: textTint(SOS_COLOR),
                   fontSize: "12.5px",
                   fontWeight: 600,
                 }}
@@ -158,7 +159,7 @@ export function SosAmbassadeursPageContent({ galleryImages }: Props) {
 
       <div style={{ marginBottom: "32px" }}>
         <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-          <Award size={20} style={{ color: SOS_COLOR }} />
+          <Award size={20} style={{ color: textTint(SOS_COLOR) }} />
           أبرز المبادرات
         </h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "16px" }}>

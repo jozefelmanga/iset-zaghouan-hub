@@ -145,4 +145,5 @@ export const footerLinks: FooterLink[] = [
   { href: "/clubs",       label: "النوادي"  },
   { href: "/faq",         label: "الأسئلة"  },
   { href: "/about",       label: "عن المنصة"},
+  { href: "/privacy",     label: "الخصوصية" },
 ];

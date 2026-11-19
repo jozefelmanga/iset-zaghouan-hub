@@ -1,5 +1,6 @@
 import type { LucideIcon } from "@/lib/icons";
 import {
+  Shield,
   Globe,
   Briefcase,
   MessageCircle,
@@ -107,6 +108,7 @@ export const pageHeaderIcons: Record<string, LucideIcon> = {
   code: Code,
   coins: Coins,
   flask: FlaskConical,
+  shield: Shield,
 };
 
 export const enrollmentStepIcons: Record<string, LucideIcon> = {

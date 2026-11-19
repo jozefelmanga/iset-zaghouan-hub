@@ -660,11 +660,34 @@ main > * {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
     scroll-behavior: auto !important;
+  }
+  /* Enter reveals: show content straight away */
+  .motion-reveal,
+  .section-reveal,
+  .animate-fade-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  /* Looping decorations: hold still */
+  .animate-float,
+  .animate-twinkle,
+  .animate-mountain,
+  .animate-pulse,
+  .animate-ping,
+  .animate-bounce,
+  .shimmer {
+    animation: none !important;
   }
 }
 

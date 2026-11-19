@@ -36,6 +36,7 @@ scripts/
   generate-stage-companies.mjs   # xlsx → stage-companies.json (runs on prebuild)
   generate-stage-logos.mjs
   generate-llms.ts
+archive/         # Outdated source material kept for reference — not deployed (see below)
 ```
 
 ## Key Features & Routes
@@ -51,7 +52,7 @@ The platform is divided into four main pillars to cover every aspect of a studen
 ### 🌟 Student Life
 - **`/housing` & `/resto`**: Comprehensive details on dormitories (Foyer) and the university restaurant, including meal times and procedures.
 - **`/bourse`**: Information on full scholarships and integration grants.
-- **`/transport`**: Practical commuting guides, louage/bus station locations, and pricing from surrounding cities.
+- **`/transport`**: Practical commuting guides, louage/bus station locations, pricing, and bus departure times for Zaghouan routes. Times live in `src/data/transport.ts`, copied from SRTGN's live timetable at http://www.srtgn.com.tn/site/horaires — re-check every September.
 - **`/clubs`**: Showcases active student organizations (SecuriNets, Enactus, Robotique, IEEE, etc.), their activities, achievements, and integration events.
 
 ### 💼 Career & Internships (`/stages`)
@@ -71,6 +72,14 @@ To refresh company data after updating the xlsx:
 ```bash
 node scripts/generate-stage-companies.mjs
 ```
+
+## Archive
+
+`archive/` holds outdated material that is no longer shown on the site but kept for reference. Files here are outside `public/`, so they are **not deployed** and have no public URL.
+
+| Folder | What | Why archived |
+|---|---|---|
+| `archive/srtgn-timetable-2023/` | SRTGN winter bus timetable, valid from 1 Sep 2023 (4 pages, all Nabeul-region lines) | Replaced on 2026-11-19 by text tables built from SRTGN's live timetable; several Tunis–Zaghouan departures in these images no longer run. |
 
 ## Deployment
 

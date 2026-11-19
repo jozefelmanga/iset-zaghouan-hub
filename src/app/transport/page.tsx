@@ -4,10 +4,8 @@ import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { Card, Alert } from "@/components/ui/shared";
 import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
-import { TransportBusGallery } from "@/components/transport/TransportBusGallery";
 import { BusTimetables } from "@/components/transport/BusTimetables";
 import { transportRoutes, transportTips, transportWarnings, transportAbonnement, transportSrtn } from "@/data/transport";
-import { getGalleryImages } from "@/lib/gallery";
 
 export const metadata = pageMetadata("/transport");
 
@@ -17,8 +15,6 @@ const typeColors: Record<string, { bg: string; text: string; label: string }> = 
 };
 
 export default function TransportPage() {
-  const images = getGalleryImages("transport");
-
   return (
     <PageWrapper seoPath="/transport">
       <StaticPageHeader
@@ -87,7 +83,6 @@ export default function TransportPage() {
           </a>
         </div>
         <BusTimetables />
-        <TransportBusGallery galleryImages={images} />
       </div>
 
       <Card elevation="raised" padding="24px" style={{ marginBottom: "36px" }}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Search, Map, X } from "lucide-react";
 
@@ -10,6 +11,7 @@ interface FABProps {
 
 export function FloatingActionButton({ onSearchOpen }: FABProps) {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   const actions = [
     {
@@ -26,7 +28,7 @@ export function FloatingActionButton({ onSearchOpen }: FABProps) {
       label: "خريطة الحرم",
       action: () => {
         setOpen(false);
-        window.location.href = "/explore";
+        router.push("/explore");
       },
       color: "#F97316",
     },

@@ -222,7 +222,7 @@ export function InternshipCompanySearch() {
               border: cityFilter === city ? "1px solid rgba(99,102,241,0.4)" : "1px solid var(--color-border)",
             }}
           >
-            {label} <span style={{ opacity: 0.6, fontWeight: 500 }}>{count}</span>
+            {label} <span style={{ fontWeight: 500 }}>({count})</span>
           </button>
         ))}
       </div>
@@ -242,7 +242,7 @@ export function InternshipCompanySearch() {
                 <div style={{ minWidth: 0 }}>
                   <p style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", lineHeight: 1.4 }}>{company.name}</p>
                   {(company.city || company.region) && (
-                    <p style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "12px", color: "var(--color-secondary)", fontWeight: 600, marginTop: "4px" }}>
+                    <p style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "12px", color: "var(--color-secondary-text)", fontWeight: 600, marginTop: "4px" }}>
                       <MapPin size={12} strokeWidth={2} />
                       {company.city ?? company.region}
                     </p>
@@ -263,7 +263,7 @@ export function InternshipCompanySearch() {
                     dir="ltr"
                     style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: 600, color: "var(--color-text)", textDecoration: "none" }}
                   >
-                    <Phone size={12} strokeWidth={2} style={{ color: "var(--color-secondary)", flexShrink: 0 }} />
+                    <Phone size={12} strokeWidth={2} style={{ color: "var(--color-secondary-text)", flexShrink: 0 }} />
                     {company.phone}
                   </a>
                 )}
@@ -273,7 +273,7 @@ export function InternshipCompanySearch() {
                     dir="ltr"
                     style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", color: "var(--color-text-secondary)", textDecoration: "none", wordBreak: "break-all" }}
                   >
-                    <Mail size={12} strokeWidth={2} style={{ color: "var(--color-secondary)", flexShrink: 0 }} />
+                    <Mail size={12} strokeWidth={2} style={{ color: "var(--color-secondary-text)", flexShrink: 0 }} />
                     {company.email}
                   </a>
                 )}

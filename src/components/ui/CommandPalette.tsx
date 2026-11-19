@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Search, X, Clock, TrendingUp, ArrowLeft } from "@/lib/icons";
 import { allNavLinks } from "@/constants/navigation";
 import { matchesNavLink } from "@/lib/nav-search";
@@ -62,7 +62,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       {open && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -79,7 +79,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
           />
 
           {/* Palette */}
-          <motion.div
+          <m.div
             ref={dialogRef}
             role="dialog"
             aria-modal="true"
@@ -478,7 +478,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                 ))}
               </div>
             )}
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

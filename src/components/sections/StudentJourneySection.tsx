@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { studentJourney } from "@/data/content";
@@ -10,7 +10,7 @@ import { hoverLift, itemReveal, sectionReveal } from "@/lib/motion";
 
 export function StudentJourneySection() {
   return (
-    <motion.section {...sectionReveal} className="mb-20">
+    <m.section {...sectionReveal} className="mb-20">
       <Card elevation="feature" padding="32px">
         <SectionHeader
           label="رحلتك الجامعية"
@@ -22,7 +22,7 @@ export function StudentJourneySection() {
           {studentJourney.map((step, i) => {
             const Icon = journeyStepIcons[step.icon];
             return (
-              <motion.a
+              <m.a
                 key={step.id}
                 href={step.href}
                 {...itemReveal(i * 0.08)}
@@ -39,7 +39,7 @@ export function StudentJourneySection() {
                   className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mb-3 sm:mb-5 transition-transform duration-200 group-hover:scale-105"
                   style={{
                     background: "rgba(18,184,200,0.10)",
-                    color: "var(--color-secondary)",
+                    color: "var(--color-secondary-text)",
                   }}
                 >
                   <Icon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2} />
@@ -56,11 +56,11 @@ export function StudentJourneySection() {
                   عرض التفاصيل
                   <ArrowLeft className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </span>
-              </motion.a>
+              </m.a>
             );
           })}
         </div>
       </Card>
-    </motion.section>
+    </m.section>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import {
   Clock, MapPin, Wallet, CheckCircle2, Key, Sparkles, User, Users, ImageIcon,
   ExternalLink, Building2,
@@ -36,7 +36,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
           { value: "girls" as const, label: "فواي البنات", icon: User },
           { value: "boys" as const, label: "فواي الأولاد", icon: Users },
         ].map(({ value, label, icon: Icon }) => (
-          <motion.button
+          <m.button
             key={value}
             type="button"
             onClick={() => setTab(value)}
@@ -63,12 +63,12 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
           >
             <Icon size={16} strokeWidth={2} />
             {label}
-          </motion.button>
+          </m.button>
         ))}
       </div>
 
       <AnimatePresence mode="wait">
-        <motion.div
+        <m.div
           key={tab}
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -147,7 +147,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
 
           <div style={{ marginBottom: "24px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-              <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Sparkles size={16} strokeWidth={2} />
               </div>
               <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>الميزات</span>
@@ -186,7 +186,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
                       fontSize: "12px",
                       fontWeight: 500,
                       background: "rgba(18,184,200,0.08)",
-                      color: "var(--color-secondary)",
+                      color: "var(--color-secondary-text)",
                       border: "1px solid rgba(18,184,200,0.2)",
                     }}
                   >
@@ -196,7 +196,7 @@ export function HousingFoyersContent({ foyerGirlsGallery, foyerBoysGallery }: Pr
               </div>
             </Card>
           </div>
-        </motion.div>
+        </m.div>
       </AnimatePresence>
 
       <div style={{ marginTop: "40px" }}>

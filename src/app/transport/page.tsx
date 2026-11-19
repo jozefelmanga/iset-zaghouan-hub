@@ -30,7 +30,7 @@ export default function TransportPage() {
 
       <div style={{ marginBottom: "36px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Bus size={16} strokeWidth={2} />
           </div>
           <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>توقيت الحافلات: جداول مواعيد الكار الرسمية (SRTN) 🚌</h2>
@@ -51,7 +51,7 @@ export default function TransportPage() {
               borderRadius: "12px",
               background: "rgba(18,184,200,0.08)",
               border: "1px solid rgba(18,184,200,0.2)",
-              color: "var(--color-secondary)",
+              color: "var(--color-secondary-text)",
               fontSize: "13px",
               fontWeight: 600,
               textDecoration: "none",
@@ -59,7 +59,7 @@ export default function TransportPage() {
           >
             <Globe size={14} strokeWidth={2} />
             {transportSrtn.website.label}
-            <span dir="ltr" style={{ opacity: 0.85 }}>({transportSrtn.website.display})</span>
+            <span dir="ltr">({transportSrtn.website.display})</span>
             <ExternalLink size={12} strokeWidth={2} style={{ opacity: 0.7 }} />
           </a>
           <a
@@ -74,7 +74,7 @@ export default function TransportPage() {
               borderRadius: "12px",
               background: "rgba(24,119,242,0.08)",
               border: "1px solid rgba(24,119,242,0.2)",
-              color: "#1877F2",
+              color: "#0E5BC4",
               fontSize: "13px",
               fontWeight: 600,
               textDecoration: "none",
@@ -90,7 +90,7 @@ export default function TransportPage() {
 
       <Card elevation="raised" padding="24px" style={{ marginBottom: "36px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <MapPin size={16} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>أبونمان زغوان ↔ الايزات</span>
@@ -98,7 +98,7 @@ export default function TransportPage() {
         <p style={{ fontSize: "15px", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.6, marginBottom: "6px" }}>
           {transportAbonnement.place}
         </p>
-        <p style={{ fontSize: "13px", color: "var(--color-secondary)", fontWeight: 600, lineHeight: 1.6, marginBottom: "14px" }}>
+        <p style={{ fontSize: "13px", color: "var(--color-secondary-text)", fontWeight: 600, lineHeight: 1.6, marginBottom: "14px" }}>
           {transportAbonnement.amount}
         </p>
         <a
@@ -136,7 +136,7 @@ export default function TransportPage() {
                 fontSize: "12px",
                 fontWeight: 500,
                 background: "rgba(18,184,200,0.08)",
-                color: "var(--color-secondary)",
+                color: "var(--color-secondary-text)",
                 border: "1px solid rgba(18,184,200,0.2)",
               }}
             >
@@ -176,7 +176,7 @@ export default function TransportPage() {
 
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "10px", marginBottom: "12px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "rgba(18,184,200,0.08)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "rgba(18,184,200,0.08)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                       <Clock size={13} strokeWidth={2} />
                     </div>
                     <span style={{ fontSize: "13px", color: "var(--color-text-secondary)" }}>{route.schedule}</span>
@@ -187,7 +187,7 @@ export default function TransportPage() {
                         <Phone size={13} strokeWidth={2} />
                       </div>
                       <span style={{ fontSize: "13px", color: "var(--color-text-secondary)" }}>
-                        {route.contact.name}: <a href={`tel:${route.contact.phone}`} style={{ color: "var(--color-secondary)", fontWeight: 600, textDecoration: "none" }}>{route.contact.phone}</a>
+                        {route.contact.name}: <a href={`tel:${route.contact.phone}`} style={{ color: "var(--color-secondary-text)", fontWeight: 600, textDecoration: "none" }}>{route.contact.phone}</a>
                       </span>
                     </div>
                   )}
@@ -196,7 +196,7 @@ export default function TransportPage() {
                 <p style={{ fontSize: "13px", color: "var(--color-text-muted)", lineHeight: 1.6 }}>{route.notes}</p>
 
                 {route.abonnement && (
-                  <div style={{ marginTop: "12px", padding: "10px 14px", borderRadius: "10px", background: "rgba(18,184,200,0.06)", border: "1px solid rgba(18,184,200,0.15)", fontSize: "13px", color: "var(--color-secondary)", fontWeight: 500 }}>
+                  <div style={{ marginTop: "12px", padding: "10px 14px", borderRadius: "10px", background: "rgba(18,184,200,0.06)", border: "1px solid rgba(18,184,200,0.15)", fontSize: "13px", color: "var(--color-secondary-text)", fontWeight: 500 }}>
                     🎫 أبونمان: {route.abonnement}
                   </div>
                 )}
@@ -237,7 +237,7 @@ export default function TransportPage() {
           href="https://docs.google.com/spreadsheets/d/1cVFQhbfuCZ__jgNJY5beEL-Zmch9Q1I-d1vD11UByTg"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ color: "var(--color-secondary)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px", textDecoration: "none" }}
+          style={{ color: "var(--color-secondary-text)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px", textDecoration: "none" }}
         >
           افتح الجدول <ExternalLink size={13} />
         </a>

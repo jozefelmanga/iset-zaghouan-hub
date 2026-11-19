@@ -1,5 +1,6 @@
-// This file configures the initialization of Sentry on the client.
-// The config you add here will be used whenever a user loads a page in their browser.
+// Sentry in the browser: error reporting only.
+// Session recordings come from Microsoft Clarity, so Sentry's replay (rrweb, ~200 KB)
+// and performance tracing are left out to keep pages light on mobile.
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 import * as Sentry from "@sentry/nextjs";
@@ -11,28 +12,8 @@ const SENTRY_DSN =
 if (typeof window !== "undefined") {
   Sentry.init({
     dsn: SENTRY_DSN,
-
-    // Add optional integrations for additional features
-    integrations:
-      typeof Sentry.replayIntegration === "function"
-        ? [
-            Sentry.replayIntegration({
-              maskAllText: false,
-              blockAllMedia: false,
-            }),
-          ]
-        : [],
-
-    // Define how likely traces are sampled. Adjust this value in production
-    tracesSampleRate: 1.0,
-
-    // Define how likely Replay events are sampled
-    replaysSessionSampleRate: 0.1,
-
-    // Capture 100% of Replay events when an error occurs
-    replaysOnErrorSampleRate: 1.0,
-
-    // Enabled debug logs in development console so you can see Sentry sending events
-    debug: process.env.NODE_ENV !== "production",
+    // No tracing: the site is static, and GA4 / Lighthouse cover page speed.
+    tracesSampleRate: 0,
+    debug: false,
   });
 }

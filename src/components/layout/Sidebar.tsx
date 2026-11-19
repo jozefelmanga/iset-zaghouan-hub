@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { GraduationCap, X } from "@/lib/icons";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { navGroups, homeLink } from "@/constants/navigation";
 import { isNavActive } from "@/lib/utils";
 import { drawerFromRight, backdrop } from "@/lib/motion";
@@ -199,7 +199,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
               const active = isNavActive(link.href, pathname, navHrefs);
 
               return (
-                <motion.div
+                <m.div
                   key={link.href}
                   whileHover={{ x: 2 }}
                   transition={{ duration: 0.15 }}
@@ -259,7 +259,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
                       {link.label}
                     </span>
                   </Link>
-                </motion.div>
+                </m.div>
               );
             })}
           </div>
@@ -311,7 +311,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
         {drawerOpen && (
           <>
             {/* Backdrop */}
-            <motion.div
+            <m.div
               variants={backdrop}
               initial="hidden"
               animate="visible"
@@ -327,7 +327,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
             />
 
             {/* Drawer */}
-            <motion.aside
+            <m.aside
               ref={drawerRef}
               role="dialog"
               aria-modal="true"
@@ -351,7 +351,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
               }}
             >
               {sidebarContent}
-            </motion.aside>
+            </m.aside>
           </>
         )}
       </AnimatePresence>

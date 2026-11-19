@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { homeTipsMeta, studentTips } from "@/data/bonus";
 import { ArrowLeft, ChevronLeft, ChevronRight, Heart, Lightbulb } from "@/lib/icons";
@@ -76,7 +76,7 @@ export function TipsCarouselSection() {
   const tip = studentTips[index];
 
   return (
-    <motion.section {...sectionReveal} className="mb-16">
+    <m.section {...sectionReveal} className="mb-16">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-4">
         <div>
           <span className="section-label">{homeTipsMeta.label}</span>
@@ -145,7 +145,7 @@ export function TipsCarouselSection() {
               <div className="min-h-[88px] sm:min-h-[72px]">
                 <AnimatePresence mode="wait">
                   {ready && (
-                    <motion.p
+                    <m.p
                       key={index}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ export function TipsCarouselSection() {
                       className="text-[14px] sm:text-[15px] leading-[1.75] text-[var(--color-text)]"
                     >
                       {tip.text}
-                    </motion.p>
+                    </m.p>
                   )}
                 </AnimatePresence>
               </div>
@@ -193,6 +193,6 @@ export function TipsCarouselSection() {
         </div>
       </Card>
       </div>
-    </motion.section>
+    </m.section>
   );
 }

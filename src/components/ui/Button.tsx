@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import type { LucideIcon } from "@/lib/icons";
 
 interface ButtonProps {
@@ -48,17 +48,17 @@ export function Button({ children, variant = "primary", size = "md", href, onCli
 
   if (href) {
     return (
-      <motion.a href={href} style={commonStyle} className={className} {...hoverProps}>
+      <m.a href={href} style={commonStyle} className={className} {...hoverProps}>
         {Icon && <Icon size={16} strokeWidth={2} />}
         {children}
-      </motion.a>
+      </m.a>
     );
   }
 
   return (
-    <motion.button onClick={onClick} style={commonStyle} className={className} {...hoverProps}>
+    <m.button onClick={onClick} style={commonStyle} className={className} {...hoverProps}>
       {Icon && <Icon size={16} strokeWidth={2} />}
       {children}
-    </motion.button>
+    </m.button>
   );
 }

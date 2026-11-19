@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { itemReveal } from "@/lib/motion";
 
 interface StatCounterProps {
@@ -45,18 +45,18 @@ export function StatCounter({ value, label, suffix = "", delay = 0 }: StatCounte
   }, [numericValue, value, delay, hasAnimated]);
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       {...itemReveal(delay / 1000)}
       className="text-center"
     >
       <div
         className="text-4xl sm:text-5xl font-bold mb-2"
-        style={{ color: "var(--color-secondary)", fontFeatureSettings: '"tnum"' }}
+        style={{ color: "var(--color-secondary-text)", fontFeatureSettings: '"tnum"' }}
       >
         {displayed}{suffix}
       </div>
       <p style={{ color: "var(--color-text-secondary)", fontSize: "14px", fontWeight: 500 }}>{label}</p>
-    </motion.div>
+    </m.div>
   );
 }

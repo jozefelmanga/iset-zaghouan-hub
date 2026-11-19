@@ -151,7 +151,7 @@ export function IeeePageContent({ galleryImages }: Props) {
 
           <Card elevation="raised" padding="20px">
             <h3 style={{ fontSize: "15px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
-              <Calendar size={16} style={{ color: "var(--color-secondary)" }} />
+              <Calendar size={16} style={{ color: "var(--color-secondary-text)" }} />
               الأنشطة والفعاليات
             </h3>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
@@ -178,7 +178,7 @@ export function IeeePageContent({ galleryImages }: Props) {
 
       <div style={{ marginBottom: "20px" }}>
         <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-          <ImageIcon size={20} style={{ color: "var(--color-secondary)" }} />
+          <ImageIcon size={20} style={{ color: "var(--color-secondary-text)" }} />
           معرض الصور والذكريات
         </h2>
         <PhotoGallery images={galleryImages} initialVisibleCount={12} altPrefix="IEEE" />

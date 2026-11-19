@@ -90,10 +90,10 @@ export function Footer() {
             <p className="text-[13px] text-white/50 m-0">
               © {new Date().getFullYear()} Guide ISET Zaghouan — Independent Platform
             </p>
-            <p className="text-[13px] text-white/40 m-0">
+            <p className="text-[13px] text-white/65 m-0">
               Developed with ❤️ by <a href="https://linktr.ee/Youssef_Ben_Salem" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors underline decoration-white/20 underline-offset-4">Youssef Ben Salem</a>
             </p>
-            <a href="https://forms.gle/4Aj6svouhdPu9TBA7" target="_blank" rel="noopener noreferrer" className="text-[12px] text-white/30 hover:text-white/60 transition-colors mt-1 underline decoration-white/10 underline-offset-4 w-fit mx-auto md:mx-0">
+            <a href="https://forms.gle/4Aj6svouhdPu9TBA7" target="_blank" rel="noopener noreferrer" className="text-[12px] text-white/60 hover:text-white/80 transition-colors mt-1 underline decoration-white/10 underline-offset-4 w-fit mx-auto md:mx-0">
               عندك اقتراح؟ أعلمنا هنا
             </a>
           </div>

@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { Building2 } from "@/lib/icons";
 import { departmentList } from "@/data/departments";
 
 export function InstitutionInfoSection() {
   return (
-    <motion.section
+    <m.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.15 }}
@@ -37,11 +37,11 @@ export function InstitutionInfoSection() {
               تأسّست إيزات زغوان (ISET Zaghouan) <span style={{ color: "var(--color-primary)", fontWeight: 700 }}>عام 2002</span>، وهي فاك عمومية تابعة لـ <span style={{ color: "var(--color-text)", fontWeight: 600 }}>وزارة التعليم العالي والبحث العلمي</span> وتحت إشراف الإدارة العامة للدراسات التكنولوجية (<span style={{ color: "var(--color-text)", fontWeight: 600 }} dir="ltr">DGET</span>).
             </p>
             <p style={{ fontSize: "14.5px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0 }}>
-              عندها توّا <span style={{ color: "var(--color-secondary)", fontWeight: 700 }}>أكثر من 20 سنة</span> وهي تعطي في تكوين تطبيقي يجمع بين القراية النظري وتطبيقات سوق الشغل (الستاجات)، وفيها حالياً <span style={{ color: "var(--color-accent)", fontWeight: 700 }}>{departmentList.length} أقسام رئيسية</span>.
+              عندها توّا <span style={{ color: "var(--color-secondary-text)", fontWeight: 700 }}>أكثر من 20 سنة</span> وهي تعطي في تكوين تطبيقي يجمع بين القراية النظري وتطبيقات سوق الشغل (الستاجات)، وفيها حالياً <span style={{ color: "var(--color-accent-text)", fontWeight: 700 }}>{departmentList.length} أقسام رئيسية</span>.
             </p>
           </div>
         </div>
       </Card>
-    </motion.section>
+    </m.section>
   );
 }

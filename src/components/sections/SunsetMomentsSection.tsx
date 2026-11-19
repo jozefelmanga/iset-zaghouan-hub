@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown, Sparkles } from "@/lib/icons";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 import { sectionReveal } from "@/lib/motion";
@@ -19,7 +19,7 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
   const panelId = useId();
 
   return (
-    <motion.section {...sectionReveal} className="mb-16">
+    <m.section {...sectionReveal} className="mb-16">
       <div
         className="relative overflow-hidden rounded-2xl border"
         style={{
@@ -73,7 +73,7 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
             </p>
           </div>
 
-          <motion.div
+          <m.div
             animate={{ rotate: open ? 180 : 0 }}
             transition={{ duration: 0.22 }}
             aria-hidden="true"
@@ -85,12 +85,12 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
             }}
           >
             <ChevronDown size={18} strokeWidth={2.5} />
-          </motion.div>
+          </m.div>
         </button>
 
         <AnimatePresence initial={false}>
           {open && (
-            <motion.div
+            <m.div
               id={panelId}
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
@@ -127,10 +127,10 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
                   initialVisibleCount={12}
                 />
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>
-    </motion.section>
+    </m.section>
   );
 }

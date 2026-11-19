@@ -123,7 +123,7 @@ export function ProceGeniusPageContent({ galleryImages }: Props) {
 
         <div style={{ marginBottom: "20px" }}>
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <ImageIcon size={20} style={{ color: "var(--color-secondary)" }} />
+            <ImageIcon size={20} style={{ color: "var(--color-secondary-text)" }} />
             معرض الصور والذكريات
           </h2>
           <PhotoGallery images={galleryImages} initialVisibleCount={8} altPrefix="ProceGenius" />

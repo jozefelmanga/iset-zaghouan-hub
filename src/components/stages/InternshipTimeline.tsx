@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown, ArrowLeft, ExternalLink } from "@/lib/icons";
 import { Badge } from "@/components/ui/shared";
 import { Accordion } from "@/components/ui/Accordion";
@@ -48,7 +48,7 @@ function StageDetail({ internship, colors, isExpanded }: {
   return (
     <AnimatePresence>
       {isExpanded && (
-        <motion.div
+        <m.div
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
@@ -128,7 +128,7 @@ function StageDetail({ internship, colors, isExpanded }: {
               </Link>
             )}
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );
@@ -205,9 +205,9 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
                     <p style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>{internship.duration}</p>
                   </div>
                 </div>
-                <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.22 }}>
+                <m.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.22 }}>
                   <ChevronDown size={18} style={{ color: colors.text }} strokeWidth={2.5} />
-                </motion.div>
+                </m.div>
               </button>
               {isOpen && (
                 <div style={{ padding: "0 18px 18px" }}>
@@ -232,7 +232,7 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
 
           return (
             <div key={internship.year} style={{ display: "flex", alignItems: "center", flex: isLast ? "none" : 1 }}>
-              <motion.button
+              <m.button
                 type="button"
                 onClick={() => setActiveYear(internship.year)}
                 {...hoverLift}
@@ -268,7 +268,7 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
                 <span style={{ fontSize: "12px", fontWeight: isActive ? 700 : 500, color: isActive ? colors.text : "var(--color-text-muted)" }}>
                   السنة {internship.year}
                 </span>
-              </motion.button>
+              </m.button>
               {!isLast && (
                 <div
                   style={{
@@ -296,13 +296,13 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
         const isExpanded = true;
 
         return (
-          <motion.div
+          <m.div
             key={internship.year}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <motion.div
+            <m.div
               {...hoverLift}
               className={styles.stageCard}
               style={{
@@ -325,8 +325,8 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
                   <StageDetail internship={internship} colors={colors} isExpanded={isExpanded} />
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         );
       })}
     </div>

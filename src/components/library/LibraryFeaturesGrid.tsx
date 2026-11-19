@@ -2,7 +2,7 @@
 
 import type { LucideIcon } from "@/lib/icons";
 import { BookOpen, Camera, Clock, FileText, Sparkles } from "@/lib/icons";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { enterAnimation } from "@/lib/motion";
 
@@ -19,7 +19,7 @@ export function LibraryFeaturesGrid({ features }: { features: string[] }) {
       <div className="mb-4 flex items-center gap-2.5">
         <div
           className="flex h-[34px] w-[34px] items-center justify-center rounded-full"
-          style={{ background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)" }}
+          style={{ background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)" }}
         >
           <Sparkles size={16} strokeWidth={2} />
         </div>
@@ -32,7 +32,7 @@ export function LibraryFeaturesGrid({ features }: { features: string[] }) {
           const Icon = meta.icon;
 
           return (
-            <motion.div key={text} {...enterAnimation(i * 0.06)} whileHover={{ y: -3 }}>
+            <m.div key={text} {...enterAnimation(i * 0.06)} whileHover={{ y: -3 }}>
               <Card elevation="raised" padding="20px" className="h-full">
                 <div className="flex items-start gap-3.5">
                   <div
@@ -46,7 +46,7 @@ export function LibraryFeaturesGrid({ features }: { features: string[] }) {
                   </p>
                 </div>
               </Card>
-            </motion.div>
+            </m.div>
           );
         })}
       </div>

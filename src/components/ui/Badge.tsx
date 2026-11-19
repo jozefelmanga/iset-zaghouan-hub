@@ -12,7 +12,7 @@ export function Badge({ children, variant = "default" }: BadgeProps) {
     warning: { bg: "rgba(246,180,27,0.12)", color: "#B45309"                },
     danger:  { bg: "rgba(239,68,68,0.10)",  color: "#DC2626"                },
     accent:  { bg: "rgba(246,180,27,0.12)", color: "#B45309"                },
-    info:    { bg: "rgba(18,184,200,0.10)", color: "var(--color-secondary)" },
+    info:    { bg: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)" },
   };
   const v = variants[variant] || variants.default;
   return (

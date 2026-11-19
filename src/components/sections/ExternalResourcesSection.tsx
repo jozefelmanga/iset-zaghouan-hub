@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Divider, Grid } from "@/components/ui/layout";
@@ -18,7 +18,7 @@ const videos = externalResources.filter(
 
 export function ExternalResourcesSection() {
   return (
-    <motion.section {...sectionReveal} className="mb-20">
+    <m.section {...sectionReveal} className="mb-20">
       <SectionHeader
         label={externalResourcesMeta.label}
         title={externalResourcesMeta.title}
@@ -39,9 +39,9 @@ export function ExternalResourcesSection() {
         </p>
         <Grid gap="lg" minColWidth="320px">
           {featuredPlatforms.map((resource, i) => (
-            <motion.div key={resource.href} {...itemReveal(i * 0.08)} style={{ height: "100%" }}>
+            <m.div key={resource.href} {...itemReveal(i * 0.08)} style={{ height: "100%" }}>
               <FeaturedPlatformCard resource={resource} />
-            </motion.div>
+            </m.div>
           ))}
         </Grid>
       </div>
@@ -50,7 +50,7 @@ export function ExternalResourcesSection() {
 
       <Grid gap="md" minColWidth="300px">
         {videos.map((resource, i) => (
-          <motion.div key={resource.embedUrl} {...itemReveal(i * 0.06)}>
+          <m.div key={resource.embedUrl} {...itemReveal(i * 0.06)}>
             <Card elevation="raised" padding="0" style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}>
               <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
                 <YoutubeEmbed embedUrl={resource.embedUrl} title={resource.title} />
@@ -69,9 +69,9 @@ export function ExternalResourcesSection() {
                 </p>
               </div>
             </Card>
-          </motion.div>
+          </m.div>
         ))}
       </Grid>
-    </motion.section>
+    </m.section>
   );
 }

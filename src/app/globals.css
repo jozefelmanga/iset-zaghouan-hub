@@ -12,8 +12,11 @@
   /* === Text === */
   --color-text:         #10213A;
   --color-text-secondary: #5F708A;
-  --color-text-muted:   #8895A7;
+  --color-text-muted:   #64707F; /* 4.5:1 on all light backgrounds (WCAG AA) */
   --color-text-white:   #FFFFFF;
+  /* Darker shades for text; the bright brand colours stay for icons and fills */
+  --color-secondary-text: #077A86;
+  --color-accent-text:    #8A5F00;
 
   /* === Semantic === */
   --color-success: #22C55E;
@@ -405,7 +408,7 @@ main > * {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-secondary);
+  color: var(--color-secondary-text);
   margin-bottom: 8px;
 }
 
@@ -556,14 +559,14 @@ main > * {
 @media (hover: hover) {
   .chip:hover {
     border-color: rgba(18,184,200,0.4);
-    color: var(--color-secondary);
+    color: var(--color-secondary-text);
     background: rgba(18,184,200,0.05);
   }
 }
 .chip-active {
   background: rgba(18,184,200,0.10);
   border-color: rgba(18,184,200,0.3);
-  color: var(--color-secondary);
+  color: var(--color-secondary-text);
   font-weight: 600;
 }
 
@@ -626,7 +629,7 @@ main > * {
 @media (hover: hover) {
   .row-interactive:hover {
     background: rgba(18,184,200,0.06);
-    color: var(--color-secondary);
+    color: var(--color-secondary-text);
   }
 }
 

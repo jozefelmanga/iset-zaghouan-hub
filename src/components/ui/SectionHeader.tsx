@@ -19,7 +19,7 @@ export function SectionHeader({ label, title, subtitle, icon: Icon, children, ce
       {label && <span className="section-label">{label}</span>}
       <div className={cn("flex items-center gap-3", center && "justify-center")}>
         {Icon && (
-          <div className="icon-circle" style={{ background: "rgba(18,184,200,0.1)", color: "var(--color-secondary)" }}>
+          <div className="icon-circle" style={{ background: "rgba(18,184,200,0.1)", color: "var(--color-secondary-text)" }}>
             <Icon size={22} strokeWidth={2} />
           </div>
         )}

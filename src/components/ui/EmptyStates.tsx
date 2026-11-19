@@ -10,7 +10,7 @@
  * All accept an optional `action` slot for a CTA button.
  */
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { enterAnimation } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
@@ -34,7 +34,7 @@ export function EmptyState({
   className,
 }: EmptyStateProps) {
   return (
-    <motion.div
+    <m.div
       {...enterAnimation(0)}
       className={cn("flex flex-col items-center justify-center text-center py-16 px-6", className)}
     >
@@ -54,7 +54,7 @@ export function EmptyState({
         </p>
       )}
       {action && <div className="mt-6">{action}</div>}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -96,7 +96,7 @@ export function ComingSoon({
   className,
 }: ComingSoonProps) {
   return (
-    <motion.div
+    <m.div
       {...enterAnimation(0)}
       className={cn(
         "flex flex-col items-center justify-center text-center",
@@ -105,14 +105,14 @@ export function ComingSoon({
       )}
     >
       {/* Animated icon */}
-      <motion.div
+      <m.div
         className="text-6xl mb-6"
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden="true"
       >
         🚧
-      </motion.div>
+      </m.div>
 
       {/* Badge */}
       <span
@@ -141,7 +141,7 @@ export function ComingSoon({
       {/* Decorative dots */}
       <div className="flex gap-2 mt-8" aria-hidden="true">
         {[0, 1, 2].map((i) => (
-          <motion.div
+          <m.div
             key={i}
             className="w-2 h-2 rounded-full"
             style={{ background: "var(--color-border)" }}
@@ -150,7 +150,7 @@ export function ComingSoon({
           />
         ))}
       </div>
-    </motion.div>
+    </m.div>
   );
 }
 

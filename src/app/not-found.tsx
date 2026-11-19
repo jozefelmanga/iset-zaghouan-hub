@@ -19,7 +19,7 @@ export default function NotFound() {
             width: "72px",
             height: "72px",
             background: "rgba(18,184,200,0.12)",
-            color: "var(--color-secondary)",
+            color: "var(--color-secondary-text)",
           }}
         >
           <HelpCircle size={32} strokeWidth={2} />

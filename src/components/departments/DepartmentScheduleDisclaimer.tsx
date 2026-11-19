@@ -1,7 +1,7 @@
 import { instituteOfficial } from "@/data/official";
 
 const linkStyle: React.CSSProperties = {
-  color: "var(--color-secondary)",
+  color: "var(--color-secondary-text)",
   fontWeight: 600,
   textDecoration: "none",
 };

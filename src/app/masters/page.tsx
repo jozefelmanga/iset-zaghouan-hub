@@ -27,7 +27,7 @@ export default function MastersPage() {
               href={afterGraduationGuide.href}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "var(--color-secondary)", fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "4px" }}
+              style={{ color: "var(--color-secondary-text)", fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "4px" }}
             >
               {afterGraduationGuide.title}
               <ExternalLink size={12} />

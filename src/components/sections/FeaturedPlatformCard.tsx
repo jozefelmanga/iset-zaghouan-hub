@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "@/lib/icons";
 import { externalResourceIcons } from "@/lib/iconMaps";
 import { hoverLift } from "@/lib/motion";
@@ -19,7 +19,7 @@ export function FeaturedPlatformCard({ resource }: { resource: ExternalLinkResou
   const domain = getDomain(resource.href);
 
   return (
-    <motion.a
+    <m.a
       href={resource.href}
       target="_blank"
       rel="noopener noreferrer"
@@ -204,6 +204,6 @@ export function FeaturedPlatformCard({ resource }: { resource: ExternalLinkResou
           {resource.icon === "book-open" ? "زور المنصة" : "تصفح الدليل"} <ArrowLeft size={14} />
         </div>
       </div>
-    </motion.a>
+    </m.a>
   );
 }

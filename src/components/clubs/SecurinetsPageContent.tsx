@@ -56,7 +56,7 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))", gap: "24px" }}>
         <Card elevation="raised" padding="24px">
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Globe size={18} style={{ color: "var(--color-secondary)" }} />
+            <Globe size={18} style={{ color: "var(--color-secondary-text)" }} />
             مواقع التواصل الاجتماعي
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -64,7 +64,7 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
               { label: "Facebook", icon: Facebook, link: "https://www.facebook.com/SecuriNets.ZG", color: "#1877F2" },
               { label: "Instagram", icon: Instagram, link: "https://www.instagram.com/securinets_iset_zaghouan/", color: "#E4405F" },
               { label: "LinkedIn", icon: Linkedin, link: "https://www.linkedin.com/company/securinets-iset-zaghouan/", color: "#0A66C2" },
-              { label: "Website", icon: ExternalLink, link: "https://securinets.tn/", color: "var(--color-secondary)" },
+              { label: "Website", icon: ExternalLink, link: "https://securinets.tn/", color: "var(--color-secondary-text)" },
             ].map((soc) => {
               const Icon = soc.icon;
               return (
@@ -106,7 +106,7 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
 
         <Card elevation="raised" padding="24px">
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Calendar size={18} style={{ color: "var(--color-secondary)" }} />
+            <Calendar size={18} style={{ color: "var(--color-secondary-text)" }} />
             أنشطة وفعاليات النادي
           </h3>
           <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", lineHeight: 1.5, marginBottom: "14px" }}>
@@ -136,7 +136,7 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
       <div>
         <Card elevation="raised" padding="24px">
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Trophy size={18} style={{ color: "var(--color-secondary)" }} />
+            <Trophy size={18} style={{ color: "var(--color-secondary-text)" }} />
             إنجازات وأرقام النادي
           </h3>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -161,7 +161,7 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
 
       <div style={{ marginBottom: "20px" }}>
         <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-          <ImageIcon size={20} style={{ color: "var(--color-secondary)" }} />
+          <ImageIcon size={20} style={{ color: "var(--color-secondary-text)" }} />
           معرض الصور والذكريات
         </h2>
         <PhotoGallery images={galleryImages} initialVisibleCount={12} />

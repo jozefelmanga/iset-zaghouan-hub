@@ -12,7 +12,7 @@ const copy = {
     icon: FileText,
     text: "مازلت ما تعرفش كيفاش تترسّم في المبيت؟",
     cta: "شوف خطوات التسجيل",
-    color: "var(--color-secondary)",
+    color: "var(--color-secondary-text)",
     bg: "rgba(18,184,200,0.08)",
     border: "rgba(18,184,200,0.22)",
   },

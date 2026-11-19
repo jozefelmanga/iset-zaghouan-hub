@@ -21,7 +21,7 @@ export function HousingInscriptionContent() {
 
       <div style={{ marginBottom: "36px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Globe size={16} strokeWidth={2} />
           </div>
           <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>كيفاش ترسّم في المبيت الجامعي؟</h2>
@@ -38,7 +38,7 @@ export function HousingInscriptionContent() {
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                   <div style={{
                     width: "28px", height: "28px", borderRadius: "50%",
-                    background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)",
+                    background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     fontWeight: 700, fontSize: "12px", flexShrink: 0,
                   }}>
@@ -53,7 +53,7 @@ export function HousingInscriptionContent() {
                     rel="noopener noreferrer"
                     style={{
                       display: "inline-flex", alignItems: "center", gap: "6px",
-                      fontSize: "12px", fontWeight: 600, color: "var(--color-secondary)",
+                      fontSize: "12px", fontWeight: 600, color: "var(--color-secondary-text)",
                       textDecoration: "none",
                     }}
                   >
@@ -65,7 +65,7 @@ export function HousingInscriptionContent() {
               <ul style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 {phase.steps.map((step, j) => (
                   <li key={j} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                    <ArrowLeft size={14} style={{ color: "var(--color-secondary)", marginTop: "4px", flexShrink: 0 }} />
+                    <ArrowLeft size={14} style={{ color: "var(--color-secondary-text)", marginTop: "4px", flexShrink: 0 }} />
                     <span style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{step}</span>
                   </li>
                 ))}

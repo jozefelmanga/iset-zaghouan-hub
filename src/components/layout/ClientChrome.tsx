@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { BackToTopButton } from "@/components/ui/BackToTopButton";
+import { MotionProvider } from "@/components/layout/MotionProvider";
 
 interface ClientChromeProps {
   children: ReactNode;
@@ -19,6 +20,7 @@ export function ClientChrome({ children, footer }: ClientChromeProps) {
   const isHome = pathname === "/";
 
   return (
+    <MotionProvider>
     <div style={{ display: "flex", minHeight: "100dvh", background: "var(--color-background)" }}>
       <a href="#main-content" className="skip-link">
         الانتقال إلى المحتوى الرئيسي
@@ -43,5 +45,6 @@ export function ClientChrome({ children, footer }: ClientChromeProps) {
         <BottomNav />
       </div>
     </div>
+    </MotionProvider>
   );
 }

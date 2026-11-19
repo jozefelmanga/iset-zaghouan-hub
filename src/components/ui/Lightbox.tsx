@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { X, ZoomIn, ChevronLeft, ChevronRight } from "@/lib/icons";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { useMounted } from "@/hooks/useMounted";
@@ -85,7 +85,7 @@ function LightboxOverlay({
   return createPortal(
     <AnimatePresence>
       {open && src && (
-        <motion.div
+        <m.div
           ref={dialogRef}
           role="dialog"
           aria-modal="true"
@@ -136,7 +136,7 @@ function LightboxOverlay({
             </button>
           )}
 
-          <motion.div
+          <m.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
@@ -151,7 +151,7 @@ function LightboxOverlay({
             }}
           >
             <AnimatePresence mode="wait">
-              <motion.img
+              <m.img
                 key={src}
                 src={src}
                 alt={alt}
@@ -216,8 +216,8 @@ function LightboxOverlay({
             >
               <X size={16} strokeWidth={2.5} aria-hidden="true" />
             </button>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       )}
     </AnimatePresence>,
     document.body
@@ -285,7 +285,7 @@ export function PhotoGallery({
         {visibleImages.map((src, idx) => {
           const alt = getAlt(idx);
           return (
-            <motion.button
+            <m.button
               type="button"
               key={src}
               aria-label={`تكبير ${alt}`}
@@ -310,10 +310,10 @@ export function PhotoGallery({
                 alt={alt}
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
-              <motion.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle} aria-hidden="true">
+              <m.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle} aria-hidden="true">
                 <ZoomIn size={22} style={{ color: "#fff" }} strokeWidth={2} />
-              </motion.div>
-            </motion.button>
+              </m.div>
+            </m.button>
           );
         })}
       </div>
@@ -453,9 +453,9 @@ export function ZoomableImage({
           }}
         />
         {!hideHint && (
-          <motion.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle} aria-hidden="true">
+          <m.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle} aria-hidden="true">
             <ZoomIn size={24} style={{ color: "#fff" }} strokeWidth={2} />
-          </motion.div>
+          </m.div>
         )}
       </button>
 

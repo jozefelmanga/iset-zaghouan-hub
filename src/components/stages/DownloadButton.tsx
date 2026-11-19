@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Download, CheckCircle2 } from "@/lib/icons";
 
 interface DownloadButtonProps {
@@ -35,7 +35,7 @@ export function DownloadButton({ href, downloadName, downloadCount }: DownloadBu
         transition: "all 0.25s ease",
       }}
     >
-      <motion.span
+      <m.span
         key={downloaded ? "check" : "dl"}
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -43,7 +43,7 @@ export function DownloadButton({ href, downloadName, downloadCount }: DownloadBu
       >
         {downloaded ? <CheckCircle2 size={14} strokeWidth={2.5} /> : <Download size={14} strokeWidth={2.5} />}
         {downloaded ? "تم التحميل" : "تحميل"}
-      </motion.span>
+      </m.span>
       {downloadCount != null && !downloaded && (
         <span style={{ fontSize: "11px", opacity: 0.7, fontWeight: 500 }}>
           ⬇ {downloadCount}

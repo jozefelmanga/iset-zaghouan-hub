@@ -132,7 +132,7 @@ export function SosAmbassadeursPageContent({ galleryImages }: Props) {
 
         <Card elevation="raised" padding="24px">
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Calendar size={18} style={{ color: "var(--color-secondary)" }} />
+            <Calendar size={18} style={{ color: "var(--color-secondary-text)" }} />
             أنشطة ومبادرات
           </h3>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
@@ -177,7 +177,7 @@ export function SosAmbassadeursPageContent({ galleryImages }: Props) {
 
       <div style={{ marginBottom: "20px" }}>
         <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-          <ImageIcon size={20} style={{ color: "var(--color-secondary)" }} />
+          <ImageIcon size={20} style={{ color: "var(--color-secondary-text)" }} />
           معرض الصور والذكريات
         </h2>
         <PhotoGallery images={galleryImages} initialVisibleCount={12} altPrefix="SOS Ambassadeurs" />

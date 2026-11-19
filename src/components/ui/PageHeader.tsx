@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { categoryConfig } from "@/lib/theme";
 import { enterAnimation } from "@/lib/motion";
 import type { Category } from "@/types";
@@ -21,7 +21,7 @@ export function PageHeader({ icon: Icon, label, title, subtitle, badge, lastUpda
   const colors = categoryConfig[category] || categoryConfig.primary;
 
   return (
-    <motion.div
+    <m.div
       {...enterAnimation(0)}
       className="mb-8"
     >
@@ -54,6 +54,6 @@ export function PageHeader({ icon: Icon, label, title, subtitle, badge, lastUpda
           {badge && <div className="mt-2">{badge}</div>}
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

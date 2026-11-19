@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   Calendar, FileText, ExternalLink, ImageIcon,
   Building2, CheckCircle2, Circle,
@@ -84,7 +84,7 @@ export function StagesPageContent() {
   return (
     <>
       {/* Progress tracker — single year selector */}
-      <motion.div {...itemReveal(0)} id="progress" style={{ marginBottom: "32px" }}>
+      <m.div {...itemReveal(0)} id="progress" style={{ marginBottom: "32px" }}>
         <Card elevation="raised" padding="24px" className={styles.mobileCard}>
           <p style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)", marginBottom: "14px" }}>
             مسار الستاجات
@@ -113,7 +113,7 @@ export function StagesPageContent() {
           </div>
 
           <div style={{ height: "6px", background: "var(--color-border)", borderRadius: "999px", overflow: "hidden", marginBottom: "24px" }}>
-            <motion.div
+            <m.div
               style={{ height: "100%", background: "linear-gradient(90deg, var(--color-secondary), #0FA8B8)", borderRadius: "999px" }}
               animate={{ width: `${((completedStages + 1) / internships.length) * 100}%` }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -122,16 +122,16 @@ export function StagesPageContent() {
 
           <InternshipTimeline activeYear={activeYear} onYearChange={setActiveYear} hideSelector />
         </Card>
-      </motion.div>
+      </m.div>
 
       {/* General FAQ */}
-      <motion.div {...itemReveal(0.08)} id="faq-general" style={{ marginBottom: "32px" }}>
+      <m.div {...itemReveal(0.08)} id="faq-general" style={{ marginBottom: "32px" }}>
         <SectionHeader icon={HelpCircle} title="أسئلة شائعة" color="#6366F1" bg="rgba(99,102,241,0.10)" />
         <Accordion items={internshipGeneralFaq} />
-      </motion.div>
+      </m.div>
 
       {/* Administrative steps */}
-      <motion.div {...itemReveal(0.12)} id="admin" style={{ marginBottom: "36px" }}>
+      <m.div {...itemReveal(0.12)} id="admin" style={{ marginBottom: "36px" }}>
         <SectionHeader icon={FileText} title="الإجراءات الإدارية" color="#0EA5E9" bg="rgba(14,165,233,0.10)" />
         <Card elevation="raised" padding="24px" className={styles.mobileCard}>
           <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "20px", lineHeight: 1.6 }}>
@@ -156,10 +156,10 @@ export function StagesPageContent() {
             ))}
           </div>
         </Card>
-      </motion.div>
+      </m.div>
 
       {/* Journal / Livret */}
-      <motion.div {...itemReveal(0.15)} id="journal" style={{ marginBottom: "36px" }}>
+      <m.div {...itemReveal(0.15)} id="journal" style={{ marginBottom: "36px" }}>
         <SectionHeader icon={BookOpen} title={stageJournalDocuments.title} color="#8B5CF6" bg="rgba(139,92,246,0.10)" />
         <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "16px", lineHeight: 1.6 }}>
           {stageJournalDocuments.description}
@@ -173,7 +173,7 @@ export function StagesPageContent() {
                 </div>
                 <div style={{ flex: 1 }}>
                   <p style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "4px" }}>{doc.name}</p>
-                  <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-secondary)", marginBottom: "6px" }}>{doc.label}</p>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-secondary-text)", marginBottom: "6px" }}>{doc.label}</p>
                   <p style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: 1.6, marginBottom: "12px" }}>{doc.description}</p>
                   <DownloadButton href={encodeURI(doc.downloadSrc)} downloadName={doc.downloadName} />
                 </div>
@@ -181,10 +181,10 @@ export function StagesPageContent() {
             </Card>
           ))}
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Deadline calendar */}
-      <motion.div {...itemReveal(0.2)} style={{ marginBottom: "36px" }}>
+      <m.div {...itemReveal(0.2)} style={{ marginBottom: "36px" }}>
         <SectionHeader icon={Calendar} title="المواعيد النهائية" color="#F97316" bg="rgba(249,115,22,0.10)" />
         <Card elevation="flat" padding="20px" className={styles.mobileCard}>
           <div className={styles.deadlineGrid}>
@@ -220,10 +220,10 @@ export function StagesPageContent() {
             المواعيد تقريبية — كل الستاجات (س1، س2، PFE)
           </p>
         </Card>
-      </motion.div>
+      </m.div>
 
       {/* Logos */}
-      <motion.div {...itemReveal(0.25)} id="kit" style={{ marginBottom: "36px" }}>
+      <m.div {...itemReveal(0.25)} id="kit" style={{ marginBottom: "36px" }}>
         <SectionHeader icon={ImageIcon} title="شعارات التقارير والعروض" color="#22C55E" bg="rgba(34,197,94,0.10)" />
         <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "16px", lineHeight: 1.6 }}>
           الشعارات الرسمية لصفحات الغلاف، التقارير، والـ présentations.
@@ -245,10 +245,10 @@ export function StagesPageContent() {
             </Card>
           ))}
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Example reports */}
-      <motion.div {...itemReveal(0.3)} id="examples" style={{ marginBottom: "36px" }}>
+      <m.div {...itemReveal(0.3)} id="examples" style={{ marginBottom: "36px" }}>
         <SectionHeader icon={FileText} title={dsegExampleReports.title} color="#3B82F6" bg="rgba(59,130,246,0.08)" badge="SEG" />
         <Card elevation="raised" padding="24px" className={styles.mobileCard}>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "14px" }}>
@@ -282,16 +282,16 @@ export function StagesPageContent() {
             فتح نماذج التقارير على Google Drive
           </a>
         </Card>
-      </motion.div>
+      </m.div>
 
       {/* Job search + companies */}
-      <motion.div {...itemReveal(0.35)} id="companies" style={{ marginBottom: "36px" }}>
+      <m.div {...itemReveal(0.35)} id="companies" style={{ marginBottom: "36px" }}>
         <SectionHeader icon={Building2} title="كيفاش تلقى stage؟" color="#6366F1" bg="rgba(99,102,241,0.10)" />
         <Card elevation="flat" padding="20px" style={{ marginBottom: "14px" }} className={styles.mobileCard}>
           <div className={styles.tipsGrid}>
             {internshipJobSearchTips.map((tip) => (
               <div key={tip} style={{ display: "flex", alignItems: "flex-start", gap: "8px", padding: "10px 12px", borderRadius: "10px", background: "var(--color-background)" }}>
-                <CheckCircle2 size={14} style={{ color: "var(--color-secondary)", flexShrink: 0, marginTop: "2px" }} strokeWidth={2.5} />
+                <CheckCircle2 size={14} style={{ color: "var(--color-secondary-text)", flexShrink: 0, marginTop: "2px" }} strokeWidth={2.5} />
                 <span style={{ fontSize: "13px", color: "var(--color-text)" }}>{tip}</span>
               </div>
             ))}
@@ -340,28 +340,28 @@ export function StagesPageContent() {
           </div>
           <ArrowLeft size={18} style={{ color: "#6366F1", flexShrink: 0 }} strokeWidth={2} />
         </Link>
-      </motion.div>
+      </m.div>
 
       {/* Vocabulary — single source for document terms */}
-      <motion.div {...itemReveal(0.4)} id="vocabulary" style={{ marginBottom: "36px" }}>
+      <m.div {...itemReveal(0.4)} id="vocabulary" style={{ marginBottom: "36px" }}>
         <SectionHeader icon={BookOpen} title="المصطلحات والوثائق" color="#8B5CF6" bg="rgba(139,92,246,0.10)" />
         <div className={styles.vocabGrid}>
           {internshipVocabulary.map((item) => (
             <Card key={item.term} elevation="raised" padding="16px">
-              <p style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-secondary)", marginBottom: "6px" }}>{item.term}</p>
+              <p style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-secondary-text)", marginBottom: "6px" }}>{item.term}</p>
               <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{item.definition}</p>
             </Card>
           ))}
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Grade calculator */}
-      <motion.div {...itemReveal(0.45)} style={{ marginBottom: "36px" }}>
+      <m.div {...itemReveal(0.45)} style={{ marginBottom: "36px" }}>
         <InternshipGradeCalculator />
-      </motion.div>
+      </m.div>
 
       {/* ISET contact */}
-      <motion.div {...itemReveal(0.5)} id="contact" style={{ marginBottom: "28px" }}>
+      <m.div {...itemReveal(0.5)} id="contact" style={{ marginBottom: "28px" }}>
         <SectionHeader icon={Phone} title="مشكلة مع الشركة؟" color="#EF4444" bg="rgba(239,68,68,0.10)" />
         <Card elevation="raised" padding="24px" className={styles.mobileCard}>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
@@ -388,20 +388,20 @@ export function StagesPageContent() {
             </span>
           </p>
         </Card>
-      </motion.div>
+      </m.div>
 
       {/* Common mistakes */}
-      <motion.div {...itemReveal(0.55)} style={{ marginBottom: "28px" }}>
+      <m.div {...itemReveal(0.55)} style={{ marginBottom: "28px" }}>
         <SectionHeader icon={AlertTriangle} title="أخطاء شائعة" color="var(--color-accent)" bg="rgba(246,180,27,0.10)" />
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           {internshipMistakes.map((mistake, i) => (
             <Alert key={i} title="" variant="warning">⚠ {mistake}</Alert>
           ))}
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Quick links */}
-      <motion.div {...itemReveal(0.6)}>
+      <m.div {...itemReveal(0.6)}>
         <SectionHeader icon={BookOpen} title="روابط سريعة" color="#8B5CF6" bg="rgba(139,92,246,0.10)" />
         <div className={styles.quickLinksGrid}>
           {internshipRelatedResources.map((resource) => {
@@ -433,7 +433,7 @@ export function StagesPageContent() {
             );
           })}
         </div>
-      </motion.div>
+      </m.div>
     </>
   );
 }

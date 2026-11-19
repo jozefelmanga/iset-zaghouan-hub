@@ -2,7 +2,7 @@
 
 import { useState, useId } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowLeft, ChevronDown } from "@/lib/icons";
 import type { FAQItem } from "@/types";
 
@@ -12,7 +12,7 @@ function AccordionItem({ question, answer, links, index }: FAQItem & { index: nu
   const buttonId = useId();
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.04 }}
@@ -48,7 +48,7 @@ function AccordionItem({ question, answer, links, index }: FAQItem & { index: nu
         <span style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)", flex: 1, textAlign: "right" }}>
           {question}
         </span>
-        <motion.div
+        <m.div
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.22 }}
           aria-hidden="true"
@@ -65,9 +65,9 @@ function AccordionItem({ question, answer, links, index }: FAQItem & { index: nu
           }}
         >
           <ChevronDown size={16} strokeWidth={2.5} aria-hidden="true" />
-        </motion.div>
+        </m.div>
       </button>
-      <motion.div
+      <m.div
         id={panelId}
         role="region"
         aria-labelledby={buttonId}
@@ -104,7 +104,7 @@ function AccordionItem({ question, answer, links, index }: FAQItem & { index: nu
                     borderRadius: "10px",
                     background: "rgba(18,184,200,0.08)",
                     border: "1px solid rgba(18,184,200,0.22)",
-                    color: "var(--color-secondary)",
+                    color: "var(--color-secondary-text)",
                     fontSize: "12px",
                     fontWeight: 600,
                     textDecoration: "none",
@@ -118,8 +118,8 @@ function AccordionItem({ question, answer, links, index }: FAQItem & { index: nu
             </div>
           )}
         </div>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 }
 

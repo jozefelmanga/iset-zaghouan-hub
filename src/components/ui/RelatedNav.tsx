@@ -83,7 +83,7 @@ export function RelatedDepartmentsNav({ currentDept }: RelatedDepartmentsNavProp
             gap: "6px",
             fontSize: "13px",
             fontWeight: 600,
-            color: "var(--color-secondary)",
+            color: "var(--color-secondary-text)",
             textDecoration: "none",
           }}
         >
@@ -247,7 +247,7 @@ export function RelatedClubsNav({ currentClubId }: RelatedClubsNavProps) {
             gap: "6px",
             fontSize: "13px",
             fontWeight: 600,
-            color: "var(--color-secondary)",
+            color: "var(--color-secondary-text)",
             textDecoration: "none",
           }}
         >

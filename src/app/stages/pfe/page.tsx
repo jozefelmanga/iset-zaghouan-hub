@@ -22,7 +22,7 @@ export default function PfePage() {
           gap: "6px",
           fontSize: "13px",
           fontWeight: 600,
-          color: "var(--color-secondary)",
+          color: "var(--color-secondary-text)",
           textDecoration: "none",
           marginBottom: "20px",
         }}
@@ -237,7 +237,7 @@ export default function PfePage() {
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {pfeGuide.checklist.map((item) => (
               <div key={item} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 14px", borderRadius: "10px", background: "var(--color-background)" }}>
-                <CheckCircle2 size={16} style={{ color: "var(--color-secondary)", flexShrink: 0 }} strokeWidth={2.5} />
+                <CheckCircle2 size={16} style={{ color: "var(--color-secondary-text)", flexShrink: 0 }} strokeWidth={2.5} />
                 <span style={{ fontSize: "14px", color: "var(--color-text)" }}>{item}</span>
               </div>
             ))}

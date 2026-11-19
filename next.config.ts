@@ -24,6 +24,14 @@ export default withSentryConfig(withBundleAnalyzer(nextConfig), {
   project: "javascript-nextjs",
   silent: !process.env.CI,
   widenClientFileUpload: true,
+  // Strip code the site doesn't use from the browser bundle.
+  bundleSizeOptimizations: {
+    excludeDebugStatements: true,
+    excludeTracing: true,
+    excludeReplayIframe: true,
+    excludeReplayShadowDom: true,
+    excludeReplayWorker: true,
+  },
 });
 
 

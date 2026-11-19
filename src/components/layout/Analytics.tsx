@@ -27,7 +27,8 @@ export function Analytics() {
       )}
       {gaId && <GoogleAnalytics gaId={gaId} />}
       {clarityId && (
-        <Script id="clarity-script" strategy="afterInteractive">
+        // Recordings start once the page is idle, so Clarity doesn't compete with the first render.
+        <Script id="clarity-script" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

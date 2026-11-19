@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   FileText, CheckCircle2, Circle, Printer, Globe, Copy, ArrowLeft,
 } from "@/lib/icons";
@@ -40,7 +40,7 @@ export function InscriptionContent() {
 
   return (
     <>
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
@@ -52,7 +52,7 @@ export function InscriptionContent() {
             <Badge variant={progress === 100 ? "success" : "info"}>{progress}%</Badge>
           </div>
           <div style={{ height: "8px", background: "var(--color-border)", borderRadius: "999px", overflow: "hidden", marginBottom: "12px" }}>
-            <motion.div
+            <m.div
               style={{
                 height: "100%",
                 background: progress === 100
@@ -69,7 +69,7 @@ export function InscriptionContent() {
             {completed} من {enrollmentSteps.length} أوراق جاهزة
           </p>
         </Card>
-      </motion.div>
+      </m.div>
 
       <div style={{ marginBottom: "40px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px" }}>
@@ -80,13 +80,13 @@ export function InscriptionContent() {
             const Icon = enrollmentStepIcons[step.icon] || FileText;
             const isChecked = checked[step.id];
             return (
-              <motion.div
+              <m.div
                 key={step.id}
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.06 }}
               >
-                <motion.div
+                <m.div
                   onClick={() => toggle(step.id)}
                   whileHover={{ scale: 1.005 }}
                   style={{
@@ -139,8 +139,8 @@ export function InscriptionContent() {
                       {step.description}
                     </p>
                   </div>
-                </motion.div>
-              </motion.div>
+                </m.div>
+              </m.div>
             );
           })}
         </div>
@@ -155,7 +155,7 @@ export function InscriptionContent() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           {enrollmentPhases.map((phase, i) => (
-            <motion.div
+            <m.div
               key={phase.id}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -178,13 +178,13 @@ export function InscriptionContent() {
                 <ul style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                   {phase.steps.map((step, j) => (
                     <li key={j} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                      <ArrowLeft size={14} style={{ color: "var(--color-secondary)", marginTop: "4px", flexShrink: 0 }} />
+                      <ArrowLeft size={14} style={{ color: "var(--color-secondary-text)", marginTop: "4px", flexShrink: 0 }} />
                       <span style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{step}</span>
                     </li>
                   ))}
                 </ul>
               </Card>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
@@ -200,7 +200,7 @@ export function InscriptionContent() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "10px" }}>
             {enrollmentDocs.map((doc, i) => (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 14px", borderRadius: "10px", background: "var(--color-background)" }}>
-                <Copy size={14} style={{ color: "var(--color-secondary)", flexShrink: 0 }} strokeWidth={2} />
+                <Copy size={14} style={{ color: "var(--color-secondary-text)", flexShrink: 0 }} strokeWidth={2} />
                 <span style={{ fontSize: "13px", color: "var(--color-text)" }}>{doc}</span>
               </div>
             ))}

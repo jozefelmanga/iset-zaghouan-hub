@@ -82,7 +82,7 @@ export default function RestoPage() {
 
       <div style={{ marginBottom: "28px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Info size={16} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>معلومات مهمة</span>
@@ -152,7 +152,7 @@ export default function RestoPage() {
 
       <div style={{ marginBottom: "28px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <PartyPopper size={16} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>المناسبات الخاصة</span>
@@ -161,7 +161,7 @@ export default function RestoPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {restaurantInfo.special.map((item, i) => (
               <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                <CheckCircle2 size={15} style={{ color: "var(--color-secondary)", flexShrink: 0, marginTop: "2px" }} strokeWidth={2.5} />
+                <CheckCircle2 size={15} style={{ color: "var(--color-secondary-text)", flexShrink: 0, marginTop: "2px" }} strokeWidth={2.5} />
                 <span style={{ fontSize: "13px", color: "var(--color-text)", lineHeight: 1.6 }}>{item}</span>
               </div>
             ))}

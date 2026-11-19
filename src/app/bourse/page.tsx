@@ -34,7 +34,7 @@ export default function BoursePage() {
           <MotionReveal key={i} delay={i * 0.1} className="h-full">
             <Card elevation="feature" padding="24px" className="h-full flex flex-col justify-between">
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
-                <span style={{ fontSize: "12px", fontWeight: 600, padding: "4px 10px", borderRadius: "999px", background: i === 0 ? "rgba(59,130,246,0.1)" : "rgba(34,197,94,0.1)", color: i === 0 ? "#3B82F6" : "#16A34A" }}>{s.name}</span>
+                <span style={{ fontSize: "12px", fontWeight: 600, padding: "4px 10px", borderRadius: "999px", background: i === 0 ? "rgba(59,130,246,0.1)" : "rgba(34,197,94,0.1)", color: i === 0 ? "#2563EB" : "#15803D" }}>{s.name}</span>
                 <div style={{ fontSize: "28px", fontWeight: 800, color: "var(--color-primary)", fontFeatureSettings: '"tnum"' }}>
                   {s.amount}
                   <span style={{ fontSize: "14px", fontWeight: 500, color: "var(--color-text-muted)", marginRight: "3px" }}>د</span>
@@ -115,7 +115,7 @@ export default function BoursePage() {
 
       <section style={{ margin: "32px 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-          <HelpCircle size={18} strokeWidth={2} style={{ color: "var(--color-secondary)" }} aria-hidden="true" />
+          <HelpCircle size={18} strokeWidth={2} style={{ color: "var(--color-secondary-text)" }} aria-hidden="true" />
           <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>أسئلة على البورص</h2>
         </div>
         <Accordion items={scholarshipFaq} />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Link2 } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
@@ -43,7 +43,7 @@ export function GPRPageContent() {
       {/* Section 1: Specialities */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> التخصصات المتاحة (Spécialités)
+          <span style={{ color: "var(--color-secondary-text)" }}>•</span> التخصصات المتاحة (Spécialités)
         </h2>
 
         <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "16px" }}>
@@ -76,7 +76,7 @@ export function GPRPageContent() {
       {/* Section 2: Future Prospects */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> الآفاق المهنية (Perspectives d&apos;avenir)
+          <span style={{ color: "var(--color-secondary-text)" }}>•</span> الآفاق المهنية (Perspectives d&apos;avenir)
         </h2>
         <Card elevation="feature" padding="24px">
           <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-text)", marginBottom: "8px" }}>شعبة تطبيقية بامتياز!</h4>
@@ -106,7 +106,7 @@ export function GPRPageContent() {
       {/* Section 2.5: Student Testimony */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> مسار الدراسة على امتداد 3 سنوات (تجربة طالبة)
+          <span style={{ color: "var(--color-secondary-text)" }}>•</span> مسار الدراسة على امتداد 3 سنوات (تجربة طالبة)
         </h2>
         <Card elevation="raised" padding="24px">
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }} dir="rtl">
@@ -143,7 +143,7 @@ export function GPRPageContent() {
       {/* Section 3: Study Materials */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "10px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى
+          <span style={{ color: "var(--color-secondary-text)" }}>•</span> المواد الدراسية للسنة الأولى
         </h2>
         <DepartmentScheduleDisclaimer intro="المواد تختلف بين السداسي الأول والثاني." />
 
@@ -178,7 +178,7 @@ export function GPRPageContent() {
           <div style={{ display: "flex", justifyContent: "center", position: "relative", overflow: "hidden", minHeight: "260px" }}>
             <AnimatePresence mode="wait">
               {semesterTab === "s1" ? (
-                <motion.div
+                <m.div
                   key="s1"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -194,9 +194,9 @@ export function GPRPageContent() {
                     style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
                   />
                   <span style={{ fontSize: "11px", color: "var(--color-text-muted)", marginTop: "8px" }}>جدول مواد السداسي الأول</span>
-                </motion.div>
+                </m.div>
               ) : (
-                <motion.div
+                <m.div
                   key="s2"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -212,7 +212,7 @@ export function GPRPageContent() {
                     style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
                   />
                   <span style={{ fontSize: "11px", color: "var(--color-text-muted)", marginTop: "8px" }}>جدول مواد السداسي الثاني</span>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>
@@ -222,7 +222,7 @@ export function GPRPageContent() {
       {/* Section 4: Resources */}
       <div style={{ marginBottom: "20px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> المصادر التعليمية والمراجع (Ressources)
+          <span style={{ color: "var(--color-secondary-text)" }}>•</span> المصادر التعليمية والمراجع (Ressources)
         </h2>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "14px" }}>
@@ -235,7 +235,7 @@ export function GPRPageContent() {
             <Card elevation="raised" padding="16px">
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
                 <h4 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>قناة Mohssine El Miski على يوتيوب</h4>
-                <Link2 size={14} style={{ color: "var(--color-secondary)" }} />
+                <Link2 size={14} style={{ color: "var(--color-secondary-text)" }} />
               </div>
               <p style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: 1.5 }}>
                 قناة تعليمية ممتازة تشرح أساسيات الكيمياء الصناعية، هندسة العمليات وتجارب المختبر بالتفصيل.

@@ -20,7 +20,7 @@ export default function AboutPage() {
       <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
         <Card elevation="raised" padding="28px">
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-            <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "rgba(18,184,200,0.1)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "rgba(18,184,200,0.1)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Info size={18} strokeWidth={2} />
             </div>
             <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)" }}>الهدف من المنصة</h2>
@@ -57,7 +57,7 @@ export default function AboutPage() {
               border: "1px solid var(--color-border)",
             }}
           >
-            <div style={{ width: "46px", height: "46px", borderRadius: "50%", background: "rgba(18,184,200,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--color-secondary)", flexShrink: 0 }}>
+            <div style={{ width: "46px", height: "46px", borderRadius: "50%", background: "rgba(18,184,200,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--color-secondary-text)", flexShrink: 0 }}>
               <User size={22} strokeWidth={2} />
             </div>
             <div style={{ flex: 1 }}>

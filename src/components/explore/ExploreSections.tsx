@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Coffee, BookOpen, Mountain, Phone, Instagram, Play, ImageIcon } from "@/lib/icons";
 import { PhotoGallery, ZoomableImage } from "@/components/ui/Lightbox";
 import { exploreZaghouan, zaghouanGallery, cafeTagColors } from "@/data/explore";
@@ -19,7 +19,7 @@ export function ExploreHeroBanner() {
   const { coordinates } = exploreZaghouan;
 
   return (
-    <motion.div {...enterAnimation(0.1)} style={{ marginBottom: "36px" }}>
+    <m.div {...enterAnimation(0.1)} style={{ marginBottom: "36px" }}>
       <div
         style={{
           position: "relative",
@@ -72,7 +72,7 @@ export function ExploreHeroBanner() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -89,7 +89,7 @@ export function ExploreStudySpots() {
         {exploreZaghouan.studySpots.map((spot, i) => {
           const Icon = studySpotIcons[i % studySpotIcons.length];
           return (
-            <motion.div
+            <m.div
               key={spot}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -113,7 +113,7 @@ export function ExploreStudySpots() {
                 <Icon size={18} strokeWidth={2} />
               </div>
               <span style={{ fontSize: "13px", fontWeight: 600, color: "var(--color-text)" }}>{spot}</span>
-            </motion.div>
+            </m.div>
           );
         })}
       </div>
@@ -134,7 +134,7 @@ export function ExploreCafeTags() {
         {exploreZaghouan.cafes.map((cafe, i) => {
           const color = cafeTagColors[i % cafeTagColors.length];
           return (
-            <motion.span
+            <m.span
               key={cafe}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -152,7 +152,7 @@ export function ExploreCafeTags() {
               }}
             >
               ☕ {cafe}
-            </motion.span>
+            </m.span>
           );
         })}
       </div>
@@ -166,12 +166,12 @@ export function ExploreMountainGuide() {
   return (
     <div style={{ marginTop: "40px", marginBottom: "36px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Mountain size={16} strokeWidth={2} />
         </div>
         <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>مرشد سياحي للجبل 🧭</span>
       </div>
-      <motion.div
+      <m.div
         {...enterAnimation(0.15)}
         style={{
           background: "var(--color-surface)",
@@ -228,7 +228,7 @@ export function ExploreMountainGuide() {
             </a>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 }
@@ -262,7 +262,7 @@ export function ExplorePhotoGallerySection() {
   return (
     <div style={{ marginBottom: "12px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <ImageIcon size={16} strokeWidth={2} />
         </div>
         <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>صور من زغوان 📸</span>

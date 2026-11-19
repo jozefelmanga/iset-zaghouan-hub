@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Calculator } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
 import { internships } from "@/data/internships";
@@ -73,7 +73,7 @@ export function InternshipGradeCalculator() {
         })}
       </div>
 
-      <motion.div
+      <m.div
         key={average}
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -91,11 +91,11 @@ export function InternshipGradeCalculator() {
         <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-text-muted)", marginBottom: "6px" }}>
           معدل الستاجات الإجمالي
         </p>
-        <p style={{ fontSize: "36px", fontWeight: 800, color: "var(--color-secondary)", fontFeatureSettings: '"tnum"' }}>
+        <p style={{ fontSize: "36px", fontWeight: 800, color: "var(--color-secondary-text)", fontFeatureSettings: '"tnum"' }}>
           {average > 0 ? average.toFixed(2) : "—"}
           <span style={{ fontSize: "18px", fontWeight: 600, opacity: 0.6 }}>/20</span>
         </p>
-      </motion.div>
+      </m.div>
 
       <div className={styles.formulaBox}>
         (PFE × 10 + Perfectionnement × 2.5 + Initiation × 2.5) ÷ 15

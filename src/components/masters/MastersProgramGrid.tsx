@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { GraduationCap, Layers, ArrowLeft } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";
@@ -34,7 +34,7 @@ export function MastersProgramGrid() {
         }}
       >
         {masterFilterTabs.map((tab) => (
-          <motion.button
+          <m.button
             key={tab.id}
             type="button"
             onClick={() => setActiveFilter(tab.id)}
@@ -55,14 +55,14 @@ export function MastersProgramGrid() {
             }}
           >
             {tab.label}
-          </motion.button>
+          </m.button>
         ))}
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 380px), 1fr))", gap: "24px", marginBottom: "40px" }}>
         <AnimatePresence mode="popLayout">
           {filteredMasters.map((master, idx) => (
-            <motion.div
+            <m.div
               key={master.id}
               layout
               initial={{ opacity: 0, y: 20 }}
@@ -142,7 +142,7 @@ export function MastersProgramGrid() {
                   />
                 </div>
               </Card>
-            </motion.div>
+            </m.div>
           ))}
         </AnimatePresence>
       </div>

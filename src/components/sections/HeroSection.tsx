@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CheckCircle2, MapPin, Sparkles } from "@/lib/icons";
 
 /* ======================================================
@@ -66,7 +66,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-8 py-20 w-full">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -92,7 +92,7 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-3 mb-12">
-            <motion.a
+            <m.a
               href="/inscription"
               whileHover={{ y: -2, boxShadow: "0 12px 32px rgba(246,180,27,0.35)" }}
               whileTap={{ scale: 0.97 }}
@@ -100,8 +100,8 @@ export function HeroSection() {
             >
               <CheckCircle2 size={18} strokeWidth={2.5} />
               ابدأ الترسيم
-            </motion.a>
-            <motion.a
+            </m.a>
+            <m.a
               href="/explore"
               whileHover={{ y: -2, boxShadow: "0 12px 32px rgba(255,255,255,0.1)" }}
               whileTap={{ scale: 0.97 }}
@@ -109,13 +109,13 @@ export function HeroSection() {
             >
               <MapPin size={18} strokeWidth={2} />
               اكتشف زغوان
-            </motion.a>
+            </m.a>
           </div>
 
           {/* Floating chips */}
           <div className="flex flex-wrap gap-2">
             {["الترسيم", "المبيت", "البورص", "النقل", "الستاجات"].map((chip, i) => (
-              <motion.a
+              <m.a
                 key={chip}
                 href={`/${["inscription","housing","bourse","transport","stages"][i]}`}
                 initial={{ opacity: 0, y: 10 }}
@@ -125,10 +125,10 @@ export function HeroSection() {
                 className="px-4 py-[7px] rounded-full bg-white/5 border border-white/10 text-white/70 text-xs font-medium no-underline transition-colors duration-200 backdrop-blur-md hover:text-[#12B8C8] hover:border-[rgba(18,184,200,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12B8C8]"
               >
                 {chip}
-              </motion.a>
+              </m.a>
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

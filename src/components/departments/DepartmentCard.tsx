@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowLeft } from "@/lib/icons";
 import { Card } from "@/components/ui/Card";
 import { departmentIcons } from "@/lib/iconMaps";
@@ -13,7 +13,7 @@ export function DepartmentCard({ dept, index }: { dept: Department; index: numbe
   const Icon = departmentIcons[dept.icon];
 
   return (
-    <motion.div {...enterAnimation(index * 0.1)}>
+    <m.div {...enterAnimation(index * 0.1)}>
       <Card elevation="raised" padding="30px">
         <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "flex-start" }}>
           <div
@@ -79,7 +79,7 @@ export function DepartmentCard({ dept, index }: { dept: Department; index: numbe
             </div>
 
             <Link href={dept.href} style={{ textDecoration: "none" }}>
-              <motion.div
+              <m.div
                 whileHover={{ x: -4 }}
                 style={{
                   display: "inline-flex",
@@ -93,11 +93,11 @@ export function DepartmentCard({ dept, index }: { dept: Department; index: numbe
               >
                 <span>عرض تفاصيل القسم والمواد</span>
                 <ArrowLeft size={14} />
-              </motion.div>
+              </m.div>
             </Link>
           </div>
         </div>
       </Card>
-    </motion.div>
+    </m.div>
   );
 }

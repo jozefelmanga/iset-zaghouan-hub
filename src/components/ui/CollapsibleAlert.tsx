@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode, useState, useId } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Info, AlertTriangle, CheckCircle2, AlertCircle, ChevronDown } from "@/lib/icons";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
@@ -91,7 +91,7 @@ export function CollapsibleAlert({ title, children, variant = "info" }: Collapsi
         <span style={{ flex: 1, fontWeight: 600, fontSize: "14px", color: "var(--color-text)", lineHeight: 1.4 }}>
           {title}
         </span>
-        <motion.div
+        <m.div
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.22 }}
           aria-hidden="true"
@@ -108,11 +108,11 @@ export function CollapsibleAlert({ title, children, variant = "info" }: Collapsi
           }}
         >
           <ChevronDown size={16} strokeWidth={2.5} />
-        </motion.div>
+        </m.div>
       </button>
       <AnimatePresence initial={false}>
         {open && (
-          <motion.div
+          <m.div
             id={panelId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -131,7 +131,7 @@ export function CollapsibleAlert({ title, children, variant = "info" }: Collapsi
             >
               {children}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

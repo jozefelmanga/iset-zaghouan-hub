@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Search, Menu } from "@/lib/icons";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const CommandPalette = dynamic(
   () =>
@@ -68,7 +68,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
             gap: "clamp(12px, 3vw, 24px)",
           }}
         >
-          <motion.button
+          <m.button
             className="mobile-only"
             type="button"
             aria-label="فتح القائمة"
@@ -89,7 +89,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
             }}
           >
             <Menu size={20} strokeWidth={2} aria-hidden="true" />
-          </motion.button>
+          </m.button>
 
           <button
             type="button"

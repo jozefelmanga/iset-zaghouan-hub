@@ -22,7 +22,7 @@ export default function StageCompaniesPage() {
           gap: "6px",
           fontSize: "13px",
           fontWeight: 600,
-          color: "var(--color-secondary)",
+          color: "var(--color-secondary-text)",
           textDecoration: "none",
           marginBottom: "20px",
         }}

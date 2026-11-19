@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowLeft } from "@/lib/icons";
 import { hoverLift } from "@/lib/motion";
 import { categoryConfig } from "@/lib/theme";
@@ -20,7 +20,7 @@ export function ActionCard({ icon: Icon, title, description, href, category = "p
   const colors = categoryConfig[category] || categoryConfig.primary;
 
   return (
-    <motion.a
+    <m.a
       href={href}
       {...hoverLift}
       className={`group flex h-full flex-col no-underline ${
@@ -66,6 +66,6 @@ export function ActionCard({ icon: Icon, title, description, href, category = "p
         <span>عرض التفاصيل</span>
         <ArrowLeft size={14} />
       </div>
-    </motion.a>
+    </m.a>
   );
 }

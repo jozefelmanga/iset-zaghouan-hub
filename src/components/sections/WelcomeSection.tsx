@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { Sparkles, ChevronDown, ChevronUp } from "@/lib/icons";
 
@@ -9,7 +9,7 @@ export function WelcomeSection() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <motion.section
+    <m.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 }}
@@ -50,7 +50,7 @@ export function WelcomeSection() {
             {/* Collapsible paragraphs */}
             <AnimatePresence initial={false}>
               {isExpanded && (
-                <motion.div
+                <m.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
@@ -63,7 +63,7 @@ export function WelcomeSection() {
                   <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0 }}>
                     📚 الفكرة من الدليل هذا هي إنّنا نوفّرولكم كل المعلومات اللي تحتاجوها بطريقة سهلة وواضحة، باش نسهّلوا عليكم أول خطواتكم في الحياة الجامعية ونعاونكم تبداوها بثقة وراحة. 🚀
                   </p>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
 
@@ -101,6 +101,6 @@ export function WelcomeSection() {
           </div>
         </div>
       </Card>
-    </motion.section>
+    </m.section>
   );
 }

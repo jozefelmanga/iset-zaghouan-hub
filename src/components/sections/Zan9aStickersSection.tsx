@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Sticker, ExternalLink } from "@/lib/icons";
 import { sectionReveal } from "@/lib/motion";
 
 export function Zan9aStickersSection() {
   return (
-    <motion.section {...sectionReveal} className="mb-16">
+    <m.section {...sectionReveal} className="mb-16">
       <a
         href="https://zan9a.tn"
         target="_blank"
@@ -74,6 +74,6 @@ export function Zan9aStickersSection() {
           </div>
         </div>
       </a>
-    </motion.section>
+    </m.section>
   );
 }

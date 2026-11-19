@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Plus, Search, Map, X } from "lucide-react";
 
 interface FABProps {
@@ -21,7 +21,7 @@ export function FloatingActionButton({ onSearchOpen }: FABProps) {
         setOpen(false);
         onSearchOpen();
       },
-      color: "var(--color-secondary)",
+      color: "var(--color-secondary-text)",
     },
     {
       icon: Map,
@@ -55,7 +55,7 @@ export function FloatingActionButton({ onSearchOpen }: FABProps) {
           actions.map((action, i) => {
             const Icon = action.icon;
             return (
-              <motion.button
+              <m.button
                 key={i}
                 type="button"
                 aria-label={action.label}
@@ -97,13 +97,13 @@ export function FloatingActionButton({ onSearchOpen }: FABProps) {
                   <Icon size={16} strokeWidth={2} />
                 </div>
                 {action.label}
-              </motion.button>
+              </m.button>
             );
           })}
       </AnimatePresence>
 
       {/* Main FAB */}
-      <motion.button
+      <m.button
         type="button"
         aria-label={open ? "إغلاق القائمة السريعة" : "فتح القائمة السريعة"}
         aria-expanded={open}
@@ -126,12 +126,12 @@ export function FloatingActionButton({ onSearchOpen }: FABProps) {
         }}
       >
         {open ? <X size={22} strokeWidth={2.5} aria-hidden="true" /> : <Plus size={22} strokeWidth={2.5} aria-hidden="true" />}
-      </motion.button>
+      </m.button>
 
       {/* Backdrop */}
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

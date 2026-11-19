@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Link2, ExternalLink } from "@/lib/icons";
 import { Card, Badge } from "@/components/ui/shared";
 import { ZoomableImage } from "@/components/ui/Lightbox";
@@ -44,7 +44,7 @@ export function TIPageContent() {
       {/* Section 1: Specialities */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> التخصصات المتاحة (Spécialités)
+          <span style={{ color: "var(--color-secondary-text)" }}>•</span> التخصصات المتاحة (Spécialités)
         </h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "20px" }}>
           <Card elevation="raised" padding="24px">
@@ -106,7 +106,7 @@ export function TIPageContent() {
       {/* Section 1b: Mini Parcours */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "8px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)"}}>•</span> المسارات المصغّرة (Mini Parcours)
+          <span style={{ color: "var(--color-secondary-text)"}}>•</span> المسارات المصغّرة (Mini Parcours)
         </h2>
         <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "16px" }}>
           ابتداءً من السنة الثانية، يمكن للطلبة اختيار مسار مصغّر (Mini Parcours) ضمن تخصصهم. هذه المسارات متوفّرة حالياً في قسم الإعلامية (TI) بـ ISET Zaghouan:
@@ -143,7 +143,7 @@ export function TIPageContent() {
       {/* Section 2: Study Materials */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "10px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> المواد الدراسية للسنة الأولى
+          <span style={{ color: "var(--color-secondary-text)" }}>•</span> المواد الدراسية للسنة الأولى
         </h2>
         <DepartmentScheduleDisclaimer intro="المواد تختلف بين السداسي الأول والثاني." />
 
@@ -178,7 +178,7 @@ export function TIPageContent() {
           <div style={{ display: "flex", justifyContent: "center", position: "relative", overflow: "hidden", minHeight: "260px" }}>
             <AnimatePresence mode="wait">
               {semesterTab === "s1" ? (
-                <motion.div
+                <m.div
                   key="s1"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -194,9 +194,9 @@ export function TIPageContent() {
                     style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
                   />
                   <span style={{ fontSize: "11px", color: "var(--color-text-muted)", marginTop: "8px" }}>جدول مواد السداسي الأول</span>
-                </motion.div>
+                </m.div>
               ) : (
-                <motion.div
+                <m.div
                   key="s2"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -212,7 +212,7 @@ export function TIPageContent() {
                     style={{ maxWidth: "100%", borderRadius: "10px", border: "1px solid var(--color-border)" }}
                   />
                   <span style={{ fontSize: "11px", color: "var(--color-text-muted)", marginTop: "8px" }}>جدول مواد السداسي الثاني</span>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>
@@ -222,7 +222,7 @@ export function TIPageContent() {
       {/* Section 3: Credit System & Engineering */}
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> نظام الكريدي والآفاق للهندسة (Crédits & Cycle d&apos;ingénieur)
+          <span style={{ color: "var(--color-secondary-text)" }}>•</span> نظام الكريدي والآفاق للهندسة (Crédits & Cycle d&apos;ingénieur)
         </h2>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -306,7 +306,7 @@ export function TIPageContent() {
       {/* Section 4: Resources */}
       <div style={{ marginBottom: "20px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ color: "var(--color-secondary)" }}>•</span> المصادر التعليمية والمراجع (Ressources)
+          <span style={{ color: "var(--color-secondary-text)" }}>•</span> المصادر التعليمية والمراجع (Ressources)
         </h2>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "14px" }}>
@@ -332,7 +332,7 @@ export function TIPageContent() {
               <Card elevation="raised" padding="16px">
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
                   <h4 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>{res.title}</h4>
-                  <Link2 size={14} style={{ color: "var(--color-secondary)" }} />
+                  <Link2 size={14} style={{ color: "var(--color-secondary-text)" }} />
                 </div>
                 <p style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: 1.5 }}>{res.desc}</p>
               </Card>

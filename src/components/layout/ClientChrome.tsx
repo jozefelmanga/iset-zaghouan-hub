@@ -7,6 +7,7 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import { MotionProvider } from "@/components/layout/MotionProvider";
+import { OfflineBanner } from "@/components/layout/OfflineBanner";
 
 interface ClientChromeProps {
   children: ReactNode;
@@ -30,6 +31,7 @@ export function ClientChrome({ children, footer }: ClientChromeProps) {
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
         <Navbar setDrawerOpen={setDrawerOpen} />
+        <OfflineBanner />
 
         <main
           id="main-content"
@@ -42,7 +44,7 @@ export function ClientChrome({ children, footer }: ClientChromeProps) {
 
         {footer}
         <BackToTopButton />
-        <BottomNav />
+        <BottomNav onOpenMenu={() => setDrawerOpen(true)} />
       </div>
     </div>
     </MotionProvider>

@@ -47,7 +47,8 @@ function StageDetail({ internship, colors, isExpanded }: {
   const diff = difficultyLabels[internship.difficulty];
 
   return (
-    <AnimatePresence>
+    // initial={false}: an already-open card renders at full height on load (no layout shift); toggling still animates.
+    <AnimatePresence initial={false}>
       {isExpanded && (
         <m.div
           initial={{ height: 0, opacity: 0 }}
@@ -201,7 +202,7 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
                   <span style={{ fontSize: "24px" }}>{internship.emoji}</span>
                   <div>
                     <p style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-text)" }}>
-                      {i + 1}️⃣ {internship.name}
+                      {i + 1}️⃣ <span lang="fr">{internship.name}</span>
                     </p>
                     <p style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>{internship.duration}</p>
                   </div>
@@ -321,7 +322,7 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
                 <div className={styles.stageBody}>
                   <div className={styles.stageTitleRow}>
                     <Badge variant={colors.badge}>السنة {internship.year}</Badge>
-                    <h3 className={styles.stageTitle} style={{ fontWeight: 700, fontSize: "18px", color: "var(--color-text)", margin: 0 }}>{internship.name}</h3>
+                    <h3 lang="fr" className={styles.stageTitle} style={{ fontWeight: 700, fontSize: "18px", color: "var(--color-text)", margin: 0 }}>{internship.name}</h3>
                   </div>
                   <StageDetail internship={internship} colors={colors} isExpanded={isExpanded} />
                 </div>

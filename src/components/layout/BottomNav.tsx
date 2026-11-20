@@ -5,8 +5,10 @@ import { usePathname } from "next/navigation";
 import { bottomNavLinks } from "@/constants/navigation";
 import { isNavActive } from "@/lib/utils";
 import { cn } from "@/lib/utils";
+import { Menu } from "@/lib/icons";
 
-export function BottomNav() {
+/** `onOpenMenu` opens the side drawer, where every page (bourse, resto, stages, FAQ…) is listed. */
+export function BottomNav({ onOpenMenu }: { onOpenMenu: () => void }) {
   const pathname = usePathname();
   const navHrefs = bottomNavLinks.map((link) => link.href);
 
@@ -35,6 +37,13 @@ export function BottomNav() {
             </Link>
           );
         })}
+        <button type="button" onClick={onOpenMenu} className="bottom-nav-link cursor-pointer border-0 bg-transparent" aria-label="كل الصفحات">
+          <span className="bottom-nav-dot" aria-hidden="true" />
+          <span className="bottom-nav-icon" aria-hidden="true">
+            <Menu size={22} strokeWidth={2} />
+          </span>
+          <span className="bottom-nav-label">أكثر</span>
+        </button>
       </div>
     </nav>
   );

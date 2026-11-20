@@ -24,6 +24,7 @@ const IMAGES = `images-${VERSION}`;
 const OFFLINE_URL = "/offline";
 const OFFLINE_ICON = "/icons/icon-192.png"; // shown on the offline page
 const MAX_IMAGES = 80;
+const MAX_ASSETS = 250; // about 5 deploys of build files; older ones are dropped first
 const NETWORK_TIMEOUT_MS = 4000;
 const PAGE_REFRESH_MS = 12 * 60 * 60 * 1000; // re-save a visited page at most twice a day
 
@@ -146,15 +147,18 @@ async function cacheOfflinePage(cache) {
 
 async function handlePage(request) {
   const cache = await caches.open(PAGES);
+  // Only race the network against a saved copy. With no saved copy, a slow
+  // connection should still get the page, not the "you're offline" screen.
+  const saved = await cache.match(pageKey(request));
   try {
-    const response = await fetchWithTimeout(request, NETWORK_TIMEOUT_MS);
+    const response = saved ? await fetchWithTimeout(request, NETWORK_TIMEOUT_MS) : await fetch(request);
     // Redirected responses can't be replayed for a navigation in Safari, so don't save them.
     if (response.ok && response.type === "basic" && !response.redirected) {
       cache.put(pageKey(request), response.clone());
     }
     return response;
   } catch {
-    return (await cache.match(pageKey(request))) || (await cache.match(OFFLINE_URL)) || Response.error();
+    return saved || (await cache.match(pageKey(request))) || (await cache.match(OFFLINE_URL)) || Response.error();
   }
 }
 
@@ -185,7 +189,11 @@ async function cacheFirst(request, cacheName) {
   const cached = await cache.match(request);
   if (cached) return cached;
   const response = await fetch(request);
-  if (response.ok) cache.put(request, response.clone());
+  if (response.ok) {
+    await cache.put(request, response.clone());
+    // Every deploy adds new hashed files: cap the cache so it can't grow forever.
+    if (cacheName === ASSETS) trimCache(cache, MAX_ASSETS);
+  }
   return response;
 }
 
@@ -204,7 +212,8 @@ async function staleWhileRevalidate(request, cacheName) {
   return cached || network;
 }
 
+/** Drops the oldest entries above `max`, but never the icon the offline page needs. */
 async function trimCache(cache, max) {
-  const keys = await cache.keys();
+  const keys = (await cache.keys()).filter((req) => new URL(req.url).pathname !== OFFLINE_ICON);
   for (let i = 0; i < keys.length - max; i++) await cache.delete(keys[i]);
 }

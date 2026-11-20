@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { categoryConfig } from "@/lib/theme";
 import { pageHeaderIcons } from "@/lib/iconMaps";
-import { cn, textTint } from "@/lib/utils";
+import { cn, latinLang, textTint } from "@/lib/utils";
 import type { Category } from "@/types";
 
 interface StaticPageHeaderProps {
@@ -36,8 +36,8 @@ export function StaticPageHeader({ icon, label, title, subtitle, badge, lastUpda
           {Icon && <Icon size={24} strokeWidth={2} />}
         </div>
         <div className="flex-1">
-          {label && <span className="section-label">{label}</span>}
-          <h1 style={{ fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 800, color: "var(--color-text)", lineHeight: 1.2, marginBottom: "6px" }}>
+          {label && <span className="section-label" lang={latinLang(label)}>{label}</span>}
+          <h1 lang={latinLang(title)} style={{ fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 800, color: "var(--color-text)", lineHeight: 1.2, marginBottom: "6px" }}>
             {title}
           </h1>
           {subtitle && (

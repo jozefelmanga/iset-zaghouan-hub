@@ -268,3 +268,26 @@ export const categorySearchKeywords: Record<string, string[]> = {
   career: ["career", "carriere", "carrière", "internship", "stage", "emploi", "job"],
   campus: ["campus", "city", "ville", "other", "autre"],
 };
+
+/**
+ * Everyday words students actually type (derja, MSA, French, transliterated),
+ * merged with `navSearchKeywords` by `matchesNavLink`. Arabic spelling
+ * variants (أ/ا, ة/ه, ى/ي) are handled by normalisation, so list one form.
+ */
+export const everydayWordsByHref: Record<string, string[]> = {
+  "/inscription": ["تسجيل", "ترسيم", "الترسيم", "اوراق الترسيم", "tasjil", "tarsim", "e-dinar", "edinar", "ادينار", "inscription.tn"],
+  "/inscription/foyer": ["اوراق المبيت", "ترسيم المبيت", "ترسيم الفواي", "ooun", "ديوان الخدمات", "sakan"],
+  "/housing": ["سكن", "مبيت", "فواي", "فوايي", "المبيت الجامعي", "internat", "dortoir", "chambre", "sakan", "mabit"],
+  "/bourse": ["منحة", "منح", "بورصة", "بورص", "منحة الادماج", "minha", "ooun", "cnss", "cnrps", "قرض"],
+  "/transport": ["كار", "كيران", "حافلة", "حافلات", "لواج", "لواجات", "تاكسي", "نقل", "ابونمان", "horaire", "horaires", "timetable", "bus", "louage", "srtgn", "abonnement"],
+  "/resto": ["مطعم", "ريستو", "ماكلة", "اكل", "تيكيات", "تيكة", "restaurant", "cantine", "ticket", "dejeuner", "diner"],
+  "/stages": ["تربص", "تربصات", "ستاج", "ستاجات", "stage", "stages", "internship", "rapport", "convention", "journal de stage"],
+  "/stages/pfe": ["مشروع التخرج", "pfe", "soutenance", "projet de fin"],
+  "/stages/companies": ["شركات", "شركة", "entreprise", "entreprises", "societe", "company"],
+  "/masters": ["مستر", "ماستر", "ماجستير", "mastere", "mastère", "master"],
+  "/departments": ["توجيه", "اختصاص", "اختصاصات", "شعبة", "tawjih", "orientation", "filiere", "filière"],
+  "/library": ["مكتبة", "كتب", "اكزامانات", "امتحانات", "فروض", "ds", "examen", "devoir"],
+  "/clubs": ["نادي", "نوادي", "جمعية", "جمعيات", "club", "clubs", "association"],
+  "/explore": ["زغوان", "قهاوي", "قهوة", "كافيه", "خرجة", "cafe", "café", "sortie", "zaghouan"],
+  "/faq": ["سؤال", "اسئلة", "contact", "telephone", "téléphone", "tel", "هاتف", "نومرو", "numero", "اتصال", "urgence"],
+};

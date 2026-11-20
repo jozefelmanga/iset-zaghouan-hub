@@ -117,14 +117,13 @@ export const allNavLinks: NavLink[] = [
 ];
 
 /* ============================================================
-   BOTTOM NAV — 5 primary mobile links
+   BOTTOM NAV — 4 primary mobile links + a "أكثر" button that opens the menu
    ============================================================ */
 export const bottomNavLinks: NavLink[] = [
   homeLink,
   { href: "/inscription", label: "الترسيم", icon: FileText,   category: "academic" },
   { href: "/housing",     label: "المبيت",   icon: Building2,  category: "life"     },
   { href: "/transport",   label: "النقل",    icon: Bus,        category: "life"     },
-  { href: "/faq",         label: "أكثر",     icon: HelpCircle, category: "campus"   },
 ];
 
 /* ============================================================

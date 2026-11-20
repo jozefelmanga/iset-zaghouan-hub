@@ -161,6 +161,17 @@ export const isBrowser = typeof window !== "undefined";
    ============================================================ */
 
 /**
+ * `lang` for a short label: "fr" when it has no Arabic letters (most Latin text
+ * on this site is French: "Génie des Procédés", "Stage d'initiation"), so
+ * screen readers don't read it with the Arabic voice. Undefined for Arabic text.
+ *
+ * @example <h1 lang={latinLang(title)}>{title}</h1>
+ */
+export function latinLang(text: string): "fr" | undefined {
+  return /[\u0600-\u06FF]/.test(text) || !/[A-Za-zÀ-ÿ]/.test(text) ? undefined : "fr";
+}
+
+/**
  * Brand/status colour for text or icons, kept at WCAG AA contrast.
  * Light mode: lightness capped at `--tint-lmax` (OKLCH), so bright brand
  * colours darken just enough while already-dark ones stay as they are.

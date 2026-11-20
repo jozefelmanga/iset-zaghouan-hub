@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { ACADEMIC_YEAR } from "@/constants/seo";
 import { m } from "framer-motion";
 import {
   FileText, CheckCircle2, Circle, Printer, Globe, Copy, ArrowLeft,
@@ -10,13 +11,16 @@ import { enrollmentSteps, enrollmentPhases, enrollmentDocs } from "@/data/enroll
 import { enrollmentStepIcons } from "@/lib/iconMaps";
 import { textTint } from "@/lib/utils";
 
+// One checklist per academic year, so last year's ticks don't carry over.
+const STORAGE_KEY = `inscription-checklist-${ACADEMIC_YEAR}`;
+
 export function InscriptionContent() {
   const [checked, setChecked] = useState<Record<number, boolean>>({});
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("inscription-checklist");
+      const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setChecked(JSON.parse(saved));
@@ -29,7 +33,11 @@ export function InscriptionContent() {
 
   useEffect(() => {
     if (isLoaded) {
-      localStorage.setItem("inscription-checklist", JSON.stringify(checked));
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(checked));
+      } catch {
+        // Storage blocked (private mode, some in-app browsers): ticks just aren't remembered.
+      }
     }
   }, [checked, isLoaded]);
 
@@ -66,9 +74,20 @@ export function InscriptionContent() {
               transition={{ duration: 0.6, ease: "easeOut" }}
             />
           </div>
-          <p style={{ fontSize: "13px", color: "var(--color-text-muted)" }}>
-            {completed} من {enrollmentSteps.length} أوراق جاهزة
-          </p>
+          <div className="flex items-center justify-between gap-3">
+            <p style={{ fontSize: "13px", color: "var(--color-text-muted)" }}>
+              {completed} من {enrollmentSteps.length} أوراق جاهزة
+            </p>
+            {completed > 0 && (
+              <button
+                type="button"
+                onClick={() => setChecked({})}
+                className="cursor-pointer rounded-lg border border-[var(--color-border)] bg-transparent px-3 py-1.5 text-[12px] font-semibold text-[var(--color-text-secondary)] hover:border-[var(--color-secondary)]"
+              >
+                مسح القائمة
+              </button>
+            )}
+          </div>
         </Card>
       </m.div>
 

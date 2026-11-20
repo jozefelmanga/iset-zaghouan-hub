@@ -105,7 +105,7 @@ export function StagesPageContent() {
                   }}
                 >
                   {isPast ? <CheckCircle2 size={16} style={{ color: textTint("#22C55E") }} strokeWidth={2.5} /> : <Circle size={16} style={{ color: isCurrent ? "var(--color-secondary)" : "var(--color-border)" }} strokeWidth={2} />}
-                  {internship.name}
+                  <span lang="fr">{internship.name}</span>
                 </button>
               );
             })}

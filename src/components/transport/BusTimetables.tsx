@@ -7,7 +7,7 @@ export function BusTimetables() {
     <div style={{ marginBottom: "20px" }}>
       <p style={{ fontSize: "12px", color: "var(--color-text-muted)", marginBottom: "14px", lineHeight: 1.6 }}>
         {busTimetableSource.label} (آخر مراجعة: {busTimetableSource.checked}).{" "}
-        <a href={busTimetableSource.href} target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-secondary-text)", fontWeight: 600 }}>
+        <a href={busTimetableSource.href} target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-secondary-text)", fontWeight: 600, display: "inline-block", padding: "12px 0", margin: "-12px 0" }}>
           شوف المواعيد المحيّنة لكل الخطوط
         </a>
         . ثبّت قبل ما تخرج، خاصة في العطل و رمضان.

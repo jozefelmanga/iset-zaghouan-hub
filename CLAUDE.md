@@ -7,7 +7,7 @@ https://guideisetzg.tn). Most visitors are on phones: always check 390px width.
 
 ```
 npx tsc --noEmit
-npx eslint src            # 8 `<img>` warnings are expected
+npx eslint src            # 9 `<img>` warnings are expected
 npx vitest run
 npm run build
 npm run check-bundle      # homepage JS budget (scripts/bundle-baseline.json)

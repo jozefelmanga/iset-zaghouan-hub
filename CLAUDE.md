@@ -31,7 +31,12 @@ keep it there.
 ## Colours and dark mode
 
 - Dark mode follows the system (`@media (prefers-color-scheme: dark)` in
-  `src/app/globals.css`). Use the CSS variables, not hard-coded light colours.
+  `src/app/globals.css`) unless the visitor picks light/dark with the navbar
+  button (`src/components/layout/ThemeToggle.tsx`: auto → light → dark, saved
+  in `localStorage("theme")`, applied as `<html data-theme>` by a head script
+  before paint). The dark tokens exist twice in `globals.css` (media block and
+  `[data-theme="dark"]`): change both. Use the CSS variables, not hard-coded
+  light colours.
 - `--color-primary` turns light in dark mode (it's mostly heading text). For
   solid navy fills use `--color-primary-bg` or `--color-navy`.
 - Brand colour as text/icon (e.g. `#12B8C8`) → `textTint("#12B8C8")` from

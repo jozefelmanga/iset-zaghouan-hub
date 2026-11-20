@@ -50,6 +50,8 @@ export {
   Key,
   Wallet,
   Moon,
+  Sun,
+  Monitor,
   PartyPopper,
 
   // Career

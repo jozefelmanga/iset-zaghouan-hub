@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Search, Menu } from "@/lib/icons";
 import { m } from "framer-motion";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 
 const CommandPalette = dynamic(
   () =>
@@ -129,6 +130,8 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
               Ctrl K
             </kbd>
           </button>
+
+          <ThemeToggle />
 
           <Link
             href="/"

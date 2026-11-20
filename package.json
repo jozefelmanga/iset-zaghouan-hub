@@ -13,6 +13,7 @@
     "generate-llms": "tsx scripts/generate-llms.ts",
     "check-bundle": "tsx scripts/check-bundle-budget.ts",
     "measure-bundle": "tsx scripts/measure-bundle-baseline.ts",
+    "check-contrast": "node scripts/check-contrast.cjs",
     "lighthouse": "lhci autorun",
     "prebuild": "npm run generate-llms && node scripts/generate-stage-logos.mjs && node scripts/generate-stage-companies.mjs",
     "analyze": "cross-env ANALYZE=true npm run build"

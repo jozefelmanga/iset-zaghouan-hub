@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { GraduationCap, X } from "@/lib/icons";
 import { m, AnimatePresence } from "framer-motion";
 import { navGroups, homeLink } from "@/constants/navigation";
+import { InstallMenuItem } from "@/components/layout/InstallApp";
 import { isNavActive, textTint } from "@/lib/utils";
 import { drawerFromRight, backdrop } from "@/lib/motion";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
@@ -274,6 +275,7 @@ export function Sidebar({ drawerOpen, setDrawerOpen }: { drawerOpen?: boolean, s
           flexShrink: 0,
         }}
       >
+        <InstallMenuItem />
         <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", textAlign: "center", lineHeight: 1.6 }}>
           Made with ❤️ for
           <br />

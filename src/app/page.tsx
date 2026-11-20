@@ -6,6 +6,7 @@ import { QuickAccessSection } from "@/components/sections/QuickAccessSection";
 import { Container } from "@/components/ui/layout";
 import { WelcomeSection } from "@/components/sections/WelcomeSection";
 import { InstitutionInfoSection } from "@/components/sections/InstitutionInfoSection";
+import { InstallCard } from "@/components/layout/InstallApp";
 import { getGalleryImages } from "@/lib/gallery";
 
 // Below-fold sections: code-split for a smaller initial JS bundle.
@@ -53,6 +54,7 @@ export default function HomePage() {
         <WelcomeSection />
         <InstitutionInfoSection />
         <QuickAccessSection />
+        <InstallCard />
         <StudentJourneySection />
         <ExternalResourcesSection />
         <SunsetMomentsSection galleryImages={sunsetImages} />

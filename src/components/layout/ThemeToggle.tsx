@@ -7,13 +7,11 @@ import { Monitor, Moon, Sun } from "@/lib/icons";
  * Theme button: auto (follow the system) → light → dark → auto.
  * The choice is saved in localStorage("theme") and applied as
  * <html data-theme="light|dark"> (no attribute = auto). THEME_INIT_SCRIPT
- * applies it before first paint, so there is no flash on load.
+ * (src/lib/head-scripts.ts) applies it before first paint: no flash on load.
  */
 type Mode = "system" | "light" | "dark";
 
 const STORAGE_KEY = "theme";
-
-export const THEME_INIT_SCRIPT = `try{var t=localStorage.getItem("${STORAGE_KEY}");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
 
 const NEXT: Record<Mode, Mode> = { system: "light", light: "dark", dark: "system" };
 

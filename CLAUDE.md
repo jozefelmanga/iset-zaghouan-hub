@@ -48,6 +48,15 @@ keep it there.
   Tailwind utilities: override their padding/background/radius with `style`,
   not classes.
 
+## Install as app
+
+- `src/lib/install.ts` decides how a visitor can install: Chrome's prompt
+  (caught early by `INSTALL_CAPTURE_SCRIPT` in `src/lib/head-scripts.ts`),
+  iPhone Share hint, Facebook/Instagram "open in browser" hint, or hidden
+  (already installed / not possible). UI in `InstallApp.tsx`: a side-menu
+  row and a closable homepage card (phones only, closed for good in
+  `localStorage("install-card-dismissed")`). Keep it soft: no pop-ups.
+
 ## Animation and JS size
 
 - Decorative fades are CSS: `.motion-reveal`, `.section-reveal` (stagger with

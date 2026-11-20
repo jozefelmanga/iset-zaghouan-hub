@@ -52,6 +52,7 @@ export {
   Moon,
   Sun,
   Monitor,
+  Smartphone,
   PartyPopper,
 
   // Career

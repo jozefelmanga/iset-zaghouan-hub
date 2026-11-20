@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { PageContentPlaceholder } from "@/components/ui/PageContentPlaceholder";
+import { lastUpdated } from "@/data/last-updated";
 
 const HousingInscriptionContent = dynamic(
   () =>
@@ -23,6 +24,7 @@ export default function FoyerInscriptionPage() {
         title="الترسيم في المبيت الجامعي: الأوراق و الخطوات"
         subtitle="خطوات التسجيل، الأوراق، و يوم الترسيم في الفواي"
         category="academic"
+        lastUpdated={lastUpdated["/inscription/foyer"]}
       />
       <HousingInscriptionContent />
     </PageWrapper>

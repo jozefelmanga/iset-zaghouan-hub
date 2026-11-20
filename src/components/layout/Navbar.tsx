@@ -148,7 +148,7 @@ export function Navbar({ setDrawerOpen }: { setDrawerOpen: (v: boolean) => void 
           >
             <img
               src="/images/logo/logo.webp"
-              alt="ISET Zaghouan Logo"
+              alt="Guide ISET Zaghouan"
               style={{
                 height: "36px",
                 width: "auto",

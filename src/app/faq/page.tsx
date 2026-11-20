@@ -7,6 +7,7 @@ import { PageWrapper } from "@/components/ui/layout";
 import { EmergencyContacts } from "@/components/faq/EmergencyContacts";
 import { FaqJsonLd } from "@/components/faq/FaqJsonLd";
 import { faqItems, emergencyContacts } from "@/data/faq";
+import { lastUpdated } from "@/data/last-updated";
 
 export const metadata = pageMetadata("/faq");
 
@@ -20,6 +21,7 @@ export default function FAQPage() {
         title="الأسئلة الشائعة"
         subtitle="أكثر الأسئلة اللي يسألوها الطلبة الجداد"
         category="campus"
+        lastUpdated={lastUpdated["/faq"]}
       />
 
       <Accordion items={faqItems} />

@@ -7,6 +7,7 @@ import { PageWrapper } from "@/components/ui/layout";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { pfeGuide, internships } from "@/data/internships";
 import { textTint } from "@/lib/utils";
+import { lastUpdated } from "@/data/last-updated";
 
 export const metadata = pageMetadata("/stages/pfe");
 
@@ -38,7 +39,7 @@ export default function PfePage() {
         title={pfeGuide.title}
         subtitle={pfeGuide.subtitle}
         category="career"
-        lastUpdated="جويلية 2026"
+        lastUpdated={lastUpdated["/stages/pfe"]}
       />
 
       <section
@@ -52,7 +53,7 @@ export default function PfePage() {
       >
         <h2 style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)", marginBottom: "8px" }}>شنوة معنى PFE؟</h2>
         <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.8 }}>
-          PFE هي اختصار <span dir="ltr">Projet de Fin d&apos;Études</span>، يعني مشروع التخرج. هو آخر ستاج في الإجازة: تخدم مشروع حقيقي في شركة
+          PFE هي اختصار <span dir="ltr" lang="fr">Projet de Fin d&apos;Études</span>، يعني مشروع التخرج. هو آخر ستاج في الإجازة: تخدم مشروع حقيقي في شركة
           في السداسي الثاني من السنة الثالثة، تكتب عليه rapport، و تعرضو قدّام لجنة في الـ Soutenance. النقطة متاعو تحسب برشا في
           الديبلوم، هذاكا علاش لازم تختار الموضوع و الشركة بالباهي.
         </p>

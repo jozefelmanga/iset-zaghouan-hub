@@ -4,6 +4,7 @@ import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { PageContentPlaceholder } from "@/components/ui/PageContentPlaceholder";
 import { getGalleryImages } from "@/lib/gallery";
+import { lastUpdated } from "@/data/last-updated";
 
 const HousingFoyersContent = dynamic(
   () =>
@@ -27,7 +28,7 @@ export default function HousingPage() {
         title="المبيت الجامعي"
         subtitle="كل ما تحتاجو تعرفوه على السكن الطلابي في زغوان"
         category="life"
-        lastUpdated="جويلية 2026"
+        lastUpdated={lastUpdated["/housing"]}
       />
       <HousingFoyersContent foyerGirlsGallery={girlsGallery} foyerBoysGallery={boysGallery} />
     </PageWrapper>

@@ -1,5 +1,13 @@
 import type { FAQItem, Contact } from "@/types";
 import { instituteOfficial } from "./official";
+import { scholarshipDocumentsSummary, scholarshipDeadlineDays } from "./scholarships";
+import { transportRoutes, plainTimes, zaghouanToTunisTimes } from "./transport";
+import { enrollmentDocsSummary } from "./enrollment";
+import { restaurantInfo } from "./restaurant";
+
+const { lunch, dinner } = restaurantInfo;
+
+const fare = (id: string) => transportRoutes.find((r) => r.id === id)?.fare?.toFixed(3);
 
 const formatPhone = (phone: string) => phone.replace("+216 ", "");
 
@@ -22,18 +30,18 @@ export const faqItems: FAQItem[] = [
   {
     question: "شنية أوراق البورص؟",
     answer:
-      "بطاقة التعريف، شهادة الترسيم، بطاقة الخدمات الجامعية، وثائق الدخل، شهادة الإقامة، و صور شمسية.",
+      `${scholarshipDocumentsSummary} الملف يتبعث للديوان في أجل ${scholarshipDeadlineDays} يوم من تاريخ الترسيم. القائمة الكاملة في دليل البورص.`,
     links: [{ href: "/bourse", label: "دليل البورص و المنحة" }],
   },
   {
     question: "كيفاش نروح لتونس من زغوان؟",
     answer:
-      "تاخذ لواج من باب عليوة (5.350 د) أو كار كونفور (4 د) أو كار عادية (3.400 د). كيران الرجوع: 10h/12h/15h/16h/17:30.",
+      `تاخذ لواج من باب عليوة (${fare("louage")} د) أو كار كونفور (${fare("bus_confort")} د) أو كار عادية (${fare("bus_normal")} د). كيران الرجوع من زغوان: ${plainTimes(zaghouanToTunisTimes).join(" / ")}. نهار الأحد و العطل فما كيران أقل، شوف الجدول الكامل.`,
     links: [{ href: "/transport", label: "دليل النقل و المواصلات" }],
   },
   {
     question: "وقتاش يحل الريستو؟",
-    answer: "الغداء: 11:30-14:00، العشاء: 17:00-19:00. السبت مفماش عشاء.",
+    answer: `الغداء: ${lunch.open}-${lunch.close}، العشاء: ${dinner.open}-${dinner.close}. السبت مفماش عشاء.`,
     links: [{ href: "/resto", label: "أوقات الريستو و القائمة" }],
   },
   {
@@ -63,11 +71,16 @@ export const inscriptionFaqItems: FAQItem[] = [
   },
   {
     question: "شنية الأوراق المطلوبة للترسيم الجامعي؟",
-    answer: "لازمك تحضر بطاقة التعريف الوطنية، 4 صور شمسية، الدفتر الصحي، نسخة من شهادة البكالوريا، وتوصيل الخلاص متع الترسيم عن بعد.",
+    answer: `تحضّر: ${enrollmentDocsSummary}.`,
   },
   {
     question: "وقتاش نرسّم في المعهد؟",
     answer: "المواعيد تختلف حسب المستوى (سنة أولى ولا ثانية ولا ثالثة). ديما تبع إعلانات إدارة ISET Zaghouan على الصفحة الرسمية لمعرفة نهار الترسيم المخصص ليك.",
+  },
+  {
+    question: "عندي بورص، شنوة نعمل بعد الترسيم؟",
+    answer: `تبعث ملف البورص للديوان في أجل ${scholarshipDeadlineDays} يوم من تاريخ الترسيم. إذا فات الأجل تنجم تخسر المنحة.`,
+    links: [{ href: "/bourse", label: "أوراق البورص و الخطوات" }],
   },
 ];
 

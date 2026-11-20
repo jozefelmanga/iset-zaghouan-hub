@@ -49,11 +49,31 @@ keep it there.
 - Brand colour as text/icon (e.g. `#12B8C8`) → `textTint("#12B8C8")` from
   `src/lib/utils.ts`. It darkens just enough in light mode and lightens in dark
   mode so contrast passes. Don't write raw brand hex as text colour.
+  Exception: the Zan9a banner's large orange headline word (`text-[#EA580C]`)
+  is deliberate (large text passes as is; `textTint` turns it rust). The
+  banner belongs to the owner's own business: leave it as it is.
 - jsdom drops `color-mix()` values, so tests must not assert text colour on
   tinted elements.
 - `.card-flat` / `.card-raised` / `.card-feature` are unlayered CSS and beat
   Tailwind utilities: override their padding/background/radius with `style`,
   not classes.
+
+## Content and facts
+
+- Each fact (papers, deadlines, bus times, fares, resto hours) is written once
+  in `src/data/*`. FAQ answers, route cards and SEO text are built from it.
+  Never retype a fact elsewhere; `src/data/facts-consistency.test.ts` fails if
+  the FAQ drifts.
+- "آخر تحديث" dates live in `src/data/last-updated.ts`; the academic year in
+  titles is `ACADEMIC_YEAR` in `src/constants/seo.ts`. Both are bumped by the
+  yearly review in `docs/SEPTEMBER-CHECKLIST.md`.
+- French or English headings/labels: `lang={latinLang(text)}` (from
+  `src/lib/utils.ts`) so screen readers use the right voice.
+- Search: everyday words per page in `everydayWordsByHref`
+  (`src/constants/nav-search-keywords.ts`); Arabic spelling variants are
+  normalised in `src/lib/nav-search.ts`. Add a case to `nav-search.test.ts`
+  when you add words.
+- Analytics events go through `track()` in `src/lib/track.ts`.
 
 ## Install as app
 

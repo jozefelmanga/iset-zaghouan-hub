@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
+import { scholarshipDeadlineDays } from "@/data/scholarships";
+
+/** Current academic year for titles. Update every September (see docs/SEPTEMBER-CHECKLIST.md). */
+export const ACADEMIC_YEAR = "2026-2027";
 
 /** Single source of truth for per-route SEO — keyed by pathname. */
 export const PAGE_SEO = {
@@ -15,15 +19,15 @@ export const PAGE_SEO = {
   },
   "/housing": {
     title: "المبيت الجامعي",
-    description: "دليل السكن والمبيت الجامعي في زغوان (مبيت المكرن): معلومات فواي البنات والأولاد، الوثائق المطلوبة، الصور، ونصائح عملية للعيش في الفواي.",
+    description: "دليل السكن والمبيت الجامعي في زغوان (مبيت مقرن): معلومات فواي البنات والأولاد، الوثائق المطلوبة، الصور، ونصائح عملية للعيش في الفواي.",
   },
   "/inscription/foyer": {
-    title: "أوراق الترسيم في المبيت الجامعي 2026-2027",
-    description: "أوراق الترسيم في المبيت الجامعي و شروط الانتفاع بالسكن لطلبة ISET Zaghouan: قائمة الوثائق كاملة، التسجيل في موقع OOUN، الخلاص بـ E-dinar و يوم الدخول للفواي.",
+    title: `أوراق المبيت الجامعي ${ACADEMIC_YEAR}: الترسيم في الفواي خطوة بخطوة`,
+    description: "أوراق الترسيم في المبيت الجامعي كاملة لطلبة ISET Zaghouan: الوثائق اللازمة، التسجيل في موقع OOUN، الخلاص بـ E-dinar، الشروط و يوم الدخول للفواي.",
   },
   "/bourse": {
-    title: "أوراق البورص و منحة الإدماج 2026-2027",
-    description: "قائمة أوراق البورص و منحة الإدماج (500 د) كاملة، شروط المنحة الجامعية، مراحل التقديم للديوان، و مبالغ و مواعيد الدفعات لطلبة ISET Zaghouan.",
+    title: `أوراق البورص ${ACADEMIC_YEAR}: القائمة كاملة و منحة الإدماج`,
+    description: `أوراق البورص كاملة و الأجل: الملف يتبعث للديوان في ${scholarshipDeadlineDays} يوم بعد الترسيم. شروط المنحة، مبلغها، منحة الإدماج (500 د) و مواعيد الدفعات لطلبة ISET Zaghouan.`,
   },
   "/transport": {
     title: "توقيت الحافلات تونس زغوان و النقل",
@@ -48,7 +52,7 @@ export const PAGE_SEO = {
   },
   "/library": {
     title: "المكتبة",
-    description: "دليل المكتبة الجامعية في ISET Zaghouan: أوقات الفتح، كيفية الإعارة، بنك الامتحانات والفروض السابقة (DS & Examens)، والمراجع المتوفرة للمراجعة.",
+    description: "دليل المكتبة الجامعية في ISET Zaghouan: بنك الامتحانات والفروض السابقة (DS & Examens)، المراجع المتوفرة، و نصائح باش تراجع بالباهي.",
   },
   "/clubs": {
     title: "النوادي الطلابية",

@@ -41,10 +41,16 @@ export const scholarshipDocuments = [
   "قرار الإحالة على التقاعد من وزارة التربية (لأبناء رجال التعليم)",
 ];
 
+/** Short version for the FAQ. Lives next to the full list so both are updated together. */
+export const scholarshipDocumentsSummary = `${scholarshipDocuments.length} ورقة، أهمّهم: بطاقة التعريف، مضمون ولادة، شهادة الترسيم، التصريح بالدخل متاع الأب و الأم، و شهادات CNSS / CNRPS (خوذهم بكري، ياخذو وقت).`;
+
+/** Deadline to send the file to the OOUN, counted from enrollment. Shown on /bourse, /inscription and the FAQ. */
+export const scholarshipDeadlineDays = 15;
+
 /** How the application works, from download to payment. */
 export const scholarshipSteps = [
   "تنزّل المطبوعات متاع الترشح للمنح و القروض من موقع ديوان الخدمات الجامعية",
-  "تبعث الملف للديوان في أجل ما يفوتش 15 يوم من تاريخ الترسيم",
+  `تبعث الملف للديوان في أجل ما يفوتش ${scholarshipDeadlineDays} يوم من تاريخ الترسيم`,
   "الديوان يدرس المطالب و يجاوب خلال أكتوبر، نوفمبر و ديسمبر",
   "صرف القسط الأول للممنوحين حسب تاريخ وصول و دراسة الملفات، في آخر ثلاثية من العام",
   "صرف الأقساط الباقية حسب بلاغات تتنشر على موقع الديوان",
@@ -63,7 +69,7 @@ export const scholarshipFaq = [
   },
   {
     question: "وقتاش نبعث ملف البورص؟",
-    answer: "في أجل ما يفوتش 15 يوم من تاريخ الترسيم، للديوان متاع الخدمات الجامعية. الإجابة تجي بين أكتوبر و ديسمبر.",
+    answer: `في أجل ما يفوتش ${scholarshipDeadlineDays} يوم من تاريخ الترسيم، للديوان متاع الخدمات الجامعية. الإجابة تجي بين أكتوبر و ديسمبر.`,
   },
   {
     question: "قداش مبلغ البورص؟",

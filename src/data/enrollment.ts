@@ -65,3 +65,6 @@ export const enrollmentDocs = [
   "الدفتر الصحي",
   "شهادة طبية (للمبيت)",
 ];
+
+/** One-line version of `enrollmentDocs` for FAQ answers. */
+export const enrollmentDocsSummary = enrollmentDocs.join("، ");

@@ -8,6 +8,7 @@ import { RestoGallery } from "@/components/resto/RestoGallery";
 import { restaurantInfo } from "@/data/restaurant";
 import { getGalleryImages } from "@/lib/gallery";
 import { textTint } from "@/lib/utils";
+import { lastUpdated } from "@/data/last-updated";
 
 const infoAlerts = [
   { title: "الفطور", content: restaurantInfo.breakfast, variant: "info" as const },
@@ -29,6 +30,7 @@ export default function RestoPage() {
         title="ريستو ISET Zaghouan"
         subtitle="من أحسن الريستوات في تونس — ماكلة نظيفة و كل شي منظم"
         category="campus"
+        lastUpdated={lastUpdated["/resto"]}
       />
 
       <MotionReveal delay={0.1} className="mb-7">

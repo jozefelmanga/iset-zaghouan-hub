@@ -86,14 +86,17 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col-reverse md:flex-row justify-between items-center gap-8 md:gap-4">
-          <div className="text-center md:text-start flex flex-col gap-2 md:gap-1" dir="ltr">
+          <div className="text-center md:text-start flex flex-col gap-2 md:gap-1" dir="ltr" lang="en">
+            <p className="text-[13px] text-white/75 m-0" dir="rtl" lang="ar">
+              دليل طلابي مستقل، موش الموقع الرسمي متاع المعهد (<a href="https://isetzg.rnu.tn" target="_blank" rel="noopener noreferrer" className="underline decoration-white/30 underline-offset-4 hover:text-white">isetzg.rnu.tn</a>)
+            </p>
             <p className="text-[13px] text-white/50 m-0">
               © {new Date().getFullYear()} Guide ISET Zaghouan — Independent Platform
             </p>
             <p className="text-[13px] text-white/65 m-0">
               Developed with ❤️ by <a href="https://linktr.ee/Youssef_Ben_Salem" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors underline decoration-white/20 underline-offset-4">Youssef Ben Salem</a>
             </p>
-            <a href="https://forms.gle/4Aj6svouhdPu9TBA7" target="_blank" rel="noopener noreferrer" className="text-[12px] text-white/60 hover:text-white/80 transition-colors mt-1 underline decoration-white/10 underline-offset-4 w-fit mx-auto md:mx-0">
+            <a href="https://forms.gle/4Aj6svouhdPu9TBA7" target="_blank" rel="noopener noreferrer" className="text-[12px] text-white/60 hover:text-white/80 transition-colors underline decoration-white/10 underline-offset-4 w-fit mx-auto md:mx-0 py-3">
               عندك اقتراح؟ أعلمنا هنا
             </a>
           </div>

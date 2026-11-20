@@ -63,13 +63,15 @@ export interface PageSeoInput {
 /** Build per-route metadata with canonical URL and social tags. */
 export function createPageMetadata({ title, description, path }: PageSeoInput): Metadata {
   const url = path === "/" ? SITE_URL : `${SITE_URL}${path}`;
+  // Share previews (WhatsApp, Messenger) should say where the link goes.
+  const shareTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
 
   return {
     title,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title,
+      title: shareTitle,
       description,
       url,
       type: "website",
@@ -79,7 +81,7 @@ export function createPageMetadata({ title, description, path }: PageSeoInput): 
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: shareTitle,
       description,
       images: [OG_IMAGE_PATH],
     },

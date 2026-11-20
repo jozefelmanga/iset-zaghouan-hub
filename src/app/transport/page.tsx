@@ -8,6 +8,7 @@ import { BusTimetables } from "@/components/transport/BusTimetables";
 import { transportRoutes, transportTips, transportWarnings, transportAbonnement, transportSrtn } from "@/data/transport";
 
 import { textTint } from "@/lib/utils";
+import { lastUpdated } from "@/data/last-updated";
 export const metadata = pageMetadata("/transport");
 
 const typeColors: Record<string, { bg: string; text: string; label: string }> = {
@@ -24,6 +25,7 @@ export default function TransportPage() {
         title="النقل و توقيت الحافلات تونس زغوان"
         subtitle="كل الطرق باش تروح و تجي من ISET Zaghouan"
         category="life"
+        lastUpdated={lastUpdated["/transport"]}
       />
 
       <div style={{ marginBottom: "36px" }}>
@@ -31,7 +33,7 @@ export default function TransportPage() {
           <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(18,184,200,0.10)", color: "var(--color-secondary-text)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Bus size={16} strokeWidth={2} />
           </div>
-          <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>توقيت الحافلات: جداول مواعيد الكار الرسمية (SRTN) 🚌</h2>
+          <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>توقيت الحافلات: جداول مواعيد الكار الرسمية (SRTGN) 🚌</h2>
         </div>
         <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "14px" }}>
           {transportSrtn.tip}
@@ -185,7 +187,7 @@ export default function TransportPage() {
                         <Phone size={13} strokeWidth={2} />
                       </div>
                       <span style={{ fontSize: "13px", color: "var(--color-text-secondary)" }}>
-                        {route.contact.name}: <a href={`tel:${route.contact.phone}`} style={{ color: "var(--color-secondary-text)", fontWeight: 600, textDecoration: "none" }}>{route.contact.phone}</a>
+                        {route.contact.name}: <a href={`tel:${route.contact.phone}`} style={{ color: "var(--color-secondary-text)", fontWeight: 600, textDecoration: "none", display: "inline-block", padding: "12px 6px", margin: "-12px -6px" }}>{route.contact.phone}</a>
                       </span>
                     </div>
                   )}
@@ -235,7 +237,7 @@ export default function TransportPage() {
           href="https://docs.google.com/spreadsheets/d/1cVFQhbfuCZ__jgNJY5beEL-Zmch9Q1I-d1vD11UByTg"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ color: "var(--color-secondary-text)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px", textDecoration: "none" }}
+          style={{ color: "var(--color-secondary-text)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px", textDecoration: "none", minHeight: "44px" }}
         >
           افتح الجدول <ExternalLink size={13} />
         </a>

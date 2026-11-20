@@ -256,9 +256,12 @@ export function TIPageContent() {
               ))}
             </div>
 
+            <p style={{ fontSize: "12.5px", color: "var(--color-text-muted)", lineHeight: 1.6, margin: "0 0 10px" }}>
+              ملاحظة: Scoreapp ما فيهاش سنوات الولادة الجديدة (آخر خيار 2003)، كان مولود بعدها النقاط متاع العمر تنجم تطلع غالطة.
+            </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
               <a
-                href="https://makaabi.github.io/scoreapp/1ere"
+                href="https://makaabi.github.io/scoreapp/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

@@ -16,6 +16,7 @@ import {
   scholarshipFaq,
 } from "@/data/scholarships";
 import { textTint } from "@/lib/utils";
+import { lastUpdated } from "@/data/last-updated";
 
 export const metadata = pageMetadata("/bourse");
 
@@ -28,6 +29,7 @@ export default function BoursePage() {
         title="البورص و منحة الإدماج: الأوراق و الشروط"
         subtitle="أوراق البورص، مراحل التقديم، المبالغ و الدفعات — كل شي في بلاصة وحدة"
         category="life"
+        lastUpdated={lastUpdated["/bourse"]}
       />
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "16px", marginBottom: "32px", width: "100%", boxSizing: "border-box" }}>

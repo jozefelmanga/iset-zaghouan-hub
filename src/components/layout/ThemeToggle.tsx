@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { Monitor, Moon, Sun } from "@/lib/icons";
+import { track } from "@/lib/track";
 
 /**
  * Theme button: auto (follow the system) → light → dark → auto.
@@ -39,6 +40,7 @@ function setMode(mode: Mode) {
     /* private mode: the choice just isn't remembered */
   }
   listeners.forEach((l) => l());
+  track("theme_change", { mode });
 }
 
 function subscribe(listener: () => void) {

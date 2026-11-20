@@ -41,7 +41,7 @@ const OFFLINE_TITLE = "ما فماش كونيكسيون";
 (async () => {
   await new Promise((r) => server.listen(port, "127.0.0.1", r));
   const base = `http://127.0.0.1:${port}`;
-  const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless=new"] });
+  const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless=new", ...(process.env.CI ? ["--no-sandbox"] : [])] });
   const browser = await puppeteer.connect({ browserURL: `http://127.0.0.1:${chrome.port}` });
   const page = await browser.newPage();
   // Desktop width so the sidebar's in-app links are on screen.

@@ -254,6 +254,12 @@ interface PhotoGalleryProps {
   showMoreLabel?: string;
 }
 
+/** 480px thumbnail made by scripts/generate-thumbs.mjs; the full photo is only loaded in the lightbox. */
+function thumbSrc(src: string): string {
+  if (!src.startsWith("/images/") || /^\/images\/(logo|zan9a|icons|stage)\//.test(src)) return src;
+  return "/thumbs/" + src.slice("/images/".length).replace(/\.(webp|jpe?g|png)$/i, ".webp");
+}
+
 export function PhotoGallery({
   images,
   thumbHeight = 140,
@@ -306,10 +312,14 @@ export function PhotoGallery({
               }}
             >
               <img
-                src={src}
+                src={thumbSrc(src)}
                 alt={alt}
                 loading="lazy"
                 decoding="async"
+                onError={(e) => {
+                  // No thumbnail (e.g. a new photo before the next build): fall back to the full one.
+                  if (e.currentTarget.src !== new URL(src, location.href).href) e.currentTarget.src = src;
+                }}
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
               <m.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={zoomHintStyle} aria-hidden="true">

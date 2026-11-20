@@ -62,7 +62,7 @@ const server = http.createServer((req, res) => {
 
 (async () => {
   await new Promise((r) => server.listen(4173, "127.0.0.1", r));
-  const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless=new"] });
+  const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless=new", ...(process.env.CI ? ["--no-sandbox"] : [])] });
   const browser = await puppeteer.connect({ browserURL: `http://127.0.0.1:${chrome.port}` });
   const page = await browser.newPage();
   await page.setViewport({ width: 390, height: 844, isMobile: true });

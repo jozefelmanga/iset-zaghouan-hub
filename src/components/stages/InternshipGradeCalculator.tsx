@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { track } from "@/lib/track";
 import { m } from "framer-motion";
 import { Calculator } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
@@ -14,10 +15,15 @@ function clampGrade(value: number) {
 
 export function InternshipGradeCalculator() {
   const [grades, setGrades] = useState({ initiation: 0, perfectionnement: 0, pfe: 0 });
+  const tracked = useRef(false);
 
   const update = (key: keyof typeof grades, raw: string) => {
     const num = raw === "" ? 0 : clampGrade(parseFloat(raw) || 0);
     setGrades((prev) => ({ ...prev, [key]: num }));
+    if (!tracked.current && num > 0) {
+      tracked.current = true;
+      track("calculator_used", { calculator: "internship_grade" });
+    }
   };
 
   const average =

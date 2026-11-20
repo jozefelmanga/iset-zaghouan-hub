@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { track } from "@/lib/track";
 
 /**
  * How (and whether) this visitor can install the site as an app.
@@ -73,7 +74,8 @@ export async function promptInstall(): Promise<void> {
   if (!event) return;
   window.__installPrompt = null; // a prompt can only be used once
   await event.prompt();
-  await event.userChoice.catch(() => undefined);
+  const choice = await event.userChoice.catch(() => undefined);
+  track("install_prompt", { outcome: choice?.outcome ?? "unknown" });
   notify();
 }
 

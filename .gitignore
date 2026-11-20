@@ -51,3 +51,6 @@ next-env.d.ts
 
 # Lighthouse CI reports
 .lighthouseci/
+
+# generated gallery thumbnails (scripts/generate-thumbs.mjs)
+/public/thumbs/

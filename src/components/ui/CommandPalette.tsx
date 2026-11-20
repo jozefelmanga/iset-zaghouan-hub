@@ -8,6 +8,7 @@ import { matchesNavLink } from "@/lib/nav-search";
 import { categoryConfig } from "@/lib/theme";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { track } from "@/lib/track";
 
 const popularTags = ["الترسيم", "البورص", "المبيت", "الستاجات", "النقل"];
 
@@ -40,6 +41,14 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       setTimeout(() => inputRef.current?.focus(), 50);
     }
   }, [open]);
+
+  // Report a search once typing pauses: which words students use, and which find nothing.
+  useEffect(() => {
+    const term = query.trim();
+    if (term.length < 2) return;
+    const id = setTimeout(() => track("search", { search_term: term, results: filtered.length }), 1200);
+    return () => clearTimeout(id);
+  }, [query, filtered.length]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {

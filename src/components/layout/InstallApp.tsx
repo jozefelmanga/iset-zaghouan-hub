@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore } from "react";
 import { Smartphone, X } from "@/lib/icons";
 import { INSTALL_HINTS, promptInstall, useInstallMode } from "@/lib/install";
+import { track } from "@/lib/track";
 
 const DISMISS_KEY = "install-card-dismissed";
 
@@ -12,7 +13,10 @@ function useInstallAction() {
   const [showHint, setShowHint] = useState(false);
   const onClick = () => {
     if (mode === "prompt") void promptInstall();
-    else setShowHint((v) => !v);
+    else {
+      if (!showHint) track("install_hint", { mode });
+      setShowHint((v) => !v);
+    }
   };
   const hint = showHint && (mode === "ios" || mode === "inapp") ? INSTALL_HINTS[mode] : null;
   return { mode, onClick, hint };

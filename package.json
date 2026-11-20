@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/generate-thumbs.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -16,7 +17,7 @@
     "check-contrast": "node scripts/check-contrast.cjs",
     "check-offline": "node scripts/check-offline.cjs",
     "lighthouse": "lhci autorun",
-    "prebuild": "npm run generate-llms && node scripts/generate-stage-logos.mjs && node scripts/generate-stage-companies.mjs",
+    "prebuild": "npm run generate-llms && node scripts/generate-stage-logos.mjs && node scripts/generate-stage-companies.mjs && node scripts/generate-thumbs.mjs",
     "analyze": "cross-env ANALYZE=true npm run build"
   },
   "dependencies": {

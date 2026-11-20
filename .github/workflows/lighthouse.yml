@@ -1,6 +1,8 @@
 name: Lighthouse
 
 on:
+  push:
+    branches: [main, master]
   pull_request:
     branches: [main, master]
   workflow_dispatch:
@@ -8,6 +10,8 @@ on:
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
+    # Report-only: a slow score shows up in the run, but never blocks a deploy.
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
 
@@ -19,3 +23,9 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run lighthouse
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-report
+          path: .lighthouseci

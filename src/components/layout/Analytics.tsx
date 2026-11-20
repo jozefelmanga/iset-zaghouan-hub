@@ -1,32 +1,53 @@
 "use client";
 
+import { useEffect } from "react";
 import Script from "next/script";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { track } from "@/lib/track";
 
 /**
- * Analytics components.
- * Set NEXT_PUBLIC_PLAUSIBLE_DOMAIN for Plausible Analytics.
+ * Analytics. Both load once the page is idle (`lazyOnload`) so they don't
+ * compete with the first render on mid-range phones.
  * Set NEXT_PUBLIC_GA_ID for Google Analytics (e.g., G-XXXXXXXXXX).
  * Set NEXT_PUBLIC_CLARITY_ID for Microsoft Clarity.
+ * Custom events go through `track()` in src/lib/track.ts.
  */
 export function Analytics() {
-  const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 
+  useEffect(() => {
+    if (!gaId) return;
+    const onClick = (e: MouseEvent) => {
+      const link = (e.target as Element | null)?.closest?.("a");
+      const href = link?.getAttribute("href") ?? "";
+      if (href.startsWith("tel:")) track("tel_click", { number: href.slice(4), page: location.pathname });
+      else if (href.includes("zan9a.tn")) track("sponsor_click", { page: location.pathname });
+    };
+    const onInstalled = () => track("app_installed");
+    document.addEventListener("click", onClick, { capture: true });
+    window.addEventListener("appinstalled", onInstalled);
+    return () => {
+      document.removeEventListener("click", onClick, { capture: true });
+      window.removeEventListener("appinstalled", onInstalled);
+    };
+  }, [gaId]);
+
   return (
     <>
-      {plausibleDomain && (
-        <Script
-          defer
-          data-domain={plausibleDomain}
-          src="https://plausible.io/js/script.js"
-          strategy="afterInteractive"
-        />
+      {gaId && (
+        <>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="lazyOnload" />
+          <Script id="ga-init" strategy="lazyOnload">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              window.gtag = function(){ window.dataLayer.push(arguments); };
+              window.gtag('js', new Date());
+              window.gtag('config', '${gaId}');
+            `}
+          </Script>
+        </>
       )}
-      {gaId && <GoogleAnalytics gaId={gaId} />}
       {clarityId && (
-        // Recordings start once the page is idle, so Clarity doesn't compete with the first render.
         <Script id="clarity-script" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){

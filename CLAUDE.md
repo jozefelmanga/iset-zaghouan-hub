@@ -12,6 +12,7 @@ npx vitest run
 npm run build
 npm run check-bundle      # homepage JS budget (scripts/bundle-baseline.json)
 npm run check-contrast    # WCAG AA text contrast, every route, light + dark
+npm run check-offline     # service worker: visited pages open offline
 ```
 
 `check-contrast` needs a fresh `npm run build`; add `-- light --detail` (or
@@ -27,6 +28,12 @@ keep it there.
 - **Never push** without asking the owner first.
 - Don't bump `VERSION` in `public/sw.js` casually: it wipes visitors'
   offline caches.
+- **Vercel serves exported pages only at clean URLs**: `/offline` works,
+  `/offline.html` is a 404. Never point the service worker (or links) at
+  `.html` paths. A failed fetch during SW install kills offline support
+  silently; `check-offline` catches it.
+- The in-app browser pane blocks service workers; test them with
+  `check-offline` (headless Chrome), not the pane.
 
 ## Colours and dark mode
 

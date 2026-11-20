@@ -8,12 +8,16 @@
  * - Nothing is downloaded ahead of time except the small offline page, to save mobile data.
  *
  * Bump VERSION when this file's logic changes; old caches are deleted on activate.
+ *
+ * The offline page lives at /offline: Vercel serves exported .html files only
+ * at their clean URL, so /offline.html is a 404 there. Install must never fail
+ * because of one missing file, or offline support silently never starts.
  */
 const VERSION = "v1";
 const PAGES = `pages-${VERSION}`;
 const ASSETS = `assets-${VERSION}`;
 const IMAGES = `images-${VERSION}`;
-const OFFLINE_URL = "/offline.html";
+const OFFLINE_URL = "/offline";
 const OFFLINE_ICON = "/icons/icon-192.png"; // shown on the offline page
 const MAX_IMAGES = 80;
 const NETWORK_TIMEOUT_MS = 4000;
@@ -21,8 +25,8 @@ const NETWORK_TIMEOUT_MS = 4000;
 self.addEventListener("install", (event) => {
   event.waitUntil(
     Promise.all([
-      caches.open(PAGES).then((cache) => cache.add(new Request(OFFLINE_URL, { cache: "reload" }))),
-      caches.open(IMAGES).then((cache) => cache.add(OFFLINE_ICON)),
+      caches.open(PAGES).then((cache) => cacheOfflinePage(cache)),
+      caches.open(IMAGES).then((cache) => cache.add(OFFLINE_ICON).catch(() => {})),
     ]).then(() => self.skipWaiting()),
   );
 });
@@ -53,6 +57,21 @@ self.addEventListener("fetch", (event) => {
   }
   // Everything else (PDFs, RSC payloads, manifest) goes straight to the network.
 });
+
+/** Saves the offline page under OFFLINE_URL (tries /offline.html too, for other hosts). */
+async function cacheOfflinePage(cache) {
+  for (const url of [OFFLINE_URL, "/offline.html"]) {
+    try {
+      const response = await fetch(new Request(url, { cache: "reload" }));
+      if (response.ok && !response.redirected) {
+        await cache.put(OFFLINE_URL, response);
+        return;
+      }
+    } catch {
+      /* try the next one */
+    }
+  }
+}
 
 async function handlePage(request) {
   const cache = await caches.open(PAGES);

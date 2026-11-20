@@ -158,6 +158,10 @@ Thanks to the **student clubs** of ISET Zaghouan for their pages and photos, and
 
 **Sources:** ISET Zaghouan (official announcements and the internship office's company list), SRTGN (bus timetables), the Office des Œuvres Universitaires du Nord (bourse and housing).
 
+## License
+
+**© 2026 Youssef Ben Salem. All rights reserved.** This repository is public so it can be read and improved, not reused: copying or redeploying the site or its code under another name or domain is not allowed without permission. Contributors' photos and the clubs' material belong to their authors. See [LICENSE](LICENSE) for details.
+
 ---
 
 <p align="center">

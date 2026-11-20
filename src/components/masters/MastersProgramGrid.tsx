@@ -99,9 +99,9 @@ export function MastersProgramGrid() {
                     </Link>
                     <GraduationCap size={18} style={{ color: textTint(master.color) }} />
                   </div>
-                  <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.5, marginBottom: "10px" }}>
+                  <h2 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.5, marginBottom: "10px" }}>
                     {master.name}
-                  </h3>
+                  </h2>
                   <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "12px" }}>
                     {master.description}
                   </p>

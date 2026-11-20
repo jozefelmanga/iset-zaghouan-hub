@@ -71,7 +71,7 @@ export default function RestoPage() {
               <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: bg, color: textTint(color), display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Icon size={20} strokeWidth={2} />
               </div>
-              <h3 style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)" }}>{label}</h3>
+              <h2 style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)" }}>{label}</h2>
             </div>
             <div className="mb-1 text-2xl font-extrabold [font-feature-settings:'tnum']" style={{ color: textTint(color) }}>
               {open} — {close}

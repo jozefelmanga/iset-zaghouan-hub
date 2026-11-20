@@ -110,7 +110,7 @@ export function HousingInscriptionContent() {
                     style={{ height: "100%" }}
                   />
                 </div>
-                <h4 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", textAlign: "center" }}>{alt}</h4>
+                <h3 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", textAlign: "center" }}>{alt}</h3>
               </Card>
             ))}
           </div>

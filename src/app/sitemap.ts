@@ -4,12 +4,11 @@ import { SITE_URL } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
+// No lastmod: a build-time date on every URL tells Google everything changed on
+// each deploy, and it then ignores lastmod for the whole site.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-
   return SITEMAP_PATHS.map((path) => ({
     url: path === "/" ? SITE_URL : `${SITE_URL}${path}`,
-    lastModified,
     changeFrequency: path === "/" ? "weekly" : "monthly",
     priority: path === "/" ? 1 : path.split("/").length <= 2 ? 0.8 : 0.6,
   }));

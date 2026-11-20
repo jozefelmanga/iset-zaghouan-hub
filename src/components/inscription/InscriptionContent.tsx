@@ -74,7 +74,7 @@ export function InscriptionContent() {
 
       <div style={{ marginBottom: "40px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px" }}>
-          <span className="section-label">قائمة التحقق</span>
+          <h2 className="section-label">قائمة التحقق</h2>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
           {enrollmentSteps.map((step, i) => {
@@ -105,6 +105,8 @@ export function InscriptionContent() {
                 >
                   <button
                     type="button"
+                    aria-label={step.title}
+                    aria-pressed={Boolean(isChecked)}
                     onClick={(e) => { e.stopPropagation(); toggle(step.id); }}
                     style={{
                       background: "none", border: "none", cursor: "pointer", padding: 0,

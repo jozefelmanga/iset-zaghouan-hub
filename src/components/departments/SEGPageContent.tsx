@@ -67,13 +67,13 @@ export function SEGPageContent() {
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "12px" }}>
               <div style={{ padding: "14px", borderRadius: "12px", background: "rgba(139,92,246,0.04)", border: "1px solid rgba(139,92,246,0.15)" }}>
-                <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "4px" }}>Management Industriel</h4>
+                <h3 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "4px" }}>Management Industriel</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
                   يهتم بإدارة العمليات والإنتاج في المصانع، تحسين الأداء وتقليص التكاليف.
                 </p>
               </div>
               <div style={{ padding: "14px", borderRadius: "12px", background: "rgba(34,197,94,0.04)", border: "1px solid rgba(34,197,94,0.15)" }}>
-                <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "4px" }}>Management de Qualité</h4>
+                <h3 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "4px" }}>Management de Qualité</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
                   يركز على تحسين جودة الخدمات والمنتوجات، وضمان المعايير الدولية والرضا.
                 </p>
@@ -96,7 +96,7 @@ export function SEGPageContent() {
 
           {/* Logistique Durable */}
           <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(34,197,94,0.05)", border: "1px solid rgba(34,197,94,0.2)" }}>
-            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px" }}>🌿 Logistique Durable</h4>
+            <h3 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px" }}>🌿 Logistique Durable</h3>
             <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
               مسار مُصغَّر في اللوجستيك المستدام — يُطلَق هذا العام لأوّل مرة في ISET Zaghouan.
             </p>
@@ -104,7 +104,7 @@ export function SEGPageContent() {
 
           {/* Marketing Digital */}
           <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(139,92,246,0.05)", border: "1px solid rgba(139,92,246,0.2)" }}>
-            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px" }}>📱 Marketing Digital</h4>
+            <h3 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px" }}>📱 Marketing Digital</h3>
             <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
               مسار مُصغَّر يركّز على استراتيجيات التسويق الرقمي، إدارة منصات التواصل الاجتماعي، وتحليل البيانات التجارية.
             </p>
@@ -112,7 +112,7 @@ export function SEGPageContent() {
 
           {/* Lean Entrepreneurship */}
           <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(251,146,60,0.05)", border: "1px solid rgba(251,146,60,0.2)" }}>
-            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px" }}>🚀 Lean Entrepreneurship</h4>
+            <h3 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px" }}>🚀 Lean Entrepreneurship</h3>
             <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
               مسار مُصغَّر في ريادة الأعمال الرشيقة — يُعلّمك تأسيس مشاريع بفعّالية عبر منهجية Lean Startup.
             </p>
@@ -208,7 +208,7 @@ export function SEGPageContent() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <Card elevation="flat" padding="22px">
-            <h4 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "8px" }}>كيفاش يخدم نظام الـ Crédit في قسم SEG؟</h4>
+            <h3 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "8px" }}>كيفاش يخدم نظام الـ Crédit في قسم SEG؟</h3>
             <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
               كل سداسي فيه 30 كريدي (يعني كامل السنة 60 كريدي). نظام الكريدي يعاون على تقييم الطلبة المتفوقين لدخول الماجستير أو مناظرات الهندسة:
             </p>
@@ -255,7 +255,7 @@ export function SEGPageContent() {
           >
             <Card elevation="raised" padding="16px">
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
-                <h4 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>دروس الاستهلاك والإهلاك (Amortissements et résorption)</h4>
+                <h3 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>دروس الاستهلاك والإهلاك (Amortissements et résorption)</h3>
                 <Link2 size={14} style={{ color: "var(--color-secondary-text)" }} />
               </div>
               <p style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: 1.5 }}>

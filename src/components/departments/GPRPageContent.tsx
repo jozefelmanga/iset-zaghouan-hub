@@ -79,7 +79,7 @@ export function GPRPageContent() {
           <span style={{ color: "var(--color-secondary-text)" }}>•</span> الآفاق المهنية (Perspectives d&apos;avenir)
         </h2>
         <Card elevation="feature" padding="24px">
-          <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-text)", marginBottom: "8px" }}>شعبة تطبيقية بامتياز!</h4>
+          <h3 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-text)", marginBottom: "8px" }}>شعبة تطبيقية بامتياز!</h3>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "14px" }}>
             الـ GPR إجازة تطبيقية تخليك تخدم كـ <strong>Technicien Supérieur</strong> (فني سامٍ) في مجالات متعددة:
           </p>
@@ -111,14 +111,14 @@ export function GPRPageContent() {
         <Card elevation="raised" padding="24px">
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }} dir="rtl">
             <div style={{ background: "color-mix(in srgb, var(--color-primary) 3%, transparent)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
-              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الأولى (Tronc Commun)</h4>
+              <h3 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الأولى (Tronc Commun)</h3>
               <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0 }}>
                 في العام الأول (tronc commun)، نقراو les bases اللي نستحقوهم، كيما chimie générale et organique, math, و physique. و في الـ S2 نزيدو عليهم thermodynamique, mécanique des fluides, و électrotechnique. هالمواد يعاونونا برشا باش نفهمو les réactions chimiques و كيفاش يخدمو les équipements في أي معمل.
               </p>
             </div>
             
             <div style={{ background: "color-mix(in srgb, var(--color-primary) 3%, transparent)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
-              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثانية (Spécialisation)</h4>
+              <h3 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثانية (Spécialisation)</h3>
               <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0, marginBottom: "12px" }}>
                 <strong style={{ color: "var(--color-text)" }}>في اختصاص Génie des Procédés Agroalimentaires:</strong> هوني ندخلو في صلب الموضوع ونقراو microbiologie, biochimie, opérations unitaires, و conservation des produits. نتعلمو كيفاش نراقبو جودة الماكلة (contrôle qualité)، وكيفاش نحسنو طرق التصنيع ونستغلو الكائنات الدقيقة في الصناعات الغذائية.
               </p>
@@ -128,7 +128,7 @@ export function GPRPageContent() {
             </div>
             
             <div style={{ background: "color-mix(in srgb, var(--color-primary) 3%, transparent)", padding: "16px", borderRadius: "10px", border: "1px solid var(--color-border)", borderRight: "4px solid var(--color-primary)", textAlign: "right" }}>
-              <h4 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثالثة (Matières Appliquées)</h4>
+              <h3 style={{ fontWeight: 700, fontSize: "15px", color: "var(--color-primary)", marginBottom: "8px" }}>السنة الثالثة (Matières Appliquées)</h3>
               <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, margin: 0, marginBottom: "12px" }}>
                 <strong style={{ color: "var(--color-text)" }}>في اختصاص Génie des Procédés Agroalimentaires:</strong> نكملو نتعمقو في مواد سبيسيال كيما formulation des produits, emballage, و sécurité alimentaire. هالمواد مهمين برشا في الـ industrie باش نطوروا منتوجات جديدة، نضمنو الجودة، ونقصو مالـ coûts والـ énergie في المعامل.
               </p>
@@ -234,7 +234,7 @@ export function GPRPageContent() {
           >
             <Card elevation="raised" padding="16px">
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
-                <h4 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>قناة Mohssine El Miski على يوتيوب</h4>
+                <h3 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>قناة Mohssine El Miski على يوتيوب</h3>
                 <Link2 size={14} style={{ color: "var(--color-secondary-text)" }} />
               </div>
               <p style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: 1.5 }}>

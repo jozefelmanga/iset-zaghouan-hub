@@ -13,7 +13,6 @@ export const metadata = pageMetadata("/stages/companies");
 export default function StageCompaniesPage() {
   return (
     <PageWrapper seoPath="/stages/companies">
-      <InternshipCompanySeoIndex />
       <Link
         href="/stages"
         style={{
@@ -42,6 +41,8 @@ export default function StageCompaniesPage() {
       <MotionReveal delay={0.1}>
         <InternshipCompanySearch />
       </MotionReveal>
+
+      <InternshipCompanySeoIndex />
     </PageWrapper>
   );
 }

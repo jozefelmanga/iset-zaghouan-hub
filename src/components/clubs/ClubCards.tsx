@@ -17,7 +17,7 @@ export function ClubBenefitCard({ item, index }: { item: BenefitCard; index: num
         <div style={{ width: "44px", height: "44px", borderRadius: "50%", background: item.bg, color: textTint(item.color), display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
           <Icon size={20} strokeWidth={2} />
         </div>
-        <h4 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)", marginBottom: "6px" }}>{item.title}</h4>
+        <h3 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)", marginBottom: "6px" }}>{item.title}</h3>
         <p style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: 1.6 }}>{item.desc}</p>
       </Card>
     </div>
@@ -43,9 +43,9 @@ export function ClubDirectoryCard({ club, index }: { club: ClubEntry; index: num
               }}
             />
             <div className="flex min-w-0 flex-1 flex-col gap-2">
-              <h4 className="text-[14px] font-bold leading-snug text-text md:text-[15px]">
+              <h3 className="text-[14px] font-bold leading-snug text-text md:text-[15px]">
                 {club.name}
-              </h4>
+              </h3>
               <p className="text-[11px] font-semibold leading-snug md:text-[12px]" style={{ color: textTint(club.color) }}>
                 {club.slogan}
               </p>

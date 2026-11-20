@@ -85,9 +85,9 @@ export function StagesPageContent() {
       {/* Progress tracker — single year selector */}
       <div className="motion-reveal mb-8" id="progress">
         <Card elevation="raised" padding="24px" className={styles.mobileCard}>
-          <p style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)", marginBottom: "14px" }}>
+          <h2 style={{ fontWeight: 700, fontSize: "16px", color: "var(--color-text)", marginBottom: "14px" }}>
             مسار الستاجات
-          </p>
+          </h2>
           <div className={styles.yearPills} style={{ marginBottom: "20px" }}>
             {internships.map((internship) => {
               const isPast = internship.year < activeYear;

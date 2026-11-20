@@ -17,7 +17,7 @@ describe("Accordion", () => {
     expect(screen.getByText("سؤال 1؟")).toBeInTheDocument();
     expect(screen.getByText("جواب 1")).toBeInTheDocument();
     expect(trigger).toHaveAttribute("aria-expanded", "false");
-    expect(panel).toHaveAttribute("aria-hidden", "true");
+    expect(panel).toHaveAttribute("inert");
   });
 
   it("expands on click and collapses on second click", async () => {
@@ -29,10 +29,10 @@ describe("Accordion", () => {
 
     await user.click(trigger);
     expect(trigger).toHaveAttribute("aria-expanded", "true");
-    expect(panel).toHaveAttribute("aria-hidden", "false");
+    expect(panel).not.toHaveAttribute("inert");
 
     await user.click(trigger);
     expect(trigger).toHaveAttribute("aria-expanded", "false");
-    expect(panel).toHaveAttribute("aria-hidden", "true");
+    expect(panel).toHaveAttribute("inert");
   });
 });

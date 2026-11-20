@@ -116,7 +116,7 @@ export function TIPageContent() {
 
           {/* Full Stack AI */}
           <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(59,130,246,0.05)", border: "1px solid rgba(59,130,246,0.2)" }}>
-            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>🤖 Full Stack Developer augmenté par l&apos;IA</h4>
+            <h3 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>🤖 Full Stack Developer augmenté par l&apos;IA</h3>
             <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
               مسار يركّز على تطوير تطبيقات الويب الشاملة مع استخدام ذكي لأدوات الذكاء الاصطناعي لتسريع البرمجة والإنتاجية.
             </p>
@@ -124,7 +124,7 @@ export function TIPageContent() {
 
           {/* DevOps */}
           <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(16,185,129,0.05)", border: "1px solid rgba(16,185,129,0.2)" }}>
-            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>⚙️ DevOps</h4>
+            <h3 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>⚙️ DevOps</h3>
             <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
               مسار مُصغَّر يجمع بين التطوير (Dev) وعمليات التشغيل (Ops) للتحكم في البنية التحتية وتسريع نشر التطبيقات.
             </p>
@@ -132,7 +132,7 @@ export function TIPageContent() {
 
           {/* Cybersecurity */}
           <div style={{ padding: "16px", borderRadius: "12px", background: "rgba(239,68,68,0.05)", border: "1px solid rgba(239,68,68,0.2)" }}>
-            <h4 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>🔒 Cybersecurity</h4>
+            <h3 style={{ fontWeight: 700, fontSize: "13px", color: "var(--color-primary)", marginBottom: "8px", direction: "ltr", textAlign: "left" }}>🔒 Cybersecurity</h3>
             <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.5 }}>
               مسار لتعلم كيفية حماية الأنظمة، الشبكات، والبرمجيات من الهجمات والاختراقات وتأمين البيانات.
             </p>
@@ -228,7 +228,7 @@ export function TIPageContent() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <Card elevation="flat" padding="22px">
-            <h4 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "8px" }}>كيفاش يخدم نظام الـ Crédit؟</h4>
+            <h3 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "8px" }}>كيفاش يخدم نظام الـ Crédit؟</h3>
             <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
               كل سداسي فيه 30 كريدي (يعني كامل السنة 60 كريدي). نظام الكريدي يعاون على تقييم الطلبة المتفوقين لدخول الماجستير أو مناظرات الهندسة:
             </p>
@@ -239,7 +239,7 @@ export function TIPageContent() {
           </Card>
 
           <Card elevation="flat" padding="22px">
-            <h4 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "8px" }}>كيفاش يتحسب سكور الهندسة (Score ingénieur)؟</h4>
+            <h3 style={{ fontWeight: 700, fontSize: "14px", color: "var(--color-text)", marginBottom: "8px" }}>كيفاش يتحسب سكور الهندسة (Score ingénieur)؟</h3>
             <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "12px" }}>
               عملية الترشح لمدارس المهندسين ماهيش مربوطة باسم الجامعة، مربوطة فقط بالسكور متاعك مقارنة بباقي المترشحين. العوامل الأساسية هي:
             </p>
@@ -332,7 +332,7 @@ export function TIPageContent() {
             >
               <Card elevation="raised" padding="16px">
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
-                  <h4 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>{res.title}</h4>
+                  <h3 style={{ fontWeight: 600, fontSize: "14px", color: "var(--color-text)" }}>{res.title}</h3>
                   <Link2 size={14} style={{ color: "var(--color-secondary-text)" }} />
                 </div>
                 <p style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: 1.5 }}>{res.desc}</p>

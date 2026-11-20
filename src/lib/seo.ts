@@ -21,8 +21,8 @@ export const DEFAULT_KEYWORDS = [
   "زغوان",
 ];
 
-/** Default share image (campus banner deployed with static assets). */
-export const OG_IMAGE_PATH = "/images/OG-image.webp";
+/** Default share image: JPG at exactly 1200x630, since WhatsApp/LinkedIn previews are unreliable with WebP. */
+export const OG_IMAGE_PATH = "/images/og-image.jpg";
 
 export const rootMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),

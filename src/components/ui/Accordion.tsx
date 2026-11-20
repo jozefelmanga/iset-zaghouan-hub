@@ -71,7 +71,7 @@ function AccordionItem({ question, answer, links, index }: FAQItem & { index: nu
         id={panelId}
         role="region"
         aria-labelledby={buttonId}
-        aria-hidden={!open}
+        inert={!open} // closed: out of tab order and screen readers, text still in the HTML
         initial={false}
         animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
         transition={{ duration: 0.22 }}

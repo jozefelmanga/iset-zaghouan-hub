@@ -321,7 +321,7 @@ export function InternshipTimeline({ activeYear: controlledYear, onYearChange, h
                 <div className={styles.stageBody}>
                   <div className={styles.stageTitleRow}>
                     <Badge variant={colors.badge}>السنة {internship.year}</Badge>
-                    <h4 className={styles.stageTitle} style={{ fontWeight: 700, fontSize: "18px", color: "var(--color-text)", margin: 0 }}>{internship.name}</h4>
+                    <h3 className={styles.stageTitle} style={{ fontWeight: 700, fontSize: "18px", color: "var(--color-text)", margin: 0 }}>{internship.name}</h3>
                   </div>
                   <StageDetail internship={internship} colors={colors} isExpanded={isExpanded} />
                 </div>

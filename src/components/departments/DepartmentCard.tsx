@@ -45,9 +45,9 @@ export function DepartmentCard({ dept, index }: { dept: Department; index: numbe
               >
                 {dept.code}
               </span>
-              <h3 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)" }}>
+              <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)" }}>
                 {dept.arabicName}
-              </h3>
+              </h2>
             </div>
             <p style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "8px", fontWeight: 500 }}>
               {dept.name}

@@ -26,10 +26,9 @@ if (!fs.existsSync(path.join(dist, "index.html"))) {
   process.exit(1);
 }
 
-let puppeteer, chromeLauncher, axeSrc;
+let launchChrome, axeSrc;
 try {
-  puppeteer = require("puppeteer-core");
-  chromeLauncher = require("chrome-launcher");
+  ({ launchChrome } = require("./lib/launch-chrome.cjs"));
   axeSrc = fs.readFileSync(require.resolve("axe-core/axe.min.js"), "utf8");
 } catch {
   console.error("Missing axe-core / puppeteer-core / chrome-launcher (normally installed by @lhci/cli). Run `npm install`.");
@@ -62,8 +61,7 @@ const server = http.createServer((req, res) => {
 
 (async () => {
   await new Promise((r) => server.listen(4173, "127.0.0.1", r));
-  const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless=new", ...(process.env.CI ? ["--no-sandbox"] : [])] });
-  const browser = await puppeteer.connect({ browserURL: `http://127.0.0.1:${chrome.port}` });
+  const { chrome, browser } = await launchChrome();
   const page = await browser.newPage();
   await page.setViewport({ width: 390, height: 844, isMobile: true });
   // Keep the service worker out of the way.

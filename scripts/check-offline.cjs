@@ -14,8 +14,7 @@ const fs = require("fs");
 const http = require("http");
 const dist = path.resolve(__dirname, "..", "dist");
 const port = 4174;
-const puppeteer = require("puppeteer-core");
-const chromeLauncher = require("chrome-launcher");
+const { launchChrome } = require("./lib/launch-chrome.cjs");
 
 if (!fs.existsSync(path.join(dist, "index.html"))) {
   console.error("dist/index.html not found: run `npm run build` first.");
@@ -41,8 +40,7 @@ const OFFLINE_TITLE = "ما فماش كونيكسيون";
 (async () => {
   await new Promise((r) => server.listen(port, "127.0.0.1", r));
   const base = `http://127.0.0.1:${port}`;
-  const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless=new", ...(process.env.CI ? ["--no-sandbox"] : [])] });
-  const browser = await puppeteer.connect({ browserURL: `http://127.0.0.1:${chrome.port}` });
+  const { chrome, browser } = await launchChrome();
   const page = await browser.newPage();
   // Desktop width so the sidebar's in-app links are on screen.
   await page.setViewport({ width: 1280, height: 900 });

@@ -3,9 +3,13 @@
  *
  * - Pages: network first, so students always get the latest content when online.
  *   Each page is saved as it's visited and served from that copy when offline.
+ *   In-app (client-side) navigation makes no page request, so the app also
+ *   sends a "cache-page" message for every page opened (ServiceWorkerRegister):
+ *   that saves the page plus the files the first page loaded before we ran.
  * - /_next/static: cache first (file names change on every build, so never stale).
  * - /images: served from cache when available, refreshed in the background.
- * - Nothing is downloaded ahead of time except the small offline page, to save mobile data.
+ * - Downloaded ahead of time: only the offline page and the home page (so there
+ *   is always somewhere to go offline). Everything else is saved as visited.
  *
  * Bump VERSION when this file's logic changes; old caches are deleted on activate.
  *
@@ -21,12 +25,14 @@ const OFFLINE_URL = "/offline";
 const OFFLINE_ICON = "/icons/icon-192.png"; // shown on the offline page
 const MAX_IMAGES = 80;
 const NETWORK_TIMEOUT_MS = 4000;
+const PAGE_REFRESH_MS = 12 * 60 * 60 * 1000; // re-save a visited page at most twice a day
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     Promise.all([
       caches.open(PAGES).then((cache) => cacheOfflinePage(cache)),
       caches.open(IMAGES).then((cache) => cache.add(OFFLINE_ICON).catch(() => {})),
+      saveHomePage(),
     ]).then(() => self.skipWaiting()),
   );
 });
@@ -57,6 +63,71 @@ self.addEventListener("fetch", (event) => {
   }
   // Everything else (PDFs, RSC payloads, manifest) goes straight to the network.
 });
+
+self.addEventListener("message", (event) => {
+  const data = event.data || {};
+  if (data.type === "cache-page" && typeof data.page === "string") {
+    event.waitUntil(savePage(data.page, Array.isArray(data.assets) ? data.assets : []));
+  }
+});
+
+/** Home page + the files it needs, so offline there is always a page to go to. */
+async function saveHomePage() {
+  try {
+    const response = await fetch(new Request("/", { cache: "reload" }));
+    if (!response.ok || response.redirected) return;
+    const html = await response.clone().text();
+    await (await caches.open(PAGES)).put(self.location.origin + "/", response);
+    await saveAssets(html.match(/\/_next\/static\/[^"'\s)\\]+\.(?:css|js|woff2)/g) || []);
+  } catch {
+    /* offline support still works for pages saved later */
+  }
+}
+
+/** Saves a page the visitor opened (skipped if saved in the last 12 hours). */
+async function savePage(path, assets) {
+  const url = new URL(path, self.location.origin);
+  if (url.origin !== self.location.origin || url.pathname.startsWith("/_next/")) return;
+  const cache = await caches.open(PAGES);
+  const key = pageKey(new Request(url.href));
+  const cached = await cache.match(key);
+  const age = cached ? Date.now() - new Date(cached.headers.get("date")).getTime() : NaN;
+  if (!(age < PAGE_REFRESH_MS)) {
+    try {
+      const response = await fetch(url.href);
+      const isHtml = (response.headers.get("content-type") || "").includes("text/html");
+      if (response.ok && !response.redirected && isHtml) await cache.put(key, response);
+    } catch {
+      /* offline right now: keep the old copy */
+    }
+  }
+  await saveAssets(assets);
+}
+
+/** Saves same-origin build files and images that aren't saved yet (mostly served from the HTTP cache). */
+async function saveAssets(urls) {
+  const [assets, images] = await Promise.all([caches.open(ASSETS), caches.open(IMAGES)]);
+  await Promise.all(
+    [...new Set(urls)].map(async (raw) => {
+      let url;
+      try {
+        url = new URL(raw, self.location.origin);
+      } catch {
+        return;
+      }
+      if (url.origin !== self.location.origin) return;
+      const p = url.pathname;
+      const cache = p.startsWith("/_next/static/") ? assets : p.startsWith("/images/") || p.startsWith("/icons/") ? images : null;
+      if (!cache || (await cache.match(url.href))) return;
+      try {
+        const response = await fetch(url.href);
+        if (response.ok) await cache.put(url.href, response);
+      } catch {
+        /* skip */
+      }
+    }),
+  );
+}
 
 /** Saves the offline page under OFFLINE_URL (tries /offline.html too, for other hosts). */
 async function cacheOfflinePage(cache) {

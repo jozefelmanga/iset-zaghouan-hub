@@ -2,7 +2,7 @@
   "ci": {
     "collect": {
       "staticDistDir": "./dist",
-      "url": ["/", "/housing", "/bourse", "/explore"],
+      "url": ["/", "/housing.html", "/bourse.html", "/explore.html"],
       "numberOfRuns": 1,
       "settings": {
         "emulatedFormFactor": "mobile",

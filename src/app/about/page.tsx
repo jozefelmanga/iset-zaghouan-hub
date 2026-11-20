@@ -3,6 +3,7 @@ import { StaticPageHeader } from "@/components/ui/StaticPageHeader";
 import { PageWrapper } from "@/components/ui/layout";
 import { Card } from "@/components/ui/shared";
 import { User, Code, Info } from "@/lib/icons";
+import { textTint } from "@/lib/utils";
 
 export const metadata = pageMetadata("/about");
 
@@ -34,7 +35,7 @@ export default function AboutPage() {
 
         <Card elevation="flat" padding="28px">
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-            <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "rgba(139,92,246,0.1)", color: "color-mix(in srgb, #8B5CF6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "rgba(139,92,246,0.1)", color: textTint("#8B5CF6"), display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Code size={18} strokeWidth={2} />
             </div>
             <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)" }}>التطوير والصيانة</h2>

@@ -51,7 +51,7 @@ export function MastersProgramGrid() {
               transition: "all var(--transition-base)",
               fontFamily: "var(--font-sans)",
               background: activeFilter === tab.id ? "var(--color-primary-bg)" : "transparent",
-              color: activeFilter === tab.id ? "#fff" : "var(--color-text-secondary)",
+              color: activeFilter === tab.id ? "#fff" : "var(--color-text)",
               boxShadow: activeFilter === tab.id ? "var(--shadow-hover)" : "none",
             }}
           >

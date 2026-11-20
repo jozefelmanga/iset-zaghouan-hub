@@ -72,7 +72,7 @@ export default function TransportPage() {
               borderRadius: "12px",
               background: "rgba(24,119,242,0.08)",
               border: "1px solid rgba(24,119,242,0.2)",
-              color: "color-mix(in srgb, #0E5BC4, #fff var(--text-lift))",
+              color: textTint("#0E5BC4"),
               fontSize: "13px",
               fontWeight: 600,
               textDecoration: "none",
@@ -111,7 +111,7 @@ export default function TransportPage() {
             borderRadius: "12px",
             background: "rgba(59,130,246,0.08)",
             border: "1px solid rgba(59,130,246,0.2)",
-            color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))",
+            color: textTint("#3B82F6"),
             fontSize: "13px",
             fontWeight: 600,
             textDecoration: "none",
@@ -181,7 +181,7 @@ export default function TransportPage() {
                   </div>
                   {route.contact && (
                     <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                      <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "rgba(59,130,246,0.08)", color: textTint("#3B82F6"), display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <Phone size={13} strokeWidth={2} />
                       </div>
                       <span style={{ fontSize: "13px", color: "var(--color-text-secondary)" }}>
@@ -206,7 +206,7 @@ export default function TransportPage() {
 
       <div style={{ marginBottom: "28px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: "color-mix(in srgb, #EF4444, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: textTint("#EF4444"), display: "flex", alignItems: "center", justifyContent: "center" }}>
             <AlertCircle size={16} strokeWidth={2} />
           </div>
           <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>بالليل و بعد العشية</span>

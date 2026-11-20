@@ -113,7 +113,7 @@ export function IeeePageContent({ galleryImages }: Props) {
                 rel="noopener noreferrer"
                 style={{
                   display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
-                  textDecoration: "none", fontSize: "13px", color: "color-mix(in srgb, #1877F2, #fff var(--text-lift))", padding: "10px",
+                  textDecoration: "none", fontSize: "13px", color: textTint("#1877F2"), padding: "10px",
                   borderRadius: "10px", background: "rgba(24,119,242,0.06)", border: "1px solid rgba(24,119,242,0.18)",
                   fontWeight: 600,
                 }}
@@ -127,7 +127,7 @@ export function IeeePageContent({ galleryImages }: Props) {
                 rel="noopener noreferrer"
                 style={{
                   display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
-                  textDecoration: "none", fontSize: "13px", color: "color-mix(in srgb, #E4405F, #fff var(--text-lift))", padding: "10px",
+                  textDecoration: "none", fontSize: "13px", color: textTint("#E4405F"), padding: "10px",
                   borderRadius: "10px", background: "rgba(228,64,95,0.06)", border: "1px solid rgba(228,64,95,0.18)",
                   fontWeight: 600,
                 }}

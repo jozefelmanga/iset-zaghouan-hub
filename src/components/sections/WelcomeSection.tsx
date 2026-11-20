@@ -4,6 +4,7 @@ import { useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { Sparkles, ChevronDown, ChevronUp } from "@/lib/icons";
+import { textTint } from "@/lib/utils";
 
 export function WelcomeSection() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -65,7 +66,7 @@ export function WelcomeSection() {
                 style={{
                   background: "transparent",
                   border: "none",
-                  color: "color-mix(in srgb, #12B8C8, #fff var(--text-lift))",
+                  color: textTint("#12B8C8"),
                   fontSize: "13px",
                   fontWeight: 750,
                   cursor: "pointer",

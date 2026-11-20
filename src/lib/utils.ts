@@ -161,11 +161,13 @@ export const isBrowser = typeof window !== "undefined";
    ============================================================ */
 
 /**
- * Brand/status colour for text or icons. Unchanged in light mode; mixed
- * toward white in dark mode (`--text-lift`) so it stays readable.
+ * Brand/status colour for text or icons, kept at WCAG AA contrast.
+ * Light mode: lightness capped at `--tint-lmax` (OKLCH), so bright brand
+ * colours darken just enough while already-dark ones stay as they are.
+ * Dark mode: no cap, mixed toward white by `--text-lift`.
  *
  * @example style={{ color: textTint(club.color) }}
  */
 export function textTint(color: string): string {
-  return `color-mix(in srgb, ${color}, #fff var(--text-lift))`;
+  return `color-mix(in srgb, oklch(from ${color} min(l, var(--tint-lmax)) c h), #fff var(--text-lift))`;
 }

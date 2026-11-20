@@ -76,6 +76,7 @@
 :root {
   color-scheme: light dark;
   --text-lift: 0%; /* see textTint() in src/lib/utils.ts */
+  --tint-lmax: 0.48;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -101,6 +102,7 @@
     --color-violet-text: #B79CFF;
     --color-indigo-text: #A5B4FC;
     --text-lift: 45%;
+    --tint-lmax: 1;
 
     --shadow-soft:  0 10px 30px rgba(0, 0, 0, 0.30);
     --shadow-hover: 0 18px 50px rgba(0, 0, 0, 0.40);

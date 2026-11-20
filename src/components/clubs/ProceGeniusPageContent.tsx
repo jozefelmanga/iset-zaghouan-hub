@@ -13,6 +13,7 @@ import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 import { RelatedClubsNav } from "@/components/ui/RelatedNav";
+import { textTint } from "@/lib/utils";
 
 
 
@@ -48,7 +49,7 @@ export function ProceGeniusPageContent({ galleryImages }: Props) {
       <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Briefcase size={20} style={{ color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))" }} />
+            <Briefcase size={20} style={{ color: textTint("#22C55E") }} />
             شكون أحنا؟
           </h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
@@ -62,7 +63,7 @@ export function ProceGeniusPageContent({ galleryImages }: Props) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))", gap: "24px", marginBottom: "32px" }}>
           <Card elevation="raised" padding="24px">
             <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-              <Trophy size={18} style={{ color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))" }} />
+              <Trophy size={18} style={{ color: textTint("#22C55E") }} />
               أهم المشاريع متاعنا
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -77,7 +78,7 @@ export function ProceGeniusPageContent({ galleryImages }: Props) {
 
           <Card elevation="raised" padding="24px">
             <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-              <Globe size={18} style={{ color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))" }} />
+              <Globe size={18} style={{ color: textTint("#22C55E") }} />
               روابط التواصل الاجتماعي
             </h3>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>

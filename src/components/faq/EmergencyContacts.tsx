@@ -1,12 +1,13 @@
 import { Phone } from "@/lib/icons";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import type { Contact } from "@/types";
+import { textTint } from "@/lib/utils";
 
 export function EmergencyContacts({ contacts }: { contacts: Contact[] }) {
   return (
     <div style={{ marginBottom: "28px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: "color-mix(in srgb, #EF4444, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(239,68,68,0.10)", color: textTint("#EF4444"), display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Phone size={16} strokeWidth={2} />
         </div>
         <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>أرقام مهمة</span>

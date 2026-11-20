@@ -42,7 +42,7 @@ export function StudentJourneySection() {
                 <h3 className="text-[13px] sm:text-[15px] md:text-[16px] font-bold text-[var(--color-text)] mb-1 sm:mb-2 group-hover:text-[var(--color-secondary)] transition-colors pr-0.5 leading-tight">
                   {step.title}
                 </h3>
-                <p className="text-[11px] sm:text-[12px] md:text-[13.5px] text-[var(--color-text-secondary)] leading-snug sm:leading-relaxed flex-1 pr-0.5 opacity-90">
+                <p className="text-[11px] sm:text-[12px] md:text-[13.5px] text-[var(--color-text-secondary)] leading-snug sm:leading-relaxed flex-1 pr-0.5">
                   {step.description}
                 </p>
 

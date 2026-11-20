@@ -6,6 +6,7 @@ import { Calculator } from "@/lib/icons";
 import { Card } from "@/components/ui/shared";
 import { internships } from "@/data/internships";
 import styles from "./stages.module.css";
+import { textTint } from "@/lib/utils";
 
 function clampGrade(value: number) {
   return Math.min(20, Math.max(0, value));
@@ -32,7 +33,7 @@ export function InternshipGradeCalculator() {
     <div id="calculator">
     <Card elevation="raised" padding="24px" className={styles.mobileCard}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: "color-mix(in srgb, #8B5CF6, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(139,92,246,0.10)", color: textTint("#8B5CF6"), display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Calculator size={16} strokeWidth={2} />
         </div>
         <span style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>حاسبة معدل الستاجات</span>

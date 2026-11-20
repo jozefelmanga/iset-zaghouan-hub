@@ -8,6 +8,7 @@ import { ZoomableImage } from "@/components/ui/Lightbox";
 import { DepartmentScheduleDisclaimer } from "@/components/departments/DepartmentScheduleDisclaimer";
 import { RelatedDepartmentsNav } from "@/components/ui/RelatedNav";
 import { afterGraduationGuide } from "@/data/resources";
+import { textTint } from "@/lib/utils";
 
 const semesterGalleryImages = [
   "/images/departments/TI/1000125478.webp",
@@ -64,7 +65,7 @@ export function TIPageContent() {
                 alignItems: "center",
                 gap: "6px",
                 fontSize: "13px",
-                color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))",
+                color: textTint("#3B82F6"),
                 fontWeight: 600,
                 textDecoration: "none",
               }}
@@ -91,7 +92,7 @@ export function TIPageContent() {
                 alignItems: "center",
                 gap: "6px",
                 fontSize: "13px",
-                color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))",
+                color: textTint("#3B82F6"),
                 fontWeight: 600,
                 textDecoration: "none",
               }}

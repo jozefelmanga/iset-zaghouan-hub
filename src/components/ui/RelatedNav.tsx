@@ -48,7 +48,7 @@ export function RelatedDepartmentsNav({ currentDept }: RelatedDepartmentsNavProp
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))",
+              color: textTint("#3B82F6"),
             }}
           >
             <GraduationCap size={20} />
@@ -212,7 +212,7 @@ export function RelatedClubsNav({ currentClubId }: RelatedClubsNavProps) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "color-mix(in srgb, #12B8C8, #fff var(--text-lift))",
+              color: textTint("#12B8C8"),
             }}
           >
             <Users size={20} />

@@ -59,7 +59,7 @@ export default function BonusPage() {
 
       <div style={{ marginBottom: "36px" }}>
         <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <Coffee size={20} style={{ color: "color-mix(in srgb, #F97316, #fff var(--text-lift))" }} />
+          <Coffee size={20} style={{ color: textTint("#F97316") }} />
           في المطعم الجامعي (الريستو)
         </h2>
         <Card elevation="raised" padding="24px">
@@ -69,7 +69,7 @@ export default function BonusPage() {
 
       <div style={{ marginBottom: "40px" }}>
         <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <Home size={20} style={{ color: "color-mix(in srgb, #12B8C8, #fff var(--text-lift))" }} />
+          <Home size={20} style={{ color: textTint("#12B8C8") }} />
           داخل المبيت الجامعي
         </h2>
         <Card elevation="raised" padding="24px">
@@ -82,7 +82,7 @@ export default function BonusPage() {
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "16px" }}>
             <div
               style={{
-                width: "56px", height: "56px", borderRadius: "50%", background: "rgba(239,68,68,0.08)", color: "color-mix(in srgb, #EF4444, #fff var(--text-lift))",
+                width: "56px", height: "56px", borderRadius: "50%", background: "rgba(239,68,68,0.08)", color: textTint("#EF4444"),
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}
             >

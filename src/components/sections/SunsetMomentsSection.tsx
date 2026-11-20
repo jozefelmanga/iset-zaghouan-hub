@@ -4,6 +4,7 @@ import { useId, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown, Sparkles } from "@/lib/icons";
 import { PhotoGallery } from "@/components/ui/Lightbox";
+import { textTint } from "@/lib/utils";
 
 const SUNSET_BASE = "/images/sunset";
 
@@ -59,8 +60,8 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
 
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
-              <Sparkles size={15} style={{ color: "color-mix(in srgb, #D97706, #fff var(--text-lift))", flexShrink: 0 }} strokeWidth={2} aria-hidden="true" />
-              <span className="text-[13px] font-semibold sm:text-sm" style={{ color: "color-mix(in srgb, #B45309, #fff var(--text-lift))" }}>
+              <Sparkles size={15} style={{ color: textTint("#D97706"), flexShrink: 0 }} strokeWidth={2} aria-hidden="true" />
+              <span className="text-[13px] font-semibold sm:text-sm" style={{ color: textTint("#B45309") }}>
                 لحظات من الحرم
               </span>
             </div>
@@ -77,7 +78,7 @@ export function SunsetMomentsSection({ galleryImages }: Props) {
             className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-[rotate] duration-200 ${open ? "rotate-180" : ""}`}
             style={{
               background: open ? "rgba(246,180,27,0.15)" : "var(--color-surface)",
-              color: open ? "color-mix(in srgb, #B45309, #fff var(--text-lift))" : "var(--color-text-muted)",
+              color: open ? textTint("#B45309") : "var(--color-text-muted)",
               border: "1px solid rgba(246,180,27,0.2)",
             }}
           >

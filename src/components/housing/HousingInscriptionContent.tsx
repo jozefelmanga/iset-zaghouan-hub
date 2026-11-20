@@ -8,6 +8,7 @@ import { housingProcess, housingRegistration, housingEligibility, housingDocumen
 import { DocumentChecklist } from "@/components/ui/DocumentChecklist";
 import { ZoomableImage } from "@/components/ui/Lightbox";
 import { HousingCrossLink } from "@/components/housing/HousingCrossLink";
+import { textTint } from "@/lib/utils";
 
 const housingDocsGallery = [
   { src: "/images/foyer/inscription (1).webp", alt: "دليل معلومات المبيت الجامعي (1)" },
@@ -92,7 +93,7 @@ export function HousingInscriptionContent() {
 
         <div style={{ marginTop: "28px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(34,197,94,0.10)", color: "color-mix(in srgb, #22C55E, #fff var(--text-lift))", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(34,197,94,0.10)", color: textTint("#22C55E"), display: "flex", alignItems: "center", justifyContent: "center" }}>
               <ImageIcon size={16} strokeWidth={2} />
             </div>
             <h2 style={{ fontWeight: 700, fontSize: "17px", color: "var(--color-text)" }}>صور: دليل وثائق ومعلومات المبيت الجامعي 📋</h2>

@@ -16,6 +16,7 @@ import { ClubHeroBanner } from "@/components/clubs/ClubHeroBanner";
 import { PageWrapper } from "@/components/ui/layout";
 import { PhotoGallery } from "@/components/ui/Lightbox";
 import { RelatedClubsNav } from "@/components/ui/RelatedNav";
+import { textTint } from "@/lib/utils";
 
 const events = ["Workshops", "Hackathons", "CTFs (Capture The Flag)", "Trainings", "Journée d'intégration"];
 
@@ -41,12 +42,12 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
       <PageWrapper narrow className="pt-0! flex flex-col gap-8">
         <Card elevation="raised" padding="28px">
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text)", marginBottom: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <Shield size={20} style={{ color: "color-mix(in srgb, #F6B41B, #fff var(--text-lift))" }} />
+            <Shield size={20} style={{ color: textTint("#F6B41B") }} />
             شكون أحنا؟ (Who Are We?)
           </h2>
             <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
             جمعية <strong>SecuriNets</strong> الوطنية تأسست في 2003، وهي أكبر جمعية ومجتمع في تونس كامل متع الأمن السيبراني.
-            فرع ISET زغوان انفتح في 2016 من مجموعة طلبة شغوفين بالـ <code style={{ color: "color-mix(in srgb, #3B82F6, #fff var(--text-lift))", fontWeight: 600 }}>Cybersecurity</code>.
+            فرع ISET زغوان انفتح في 2016 من مجموعة طلبة شغوفين بالـ <code style={{ color: textTint("#3B82F6"), fontWeight: 600 }}>Cybersecurity</code>.
           </p>
           <Alert title="ملاحظة مهمة" variant="info">
             فريق SecuriNets ما يقتصرش على طلبة الإعلامية (IT) — التكوينات متاعنا مفتوحة للكل من كافة التخصصات والسنوات باش يشاركو ويتعلّمو.
@@ -121,7 +122,7 @@ export function SecurinetsPageContent({ galleryImages }: Props) {
                   borderRadius: "999px",
                   background: "rgba(246,180,27,0.08)",
                   border: "1px solid rgba(246,180,27,0.18)",
-                  color: "color-mix(in srgb, #B45309, #fff var(--text-lift))",
+                  color: textTint("#B45309"),
                   fontSize: "12.5px",
                   fontWeight: 600,
                 }}

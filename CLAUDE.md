@@ -26,6 +26,9 @@ keep it there.
 - **Mixed line endings** (some files CRLF, some LF). Keep each file's own
   endings; don't reformat whole files.
 - **Never push** without asking the owner first.
+- **No AI attribution in commits or PRs**: no `Co-Authored-By: Claude` (or
+  any AI) trailer, no "Generated with…" line. The owner removed them from
+  the history on purpose.
 - Don't bump `VERSION` in `public/sw.js` casually: it wipes visitors'
   offline caches.
 - **Vercel serves exported pages only at clean URLs**: `/offline` works,
